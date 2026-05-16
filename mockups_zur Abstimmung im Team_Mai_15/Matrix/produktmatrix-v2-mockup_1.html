@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Produktmatrix V2 – Spalten = Problem-Situationen</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 32px;
+    background: #f5f5f7;
+    color: #1a1a1a;
+  }
+  .container { max-width: 1400px; margin: 0 auto; }
+
+  h1 { color: #002D59; font-size: 22px; margin: 0 0 4px 0; }
+  .subtitle { color: #666; font-size: 13px; margin-bottom: 24px; }
+
+  /* === Legende === */
+  .legend {
+    background: #fff;
+    border: 1px solid #e0e0e5;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+  .legend-group { display: flex; flex-direction: column; gap: 6px; }
+  .legend-title {
+    font-weight: 700;
+    color: #002D59;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .legend-items { display: flex; gap: 14px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+
+  .marker {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
+  .marker.haupt { background: #002D59; }
+  .marker.moeglich { background: #fff; border: 2px solid #002D59; }
+  .marker.leer { background: transparent; border: 1px dashed #ccc; }
+
+  .belast-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .belast-icon.S { background: #c0392b; }
+  .belast-icon.L { background: #d4a017; }
+  .belast-icon.V { background: #6c5ce7; }
+  .belast-icon.C { background: #00897b; }
+  .belast-icon.W { background: #1976d2; }
+  .belast-icon.O { background: #ad1457; }
+
+  .blitz {
+    color: #f39c12;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* === Matrix === */
+  .matrix-wrap {
+    background: #fff;
+    border: 1px solid #e0e0e5;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  thead th {
+    background: #002D59;
+    color: #fff;
+    padding: 12px 6px;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 11px;
+    line-height: 1.3;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  thead th:first-child {
+    text-align: left;
+    padding-left: 14px;
+    width: 320px;
+  }
+  thead th:last-child { border-right: none; }
+
+  tbody td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #f0f0f3;
+    text-align: center;
+    vertical-align: middle;
+  }
+  tbody tr:hover { background: #fafbfc; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .produkt-cell {
+    text-align: left !important;
+    padding: 8px 14px !important;
+    border-right: 1px solid #f0f0f3;
+  }
+  .produkt-line1 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+  .produkt-name {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 12.5px;
+  }
+  .produkt-sub {
+    color: #666;
+    font-size: 10.5px;
+    margin-bottom: 4px;
+  }
+  .produkt-belast {
+    display: flex;
+    gap: 3px;
+  }
+
+  .group-header td {
+    background: #f7f7fa;
+    font-weight: 700;
+    color: #002D59;
+    text-align: left;
+    padding: 8px 14px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e0e0e5;
+  }
+
+  /* === Notiz === */
+  .notiz {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: #fff8e1;
+    border-left: 4px solid #f39c12;
+    border-radius: 4px;
+    font-size: 12.5px;
+    color: #5d4e1a;
+  }
+  .notiz strong { color: #8a6914; }
+
+  .footnote {
+    margin-top: 16px;
+    color: #888;
+    font-size: 11px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Produktmatrix V2 – Mockup</h1>
+  <p class="subtitle">Spalten = Problem-Situationen aus Lösungsfinder Schritt 1 · Belastungen + Zeit am Produkt-Label</p>
+
+  <!-- LEGENDE -->
+  <div class="legend">
+    <div class="legend-group">
+      <span class="legend-title">Eignung in Spalte</span>
+      <div class="legend-items">
+        <span class="legend-item"><span class="marker haupt"></span> Haupteinsatz</span>
+        <span class="legend-item"><span class="marker moeglich"></span> auch möglich</span>
+        <span class="legend-item"><span class="marker leer"></span> nicht vorgesehen</span>
+      </div>
+    </div>
+    <div class="legend-group">
+      <span class="legend-title">Belastungsprofil (am Produkt)</span>
+      <div class="legend-items">
+        <span class="legend-item"><span class="belast-icon S">S</span> Schwerverkehr</span>
+        <span class="legend-item"><span class="belast-icon L">L</span> Leichtverkehr</span>
+        <span class="legend-item"><span class="belast-icon V">V</span> Verschleiß</span>
+        <span class="legend-item"><span class="belast-icon C">C</span> Chemie</span>
+        <span class="legend-item"><span class="belast-icon W">W</span> Witterung</span>
+        <span class="legend-item"><span class="belast-icon O">O</span> Optik</span>
+      </div>
+    </div>
+    <div class="legend-group">
+      <span class="legend-title">Zeit</span>
+      <div class="legend-items">
+        <span class="legend-item"><span class="blitz">⚡</span> schnellaushärtend</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATRIX -->
+  <div class="matrix-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Produkt</th>
+          <th>Laufender<br>Betrieb</th>
+          <th>Schwerlast /<br>Verschleiß</th>
+          <th>Witterung /<br>Frost &amp; Tausalz</th>
+          <th>Punktuelle<br>Reparatur</th>
+          <th>Modernisierung /<br>Umnutzung</th>
+          <th>Sondernormen<br>(WHG, Trinkw. etc.)</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="group-header"><td colspan="7">Hartstoffestriche</td></tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="blitz">⚡</span>
+              <span class="produkt-name">NEODUR HE 60 rapid</span>
+            </div>
+            <div class="produkt-sub">Hartstoffestrich, schnell belastbar</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+              <span class="belast-icon V">V</span>
+            </div>
+          </td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td><span class="marker moeglich"></span></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">NEODUR HE 65</span>
+            </div>
+            <div class="produkt-sub">Hartstoffestrich Premium</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+              <span class="belast-icon V">V</span>
+            </div>
+          </td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker moeglich"></span></td>
+        </tr>
+
+        <tr class="group-header"><td colspan="7">Rapid Set Reparaturmörtel &amp; Schnellbeton</td></tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="blitz">⚡</span>
+              <span class="produkt-name">Rapid Set MORTAR MIX</span>
+            </div>
+            <div class="produkt-sub">Reparaturmörtel, schnell</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+              <span class="belast-icon L">L</span>
+            </div>
+          </td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="blitz">⚡</span>
+              <span class="produkt-name">Rapid Set CEMENT ALL</span>
+            </div>
+            <div class="produkt-sub">Universal-Reparaturmörtel</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+              <span class="belast-icon L">L</span>
+              <span class="belast-icon V">V</span>
+            </div>
+          </td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="blitz">⚡</span>
+              <span class="produkt-name">Rapid Set CONCRETE MIX</span>
+            </div>
+            <div class="produkt-sub">Schnellbeton, strukturell</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+            </div>
+          </td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td><span class="marker moeglich"></span></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="blitz">⚡</span>
+              <span class="produkt-name">Rapid Set FLOW CONTROL</span>
+            </div>
+            <div class="produkt-sub">Fließfähiger Reparaturmörtel</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+              <span class="belast-icon L">L</span>
+            </div>
+          </td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="blitz">⚡</span>
+              <span class="produkt-name">Rapid Set DOT</span>
+            </div>
+            <div class="produkt-sub">Schnellzement-Beschichtung</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+              <span class="belast-icon V">V</span>
+            </div>
+          </td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+        </tr>
+
+        <tr class="group-header"><td colspan="7">KORODUR Reparatur- &amp; Spezialmörtel</td></tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">KORODUR PC</span>
+            </div>
+            <div class="produkt-sub">Polymer-Cement-Mörtel</div>
+            <div class="produkt-belast">
+              <span class="belast-icon V">V</span>
+              <span class="belast-icon C">C</span>
+            </div>
+          </td>
+          <td><span class="marker moeglich"></span></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td><span class="marker moeglich"></span></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">KORODUR REPMÖ</span>
+            </div>
+            <div class="produkt-sub">Standard-Reparaturmörtel</div>
+            <div class="produkt-belast">
+              <span class="belast-icon L">L</span>
+              <span class="belast-icon V">V</span>
+            </div>
+          </td>
+          <td></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+        </tr>
+
+        <tr class="group-header"><td colspan="7">Pflasterfugen &amp; Aussenbereich</td></tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">NEODUR PFM 1K Easyfix</span>
+            </div>
+            <div class="produkt-sub">Pflasterfugenmörtel</div>
+            <div class="produkt-belast">
+              <span class="belast-icon L">L</span>
+              <span class="belast-icon W">W</span>
+            </div>
+          </td>
+          <td></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">NEODUR PFM 2K</span>
+            </div>
+            <div class="produkt-sub">Pflasterfugenmörtel 2-komp.</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+              <span class="belast-icon W">W</span>
+            </div>
+          </td>
+          <td></td>
+          <td><span class="marker moeglich"></span></td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="group-header"><td colspan="7">Beschichtungen &amp; Sichtoberflächen</td></tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">MICROTOP</span>
+            </div>
+            <div class="produkt-sub">Mineralische Designbeschichtung</div>
+            <div class="produkt-belast">
+              <span class="belast-icon L">L</span>
+              <span class="belast-icon O">O</span>
+            </div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker haupt"></span></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">GRANIDUR</span>
+            </div>
+            <div class="produkt-sub">Hartstoff-Sichtestrich</div>
+            <div class="produkt-belast">
+              <span class="belast-icon S">S</span>
+              <span class="belast-icon V">V</span>
+              <span class="belast-icon O">O</span>
+            </div>
+          </td>
+          <td></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">TRU Sichtestrich</span>
+            </div>
+            <div class="produkt-sub">Selbstverlaufender Designboden</div>
+            <div class="produkt-belast">
+              <span class="belast-icon L">L</span>
+              <span class="belast-icon O">O</span>
+            </div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td></td>
+        </tr>
+
+        <tr class="group-header"><td colspan="7">Spezial &amp; Nachbehandlung</td></tr>
+
+        <tr>
+          <td class="produkt-cell">
+            <div class="produkt-line1">
+              <span class="produkt-name">KORODUR Versiegelung</span>
+            </div>
+            <div class="produkt-sub">Oberflächenschutz</div>
+            <div class="produkt-belast">
+              <span class="belast-icon C">C</span>
+              <span class="belast-icon W">W</span>
+            </div>
+          </td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+          <td><span class="marker moeglich"></span></td>
+          <td></td>
+          <td><span class="marker haupt"></span></td>
+          <td><span class="marker moeglich"></span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOTIZEN -->
+  <div class="notiz">
+    <strong>Was sich geändert hat:</strong>
+    Die Spalten spiegeln jetzt 1:1 die Problem-Situationen aus dem Lösungsfinder Schritt 1.
+    Belastungs- und Zeit-Information liegt am Produkt, nicht in der Zelle – dadurch keine Vermischung mehr.
+    Wer im Lösungsfinder z. B. „laufender Betrieb" + „Schwerverkehr" auswählt, scannt in der Matrix die Spalte 1 nach Produkten mit ⚡ und „S" – sofortige visuelle Bestätigung.
+  </div>
+
+  <p class="footnote">
+    Mockup-Stand · 15 Produkte ohne Haftbrücke · Zuordnungen sind Vorschläge und müssen mit Frank Sander &amp; Richard Vadder fachlich validiert werden.
+  </p>
+
+</div>
+</body>
+</html>
