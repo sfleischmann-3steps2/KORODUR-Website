@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORODUR · Lösungsfinder 3-Step · Mockup-Vergleich</title>
+<style>
+  /* === KORODUR Brand === */
+  :root {
+    --navy: #002d59;
+    --navy-72: rgba(0,45,89,0.72);
+    --navy-50: rgba(0,45,89,0.5);
+    --navy-12: rgba(0,45,89,0.12);
+    --navy-06: rgba(0,45,89,0.06);
+    --bg: #f4f5f7;
+    --card: #ffffff;
+    --accent: #d4a017; /* warmes Gold als Akzent */
+    --green: #2e7d32;
+    --line: #e5e7eb;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === Document Header === */
+  .doc-header {
+    background: var(--navy);
+    color: #fff;
+    padding: 32px 48px;
+  }
+  .doc-header-inner {
+    max-width: 1320px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 24px;
+  }
+  .doc-header h1 {
+    font-size: 26px; margin: 0 0 6px 0; font-weight: 900; letter-spacing: -0.01em;
+  }
+  .doc-header .sub { font-size: 14px; opacity: 0.75; margin: 0; }
+  .doc-meta { font-size: 12px; opacity: 0.7; text-align: right; line-height: 1.6; }
+  .doc-logo {
+    font-weight: 900; font-size: 22px; letter-spacing: 0.04em;
+    border: 2px solid #fff; padding: 6px 12px; display: inline-block;
+  }
+
+  /* === Section === */
+  .section {
+    max-width: 1320px; margin: 0 auto; padding: 48px 48px 24px;
+  }
+  .section-header {
+    margin-bottom: 24px;
+    display: flex; align-items: flex-end; gap: 16px;
+  }
+  .variant-tag {
+    background: var(--navy); color: #fff;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 2px;
+  }
+  .variant-tag.b { background: var(--accent); color: var(--navy); }
+  .section-header h2 { margin: 0; font-size: 24px; font-weight: 900; letter-spacing: -0.01em; }
+  .section-header .desc { margin: 4px 0 0; color: var(--navy-72); font-size: 14px; max-width: 720px; }
+
+  .proscons {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin: 16px 0 32px; max-width: 920px;
+  }
+  .proscons > div {
+    background: #fff; padding: 14px 16px; border-left: 3px solid var(--navy);
+    font-size: 13px; line-height: 1.5;
+  }
+  .proscons .cons { border-left-color: var(--accent); }
+  .proscons strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+
+  /* === Screen Grid === */
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .screen {
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 20px rgba(0,45,89,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .screen-caption {
+    padding: 10px 16px;
+    background: var(--navy);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .screen-caption .step-num {
+    background: rgba(255,255,255,0.15); padding: 2px 8px; border-radius: 2px;
+    font-size: 11px;
+  }
+
+  /* === App-Top-Nav (mockup) === */
+  .app-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 24px; border-bottom: 1px solid var(--line);
+    background: #fff;
+  }
+  .app-logo {
+    font-weight: 900; font-size: 14px; letter-spacing: 0.04em; color: var(--navy);
+  }
+  .app-nav-links { display: flex; gap: 18px; font-size: 11px; color: var(--navy-72); }
+  .app-nav-links span.active { color: var(--navy); font-weight: 700; border-bottom: 2px solid var(--navy); padding-bottom: 2px; }
+  .app-lang { font-size: 11px; color: var(--navy-50); }
+
+  /* === Variant A — Wizard === */
+  .wiz-body { padding: 32px; }
+  .wiz-progress { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+  .wiz-step {
+    display: flex; align-items: center; gap: 8px; font-size: 11px;
+  }
+  .wiz-step .num {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 11px;
+    background: var(--navy-12); color: var(--navy-72);
+  }
+  .wiz-step.active .num { background: var(--navy); color: #fff; }
+  .wiz-step.done .num { background: var(--navy); color: #fff; }
+  .wiz-step.done .num::after { content: "✓"; }
+  .wiz-step.done .num .digit { display: none; }
+  .wiz-step .label { color: var(--navy-72); font-weight: 600; }
+  .wiz-step.active .label { color: var(--navy); font-weight: 700; }
+  .wiz-connector { flex: 1; height: 1px; background: var(--navy-12); }
+
+  .wiz-question {
+    font-size: 22px; font-weight: 900; margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .wiz-sub { color: var(--navy-72); font-size: 13px; margin: 0 0 24px; }
+
+  .opt-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .opt-grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .opt-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+  .opt-card {
+    border: 1.5px solid var(--navy-12);
+    border-radius: 4px;
+    padding: 18px;
+    background: #fff;
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+  .opt-card .icon {
+    width: 36px; height: 36px; border-radius: 4px;
+    background: var(--navy-06);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+    color: var(--navy);
+  }
+  .opt-card .title { font-weight: 700; font-size: 14px; margin: 0 0 4px; }
+  .opt-card .desc { font-size: 12px; color: var(--navy-72); margin: 0; line-height: 1.4; }
+  .opt-card.selected {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: #fff;
+  }
+  .opt-card.selected .title,
+  .opt-card.selected .desc { color: #fff; }
+  .opt-card.selected .desc { opacity: 0.8; }
+  .opt-card.selected .icon { background: rgba(255,255,255,0.2); color: #fff; }
+  .opt-card.selected::after {
+    content: "✓"; position: absolute; top: 12px; right: 14px;
+    color: #fff; font-weight: 700;
+  }
+
+  .opt-card.small {
+    padding: 14px;
+    text-align: center;
+  }
+  .opt-card.small .icon { margin: 0 auto 8px; }
+  .opt-card.small .title { font-size: 13px; margin: 0; }
+
+  .wiz-nav {
+    margin-top: 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 20px; border-top: 1px solid var(--line);
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1.5px solid var(--navy);
+    background: #fff;
+    color: var(--navy);
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .btn.primary { background: var(--navy); color: #fff; }
+  .btn.ghost { border-color: transparent; color: var(--navy-72); }
+  .btn.disabled { opacity: 0.4; cursor: not-allowed; }
+  .skip-link {
+    font-size: 12px; color: var(--navy-72); text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* === Variant B — One-Page Stepper === */
+  .vb-layout {
+    display: grid; grid-template-columns: 1fr 220px; gap: 0;
+    min-height: 480px;
+  }
+  .vb-main { padding: 28px; }
+  .vb-side {
+    background: var(--navy); color: #fff;
+    padding: 20px 18px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .vb-counter {
+    background: rgba(255,255,255,0.08);
+    padding: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .vb-counter .big { font-size: 32px; font-weight: 900; line-height: 1; }
+  .vb-counter .lbl { font-size: 11px; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+  .vb-side h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin: 8px 0 4px; }
+  .vb-side ul { list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.6; }
+  .vb-side ul li::before { content: "→ "; opacity: 0.6; }
+  .vb-side .cta {
+    background: #fff; color: var(--navy);
+    padding: 10px; text-align: center; font-weight: 700; font-size: 12px;
+    border-radius: 2px; margin-top: auto;
+  }
+
+  .acc {
+    border: 1px solid var(--navy-12);
+    border-radius: 3px;
+    margin-bottom: 12px;
+    background: #fff;
+  }
+  .acc-head {
+    padding: 14px 18px;
+    display: flex; align-items: center; gap: 14px;
+    cursor: pointer;
+  }
+  .acc-num {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--navy-12); color: var(--navy-72);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 12px;
+  }
+  .acc.done .acc-num { background: var(--navy); color: #fff; }
+  .acc.done .acc-num::after { content: "✓"; }
+  .acc.done .acc-num .d { display: none; }
+  .acc.active .acc-num { background: var(--navy); color: #fff; }
+  .acc-title { font-weight: 700; font-size: 14px; flex: 1; }
+  .acc-summary { font-size: 12px; color: var(--navy-72); }
+  .acc-summary strong { color: var(--navy); font-weight: 700; }
+  .acc-edit { font-size: 11px; color: var(--navy-50); text-decoration: underline; }
+
+  .acc-body { padding: 4px 18px 18px; border-top: 1px solid var(--line); }
+  .acc.collapsed .acc-body { display: none; }
+  .acc.active { border-color: var(--navy); border-width: 1.5px; }
+
+  /* === Result page === */
+  .res-top {
+    background: var(--navy); color: #fff;
+    padding: 24px 28px;
+    display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
+  }
+  .res-top h3 { margin: 0 0 4px; font-size: 18px; font-weight: 900; }
+  .res-top .res-sub { font-size: 12px; opacity: 0.75; margin: 0; }
+  .res-top .res-count {
+    font-size: 36px; font-weight: 900; line-height: 1;
+  }
+  .res-top .res-count-lbl { font-size: 10px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .res-product {
+    background: var(--navy-06); padding: 18px 24px;
+    border-left: 4px solid var(--accent);
+    margin: 0;
+  }
+  .res-product .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-72); font-weight: 700; margin-bottom: 4px; }
+  .res-product .pname { font-size: 18px; font-weight: 900; margin: 0 0 4px; }
+  .res-product .pdesc { font-size: 12px; color: var(--navy-72); margin: 0; }
+  .res-product .pcta { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--navy); font-weight: 700; text-decoration: underline; }
+
+  .res-filters {
+    padding: 16px 24px; border-bottom: 1px solid var(--line);
+    display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+  }
+  .res-filters .lbl { font-size: 11px; color: var(--navy-72); margin-right: 4px; }
+  .tag {
+    background: var(--navy-06); color: var(--navy); padding: 4px 10px;
+    border-radius: 100px; font-size: 11px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  .tag.derived { background: #fff; border: 1px dashed var(--navy-50); color: var(--navy-72); }
+
+  .res-grid {
+    padding: 16px 24px 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .res-card {
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .res-card .img {
+    height: 90px;
+    background: linear-gradient(135deg, #c9d3df 0%, #94a3b8 100%);
+    position: relative;
+  }
+  .res-card .img::before {
+    content: ""; position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent 0 8px, rgba(255,255,255,0.08) 8px 16px);
+  }
+  .res-card .img-lbl {
+    position: absolute; bottom: 6px; left: 8px;
+    background: rgba(0,45,89,0.7); color: #fff;
+    font-size: 9px; padding: 2px 6px; border-radius: 2px;
+  }
+  .res-card-body { padding: 10px 12px; }
+  .res-card .name { font-size: 12px; font-weight: 700; margin: 0 0 2px; line-height: 1.3; }
+  .res-card .loc { font-size: 10px; color: var(--navy-50); margin: 0 0 6px; }
+  .res-card .tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .res-card .tags .tag { font-size: 9px; padding: 2px 6px; }
+
+  /* === Annotations === */
+  .anno {
+    background: #fff8e1;
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px; font-size: 12px;
+    margin: 12px 0 0; color: #5a4a14;
+    border-radius: 0 3px 3px 0;
+  }
+  .anno strong { color: #3b2f0c; }
+
+  /* === Comparison Table === */
+  .compare {
+    max-width: 1320px; margin: 24px auto 64px; padding: 0 48px;
+  }
+  .compare h2 { font-size: 22px; font-weight: 900; margin: 0 0 16px; }
+  table {
+    width: 100%; border-collapse: collapse;
+    background: #fff; box-shadow: 0 2px 10px rgba(0,45,89,0.06);
+  }
+  th, td {
+    padding: 12px 16px; text-align: left; font-size: 13px;
+    border-bottom: 1px solid var(--line); vertical-align: top;
+  }
+  th { background: var(--navy); color: #fff; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td:first-child { font-weight: 700; width: 22%; }
+  tr:last-child td { border-bottom: none; }
+
+  /* === Footer === */
+  .doc-footer {
+    background: var(--navy); color: #fff;
+    padding: 24px 48px; font-size: 12px;
+    display: flex; justify-content: space-between;
+    opacity: 0.9;
+  }
+  .doc-footer-inner { max-width: 1320px; margin: 0 auto; display: flex; justify-content: space-between; width: 100%; }
+
+  /* === Print === */
+  @media print {
+    body { background: #fff; }
+    .doc-header { padding: 16px 24px; }
+    .section { padding: 16px 24px; }
+    .screen { box-shadow: none; page-break-inside: avoid; }
+    .screens { gap: 16px; }
+    .compare { padding: 16px 24px; }
+    @page { size: A4 landscape; margin: 8mm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== DOCUMENT HEADER ========== -->
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div>
+      <div class="doc-logo">KORODUR</div>
+      <h1 style="margin-top:16px;">Lösungsfinder · 3-Step-Rewrite · Mockup-Vergleich</h1>
+      <p class="sub">Mid-Fi Konzept · Mai 2026 · zwei Varianten zur Team-Diskussion</p>
+    </div>
+    <div class="doc-meta">
+      Projekt: KORODUR Sanierungs-App<br>
+      Plan-Ref: docs/superpowers/plans/2026-05-13-loesungsfinder-3step-rewrite.md<br>
+      Stand: 14.05.2026<br>
+      Autor: Mockup-Session
+    </div>
+  </div>
+</header>
+
+<!-- ========== INTRO ========== -->
+<section class="section">
+  <h2 style="font-size:18px; font-weight:900; margin:0 0 8px;">Zur Orientierung</h2>
+  <p style="margin:0 0 8px; color: var(--navy-72); font-size:13px; max-width: 920px;">
+    Beide Varianten setzen denselben 3-Step-Filter um (Sanierungsart → Einsatzbereich → Zeitfenster) und denselben Ergebnis-Aufbau mit Top-Produkt-Banner + abgeleiteten Eigenschafts-Tags. Sie unterscheiden sich in der <strong>User-Interaktion</strong>:
+  </p>
+  <ul style="margin:0 0 0 20px; color: var(--navy-72); font-size:13px;">
+    <li><strong>Variante A</strong> führt geführt durch — ein Step pro Screen, viel Whitespace, ruhig.</li>
+    <li><strong>Variante B</strong> zeigt alles auf einer Seite — Akkordeon-Stepper mit Live-Treffer-Counter, schneller Überblick.</li>
+  </ul>
+  <p style="margin:14px 0 0; color: var(--navy-72); font-size:13px; max-width: 920px;">
+    <strong>Lese-Empfehlung für das Team-Meeting:</strong> Erst die <em>Inhalts-Check-Sektion</em> direkt unten durchgehen (Step-Fragen + Optionen finalisieren), dann die UI-Varianten A/B vergleichen.
+  </p>
+</section>
+
+<!-- ========================================================== -->
+<!-- ============== INHALTS-CHECK FÜR DAS TEAM-MEETING ======== -->
+<!-- ========================================================== -->
+<section class="section" style="background: #fffaed; padding-top: 32px; padding-bottom: 32px;">
+  <div class="section-header" style="margin-bottom: 16px;">
+    <span class="variant-tag b">Inhalts-Check</span>
+    <div>
+      <h2>Die 3 Steps — Frage, Optionen, Wording</h2>
+      <p class="desc">Zentrale Arbeitsfläche für morgen: Was wird gefragt? Welche Optionen werden angeboten? Welche Beschreibung steht darunter? Gegenüberstellung von <strong>aktuell live</strong> und <strong>Vorschlag (Mai 2026)</strong>, plus offene Diskussionspunkte je Step.</p>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+
+    <!-- =============== STEP 1 =============== -->
+    <div style="background: #fff; border: 1px solid var(--line); border-radius: 4px; overflow: hidden;">
+      <div style="background: var(--navy); color: #fff; padding: 12px 20px; display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-weight: 900; font-size: 14px;">1</span>
+          <strong style="font-size: 15px;">Sanierungsart</strong>
+        </div>
+        <span style="font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.08em;">Was für eine Maßnahme?</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+        <!-- live -->
+        <div style="padding: 18px 20px; border-right: 1px solid var(--line);">
+          <div style="font-size: 11px; color: var(--navy-50); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">Aktuell live (4-Step-App)</div>
+          <p style="margin: 0 0 6px; font-weight: 700; font-size: 14px;">„Welche Art von Maßnahme?"</p>
+          <p style="margin: 0 0 12px; font-size: 12px; color: var(--navy-72);">— (keine Sub-Headline)</p>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-06);">
+              <strong>Punktuelle Reparatur</strong><br>
+              <span style="color: var(--navy-72);">Löcher, Fugen, einzelne Flächen</span>
+            </li>
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-06);">
+              <strong>Flächensanierung</strong><br>
+              <span style="color: var(--navy-72);">Komplette Halle oder Abschnitt</span>
+            </li>
+            <li style="padding: 6px 0;">
+              <strong>Ich bin mir nicht sicher</strong><br>
+              <span style="color: var(--navy-72);">Wir empfehlen vielseitige Lösungen</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- vorschlag -->
+        <div style="padding: 18px 20px; background: var(--navy-06);">
+          <div style="font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">Vorschlag Mai 2026</div>
+          <p style="margin: 0 0 6px; font-weight: 700; font-size: 14px;">„Was ist Ihre Situation?"</p>
+          <p style="margin: 0 0 12px; font-size: 12px; color: var(--navy-72);">Sub: „Wählen Sie die Art der Sanierungsmaßnahme aus."</p>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-12);">
+              <strong>Punktuelle Sanierung</strong><br>
+              <span style="color: var(--navy-72);">Kosmetische oder funktionale Reparaturen wichtiger Flächen (Boden, Wand, Decke).</span>
+            </li>
+            <li style="padding: 6px 0;">
+              <strong>Großflächige Sanierung</strong><br>
+              <span style="color: var(--navy-72);">Maßnahmen bei Restrukturierung, Modernisierung, Umnutzung oder energetischer Sanierung.</span>
+            </li>
+          </ul>
+          <p style="margin: 10px 0 0; font-size: 11px; color: var(--navy-50); font-style: italic;">→ „Unsicher"-Option entfällt (vereinfacht, mit Skip Step 2 fängt sich das auf)</p>
+        </div>
+      </div>
+
+      <div style="padding: 12px 20px; background: #fffbe8; border-top: 1px solid var(--accent);">
+        <strong style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #3b2f0c;">Diskussionspunkte Step 1</strong>
+        <ul style="margin: 6px 0 0 18px; padding: 0; font-size: 12px; color: #5a4a14; line-height: 1.6;">
+          <li>„Was ist Ihre Situation?" — zu generisch? Alternative: <em>„Was möchten Sie sanieren?"</em> oder <em>„Wie groß ist Ihr Sanierungsvorhaben?"</em></li>
+          <li>Wording „Punktuelle <strong>Sanierung</strong>" vs. „Punktuelle <strong>Reparatur</strong>" — was passt zur Vertriebs-Sprache?</li>
+          <li>„Großflächig" → soll eine Größenangabe rein (z.B. <em>„ab ~100 m²"</em>) um Abgrenzung zu schärfen?</li>
+          <li>„Unsicher"-Option drinlassen für Erstbesucher oder weglassen für klare Filter-Logik?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- =============== STEP 2 =============== -->
+    <div style="background: #fff; border: 1px solid var(--line); border-radius: 4px; overflow: hidden;">
+      <div style="background: var(--navy); color: #fff; padding: 12px 20px; display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-weight: 900; font-size: 14px;">2</span>
+          <strong style="font-size: 15px;">Einsatzbereich</strong>
+        </div>
+        <span style="font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.08em;">Wo wird saniert?</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+        <!-- live -->
+        <div style="padding: 18px 20px; border-right: 1px solid var(--line);">
+          <div style="font-size: 11px; color: var(--navy-50); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">Aktuell live (Step 1 in alter App)</div>
+          <p style="margin: 0 0 6px; font-weight: 700; font-size: 14px;">„Was sanieren Sie?"</p>
+          <p style="margin: 0 0 12px; font-size: 12px; color: var(--navy-72);">— (3 Optionen, Bereich kam ZUERST)</p>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-06);">
+              <strong>Industrieboden</strong><br>
+              <span style="color: var(--navy-72);">Hallen, Lager, Werkstätten</span>
+            </li>
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-06);">
+              <strong>Industriebau</strong><br>
+              <span style="color: var(--navy-72);">Bauteile, Fugen, Treppen, Fundamente</span>
+            </li>
+            <li style="padding: 6px 0;">
+              <strong>Verkehrs- &amp; Logistikflächen</strong><br>
+              <span style="color: var(--navy-72);">Höfe, Parkhäuser, Häfen, Brücken</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- vorschlag -->
+        <div style="padding: 18px 20px; background: var(--navy-06);">
+          <div style="font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">Vorschlag Mai 2026 (4 Bereiche, optional)</div>
+          <p style="margin: 0 0 6px; font-weight: 700; font-size: 14px;">„In welchem Bereich wird saniert?"</p>
+          <p style="margin: 0 0 12px; font-size: 12px; color: var(--navy-72);">Sub: „Bitte eine Kategorie wählen — oder überspringen für alle Bereiche."</p>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-12);">
+              <strong>Lager &amp; Logistik</strong> <span style="color: var(--navy-72);">— Hochregale, Umschlag, Hofflächen</span>
+            </li>
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-12);">
+              <strong>Industrie &amp; Produktion</strong> <span style="color: var(--navy-72);">— Werkshallen, Maschinenstellplätze</span>
+            </li>
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-12);">
+              <strong>Lebensmittel &amp; Verkauf</strong> <span style="color: var(--navy-72);">— Märkte, Küchen, Kühlbereiche</span>
+            </li>
+            <li style="padding: 6px 0;">
+              <strong>Infrastruktur &amp; Verkehr</strong> <span style="color: var(--navy-72);">— Parkflächen, Brücken, Tunnel</span>
+            </li>
+          </ul>
+          <p style="margin: 10px 0 0; font-size: 11px; color: var(--navy-50); font-style: italic;">→ „Alle Bereiche anzeigen"-Skip-Link ersetzt die „Unsicher"-Option</p>
+        </div>
+      </div>
+
+      <div style="padding: 12px 20px; background: #fffbe8; border-top: 1px solid var(--accent);">
+        <strong style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #3b2f0c;">Diskussionspunkte Step 2</strong>
+        <ul style="margin: 6px 0 0 18px; padding: 0; font-size: 12px; color: #5a4a14; line-height: 1.6;">
+          <li><strong>Reihenfolge:</strong> Bisher kam Bereich zuerst. Neuer Plan: Sanierungsart zuerst, dann Bereich. Klingt das logisch aus Vertriebs-Sicht?</li>
+          <li><strong>„Lebensmittel &amp; Verkauf"</strong> — passt das? Alternativen: <em>„Handel &amp; Gastronomie"</em>, <em>„Verkauf &amp; Food"</em>, <em>„Einzelhandel &amp; Lebensmittelindustrie"</em></li>
+          <li><strong>Granularität:</strong> 4 Bereiche reichen oder bräuchte es z.B. „Trinkwasser-Infrastruktur" als 5. Bereich (Micro-Top-Workflow)?</li>
+          <li><strong>Skip-Link „Alle Bereiche anzeigen":</strong> prominent oder eher Power-User-Feature?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- =============== STEP 3 =============== -->
+    <div style="background: #fff; border: 1px solid var(--line); border-radius: 4px; overflow: hidden;">
+      <div style="background: var(--navy); color: #fff; padding: 12px 20px; display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-weight: 900; font-size: 14px;">3</span>
+          <strong style="font-size: 15px;">Zeitfenster</strong>
+        </div>
+        <span style="font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.08em;">Wie schnell muss es gehen?</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+        <!-- live -->
+        <div style="padding: 18px 20px; border-right: 1px solid var(--line);">
+          <div style="font-size: 11px; color: var(--navy-50); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">Aktuell live</div>
+          <p style="margin: 0 0 6px; font-weight: 700; font-size: 14px;">„Zeitrahmen?"</p>
+          <p style="margin: 0 0 12px; font-size: 12px; color: var(--navy-72);">— (sehr knapp)</p>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-06);">
+              <strong>Stunden</strong><br>
+              <span style="color: var(--navy-72);">Produktion darf nicht stillstehen</span>
+            </li>
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-06);">
+              <strong>Wochenende / Stillstand geplant</strong><br>
+              <span style="color: var(--navy-72);">2–3 Tage verfügbar</span>
+            </li>
+            <li style="padding: 6px 0;">
+              <strong>Flexibel</strong><br>
+              <span style="color: var(--navy-72);">Keine zeitlichen Einschränkungen</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- vorschlag -->
+        <div style="padding: 18px 20px; background: var(--navy-06);">
+          <div style="font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 6px;">Vorschlag Mai 2026</div>
+          <p style="margin: 0 0 6px; font-weight: 700; font-size: 14px;">„Wie dringlich ist die Wieder-Belastbarkeit?"</p>
+          <p style="margin: 0 0 12px; font-size: 12px; color: var(--navy-72);">Sub: „Wann muss die Fläche wieder voll nutzbar sein?"</p>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px;">
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-12);">
+              <strong>Kurzfristig</strong> <span style="color: var(--navy-72);">— Wenige Stunden bis 1 Tag</span>
+            </li>
+            <li style="padding: 6px 0; border-bottom: 1px solid var(--navy-12);">
+              <strong>Mittelfristig</strong> <span style="color: var(--navy-72);">— 2 – 7 Tage</span>
+            </li>
+            <li style="padding: 6px 0;">
+              <strong>Planbar</strong> <span style="color: var(--navy-72);">— Zeit spielt keine Rolle</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="padding: 12px 20px; background: #fffbe8; border-top: 1px solid var(--accent);">
+        <strong style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #3b2f0c;">Diskussionspunkte Step 3</strong>
+        <ul style="margin: 6px 0 0 18px; padding: 0; font-size: 12px; color: #5a4a14; line-height: 1.6;">
+          <li><strong>Wording „Wieder-Belastbarkeit":</strong> Fach-Sprache (gut für B2B-Profi) oder zu sperrig? Alternative: <em>„Wann muss die Fläche wieder belastbar sein?"</em></li>
+          <li><strong>Abstrakt vs. konkret:</strong> „Kurzfristig / Mittelfristig / Planbar" ist klarer mappable, aber „Stunden / Wochenende / Flexibel" trifft den Anwendungsfall genauer. Welcher Stil gewinnt?</li>
+          <li><strong>„Planbar — Zeit spielt keine Rolle":</strong> klingt etwas flapsig. Alternative: <em>„Planbar — Zeit ist Standard"</em> oder <em>„Planbar — keine Eile"</em></li>
+          <li><strong>Bandbreiten:</strong> Sind die Tageszahlen (1 Tag / 2–7 Tage) aus Produkt-Sicht korrekt? Frank/Richard validieren.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 20px; padding: 14px 18px; background: #fff; border-left: 4px solid var(--navy); font-size: 13px;">
+    <strong>Entscheidungs-Vorschlag für das Meeting:</strong> Pro Step die finale <em>Frage</em>, die finalen <em>Options-Labels</em> und die finalen <em>Sub-Beschreibungen</em> abnicken (oder mit Variante markieren). Daraus baue ich am Mittwoch die `dictionaries/{de,en,fr,pl}.json`-Updates für die App.
+  </div>
+</section>
+
+<!-- ========================================================== -->
+<!-- ============== VARIANTE A — Klassisch Geführt ============ -->
+<!-- ========================================================== -->
+<section class="section">
+  <div class="section-header">
+    <span class="variant-tag">Variante A</span>
+    <div>
+      <h2>Klassischer Wizard — ein Step pro Screen</h2>
+      <p class="desc">Reduziert auf das Wesentliche pro Schritt, große Karten, ruhig. Progress-Indikator oben, klare „Weiter"-Navigation. Tendenziell sicherer für Erstbenutzer und gut für mobile Nutzung.</p>
+    </div>
+  </div>
+
+  <div class="proscons">
+    <div><strong>Stärken</strong>Sehr fokussiert · niedrige kognitive Last · klare Hierarchie · mobile-first · funktioniert ohne JS-Magic.</div>
+    <div class="cons"><strong>Trade-offs</strong>Mehr Klicks bis zum Ergebnis · Kontext der vorherigen Antworten weniger sichtbar · kein Live-Feedback zur Treffer-Anzahl.</div>
+  </div>
+
+  <div class="screens">
+
+    <!-- A · Step 1 -->
+    <div class="screen">
+      <div class="screen-caption">Step 1 — Sanierungsart <span class="step-num">A · 1 / 4</span></div>
+      <div class="app-nav">
+        <span class="app-logo">KORODUR</span>
+        <div class="app-nav-links"><span class="active">Lösungsfinder</span><span>Referenzen</span><span>Produkte</span></div>
+        <span class="app-lang">DE · EN · FR · PL</span>
+      </div>
+      <div class="wiz-body">
+        <div class="wiz-progress">
+          <div class="wiz-step active"><div class="num"><span class="digit">1</span></div><span class="label">Sanierungsart</span></div>
+          <div class="wiz-connector"></div>
+          <div class="wiz-step"><div class="num"><span class="digit">2</span></div><span class="label">Einsatzbereich</span></div>
+          <div class="wiz-connector"></div>
+          <div class="wiz-step"><div class="num"><span class="digit">3</span></div><span class="label">Zeitfenster</span></div>
+        </div>
+        <h2 class="wiz-question">Was ist Ihre Situation?</h2>
+        <p class="wiz-sub">Wählen Sie die Art der Sanierungsmaßnahme aus.</p>
+
+        <div class="opt-grid-2">
+          <div class="opt-card">
+            <div class="icon">◐</div>
+            <p class="title">Punktuelle Sanierung</p>
+            <p class="desc">Kosmetische oder funktionale Reparaturen wichtiger Flächen (Boden, Wand, Decke).</p>
+          </div>
+          <div class="opt-card selected">
+            <div class="icon">■</div>
+            <p class="title">Großflächige Sanierung</p>
+            <p class="desc">Maßnahmen bei Restrukturierung, Modernisierung, Umnutzung oder energetischer Sanierung.</p>
+          </div>
+        </div>
+
+        <div class="wiz-nav">
+          <button class="btn ghost disabled">← Zurück</button>
+          <button class="btn primary">Weiter →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- A · Step 2 -->
+    <div class="screen">
+      <div class="screen-caption">Step 2 — Einsatzbereich <span class="step-num">A · 2 / 4</span></div>
+      <div class="app-nav">
+        <span class="app-logo">KORODUR</span>
+        <div class="app-nav-links"><span class="active">Lösungsfinder</span><span>Referenzen</span><span>Produkte</span></div>
+        <span class="app-lang">DE · EN · FR · PL</span>
+      </div>
+      <div class="wiz-body">
+        <div class="wiz-progress">
+          <div class="wiz-step done"><div class="num"><span class="digit">1</span></div><span class="label">Sanierungsart</span></div>
+          <div class="wiz-connector"></div>
+          <div class="wiz-step active"><div class="num"><span class="digit">2</span></div><span class="label">Einsatzbereich</span></div>
+          <div class="wiz-connector"></div>
+          <div class="wiz-step"><div class="num"><span class="digit">3</span></div><span class="label">Zeitfenster</span></div>
+        </div>
+        <h2 class="wiz-question">In welchem Bereich wird saniert?</h2>
+        <p class="wiz-sub">Bitte eine Kategorie wählen — oder überspringen für alle Bereiche.</p>
+
+        <div class="opt-grid-4">
+          <div class="opt-card">
+            <div class="icon">▦</div>
+            <p class="title">Lager &amp; Logistik</p>
+            <p class="desc">Hochregale, Umschlag, Hofflächen</p>
+          </div>
+          <div class="opt-card selected">
+            <div class="icon">⚙</div>
+            <p class="title">Industrie &amp; Produktion</p>
+            <p class="desc">Werkshallen, Maschinenstellplätze</p>
+          </div>
+          <div class="opt-card">
+            <div class="icon">⌂</div>
+            <p class="title">Lebensmittel &amp; Verkauf</p>
+            <p class="desc">Märkte, Küchen, Kühlbereiche</p>
+          </div>
+          <div class="opt-card">
+            <div class="icon">⇄</div>
+            <p class="title">Infrastruktur &amp; Verkehr</p>
+            <p class="desc">Parkflächen, Brücken, Tunnel</p>
+          </div>
+        </div>
+
+        <div class="wiz-nav">
+          <button class="btn ghost">← Zurück</button>
+          <span class="skip-link">Alle Bereiche anzeigen →</span>
+          <button class="btn primary">Weiter →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- A · Step 3 -->
+    <div class="screen">
+      <div class="screen-caption">Step 3 — Zeitfenster <span class="step-num">A · 3 / 4</span></div>
+      <div class="app-nav">
+        <span class="app-logo">KORODUR</span>
+        <div class="app-nav-links"><span class="active">Lösungsfinder</span><span>Referenzen</span><span>Produkte</span></div>
+        <span class="app-lang">DE · EN · FR · PL</span>
+      </div>
+      <div class="wiz-body">
+        <div class="wiz-progress">
+          <div class="wiz-step done"><div class="num"><span class="digit">1</span></div><span class="label">Sanierungsart</span></div>
+          <div class="wiz-connector"></div>
+          <div class="wiz-step done"><div class="num"><span class="digit">2</span></div><span class="label">Einsatzbereich</span></div>
+          <div class="wiz-connector"></div>
+          <div class="wiz-step active"><div class="num"><span class="digit">3</span></div><span class="label">Zeitfenster</span></div>
+        </div>
+        <h2 class="wiz-question">Wie dringlich ist die Wieder-Belastbarkeit?</h2>
+        <p class="wiz-sub">Wann muss die Fläche wieder voll nutzbar sein?</p>
+
+        <div class="opt-grid-3">
+          <div class="opt-card selected">
+            <div class="icon">⚡</div>
+            <p class="title">Kurzfristig</p>
+            <p class="desc">Wenige Stunden bis 1 Tag</p>
+          </div>
+          <div class="opt-card">
+            <div class="icon">◴</div>
+            <p class="title">Mittelfristig</p>
+            <p class="desc">2 – 7 Tage</p>
+          </div>
+          <div class="opt-card">
+            <div class="icon">⌚</div>
+            <p class="title">Planbar</p>
+            <p class="desc">Zeit spielt keine Rolle</p>
+          </div>
+        </div>
+
+        <div class="wiz-nav">
+          <button class="btn ghost">← Zurück</button>
+          <button class="btn primary">Ergebnisse anzeigen →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- A · Result -->
+    <div class="screen">
+      <div class="screen-caption">Ergebnis-Seite <span class="step-num">A · 4 / 4</span></div>
+      <div class="app-nav">
+        <span class="app-logo">KORODUR</span>
+        <div class="app-nav-links"><span class="active">Lösungsfinder</span><span>Referenzen</span><span>Produkte</span></div>
+        <span class="app-lang">DE · EN · FR · PL</span>
+      </div>
+      <div class="res-top">
+        <div>
+          <h3>Ihre passende Lösung</h3>
+          <p class="res-sub">Großflächige Sanierung · Industrie &amp; Produktion · Kurzfristig</p>
+        </div>
+        <div style="text-align:right;">
+          <div class="res-count">7</div>
+          <div class="res-count-lbl">Treffer</div>
+        </div>
+      </div>
+      <div class="res-product">
+        <div class="lbl">★ Top-Produkt-Empfehlung</div>
+        <p class="pname">NEODUR HE 60 rapid</p>
+        <p class="pdesc">Industrieestrich · belastbar nach 8 h · Verschleißklasse A6 · in 5 von 7 Referenzen eingesetzt</p>
+        <span class="pcta">→ Produkt-Datenblatt &amp; Verarbeitung</span>
+      </div>
+      <div class="res-filters">
+        <span class="lbl">Abgeleitete Eigenschaften:</span>
+        <span class="tag derived">Hohe Dichtigkeit</span>
+        <span class="tag derived">Außenflächen-tauglich</span>
+        <span class="tag derived">Frost &amp; Tausalz</span>
+      </div>
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="img"><span class="img-lbl">2024</span></div>
+          <div class="res-card-body">
+            <p class="name">DHL Logistik-Zentrum</p>
+            <p class="loc">Versmold · DE</p>
+            <div class="tags"><span class="tag">Industrie</span><span class="tag">Kurzfristig</span></div>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="img"><span class="img-lbl">2024</span></div>
+          <div class="res-card-body">
+            <p class="name">BMW Werkshalle</p>
+            <p class="loc">Leipzig · DE</p>
+            <div class="tags"><span class="tag">Industrie</span><span class="tag">Kurzfristig</span></div>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="img"><span class="img-lbl">2023</span></div>
+          <div class="res-card-body">
+            <p class="name">Lyreco Distribution</p>
+            <p class="loc">Barsinghausen · DE</p>
+            <div class="tags"><span class="tag">Logistik</span><span class="tag">Kurzfristig</span></div>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="img"><span class="img-lbl">2023</span></div>
+          <div class="res-card-body">
+            <p class="name">Produktionshalle Müller</p>
+            <p class="loc">Köln · DE</p>
+            <div class="tags"><span class="tag">Industrie</span><span class="tag">+1</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="anno"><strong>Hinweis Variante A:</strong> Mobile-Version stapelt die 4 Bereich-Karten in Step 2 untereinander (1-spaltig). Progress-Indikator bleibt oben sichtbar.</div>
+</section>
+
+<!-- ========================================================== -->
+<!-- ============== VARIANTE B — One-Page Stepper ============= -->
+<!-- ========================================================== -->
+<section class="section">
+  <div class="section-header">
+    <span class="variant-tag b">Variante B</span>
+    <div>
+      <h2>One-Page-Stepper mit Live-Counter</h2>
+      <p class="desc">Alle 3 Steps auf einer Seite als Akkordeon. Beantwortete Steps klappen zu einer Zeile zusammen (mit „Bearbeiten"-Link), die seitliche Live-Anzeige zeigt sofort, wie viele Referenzen aktuell passen. Schneller, transparenter — und gut für „Power-User", die ihre Eingabe häufig nachjustieren.</p>
+    </div>
+  </div>
+
+  <div class="proscons">
+    <div><strong>Stärken</strong>Kontext der Auswahl immer sichtbar · Live-Treffer schafft Vertrauen · weniger Klicks bei Korrekturen · Ergebnis direkt anschließend lesbar.</div>
+    <div class="cons"><strong>Trade-offs</strong>Höhere visuelle Dichte · Side-Panel kostet Mobile-Platz (collapsed) · benötigt JS · Erstbenutzer ggf. überfordert.</div>
+  </div>
+
+  <div class="screens">
+
+    <!-- B · Step 1 (initial) -->
+    <div class="screen">
+      <div class="screen-caption">Initial — Step 1 offen <span class="step-num">B · 1 / 4</span></div>
+      <div class="app-nav">
+        <span class="app-logo">KORODUR</span>
+        <div class="app-nav-links"><span class="active">Lösungsfinder</span><span>Referenzen</span><span>Produkte</span></div>
+        <span class="app-lang">DE · EN · FR · PL</span>
+      </div>
+      <div class="vb-layout">
+        <div class="vb-main">
+          <h2 class="wiz-question" style="margin-bottom:18px;">Lösungsfinder</h2>
+
+          <div class="acc active">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">1</span></div>
+              <div class="acc-title">Sanierungsart</div>
+            </div>
+            <div class="acc-body">
+              <div class="opt-grid-2" style="margin-top:8px;">
+                <div class="opt-card">
+                  <p class="title">Punktuelle Sanierung</p>
+                  <p class="desc">Kosmetische oder funktionale Reparaturen wichtiger Flächen.</p>
+                </div>
+                <div class="opt-card">
+                  <p class="title">Großflächige Sanierung</p>
+                  <p class="desc">Restrukturierung, Modernisierung, Umnutzung, energetische Sanierung.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc collapsed">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">2</span></div>
+              <div class="acc-title" style="opacity:0.5;">Einsatzbereich</div>
+            </div>
+          </div>
+          <div class="acc collapsed">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">3</span></div>
+              <div class="acc-title" style="opacity:0.5;">Zeitfenster</div>
+            </div>
+          </div>
+        </div>
+        <aside class="vb-side">
+          <div class="vb-counter">
+            <div class="big">51</div>
+            <div class="lbl">Referenzen verfügbar</div>
+          </div>
+          <h4>Ihre Auswahl</h4>
+          <p style="font-size:12px; opacity:0.7; margin:0;">Noch keine Auswahl getroffen — beginnen Sie mit Schritt 1.</p>
+          <div class="cta" style="opacity:0.4;">Ergebnisse anzeigen</div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- B · Step 2 -->
+    <div class="screen">
+      <div class="screen-caption">Step 1 erledigt, Step 2 offen <span class="step-num">B · 2 / 4</span></div>
+      <div class="app-nav">
+        <span class="app-logo">KORODUR</span>
+        <div class="app-nav-links"><span class="active">Lösungsfinder</span><span>Referenzen</span><span>Produkte</span></div>
+        <span class="app-lang">DE · EN · FR · PL</span>
+      </div>
+      <div class="vb-layout">
+        <div class="vb-main">
+          <div class="acc done">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">1</span></div>
+              <div class="acc-title">Sanierungsart</div>
+              <div class="acc-summary"><strong>Großflächige Sanierung</strong></div>
+              <span class="acc-edit">Bearbeiten</span>
+            </div>
+          </div>
+
+          <div class="acc active">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">2</span></div>
+              <div class="acc-title">Einsatzbereich</div>
+              <span class="skip-link">Bereich überspringen →</span>
+            </div>
+            <div class="acc-body">
+              <p class="wiz-sub" style="margin:8px 0 14px; font-size:12px;">Wählen Sie eine Kategorie — oder überspringen für alle Bereiche.</p>
+              <div class="opt-grid-4">
+                <div class="opt-card small">
+                  <div class="icon">▦</div>
+                  <p class="title">Lager &amp; Logistik</p>
+                </div>
+                <div class="opt-card small selected">
+                  <div class="icon">⚙</div>
+                  <p class="title">Industrie &amp; Produktion</p>
+                </div>
+                <div class="opt-card small">
+                  <div class="icon">⌂</div>
+                  <p class="title">Lebensmittel &amp; Verkauf</p>
+                </div>
+                <div class="opt-card small">
+                  <div class="icon">⇄</div>
+                  <p class="title">Infrastruktur &amp; Verkehr</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc collapsed">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">3</span></div>
+              <div class="acc-title" style="opacity:0.5;">Zeitfenster</div>
+            </div>
+          </div>
+        </div>
+        <aside class="vb-side">
+          <div class="vb-counter">
+            <div class="big">19</div>
+            <div class="lbl">passende Referenzen</div>
+          </div>
+          <h4>Ihre Auswahl</h4>
+          <ul>
+            <li>Großflächig</li>
+            <li>Industrie &amp; Produktion</li>
+          </ul>
+          <div class="cta" style="opacity:0.4;">Ergebnisse anzeigen</div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- B · Step 3 -->
+    <div class="screen">
+      <div class="screen-caption">Step 3 offen, Counter aktualisiert sich <span class="step-num">B · 3 / 4</span></div>
+      <div class="app-nav">
+        <span class="app-logo">KORODUR</span>
+        <div class="app-nav-links"><span class="active">Lösungsfinder</span><span>Referenzen</span><span>Produkte</span></div>
+        <span class="app-lang">DE · EN · FR · PL</span>
+      </div>
+      <div class="vb-layout">
+        <div class="vb-main">
+          <div class="acc done">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">1</span></div>
+              <div class="acc-title">Sanierungsart</div>
+              <div class="acc-summary"><strong>Großflächige Sanierung</strong></div>
+              <span class="acc-edit">Bearbeiten</span>
+            </div>
+          </div>
+          <div class="acc done">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">2</span></div>
+              <div class="acc-title">Einsatzbereich</div>
+              <div class="acc-summary"><strong>Industrie &amp; Produktion</strong></div>
+              <span class="acc-edit">Bearbeiten</span>
+            </div>
+          </div>
+
+          <div class="acc active">
+            <div class="acc-head">
+              <div class="acc-num"><span class="d">3</span></div>
+              <div class="acc-title">Zeitfenster</div>
+            </div>
+            <div class="acc-body">
+              <p class="wiz-sub" style="margin:8px 0 14px; font-size:12px;">Wann muss die Fläche wieder voll nutzbar sein?</p>
+              <div class="opt-grid-3">
+                <div class="opt-card small selected">
+                  <div class="icon">⚡</div>
+                  <p class="title">Kurzfristig</p>
+                </div>
+                <div class="opt-card small">
+                  <div class="icon">◴</div>
+                  <p class="title">Mittelfristig</p>
+                </div>
+                <div class="opt-card small">
+                  <div class="icon">⌚</div>
+                  <p class="title">Planbar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="vb-side">
+          <div class="vb-counter">
+            <div class="big">7</div>
+            <div class="lbl">passende Referenzen</div>
+          </div>
+          <h4>Ihre Auswahl</h4>
+          <ul>
+            <li>Großflächig</li>
+            <li>Industrie &amp; Produktion</li>
+            <li>Kurzfristig</li>
+          </ul>
+          <div class="cta">Ergebnisse anzeigen →</div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- B · Result inline -->
+    <div class="screen">
+      <div class="screen-caption">Ergebnis direkt unter dem Stepper <span class="step-num">B · 4 / 4</span></div>
+      <div class="app-nav">
+        <span class="app-logo">KORODUR</span>
+        <div class="app-nav-links"><span class="active">Lösungsfinder</span><span>Referenzen</span><span>Produkte</span></div>
+        <span class="app-lang">DE · EN · FR · PL</span>
+      </div>
+      <div style="padding: 16px 24px 0; background: var(--navy-06);">
+        <div style="display:flex; gap:8px; font-size:11px; color: var(--navy-72); align-items:center;">
+          <span style="background:var(--navy); color:#fff; padding:3px 8px; border-radius:2px;">1 ✓ Großflächig</span>
+          <span style="background:var(--navy); color:#fff; padding:3px 8px; border-radius:2px;">2 ✓ Industrie &amp; Produktion</span>
+          <span style="background:var(--navy); color:#fff; padding:3px 8px; border-radius:2px;">3 ✓ Kurzfristig</span>
+          <span class="acc-edit" style="color:var(--navy);">Auswahl ändern</span>
+        </div>
+      </div>
+      <div class="res-product" style="border-left:4px solid var(--accent); margin-top:0;">
+        <div class="lbl">★ Top-Produkt-Empfehlung</div>
+        <p class="pname">NEODUR HE 60 rapid</p>
+        <p class="pdesc">Industrieestrich · belastbar nach 8 h · in 5 von 7 Referenzen eingesetzt</p>
+        <span class="pcta">→ Produkt-Datenblatt</span>
+      </div>
+      <div class="res-filters">
+        <span class="lbl">Eigenschaften (abgeleitet):</span>
+        <span class="tag derived">Hohe Dichtigkeit</span>
+        <span class="tag derived">Außenflächen</span>
+        <span class="tag derived">Frost</span>
+      </div>
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="img"><span class="img-lbl">2024</span></div>
+          <div class="res-card-body">
+            <p class="name">DHL Logistik-Zentrum</p>
+            <p class="loc">Versmold · DE</p>
+            <div class="tags"><span class="tag">Industrie</span></div>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="img"><span class="img-lbl">2024</span></div>
+          <div class="res-card-body">
+            <p class="name">BMW Werkshalle</p>
+            <p class="loc">Leipzig · DE</p>
+            <div class="tags"><span class="tag">Industrie</span></div>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="img"><span class="img-lbl">2023</span></div>
+          <div class="res-card-body">
+            <p class="name">Lyreco Distribution</p>
+            <p class="loc">Barsinghausen · DE</p>
+            <div class="tags"><span class="tag">Logistik</span></div>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="img"><span class="img-lbl">2023</span></div>
+          <div class="res-card-body">
+            <p class="name">Produktionshalle Müller</p>
+            <p class="loc">Köln · DE</p>
+            <div class="tags"><span class="tag">+2</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="anno"><strong>Hinweis Variante B:</strong> Auf Mobile wird das Side-Panel zu einer fixed Bottom-Bar (immer sichtbar: Counter + „Ergebnisse anzeigen"). Akkordeon-Logik bleibt identisch.</div>
+</section>
+
+<!-- ========== COMPARISON TABLE ========== -->
+<section class="compare">
+  <h2>Direkter Vergleich</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>Variante A — Klassischer Wizard</th>
+        <th>Variante B — One-Page-Stepper</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kognitive Last</td>
+        <td>Niedrig — eine Frage pro Screen</td>
+        <td>Mittel — Stepper + Counter + Side-Panel gleichzeitig</td>
+      </tr>
+      <tr>
+        <td>Klicks bis Ergebnis</td>
+        <td>4 (Step 1 → Weiter → Step 2 → Weiter → Step 3 → Ergebnisse)</td>
+        <td>3 (jede Auswahl klappt nächsten Step auf; Ergebnis erscheint nach Step 3 automatisch)</td>
+      </tr>
+      <tr>
+        <td>Korrektur einer Antwort</td>
+        <td>„Zurück" mehrmals — Kontext verloren</td>
+        <td>„Bearbeiten" am Step — Kontext bleibt</td>
+      </tr>
+      <tr>
+        <td>Transparenz „wie viele Treffer"</td>
+        <td>Erst auf Ergebnis-Seite sichtbar</td>
+        <td>Live-Counter aktualisiert nach jedem Klick</td>
+      </tr>
+      <tr>
+        <td>Mobile-Eignung</td>
+        <td>Sehr gut — vertikal, ein Step, große Buttons</td>
+        <td>Gut — Side-Panel wird zu Bottom-Bar; Akkordeon scrollt</td>
+      </tr>
+      <tr>
+        <td>Implementierungsaufwand</td>
+        <td>Niedriger — bestehende Komponente nur umstrukturieren</td>
+        <td>Höher — neue Akkordeon-Komponente + reaktiver Counter + Layout-Refactor</td>
+      </tr>
+      <tr>
+        <td>Eignung für Salespitch-Demo</td>
+        <td>Klassisch, sicher</td>
+        <td>„Wow"-Effekt durch Live-Feedback, fühlt sich intelligenter an</td>
+      </tr>
+      <tr>
+        <td>i18n-Komplexität</td>
+        <td>Standard (4 Sprachen × 3 Steps)</td>
+        <td>Standard + „Bearbeiten"-Label + Counter-Pluralisierung</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:32px;">Offene Diskussionspunkte für das Team</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>Skip-Logik Step 2</td>
+        <td colspan="2">In beiden Varianten gezeigt als „Bereich überspringen". Klärungs-Frage: Soll der Skip wirklich prominent sein oder eher Power-User-Feature?</td>
+      </tr>
+      <tr>
+        <td>Top-Produkt-Logik</td>
+        <td colspan="2">Aktuell: häufigstes Produkt in den Top-Referenzen. Alternative: explizites „Recommended"-Flag pro Sanierungsart × Bereich-Kombi pflegen?</td>
+      </tr>
+      <tr>
+        <td>Property-Tags Position</td>
+        <td colspan="2">Aktuell unter dem Top-Produkt als „abgeleitet" markiert. Alternative: als Filter über dem Ref-Grid, mit Möglichkeit nachzufiltern?</td>
+      </tr>
+      <tr>
+        <td>Variante B Mobile</td>
+        <td colspan="2">Sticky Bottom-Bar wie skizziert, oder klappbarer Counter im Header?</td>
+      </tr>
+      <tr>
+        <td>Bilder-Platzhalter</td>
+        <td colspan="2">25 Refs haben aktuell noch _placeholder.jpg. Mockup zeigt diagonale Schraffur als visuellen Hinweis — okay so, oder lieber „Bild folgt"-Beschriftung?</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <span>KORODUR International GmbH · Sanierungs-App · Mockup-Set v1</span>
+    <span>Stand 14.05.2026 · vertraulich · zur internen Diskussion</span>
+  </div>
+</footer>
+
+</body>
+</html>

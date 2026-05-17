@@ -5,6 +5,7 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 .superpowers/
+.claude/
 
 # Lokale Zwischen-Artefakte (Reconciliation-Pipeline)
 docs/cache/
