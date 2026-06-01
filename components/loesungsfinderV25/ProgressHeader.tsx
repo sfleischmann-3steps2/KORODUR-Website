@@ -26,7 +26,7 @@ export default function ProgressHeader({ currentStep, totalSteps, onCancel }: Pr
               style={{
                 width: 32,
                 height: 4,
-                background: i < currentStep ? NAVY : "#D3D1C7",
+                background: i < currentStep ? NAVY : "#d9dada",
               }}
             />
           ))}

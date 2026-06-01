@@ -71,7 +71,7 @@ export default function Wizard() {
   return (
     <div
       className="rounded-2xl p-6 md:p-8"
-      style={{ background: "#F7F6F1" }}
+      style={{ background: "#ececed" }}
     >
       <ProgressHeader currentStep={currentStep} totalSteps={totalSteps} onCancel={cancel} />
 
@@ -125,7 +125,7 @@ export default function Wizard() {
 
 function PlaceholderStep({ title, hinweis }: { title: string; hinweis: string }) {
   return (
-    <div className="rounded-xl p-8 text-center" style={{ border: "0.5px dashed rgba(0,0,0,0.2)", background: "#fff" }}>
+    <div className="rounded-xl p-8 text-center" style={{ border: "1px dashed #d9dada", background: "#fff" }}>
       <div className="text-lg font-medium mb-2" style={{ color: NAVY }}>{title}</div>
       <div className="text-sm text-gray-600">{hinweis}</div>
     </div>

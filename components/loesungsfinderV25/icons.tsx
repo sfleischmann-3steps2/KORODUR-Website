@@ -14,14 +14,17 @@ const base = {
   strokeWidth: 1.75,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
+  // display:block verhindert subtilen Inline-Baseline-Offset einzelner Icons,
+  // der bei align-items:center in Flex-Containern zu pixelversetzter Optik führt.
+  style: { display: "block" as const },
 };
 
 export function IconTarget(props: IconProps) {
   return (
     <svg {...base} {...props}>
-      <circle cx="12" cy="12" r="1" />
-      <circle cx="12" cy="12" r="5" />
-      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="12" r="6" />
+      <circle cx="12" cy="12" r="10" />
     </svg>
   );
 }

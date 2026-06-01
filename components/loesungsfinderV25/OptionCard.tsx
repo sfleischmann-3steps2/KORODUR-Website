@@ -25,7 +25,9 @@ interface OptionCardProps {
 
 const NAVY = "#002d59";
 const CYAN = "#009ee3";
-const LIGHT_NAVY_BG = "#E6F1FB";
+// Sehr leichter Cyan-Tint (12% der Sekundärfarbe) für die Icon-Box im
+// Default-State. Bleibt in der Brand-Welt, statt ein fremdes Hellblau zu erfinden.
+const LIGHT_CYAN_BG = "rgba(0, 158, 227, 0.12)";
 
 const buttonReset: CSSProperties = {
   appearance: "none",
@@ -92,7 +94,7 @@ export default function OptionCard({
 
   const iconBoxColor: CSSProperties = selected
     ? { background: NAVY, color: "#fff" }
-    : { background: LIGHT_NAVY_BG, color: NAVY };
+    : { background: LIGHT_CYAN_BG, color: NAVY };
 
   const sharedCardStyle: CSSProperties = {
     ...buttonReset,
