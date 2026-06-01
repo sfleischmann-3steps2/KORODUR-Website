@@ -91,10 +91,39 @@ for (const r of referenzen) {
   }
 }
 
+// === Sanierungs-Produktmatrix V5: Pflichtfeld-Check ===
+const matrixProdukte = produkte.filter((p) => p.inSanierungsMatrix === true);
+const kategorienInMatrix = new Set(matrixProdukte.map((p) => p.kategorie));
+
+for (const p of matrixProdukte) {
+  if (p.belastbarkeitsStufe === undefined) {
+    issues.push({ slug: p.id, level: "error", msg: "Matrix-Produkt ohne belastbarkeitsStufe" });
+  } else if (p.belastbarkeitsStufe < 1 || p.belastbarkeitsStufe > 5) {
+    issues.push({ slug: p.id, level: "error", msg: `belastbarkeitsStufe ${p.belastbarkeitsStufe} außerhalb 1-5` });
+  }
+  if (!p.belastbarNach) {
+    issues.push({ slug: p.id, level: "error", msg: "Matrix-Produkt ohne belastbarNach" });
+  }
+  if (!p.schichtdicke) {
+    issues.push({ slug: p.id, level: "error", msg: "Matrix-Produkt ohne schichtdicke" });
+  }
+  // qualitaetsklasse ist soft-required (ASPHALT REPAIR MIX hat keine offizielle C-Klasse)
+  if (!p.qualitaetsklasse) {
+    issues.push({ slug: p.id, level: "warn", msg: "Matrix-Produkt ohne qualitaetsklasse (OK bei ASPHALT)" });
+  }
+}
+
+// Mind. 1 Produkt pro Matrix-Kategorie
+for (const kat of ["estrich", "schnellzement"] as const) {
+  if (!kategorienInMatrix.has(kat)) {
+    issues.push({ slug: `kategorie:${kat}`, level: "error", msg: `Keine Matrix-Produkte in Kategorie '${kat}'` });
+  }
+}
+
 const errors = issues.filter((i) => i.level === "error");
 const warnings = issues.filter((i) => i.level === "warn");
 
-console.log(`Geprüft: ${referenzen.length} Referenzen`);
+console.log(`Geprüft: ${referenzen.length} Referenzen, ${matrixProdukte.length} Matrix-Produkte`);
 console.log(`Fehler: ${errors.length} · Warnungen: ${warnings.length}`);
 
 if (errors.length > 0) {

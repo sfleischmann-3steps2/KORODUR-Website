@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produktportfolio Sanierung · KORODUR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #002d59;
+    --navy-72: rgba(0, 45, 89, 0.72);
+    --navy-40: rgba(0, 45, 89, 0.40);
+    --cyan: #009ee3;
+    --cyan-light: #e0f4fc;
+    --line: #e8edf5;
+    --line-soft: #f0f3f7;
+    --bg: #ffffff;
+    --bg-soft: #eef1f5;
+    --bg-cool: #f4f6f9;
+    --ink: #0d1620;
+    --muted: #94a3b8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  /* === Webapp-Header (TopNav-Stil) === */
+  .topnav {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  .topnav-inner {
+    max-width: 1320px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .logo-mark {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    background: var(--navy);
+    color: #fff;
+    font-weight: 900;
+    font-size: 13px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-text {
+    color: var(--navy);
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 4px; list-style: none; }
+  .nav-link {
+    padding: 8px 14px;
+    color: var(--navy-72);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background 120ms;
+  }
+  .nav-link:hover { background: var(--bg-soft); }
+  .nav-link.active {
+    color: var(--navy);
+    background: var(--bg-soft);
+    font-weight: 600;
+  }
+  .nav-actions { display: flex; gap: 8px; align-items: center; }
+  .nav-search {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: var(--navy-40);
+    font-size: 13px;
+  }
+  .lang-pill {
+    background: var(--bg-soft);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: var(--navy-72);
+    font-weight: 600;
+  }
+
+  /* === Hero === */
+  main { max-width: 1320px; margin: 0 auto; padding: 64px 24px 64px; }
+  .hero { text-align: center; margin-bottom: 48px; }
+  .hero h1 {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+  }
+
+  /* === Matrix === */
+  .matrix-wrap {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  table.matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.matrix thead th {
+    background: #fff;
+    color: var(--navy);
+    text-align: left;
+    padding: 18px 20px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--navy);
+    vertical-align: bottom;
+  }
+  table.matrix thead th.center { text-align: center; }
+  table.matrix thead th.col-produkt { min-width: 280px; }
+  table.matrix thead th.col-aussen { width: 90px; }
+  table.matrix thead th.col-belastung { width: 160px; }
+  table.matrix thead th.col-schichtdicke { width: 170px; }
+  table.matrix thead th.col-belastbar { width: 160px; }
+
+  tr.kat-row td {
+    background: var(--bg-soft);
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  tr.kat-row .kat-count {
+    float: right;
+    font-weight: 500;
+    color: var(--navy-40);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+
+  tr.produkt-row td {
+    padding: 18px 20px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: middle;
+  }
+  tr.produkt-row:last-child td { border-bottom: none; }
+  tr.produkt-row:hover td { background: #fafbfc; }
+  tr.produkt-row td.center { text-align: center; }
+
+  .produkt-name {
+    font-weight: 800;
+    color: var(--navy);
+    font-size: 15px;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    padding-top: 2px;
+  }
+  .produkt-sub {
+    font-size: 12px;
+    color: var(--navy-72);
+    line-height: 1.45;
+  }
+  .produkt-sub .qclass {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 1px 7px;
+    background: var(--bg-cool);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .produkt-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 4px;
+    background: var(--navy);
+    color: #fff;
+    margin-left: 6px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--cyan);
+  }
+  .scale-dots { display: inline-flex; gap: 4px; }
+  .scale-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--cyan);
+  }
+  .scale-dot.off { background: var(--line); }
+  .val-num {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .val-num small {
+    display: block;
+    font-size: 11px;
+    color: var(--navy-40);
+    font-weight: 400;
+    margin-top: 2px;
+    white-space: normal;
+  }
+  .val-dash { color: var(--muted); font-size: 16px; }
+
+  /* === Legende (kompakt, ohne H2) === */
+  .legend-section {
+    margin-top: 24px;
+    background: var(--bg-soft);
+    border-radius: 14px;
+    padding: 22px 28px;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr 1fr;
+    gap: 32px;
+  }
+  .legend-block .legend-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--navy-72);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .legend-item:last-child { margin-bottom: 0; }
+  .legend-desc { font-size: 13px; color: var(--navy-72); line-height: 1.5; }
+
+  /* === CTA mit zwei Buttons === */
+  .cta-box {
+    margin-top: 56px;
+    background: var(--bg-soft);
+    border-radius: 14px;
+    padding: 32px;
+    text-align: center;
+  }
+  .cta-box p {
+    color: var(--navy);
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .cta-actions {
+    display: inline-flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--cyan);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: opacity 120ms;
+  }
+  .cta-btn:hover { opacity: 0.9; }
+  .cta-btn.secondary {
+    background: #fff;
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+  }
+  .cta-btn.secondary:hover {
+    background: var(--navy);
+    color: #fff;
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="topnav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">K</div>
+      <span class="logo-text">KORODUR Sanierung</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link">Start</a></li>
+        <li><a href="#" class="nav-link">Lösungsfinder</a></li>
+        <li><a href="#" class="nav-link">Referenzen</a></li>
+        <li><a href="#" class="nav-link active">Produktmatrix</a></li>
+        <li><a href="#" class="nav-link">Produkte</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <span class="nav-search">Suche … ⌘K</span>
+      <span class="lang-pill">DE</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Produktportfolio Sanierung</h1>
+  </section>
+
+  <div class="matrix-wrap">
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th class="col-produkt">Produkt</th>
+          <th class="center col-aussen">Außen</th>
+          <th class="center col-belastung">Belastbarkeit</th>
+          <th class="col-schichtdicke">Schichtdicke</th>
+          <th class="col-belastbar">Belastbar nach</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="kat-row"><td colspan="5">Industrieestriche <span class="kat-count">6 Produkte</span></td></tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">NEODUR HE 60 rapid <span class="produkt-badge">Rapid</span></div>
+            <div class="produkt-sub">Hochbelastbarer Hartstoff-Schnellestrich <span class="qclass">CT-C60-F8-A6</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span>
+            </span>
+          </td>
+          <td><span class="val-num">10–60 mm</span></td>
+          <td><span class="val-num">24 h</span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">NEODUR HE 65</div>
+            <div class="produkt-sub">Hochbelastbarer Hartstoffestrich <span class="qclass">CT-C70-F9-A6</span></div>
+          </td>
+          <td class="center"><span class="val-dash">–</span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span>
+            </span>
+          </td>
+          <td><span class="val-num">12–15 mm</span></td>
+          <td><span class="val-num">3 d</span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">NEODUR HE 65 Plus <span class="produkt-badge">WHG</span></div>
+            <div class="produkt-sub">Hochbelastbarer Hartstoffestrich <span class="qclass">CT-C70-F9-A6</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span>
+            </span>
+          </td>
+          <td><span class="val-num">15–30 mm</span></td>
+          <td><span class="val-num">3 d</span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">NEODUR HE 40</div>
+            <div class="produkt-sub">Hochbelastbarer Hartstoffestrich <span class="qclass">CT-C40-F6-A6</span></div>
+          </td>
+          <td class="center"><span class="val-dash">–</span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span>
+            </span>
+          </td>
+          <td><span class="val-num">15–35 mm</span></td>
+          <td><span class="val-num">3 d</span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">NEODUR Level</div>
+            <div class="produkt-sub">Selbstverlaufender, schnellerhärtender Dünnestrich <span class="qclass">CT-C40-F10</span></div>
+          </td>
+          <td class="center"><span class="val-dash">–</span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot off"></span>
+            </span>
+          </td>
+          <td><span class="val-num">5–10 mm</span></td>
+          <td><span class="val-num">3 d<small>leicht belastbar 24 h</small></span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">TRU Self-Leveling <span class="produkt-badge">Sichtestrich</span></div>
+            <div class="produkt-sub">Selbstverlaufender, geschliffener dekorativer Sichtestrich <span class="qclass">CT-C40-F10</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot off"></span>
+            </span>
+          </td>
+          <td><span class="val-num">5–35 mm</span></td>
+          <td><span class="val-num">24 h<small>schleifbar bis Hochglanz</small></span></td>
+        </tr>
+
+        <tr class="kat-row"><td colspan="5">Schnellreparaturmörtel <span class="kat-count">7 Produkte</span></td></tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">Rapid Set CEMENT ALL <span class="produkt-badge">Rapid</span></div>
+            <div class="produkt-sub">Universeller Schnellreparaturmörtel <span class="qclass">C55/67</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot off"></span><span class="scale-dot off"></span>
+            </span>
+          </td>
+          <td><span class="val-num">0–100 mm</span></td>
+          <td><span class="val-num">1 h</span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">Rapid Set MORTAR MIX <span class="produkt-badge">Rapid</span></div>
+            <div class="produkt-sub">Universeller Schnellreparaturmörtel <span class="qclass">C45/55</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot off"></span><span class="scale-dot off"></span>
+            </span>
+          </td>
+          <td><span class="val-num">10–150 mm</span></td>
+          <td><span class="val-num">1 h</span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">Rapid Set MORTAR MIX DUR <span class="produkt-badge">Rapid</span></div>
+            <div class="produkt-sub">Schnellreparaturmörtel mit Hartstoff DIN 1100 A <span class="qclass">C45/55</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span>
+            </span>
+          </td>
+          <td><span class="val-num">10–150 mm</span></td>
+          <td><span class="val-num">1 h</span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">ASPHALT REPAIR MIX <span class="produkt-badge">Rapid</span></div>
+            <div class="produkt-sub">Schnellreparaturmaterial für Asphaltflächen</div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot off"></span><span class="scale-dot off"></span>
+            </span>
+          </td>
+          <td><span class="val-num">30–600 mm</span></td>
+          <td><span class="val-num">30 min<small>Verkehrsfreigabe</small></span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">DOT Europe CONCRETE MIX <span class="produkt-badge">Rapid</span></div>
+            <div class="produkt-sub">Universeller Schnellreparaturbeton, DIN EN 1504-3 <span class="qclass">C35/45</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span>
+            </span>
+          </td>
+          <td><span class="val-num">50–600 mm</span></td>
+          <td><span class="val-num">1 h</span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">KOROCRETE Schnellbeton <span class="produkt-badge">System</span></div>
+            <div class="produkt-sub">Volumetrisch gemischter Schnellbeton (FSCem-Basis) <span class="qclass">C35/45 – C50/60</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot off"></span>
+            </span>
+          </td>
+          <td><span class="val-num">projektabhängig<small>volumetrisch vor Ort</small></span></td>
+          <td><span class="val-num">6 h<small>≥ 20 MPa</small></span></td>
+        </tr>
+
+        <tr class="produkt-row">
+          <td>
+            <div class="produkt-name">Rapid Set Schnellbeton <span class="produkt-badge">System</span></div>
+            <div class="produkt-sub">Volumetrisch gemischter Schnellbeton (Rapid Set), TL BEB-StB <span class="qclass">C40/50</span></div>
+          </td>
+          <td class="center"><span class="dot"></span></td>
+          <td class="center">
+            <span class="scale-dots">
+              <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span>
+            </span>
+          </td>
+          <td><span class="val-num">projektabhängig<small>volumetrisch vor Ort</small></span></td>
+          <td><span class="val-num">2 h<small>Verkehrsfreigabe</small></span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <section class="legend-section">
+    <div class="legend-grid">
+
+      <div class="legend-block">
+        <div class="legend-title">Außen</div>
+        <div class="legend-item"><span class="dot"></span> außenbereich-tauglich</div>
+        <div class="legend-item" style="margin-left:24px; color: var(--navy-40); font-size:12px;">leer = nur Innenanwendung</div>
+      </div>
+
+      <div class="legend-block">
+        <div class="legend-title">Belastbarkeit</div>
+        <div class="legend-item">
+          <span class="scale-dots">
+            <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span>
+          </span>
+          Höchste Last (Hartstoff DIN 1100 A · Verkehrsflächen-Norm)
+        </div>
+        <div class="legend-item">
+          <span class="scale-dots">
+            <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot off"></span>
+          </span>
+          Sehr hohe Last (Hartstoff-Niveau, Beton C45+)
+        </div>
+        <div class="legend-item">
+          <span class="scale-dots">
+            <span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot"></span><span class="scale-dot off"></span><span class="scale-dot off"></span>
+          </span>
+          Hohe Last (Reparaturmörtel C35+, Industrie)
+        </div>
+      </div>
+
+      <div class="legend-block">
+        <div class="legend-title">Schichtdicke</div>
+        <div class="legend-desc">Empfohlener Sanierungs-Anwendungsbereich pro Lage. Werte aus den aktuellen Technischen Datenblättern.</div>
+      </div>
+
+      <div class="legend-block">
+        <div class="legend-title">Belastbar nach</div>
+        <div class="legend-desc">Voll belastbar bzw. Verkehrsfreigabe ab Einbau-Ende. Bei Hartstoffestrichen klassisch 3 Tage nach DIN 18560-7.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="cta-box">
+    <p>Unsicher? Der Lösungsfinder führt Sie in wenigen Schritten zur passenden Lösung – oder sprechen Sie direkt mit unseren Beratern.</p>
+    <div class="cta-actions">
+      <a href="#" class="cta-btn">Lösungsfinder starten</a>
+      <a href="https://www.korodur.de/kontakt.html" target="_blank" rel="noopener" class="cta-btn secondary">Kontakt zu unseren Beratern</a>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

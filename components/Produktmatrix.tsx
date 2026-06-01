@@ -1,250 +1,401 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { produkte } from "@/data/produkte";
+import type { Produkt } from "@/data/produkte";
 import type { Locale } from "@/lib/i18n";
 
-const SPALTEN = [
-  { id: "kleine-reparatur", label: "Kleine Reparatur" },
-  { id: "grossflaechige-sanierung", label: "Großfl. Sanierung" },
-  { id: "schwerlast", label: "Schwerlast" },
-  { id: "leichte-nutzung", label: "Leichte Nutzung" },
-  { id: "rollende-lasten", label: "Rollende Lasten" },
-  { id: "punktlasten", label: "Punktlasten" },
-  { id: "chemikalien", label: "Chemikalien" },
-  { id: "tausalz", label: "Tausalz" },
-  { id: "rutschhemmung", label: "Rutschhemmung" },
-  { id: "kurze-sperrzeit", label: "Kurze Sperrzeit" },
-  { id: "aussenbereich", label: "Außenbereich" },
-] as const;
+const NAVY = "#002d59";
+const NAVY_72 = "rgba(0, 45, 89, 0.72)";
+const NAVY_40 = "rgba(0, 45, 89, 0.40)";
+const CYAN = "#009ee3";
+const LINE = "#e8edf5";
+const LINE_SOFT = "#f0f3f7";
+const BG_SOFT = "#eef1f5";
+const BG_COOL = "#f4f6f9";
+const MUTED = "#94a3b8";
 
-const KATEGORIEN = [
-  { id: "estrich", label: "Estriche" },
-  { id: "schnellzement", label: "Schnellzemente & Mörtel" },
-  { id: "grundierung", label: "Grundierungen & Haftbrücken" },
-  { id: "nachbehandlung", label: "Nachbehandlung" },
-  { id: "sonstige", label: "Sonstige" },
-] as const;
+type KategorieId = "estrich" | "schnellzement";
 
-// Produkte die nicht in der Matrix erscheinen sollen
-const AUSGESCHLOSSEN = ["microtop-tw"];
+type Dict = Record<string, string>;
 
-function KategorieGruppe({
-  label,
-  produkte: gruppenProdukte,
-  lang,
-  defaultOpen,
-}: {
-  label: string;
-  produkte: typeof produkte;
-  lang: Locale;
-  defaultOpen: boolean;
-}) {
-  const [open, setOpen] = useState(defaultOpen);
+function t(dict: Dict | undefined, key: string, fallback: string): string {
+  return dict?.[key] ?? fallback;
+}
 
+function ScaleDots({ stufe }: { stufe: 1 | 2 | 3 | 4 | 5 }) {
   return (
-    <>
-      <tr>
-        <td colSpan={SPALTEN.length + 1} style={{ padding: 0 }}>
-          <button
-            onClick={() => setOpen(!open)}
-            style={{
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              padding: "18px 0",
-              background: "none",
-              border: "none",
-              borderBottom: "2px solid #e8edf5",
-              cursor: "pointer",
-              fontFamily: "inherit",
-              fontSize: 16,
-              fontWeight: 900,
-              color: "#002d59",
-              letterSpacing: "0.01em",
-            }}
-          >
-            {/* Pfeil LINKS */}
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#009ee3"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{
-                transition: "transform 200ms",
-                transform: open ? "rotate(180deg)" : "rotate(0deg)",
-                flexShrink: 0,
-              }}
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-            <span>{label}</span>
-            {/* Anzahl RECHTS */}
-            <span
-              style={{
-                fontSize: 12,
-                fontWeight: 600,
-                color: "#002d59",
-                opacity: 0.4,
-                marginLeft: "auto",
-              }}
-            >
-              {gruppenProdukte.length} {gruppenProdukte.length === 1 ? "Produkt" : "Produkte"}
-            </span>
-          </button>
-        </td>
-      </tr>
-      {open &&
-        gruppenProdukte.map((p, i) => {
-          const bgColor = i % 2 === 0 ? "#ffffff" : "#f7f8fa";
-          return (
-            <tr key={p.id}>
-              <td
-                style={{
-                  position: "sticky",
-                  left: 0,
-                  zIndex: 1,
-                  background: bgColor,
-                  padding: "14px 16px",
-                  fontWeight: 700,
-                  color: "#002d59",
-                  fontSize: 14,
-                  whiteSpace: "nowrap",
-                  borderBottom: "1px solid #e8edf5",
-                }}
-              >
-                <Link
-                  href={`/${lang}/produkte/${p.id}/`}
-                  style={{ color: "#009ee3", textDecoration: "none" }}
-                  className="hover:underline"
-                >
-                  {p.name}
-                </Link>
-              </td>
-              {SPALTEN.map((s) => {
-                const match = p.eignungen?.includes(s.id as typeof p.eignungen[number]);
-                return (
-                  <td
-                    key={s.id}
-                    style={{
-                      textAlign: "center",
-                      padding: "14px 4px",
-                      borderBottom: "1px solid #e8edf5",
-                      background: bgColor,
-                    }}
-                  >
-                    {match && (
-                      <span
-                        style={{
-                          display: "inline-block",
-                          width: 16,
-                          height: 16,
-                          borderRadius: "50%",
-                          backgroundColor: "#009ee3",
-                        }}
-                      />
-                    )}
-                  </td>
-                );
-              })}
-            </tr>
-          );
-        })}
-    </>
+    <span style={{ display: "inline-flex", gap: 4 }}>
+      {[1, 2, 3, 4, 5].map((n) => (
+        <span
+          key={n}
+          style={{
+            width: 9,
+            height: 9,
+            borderRadius: "50%",
+            background: n <= stufe ? CYAN : LINE,
+            display: "inline-block",
+          }}
+        />
+      ))}
+    </span>
   );
 }
 
-export default function Produktmatrix({ lang }: { lang: Locale }) {
-  const filtered = produkte.filter(
-    (p) =>
-      p.eignungen &&
-      p.eignungen.length > 0 &&
-      !AUSGESCHLOSSEN.includes(p.id)
+function Dot() {
+  return (
+    <span
+      style={{
+        display: "inline-block",
+        width: 14,
+        height: 14,
+        borderRadius: "50%",
+        background: CYAN,
+      }}
+    />
   );
+}
 
-  const grouped = KATEGORIEN
-    .map((kat) => ({
-      ...kat,
-      produkte: filtered.filter((p) => p.kategorie === kat.id),
-    }))
-    .filter((g) => g.produkte.length > 0);
+function Dash() {
+  return <span style={{ color: MUTED, fontSize: 16 }}>–</span>;
+}
+
+function Badge({ kind, dict }: { kind: "rapid" | "whg" | "sichtestrich" | "system"; dict?: Dict }) {
+  const labels: Record<typeof kind, string> = {
+    rapid: t(dict, "badge_rapid", "Rapid"),
+    whg: t(dict, "badge_whg", "WHG"),
+    sichtestrich: t(dict, "badge_sichtestrich", "Sichtestrich"),
+    system: t(dict, "badge_system", "System"),
+  };
+  return (
+    <span
+      style={{
+        display: "inline-block",
+        padding: "2px 8px",
+        fontSize: 10,
+        fontWeight: 700,
+        borderRadius: 4,
+        background: NAVY,
+        color: "#fff",
+        marginLeft: 6,
+        letterSpacing: "0.04em",
+        textTransform: "uppercase",
+        verticalAlign: "middle",
+      }}
+    >
+      {labels[kind]}
+    </span>
+  );
+}
+
+function getBadge(p: Produkt): "rapid" | "whg" | "sichtestrich" | "system" | null {
+  if (p.systemProdukt) return "system";
+  if (p.whgZulassung) return "whg";
+  if (p.sichtestrich) return "sichtestrich";
+  if (p.zeitKategorie === "schnell") return "rapid";
+  return null;
+}
+
+function ProduktRow({ p, lang, dict }: { p: Produkt; lang: Locale; dict?: Dict }) {
+  const badge = getBadge(p);
 
   return (
-    <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: "touch" }}>
-      <table style={{ borderCollapse: "collapse", width: "100%", tableLayout: "fixed", fontSize: 14 }}>
-        <colgroup>
-          <col style={{ width: 240 }} />
-          {SPALTEN.map((s) => (
-            <col key={s.id} />
-          ))}
-        </colgroup>
-        <thead>
-          <tr style={{ height: 160 }}>
-            <th
+    <tr>
+      <td
+        style={{
+          padding: "18px 20px 16px",
+          borderBottom: `1px solid ${LINE_SOFT}`,
+          verticalAlign: "middle",
+        }}
+      >
+        <div style={{ marginBottom: 4 }}>
+          <Link
+            href={`/${lang}/produkte/${p.id}/`}
+            style={{
+              fontWeight: 800,
+              color: NAVY,
+              fontSize: 15,
+              letterSpacing: "-0.01em",
+              lineHeight: 1.3,
+              textDecoration: "none",
+            }}
+          >
+            {p.name}
+          </Link>
+          {badge && <Badge kind={badge} dict={dict} />}
+        </div>
+        <div style={{ fontSize: 12, color: NAVY_72, lineHeight: 1.45 }}>
+          {p.kurzbeschreibung}
+          {p.qualitaetsklasse && (
+            <span
               style={{
-                position: "sticky",
-                left: 0,
-                zIndex: 2,
-                background: "#fff",
-                padding: "0 16px 16px 0",
-                textAlign: "left",
-                fontWeight: 900,
-                color: "#002d59",
-                fontSize: 14,
-                borderBottom: "2px solid #002d59",
-                verticalAlign: "bottom",
+                display: "inline-block",
+                marginLeft: 4,
+                padding: "1px 7px",
+                background: BG_COOL,
+                borderRadius: 4,
+                fontSize: 11,
+                fontWeight: 600,
+                color: NAVY,
+                letterSpacing: "0.02em",
+                fontVariantNumeric: "tabular-nums",
               }}
             >
-              Produkt
-            </th>
-            {SPALTEN.map((s) => (
+              {p.qualitaetsklasse}
+            </span>
+          )}
+        </div>
+      </td>
+      <td
+        style={{
+          textAlign: "center",
+          padding: "18px 12px 16px",
+          borderBottom: `1px solid ${LINE_SOFT}`,
+        }}
+      >
+        {p.aussenbereich ? <Dot /> : <Dash />}
+      </td>
+      <td
+        style={{
+          textAlign: "center",
+          padding: "18px 12px 16px",
+          borderBottom: `1px solid ${LINE_SOFT}`,
+        }}
+      >
+        {p.belastbarkeitsStufe ? <ScaleDots stufe={p.belastbarkeitsStufe} /> : <Dash />}
+      </td>
+      <td
+        style={{
+          padding: "18px 20px 16px",
+          borderBottom: `1px solid ${LINE_SOFT}`,
+          verticalAlign: "middle",
+        }}
+      >
+        <span style={{ fontSize: 14, fontWeight: 600, color: NAVY, whiteSpace: "nowrap" }}>
+          {p.schichtdicke ?? "–"}
+        </span>
+      </td>
+      <td
+        style={{
+          padding: "18px 20px 16px",
+          borderBottom: `1px solid ${LINE_SOFT}`,
+          verticalAlign: "middle",
+        }}
+      >
+        <span style={{ fontSize: 14, fontWeight: 600, color: NAVY, whiteSpace: "nowrap" }}>
+          {p.belastbarNach ?? "–"}
+          {p.belastbarNachZusatz && (
+            <small
+              style={{
+                display: "block",
+                fontSize: 11,
+                color: NAVY_40,
+                fontWeight: 400,
+                marginTop: 2,
+                whiteSpace: "normal",
+              }}
+            >
+              {p.belastbarNachZusatz}
+            </small>
+          )}
+        </span>
+      </td>
+    </tr>
+  );
+}
+
+function KategorieHeader({
+  label,
+  anzahl,
+  produktLabel,
+}: {
+  label: string;
+  anzahl: number;
+  produktLabel: string;
+}) {
+  return (
+    <tr>
+      <td
+        colSpan={5}
+        style={{
+          background: BG_SOFT,
+          padding: "14px 20px",
+          fontSize: 11,
+          fontWeight: 700,
+          letterSpacing: "0.12em",
+          textTransform: "uppercase",
+          color: NAVY,
+          borderTop: `1px solid ${LINE}`,
+          borderBottom: `1px solid ${LINE}`,
+        }}
+      >
+        {label}
+        <span
+          style={{
+            float: "right",
+            fontWeight: 500,
+            color: NAVY_40,
+            fontSize: 11,
+            letterSpacing: "0.04em",
+            textTransform: "none",
+          }}
+        >
+          {anzahl} {produktLabel}
+        </span>
+      </td>
+    </tr>
+  );
+}
+
+const KATEGORIEN: { id: KategorieId; labelKey: string; fallback: string }[] = [
+  { id: "estrich", labelKey: "kategorie_industrieestriche", fallback: "Industrieestriche" },
+  { id: "schnellzement", labelKey: "kategorie_schnellreparaturmoertel", fallback: "Schnellreparaturmörtel" },
+];
+
+export default function Produktmatrix({
+  produkte: matrixProdukte,
+  lang,
+  dict,
+}: {
+  produkte: Produkt[];
+  lang: Locale;
+  dict?: Dict;
+}) {
+  const produktLabel = t(dict, "produkte_label", "Produkte");
+
+  return (
+    <div
+      style={{
+        background: "#fff",
+        border: `1px solid ${LINE}`,
+        borderRadius: 14,
+        overflow: "hidden",
+      }}
+    >
+      <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
+          <thead>
+            <tr>
               <th
-                key={s.id}
                 style={{
-                  padding: "0 0 16px 0",
-                  fontWeight: 700,
-                  color: "#002d59",
-                  fontSize: 13,
-                  borderBottom: "2px solid #002d59",
-                  verticalAlign: "bottom",
+                  background: "#fff",
+                  color: NAVY,
                   textAlign: "left",
-                  position: "relative",
+                  padding: "18px 20px 14px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  borderBottom: `2px solid ${NAVY}`,
+                  minWidth: 280,
                 }}
               >
-                <div
-                  style={{
-                    whiteSpace: "nowrap",
-                    transform: "rotate(-50deg)",
-                    transformOrigin: "bottom left",
-                    position: "absolute",
-                    bottom: 16,
-                    left: 8,
-                  }}
-                >
-                  {s.label}
-                </div>
+                {t(dict, "spalte_produkt", "Produkt")}
               </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {grouped.map((gruppe, i) => (
-            <KategorieGruppe
-              key={gruppe.id}
-              label={gruppe.label}
-              produkte={gruppe.produkte}
-              lang={lang}
-              defaultOpen={i < 2}
-            />
-          ))}
-        </tbody>
-      </table>
+              <th
+                style={{
+                  background: "#fff",
+                  color: NAVY,
+                  textAlign: "center",
+                  padding: "18px 12px 14px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  borderBottom: `2px solid ${NAVY}`,
+                  width: 90,
+                }}
+              >
+                {t(dict, "spalte_aussen", "Außen")}
+              </th>
+              <th
+                style={{
+                  background: "#fff",
+                  color: NAVY,
+                  textAlign: "center",
+                  padding: "18px 12px 14px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  borderBottom: `2px solid ${NAVY}`,
+                  width: 160,
+                }}
+              >
+                {t(dict, "spalte_belastbarkeit", "Belastbarkeit")}
+              </th>
+              <th
+                style={{
+                  background: "#fff",
+                  color: NAVY,
+                  textAlign: "left",
+                  padding: "18px 20px 14px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  borderBottom: `2px solid ${NAVY}`,
+                  width: 170,
+                }}
+              >
+                {t(dict, "spalte_schichtdicke", "Schichtdicke")}
+              </th>
+              <th
+                style={{
+                  background: "#fff",
+                  color: NAVY,
+                  textAlign: "left",
+                  padding: "18px 20px 14px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  borderBottom: `2px solid ${NAVY}`,
+                  width: 160,
+                }}
+              >
+                {t(dict, "spalte_belastbar_nach", "Belastbar nach")}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {KATEGORIEN.map((kat) => {
+              const inKategorie = matrixProdukte.filter((p) => p.kategorie === kat.id);
+              if (inKategorie.length === 0) return null;
+              return (
+                <Section
+                  key={kat.id}
+                  label={t(dict, kat.labelKey, kat.fallback)}
+                  produkte={inKategorie}
+                  lang={lang}
+                  dict={dict}
+                  produktLabel={produktLabel}
+                />
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
+  );
+}
+
+function Section({
+  label,
+  produkte,
+  lang,
+  dict,
+  produktLabel,
+}: {
+  label: string;
+  produkte: Produkt[];
+  lang: Locale;
+  dict?: Dict;
+  produktLabel: string;
+}) {
+  return (
+    <>
+      <KategorieHeader label={label} anzahl={produkte.length} produktLabel={produktLabel} />
+      {produkte.map((p) => (
+        <ProduktRow key={p.id} p={p} lang={lang} dict={dict} />
+      ))}
+    </>
   );
 }

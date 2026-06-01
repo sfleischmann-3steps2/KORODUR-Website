@@ -5,7 +5,7 @@ export const produkteFR: Record<string, {
   technischeDaten?: { label: string; wert: string }[];
 }> = {
   "neodur-he-60-rapid": {
-    kurzbeschreibung: "Chape rapide à granulats durs – charge complète après 24 h",
+    kurzbeschreibung: "Chape rapide haute performance à granulats durs – charge complète après 24 h",
     besonderheiten: ["Haute résistance à l'abrasion", "Résistant aux produits chimiques", "Prise rapide", "Faible retrait"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 60 N/mm²" },
@@ -15,8 +15,19 @@ export const produkteFR: Record<string, {
       { label: "Charge complète après", wert: "env. 24 h" },
     ],
   },
+  "neodur-he-65": {
+    kurzbeschreibung: "Chape haute performance à granulats durs pour exigences industrielles maximales avec technologie silo",
+    besonderheiten: ["Résistance à l'usure maximale", "Application par système silo", "Économique sur grandes surfaces", "Liaison solide"],
+    technischeDaten: [
+      { label: "Résistance à la compression", wert: "≥ 70 N/mm²" },
+      { label: "Résistance à la flexion", wert: "≥ 9 N/mm²" },
+      { label: "Résistance à l'abrasion", wert: "A6 (≤ 6 cm³/50 cm²)" },
+      { label: "Application", wert: "Système silo / pompage" },
+      { label: "Charge complète après", wert: "env. 3 jours" },
+    ],
+  },
   "neodur-he-65-plus": {
-    kurzbeschreibung: "Chape haute performance à granulats durs pour intérieur et extérieur – sans pont d'adhérence",
+    kurzbeschreibung: "Chape haute performance à granulats durs pour intérieur et extérieur – sans pont d'adhérence, conforme WHG",
     besonderheiten: ["Sans pont d'adhérence", "Résistant au gel et aux sels de déverglaçage", "Conforme WHG", "Modifié polymère & renforcé de fibres"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 70 N/mm²" },
@@ -26,15 +37,39 @@ export const produkteFR: Record<string, {
       { label: "Pont d'adhérence requis", wert: "Non" },
     ],
   },
+  "neodur-he-40": {
+    kurzbeschreibung: "Chape haute performance à granulats durs pour sols industriels fortement sollicités",
+    besonderheiten: ["Haute résistance à l'usure", "Liaison solide (DIN 18560-7)", "Solution économique à granulats durs", "Usage intérieur"],
+    technischeDaten: [
+      { label: "Résistance à la compression", wert: "≥ 40 N/mm²" },
+      { label: "Résistance à la flexion", wert: "≥ 6 N/mm²" },
+      { label: "Résistance à l'abrasion", wert: "A6 (≤ 6 cm³/50 cm²)" },
+      { label: "Charge complète après", wert: "env. 3 jours" },
+    ],
+  },
   "neodur-level": {
-    kurzbeschreibung: "Chape mince autoplaçante à granulats durs pour rénovation de sol de précision",
+    kurzbeschreibung: "Chape mince autoplaçante à prise rapide et granulats durs pour rénovation de sol de précision",
     besonderheiten: ["Autoplaçant – excellente planéité", "Utilisation rapide", "Couche d'usure intégrée", "Application mécanisée"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 40 N/mm²" },
-      { label: "Résistance à la flexion", wert: "≥ 8 N/mm²" },
-      { label: "Résistance à l'abrasion", wert: "AR0,5 (≤ 0,5 cm³/50 cm²)" },
+      { label: "Résistance à la flexion", wert: "≥ 10 N/mm²" },
       { label: "Autoplaçant", wert: "Oui" },
       { label: "Planéité", wert: "DIN 18202, Ligne 3" },
+      { label: "Charge légère après", wert: "env. 24 h" },
+      { label: "Charge complète après", wert: "env. 3 jours" },
+    ],
+  },
+  "tru-self-leveling": {
+    kurzbeschreibung: "Chape apparente décorative autoplaçante et polie pour solutions de sol design",
+    besonderheiten: ["Aspect béton design", "Surface sans joints", "Sans pont d'adhérence", "Polissable jusqu'au haut brillant", "Hygiénique & facile d'entretien"],
+    technischeDaten: [
+      { label: "Résistance à la compression", wert: "≥ 40 N/mm²" },
+      { label: "Résistance à la flexion", wert: "≥ 10 N/mm²" },
+      { label: "Aspect", wert: "Surface de chape apparente type béton" },
+      { label: "Application", wert: "Autoplaçant" },
+      { label: "Pont d'adhérence", wert: "Non requis" },
+      { label: "Praticable après", wert: "env. 2–3 h" },
+      { label: "Charge complète après", wert: "env. 24 h" },
     ],
   },
   "korodur-hb-5-rapid": {
@@ -47,17 +82,19 @@ export const produkteFR: Record<string, {
     ],
   },
   "korodur-pc": {
-    kurzbeschreibung: "Primaire pour systèmes de chape mince",
+    kurzbeschreibung: "Primaire de dispersion à base de résine synthétique pour systèmes de chape mince",
     besonderheiten: ["Spécifique pour systèmes de chape mince", "Modifié polymère"],
     technischeDaten: [
       { label: "Résistance à l'arrachement", wert: "≥ 1,0 N/mm²" },
       { label: "Application", wert: "Pour NEODUR Level" },
+      { label: "Consommation", wert: "50–200 g/m²" },
     ],
   },
   "rapid-set-cement-all": {
-    kurzbeschreibung: "Ciment rapide universel pour réparations ponctuelles",
+    kurzbeschreibung: "Mortier de réparation rapide universel – chargeable après 1 h, intérieur et extérieur",
     besonderheiten: ["Temps de prise ultra-court", "Haute résistance initiale", "Usage intérieur et extérieur", "Compensé en retrait"],
     technischeDaten: [
+      { label: "Qualité", wert: "C55/67" },
       { label: "Résistance à la compression (1 h)", wert: "≥ 21 N/mm²" },
       { label: "Résistance à la compression (24 h)", wert: "≥ 42 N/mm²" },
       { label: "Praticable après", wert: "env. 15 min" },
@@ -65,77 +102,75 @@ export const produkteFR: Record<string, {
     ],
   },
   "rapid-set-mortar-mix": {
-    kurzbeschreibung: "Mortier rapide pour joints, reprofilage et pose de profilés",
+    kurzbeschreibung: "Mortier de réparation rapide universel pour joints, reprofilage et pose de profilés",
     besonderheiten: ["Neutre en retrait", "Sans pont d'adhérence", "Consistance pâteuse à rigide ajustable", "Mélanger avec de l'eau uniquement"],
     technischeDaten: [
+      { label: "Qualité", wert: "C45/55" },
       { label: "Résistance à la compression (1 h)", wert: "≥ 21 N/mm²" },
       { label: "Résistance à la compression (24 h)", wert: "≥ 42 N/mm²" },
       { label: "Consistance", wert: "pâteuse à plastique" },
-      { label: "Charge après", wert: "env. 1–2 h" },
-    ],
-  },
-  "rapid-set-concrete-mix": {
-    kurzbeschreibung: "Béton rapide pour réparations structurelles et reprofilage d'arêtes",
-    besonderheiten: ["Granulats grossiers pour réparations structurelles", "Haute résistance finale", "Résistant au gel"],
-    technischeDaten: [
-      { label: "Résistance à la compression (1 h)", wert: "≥ 21 N/mm²" },
-      { label: "Résistance à la compression (28 j)", wert: "≥ 55 N/mm²" },
-      { label: "Charge après", wert: "env. 1–2 h" },
-    ],
-  },
-  "korocrete": {
-    kurzbeschreibung: "Béton rapide pour grandes surfaces – mélange volumétrique sur site",
-    besonderheiten: ["Mélange volumétrique sur site", "Pas de béton résiduel / pertes minimales", "Application grande surface", "Haute résistance"],
-    technischeDaten: [
-      { label: "Résistance à la compression (24 h)", wert: "≥ 35 N/mm²" },
-      { label: "Résistance à la compression (28 j)", wert: "≥ 55 N/mm²" },
-      { label: "Circulable après", wert: "env. 4–6 h" },
-      { label: "Mélange", wert: "volumétrique sur site" },
+      { label: "Charge complète après", wert: "env. 1 h" },
     ],
   },
   "rapid-set-mortar-mix-dur": {
-    kurzbeschreibung: "Mortier rapide avec granulat d'usure intégré pour réparation de joints",
-    besonderheiten: ["Granulat d'usure intégré", "Adapté aux joints charges lourdes", "Neutre en retrait", "Consistance pâteuse ajustable"],
+    kurzbeschreibung: "Mortier de réparation rapide avec granulat dur DIN 1100 A pour joints à charges lourdes",
+    besonderheiten: ["Granulat d'usure intégré DIN 1100 A", "Adapté aux joints à charges lourdes", "Neutre en retrait", "Consistance pâteuse ajustable"],
     technischeDaten: [
+      { label: "Qualité", wert: "C45/55 + DIN 1100 A" },
       { label: "Résistance à la compression (1 h)", wert: "≥ 21 N/mm²" },
       { label: "Résistance à la compression (24 h)", wert: "≥ 42 N/mm²" },
       { label: "Consistance", wert: "pâteuse à plastique" },
-      { label: "Charge après", wert: "env. 2 h" },
+      { label: "Charge complète après", wert: "env. 1 h" },
     ],
   },
   "asphalt-repair-mix": {
-    kurzbeschreibung: "Mélange de réparation rapide pour surfaces en asphalte – sans pont d'adhérence",
-    besonderheiten: ["Adapté aux surfaces en asphalte", "Sans pont d'adhérence", "Application facile", "Haute capacité portante"],
+    kurzbeschreibung: "Matériau de réparation rapide pour surfaces en asphalte – ouverture au trafic après 30 minutes",
+    besonderheiten: ["Adapté aux surfaces en asphalte", "Sans pont d'adhérence", "Application facile", "Ouverture au trafic après 30 minutes"],
     technischeDaten: [
-      { label: "Épaisseur de couche", wert: "30–80 mm" },
-      { label: "Charge après", wert: "env. 2 h" },
+      { label: "Résistance à la compression", wert: "env. 22 N/mm²" },
+      { label: "Épaisseur de couche", wert: "30–600 mm" },
+      { label: "Ouverture au trafic après", wert: "env. 30 min" },
       { label: "Pont d'adhérence", wert: "Non requis" },
     ],
   },
-  "korodur-fscem-screed": {
-    kurzbeschreibung: "Chape d'égalisation pour différentes hauteurs d'installation",
-    besonderheiten: ["Grandes épaisseurs possibles", "Utilisable comme couche d'égalisation", "Prise rapide"],
+  "dot-europe-concrete-mix": {
+    kurzbeschreibung: "Béton de réparation rapide universel selon DIN EN 1504-3 – pour ponts, pistes et sols industriels",
+    besonderheiten: ["Utilisation multifonctionnelle", "Résistant au gel et aux sels", "Résistant aux sulfates, sans chlorures", "Excellente adhérence sans pont", "Pour ponts, pistes, sols industriels", "30 % CO₂ en moins que le ciment Portland"],
     technischeDaten: [
-      { label: "Épaisseur de couche", wert: "45–115 mm" },
-      { label: "Application", wert: "Couche d'égalisation" },
+      { label: "Qualité", wert: "C35/45" },
+      { label: "Granulométrie", wert: "0–8 mm" },
+      { label: "Résistance à la compression (60 min)", wert: "> 19 N/mm²" },
+      { label: "Résistance à la compression (28 j)", wert: "> 41 N/mm²" },
+      { label: "Résistance à la flexion (28 j)", wert: "> 7 N/mm²" },
+      { label: "Charge complète après", wert: "env. 1 h" },
+      { label: "Résistant gel/sel", wert: "Oui" },
+      { label: "Résistant aux sulfates", wert: "Oui" },
     ],
   },
-  "neodur-he-65": {
-    kurzbeschreibung: "Chape à granulats durs pour intérieur et extérieur avec technologie silo",
-    besonderheiten: ["Résistant aux intempéries", "Application par système silo", "Économique sur grandes surfaces", "Liaison solide"],
+  "korocrete": {
+    kurzbeschreibung: "Béton rapide à mélange volumétrique sur base FSCem (liant spécial ternaire) – ouverture au trafic après 6 h",
+    besonderheiten: ["Mélange volumétrique sur site (Cemen Tech M-Series)", "Volume stable, sans retrait/contrainte, durcit sans fissures", "Étanche, adapté aux zones humides", "Pompable", "Application grande surface", "Pas de béton résiduel"],
     technischeDaten: [
-      { label: "Résistance à la compression", wert: "≥ 65 N/mm²" },
-      { label: "Résistance à l'abrasion", wert: "A6 (≤ 6 cm³/50 cm²)" },
-      { label: "Application", wert: "Système silo / pompage" },
+      { label: "Liant", wert: "KORODUR FSCem (ternaire)" },
+      { label: "Qualité", wert: "C35/45 – C50/60" },
+      { label: "Résistance à la compression (6 h)", wert: "env. 18 N/mm²" },
+      { label: "Résistance à la compression (8 h)", wert: "env. 25 N/mm²" },
+      { label: "Résistance à la compression (16 h)", wert: "env. 35 N/mm²" },
+      { label: "Résistance à la compression (28 j)", wert: "env. 65 N/mm²" },
+      { label: "Ouverture au trafic après", wert: "env. 6 h (≥ 20 MPa)" },
+      { label: "Mélange", wert: "volumétrique sur site" },
     ],
   },
-  "tru-self-leveling": {
-    kurzbeschreibung: "Chape autoplaçante design pour solutions de sol esthétiques",
-    besonderheiten: ["Aspect béton design", "Surface sans joints", "Sans pont d'adhérence", "Hygiénique & facile d'entretien"],
+  "rapid-set-schnellbeton": {
+    kurzbeschreibung: "Béton rapide à mélange volumétrique sur base Rapid-Set selon TL BEB-StB – ouverture au trafic après 2 h",
+    besonderheiten: ["Mélange volumétrique sur site", "TL BEB-StB (classe de trafic maximale pour travaux de maintenance)", "Ouverture au trafic après 2 heures", "Résistant gel/sel", "Application grande surface", "Pas de béton résiduel"],
     technischeDaten: [
-      { label: "Aspect", wert: "Surface de chape apparente type béton" },
-      { label: "Application", wert: "Autoplaçant" },
-      { label: "Pont d'adhérence", wert: "Non requis" },
+      { label: "Liant", wert: "Rapid Set (ciment sulfo-aluminate de calcium)" },
+      { label: "Qualité", wert: "C40/50" },
+      { label: "Résistance à la compression (60 min)", wert: "> 19 N/mm²" },
+      { label: "Résistance à la compression (28 j)", wert: "> 41 N/mm²" },
+      { label: "Ouverture au trafic après", wert: "env. 2 h" },
+      { label: "Mélange", wert: "volumétrique sur site" },
     ],
   },
   "korocure": {

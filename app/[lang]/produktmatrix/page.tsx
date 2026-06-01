@@ -2,14 +2,62 @@ import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Produktmatrix from "../../../components/Produktmatrix";
+import { produkte } from "../../../data/produkte";
+import { localizeProdukte } from "../../../data/i18n/getLocalized";
 import type { Locale } from "../../../lib/i18n";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Produktmatrix",
+  title: "Produktportfolio Sanierung",
   description:
-    "Vergleichen Sie alle KORODUR-Produkte auf einen Blick: Eignung nach Belastung, Situation und Sonderbedingungen.",
+    "Sanierungsprodukte von KORODUR auf einen Blick: 13 Produkte für Industrieestriche und Schnellreparaturmörtel mit Belastbarkeit, Schichtdicke und Belastbar-nach-Zeit.",
 };
+
+const NAVY = "#002d59";
+const NAVY_72 = "rgba(0, 45, 89, 0.72)";
+const NAVY_40 = "rgba(0, 45, 89, 0.40)";
+const CYAN = "#009ee3";
+const LINE = "#e8edf5";
+const BG_SOFT = "#eef1f5";
+
+type Dict = Record<string, string>;
+
+function tx(dict: Dict | undefined, key: string, fallback: string): string {
+  return dict?.[key] ?? fallback;
+}
+
+function ScaleDots({ filled }: { filled: number }) {
+  return (
+    <span style={{ display: "inline-flex", gap: 4 }}>
+      {[1, 2, 3, 4, 5].map((n) => (
+        <span
+          key={n}
+          style={{
+            width: 9,
+            height: 9,
+            borderRadius: "50%",
+            background: n <= filled ? CYAN : LINE,
+            display: "inline-block",
+          }}
+        />
+      ))}
+    </span>
+  );
+}
+
+function Dot() {
+  return (
+    <span
+      style={{
+        display: "inline-block",
+        width: 14,
+        height: 14,
+        borderRadius: "50%",
+        background: CYAN,
+      }}
+    />
+  );
+}
 
 export default async function ProduktmatrixPage({
   params,
@@ -18,36 +66,200 @@ export default async function ProduktmatrixPage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  await getDictionary(lang);
+  const rawDict = await getDictionary(lang);
+  const dict: Dict | undefined = (rawDict as unknown as { produktmatrix?: Dict }).produktmatrix;
+
+  const matrixProdukte = produkte.filter((p) => p.inSanierungsMatrix === true);
+  const localizedProdukte = await localizeProdukte(matrixProdukte, lang as "de" | "en" | "fr" | "pl");
 
   return (
-    <section className="py-24 px-8">
-      <div className="max-w-7xl mx-auto">
-        <h1
-          className="text-4xl text-[#002d59] text-center mb-4"
-          style={{ fontWeight: 900 }}
-        >
-          Produktmatrix
-        </h1>
-        <p className="text-lg text-[#002d59]/72 text-center mb-16 max-w-2xl mx-auto">
-          Welches Produkt passt zu Ihrer Situation? Vergleichen Sie alle Produkte
-          auf einen Blick.
-        </p>
-
-        <Produktmatrix lang={lang as Locale} />
-
-        <div className="mt-16 text-center p-8 bg-[#f5f5f6] rounded-[14px]">
-          <p className="text-[#002d59] text-lg mb-4">
-            Unsicher? Der Lösungsfinder führt Sie in 5 Schritten zur passenden
-            Lösung.
-          </p>
-          <Link
-            href={`/${lang}/loesungsfinder/`}
-            className="inline-block px-8 py-3 text-white font-bold rounded-[10px] no-underline transition-all duration-200 hover:opacity-90"
-            style={{ backgroundColor: "#009ee3" }}
+    <section style={{ padding: "64px 24px" }}>
+      <div style={{ maxWidth: 1320, margin: "0 auto" }}>
+        <header style={{ textAlign: "center", marginBottom: 48 }}>
+          <h1
+            style={{
+              fontSize: 40,
+              fontWeight: 900,
+              color: NAVY,
+              letterSpacing: "-0.02em",
+              margin: 0,
+            }}
           >
-            Lösungsfinder starten
-          </Link>
+            {tx(dict, "title", "Produktportfolio Sanierung")}
+          </h1>
+        </header>
+
+        <Produktmatrix produkte={localizedProdukte} lang={lang as Locale} dict={dict} />
+
+        <section
+          style={{
+            marginTop: 24,
+            background: BG_SOFT,
+            borderRadius: 14,
+            padding: "22px 28px",
+          }}
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1.4fr 1fr 1fr",
+              gap: 32,
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
+                {tx(dict, "spalte_aussen", "Außen")}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  fontSize: 13,
+                  color: NAVY_72,
+                  marginBottom: 8,
+                }}
+              >
+                <Dot /> {tx(dict, "legende_aussen", "außenbereich-tauglich")}
+              </div>
+              <div style={{ marginLeft: 24, color: NAVY_40, fontSize: 12 }}>
+                {tx(dict, "legende_aussen_leer", "leer = nur Innenanwendung")}
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
+                {tx(dict, "spalte_belastbarkeit", "Belastbarkeit")}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  fontSize: 13,
+                  color: NAVY_72,
+                  marginBottom: 8,
+                  lineHeight: 1.4,
+                }}
+              >
+                <ScaleDots filled={5} />
+                {tx(dict, "legende_stufe5", "Höchste Last (Hartstoff DIN 1100 A · Verkehrsflächen-Norm)")}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  fontSize: 13,
+                  color: NAVY_72,
+                  marginBottom: 8,
+                  lineHeight: 1.4,
+                }}
+              >
+                <ScaleDots filled={4} />
+                {tx(dict, "legende_stufe4", "Sehr hohe Last (Hartstoff-Niveau, Beton C45+)")}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  fontSize: 13,
+                  color: NAVY_72,
+                  lineHeight: 1.4,
+                }}
+              >
+                <ScaleDots filled={3} />
+                {tx(dict, "legende_stufe3", "Hohe Last (Reparaturmörtel C35+, Industrie)")}
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
+                {tx(dict, "spalte_schichtdicke", "Schichtdicke")}
+              </div>
+              <div style={{ fontSize: 13, color: NAVY_72, lineHeight: 1.5 }}>
+                {tx(
+                  dict,
+                  "legende_schichtdicke",
+                  "Empfohlener Sanierungs-Anwendungsbereich pro Lage. Werte aus den aktuellen Technischen Datenblättern."
+                )}
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
+                {tx(dict, "spalte_belastbar_nach", "Belastbar nach")}
+              </div>
+              <div style={{ fontSize: 13, color: NAVY_72, lineHeight: 1.5 }}>
+                {tx(
+                  dict,
+                  "legende_belastbar_nach",
+                  "Voll belastbar bzw. Verkehrsfreigabe ab Einbau-Ende. Bei Hartstoffestrichen klassisch 3 Tage nach DIN 18560-7."
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div
+          style={{
+            marginTop: 56,
+            background: BG_SOFT,
+            borderRadius: 14,
+            padding: 32,
+            textAlign: "center",
+          }}
+        >
+          <p style={{ color: NAVY, fontSize: 18, marginBottom: 20 }}>
+            {tx(
+              dict,
+              "cta_text",
+              "Unsicher? Der Lösungsfinder führt Sie in wenigen Schritten zur passenden Lösung – oder sprechen Sie direkt mit unseren Beratern."
+            )}
+          </p>
+          <div
+            style={{
+              display: "inline-flex",
+              gap: 12,
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            <Link
+              href={`/${lang}/loesungsfinder/`}
+              style={{
+                display: "inline-block",
+                padding: "12px 28px",
+                background: CYAN,
+                color: "#fff",
+                fontWeight: 700,
+                borderRadius: 10,
+                textDecoration: "none",
+                fontSize: 15,
+              }}
+            >
+              {tx(dict, "cta_loesungsfinder", "Lösungsfinder starten")}
+            </Link>
+            <a
+              href="https://www.korodur.de/kontakt.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                padding: "12px 28px",
+                background: "#fff",
+                color: NAVY,
+                fontWeight: 700,
+                borderRadius: 10,
+                textDecoration: "none",
+                fontSize: 15,
+                border: `1.5px solid ${NAVY}`,
+              }}
+            >
+              {tx(dict, "cta_kontakt", "Kontakt zu unseren Beratern")}
+            </a>
+          </div>
         </div>
       </div>
     </section>
