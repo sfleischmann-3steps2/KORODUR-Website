@@ -294,7 +294,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Boden mit Charakter – ohne Stillstand",
     ort: "Ibbenbüren",
     land: "Deutschland",
-    produkte: ["KORODUR FSCem Screed", "NEODUR HE 60 rapid"],
+    produkte: ["NEODUR HE 60 rapid"],
     herausforderungen: [
       "Unterschiedliche Einbauhöhen von 45 bis 115 mm",
       "Gleichzeitiger Kundenverkehr und täglicher Staplereinsatz",
@@ -476,7 +476,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Schnell. Sauber. Trittsicher.",
     ort: "Deutschland",
     land: "Deutschland",
-    produkte: ["Rapid Set CONCRETE MIX", "Rapid Set CEMENT ALL"],
+    produkte: ["DOT Europe CONCRETE MIX", "Rapid Set CEMENT ALL"],
     herausforderungen: [
       "Witterungsbedingte Schäden (Frost/Taumittel) an Tritt- und Setzstufen",
       "Unfallgefahr im öffentlichen Bereich – kurze Sperrzeit erforderlich",
@@ -832,7 +832,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Flüssigkeitsdichte Betonsanierung einer Tankstelle nach CUR-63-Empfehlung für LAU-Anlagen. Instandsetzung an der Autobah",
     ort: "Arnheim",
     land: "Niederlande",
-    produkte: ["Rapid Set CONCRETE MIX"],
+    produkte: ["DOT Europe CONCRETE MIX"],
     herausforderungen: [
       "Der verwendete Beton muss eine hohe Flüssigkeitsdichte aufweisen, um den Anforderungen für LAU-Anlagen zu entsprechen und eine Beständigkeit nach dem CUR-Empfehlung 63 zu garantieren.",
     ],
@@ -854,7 +854,7 @@ export const referenzen: Referenz[] = [
     ort: "Burgdorf",
     land: "Schweiz",
     flaeche: "200 m²",
-    produkte: ["Rapid Set CONCRETE MIX", "SET Control"],
+    produkte: ["DOT Europe CONCRETE MIX", "SET Control"],
     herausforderungen: [
       "Die Komplettsanierung musste innerhalb von nur drei Wochen abgeschlossen werden. Der Turmboden von ca. 200 m² sollte innerhalb einer Woche herausgestemmt und neu verlegt werden, wobei eine lebensmittelresistente PU-Beschichtung erforderlich war.",
     ],

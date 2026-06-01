@@ -31,14 +31,27 @@ export interface Produkt {
   verarbeitung?: Verarbeitung;
   tdsUrl?: string;
 
-  // === NEU (2026-04-22): 4-Step-Lösungsfinder ===
-  /**
-   * Zeit-Kategorie des Produkts. Platzhalter "normal" bis Experten-Tagging erfolgt.
-   * TODO (Experten-Workshop): TDS-basiert pro Produkt auf schnell/mittel/normal setzen.
-   */
+  // === Lösungsfinder (2026-04-22) ===
   zeitKategorie: ZeitKategorie;
-  /** Zusatzfunktionen, die dieses Produkt inhärent mitbringt. Leer = keine. */
   zusatzfunktionen?: Zusatzfunktion[];
+
+  // === Sanierungs-Produktmatrix V5 (2026-06-01) ===
+  /** Wenn true, erscheint das Produkt in der Sanierungs-Matrix-Ansicht. Default false. */
+  inSanierungsMatrix?: boolean;
+  /** Belastbarkeits-Stufe für die Matrix-Anzeige. 5 = höchste Last (Hartstoff DIN 1100 A / TL BEB-StB), 1 = leichte Last. */
+  belastbarkeitsStufe?: 1 | 2 | 3 | 4 | 5;
+  /** Voll-belastbar-Zeit als Kurz-String (z. B. "24 h", "1 h", "30 min", "3 d"). */
+  belastbarNach?: string;
+  /** Optionaler Zusatz unter belastbarNach (z. B. "Verkehrsfreigabe", "leicht belastbar 24 h"). */
+  belastbarNachZusatz?: string;
+  /** Außenbereich-tauglich (Frost-/Tausalzbeständigkeit, UV-resistent etc.). */
+  aussenbereich?: boolean;
+  /** WHG-Zulassung (Wasserhaushaltsgesetz). */
+  whgZulassung?: boolean;
+  /** System-Produkt (volumetrische Mischtechnik vor Ort, z. B. KOROCRETE / Rapid Set Schnellbeton). */
+  systemProdukt?: boolean;
+  /** Designorientierter Sichtestrich (z. B. TRU Self-Leveling). */
+  sichtestrich?: boolean;
 
   /** @deprecated Alter Eignungs-Array, entfällt nach Migrationsabschluss. */
   eignungen?: (Belastung | Sonderbedingung | Massnahme)[];
@@ -46,12 +59,12 @@ export interface Produkt {
 }
 
 export const produkte: Produkt[] = [
-  // === ESTRICHE ===
+  // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
     id: "neodur-he-60-rapid",
     name: "NEODUR HE 60 rapid",
     kategorie: "estrich",
-    kurzbeschreibung: "Hartstoff-Schnellestrich – volle Belastbarkeit nach 24 h",
+    kurzbeschreibung: "Hochbelastbarer Hartstoff-Schnellestrich – volle Belastbarkeit nach 24 h",
     schichtdicke: "10–60 mm",
     qualitaetsklasse: "CT-C60-F8-A6",
     normen: [
@@ -85,12 +98,49 @@ export const produkte: Produkt[] = [
     bild: "/images/produkte/neodur-he-60-rapid.png",
     zeitKategorie: "schnell",
     zusatzfunktionen: ["chemikalienbestaendigkeit"],
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 5,
+    belastbarNach: "24 h",
+    aussenbereich: true,
+  },
+  {
+    id: "neodur-he-65",
+    name: "NEODUR HE 65",
+    kategorie: "estrich",
+    kurzbeschreibung: "Hochbelastbarer Hartstoffestrich für höchste Industrieböden-Beanspruchung mit Silotechnik",
+    schichtdicke: "12–15 mm",
+    qualitaetsklasse: "CT-C70-F9-A6",
+    normen: [
+      "DIN EN 13813",
+      "DIN 18560-7",
+    ],
+    technischeDaten: [
+      { label: "Druckfestigkeit", wert: "≥ 70 N/mm²" },
+      { label: "Biegezugfestigkeit", wert: "≥ 9 N/mm²" },
+      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)" },
+      { label: "Verarbeitung", wert: "Silosystem / Pumptechnik" },
+      { label: "Voll belastbar nach", wert: "ca. 3 Tage" },
+    ],
+    besonderheiten: [
+      "Höchste Verschleißfestigkeit",
+      "Mit Silosystem verarbeitbar",
+      "Wirtschaftlich auf Großflächen",
+      "Kraftschlüssiger Verbund",
+    ],
+    tdsUrl: "https://www.korodur.de/downloads/tds-neodur-he-65.pdf",
+    eignungen: ["grossflaechige-sanierung", "schwerlast", "rollende-lasten"],
+    bild: "/images/produkte/neodur-he-65.png",
+    zeitKategorie: "normal",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 5,
+    belastbarNach: "3 d",
+    aussenbereich: false,
   },
   {
     id: "neodur-he-65-plus",
     name: "NEODUR HE 65 Plus",
     kategorie: "estrich",
-    kurzbeschreibung: "Hochbelastbarer Hartstoffestrich für Innen und Außen – ohne Haftbrücke",
+    kurzbeschreibung: "Hochbelastbarer Hartstoffestrich für Innen und Außen – ohne Haftbrücke, WHG-zugelassen",
     schichtdicke: "15–30 mm",
     qualitaetsklasse: "CT-C70-F9-A6",
     normen: [
@@ -124,14 +174,49 @@ export const produkte: Produkt[] = [
     eignungen: ["grossflaechige-sanierung", "schwerlast", "rollende-lasten", "chemikalien", "tausalz", "aussenbereich"],
     zeitKategorie: "normal",
     zusatzfunktionen: ["chemikalienbestaendigkeit", "tausalzbestaendigkeit"],
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 5,
+    belastbarNach: "3 d",
+    aussenbereich: true,
+    whgZulassung: true,
+  },
+  {
+    id: "neodur-he-40",
+    name: "NEODUR HE 40",
+    kategorie: "estrich",
+    kurzbeschreibung: "Hochbelastbarer Hartstoffestrich für stark beanspruchte Industrieböden",
+    schichtdicke: "15–35 mm",
+    qualitaetsklasse: "CT-C40-F6-A6",
+    normen: [
+      "DIN EN 13813",
+      "DIN 18560-7",
+    ],
+    technischeDaten: [
+      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
+      { label: "Biegezugfestigkeit", wert: "≥ 6 N/mm²" },
+      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)" },
+      { label: "Voll belastbar nach", wert: "ca. 3 Tage" },
+    ],
+    besonderheiten: [
+      "Hohe Verschleißfestigkeit",
+      "Kraftschlüssiger Verbund (DIN 18560-7)",
+      "Wirtschaftliche Hartstoff-Lösung",
+      "Innenbereich",
+    ],
+    tdsUrl: "https://www.korodur.de/downloads/tds-neodur-he-40.pdf",
+    zeitKategorie: "normal",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 5,
+    belastbarNach: "3 d",
+    aussenbereich: false,
   },
   {
     id: "neodur-level",
     name: "NEODUR Level",
     kategorie: "estrich",
-    kurzbeschreibung: "Selbstverlaufender Hartstoff-Dünnestrich für präzise Bodensanierung",
-    schichtdicke: "4–10 mm",
-    qualitaetsklasse: "CT-C40-F8-AR0,5",
+    kurzbeschreibung: "Selbstverlaufender, schnellerhärtender Hartstoff-Dünnestrich für präzise Bodensanierung",
+    schichtdicke: "5–10 mm",
+    qualitaetsklasse: "CT-C40-F10",
     normen: [
       "DIN EN 13813",
       "DIN 18560",
@@ -139,10 +224,11 @@ export const produkte: Produkt[] = [
     ],
     technischeDaten: [
       { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
-      { label: "Biegezugfestigkeit", wert: "≥ 8 N/mm²" },
-      { label: "Verschleißwiderstand", wert: "AR0,5 (≤ 0,5 cm³/50 cm²)" },
+      { label: "Biegezugfestigkeit", wert: "≥ 10 N/mm²" },
       { label: "Selbstverlaufend", wert: "Ja" },
       { label: "Ebenheit", wert: "DIN 18202, Zeile 3" },
+      { label: "Leicht belastbar nach", wert: "ca. 24 h" },
+      { label: "Voll belastbar nach", wert: "ca. 3 Tage" },
     ],
     besonderheiten: [
       "Selbstverlaufend – sehr gute Ebenheit",
@@ -153,18 +239,59 @@ export const produkte: Produkt[] = [
     verarbeitung: {
       untergrundvorbereitung: "Tragfähiger, sauberer Betonuntergrund. Kugelstrahlen empfohlen. Grundierung mit KORODUR PC erforderlich.",
       mischverhaeltnis: "25 kg Pulver auf ca. 5,0–5,5 l Wasser. Zwangsmischer, 3 Minuten Mischzeit.",
-      schichtaufbau: "Einschichtig 4–10 mm auf Grundierung KORODUR PC. Selbstverlaufend.",
+      schichtaufbau: "Einschichtig 5–10 mm auf Grundierung KORODUR PC. Selbstverlaufend.",
       verarbeitungszeit: "Ca. 20–30 Minuten bei 20 °C.",
-      aushaertezeit: "Begehbar nach ca. 4–6 h. Voll belastbar nach ca. 24 h.",
+      aushaertezeit: "Leicht belastbar nach ca. 24 h. Voll belastbar nach ca. 3 Tagen.",
       besonderheiten: "Maschinelle Verarbeitung möglich. Für große Flächen mit Pumptechnik geeignet.",
     },
     tdsUrl: "https://www.korodur.de/downloads/tds-neodur-level.pdf",
     eignungen: ["grossflaechige-sanierung", "leichte-nutzung", "rollende-lasten"],
     bild: "/images/produkte/neodur-level.png",
     zeitKategorie: "normal",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 4,
+    belastbarNach: "3 d",
+    belastbarNachZusatz: "leicht belastbar 24 h",
+    aussenbereich: false,
+  },
+  {
+    id: "tru-self-leveling",
+    name: "TRU Self-Leveling",
+    kategorie: "estrich",
+    kurzbeschreibung: "Selbstverlaufender, geschliffener dekorativer Sichtestrich für designorientierte Bodenlösungen",
+    schichtdicke: "5–35 mm",
+    qualitaetsklasse: "CT-C40-F10",
+    normen: [
+      "DIN EN 13813",
+    ],
+    technischeDaten: [
+      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
+      { label: "Biegezugfestigkeit", wert: "≥ 10 N/mm²" },
+      { label: "Optik", wert: "Betonähnliche Sichtestrich-Oberfläche" },
+      { label: "Verarbeitung", wert: "Selbstverlaufend" },
+      { label: "Haftbrücke", wert: "Nicht erforderlich" },
+      { label: "Begehbar nach", wert: "ca. 2–3 h" },
+      { label: "Voll belastbar nach", wert: "ca. 24 h" },
+    ],
+    besonderheiten: [
+      "Designorientierte Betonoptik",
+      "Fugenlose Oberfläche",
+      "Ohne Haftbrücke",
+      "Schleifbar bis Hochglanz",
+      "Hygienisch & pflegeleicht",
+    ],
+    tdsUrl: "https://www.korodur.de/downloads/tds-tru-self-leveling.pdf",
+    eignungen: ["grossflaechige-sanierung", "leichte-nutzung"],
+    zeitKategorie: "schnell",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 4,
+    belastbarNach: "24 h",
+    belastbarNachZusatz: "schleifbar bis Hochglanz",
+    aussenbereich: true,
+    sichtestrich: true,
   },
 
-  // === GRUNDIERUNGEN / HAFTBRÜCKEN ===
+  // === GRUNDIERUNGEN / HAFTBRÜCKEN (nicht in Sanierungs-Matrix) ===
   {
     id: "korodur-hb-5-rapid",
     name: "KORODUR HB 5 rapid",
@@ -191,13 +318,14 @@ export const produkte: Produkt[] = [
     id: "korodur-pc",
     name: "KORODUR PC",
     kategorie: "grundierung",
-    kurzbeschreibung: "Grundierung für Dünnestrich-Systeme",
+    kurzbeschreibung: "Kunstharzdispersion-Grundierung für Dünnestrich-Systeme",
     normen: [
       "DIN EN 1504-4",
     ],
     technischeDaten: [
       { label: "Haftzugfestigkeit", wert: "≥ 1,0 N/mm²" },
       { label: "Anwendung", wert: "Für NEODUR Level" },
+      { label: "Verbrauch", wert: "50–200 g/m²" },
     ],
     besonderheiten: [
       "Speziell für Dünnestrich-Systeme",
@@ -207,17 +335,20 @@ export const produkte: Produkt[] = [
     zeitKategorie: "schnell",
   },
 
-  // === SCHNELLZEMENTE / MÖRTEL ===
+  // === SCHNELLREPARATURMÖRTEL ===
   {
     id: "rapid-set-cement-all",
     name: "Rapid Set CEMENT ALL",
     kategorie: "schnellzement",
-    kurzbeschreibung: "Universeller Schnellzement für punktuelle Reparaturen",
+    kurzbeschreibung: "Universeller Schnellreparaturmörtel – belastbar nach 1 h, innen und außen",
+    schichtdicke: "0–100 mm",
+    qualitaetsklasse: "C55/67",
     normen: [
       "ASTM C928",
       "DIN EN 1504-3",
     ],
     technischeDaten: [
+      { label: "Qualität", wert: "C55/67" },
       { label: "Druckfestigkeit (1 h)", wert: "≥ 21 N/mm²" },
       { label: "Druckfestigkeit (24 h)", wert: "≥ 42 N/mm²" },
       { label: "Begehbar nach", wert: "ca. 15 min" },
@@ -241,21 +372,28 @@ export const produkte: Produkt[] = [
     eignungen: ["kleine-reparatur", "kurze-sperrzeit", "aussenbereich"],
     bild: "/images/produkte/rapid-set-cement-all.png",
     zeitKategorie: "schnell",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 3,
+    belastbarNach: "1 h",
+    aussenbereich: true,
   },
   {
     id: "rapid-set-mortar-mix",
     name: "Rapid Set MORTAR MIX",
     kategorie: "schnellzement",
-    kurzbeschreibung: "Schnellmörtel für Fugen, Reprofilierung und Einbau von Profilen",
+    kurzbeschreibung: "Universeller Schnellreparaturmörtel für Fugen, Reprofilierung und Profileinbau",
+    schichtdicke: "10–150 mm",
+    qualitaetsklasse: "C45/55",
     normen: [
       "ASTM C928",
       "DIN EN 1504-3",
     ],
     technischeDaten: [
+      { label: "Qualität", wert: "C45/55" },
       { label: "Druckfestigkeit (1 h)", wert: "≥ 21 N/mm²" },
       { label: "Druckfestigkeit (24 h)", wert: "≥ 42 N/mm²" },
       { label: "Verarbeitbar", wert: "pastös bis plastisch" },
-      { label: "Belastbar nach", wert: "ca. 1–2 h" },
+      { label: "Voll belastbar nach", wert: "ca. 1 h" },
     ],
     besonderheiten: [
       "Schwundneutral",
@@ -263,176 +401,191 @@ export const produkte: Produkt[] = [
       "Pastöse bis steife Konsistenz einstellbar",
       "Nur mit Wasser mischen",
     ],
+    tdsUrl: "https://www.korodur.de/downloads/tds-rapid-set-mortar-mix.pdf",
     eignungen: ["kleine-reparatur", "kurze-sperrzeit"],
     bild: "/images/produkte/rapid-set-mortar-mix.png",
     zeitKategorie: "schnell",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 3,
+    belastbarNach: "1 h",
+    aussenbereich: true,
   },
-  {
-    id: "rapid-set-concrete-mix",
-    name: "Rapid Set CONCRETE MIX",
-    kategorie: "schnellzement",
-    kurzbeschreibung: "Schnellbeton für strukturelle Reparaturen und Kantenreprofilierung",
-    normen: [
-      "ASTM C928",
-      "DIN EN 1504-3",
-    ],
-    technischeDaten: [
-      { label: "Druckfestigkeit (1 h)", wert: "≥ 21 N/mm²" },
-      { label: "Druckfestigkeit (28 d)", wert: "≥ 55 N/mm²" },
-      { label: "Belastbar nach", wert: "ca. 1–2 h" },
-    ],
-    besonderheiten: [
-      "Grobe Körnung für strukturelle Reparaturen",
-      "Hohe Endfestigkeit",
-      "Frostbeständig",
-    ],
-    eignungen: ["kleine-reparatur", "schwerlast", "kurze-sperrzeit", "tausalz", "aussenbereich"],
-    bild: "/images/produkte/rapid-set-concrete-mix.png",
-    zeitKategorie: "schnell",
-    zusatzfunktionen: ["tausalzbestaendigkeit"],
-  },
-  {
-    id: "korocrete",
-    name: "KOROCRETE Schnellbeton",
-    kategorie: "schnellzement",
-    kurzbeschreibung: "Schnellbeton für Großflächen – volumetrisch mischbar vor Ort",
-    normen: [
-      "DIN EN 206",
-      "DIN 1045-2",
-    ],
-    technischeDaten: [
-      { label: "Druckfestigkeit (24 h)", wert: "≥ 35 N/mm²" },
-      { label: "Druckfestigkeit (28 d)", wert: "≥ 55 N/mm²" },
-      { label: "Befahrbar nach", wert: "ca. 4–6 h" },
-      { label: "Mischung", wert: "volumetrisch vor Ort" },
-    ],
-    besonderheiten: [
-      "Volumetrische Mischtechnik vor Ort",
-      "Kein Restbeton / minimale Verluste",
-      "Großflächig einsetzbar",
-      "Hochbelastbar",
-    ],
-    eignungen: ["grossflaechige-sanierung", "schwerlast", "rollende-lasten", "kurze-sperrzeit"],
-    zeitKategorie: "schnell", // TODO-Workshop: TDS deutet eher auf "mittel" (befahrbar 4–6 h)
-  },
-
   {
     id: "rapid-set-mortar-mix-dur",
     name: "Rapid Set MORTAR MIX DUR",
     kategorie: "schnellzement",
-    kurzbeschreibung: "Schnellmörtel mit integriertem Verschleißträger für Fugenreparaturen",
+    kurzbeschreibung: "Schnellreparaturmörtel mit Hartstoff DIN 1100 A für Schwerlastfugen",
+    schichtdicke: "10–150 mm",
+    qualitaetsklasse: "C45/55",
     normen: [
       "ASTM C928",
       "DIN EN 1504-3",
+      "DIN 1100 A (Hartstoff)",
     ],
     technischeDaten: [
+      { label: "Qualität", wert: "C45/55 + DIN 1100 A" },
       { label: "Druckfestigkeit (1 h)", wert: "≥ 21 N/mm²" },
       { label: "Druckfestigkeit (24 h)", wert: "≥ 42 N/mm²" },
       { label: "Verarbeitbar", wert: "pastös bis plastisch" },
-      { label: "Belastbar nach", wert: "ca. 2 h" },
+      { label: "Voll belastbar nach", wert: "ca. 1 h" },
     ],
     besonderheiten: [
-      "Integrierter Verschleißträger",
+      "Integrierter Verschleißträger DIN 1100 A",
       "Für Schwerlastfugen geeignet",
       "Schwundneutral",
       "Pastöse Konsistenz einstellbar",
     ],
     eignungen: ["kleine-reparatur", "schwerlast", "punktlasten", "kurze-sperrzeit"],
     zeitKategorie: "schnell",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 5,
+    belastbarNach: "1 h",
+    aussenbereich: true,
   },
   {
     id: "asphalt-repair-mix",
     name: "ASPHALT REPAIR MIX",
     kategorie: "schnellzement",
-    kurzbeschreibung: "Schnellreparaturmischung für Asphaltflächen – ohne Haftbrücke",
+    kurzbeschreibung: "Schnellreparaturmaterial für Asphaltflächen – Verkehrsfreigabe nach 30 Minuten",
+    schichtdicke: "30–600 mm",
     normen: [
       "DIN EN 1504-3",
     ],
     technischeDaten: [
-      { label: "Schichtdicke", wert: "30–80 mm" },
-      { label: "Belastbar nach", wert: "ca. 2 h" },
+      { label: "Druckfestigkeit", wert: "ca. 22 N/mm²" },
+      { label: "Schichtdicke", wert: "30–600 mm" },
+      { label: "Verkehrsfreigabe nach", wert: "ca. 30 min" },
       { label: "Haftbrücke", wert: "Nicht erforderlich" },
     ],
     besonderheiten: [
       "Für Asphaltflächen geeignet",
       "Ohne Haftbrücke",
       "Einfache Verarbeitung",
-      "Hohe Belastbarkeit",
+      "30-Minuten-Verkehrsfreigabe",
     ],
+    tdsUrl: "https://www.korodur.de/downloads/tds-asphalt-repair-mix.pdf",
     eignungen: ["kleine-reparatur", "grossflaechige-sanierung", "schwerlast", "rollende-lasten", "kurze-sperrzeit", "aussenbereich"],
     bild: "/images/produkte/asphalt-repair-mix.png",
-    zeitKategorie: "normal",
+    zeitKategorie: "schnell",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 3,
+    belastbarNach: "30 min",
+    belastbarNachZusatz: "Verkehrsfreigabe",
+    aussenbereich: true,
   },
   {
-    id: "korodur-fscem-screed",
-    name: "KORODUR FSCem Screed",
-    kategorie: "estrich",
-    kurzbeschreibung: "Ausgleichsestrich für unterschiedliche Einbauhöhen",
+    id: "dot-europe-concrete-mix",
+    name: "DOT Europe CONCRETE MIX",
+    kategorie: "schnellzement",
+    kurzbeschreibung: "Universeller Schnellreparaturbeton nach DIN EN 1504-3 – für Brücken, Start-/Landebahnen und Industrieböden",
+    schichtdicke: "50–600 mm",
+    qualitaetsklasse: "C35/45",
     normen: [
-      "DIN EN 13813",
-      "DIN 18560",
+      "DIN EN 1504-3",
+      "DIN EN 1015-11",
     ],
     technischeDaten: [
-      { label: "Schichtdicke", wert: "45–115 mm" },
-      { label: "Anwendung", wert: "Ausgleichsschicht" },
+      { label: "Qualität", wert: "C35/45" },
+      { label: "Körnung", wert: "0–8 mm" },
+      { label: "Druckfestigkeit (60 min)", wert: "> 19 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "> 41 N/mm²" },
+      { label: "Biegezugfestigkeit (28 d)", wert: "> 7 N/mm²" },
+      { label: "Voll belastbar nach", wert: "ca. 1 h" },
+      { label: "Frost-/Tausalzbeständig", wert: "Ja" },
+      { label: "Sulfatbeständig", wert: "Ja" },
     ],
     besonderheiten: [
-      "Große Schichtdicken möglich",
-      "Als Ausgleichsschicht einsetzbar",
-      "Schnelle Erhärtung",
+      "Multifunktional einsetzbar",
+      "Frost-/tausalzbeständig",
+      "Sulfatbeständig, chloridfrei",
+      "Exzellente Haftung ohne Haftbrücke",
+      "Für Brücken, Start-/Landebahnen, Industrieböden",
+      "30 % weniger CO₂-Ausstoß als Portlandzement",
     ],
-    eignungen: ["grossflaechige-sanierung", "kurze-sperrzeit"],
-    bild: "/images/produkte/korodur-fscem-screed.png",
-    zeitKategorie: "normal",
+    tdsUrl: "https://www.korodur.de/downloads/tds-dot-europe-concrete-mix.pdf",
+    zeitKategorie: "schnell",
+    zusatzfunktionen: ["tausalzbestaendigkeit"],
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 5,
+    belastbarNach: "1 h",
+    aussenbereich: true,
   },
   {
-    id: "neodur-he-65",
-    name: "NEODUR HE 65",
-    kategorie: "estrich",
-    kurzbeschreibung: "Hartstoffestrich für Innen- und Außenbereiche mit Silotechnik",
+    id: "korocrete",
+    name: "KOROCRETE Schnellbeton",
+    kategorie: "schnellzement",
+    kurzbeschreibung: "Volumetrisch gemischter Schnellbeton auf FSCem-Basis (ternäres Spezialbindemittel) – Verkehrsfreigabe nach 6 h",
+    schichtdicke: "projektabhängig",
+    qualitaetsklasse: "C35/45 – C50/60",
     normen: [
-      "DIN EN 13813",
-      "DIN 18560",
+      "DIN EN 206 (Anlehnung)",
     ],
     technischeDaten: [
-      { label: "Druckfestigkeit", wert: "≥ 65 N/mm²" },
-      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)" },
-      { label: "Verarbeitung", wert: "Silosystem / Pumptechnik" },
+      { label: "Bindemittel", wert: "KORODUR FSCem (ternär)" },
+      { label: "Qualität", wert: "C35/45 – C50/60" },
+      { label: "Druckfestigkeit (6 h)", wert: "ca. 18 N/mm²" },
+      { label: "Druckfestigkeit (8 h)", wert: "ca. 25 N/mm²" },
+      { label: "Druckfestigkeit (16 h)", wert: "ca. 35 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "ca. 65 N/mm²" },
+      { label: "Verkehrsfreigabe nach", wert: "ca. 6 h (≥ 20 MPa)" },
+      { label: "Mischung", wert: "volumetrisch vor Ort" },
     ],
     besonderheiten: [
-      "Witterungsbeständig",
-      "Mit Silosystem verarbeitbar",
-      "Wirtschaftlich auf Großflächen",
-      "Kraftschlüssiger Verbund",
+      "Volumetrische Mischtechnik vor Ort (Cemen Tech M-Series)",
+      "Volumenstabil, schwind-/spannungsfrei, rissefrei erhärtend",
+      "Wasserfest, nassraumtauglich",
+      "Pumpfähig",
+      "Großflächig einsetzbar",
+      "Kein Restbeton",
     ],
-    eignungen: ["grossflaechige-sanierung", "schwerlast", "rollende-lasten", "aussenbereich"],
-    bild: "/images/produkte/neodur-he-65.png",
-    zeitKategorie: "normal",
+    tdsUrl: "https://www.korodur.de/downloads/tds-korocrete.pdf",
+    zeitKategorie: "schnell",
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 4,
+    belastbarNach: "6 h",
+    belastbarNachZusatz: "≥ 20 MPa",
+    aussenbereich: true,
+    systemProdukt: true,
+  },
+  {
+    id: "rapid-set-schnellbeton",
+    name: "Rapid Set Schnellbeton",
+    kategorie: "schnellzement",
+    kurzbeschreibung: "Volumetrisch gemischter Schnellbeton auf Rapid-Set-Basis nach TL BEB-StB – Verkehrsfreigabe nach 2 h",
+    schichtdicke: "projektabhängig",
+    qualitaetsklasse: "C40/50",
+    normen: [
+      "TL BEB-StB",
+      "DIN EN 1504-3",
+    ],
+    technischeDaten: [
+      { label: "Bindemittel", wert: "Rapid Set (Calcium-Sulfo-Aluminat-Zement)" },
+      { label: "Qualität", wert: "C40/50" },
+      { label: "Druckfestigkeit (60 min)", wert: "> 19 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "> 41 N/mm²" },
+      { label: "Verkehrsfreigabe nach", wert: "ca. 2 h" },
+      { label: "Mischung", wert: "volumetrisch vor Ort" },
+    ],
+    besonderheiten: [
+      "Volumetrische Mischtechnik vor Ort",
+      "TL BEB-StB (höchste Verkehrsklasse für Erhaltungsbau)",
+      "2-Stunden-Verkehrsfreigabe",
+      "Frost-/tausalzbeständig",
+      "Großflächig einsetzbar",
+      "Kein Restbeton",
+    ],
+    tdsUrl: "https://www.korodur.de/downloads/tds-rapid-set-schnellbeton.pdf",
+    zeitKategorie: "schnell",
+    zusatzfunktionen: ["tausalzbestaendigkeit"],
+    inSanierungsMatrix: true,
+    belastbarkeitsStufe: 5,
+    belastbarNach: "2 h",
+    belastbarNachZusatz: "Verkehrsfreigabe",
+    aussenbereich: true,
+    systemProdukt: true,
   },
 
-  {
-    id: "tru-self-leveling",
-    name: "TRU Self-Leveling",
-    kategorie: "estrich",
-    kurzbeschreibung: "Selbstverlaufender Sichtestrich für designorientierte Bodenlösungen",
-    normen: [
-      "DIN EN 13813",
-    ],
-    technischeDaten: [
-      { label: "Optik", wert: "Betonähnliche Sichtestrich-Oberfläche" },
-      { label: "Verarbeitung", wert: "Selbstverlaufend" },
-      { label: "Haftbrücke", wert: "Nicht erforderlich" },
-    ],
-    besonderheiten: [
-      "Designorientierte Betonoptik",
-      "Fugenlose Oberfläche",
-      "Ohne Haftbrücke",
-      "Hygienisch & pflegeleicht",
-    ],
-    eignungen: ["grossflaechige-sanierung", "leichte-nutzung"],
-    zeitKategorie: "normal",
-  },
-  // === NACHBEHANDLUNG ===
+  // === NACHBEHANDLUNG (nicht in Sanierungs-Matrix) ===
   {
     id: "korocure",
     name: "KOROCURE",
