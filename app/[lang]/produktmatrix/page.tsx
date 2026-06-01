@@ -66,9 +66,8 @@ export default async function ProduktmatrixPage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  await getDictionary(lang);
-  // i18n-Strings für die Matrix folgen in Paket 3 (Top-Level `produktmatrix`-Key in den Dictionaries).
-  const dict: Dict | undefined = undefined;
+  const rawDict = await getDictionary(lang);
+  const dict: Dict | undefined = (rawDict as unknown as { produktmatrix?: Dict }).produktmatrix;
 
   const matrixProdukte = produkte.filter((p) => p.inSanierungsMatrix === true);
   const localizedProdukte = await localizeProdukte(matrixProdukte, lang as "de" | "en" | "fr" | "pl");
@@ -86,7 +85,7 @@ export default async function ProduktmatrixPage({
               margin: 0,
             }}
           >
-            {tx(dict, "produktmatrix.title", "Produktportfolio Sanierung")}
+            {tx(dict, "title", "Produktportfolio Sanierung")}
           </h1>
         </header>
 
@@ -109,7 +108,7 @@ export default async function ProduktmatrixPage({
           >
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
-                {tx(dict, "produktmatrix.spalte.aussen", "Außen")}
+                {tx(dict, "spalte_aussen", "Außen")}
               </div>
               <div
                 style={{
@@ -121,16 +120,16 @@ export default async function ProduktmatrixPage({
                   marginBottom: 8,
                 }}
               >
-                <Dot /> {tx(dict, "produktmatrix.legende.aussen", "außenbereich-tauglich")}
+                <Dot /> {tx(dict, "legende_aussen", "außenbereich-tauglich")}
               </div>
               <div style={{ marginLeft: 24, color: NAVY_40, fontSize: 12 }}>
-                {tx(dict, "produktmatrix.legende.aussen_leer", "leer = nur Innenanwendung")}
+                {tx(dict, "legende_aussen_leer", "leer = nur Innenanwendung")}
               </div>
             </div>
 
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
-                {tx(dict, "produktmatrix.spalte.belastbarkeit", "Belastbarkeit")}
+                {tx(dict, "spalte_belastbarkeit", "Belastbarkeit")}
               </div>
               <div
                 style={{
@@ -144,7 +143,7 @@ export default async function ProduktmatrixPage({
                 }}
               >
                 <ScaleDots filled={5} />
-                {tx(dict, "produktmatrix.legende.stufe5", "Höchste Last (Hartstoff DIN 1100 A · Verkehrsflächen-Norm)")}
+                {tx(dict, "legende_stufe5", "Höchste Last (Hartstoff DIN 1100 A · Verkehrsflächen-Norm)")}
               </div>
               <div
                 style={{
@@ -158,7 +157,7 @@ export default async function ProduktmatrixPage({
                 }}
               >
                 <ScaleDots filled={4} />
-                {tx(dict, "produktmatrix.legende.stufe4", "Sehr hohe Last (Hartstoff-Niveau, Beton C45+)")}
+                {tx(dict, "legende_stufe4", "Sehr hohe Last (Hartstoff-Niveau, Beton C45+)")}
               </div>
               <div
                 style={{
@@ -171,18 +170,18 @@ export default async function ProduktmatrixPage({
                 }}
               >
                 <ScaleDots filled={3} />
-                {tx(dict, "produktmatrix.legende.stufe3", "Hohe Last (Reparaturmörtel C35+, Industrie)")}
+                {tx(dict, "legende_stufe3", "Hohe Last (Reparaturmörtel C35+, Industrie)")}
               </div>
             </div>
 
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
-                {tx(dict, "produktmatrix.spalte.schichtdicke", "Schichtdicke")}
+                {tx(dict, "spalte_schichtdicke", "Schichtdicke")}
               </div>
               <div style={{ fontSize: 13, color: NAVY_72, lineHeight: 1.5 }}>
                 {tx(
                   dict,
-                  "produktmatrix.legende.schichtdicke",
+                  "legende_schichtdicke",
                   "Empfohlener Sanierungs-Anwendungsbereich pro Lage. Werte aus den aktuellen Technischen Datenblättern."
                 )}
               </div>
@@ -190,12 +189,12 @@ export default async function ProduktmatrixPage({
 
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 12 }}>
-                {tx(dict, "produktmatrix.spalte.belastbar_nach", "Belastbar nach")}
+                {tx(dict, "spalte_belastbar_nach", "Belastbar nach")}
               </div>
               <div style={{ fontSize: 13, color: NAVY_72, lineHeight: 1.5 }}>
                 {tx(
                   dict,
-                  "produktmatrix.legende.belastbar_nach",
+                  "legende_belastbar_nach",
                   "Voll belastbar bzw. Verkehrsfreigabe ab Einbau-Ende. Bei Hartstoffestrichen klassisch 3 Tage nach DIN 18560-7."
                 )}
               </div>
@@ -215,7 +214,7 @@ export default async function ProduktmatrixPage({
           <p style={{ color: NAVY, fontSize: 18, marginBottom: 20 }}>
             {tx(
               dict,
-              "produktmatrix.cta.text",
+              "cta_text",
               "Unsicher? Der Lösungsfinder führt Sie in wenigen Schritten zur passenden Lösung – oder sprechen Sie direkt mit unseren Beratern."
             )}
           </p>
@@ -240,7 +239,7 @@ export default async function ProduktmatrixPage({
                 fontSize: 15,
               }}
             >
-              {tx(dict, "produktmatrix.cta.loesungsfinder", "Lösungsfinder starten")}
+              {tx(dict, "cta_loesungsfinder", "Lösungsfinder starten")}
             </Link>
             <a
               href="https://www.korodur.de/kontakt.html"
@@ -258,7 +257,7 @@ export default async function ProduktmatrixPage({
                 border: `1.5px solid ${NAVY}`,
               }}
             >
-              {tx(dict, "produktmatrix.cta.kontakt", "Kontakt zu unseren Beratern")}
+              {tx(dict, "cta_kontakt", "Kontakt zu unseren Beratern")}
             </a>
           </div>
         </div>

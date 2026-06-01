@@ -59,10 +59,10 @@ function Dash() {
 
 function Badge({ kind, dict }: { kind: "rapid" | "whg" | "sichtestrich" | "system"; dict?: Dict }) {
   const labels: Record<typeof kind, string> = {
-    rapid: t(dict, "produktmatrix.badge.rapid", "Rapid"),
-    whg: t(dict, "produktmatrix.badge.whg", "WHG"),
-    sichtestrich: t(dict, "produktmatrix.badge.sichtestrich", "Sichtestrich"),
-    system: t(dict, "produktmatrix.badge.system", "System"),
+    rapid: t(dict, "badge_rapid", "Rapid"),
+    whg: t(dict, "badge_whg", "WHG"),
+    sichtestrich: t(dict, "badge_sichtestrich", "Sichtestrich"),
+    system: t(dict, "badge_system", "System"),
   };
   return (
     <span
@@ -245,8 +245,8 @@ function KategorieHeader({
 }
 
 const KATEGORIEN: { id: KategorieId; labelKey: string; fallback: string }[] = [
-  { id: "estrich", labelKey: "produktmatrix.kategorie.industrieestriche", fallback: "Industrieestriche" },
-  { id: "schnellzement", labelKey: "produktmatrix.kategorie.schnellreparaturmoertel", fallback: "Schnellreparaturmörtel" },
+  { id: "estrich", labelKey: "kategorie_industrieestriche", fallback: "Industrieestriche" },
+  { id: "schnellzement", labelKey: "kategorie_schnellreparaturmoertel", fallback: "Schnellreparaturmörtel" },
 ];
 
 export default function Produktmatrix({
@@ -258,7 +258,7 @@ export default function Produktmatrix({
   lang: Locale;
   dict?: Dict;
 }) {
-  const produktLabel = t(dict, "produktmatrix.produkte_label", "Produkte");
+  const produktLabel = t(dict, "produkte_label", "Produkte");
 
   return (
     <div
@@ -287,7 +287,7 @@ export default function Produktmatrix({
                   minWidth: 280,
                 }}
               >
-                {t(dict, "produktmatrix.spalte.produkt", "Produkt")}
+                {t(dict, "spalte_produkt", "Produkt")}
               </th>
               <th
                 style={{
@@ -303,7 +303,7 @@ export default function Produktmatrix({
                   width: 90,
                 }}
               >
-                {t(dict, "produktmatrix.spalte.aussen", "Außen")}
+                {t(dict, "spalte_aussen", "Außen")}
               </th>
               <th
                 style={{
@@ -319,7 +319,7 @@ export default function Produktmatrix({
                   width: 160,
                 }}
               >
-                {t(dict, "produktmatrix.spalte.belastbarkeit", "Belastbarkeit")}
+                {t(dict, "spalte_belastbarkeit", "Belastbarkeit")}
               </th>
               <th
                 style={{
@@ -335,7 +335,7 @@ export default function Produktmatrix({
                   width: 170,
                 }}
               >
-                {t(dict, "produktmatrix.spalte.schichtdicke", "Schichtdicke")}
+                {t(dict, "spalte_schichtdicke", "Schichtdicke")}
               </th>
               <th
                 style={{
@@ -351,7 +351,7 @@ export default function Produktmatrix({
                   width: 160,
                 }}
               >
-                {t(dict, "produktmatrix.spalte.belastbar_nach", "Belastbar nach")}
+                {t(dict, "spalte_belastbar_nach", "Belastbar nach")}
               </th>
             </tr>
           </thead>
