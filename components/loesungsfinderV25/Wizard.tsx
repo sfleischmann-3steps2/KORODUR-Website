@@ -1,25 +1,31 @@
 // V2.5-Wizard — zentrale Klammer für Step 1–4 + Ergebnisseite.
-// PoC-Stand 2026-06-01: Step 1 + Step 2 funktional, Step 3 + 4 + Ergebnisseite
-// folgen nach Architektur-Abnahme.
+// Plan: docs/superpowers/plans/2026-06-01-loesungsfinder-4step-adaptive.md
 //
 // Adaptive Logik: Bei flaeche === "punktuell" wird Step 4 (Zeitfenster)
 // übersprungen und intern auf "sehr-kurz" defaulted (alle Reparaturmörtel
-// sind ~1h belastbar).
+// sind ~1h belastbar). Progress-Dots gehen 4→3 stillschweigend.
 
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import type { Locale } from "@/lib/i18n";
 import type {
+  EinsatzbereichV25,
   Flaechenkategorie,
   InnenAussen,
   LoesungsfinderState,
+  Zeitfenster,
 } from "@/data/types";
 import ProgressHeader from "./ProgressHeader";
 import Step1Flaeche from "./Step1Flaeche";
 import Step2InnenAussen from "./Step2InnenAussen";
+import Step3Einsatzbereich from "./Step3Einsatzbereich";
+import Step4Zeitfenster from "./Step4Zeitfenster";
+import Ergebnisseite from "./Ergebnisseite";
 import { IconArrowLeft, IconArrowRight } from "./icons";
 
 const NAVY = "#002d59";
+const MITTELGRAU = "#d9dada";
 
 const INITIAL_STATE: LoesungsfinderState = {
   flaeche: null,
@@ -28,14 +34,19 @@ const INITIAL_STATE: LoesungsfinderState = {
   zeitfenster: null,
 };
 
-export default function Wizard() {
+interface WizardProps {
+  lang: Locale;
+}
+
+export default function Wizard({ lang }: WizardProps) {
   const [state, setState] = useState<LoesungsfinderState>(INITIAL_STATE);
   const [currentStep, setCurrentStep] = useState<1 | 2 | 3 | 4>(1);
+  const [showResults, setShowResults] = useState(false);
 
   // Adaptive Funnel-Länge: Punktuell überspringt Step 4.
   const totalSteps = state.flaeche === "punktuell" ? 3 : 4;
+  const isFinalStep = currentStep === totalSteps;
 
-  // Pro Step: ist der "Weiter"-Button aktivierbar?
   const stepIsReady = useMemo(() => {
     if (currentStep === 1) return state.flaeche !== null;
     if (currentStep === 2) return state.innenAussen !== null;
@@ -48,14 +59,28 @@ export default function Wizard() {
     setState((s) => ({ ...s, flaeche: v }));
   }, []);
   const selectInnenAussen = useCallback((v: InnenAussen) => {
-    setState((s) => ({ ...s, innenAussen: v, einsatzbereich: null /* reset abhängiger Step 3 */ }));
+    // Bei Änderung von Innen/Außen muss die Branche zurückgesetzt werden,
+    // weil sich die zur Verfügung stehenden Branchen-Karten unterscheiden.
+    setState((s) => ({ ...s, innenAussen: v, einsatzbereich: null }));
+  }, []);
+  const selectEinsatzbereich = useCallback((v: EinsatzbereichV25) => {
+    setState((s) => ({ ...s, einsatzbereich: v }));
+  }, []);
+  const selectZeitfenster = useCallback((v: Zeitfenster) => {
+    setState((s) => ({ ...s, zeitfenster: v }));
   }, []);
 
   const goNext = useCallback(() => {
-    if (currentStep < totalSteps) {
+    if (isFinalStep) {
+      // Bei Punktuell vor Übergang ins Ergebnis das Zeitfenster auf "sehr-kurz" fixieren.
+      if (state.flaeche === "punktuell") {
+        setState((s) => ({ ...s, zeitfenster: "sehr-kurz" }));
+      }
+      setShowResults(true);
+    } else if (currentStep < totalSteps) {
       setCurrentStep((s) => (Math.min(s + 1, totalSteps) as 1 | 2 | 3 | 4));
     }
-  }, [currentStep, totalSteps]);
+  }, [currentStep, totalSteps, isFinalStep, state.flaeche]);
 
   const goBack = useCallback(() => {
     if (currentStep > 1) {
@@ -66,13 +91,20 @@ export default function Wizard() {
   const cancel = useCallback(() => {
     setState(INITIAL_STATE);
     setCurrentStep(1);
+    setShowResults(false);
   }, []);
 
+  const reopenWizard = useCallback(() => {
+    setShowResults(false);
+    setCurrentStep(1);
+  }, []);
+
+  if (showResults) {
+    return <Ergebnisseite lang={lang} state={state} onAuswahlAendern={reopenWizard} />;
+  }
+
   return (
-    <div
-      className="rounded-2xl p-6 md:p-8"
-      style={{ background: "#ececed" }}
-    >
+    <div className="rounded-2xl p-6 md:p-8" style={{ background: "#ececed" }}>
       <ProgressHeader currentStep={currentStep} totalSteps={totalSteps} onCancel={cancel} />
 
       {currentStep === 1 && (
@@ -81,11 +113,15 @@ export default function Wizard() {
       {currentStep === 2 && (
         <Step2InnenAussen value={state.innenAussen} onSelect={selectInnenAussen} />
       )}
-      {currentStep === 3 && (
-        <PlaceholderStep title="Step 3 — Einsatzbereich" hinweis="In Vorbereitung: vier Branchen-Karten je nach Innen/Außen-Auswahl." />
+      {currentStep === 3 && state.innenAussen && (
+        <Step3Einsatzbereich
+          innenAussen={state.innenAussen}
+          value={state.einsatzbereich}
+          onSelect={selectEinsatzbereich}
+        />
       )}
-      {currentStep === 4 && (
-        <PlaceholderStep title="Step 4 — Zeitfenster" hinweis="In Vorbereitung: drei Karten (sehr kurz / 1–2 Wo / planbar)." />
+      {currentStep === 4 && state.flaeche !== "punktuell" && (
+        <Step4Zeitfenster value={state.zeitfenster} onSelect={selectZeitfenster} />
       )}
 
       <div className="flex items-center justify-between mt-8">
@@ -93,8 +129,8 @@ export default function Wizard() {
           <button
             type="button"
             onClick={goBack}
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg border text-sm transition hover:bg-white"
-            style={{ borderColor: "rgba(0,0,0,0.2)", color: NAVY }}
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm transition hover:bg-white"
+            style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
           >
             <IconArrowLeft width={14} height={14} aria-hidden="true" />
             Zurück
@@ -111,23 +147,14 @@ export default function Wizard() {
           style={{
             background: stepIsReady ? NAVY : "#E5E4DE",
             color: stepIsReady ? "#fff" : "#8A8983",
-            border: `0.5px solid ${stepIsReady ? NAVY : "rgba(0,0,0,0.12)"}`,
+            border: `1px solid ${stepIsReady ? NAVY : MITTELGRAU}`,
             cursor: stepIsReady ? "pointer" : "not-allowed",
           }}
         >
-          Weiter
+          {isFinalStep ? "Lösung anzeigen" : "Weiter"}
           <IconArrowRight width={14} height={14} aria-hidden="true" />
         </button>
       </div>
-    </div>
-  );
-}
-
-function PlaceholderStep({ title, hinweis }: { title: string; hinweis: string }) {
-  return (
-    <div className="rounded-xl p-8 text-center" style={{ border: "1px dashed #d9dada", background: "#fff" }}>
-      <div className="text-lg font-medium mb-2" style={{ color: NAVY }}>{title}</div>
-      <div className="text-sm text-gray-600">{hinweis}</div>
     </div>
   );
 }

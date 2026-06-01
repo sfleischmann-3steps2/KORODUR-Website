@@ -1,6 +1,7 @@
 import { hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import Wizard from "../../../components/loesungsfinderV25/Wizard";
+import type { Locale } from "../../../lib/i18n";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default async function LoesungsfinderPage({
           Beschreiben Sie Ihre Situation, und wir zeigen Ihnen passende Produkte
           und Referenzprojekte.
         </p>
-        <Wizard />
+        <Wizard lang={lang as Locale} />
       </div>
     </section>
   );
