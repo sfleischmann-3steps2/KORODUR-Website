@@ -66,8 +66,8 @@ export default function OptionCard({
         <div className="flex items-start gap-3.5">
           <span
             aria-hidden="true"
-            className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
-            style={iconBox}
+            className="flex-shrink-0 inline-flex rounded-lg items-center justify-center"
+            style={{ ...iconBox, width: 40, height: 40 }}
           >
             <Icon width={22} height={22} />
           </span>
@@ -106,8 +106,8 @@ export default function OptionCard({
       )}
       <span
         aria-hidden="true"
-        className="flex w-11 h-11 rounded-lg items-center justify-center mb-3.5"
-        style={iconBox}
+        className="inline-flex rounded-lg items-center justify-center mb-3.5"
+        style={{ ...iconBox, width: 44, height: 44 }}
       >
         <Icon width={26} height={26} />
       </span>
