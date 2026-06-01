@@ -17,10 +17,16 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   const pathname = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [shortcutLabel, setShortcutLabel] = useState<string | null>(null);
+  // Initial-Wert "⌘K" wird auf Server UND beim ersten Client-Render gerendert.
+  // useEffect korrigiert nach Hydration auf "Ctrl+K", falls kein Mac.
+  // So gibt es keinen Hydration-Mismatch durch Browser-API-Aufrufe im
+  // Initial-State (siehe https://nextjs.org/docs/messages/react-hydration-error).
+  const [shortcutLabel, setShortcutLabel] = useState<string>("⌘K");
 
   useEffect(() => {
-    setShortcutLabel(/Mac/.test(navigator.userAgent ?? "") ? "⌘K" : "Ctrl+K");
+    if (!/Mac/.test(navigator.userAgent ?? "")) {
+      setShortcutLabel("Ctrl+K");
+    }
   }, []);
 
   // Cmd/Ctrl+K shortcut
