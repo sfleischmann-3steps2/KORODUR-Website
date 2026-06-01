@@ -3,23 +3,37 @@
 //
 // Pure-Functions, kein Side-Effect, kein State. Bekommt einen
 // LoesungsfinderState rein und liefert ein Ergebnis (Top-Produkt + passende
-// Referenzen + Tags zum Eingrenzen).
+// Referenzen).
 //
-// Die Bestandsdaten (produkte.ts, referenzen.ts) sind noch im V2.4-Schema.
-// Über `alsV25Produkt` / `alsV25Referenz` werden sie on-the-fly auf V2.5
-// gemappt — Heuristiken in loesungsfinderV25Adapter.ts. Sobald Stammdaten
-// migriert sind, fällt der Adapter weg.
+// Datenbasis (seit V2.5-Migration, kein Adapter mehr):
+//  - Produkte: `produktFilterV25(p)` leitet die Filter-Felder aus den
+//    kuratierten Stammdaten ab (produkte.ts).
+//  - Referenzen: `REFERENZ_FILTER_V25[slug]` (generiert von
+//    scripts/migrate-refs-v25.ts → data/referenzenV25.ts).
 
-import type { LoesungsfinderState } from "./types";
+import type {
+  LoesungsfinderState,
+  ProduktFilterV25,
+  Referenz,
+  ReferenzFilterV25,
+} from "./types";
 import { EINSATZBEREICH_TAGS } from "./einsatzbereichMapping";
-import { produkte } from "./produkte";
+import { produkte, produktFilterV25, type Produkt } from "./produkte";
 import { referenzen } from "./referenzen";
-import {
-  alsV25Produkt,
-  alsV25Referenz,
-  type V25Produkt,
-  type V25Referenz,
-} from "./loesungsfinderV25Adapter";
+import { REFERENZ_FILTER_V25 } from "./referenzenV25";
+
+export type V25Produkt = Produkt & ProduktFilterV25;
+export type V25Referenz = Referenz & ReferenzFilterV25;
+
+// Fallback, falls eine Referenz (noch) keinen V25-Eintrag hat. Die
+// Vollständigkeit wird von scripts/validate-referenzen.ts erzwungen.
+const FALLBACK_REF_FILTER: ReferenzFilterV25 = {
+  flaecheKategorie: "mittel",
+  innenAussen: "innen",
+  einsatzbereich: "innen-industrie-produktion",
+  zeitfenster: "planbar",
+  schadenstypen: [],
+};
 
 export interface ErgebnisV25 {
   /** Beste Produkt-Empfehlung oder null wenn keine passt. */
@@ -64,7 +78,7 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
       : Infinity;
 
   // --- Produkte filtern + ranken ---
-  const v25Produkte = produkte.map(alsV25Produkt);
+  const v25Produkte: V25Produkt[] = produkte.map((p) => ({ ...p, ...produktFilterV25(p) }));
   const kandidaten = v25Produkte
     .filter((p) => p.flaechenkategorienGeeignet.includes(state.flaeche!))
     .filter((p) => (state.innenAussen === "innen" ? p.innenGeeignet : p.aussenGeeignet))
@@ -76,18 +90,47 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
       p.kategorie === "beschichtung",
     );
 
-  // Score = Anzahl matching Belastungs-Tags, plus kleiner Bonus für kürzere Wiederbelastung.
+  // Ranking (Steffi-Entscheidung D1, 2026-06-01):
+  //  1. Primär: Anzahl passender Branchen-Belastungs-Tags (höher = besser).
+  //  2. Tiebreak abhängig vom Zeitdruck:
+  //     - Zeitdruck (sehr-kurz/kurz): schnellere Wiederbelastung gewinnt.
+  //     - planbar/punktuell (kein Zeitdruck): passendstes Produkt gewinnt — bei
+  //       Flächen-Jobs Estrich vor Reparaturbeton, dann höhere Belastbarkeitsstufe.
+  //       (Verhindert, dass ein schneller Reparaturbeton einen Industrieestrich
+  //       schlägt, obwohl gar kein Zeitfenster gefordert ist.)
+  const zeitDruck =
+    state.flaeche !== "punktuell" &&
+    (state.zeitfenster === "sehr-kurz" || state.zeitfenster === "kurz");
+  const katRang = (k: V25Produkt["kategorie"]) =>
+    k === "estrich" ? 0 : k === "beschichtung" ? 1 : 2;
+
   kandidaten.sort((a, b) => {
     const aMatch = a.belastungenAbgedeckt.filter((t) => branchenTags.includes(t)).length;
     const bMatch = b.belastungenAbgedeckt.filter((t) => branchenTags.includes(t)).length;
     if (aMatch !== bMatch) return bMatch - aMatch;
+
+    if (zeitDruck) {
+      if (a.wiederbelastungInH !== b.wiederbelastungInH) return a.wiederbelastungInH - b.wiederbelastungInH;
+      return (b.belastbarkeitsStufe ?? 0) - (a.belastbarkeitsStufe ?? 0);
+    }
+
+    // Kein Zeitdruck: Bei Flächen-Jobs Estrich-Kategorie bevorzugen.
+    if (state.flaeche !== "punktuell") {
+      const katDelta = katRang(a.kategorie) - katRang(b.kategorie);
+      if (katDelta !== 0) return katDelta;
+    }
+    const stufeDelta = (b.belastbarkeitsStufe ?? 0) - (a.belastbarkeitsStufe ?? 0);
+    if (stufeDelta !== 0) return stufeDelta;
     return a.wiederbelastungInH - b.wiederbelastungInH;
   });
 
   const topProdukt = kandidaten[0] ?? null;
 
   // --- Referenzen filtern ---
-  const v25Refs = referenzen.map(alsV25Referenz);
+  const v25Refs: V25Referenz[] = referenzen.map((r) => ({
+    ...r,
+    ...(REFERENZ_FILTER_V25[r.slug] ?? FALLBACK_REF_FILTER),
+  }));
   let refsAlle = v25Refs
     .filter((r) => r.flaecheKategorie === state.flaeche)
     .filter((r) => r.innenAussen === state.innenAussen)

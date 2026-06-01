@@ -1,4 +1,11 @@
-import type { Verarbeitung, ZeitKategorie, Zusatzfunktion } from "./types";
+import type {
+  BelastungsTag,
+  Flaechenkategorie,
+  ProduktFilterV25,
+  Verarbeitung,
+  ZeitKategorie,
+  Zusatzfunktion,
+} from "./types";
 
 // Produktmatrix-interne Filter-Taxonomie (aus Produktsicht). Bewusst separat
 // von der Referenz-Taxonomie: Referenzen nutzen Einsatzbereich/Sanierungsart/
@@ -53,6 +60,23 @@ export interface Produkt {
   /** Designorientierter Sichtestrich (z. B. TRU Self-Leveling). */
   sichtestrich?: boolean;
 
+  // === Lösungsfinder V2.5 — Match-Algorithmus (2026-06-01) ===
+  // Plan: docs/superpowers/plans/2026-06-01-loesungsfinder-4step-adaptive.md
+  //
+  // NUR `belastungenAbgedeckt` + `systemBegleitprodukte` werden hier explizit
+  // gepflegt. Die übrigen Filter-Felder (wiederbelastungInH, aussenGeeignet,
+  // flaechenkategorienGeeignet) leitet `produktFilterV25()` deterministisch aus
+  // den kuratierten Matrix-Feldern ab — keine Redundanz, keine Heuristik.
+  /**
+   * Welche Branchen-Belastungen das Produkt fachlich abdeckt. Match-Schlüssel
+   * der Top-Empfehlung (Schnittmenge mit den Branchen-Tags aus Step 3).
+   * DRAFT — faktenbasiert aus besonderheiten/technischeDaten/Stufe abgeleitet,
+   * Sign-off Produktmanagement (Frank) offen. Siehe docs/loesungsfinder-v25-review.md.
+   */
+  belastungenAbgedeckt?: BelastungsTag[];
+  /** Slugs der System-Begleitprodukte (Haftbrücke, Grundierung, Nachbehandlung). */
+  systemBegleitprodukte?: string[];
+
   /** @deprecated Alter Eignungs-Array, entfällt nach Migrationsabschluss. */
   eignungen?: (Belastung | Sonderbedingung | Massnahme)[];
   bild?: string;
@@ -102,6 +126,8 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "24 h",
     aussenbereich: true,
+    belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie", "frost-tausalz", "staplerverkehr"],
+    systemBegleitprodukte: ["korodur-hb-5-rapid"],
   },
   {
     id: "neodur-he-65",
@@ -135,6 +161,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "3 d",
     aussenbereich: false,
+    belastungenAbgedeckt: ["schwerlast", "verschleiss", "staplerverkehr"],
   },
   {
     id: "neodur-he-65-plus",
@@ -179,6 +206,7 @@ export const produkte: Produkt[] = [
     belastbarNach: "3 d",
     aussenbereich: true,
     whgZulassung: true,
+    belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie", "frost-tausalz", "staplerverkehr"],
   },
   {
     id: "neodur-he-40",
@@ -209,6 +237,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "3 d",
     aussenbereich: false,
+    belastungenAbgedeckt: ["schwerlast", "verschleiss"],
   },
   {
     id: "neodur-level",
@@ -253,6 +282,8 @@ export const produkte: Produkt[] = [
     belastbarNach: "3 d",
     belastbarNachZusatz: "leicht belastbar 24 h",
     aussenbereich: false,
+    belastungenAbgedeckt: ["verschleiss", "staplerverkehr", "optik"],
+    systemBegleitprodukte: ["korodur-pc"],
   },
   {
     id: "tru-self-leveling",
@@ -289,6 +320,7 @@ export const produkte: Produkt[] = [
     belastbarNachZusatz: "schleifbar bis Hochglanz",
     aussenbereich: true,
     sichtestrich: true,
+    belastungenAbgedeckt: ["optik", "fleckschutz", "hygiene", "publikumsverkehr"],
   },
 
   // === GRUNDIERUNGEN / HAFTBRÜCKEN (nicht in Sanierungs-Matrix) ===
@@ -376,6 +408,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 3,
     belastbarNach: "1 h",
     aussenbereich: true,
+    belastungenAbgedeckt: ["frost-tausalz", "verschleiss"],
   },
   {
     id: "rapid-set-mortar-mix",
@@ -409,6 +442,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 3,
     belastbarNach: "1 h",
     aussenbereich: true,
+    belastungenAbgedeckt: ["frost-tausalz"],
   },
   {
     id: "rapid-set-mortar-mix-dur",
@@ -441,6 +475,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "1 h",
     aussenbereich: true,
+    belastungenAbgedeckt: ["schwerlast", "verschleiss", "staplerverkehr", "frost-tausalz"],
   },
   {
     id: "asphalt-repair-mix",
@@ -472,6 +507,7 @@ export const produkte: Produkt[] = [
     belastbarNach: "30 min",
     belastbarNachZusatz: "Verkehrsfreigabe",
     aussenbereich: true,
+    belastungenAbgedeckt: ["frost-tausalz", "schwerlast"],
   },
   {
     id: "dot-europe-concrete-mix",
@@ -509,6 +545,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "1 h",
     aussenbereich: true,
+    belastungenAbgedeckt: ["frost-tausalz", "schwerlast", "chemie", "verschleiss"],
   },
   {
     id: "korocrete",
@@ -546,6 +583,7 @@ export const produkte: Produkt[] = [
     belastbarNachZusatz: "≥ 20 MPa",
     aussenbereich: true,
     systemProdukt: true,
+    belastungenAbgedeckt: ["schwerlast", "frost-tausalz"],
   },
   {
     id: "rapid-set-schnellbeton",
@@ -583,6 +621,7 @@ export const produkte: Produkt[] = [
     belastbarNachZusatz: "Verkehrsfreigabe",
     aussenbereich: true,
     systemProdukt: true,
+    belastungenAbgedeckt: ["frost-tausalz", "schwerlast", "staplerverkehr"],
   },
 
   // === NACHBEHANDLUNG (nicht in Sanierungs-Matrix) ===
@@ -647,6 +686,72 @@ export const produkte: Produkt[] = [
     zeitKategorie: "normal",
   },
 ];
+
+// ===========================================================================
+// Lösungsfinder V2.5 — Filter-Ableitung
+// Plan: docs/superpowers/plans/2026-06-01-loesungsfinder-4step-adaptive.md
+//
+// Ersetzt den früheren heuristischen Adapter (loesungsfinderV25Adapter.ts).
+// `wiederbelastungInH` + `aussenGeeignet` werden DETERMINISTISCH aus den
+// kuratierten Matrix-Feldern (belastbarNach, aussenbereich) abgeleitet;
+// `belastungenAbgedeckt` + `systemBegleitprodukte` stehen explizit am Produkt
+// (DRAFT, Sign-off Frank offen). `flaechenkategorienGeeignet` folgt einer
+// dokumentierten Produkt-Logik (s. u.).
+// ===========================================================================
+
+/** Parst die kuratierte `belastbarNach`-Angabe ("24 h", "1 h", "3 d", "30 min", "6 h") in Stunden. */
+export function wiederbelastungInHVon(belastbarNach?: string): number {
+  if (!belastbarNach) return Infinity;
+  const m = belastbarNach.trim().match(/^([\d.,]+)\s*(min|h|d)$/i);
+  if (!m) return Infinity;
+  const wert = parseFloat(m[1].replace(",", "."));
+  const einheit = m[2].toLowerCase();
+  if (einheit === "min") return wert / 60;
+  if (einheit === "d") return wert * 24;
+  return wert; // "h"
+}
+
+// Schnellreparaturmörtel: punktuelle Schadstellen + mittlere Flächen, keine
+// Großflächen-Eignung. Asphalt-Reparatur deckt zusätzlich Großflächen ab
+// (Verkehrsflächen, Schichtdicke bis 600 mm). Alle übrigen (Estriche, System-
+// Schnellbetone, DOT Europe CONCRETE MIX) sind Flächen-Produkte (mittel/gross).
+// DRAFT-Logik — Sign-off Produktmanagement offen.
+const FLAECHEN_PUNKTUELL_MITTEL = new Set<string>([
+  "rapid-set-cement-all",
+  "rapid-set-mortar-mix",
+  "rapid-set-mortar-mix-dur",
+]);
+const FLAECHEN_PUNKTUELL_MITTEL_GROSS = new Set<string>(["asphalt-repair-mix"]);
+
+/** Flächengrößen, die das Produkt bedient (Step-1-Filter des Lösungsfinders). */
+export function flaechenkategorienVon(p: Produkt): Flaechenkategorie[] {
+  if (FLAECHEN_PUNKTUELL_MITTEL_GROSS.has(p.id)) return ["punktuell", "mittel", "gross"];
+  if (FLAECHEN_PUNKTUELL_MITTEL.has(p.id)) return ["punktuell", "mittel"];
+  return ["mittel", "gross"];
+}
+
+// Reine Außenprodukte — nicht innen relevant. ASPHALT REPAIR MIX ist ein
+// Verkehrsflächen-Reparaturmaterial (Straßen, Zufahrten, Außenlager), das
+// innen fachlich keinen Sinn ergibt. Steffi-Entscheidung 2026-06-01:
+// "nur außen, realistische Tags" statt Vollausschluss aus dem Funnel.
+const NUR_AUSSEN = new Set<string>(["asphalt-repair-mix"]);
+
+/** Innen-Eignung. Default true; reine Außenprodukte ausgenommen. */
+export function innenGeeignetVon(p: Produkt): boolean {
+  return !NUR_AUSSEN.has(p.id);
+}
+
+/** Vollständige V2.5-Filter-Eigenschaften eines Produkts (ersetzt den Adapter). */
+export function produktFilterV25(p: Produkt): ProduktFilterV25 {
+  return {
+    flaechenkategorienGeeignet: flaechenkategorienVon(p),
+    innenGeeignet: innenGeeignetVon(p),
+    aussenGeeignet: p.aussenbereich ?? false,
+    belastungenAbgedeckt: p.belastungenAbgedeckt ?? [],
+    wiederbelastungInH: wiederbelastungInHVon(p.belastbarNach),
+    systemBegleitprodukte: p.systemBegleitprodukte ?? [],
+  };
+}
 
 export function getProduktByName(name: string): Produkt | undefined {
   return produkte.find(
