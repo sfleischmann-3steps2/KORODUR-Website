@@ -1,8 +1,13 @@
 // Gemeinsame Option-Karte für Step 1–4 des V2.5-Lösungsfinders.
 // Hält Default-, Selected- und Disabled-State an einer Stelle, damit
 // Brand-Tokens und Hover-Verhalten konsistent bleiben.
+//
+// Alle Größen/Layouts sind bewusst als Inline-Styles gesetzt, weil
+// Tailwind 4 Klassen wie `inline-flex` bei generierten Komponenten teilweise
+// nicht zuverlässig im JIT-Index landen (PoC 2026-06-01 zeigte volle
+// Card-Breite statt 44×44-Icon-Box).
 
-import type { ComponentType, SVGProps } from "react";
+import type { ComponentType, CSSProperties, SVGProps } from "react";
 import { IconCheck } from "./icons";
 
 type IconComp = ComponentType<Omit<SVGProps<SVGSVGElement>, "children" | "viewBox" | "fill" | "stroke">>;
@@ -10,20 +15,66 @@ type IconComp = ComponentType<Omit<SVGProps<SVGSVGElement>, "children" | "viewBo
 interface OptionCardProps {
   Icon: IconComp;
   titel: string;
-  /** Kleiner Hint unter dem Titel (z.B. "unter 100 m²", "Hallen, Werkstätten"). */
   hint?: string;
   beschreibung: string;
   selected: boolean;
   onSelect: () => void;
-  /** Optional: Karte deaktivieren (z.B. nicht-ausgewählte nach Selection). */
   dimmed?: boolean;
-  /** Lange Karten (Mobile-Layout, Icon links + Text rechts) vs. quadratische Karten. */
   layout?: "stacked" | "horizontal";
 }
 
 const NAVY = "#002d59";
 const CYAN = "#009ee3";
 const LIGHT_NAVY_BG = "#E6F1FB";
+
+const buttonReset: CSSProperties = {
+  appearance: "none",
+  WebkitAppearance: "none",
+  background: "#fff",
+  textAlign: "left",
+  width: "100%",
+  cursor: "pointer",
+  font: "inherit",
+};
+
+const cardBase: CSSProperties = {
+  position: "relative",
+  borderRadius: 12,
+  transition: "border-color 0.15s, opacity 0.15s",
+};
+
+const iconBoxBase: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: 8,
+  flexShrink: 0,
+};
+
+const checkBadgeBase: CSSProperties = {
+  position: "absolute",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "50%",
+  background: CYAN,
+  color: "#fff",
+};
+
+const titleStyle: CSSProperties = { fontSize: 15, fontWeight: 500, color: NAVY };
+const hintStyle: CSSProperties = {
+  fontSize: 11,
+  textTransform: "uppercase",
+  letterSpacing: "0.3px",
+  color: "#6B7280",
+  marginTop: 4,
+};
+const beschreibungStyle: CSSProperties = {
+  fontSize: 12,
+  color: "#4B5563",
+  marginTop: 6,
+  lineHeight: 1.55,
+};
 
 export default function OptionCard({
   Icon,
@@ -35,50 +86,37 @@ export default function OptionCard({
   dimmed = false,
   layout = "stacked",
 }: OptionCardProps) {
-  const borderStyle = selected
+  const borderStyle: CSSProperties = selected
     ? { border: `2px solid ${NAVY}` }
-    : { border: "0.5px solid rgba(0,0,0,0.12)" };
+    : { border: "1px solid rgba(0, 45, 89, 0.15)" };
 
-  const iconBox = selected
+  const iconBoxColor: CSSProperties = selected
     ? { background: NAVY, color: "#fff" }
     : { background: LIGHT_NAVY_BG, color: NAVY };
 
+  const sharedCardStyle: CSSProperties = {
+    ...buttonReset,
+    ...cardBase,
+    ...borderStyle,
+    opacity: dimmed ? 0.6 : 1,
+  };
+
   if (layout === "horizontal") {
     return (
-      <button
-        type="button"
-        onClick={onSelect}
-        aria-pressed={selected}
-        className={`relative w-full text-left bg-white rounded-xl p-4 transition ${
-          dimmed ? "opacity-60" : "hover:border-[#009ee3]"
-        }`}
-        style={borderStyle}
-      >
+      <button type="button" onClick={onSelect} aria-pressed={selected} style={{ ...sharedCardStyle, padding: 16 }}>
         {selected && (
-          <span
-            aria-hidden="true"
-            className="absolute top-2 right-2 w-[22px] h-[22px] rounded-full flex items-center justify-center"
-            style={{ background: CYAN, color: "#fff" }}
-          >
+          <span aria-hidden="true" style={{ ...checkBadgeBase, top: 8, right: 8, width: 22, height: 22 }}>
             <IconCheck width={14} height={14} />
           </span>
         )}
-        <div className="flex items-start gap-3.5">
-          <span
-            aria-hidden="true"
-            className="flex-shrink-0 inline-flex rounded-lg items-center justify-center"
-            style={{ ...iconBox, width: 40, height: 40 }}
-          >
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+          <span aria-hidden="true" style={{ ...iconBoxBase, ...iconBoxColor, width: 40, height: 40 }}>
             <Icon width={22} height={22} />
           </span>
           <div>
-            <div className="text-[15px] font-medium" style={{ color: NAVY }}>
-              {titel}
-            </div>
-            {hint && (
-              <div className="text-[11px] uppercase tracking-wide text-gray-500 mt-0.5">{hint}</div>
-            )}
-            <div className="text-xs text-gray-600 mt-1 leading-relaxed">{beschreibung}</div>
+            <div style={titleStyle}>{titel}</div>
+            {hint && <div style={{ ...hintStyle, marginTop: 2 }}>{hint}</div>}
+            <div style={{ ...beschreibungStyle, marginTop: 4 }}>{beschreibung}</div>
           </div>
         </div>
       </button>
@@ -86,38 +124,21 @@ export default function OptionCard({
   }
 
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      aria-pressed={selected}
-      className={`relative w-full text-left bg-white rounded-xl p-5 transition ${
-        dimmed ? "opacity-60" : "hover:border-[#009ee3]"
-      }`}
-      style={borderStyle}
-    >
+    <button type="button" onClick={onSelect} aria-pressed={selected} style={{ ...sharedCardStyle, padding: 20 }}>
       {selected && (
-        <span
-          aria-hidden="true"
-          className="absolute top-3 right-3 w-6 h-6 rounded-full flex items-center justify-center"
-          style={{ background: CYAN, color: "#fff" }}
-        >
+        <span aria-hidden="true" style={{ ...checkBadgeBase, top: 12, right: 12, width: 24, height: 24 }}>
           <IconCheck width={16} height={16} />
         </span>
       )}
       <span
         aria-hidden="true"
-        className="inline-flex rounded-lg items-center justify-center mb-3.5"
-        style={{ ...iconBox, width: 44, height: 44 }}
+        style={{ ...iconBoxBase, ...iconBoxColor, width: 44, height: 44, marginBottom: 14 }}
       >
         <Icon width={26} height={26} />
       </span>
-      <div className="text-[15px] font-medium" style={{ color: NAVY }}>
-        {titel}
-      </div>
-      {hint && (
-        <div className="text-[11px] uppercase tracking-wide text-gray-500 mt-1">{hint}</div>
-      )}
-      <div className="text-xs text-gray-600 mt-2 leading-relaxed">{beschreibung}</div>
+      <div style={titleStyle}>{titel}</div>
+      {hint && <div style={hintStyle}>{hint}</div>}
+      <div style={beschreibungStyle}>{beschreibung}</div>
     </button>
   );
 }
