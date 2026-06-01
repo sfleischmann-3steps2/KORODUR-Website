@@ -21,7 +21,6 @@ import type {
   Referenz,
   ReferenzFilterV25,
   Sanierungsart,
-  Schadenstyp,
   ZeitKategorie,
   Zeitfenster,
   Zusatzfunktion,
