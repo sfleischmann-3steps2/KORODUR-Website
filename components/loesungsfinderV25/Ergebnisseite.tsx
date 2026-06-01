@@ -1,20 +1,19 @@
 // Ergebnisseite des V2.5-Lösungsfinders.
 // Plan: docs/superpowers/plans/2026-06-01-loesungsfinder-4step-adaptive.md
 //
-// Layout:
-//   1. Auswahl-Chips oben (alle Wizard-Antworten sichtbar) + "Auswahl ändern"
-//   2. Top-Empfehlung — ein Produkt prominent, mit CTAs
-//   3. Schaden-Pill-Filter (grenzt nur Referenzen ein, kein Wizard-Step)
-//   4. Referenz-Grid (3-spaltig, max 6 Treffer + "Alle anzeigen")
-//   5. Beratungs-Banner unten (für Sondernormen-Fälle)
+// Layout (nach Steffi-Review 2026-06-01):
+//   1. Auswahl-Chips oben + "Auswahl ändern"
+//   2. Top-Empfehlung als kompakter Banner (nicht zentraler Card-Block)
+//   3. Referenz-Grid mit Treffer-Zähler
+//   4. Beratungs-Banner unten (für Sondernormen-Fälle)
+// Schaden-Pill-Filter wurde entfernt — Steffi: "brauchen wir nicht im letzten Schritt".
 
-import { useState } from "react";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
-import type { LoesungsfinderState, Schadenstyp } from "@/data/types";
+import type { LoesungsfinderState } from "@/data/types";
 import { EINSATZBEREICH_LABELS } from "@/data/einsatzbereichMapping";
 import { berechneErgebnisV25 } from "@/data/loesungsfinderV25";
-import { IconFlame, IconEdit, IconExternalLink, IconPhone, IconArrowRight } from "./icons";
+import { IconFlame, IconEdit, IconPhone, IconArrowRight } from "./icons";
 
 const KONTAKT_URLS: Record<string, string> = {
   de: "https://www.korodur.de/kontakt/deutschland/",
@@ -46,23 +45,8 @@ const ZEIT_LABEL: Record<string, string> = {
   planbar: "Planbar",
 };
 
-const SCHADEN_OPTIONEN: Array<{ id: Schadenstyp; label: string }> = [
-  { id: "verschleissschaeden", label: "Verschleißschäden" },
-  { id: "ausbrueche", label: "Ausbrüche" },
-  { id: "risse", label: "Risse" },
-  { id: "frueher-sanierung", label: "Frühere Sanierung" },
-];
-
 export default function Ergebnisseite({ lang, state, onAuswahlAendern }: ErgebnisseiteProps) {
-  const [schadenFilter, setSchadenFilter] = useState<Schadenstyp[]>([]);
-
-  const toggleSchaden = (s: Schadenstyp) => {
-    setSchadenFilter((prev) =>
-      prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s],
-    );
-  };
-
-  const ergebnis = berechneErgebnisV25(state, schadenFilter);
+  const ergebnis = berechneErgebnisV25(state);
 
   // Chip-Labels in der oberen Leiste
   const chips: string[] = [];
@@ -111,127 +95,103 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
           Auswahl ändern
         </button>
       </div>
-      <h2 className="text-[22px] font-medium mb-5" style={{ color: NAVY }}>
+
+      <h2 className="text-[20px] font-medium mb-4" style={{ color: NAVY }}>
         Unsere Empfehlung für Ihre Sanierung
       </h2>
 
-      {/* Top-Empfehlung */}
+      {/* Top-Empfehlung als kompakter Banner */}
       {ergebnis.topProdukt ? (
-        <div
+        <Link
+          href={`/${lang}/produkte/${ergebnis.topProdukt.id}/`}
           style={{
             background: "#fff",
             border: `1px solid ${MITTELGRAU}`,
             borderRadius: 12,
-            padding: 20,
-            marginBottom: 16,
+            padding: "14px 18px",
+            display: "flex",
+            alignItems: "center",
+            gap: 16,
+            textDecoration: "none",
+            color: NAVY,
+            marginBottom: 20,
           }}
         >
-          <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+          <div
+            style={{
+              flexShrink: 0,
+              width: 40,
+              height: 40,
+              borderRadius: 8,
+              background: NAVY,
+              color: "#fff",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <IconFlame width={22} height={22} aria-hidden="true" />
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
             <div
               style={{
-                width: 56,
-                height: 56,
-                borderRadius: 8,
-                background: NAVY,
-                color: "#fff",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
+                fontSize: 10,
+                color: CYAN,
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
+                fontWeight: 500,
+                marginBottom: 2,
               }}
             >
-              <IconFlame width={28} height={28} aria-hidden="true" />
+              Top-Empfehlung
             </div>
-            <div style={{ flex: 1 }}>
-              <div
-                style={{
-                  fontSize: 11,
-                  color: CYAN,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                  fontWeight: 500,
-                  marginBottom: 4,
-                }}
-              >
-                Top-Empfehlung
-              </div>
-              <div style={{ fontSize: 18, fontWeight: 500, color: NAVY, marginBottom: 6 }}>
-                {ergebnis.topProdukt.name}
-              </div>
-              <div
-                style={{
-                  fontSize: 13,
-                  color: "#4B5563",
-                  lineHeight: 1.6,
-                  marginBottom: 12,
-                }}
-              >
-                {ergebnis.topProdukt.kurzbeschreibung}
-              </div>
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                <Link
-                  href={`/${lang}/produkte/${ergebnis.topProdukt.id}/`}
-                  style={{
-                    background: NAVY,
-                    color: "#fff",
-                    padding: "8px 16px",
-                    borderRadius: 8,
-                    fontSize: 13,
-                    fontWeight: 500,
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 6,
-                  }}
-                >
-                  Produktdetails
-                  <IconArrowRight width={13} height={13} aria-hidden="true" />
-                </Link>
-                {ergebnis.topProdukt.tdsUrl && (
-                  <a
-                    href={ergebnis.topProdukt.tdsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      background: "transparent",
-                      color: NAVY,
-                      padding: "8px 16px",
-                      borderRadius: 8,
-                      fontSize: 13,
-                      textDecoration: "none",
-                      border: `1px solid ${MITTELGRAU}`,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    Datenblatt PDF
-                    <IconExternalLink width={13} height={13} aria-hidden="true" />
-                  </a>
-                )}
-              </div>
+            <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
+              {ergebnis.topProdukt.name}
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: "#6B7280",
+                marginTop: 2,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {ergebnis.topProdukt.kurzbeschreibung}
             </div>
           </div>
-        </div>
+          <div
+            style={{
+              flexShrink: 0,
+              fontSize: 13,
+              color: CYAN,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 4,
+            }}
+          >
+            Details
+            <IconArrowRight width={13} height={13} aria-hidden="true" />
+          </div>
+        </Link>
       ) : (
         <EmptyEmpfehlung />
       )}
 
-      {/* Referenzen */}
+      {/* Referenzen-Header */}
       <div
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          marginTop: 20,
-          marginBottom: 10,
+          marginBottom: 12,
         }}
       >
         <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
           Passende Referenzen{" "}
           <span style={{ fontSize: 12, color: "#6B7280", fontWeight: 400 }}>
-            · {ergebnis.refsGesamt}{" "}
-            {ergebnis.refsGesamt === 1 ? "Treffer" : "Treffer"}
+            · {ergebnis.refsGesamt} {ergebnis.refsGesamt === 1 ? "Treffer" : "Treffer"}
           </span>
         </div>
         {ergebnis.refsGesamt > 6 && (
@@ -250,34 +210,6 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
             <IconArrowRight width={12} height={12} aria-hidden="true" />
           </Link>
         )}
-      </div>
-
-      {/* Schaden-Pill-Filter */}
-      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 14 }}>
-        <span style={{ fontSize: 11, color: "#6B7280", marginRight: 4, alignSelf: "center" }}>
-          Eingrenzen nach Schaden:
-        </span>
-        {SCHADEN_OPTIONEN.map((s) => {
-          const active = schadenFilter.includes(s.id);
-          return (
-            <button
-              key={s.id}
-              type="button"
-              onClick={() => toggleSchaden(s.id)}
-              style={{
-                fontSize: 11,
-                background: active ? NAVY : "#fff",
-                color: active ? "#fff" : NAVY,
-                border: `1px solid ${active ? NAVY : MITTELGRAU}`,
-                padding: "4px 10px",
-                borderRadius: 999,
-                cursor: "pointer",
-              }}
-            >
-              {s.label}
-            </button>
-          );
-        })}
       </div>
 
       {/* Referenz-Grid */}
@@ -402,7 +334,7 @@ function EmptyEmpfehlung() {
         borderRadius: 12,
         padding: 24,
         textAlign: "center",
-        marginBottom: 16,
+        marginBottom: 20,
       }}
     >
       <div style={{ fontSize: 16, fontWeight: 500, color: NAVY, marginBottom: 6 }}>

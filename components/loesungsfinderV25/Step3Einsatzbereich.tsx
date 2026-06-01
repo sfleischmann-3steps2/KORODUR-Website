@@ -1,6 +1,13 @@
 // Step 3 — Einsatzbereich / Branche.
 // Zeigt vier Karten je nach Innen/Außen-Auswahl aus Step 2.
 // Plan: docs/superpowers/plans/2026-06-01-loesungsfinder-4step-adaptive.md
+//
+// TODO (Steffi 2026-06-01): Bei flaeche === "punktuell" passen die Branchen-
+// Cluster fachlich nicht — eine punktuelle Reparatur wird nicht nach Branche,
+// sondern nach Reparatur-Typ oder Belastung an der Stelle differenziert
+// (Fugenprofile, Treppenstufen, Schwerlast-Spuren, dauernder LKW-Verkehr).
+// Steffi klärt die Kategorien anhand der Rapid-Set-TDS und liefert nach;
+// dann eigene Punktuell-Karten-Liste hier ergänzen.
 
 import type { ComponentType, SVGProps } from "react";
 import type { EinsatzbereichV25, InnenAussen } from "@/data/types";

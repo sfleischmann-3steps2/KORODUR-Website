@@ -72,15 +72,13 @@ export default function Wizard({ lang }: WizardProps) {
 
   const goNext = useCallback(() => {
     if (isFinalStep) {
-      // Bei Punktuell vor Übergang ins Ergebnis das Zeitfenster auf "sehr-kurz" fixieren.
-      if (state.flaeche === "punktuell") {
-        setState((s) => ({ ...s, zeitfenster: "sehr-kurz" }));
-      }
+      // Bei Punktuell bleibt state.zeitfenster null — der Match-Algorithmus
+      // ignoriert Zeit in dem Pfad bewusst (Steffi 2026-06-01).
       setShowResults(true);
     } else if (currentStep < totalSteps) {
       setCurrentStep((s) => (Math.min(s + 1, totalSteps) as 1 | 2 | 3 | 4));
     }
-  }, [currentStep, totalSteps, isFinalStep, state.flaeche]);
+  }, [currentStep, totalSteps, isFinalStep]);
 
   const goBack = useCallback(() => {
     if (currentStep > 1) {

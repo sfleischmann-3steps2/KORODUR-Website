@@ -10,10 +10,7 @@
 // gemappt — Heuristiken in loesungsfinderV25Adapter.ts. Sobald Stammdaten
 // migriert sind, fällt der Adapter weg.
 
-import type {
-  LoesungsfinderState,
-  Schadenstyp,
-} from "./types";
+import type { LoesungsfinderState } from "./types";
 import { EINSATZBEREICH_TAGS } from "./einsatzbereichMapping";
 import { produkte } from "./produkte";
 import { referenzen } from "./referenzen";
@@ -29,29 +26,42 @@ export interface ErgebnisV25 {
   topProdukt: V25Produkt | null;
   /** Passende Referenzen, nach Aktualität sortiert. */
   refs: V25Referenz[];
-  /** Anzahl Refs vor Schaden-Filter (für UI "12 Treffer"). */
+  /** Gesamttreffer-Zähler (gleich refs.length, da Schaden-Pill-Filter entfernt). */
   refsGesamt: number;
 }
 
-/** Hauptberechnung. Bei flaeche === "punktuell" wird zeitfenster intern auf "sehr-kurz" defaulted. */
-export function berechneErgebnisV25(
-  state: LoesungsfinderState,
-  schadenFilter: Schadenstyp[] = [],
-): ErgebnisV25 {
+/**
+ * Hauptberechnung.
+ *
+ * Bei flaeche === "punktuell":
+ *  - Zeitfenster wird komplett ignoriert (alle Reparaturmörtel ~1h belastbar)
+ *  - Steffis Vorgabe 2026-06-01: "Bei kleinflächigen Sanierungen Zeitfenster
+ *    ganz rauslassen" — kein interner Default mehr, kein Filter
+ *
+ * Bei mittel/gross:
+ *  - state.zeitfenster muss gesetzt sein, sonst kein Ergebnis
+ *  - Filter auf wiederbelastungInH und auf Ref-Zeitfenster
+ */
+export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
   if (!state.flaeche || !state.innenAussen || !state.einsatzbereich) {
     return { topProdukt: null, refs: [], refsGesamt: 0 };
   }
 
-  // Bei Punktuell ist Zeit intern immer "sehr-kurz" (Rapid-Set ~1h).
-  const effectiveZeit =
-    state.flaeche === "punktuell" ? "sehr-kurz" : state.zeitfenster;
-  if (!effectiveZeit) {
+  // Mittel/Gross brauchen ein Zeitfenster; Punktuell ist davon befreit.
+  if (state.flaeche !== "punktuell" && !state.zeitfenster) {
     return { topProdukt: null, refs: [], refsGesamt: 0 };
   }
 
   const branchenTags = EINSATZBEREICH_TAGS[state.einsatzbereich];
+
   const maxWiederbelastungH =
-    effectiveZeit === "sehr-kurz" ? 24 : effectiveZeit === "kurz" ? 168 : Infinity;
+    state.flaeche === "punktuell"
+      ? Infinity
+      : state.zeitfenster === "sehr-kurz"
+      ? 24
+      : state.zeitfenster === "kurz"
+      ? 168
+      : Infinity;
 
   // --- Produkte filtern + ranken ---
   const v25Produkte = produkte.map(alsV25Produkt);
@@ -83,25 +93,19 @@ export function berechneErgebnisV25(
     .filter((r) => r.innenAussen === state.innenAussen)
     .filter((r) => r.einsatzbereich === state.einsatzbereich);
 
-  // Zeitfenster-Filter ist hier weicher: bei "planbar" alle, sonst muss Ref-Zeitfenster
-  // ≤ Auswahl sein (sehr-kurz subsumiert kurz subsumiert planbar nicht — andersrum).
-  if (effectiveZeit === "sehr-kurz") {
-    refsAlle = refsAlle.filter((r) => r.zeitfenster === "sehr-kurz");
-  } else if (effectiveZeit === "kurz") {
-    refsAlle = refsAlle.filter(
-      (r) => r.zeitfenster === "sehr-kurz" || r.zeitfenster === "kurz",
-    );
+  // Zeitfenster-Filter nur für mittel/gross: bei "sehr-kurz" nur passende Refs,
+  // bei "kurz" auch sehr-kurz dabei, bei "planbar" alle. Punktuell: kein Filter.
+  if (state.flaeche !== "punktuell") {
+    if (state.zeitfenster === "sehr-kurz") {
+      refsAlle = refsAlle.filter((r) => r.zeitfenster === "sehr-kurz");
+    } else if (state.zeitfenster === "kurz") {
+      refsAlle = refsAlle.filter(
+        (r) => r.zeitfenster === "sehr-kurz" || r.zeitfenster === "kurz",
+      );
+    }
   }
 
-  const refsGesamt = refsAlle.length;
-
-  // Schaden-Pill-Filter (auf Ergebnisseite, kein Wizard-Step)
-  const refs =
-    schadenFilter.length === 0
-      ? refsAlle
-      : refsAlle.filter((r) => r.schadenstypen.some((s) => schadenFilter.includes(s)));
-
-  return { topProdukt, refs, refsGesamt };
+  return { topProdukt, refs: refsAlle, refsGesamt: refsAlle.length };
 }
 
 /** Labels für die Auswahl-Chips oben auf der Ergebnisseite. */
