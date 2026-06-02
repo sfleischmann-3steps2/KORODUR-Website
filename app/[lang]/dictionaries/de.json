@@ -145,7 +145,10 @@
   "produktmatrix": {
     "title": "Produktportfolio Sanierung",
     "spalte_produkt": "Produkt",
+    "spalte_klassifizierung": "Klassifizierung",
+    "spalte_druckfestigkeit": "Druckfestigkeit",
     "spalte_aussen": "Außen",
+    "spalte_tds": "TDS",
     "spalte_belastbarkeit": "Belastbarkeit",
     "spalte_schichtdicke": "Schichtdicke",
     "spalte_belastbar_nach": "Belastbar nach",

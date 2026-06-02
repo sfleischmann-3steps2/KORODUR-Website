@@ -5,7 +5,7 @@ export const produktePL: Record<string, {
   technischeDaten?: { label: string; wert: string }[];
 }> = {
   "neodur-he-60-rapid": {
-    kurzbeschreibung: "Wysokowydajny szybkotwardniejący jastrych z posypką utwardzającą – pełna nośność po 24 h",
+    kurzbeschreibung: "Wysokowydajny szybkotwardniejący jastrych z posypką utwardzającą",
     besonderheiten: ["Wysoka odporność na ścieranie", "Odporny chemicznie", "Szybkotwardniejący", "Niski skurcz"],
     technischeDaten: [
       { label: "Wytrzymałość na ściskanie", wert: "≥ 60 N/mm²" },
@@ -16,7 +16,7 @@ export const produktePL: Record<string, {
     ],
   },
   "neodur-he-65": {
-    kurzbeschreibung: "Wysokowydajny jastrych z posypką utwardzającą do najwyższych obciążeń przemysłowych z technologią silosową",
+    kurzbeschreibung: "Wysokowydajny jastrych z posypką utwardzającą",
     besonderheiten: ["Najwyższa odporność na zużycie", "System silosowy", "Ekonomiczny na dużych powierzchniach", "Mocne połączenie"],
     technischeDaten: [
       { label: "Wytrzymałość na ściskanie", wert: "≥ 70 N/mm²" },
@@ -27,7 +27,7 @@ export const produktePL: Record<string, {
     ],
   },
   "neodur-he-65-plus": {
-    kurzbeschreibung: "Wysokowydajny jastrych z posypką utwardzającą do stosowania wewnątrz i na zewnątrz – bez mostka sczepnego, zgodny z WHG",
+    kurzbeschreibung: "Wysokowydajny jastrych z posypką utwardzającą",
     besonderheiten: ["Bez mostka sczepnego", "Odporny na mróz i sole odladzające", "Zgodny z WHG", "Modyfikowany polimerami i zbrojony włóknami"],
     technischeDaten: [
       { label: "Wytrzymałość na ściskanie", wert: "≥ 70 N/mm²" },
@@ -38,7 +38,7 @@ export const produktePL: Record<string, {
     ],
   },
   "neodur-he-40": {
-    kurzbeschreibung: "Wysokowydajny jastrych z posypką utwardzającą do silnie obciążonych posadzek przemysłowych",
+    kurzbeschreibung: "Wysokowydajny jastrych z posypką utwardzającą",
     besonderheiten: ["Wysoka odporność na zużycie", "Mocne połączenie (DIN 18560-7)", "Ekonomiczne rozwiązanie z posypką utwardzającą", "Zastosowanie wewnętrzne"],
     technischeDaten: [
       { label: "Wytrzymałość na ściskanie", wert: "≥ 40 N/mm²" },
@@ -48,7 +48,7 @@ export const produktePL: Record<string, {
     ],
   },
   "neodur-level": {
-    kurzbeschreibung: "Samorozlewny, szybkotwardniejący jastrych cienkościenny z posypką utwardzającą do precyzyjnej renowacji posadzek",
+    kurzbeschreibung: "Samorozlewny, szybkotwardniejący jastrych cienkościenny",
     besonderheiten: ["Samorozlewny – doskonała płaskość", "Szybkie użytkowanie", "Zintegrowana warstwa ścieralna", "Aplikacja maszynowa"],
     technischeDaten: [
       { label: "Wytrzymałość na ściskanie", wert: "≥ 40 N/mm²" },
@@ -60,7 +60,7 @@ export const produktePL: Record<string, {
     ],
   },
   "tru-self-leveling": {
-    kurzbeschreibung: "Samorozlewny, polerowany dekoracyjny jastrych pokazowy do estetycznych rozwiązań posadzkowych",
+    kurzbeschreibung: "Samorozlewny, polerowany dekoracyjny jastrych pokazowy",
     besonderheiten: ["Designerski wygląd betonu", "Bezspoinowa powierzchnia", "Bez mostka sczepnego", "Polerowanie do wysokiego połysku", "Higieniczny i łatwy w utrzymaniu"],
     technischeDaten: [
       { label: "Wytrzymałość na ściskanie", wert: "≥ 40 N/mm²" },
@@ -91,7 +91,7 @@ export const produktePL: Record<string, {
     ],
   },
   "rapid-set-cement-all": {
-    kurzbeschreibung: "Uniwersalna szybka zaprawa naprawcza – nośność po 1 h, wewnątrz i na zewnątrz",
+    kurzbeschreibung: "Uniwersalna szybka zaprawa naprawcza",
     besonderheiten: ["Ultraszybki czas wiązania", "Wysoka wytrzymałość wczesna", "Do stosowania wewnątrz i na zewnątrz", "Kompensacja skurczu"],
     technischeDaten: [
       { label: "Jakość", wert: "C55/67" },
@@ -102,7 +102,7 @@ export const produktePL: Record<string, {
     ],
   },
   "rapid-set-mortar-mix": {
-    kurzbeschreibung: "Uniwersalna szybka zaprawa naprawcza do dylatacji, reprofilacji i montażu profili",
+    kurzbeschreibung: "Uniwersalna szybka zaprawa naprawcza",
     besonderheiten: ["Bez skurczu", "Bez mostka sczepnego", "Regulowana konsystencja od pastowej do sztywnej", "Tylko mieszanie z wodą"],
     technischeDaten: [
       { label: "Jakość", wert: "C45/55" },
@@ -113,7 +113,7 @@ export const produktePL: Record<string, {
     ],
   },
   "rapid-set-mortar-mix-dur": {
-    kurzbeschreibung: "Szybka zaprawa naprawcza z kruszywem twardym DIN 1100 A do dylatacji pod dużym obciążeniem",
+    kurzbeschreibung: "Szybka zaprawa naprawcza z kruszywem twardym DIN 1100 A",
     besonderheiten: ["Zintegrowane kruszywo twarde DIN 1100 A", "Do dylatacji pod dużym obciążeniem", "Bez skurczu", "Regulowana konsystencja pastowa"],
     technischeDaten: [
       { label: "Jakość", wert: "C45/55 + DIN 1100 A" },
@@ -124,7 +124,7 @@ export const produktePL: Record<string, {
     ],
   },
   "asphalt-repair-mix": {
-    kurzbeschreibung: "Szybki materiał naprawczy do nawierzchni asfaltowych – dopuszczenie do ruchu po 30 minutach",
+    kurzbeschreibung: "Szybki materiał naprawczy do nawierzchni asfaltowych",
     besonderheiten: ["Do nawierzchni asfaltowych", "Bez mostka sczepnego", "Łatwa aplikacja", "Dopuszczenie do ruchu po 30 minutach"],
     technischeDaten: [
       { label: "Wytrzymałość na ściskanie", wert: "ok. 22 N/mm²" },
@@ -134,7 +134,7 @@ export const produktePL: Record<string, {
     ],
   },
   "dot-europe-concrete-mix": {
-    kurzbeschreibung: "Uniwersalny szybki beton naprawczy zgodny z DIN EN 1504-3 – do mostów, pasów startowych i posadzek przemysłowych",
+    kurzbeschreibung: "Uniwersalny szybki beton naprawczy, DIN EN 1504-3",
     besonderheiten: ["Zastosowanie wielofunkcyjne", "Mrozoodporny / odporny na sole", "Odporny na siarczany, bez chlorków", "Doskonała przyczepność bez mostka", "Do mostów, pasów startowych, posadzek przemysłowych", "30 % mniej CO₂ niż cement portlandzki"],
     technischeDaten: [
       { label: "Jakość", wert: "C35/45" },
@@ -148,7 +148,7 @@ export const produktePL: Record<string, {
     ],
   },
   "korocrete": {
-    kurzbeschreibung: "Szybki beton mieszany wolumetrycznie na bazie FSCem (trójskładnikowe spoiwo specjalne) – dopuszczenie do ruchu po 6 h",
+    kurzbeschreibung: "Szybki beton mieszany wolumetrycznie (baza FSCem)",
     besonderheiten: ["Mieszanie wolumetryczne na budowie (Cemen Tech M-Series)", "Stabilny objętościowo, bez skurczu/napięć, twardnieje bez pęknięć", "Wodoodporny, do pomieszczeń mokrych", "Pompowalny", "Zastosowanie na dużych powierzchniach", "Bez resztek betonu"],
     technischeDaten: [
       { label: "Spoiwo", wert: "KORODUR FSCem (trójskładnikowe)" },
@@ -162,7 +162,7 @@ export const produktePL: Record<string, {
     ],
   },
   "rapid-set-schnellbeton": {
-    kurzbeschreibung: "Szybki beton mieszany wolumetrycznie na bazie Rapid-Set zgodny z TL BEB-StB – dopuszczenie do ruchu po 2 h",
+    kurzbeschreibung: "Szybki beton mieszany wolumetrycznie (Rapid Set), TL BEB-StB",
     besonderheiten: ["Mieszanie wolumetryczne na budowie", "TL BEB-StB (najwyższa klasa ruchu dla prac utrzymaniowych)", "2-godzinne dopuszczenie do ruchu", "Mrozoodporny / odporny na sole", "Zastosowanie na dużych powierzchniach", "Bez resztek betonu"],
     technischeDaten: [
       { label: "Spoiwo", wert: "Rapid Set (cement siarczanowo-glinianowy)" },

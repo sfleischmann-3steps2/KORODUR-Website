@@ -73,9 +73,9 @@ export default async function ProduktmatrixPage({
   const localizedProdukte = await localizeProdukte(matrixProdukte, lang as "de" | "en" | "fr" | "pl");
 
   return (
-    <section style={{ padding: "64px 24px" }}>
+    <section style={{ padding: "32px 24px 64px" }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
-        <header style={{ textAlign: "center", marginBottom: 48 }}>
+        <header style={{ textAlign: "center", marginBottom: 24 }}>
           <h1
             style={{
               fontSize: 40,

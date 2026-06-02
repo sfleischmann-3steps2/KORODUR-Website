@@ -5,7 +5,7 @@ export const produkteEN: Record<string, {
   technischeDaten?: { label: string; wert: string }[];
 }> = {
   "neodur-he-60-rapid": {
-    kurzbeschreibung: "High-performance rapid-setting hard aggregate screed – fully load-bearing after 24 h",
+    kurzbeschreibung: "High-performance rapid-setting hard aggregate screed",
     besonderheiten: ["High abrasion resistance", "Chemical resistant", "Rapid setting", "Low shrinkage"],
     technischeDaten: [
       { label: "Compressive strength", wert: "≥ 60 N/mm²" },
@@ -16,7 +16,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "neodur-he-65": {
-    kurzbeschreibung: "High-performance hard aggregate screed for highest industrial floor demands with silo technology",
+    kurzbeschreibung: "High-performance hard aggregate screed",
     besonderheiten: ["Highest wear resistance", "Silo system applicable", "Economical on large areas", "Strong bond"],
     technischeDaten: [
       { label: "Compressive strength", wert: "≥ 70 N/mm²" },
@@ -27,7 +27,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "neodur-he-65-plus": {
-    kurzbeschreibung: "High-performance hard aggregate screed for indoor and outdoor use – no bonding agent, WHG-approved",
+    kurzbeschreibung: "High-performance hard aggregate screed",
     besonderheiten: ["No bonding agent required", "Freeze-thaw salt resistant", "WHG-compliant", "Polymer-modified & fibre-reinforced"],
     technischeDaten: [
       { label: "Compressive strength", wert: "≥ 70 N/mm²" },
@@ -38,7 +38,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "neodur-he-40": {
-    kurzbeschreibung: "High-performance hard aggregate screed for heavily stressed industrial floors",
+    kurzbeschreibung: "High-performance hard aggregate screed",
     besonderheiten: ["High wear resistance", "Strong bond (DIN 18560-7)", "Economical hard aggregate solution", "Indoor use"],
     technischeDaten: [
       { label: "Compressive strength", wert: "≥ 40 N/mm²" },
@@ -48,7 +48,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "neodur-level": {
-    kurzbeschreibung: "Self-levelling, rapid-setting hard aggregate thin-layer screed for precision floor renovation",
+    kurzbeschreibung: "Self-levelling, rapid-setting thin-layer screed",
     besonderheiten: ["Self-levelling – excellent flatness", "Rapid usability", "Integrated wear layer", "Machine-applicable"],
     technischeDaten: [
       { label: "Compressive strength", wert: "≥ 40 N/mm²" },
@@ -60,7 +60,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "tru-self-leveling": {
-    kurzbeschreibung: "Self-levelling, polished decorative exposed screed for design-oriented floor solutions",
+    kurzbeschreibung: "Self-levelling, polished decorative exposed screed",
     besonderheiten: ["Design-oriented concrete look", "Seamless surface", "No bonding agent required", "Polishable to high gloss", "Hygienic & easy to clean"],
     technischeDaten: [
       { label: "Compressive strength", wert: "≥ 40 N/mm²" },
@@ -91,7 +91,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "rapid-set-cement-all": {
-    kurzbeschreibung: "Universal rapid repair mortar – load-bearing after 1 h, indoor and outdoor",
+    kurzbeschreibung: "Universal rapid repair mortar",
     besonderheiten: ["Ultra-short setting time", "High early strength", "Indoor and outdoor use", "Shrinkage-compensated"],
     technischeDaten: [
       { label: "Quality", wert: "C55/67" },
@@ -102,7 +102,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "rapid-set-mortar-mix": {
-    kurzbeschreibung: "Universal rapid repair mortar for joints, reprofiling and profile installation",
+    kurzbeschreibung: "Universal rapid repair mortar",
     besonderheiten: ["Shrinkage-neutral", "No bonding agent required", "Adjustable paste to stiff consistency", "Mix with water only"],
     technischeDaten: [
       { label: "Quality", wert: "C45/55" },
@@ -113,7 +113,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "rapid-set-mortar-mix-dur": {
-    kurzbeschreibung: "Rapid repair mortar with DIN 1100 A hard aggregate for heavy-load joints",
+    kurzbeschreibung: "Rapid repair mortar with DIN 1100 A hard aggregate",
     besonderheiten: ["Integrated wear aggregate DIN 1100 A", "Suitable for heavy-load joints", "Shrinkage-neutral", "Adjustable paste consistency"],
     technischeDaten: [
       { label: "Quality", wert: "C45/55 + DIN 1100 A" },
@@ -124,7 +124,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "asphalt-repair-mix": {
-    kurzbeschreibung: "Rapid repair material for asphalt surfaces – traffic release after 30 minutes",
+    kurzbeschreibung: "Rapid repair material for asphalt surfaces",
     besonderheiten: ["Suitable for asphalt surfaces", "No bonding agent required", "Easy application", "30-minute traffic release"],
     technischeDaten: [
       { label: "Compressive strength", wert: "approx. 22 N/mm²" },
@@ -134,7 +134,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "dot-europe-concrete-mix": {
-    kurzbeschreibung: "Universal rapid repair concrete according to DIN EN 1504-3 – for bridges, runways and industrial floors",
+    kurzbeschreibung: "Universal rapid repair concrete, DIN EN 1504-3",
     besonderheiten: ["Multifunctional use", "Freeze-thaw salt resistant", "Sulfate resistant, chloride-free", "Excellent adhesion without bonding agent", "For bridges, runways, industrial floors", "30 % less CO₂ than Portland cement"],
     technischeDaten: [
       { label: "Quality", wert: "C35/45" },
@@ -148,7 +148,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "korocrete": {
-    kurzbeschreibung: "Volumetrically mixed rapid concrete on FSCem base (ternary special binder) – traffic release after 6 h",
+    kurzbeschreibung: "Volumetrically mixed rapid concrete (FSCem base)",
     besonderheiten: ["Volumetric mixing on site (Cemen Tech M-Series)", "Volume-stable, shrinkage-/stress-free, crack-free curing", "Waterproof, suitable for wet areas", "Pumpable", "Large-area application", "No residual concrete"],
     technischeDaten: [
       { label: "Binder", wert: "KORODUR FSCem (ternary)" },
@@ -162,7 +162,7 @@ export const produkteEN: Record<string, {
     ],
   },
   "rapid-set-schnellbeton": {
-    kurzbeschreibung: "Volumetrically mixed rapid concrete on Rapid-Set base per TL BEB-StB – traffic release after 2 h",
+    kurzbeschreibung: "Volumetrically mixed rapid concrete (Rapid Set), TL BEB-StB",
     besonderheiten: ["Volumetric mixing on site", "TL BEB-StB (highest traffic class for maintenance work)", "2-hour traffic release", "Freeze-thaw salt resistant", "Large-area application", "No residual concrete"],
     technischeDaten: [
       { label: "Binder", wert: "Rapid Set (calcium sulfo-aluminate cement)" },
