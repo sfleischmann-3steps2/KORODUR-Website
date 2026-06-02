@@ -8,9 +8,9 @@ import type { Locale } from "../../../lib/i18n";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Produktportfolio Sanierung",
+  title: "Technische Matrix Sanierung",
   description:
-    "Sanierungsprodukte von KORODUR auf einen Blick: 13 Produkte für Industrieestriche und Schnellreparaturmörtel mit Belastbarkeit, Schichtdicke und Belastbar-nach-Zeit.",
+    "Technische Matrix für KORODUR-Sanierungsprodukte mit Klassifizierung, Belastbarkeit, Schichtdicke, Belastbar-nach-Zeit und TDS.",
 };
 
 const NAVY = "#002d59";
@@ -75,62 +75,92 @@ export default async function ProduktmatrixPage({
   return (
     <section style={{ padding: "32px 24px 64px" }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
-        <header style={{ textAlign: "center", marginBottom: 24 }}>
-          <h1
-            style={{
-              fontSize: 40,
-              fontWeight: 900,
-              color: NAVY,
-              letterSpacing: "-0.02em",
-              margin: 0,
-            }}
-          >
-            {tx(dict, "title", "Produktportfolio Sanierung")}
-          </h1>
+        <header style={{ marginBottom: 26 }}>
           <div
             style={{
-              display: "inline-flex",
-              flexWrap: "wrap",
-              gap: 10,
-              justifyContent: "center",
-              marginTop: 18,
+              display: "inline-block",
+              padding: "4px 9px",
+              borderRadius: 5,
+              background: BG_SOFT,
+              color: NAVY_72,
+              fontSize: 12,
+              fontWeight: 800,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              marginBottom: 14,
             }}
           >
-            <Link
-              href={`/${lang}/produktmatrix/`}
+            Technische Produktmatrix
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 24,
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+            }}
+          >
+            <div style={{ flex: "1 1 620px", minWidth: 0 }}>
+              <h1
+                style={{
+                  fontSize: 42,
+                  lineHeight: 1.05,
+                  fontWeight: 900,
+                  color: NAVY,
+                  letterSpacing: "-0.02em",
+                  margin: 0,
+                  maxWidth: 820,
+                }}
+              >
+                Welche Produkte passen zu Ihrem Sanierungsbedarf?
+              </h1>
+            </div>
+            <div
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                minHeight: 42,
-                padding: "0 16px",
-                borderRadius: 8,
-                color: "#fff",
-                background: CYAN,
-                textDecoration: "none",
-                fontSize: 14,
-                fontWeight: 800,
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "flex-end",
+                gap: 10,
+                flex: "0 1 360px",
               }}
             >
-              Technische Matrix
-            </Link>
-            <Link
-              href={`/${lang}/anwendungsmatrix/`}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                minHeight: 42,
-                padding: "0 16px",
-                borderRadius: 8,
-                border: `1px solid ${LINE}`,
-                color: NAVY,
-                background: "#fff",
-                textDecoration: "none",
-                fontSize: 14,
-                fontWeight: 800,
-              }}
-            >
-              Anwendungsmatrix
-            </Link>
+              <Link
+                href={`/${lang}/produktmatrix/`}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  minHeight: 42,
+                  padding: "0 16px",
+                  borderRadius: 8,
+                  color: "#fff",
+                  background: CYAN,
+                  textDecoration: "none",
+                  fontSize: 14,
+                  fontWeight: 800,
+                }}
+              >
+                Technische Matrix
+              </Link>
+              <Link
+                href={`/${lang}/anwendungsmatrix/`}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  minHeight: 42,
+                  padding: "0 16px",
+                  borderRadius: 8,
+                  border: `1px solid ${LINE}`,
+                  color: NAVY,
+                  background: "#fff",
+                  textDecoration: "none",
+                  fontSize: 14,
+                  fontWeight: 800,
+                }}
+              >
+                Anwendungsmatrix
+              </Link>
+            </div>
           </div>
         </header>
 
