@@ -5,16 +5,16 @@ import { useSearchParams } from "next/navigation";
 import ReferenceCard from "../../../components/ReferenceCard";
 import Breadcrumb from "../../../components/Breadcrumb";
 import { referenzen as alleReferenzen } from "../../../data/referenzen";
+import {
+  bereichLabel,
+  produktFamilie,
+  produktFamilieLabel,
+} from "../../../data/einsatzbereichMapping";
 import { useLocale } from "../../../lib/LocaleContext";
 import { referenzenEN } from "../../../data/i18n/referenzen.en";
 import { referenzenFR } from "../../../data/i18n/referenzen.fr";
 import { referenzenPL } from "../../../data/i18n/referenzen.pl";
-import type {
-  Referenz,
-  Sanierungsart,
-  EinsatzbereichKategorie,
-  ZeitKategorie,
-} from "../../../data/types";
+import type { Referenz, EinsatzbereichKategorie } from "../../../data/types";
 
 const translationMap: Record<string, Record<string, Partial<Referenz>>> = {
   en: referenzenEN as Record<string, Partial<Referenz>>,
@@ -29,32 +29,17 @@ function localizeRef(ref: Referenz, lang: string): Referenz {
   return { ...ref, ...overrides };
 }
 
-const sanierungsartLabels: Record<Sanierungsart, string> = {
-  punktuell: "Punktuelle Sanierung",
-  grossflaechig: "Großflächige Sanierung",
-};
-
-const einsatzbereichLabels: Record<EinsatzbereichKategorie, string> = {
-  "lager-logistik": "Lager & Logistik",
-  "industrie-produktion": "Industrie & Produktion",
-  "lebensmittel": "Lebensmittel",
-  "flugzeug": "Flugzeug",
-  "parkdeck": "Parkdeck",
-  "infrastruktur-zufahrten": "Infrastruktur & Zufahrten",
-  "verkaufsraeume": "Verkaufsräume",
-  "schwerindustrie": "Schwerindustrie",
-};
-
-const dringlichkeitLabels: Record<ZeitKategorie, string> = {
-  schnell: "Schnell",
-  mittel: "Mittel",
-  normal: "Normal",
-};
+// Galerie-Logik: Die Referenzgalerie filtert nach der wiedererkennbaren
+// Branchen-Facette (feine Ebene), nicht nach den Lösungsfinder-Clustern. Bei
+// ~50 Referenzen reicht meist ein Filter; der Produktfilter wird erst
+// eingeblendet, wenn die Branchen-Auswahl noch viele Treffer hat (progressive
+// disclosure). Reihenfolge der Produkt-Familien im gruppierten Dropdown:
+const FAMILIE_ORDER = ["estrich", "schnellzement", "grundierung", "nachbehandlung", "beschichtung", "sonstige"];
+// Ab wie vielen Treffern (nach Bereichswahl) lohnt der zweite Filter:
+const PRODUKT_FILTER_SCHWELLE = 6;
 
 type FilterState = {
-  sanierungsart: string;
-  einsatzbereich: string;
-  dringlichkeit: string;
+  bereich: string;
   produkt: string;
 };
 
@@ -72,9 +57,7 @@ function ReferenzenContent() {
   const initialProdukt = searchParams.get("produkt") ?? "";
 
   const [filters, setFilters] = useState<FilterState>({
-    sanierungsart: "",
-    einsatzbereich: "",
-    dringlichkeit: "",
+    bereich: "",
     produkt: initialProdukt,
   });
 
@@ -83,40 +66,67 @@ function ReferenzenContent() {
     [lang]
   );
 
-  const vorhandeneEinsatzbereiche = useMemo(
-    () => [...new Set(referenzen.flatMap((r) => r.einsatzbereiche))].sort(),
-    [referenzen]
-  );
+  // Bereiche mit Trefferzahl, absteigend sortiert (leere Bereiche entfallen).
+  const bereicheSortiert = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const r of referenzen) {
+      for (const b of r.einsatzbereiche) counts[b] = (counts[b] ?? 0) + 1;
+    }
+    return (Object.keys(counts) as EinsatzbereichKategorie[]).sort(
+      (a, b) => counts[b] - counts[a]
+    ).map((b) => ({ id: b, count: counts[b] }));
+  }, [referenzen]);
 
-  const produktNamen = useMemo(
-    () => [...new Set(referenzen.flatMap((r) => r.produkte))].sort(),
-    [referenzen]
-  );
+  // Erst nach Bereich filtern (Basis für Produkt-Optionen + Einblend-Logik) …
+  const ergebnisNachBereich = useMemo(() => {
+    return referenzen.filter(
+      (r) =>
+        !filters.bereich ||
+        r.einsatzbereiche.includes(filters.bereich as EinsatzbereichKategorie)
+    );
+  }, [referenzen, filters.bereich]);
 
+  // … dann zusätzlich nach Produkt.
   const gefilterteReferenzen = useMemo(() => {
-    return referenzen.filter((r) => {
-      if (filters.sanierungsart && r.sanierungsart !== filters.sanierungsart) return false;
-      if (
-        filters.einsatzbereich &&
-        !r.einsatzbereiche.includes(filters.einsatzbereich as EinsatzbereichKategorie)
-      )
-        return false;
-      if (filters.dringlichkeit && r.zeitDringlichkeit !== filters.dringlichkeit) return false;
-      if (filters.produkt && !r.produkte.includes(filters.produkt)) return false;
-      return true;
-    });
-  }, [filters, referenzen]);
+    return ergebnisNachBereich.filter(
+      (r) => !filters.produkt || r.produkte.includes(filters.produkt)
+    );
+  }, [ergebnisNachBereich, filters.produkt]);
 
-  const updateFilter = (key: keyof FilterState, value: string) => {
-    setFilters((prev) => ({ ...prev, [key]: value }));
+  // Produktfilter nur zeigen, wenn die Bereichswahl noch viele Treffer hat
+  // (oder bereits ein Produkt gewählt ist, z. B. über die URL).
+  const zeigeProduktFilter =
+    (filters.bereich !== "" && ergebnisNachBereich.length > PRODUKT_FILTER_SCHWELLE) ||
+    filters.produkt !== "";
+
+  // Produkt-Optionen aus dem aktuellen Bereich, gruppiert nach Familie.
+  const produktGruppen = useMemo(() => {
+    const namen = [...new Set(ergebnisNachBereich.flatMap((r) => r.produkte))];
+    const nachFamilie: Record<string, string[]> = {};
+    for (const name of namen) {
+      const fam = produktFamilie(name);
+      (nachFamilie[fam] ??= []).push(name);
+    }
+    return FAMILIE_ORDER.filter((f) => nachFamilie[f]?.length).map((fam) => ({
+      familie: fam,
+      produkte: nachFamilie[fam].sort(),
+    }));
+  }, [ergebnisNachBereich]);
+
+  const setBereich = (value: string) => {
+    // Bereichswechsel setzt das Produkt zurück (Produkte sind bereichsabhängig).
+    setFilters({ bereich: value, produkt: "" });
+  };
+
+  const setProdukt = (value: string) => {
+    setFilters((prev) => ({ ...prev, produkt: value }));
   };
 
   const resetFilters = () => {
-    setFilters({ sanierungsart: "", einsatzbereich: "", dringlichkeit: "", produkt: "" });
+    setFilters({ bereich: "", produkt: "" });
   };
 
-  const hasActiveFilters =
-    filters.sanierungsart || filters.einsatzbereich || filters.dringlichkeit || filters.produkt;
+  const hasActiveFilters = filters.bereich || filters.produkt;
 
   return (
     <>
@@ -154,60 +164,38 @@ function ReferenzenContent() {
         <div className="mx-auto sm:px-4" style={{ maxWidth: 1320 }}>
           <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2 sm:gap-3">
             <select
-              value={filters.sanierungsart}
-              onChange={(e) => updateFilter("sanierungsart", e.target.value)}
-              className="text-[14px] text-[#002d59] bg-white border border-[#d9dada] rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-[#009ee3]"
-              style={{ fontWeight: 700, fontFamily: "inherit" }}
-            >
-              <option value="">Alle Sanierungsarten</option>
-              {(Object.keys(sanierungsartLabels) as Sanierungsart[]).map((key) => (
-                <option key={key} value={key}>
-                  {sanierungsartLabels[key]}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={filters.einsatzbereich}
-              onChange={(e) => updateFilter("einsatzbereich", e.target.value)}
+              value={filters.bereich}
+              onChange={(e) => setBereich(e.target.value)}
               className="text-[14px] text-[#002d59] bg-white border border-[#d9dada] rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-[#009ee3]"
               style={{ fontWeight: 700, fontFamily: "inherit" }}
             >
               <option value="">{dict.referenzen.filter_all_areas}</option>
-              {vorhandeneEinsatzbereiche.map((key) => (
-                <option key={key} value={key}>
-                  {einsatzbereichLabels[key]}
+              {bereicheSortiert.map(({ id, count }) => (
+                <option key={id} value={id}>
+                  {bereichLabel(id, lang)} ({count})
                 </option>
               ))}
             </select>
 
-            <select
-              value={filters.dringlichkeit}
-              onChange={(e) => updateFilter("dringlichkeit", e.target.value)}
-              className="text-[14px] text-[#002d59] bg-white border border-[#d9dada] rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-[#009ee3]"
-              style={{ fontWeight: 700, fontFamily: "inherit" }}
-            >
-              <option value="">Alle Dringlichkeiten</option>
-              {(Object.keys(dringlichkeitLabels) as ZeitKategorie[]).map((key) => (
-                <option key={key} value={key}>
-                  {dringlichkeitLabels[key]}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={filters.produkt}
-              onChange={(e) => updateFilter("produkt", e.target.value)}
-              className="text-[14px] text-[#002d59] bg-white border border-[#d9dada] rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-[#009ee3]"
-              style={{ fontWeight: 700, fontFamily: "inherit" }}
-            >
-              <option value="">{dict.referenzen.filter_all_products}</option>
-              {produktNamen.map((p) => (
-                <option key={p} value={p}>
-                  {p}
-                </option>
-              ))}
-            </select>
+            {zeigeProduktFilter && (
+              <select
+                value={filters.produkt}
+                onChange={(e) => setProdukt(e.target.value)}
+                className="text-[14px] text-[#002d59] bg-white border border-[#d9dada] rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-[#009ee3]"
+                style={{ fontWeight: 700, fontFamily: "inherit" }}
+              >
+                <option value="">{dict.referenzen.filter_all_products}</option>
+                {produktGruppen.map(({ familie, produkte }) => (
+                  <optgroup key={familie} label={produktFamilieLabel(familie, lang)}>
+                    {produkte.map((p) => (
+                      <option key={p} value={p}>
+                        {p}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
+              </select>
+            )}
 
             {hasActiveFilters && (
               <button
