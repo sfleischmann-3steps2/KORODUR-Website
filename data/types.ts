@@ -36,10 +36,31 @@ export interface Referenz {
   untertitel: string;
   ort: string;
   land: string;
+  jahr?: number;
   flaeche?: string;
+  menge?: string;
   produkte: string[];
+  projekttyp?: "sanierung" | "neubau" | "instandsetzung" | "modernisierung";
+  kennwerte?: { value: string; label: string }[];
+  bilder?: {
+    vorher?: { src: string; alt?: string; caption?: string };
+    nachher?: { src: string; alt?: string; caption?: string };
+    einbau?: { src: string; alt?: string; caption?: string };
+    ergebnis?: { src: string; alt?: string; caption?: string };
+    loesung?: { src: string; alt?: string; caption?: string };
+  };
+  ausgangssituation?: string;
   herausforderungen: string[];
   loesung: string;
+  umsetzung?: { label: string; value?: string }[];
+  ergebnis?: string | string[];
+  langzeit?: string;
+  nachhaltigkeit?: {
+    text: string;
+    facts?: { label: string; value: string }[];
+  };
+  beteiligte?: { role: string; name: string; anonymized?: boolean }[];
+  releaseStatus?: "oeffentlich" | "oeffentlich-anonymisiert" | "intern" | "freigabe-offen";
   vorteile: string[];
   bild: string;
   bildAlt: string;

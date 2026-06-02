@@ -4,25 +4,36 @@ import Image from "next/image";
 import Breadcrumb from "../../../../components/Breadcrumb";
 import ReferenceCard from "../../../../components/ReferenceCard";
 import ReferenzPdf from "../../../../components/ReferenzPdf";
-import TileGrid from "../../../../components/TileGrid";
 import ImageGallery from "../../../../components/ImageGallery";
 import { referenzen, getReferenzBySlug } from "../../../../data/referenzen";
 import { getProdukteByNames } from "../../../../data/produkte";
 import { bereichLabel } from "../../../../data/einsatzbereichMapping";
+import { isPublicReference, selectRelatedReferences } from "../../../../data/referenceDetail";
+import type { Referenz } from "../../../../data/types";
 import { withBasePath } from "../../../../lib/basePath";
 import { getDictionary, hasLocale } from "../../dictionaries";
 import { LOCALES } from "../../../../lib/i18n";
 import { notFound } from "next/navigation";
 import { localizeReferenz, localizeReferenzen, localizeProdukte } from "../../../../data/i18n/getLocalized";
 
+type Lang = "de" | "en" | "fr" | "pl";
+
+const container = { maxWidth: 1080 };
+const sectionPad = { padding: "0 24px 16px" };
+const cardStyle = {
+  backgroundColor: "#fff",
+  border: "1px solid #e2e8ef",
+  borderRadius: 8,
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
   const { lang, slug } = await params;
   if (!hasLocale(lang)) return {};
   const base = getReferenzBySlug(slug);
-  if (!base) return {};
-  const ref = await localizeReferenz(base, lang as "de" | "en" | "fr");
+  if (!base || !isPublicReference(base)) return {};
+  const ref = await localizeReferenz(base, lang as Lang);
   return {
-    title: `${ref.titel} – ${ref.ort}`,
+    title: `${ref.titel} - ${ref.ort}`,
     description: ref.untertitel,
     openGraph: {
       title: ref.titel,
@@ -33,9 +44,121 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 export function generateStaticParams() {
-  return referenzen.flatMap((r) =>
-    LOCALES.map((lang) => ({ lang, slug: r.slug }))
+  return referenzen
+    .filter(isPublicReference)
+    .flatMap((r) => LOCALES.map((lang) => ({ lang, slug: r.slug })));
+}
+
+function projectTypeLabel(type: Referenz["projekttyp"]): string | null {
+  if (!type) return null;
+  const labels: Record<NonNullable<Referenz["projekttyp"]>, string> = {
+    sanierung: "Sanierung",
+    neubau: "Neubau",
+    instandsetzung: "Instandsetzung",
+    modernisierung: "Modernisierung",
+  };
+  return labels[type];
+}
+
+function DetailSection({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section style={sectionPad}>
+      <div className="mx-auto" style={container}>
+        <div className="p-6 md:p-7" style={cardStyle}>
+          <h2 className="text-[#002d59] text-[20px] m-0 mb-4 leading-tight" style={{ fontWeight: 900 }}>
+            {title}
+          </h2>
+          {children}
+        </div>
+      </div>
+    </section>
   );
+}
+
+function DetailImage({
+  src,
+  alt,
+  sizes,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  sizes: string;
+  priority?: boolean;
+}) {
+  return (
+    <Image
+      src={withBasePath(src)}
+      alt={alt}
+      fill
+      priority={priority}
+      sizes={sizes}
+      className="object-cover"
+    />
+  );
+}
+
+function CheckList({ items }: { items: string[] }) {
+  if (items.length === 0) return null;
+  return (
+    <ul className="list-none m-0 p-0 flex flex-col gap-3">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-3 text-[#002d59] text-[15px] leading-[1.55]">
+          <span className="text-[#00a9e0] mt-1" aria-hidden="true">
+            ✓
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function LabeledImage({
+  image,
+  label,
+  priority,
+}: {
+  image: NonNullable<Referenz["bilder"]>["vorher"];
+  label: string;
+  priority?: boolean;
+}) {
+  if (!image) return null;
+  return (
+    <div className="overflow-hidden" style={cardStyle}>
+      <div className="relative" style={{ aspectRatio: "4/3", backgroundColor: "#f4f6f8" }}>
+        <DetailImage
+          src={image.src}
+          alt={image.alt ?? image.caption ?? label}
+          sizes="(max-width: 820px) 100vw, 50vw"
+          priority={priority}
+        />
+      </div>
+      <div className="flex items-center gap-3 px-4 py-3">
+        <span
+          className="text-[11px] uppercase tracking-wide px-2 py-1 rounded-[4px] text-[#002d59]"
+          style={{ backgroundColor: "#e7f0fa", fontWeight: 800 }}
+        >
+          {label}
+        </span>
+        {image.caption && <span className="text-[13px] text-[#5d6b7a]">{image.caption}</span>}
+      </div>
+    </div>
+  );
+}
+
+function renderResult(referenz: Referenz) {
+  if (Array.isArray(referenz.ergebnis)) return <CheckList items={referenz.ergebnis} />;
+  if (referenz.ergebnis) {
+    return <p className="text-[#002d59] text-[15px] leading-[1.7] m-0">{referenz.ergebnis}</p>;
+  }
+  return <CheckList items={referenz.vorteile} />;
 }
 
 export default async function ReferenzDetailPage({
@@ -49,31 +172,51 @@ export default async function ReferenzDetailPage({
   const dict = await getDictionary(lang);
   const baseReferenz = getReferenzBySlug(slug);
 
-  if (!baseReferenz) {
+  if (!baseReferenz || !isPublicReference(baseReferenz)) {
     notFound();
   }
 
-  const referenz = await localizeReferenz(baseReferenz, lang as "de" | "en" | "fr");
-
+  const referenz = await localizeReferenz(baseReferenz, lang as Lang);
   const primaryEinsatzbereich = referenz.einsatzbereiche?.[0];
   const kategorieLabel = primaryEinsatzbereich ? bereichLabel(primaryEinsatzbereich, lang) : "";
+  const projectLabel = projectTypeLabel(referenz.projekttyp);
   const baseProduktDetails = getProdukteByNames(referenz.produkte);
-  const produktDetails = await localizeProdukte(baseProduktDetails, lang as "de" | "en" | "fr");
+  const produktDetails = await localizeProdukte(baseProduktDetails, lang as Lang);
+  const baseRelated = selectRelatedReferences(referenz, referenzen);
+  const related = await localizeReferenzen(baseRelated, lang as Lang);
+  const isAnonymized = referenz.releaseStatus === "oeffentlich-anonymisiert";
 
-  // Related = teilt mindestens einen Einsatzbereich
-  const baseRelated = referenzen
-    .filter(
-      (r) =>
-        r.slug !== referenz.slug &&
-        r.einsatzbereiche?.some((e) => referenz.einsatzbereiche?.includes(e))
-    )
-    .slice(0, 3);
-  const related = await localizeReferenzen(baseRelated, lang as "de" | "en" | "fr");
+  const imagePair =
+    referenz.projekttyp === "sanierung" && referenz.bilder?.vorher && referenz.bilder?.nachher
+      ? { left: referenz.bilder.vorher, leftLabel: "Vorher", right: referenz.bilder.nachher, rightLabel: "Nachher" }
+      : referenz.bilder?.einbau && referenz.bilder?.ergebnis
+        ? { left: referenz.bilder.einbau, leftLabel: "Einbau", right: referenz.bilder.ergebnis, rightLabel: "Ergebnis" }
+        : null;
+
+  const facts = [
+    { label: "Ort", value: `${referenz.ort}${referenz.land ? `, ${referenz.land}` : ""}` },
+    { label: "Baujahr", value: referenz.jahr?.toString() },
+    { label: "Fläche", value: referenz.flaeche },
+    { label: "Menge", value: referenz.menge },
+    { label: "Projekttyp", value: projectLabel },
+  ].filter((row): row is { label: string; value: string } => Boolean(row.value));
+
+  const installationRows = [
+    ...(referenz.umsetzung ?? []),
+    ...(referenz.menge && !referenz.umsetzung?.some((row) => row.label === "Eingebaute Menge")
+      ? [{ label: "Eingebaute Menge", value: referenz.menge }]
+      : []),
+  ].filter((row): row is { label: string; value: string } => Boolean(row.value));
+
+  const solutionImage = referenz.bilder?.loesung ?? referenz.bilder?.einbau;
+  const parties = (referenz.beteiligte ?? []).filter((party) => party.name || party.role);
+  const showSituation = Boolean(referenz.ausgangssituation || referenz.herausforderungen.length > 0);
+  const showResult = Boolean(referenz.ergebnis || referenz.vorteile.length > 0 || referenz.langzeit);
 
   return (
     <>
-      <section style={{ padding: "0 32px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+      <section style={{ padding: "0 24px" }}>
+        <div className="mx-auto" style={container}>
           <Breadcrumb
             items={[
               { label: dict.referenzen.breadcrumb, href: `/${lang}/referenzen/` },
@@ -84,373 +227,311 @@ export default async function ReferenzDetailPage({
         </div>
       </section>
 
-      {/* Hero image */}
-      <section style={{ padding: "0 32px 48px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div
-            className="overflow-hidden w-full relative"
-            style={{ borderRadius: 14, aspectRatio: "21/9" }}
-          >
-            <Image
-              src={withBasePath(referenz.bild)}
-              alt={referenz.bildAlt}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 1320px"
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Title & meta */}
-      <section style={{ padding: "0 32px 56px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span
-              className="text-white text-[11px] uppercase tracking-wider px-3 py-1 rounded-[4px]"
-              style={{ backgroundColor: "#009ee3", fontWeight: 700 }}
-            >
-              {kategorieLabel}
-            </span>
-          </div>
-          <h1
-            className="mb-3"
-            style={{
-              fontSize: "clamp(28px, 5vw, 44px)",
-              fontWeight: 900,
-              lineHeight: 1.1,
-            }}
-          >
-            {referenz.titel}
-          </h1>
-          <p
-            className="text-[#002d59] opacity-70 mb-8"
-            style={{ fontSize: 20, lineHeight: 1.5 }}
-          >
-            {referenz.untertitel}
-          </p>
-
-          <div className="flex flex-wrap gap-3 mb-10">
-            <span
-              className="flex items-center gap-2 text-[14px] text-[#002d59] px-4 py-2 rounded-[8px]"
-              style={{ backgroundColor: "#f5f5f6", fontWeight: 700 }}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#009ee3" strokeWidth="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              {referenz.ort}, {referenz.land}
-            </span>
-            {referenz.flaeche && (
-              <span
-                className="flex items-center gap-2 text-[14px] text-[#002d59] px-4 py-2 rounded-[8px]"
-                style={{ backgroundColor: "#f5f5f6", fontWeight: 700 }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#009ee3" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path d="M3 9h18" />
-                  <path d="M9 3v18" />
-                </svg>
-                {referenz.flaeche}
-              </span>
+      <section style={sectionPad}>
+        <div className="mx-auto" style={container}>
+          <div className="p-6 md:p-7" style={cardStyle}>
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              {kategorieLabel && (
+                <span
+                  className="text-[11px] uppercase tracking-wide px-3 py-1 rounded-[4px] text-[#002d59]"
+                  style={{ backgroundColor: "#e7f0fa", fontWeight: 800 }}
+                >
+                  {kategorieLabel}
+                </span>
+              )}
+              {projectLabel && (
+                <span
+                  className="text-[11px] uppercase tracking-wide px-3 py-1 rounded-[4px] text-[#0079a3]"
+                  style={{ backgroundColor: "#e9f7fc", fontWeight: 800 }}
+                >
+                  {projectLabel}
+                </span>
+              )}
+              {isAnonymized && (
+                <span
+                  className="text-[11px] uppercase tracking-wide px-3 py-1 rounded-[4px] text-[#5d6b7a]"
+                  style={{ backgroundColor: "#f4f6f8", fontWeight: 800 }}
+                >
+                  Anonymisierte Referenz
+                </span>
+              )}
+            </div>
+            <h1 className="text-[#002d59] m-0 mb-2 leading-tight" style={{ fontSize: "clamp(30px, 5vw, 44px)", fontWeight: 900 }}>
+              {referenz.titel}
+            </h1>
+            <p className="text-[#0079a3] text-[18px] m-0 mb-3" style={{ fontWeight: 800 }}>
+              {referenz.untertitel}
+            </p>
+            {referenz.ausgangssituation && (
+              <p className="text-[#1c2a3a] text-[15px] leading-[1.7] m-0" style={{ maxWidth: "68ch" }}>
+                {referenz.ausgangssituation}
+              </p>
             )}
           </div>
-
-          <div className="flex flex-wrap gap-2 mb-10">
-            {produktDetails.map((p) => (
-              <Link
-                key={p.id}
-                href={`/${lang}/produkte/${p.id}/`}
-                className="inline-flex items-center gap-2 text-[13px] text-white no-underline rounded-[6px] hover:opacity-80 transition-opacity"
-                style={{ backgroundColor: "#009ee3", fontWeight: 700, padding: "8px 14px" }}
-              >
-                {p.name}
-              </Link>
-            ))}
-          </div>
-
-          <ReferenzPdf referenz={referenz} produkt={produktDetails[0]} />
         </div>
       </section>
 
-      {/* Herausforderungen & Lösung */}
-      <section className="bg-[#f5f5f6]" style={{ padding: "64px 32px 72px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2
-                className="mb-6"
-                style={{
-                  fontSize: "clamp(22px, 3vw, 32px)",
-                  fontWeight: 900,
-                  lineHeight: 1.15,
-                }}
-              >
-                {dict.detail.challenges}
-              </h2>
-              <ul className="list-none m-0 p-0 flex flex-col gap-4">
-                {referenz.herausforderungen.map((h, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span
-                      className="flex-shrink-0 w-[28px] h-[28px] flex items-center justify-center rounded-full mt-0.5"
-                      style={{ backgroundColor: "rgba(0,158,227,0.10)" }}
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#009ee3" strokeWidth="3" strokeLinecap="round">
-                        <path d="M12 5v14M5 12h14" />
-                      </svg>
-                    </span>
-                    <span className="text-[#002d59] text-[16px] leading-[1.6]">{h}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h2
-                className="mb-6"
-                style={{
-                  fontSize: "clamp(22px, 3vw, 32px)",
-                  fontWeight: 900,
-                  lineHeight: 1.15,
-                }}
-              >
-                {dict.detail.solution}
-              </h2>
-              <p
-                className="text-[#002d59] leading-[1.7]"
-                style={{ fontSize: 16 }}
-              >
-                {referenz.loesung}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bildergalerie */}
-      {referenz.galerieBilder && referenz.galerieBilder.length > 0 && (
-        <section style={{ padding: "64px 32px 0" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <h2
-              className="mb-8"
-              style={{
-                fontSize: "clamp(22px, 3vw, 32px)",
-                fontWeight: 900,
-                lineHeight: 1.15,
-              }}
-            >
-              {dict.detail.gallery ?? "Bildergalerie"}
-            </h2>
-            <ImageGallery images={referenz.galerieBilder} alt={referenz.titel} />
+      {imagePair && (
+        <section style={sectionPad}>
+          <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-4" style={container}>
+            <LabeledImage image={imagePair.left} label={imagePair.leftLabel} priority />
+            <LabeledImage image={imagePair.right} label={imagePair.rightLabel} priority />
           </div>
         </section>
       )}
 
-      {/* Vorteile */}
-      <section style={{ padding: "64px 32px 72px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <h2
-            className="mb-8"
-            style={{
-              fontSize: "clamp(22px, 3vw, 32px)",
-              fontWeight: 900,
-              lineHeight: 1.15,
-            }}
-          >
-            {dict.detail.benefits}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {referenz.vorteile.map((v, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-3 bg-white p-5"
-                style={{
-                  borderRadius: 12,
-                  boxShadow: "0 4px 20px rgba(0,45,89,0.06)",
-                }}
-              >
-                <span className="flex-shrink-0 text-[#009ee3] mt-0.5">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <path d="M22 4L12 14.01l-3-3" />
-                  </svg>
-                </span>
-                <span className="text-[#002d59] text-[15px] leading-[1.55]">{v}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Eingesetzte Produkte */}
-      <section className="bg-[#002d59]" style={{ padding: "64px 32px 72px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <h2
-            className="text-white mb-3"
-            style={{
-              fontSize: "clamp(22px, 3vw, 32px)",
-              fontWeight: 900,
-              lineHeight: 1.15,
-            }}
-          >
-            {dict.detail.products_used}
-          </h2>
-          <p className="text-white opacity-50 mb-10" style={{ fontSize: 16 }}>
-            {dict.detail.products_subtitle}
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {produktDetails.map((produkt) => (
-              <div
-                key={produkt.id}
-                className="bg-white overflow-hidden"
-                style={{ borderRadius: 14, boxShadow: "0 8px 40px rgba(0,0,0,0.15)" }}
-              >
-                <div
-                  className="p-6 pb-4"
-                  style={{ borderBottom: "1px solid #e8edf5" }}
-                >
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3 className="text-[#002d59] text-[18px] m-0" style={{ fontWeight: 900 }}>
-                      {produkt.name}
-                    </h3>
-                    {produkt.qualitaetsklasse && (
-                      <span
-                        className="text-[10px] text-white uppercase tracking-wider px-2.5 py-1 rounded-[4px] whitespace-nowrap"
-                        style={{ backgroundColor: "#009ee3", fontWeight: 700 }}
-                      >
-                        {produkt.qualitaetsklasse}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-[#002d59] opacity-60 text-[14px] m-0 leading-[1.5]">
-                    {produkt.kurzbeschreibung}
-                  </p>
-                  {produkt.schichtdicke && (
-                    <p className="text-[#009ee3] text-[13px] mt-2 m-0" style={{ fontWeight: 700 }}>
-                      Schichtdicke: {produkt.schichtdicke}
-                    </p>
-                  )}
-                </div>
-
-                <div className="p-6 pt-4">
-                  <p className="text-[#002d59] opacity-40 text-[11px] uppercase tracking-wider mb-3" style={{ fontWeight: 700 }}>
-                    {dict.detail.technical_data}
-                  </p>
-                  <div className="flex flex-col gap-2">
-                    {produkt.technischeDaten.slice(0, 5).map((td, i) => (
-                      <div key={i} className="flex justify-between items-baseline gap-4">
-                        <span className="text-[#002d59] opacity-60 text-[13px]">{td.label}</span>
-                        <span className="text-[#002d59] text-[13px] text-right" style={{ fontWeight: 700 }}>
-                          {td.wert}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {produkt.normen.length > 0 && (
-                    <div className="mt-4 pt-4" style={{ borderTop: "1px solid #e8edf5" }}>
-                      <p className="text-[#002d59] opacity-40 text-[11px] uppercase tracking-wider mb-2" style={{ fontWeight: 700 }}>
-                        {dict.detail.norms}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {produkt.normen.map((norm) => (
-                          <span
-                            key={norm}
-                            className="text-[11px] text-[#002d59] px-2.5 py-1 rounded-[4px]"
-                            style={{ backgroundColor: "#f5f5f6", fontWeight: 600 }}
-                          >
-                            {norm}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="mt-4 pt-4" style={{ borderTop: "1px solid #e8edf5" }}>
-                    <Link
-                      href={`/${lang}/produkte/${produkt.id}`}
-                      className="inline-flex items-center gap-2 text-[#009ee3] text-[13px] no-underline hover:underline"
-                      style={{ fontWeight: 700 }}
-                    >
-                      {dict.sanierung.view_product}
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M9 18l6-6-6-6" />
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {referenz.produkte.filter(
-            (name) => !produktDetails.find((p) => p.name === name)
-          ).length > 0 && (
-            <div className="flex flex-wrap gap-3 mt-6">
-              {referenz.produkte
-                .filter((name) => !produktDetails.find((p) => p.name === name))
-                .map((p) => (
-                  <span
-                    key={p}
-                    className="text-[14px] text-white px-5 py-2.5 rounded-[8px]"
-                    style={{ fontWeight: 700, backgroundColor: "rgba(255,255,255,0.10)" }}
-                  >
-                    {p}
+      <section style={sectionPad}>
+        <div className="mx-auto grid grid-cols-1 md:grid-cols-[1.25fr_1fr] gap-4" style={container}>
+          <div className="p-5" style={cardStyle}>
+            <div className="flex flex-col">
+              {facts.map((row) => (
+                <div key={row.label} className="flex items-baseline justify-between gap-4 py-2 border-b border-[#e2e8ef] last:border-b-0">
+                  <span className="text-[11px] uppercase tracking-wide text-[#5d6b7a]" style={{ fontWeight: 800 }}>
+                    {row.label}
                   </span>
-                ))}
+                  <span className="text-[#002d59] text-[14px] text-right" style={{ fontWeight: 800 }}>
+                    {row.value}
+                  </span>
+                </div>
+              ))}
+              <div className="flex items-start justify-between gap-4 py-2 border-b border-[#e2e8ef]">
+                <span className="text-[11px] uppercase tracking-wide text-[#5d6b7a]" style={{ fontWeight: 800 }}>
+                  Produkte
+                </span>
+                <div className="flex flex-wrap justify-end gap-2">
+                  {produktDetails.map((product) => (
+                    <Link
+                      key={product.id}
+                      href={`/${lang}/produkte/${product.id}/`}
+                      className="text-[12px] text-white no-underline rounded-[4px] px-2.5 py-1"
+                      style={{ backgroundColor: "#002d59", fontWeight: 800 }}
+                    >
+                      {product.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-4">
+                <ReferenzPdf referenz={referenz} produkt={produktDetails[0]} />
+              </div>
+            </div>
+          </div>
+
+          {referenz.kennwerte && referenz.kennwerte.length > 0 && (
+            <div className="grid grid-cols-2 gap-3">
+              {referenz.kennwerte.map((metric) => (
+                <div key={`${metric.value}-${metric.label}`} className="text-center p-4 rounded-[8px] bg-[#002d59]">
+                  <div className="text-white text-[22px] leading-tight" style={{ fontWeight: 900 }}>
+                    {metric.value}
+                  </div>
+                  <div className="text-[#bfd0e3] text-[11px] mt-1">{metric.label}</div>
+                </div>
+              ))}
             </div>
           )}
         </div>
       </section>
 
-      {/* Related references */}
-      {related.length > 0 && (
-        <section style={{ padding: "72px 32px 88px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <h2
-              className="mb-8"
-              style={{
-                fontSize: "clamp(22px, 3vw, 32px)",
-                fontWeight: 900,
-                lineHeight: 1.15,
-              }}
-            >
-              {dict.detail.related}
-            </h2>
-            <TileGrid columns={3}>
-              {related.map((r) => (
-                <ReferenceCard key={r.id} referenz={r} lang={lang} />
-              ))}
-            </TileGrid>
-            <div className="text-center mt-10">
-              <Link
-                href={`/${lang}/referenzen/`}
-                className="inline-block text-white no-underline rounded-[6px] bg-[#009ee3] hover:bg-[#0090d0] transition-colors duration-200"
-                style={{ padding: "14px 28px", fontWeight: 800, fontSize: 15 }}
-              >
-                {dict.detail.related} →
-              </Link>
-            </div>
-          </div>
-        </section>
+      {referenz.galerieBilder && referenz.galerieBilder.length > 0 && (
+        <DetailSection title="Bildergalerie">
+          <ImageGallery images={referenz.galerieBilder} alt={referenz.titel} />
+        </DetailSection>
       )}
 
-      <section className="bg-[#002d59]" style={{ padding: "48px 32px" }}>
-        <div className="mx-auto text-center" style={{ maxWidth: 700 }}>
-          <p className="text-lg text-white mb-4" style={{ fontWeight: 700 }}>
-            Ähnliches Projekt? Kontaktieren Sie unsere Berater.
+      {showSituation && (
+        <DetailSection title="Ausgangssituation und Herausforderung">
+          {referenz.ausgangssituation && (
+            <p className="text-[#002d59] text-[15px] leading-[1.7] mt-0 mb-5">{referenz.ausgangssituation}</p>
+          )}
+          <CheckList items={referenz.herausforderungen} />
+        </DetailSection>
+      )}
+
+      <DetailSection title="Unsere Lösung">
+        <div className={solutionImage ? "grid grid-cols-1 md:grid-cols-2 gap-5 items-start" : ""}>
+          <div>
+            <p className="text-[#002d59] text-[15px] leading-[1.7] mt-0 mb-4">{referenz.loesung}</p>
+            {produktDetails[0] && (
+              <Link
+                href={`/${lang}/produkte/${produktDetails[0].id}/`}
+                className="inline-flex text-[#0079a3] text-[14px] no-underline hover:underline"
+                style={{ fontWeight: 800 }}
+              >
+                Produktdetails {produktDetails[0].name} ansehen
+              </Link>
+            )}
+          </div>
+          {solutionImage && (
+            <div className="relative overflow-hidden rounded-[8px] bg-[#f4f6f8]" style={{ aspectRatio: "4/3" }}>
+              <DetailImage
+                src={solutionImage.src}
+                alt={solutionImage.alt ?? solutionImage.caption ?? "Einbau der KORODUR-Lösung"}
+                sizes="(max-width: 820px) 100vw, 50vw"
+              />
+            </div>
+          )}
+        </div>
+      </DetailSection>
+
+      {installationRows.length > 0 && (
+        <DetailSection title="Umsetzung und Kennwerte">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {installationRows.map((row) => (
+              <div key={`${row.label}-${row.value}`} className="rounded-[8px] bg-[#f4f6f8] px-4 py-3">
+                <div className="text-[11px] text-[#5d6b7a] uppercase tracking-wide" style={{ fontWeight: 800 }}>
+                  {row.label}
+                </div>
+                <div className="text-[#002d59] text-[14px]" style={{ fontWeight: 800 }}>
+                  {row.value}
+                </div>
+              </div>
+            ))}
+          </div>
+        </DetailSection>
+      )}
+
+      {showResult && (
+        <DetailSection title="Ergebnis und Wirkung">
+          {renderResult(referenz)}
+          {referenz.langzeit && (
+            <p className="text-[#002d59] text-[15px] leading-[1.7] mb-0 mt-5">
+              <strong>Langzeit-Beobachtung:</strong> {referenz.langzeit}
+            </p>
+          )}
+        </DetailSection>
+      )}
+
+      {referenz.nachhaltigkeit && (
+        <DetailSection title="Nachhaltigkeit">
+          <p className="text-[#002d59] text-[15px] leading-[1.7] mt-0">{referenz.nachhaltigkeit.text}</p>
+          {referenz.nachhaltigkeit.facts && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+              {referenz.nachhaltigkeit.facts.map((fact) => (
+                <div key={`${fact.label}-${fact.value}`} className="rounded-[8px] bg-[#f4f6f8] px-4 py-3">
+                  <div className="text-[11px] text-[#5d6b7a] uppercase tracking-wide" style={{ fontWeight: 800 }}>
+                    {fact.label}
+                  </div>
+                  <div className="text-[#002d59] text-[14px]" style={{ fontWeight: 800 }}>
+                    {fact.value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </DetailSection>
+      )}
+
+      <DetailSection title="Eingesetzte Produkte">
+        <div className="flex flex-col gap-4">
+          {produktDetails.map((produkt) => (
+            <div key={produkt.id} className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 rounded-[8px] border border-[#e2e8ef] p-4">
+              {produkt.bild && (
+                <div className="relative overflow-hidden rounded-[8px] bg-[#f4f6f8]" style={{ aspectRatio: "4/3" }}>
+                  <DetailImage
+                    src={produkt.bild}
+                    alt={produkt.name}
+                    sizes="(max-width: 820px) 100vw, 220px"
+                  />
+                </div>
+              )}
+              <div>
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="text-[#002d59] text-[18px] m-0" style={{ fontWeight: 900 }}>
+                    {produkt.name}
+                  </h3>
+                  {produkt.qualitaetsklasse && (
+                    <span className="text-[11px] text-[#5d6b7a] px-2 py-1 rounded-[4px] bg-[#eef2f6]" style={{ fontWeight: 800 }}>
+                      {produkt.qualitaetsklasse}
+                    </span>
+                  )}
+                </div>
+                <p className="text-[#5d6b7a] text-[14px] leading-[1.6] mt-0 mb-4">{produkt.kurzbeschreibung}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                  {produkt.technischeDaten.slice(0, 6).map((td) => (
+                    <div key={`${produkt.id}-${td.label}`} className="rounded-[8px] bg-[#f4f6f8] px-3 py-2">
+                      <div className="text-[11px] text-[#5d6b7a]">{td.label}</div>
+                      <div className="text-[#002d59] text-[13px]" style={{ fontWeight: 800 }}>
+                        {td.wert}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {produkt.normen.length > 0 && (
+                  <p className="text-[#5d6b7a] text-[13px] mt-4 mb-0">
+                    <strong className="text-[#002d59]">Normen und Zulassungen:</strong> {produkt.normen.join(" · ")}
+                  </p>
+                )}
+                <Link
+                  href={`/${lang}/produkte/${produkt.id}/`}
+                  className="inline-flex mt-4 text-[#0079a3] text-[14px] no-underline hover:underline"
+                  style={{ fontWeight: 800 }}
+                >
+                  {dict.sanierung.view_product}
+                </Link>
+              </div>
+            </div>
+          ))}
+          {referenz.produkte
+            .filter((name) => !produktDetails.find((p) => p.name === name))
+            .map((name) => (
+              <div key={name} className="rounded-[8px] border border-[#e2e8ef] p-4 text-[#002d59]" style={{ fontWeight: 800 }}>
+                {name}
+              </div>
+            ))}
+        </div>
+      </DetailSection>
+
+      {parties.length > 0 && (
+        <DetailSection title="Beteiligte">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {parties.map((party) => (
+              <div key={`${party.role}-${party.name}`} className="flex items-baseline justify-between gap-4 rounded-[8px] bg-[#f4f6f8] px-4 py-3">
+                <span className="text-[#5d6b7a] text-[13px]">{party.role}</span>
+                <span className="text-[#002d59] text-[14px] text-right" style={{ fontWeight: 800 }}>
+                  {isAnonymized || party.anonymized ? party.role : party.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </DetailSection>
+      )}
+
+      {related.length > 0 && (
+        <DetailSection title={dict.detail.related}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {related.map((r) => (
+              <ReferenceCard key={r.id} referenz={r} lang={lang} />
+            ))}
+          </div>
+        </DetailSection>
+      )}
+
+      <section style={{ padding: "16px 24px 40px" }}>
+        <div className="mx-auto text-center p-7 rounded-[8px] bg-[#002d59]" style={container}>
+          <h2 className="text-white text-[22px] m-0 mb-2" style={{ fontWeight: 900 }}>
+            Ähnliches Projekt?
+          </h2>
+          <p className="text-[#bfd0e3] text-[15px] mt-0 mb-5">
+            Unsere technischen Berater helfen Ihnen, die optimale Sanierungslösung zu finden.
           </p>
-          <a
-            href="https://www.korodur.de/kontakt/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#002d59] no-underline rounded-[6px] transition-colors"
-            style={{ padding: "14px 28px", fontWeight: 800, fontSize: 15 }}
-          >
-            Berater kontaktieren
-          </a>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="https://www.korodur.de/kontakt/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex text-[#00374a] bg-[#00a9e0] no-underline rounded-[6px] px-5 py-3"
+              style={{ fontWeight: 900 }}
+            >
+              Berater kontaktieren
+            </a>
+            <Link
+              href={`/${lang}/referenzen/`}
+              className="inline-flex text-white no-underline rounded-[6px] px-5 py-3 border border-white"
+              style={{ fontWeight: 900 }}
+            >
+              Alle Referenzen ansehen
+            </Link>
+          </div>
         </div>
       </section>
     </>
