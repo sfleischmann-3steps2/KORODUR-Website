@@ -145,7 +145,10 @@
   "produktmatrix": {
     "title": "Portefeuille Produits Rénovation",
     "spalte_produkt": "Produit",
+    "spalte_klassifizierung": "Classification",
+    "spalte_druckfestigkeit": "Résistance à la compression",
     "spalte_aussen": "Extérieur",
+    "spalte_tds": "TDS",
     "spalte_belastbarkeit": "Charge admissible",
     "spalte_schichtdicke": "Épaisseur",
     "spalte_belastbar_nach": "Praticable après",

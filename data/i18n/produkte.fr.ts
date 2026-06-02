@@ -5,7 +5,7 @@ export const produkteFR: Record<string, {
   technischeDaten?: { label: string; wert: string }[];
 }> = {
   "neodur-he-60-rapid": {
-    kurzbeschreibung: "Chape rapide haute performance à granulats durs – charge complète après 24 h",
+    kurzbeschreibung: "Chape rapide haute performance à granulats durs",
     besonderheiten: ["Haute résistance à l'abrasion", "Résistant aux produits chimiques", "Prise rapide", "Faible retrait"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 60 N/mm²" },
@@ -16,7 +16,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "neodur-he-65": {
-    kurzbeschreibung: "Chape haute performance à granulats durs pour exigences industrielles maximales avec technologie silo",
+    kurzbeschreibung: "Chape haute performance à granulats durs",
     besonderheiten: ["Résistance à l'usure maximale", "Application par système silo", "Économique sur grandes surfaces", "Liaison solide"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 70 N/mm²" },
@@ -27,7 +27,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "neodur-he-65-plus": {
-    kurzbeschreibung: "Chape haute performance à granulats durs pour intérieur et extérieur – sans pont d'adhérence, conforme WHG",
+    kurzbeschreibung: "Chape haute performance à granulats durs",
     besonderheiten: ["Sans pont d'adhérence", "Résistant au gel et aux sels de déverglaçage", "Conforme WHG", "Modifié polymère & renforcé de fibres"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 70 N/mm²" },
@@ -38,7 +38,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "neodur-he-40": {
-    kurzbeschreibung: "Chape haute performance à granulats durs pour sols industriels fortement sollicités",
+    kurzbeschreibung: "Chape haute performance à granulats durs",
     besonderheiten: ["Haute résistance à l'usure", "Liaison solide (DIN 18560-7)", "Solution économique à granulats durs", "Usage intérieur"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 40 N/mm²" },
@@ -48,7 +48,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "neodur-level": {
-    kurzbeschreibung: "Chape mince autoplaçante à prise rapide et granulats durs pour rénovation de sol de précision",
+    kurzbeschreibung: "Chape mince autoplaçante à prise rapide",
     besonderheiten: ["Autoplaçant – excellente planéité", "Utilisation rapide", "Couche d'usure intégrée", "Application mécanisée"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 40 N/mm²" },
@@ -60,7 +60,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "tru-self-leveling": {
-    kurzbeschreibung: "Chape apparente décorative autoplaçante et polie pour solutions de sol design",
+    kurzbeschreibung: "Chape apparente décorative autoplaçante et polie",
     besonderheiten: ["Aspect béton design", "Surface sans joints", "Sans pont d'adhérence", "Polissable jusqu'au haut brillant", "Hygiénique & facile d'entretien"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "≥ 40 N/mm²" },
@@ -91,7 +91,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "rapid-set-cement-all": {
-    kurzbeschreibung: "Mortier de réparation rapide universel – chargeable après 1 h, intérieur et extérieur",
+    kurzbeschreibung: "Mortier de réparation rapide universel",
     besonderheiten: ["Temps de prise ultra-court", "Haute résistance initiale", "Usage intérieur et extérieur", "Compensé en retrait"],
     technischeDaten: [
       { label: "Qualité", wert: "C55/67" },
@@ -102,7 +102,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "rapid-set-mortar-mix": {
-    kurzbeschreibung: "Mortier de réparation rapide universel pour joints, reprofilage et pose de profilés",
+    kurzbeschreibung: "Mortier de réparation rapide universel",
     besonderheiten: ["Neutre en retrait", "Sans pont d'adhérence", "Consistance pâteuse à rigide ajustable", "Mélanger avec de l'eau uniquement"],
     technischeDaten: [
       { label: "Qualité", wert: "C45/55" },
@@ -113,7 +113,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "rapid-set-mortar-mix-dur": {
-    kurzbeschreibung: "Mortier de réparation rapide avec granulat dur DIN 1100 A pour joints à charges lourdes",
+    kurzbeschreibung: "Mortier de réparation rapide avec granulat dur DIN 1100 A",
     besonderheiten: ["Granulat d'usure intégré DIN 1100 A", "Adapté aux joints à charges lourdes", "Neutre en retrait", "Consistance pâteuse ajustable"],
     technischeDaten: [
       { label: "Qualité", wert: "C45/55 + DIN 1100 A" },
@@ -124,7 +124,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "asphalt-repair-mix": {
-    kurzbeschreibung: "Matériau de réparation rapide pour surfaces en asphalte – ouverture au trafic après 30 minutes",
+    kurzbeschreibung: "Matériau de réparation rapide pour surfaces en asphalte",
     besonderheiten: ["Adapté aux surfaces en asphalte", "Sans pont d'adhérence", "Application facile", "Ouverture au trafic après 30 minutes"],
     technischeDaten: [
       { label: "Résistance à la compression", wert: "env. 22 N/mm²" },
@@ -134,7 +134,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "dot-europe-concrete-mix": {
-    kurzbeschreibung: "Béton de réparation rapide universel selon DIN EN 1504-3 – pour ponts, pistes et sols industriels",
+    kurzbeschreibung: "Béton de réparation rapide universel, DIN EN 1504-3",
     besonderheiten: ["Utilisation multifonctionnelle", "Résistant au gel et aux sels", "Résistant aux sulfates, sans chlorures", "Excellente adhérence sans pont", "Pour ponts, pistes, sols industriels", "30 % CO₂ en moins que le ciment Portland"],
     technischeDaten: [
       { label: "Qualité", wert: "C35/45" },
@@ -148,7 +148,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "korocrete": {
-    kurzbeschreibung: "Béton rapide à mélange volumétrique sur base FSCem (liant spécial ternaire) – ouverture au trafic après 6 h",
+    kurzbeschreibung: "Béton rapide à mélange volumétrique (base FSCem)",
     besonderheiten: ["Mélange volumétrique sur site (Cemen Tech M-Series)", "Volume stable, sans retrait/contrainte, durcit sans fissures", "Étanche, adapté aux zones humides", "Pompable", "Application grande surface", "Pas de béton résiduel"],
     technischeDaten: [
       { label: "Liant", wert: "KORODUR FSCem (ternaire)" },
@@ -162,7 +162,7 @@ export const produkteFR: Record<string, {
     ],
   },
   "rapid-set-schnellbeton": {
-    kurzbeschreibung: "Béton rapide à mélange volumétrique sur base Rapid-Set selon TL BEB-StB – ouverture au trafic après 2 h",
+    kurzbeschreibung: "Béton rapide à mélange volumétrique (Rapid Set), TL BEB-StB",
     besonderheiten: ["Mélange volumétrique sur site", "TL BEB-StB (classe de trafic maximale pour travaux de maintenance)", "Ouverture au trafic après 2 heures", "Résistant gel/sel", "Application grande surface", "Pas de béton résiduel"],
     technischeDaten: [
       { label: "Liant", wert: "Rapid Set (ciment sulfo-aluminate de calcium)" },

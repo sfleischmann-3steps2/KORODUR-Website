@@ -123,25 +123,66 @@ function ProduktRow({ p, lang, dict }: { p: Produkt; lang: Locale; dict?: Dict }
         </div>
         <div style={{ fontSize: 12, color: NAVY_72, lineHeight: 1.45 }}>
           {p.kurzbeschreibung}
-          {p.qualitaetsklasse && (
-            <span
-              style={{
-                display: "inline-block",
-                marginLeft: 4,
-                padding: "1px 7px",
-                background: BG_COOL,
-                borderRadius: 4,
-                fontSize: 11,
-                fontWeight: 600,
-                color: NAVY,
-                letterSpacing: "0.02em",
-                fontVariantNumeric: "tabular-nums",
-              }}
-            >
-              {p.qualitaetsklasse}
-            </span>
-          )}
         </div>
+      </td>
+      <td
+        style={{
+          padding: "18px 16px 16px",
+          borderBottom: `1px solid ${LINE_SOFT}`,
+          verticalAlign: "middle",
+        }}
+      >
+        {p.qualitaetsklasse ? (
+          <span
+            style={{
+              display: "inline-block",
+              padding: "2px 8px",
+              background: BG_COOL,
+              borderRadius: 4,
+              fontSize: 12,
+              fontWeight: 600,
+              color: NAVY,
+              letterSpacing: "0.02em",
+              fontVariantNumeric: "tabular-nums",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {p.qualitaetsklasse}
+          </span>
+        ) : (
+          <Dash />
+        )}
+        {p.norm && (
+          <div
+            style={{
+              fontSize: 11,
+              color: NAVY_72,
+              marginTop: 4,
+              lineHeight: 1.3,
+            }}
+          >
+            {p.norm}
+          </div>
+        )}
+      </td>
+      <td
+        style={{
+          padding: "18px 16px 16px",
+          borderBottom: `1px solid ${LINE_SOFT}`,
+          verticalAlign: "middle",
+        }}
+      >
+        <span
+          style={{
+            fontSize: 14,
+            fontWeight: 600,
+            color: NAVY,
+            whiteSpace: "nowrap",
+            fontVariantNumeric: "tabular-nums",
+          }}
+        >
+          {p.druckfestigkeit ?? "–"}
+        </span>
       </td>
       <td
         style={{
@@ -197,6 +238,50 @@ function ProduktRow({ p, lang, dict }: { p: Produkt; lang: Locale; dict?: Dict }
           )}
         </span>
       </td>
+      <td
+        style={{
+          textAlign: "center",
+          padding: "18px 12px 16px",
+          borderBottom: `1px solid ${LINE_SOFT}`,
+        }}
+      >
+        {p.tdsUrl ? (
+          <a
+            href={p.tdsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="TDS-Datenblatt herunterladen"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 32,
+              height: 32,
+              borderRadius: 6,
+              color: CYAN,
+              textDecoration: "none",
+              transition: "background 120ms",
+            }}
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </a>
+        ) : (
+          <Dash />
+        )}
+      </td>
     </tr>
   );
 }
@@ -213,7 +298,7 @@ function KategorieHeader({
   return (
     <tr>
       <td
-        colSpan={5}
+        colSpan={8}
         style={{
           background: BG_SOFT,
           padding: "14px 20px",
@@ -284,10 +369,42 @@ export default function Produktmatrix({
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   borderBottom: `2px solid ${NAVY}`,
-                  minWidth: 280,
+                  minWidth: 240,
                 }}
               >
                 {t(dict, "spalte_produkt", "Produkt")}
+              </th>
+              <th
+                style={{
+                  background: "#fff",
+                  color: NAVY,
+                  textAlign: "left",
+                  padding: "18px 16px 14px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  borderBottom: `2px solid ${NAVY}`,
+                  width: 150,
+                }}
+              >
+                {t(dict, "spalte_klassifizierung", "Klassifizierung")}
+              </th>
+              <th
+                style={{
+                  background: "#fff",
+                  color: NAVY,
+                  textAlign: "left",
+                  padding: "18px 16px 14px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  borderBottom: `2px solid ${NAVY}`,
+                  width: 110,
+                }}
+              >
+                {t(dict, "spalte_druckfestigkeit", "Druckfestigkeit")}
               </th>
               <th
                 style={{
@@ -300,7 +417,7 @@ export default function Produktmatrix({
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   borderBottom: `2px solid ${NAVY}`,
-                  width: 90,
+                  width: 80,
                 }}
               >
                 {t(dict, "spalte_aussen", "Außen")}
@@ -352,6 +469,22 @@ export default function Produktmatrix({
                 }}
               >
                 {t(dict, "spalte_belastbar_nach", "Belastbar nach")}
+              </th>
+              <th
+                style={{
+                  background: "#fff",
+                  color: NAVY,
+                  textAlign: "center",
+                  padding: "18px 12px 14px",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  borderBottom: `2px solid ${NAVY}`,
+                  width: 70,
+                }}
+              >
+                {t(dict, "spalte_tds", "TDS")}
               </th>
             </tr>
           </thead>

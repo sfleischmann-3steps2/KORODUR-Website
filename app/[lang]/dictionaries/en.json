@@ -145,7 +145,10 @@
   "produktmatrix": {
     "title": "Renovation Product Portfolio",
     "spalte_produkt": "Product",
+    "spalte_klassifizierung": "Classification",
+    "spalte_druckfestigkeit": "Compressive strength",
     "spalte_aussen": "Outdoor",
+    "spalte_tds": "TDS",
     "spalte_belastbarkeit": "Load capacity",
     "spalte_schichtdicke": "Layer thickness",
     "spalte_belastbar_nach": "Ready for use after",

@@ -145,7 +145,10 @@
   "produktmatrix": {
     "title": "Portfolio Produktów Renowacji",
     "spalte_produkt": "Produkt",
+    "spalte_klassifizierung": "Klasyfikacja",
+    "spalte_druckfestigkeit": "Wytrzymałość na ściskanie",
     "spalte_aussen": "Na zewnątrz",
+    "spalte_tds": "TDS",
     "spalte_belastbarkeit": "Obciążalność",
     "spalte_schichtdicke": "Grubość warstwy",
     "spalte_belastbar_nach": "Gotowe do użytku po",
