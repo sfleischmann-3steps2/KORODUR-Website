@@ -2,15 +2,16 @@
 
 # KORODUR Sanierungs-App
 
-Interaktive Web-App (Next.js 16 Static Export, GitHub Pages) für den Sanierungsbereich von KORODUR. Self-Service-Tool mit **Lösungsfinder** (geführter Wizard), **Referenzdatenbank** (aktuell 51), **17 Produkten**, **Produktmatrix** und **PDF-Download** je Referenz. Vier Sprachen: DE/EN/FR/PL.
+Interaktive Web-App (Next.js 16 Static Export, GitHub Pages) für den Sanierungsbereich von KORODUR. Self-Service-Tool mit **Lösungsfinder** (geführter Wizard), **Referenzdatenbank** (aktuell 51), **18 Produkten** (davon 13 in der Sanierungs-Matrix), **Produktmatrix V5** mit TDS-Download und **PDF-Download** je Referenz. Vier Sprachen: DE/EN/FR/PL.
 
 **Live:** https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/
 **Zielseite Notion (Single Source of Truth für das Projekt):** [Sanieren mit KORODUR ist als überzeugende Sales-App live](https://www.notion.so/336670e19e1a80f887dad468b1676e57)
 
 ## Aktueller Stand & nächste Iteration
 
+- **V2.5 — Produktmatrix V5 (deployed 2026-06-02):** Sanierungs-fokussierte Matrix (13 Produkte in 2 Kategorien), 7 Spalten (Klassifizierung mit Q-Klasse + Norm, Druckfestigkeit, Außen, 5-Dot-Belastbarkeit, Schichtdicke, Belastbar nach, TDS), TDS-URLs aus Notion-Produktdatenbank. PRs #3 und #4 gemerged. Plan: `docs/plans/2026-06-01-produktmatrix-v5-umsetzung.md`.
 - **V2.4 (deployed 2026-04-23):** App ↔ Notion-Referenzverzeichnis konsolidiert, 4-Schritt-Lösungsfinder, Reconciliation-Pipeline, 380 statische Seiten. Siehe [Entwicklungs-Log](https://www.notion.so/35f670e19e1a81c2a17bf0ac00adf80d).
-- **Nächste Iteration (geplant, Mai 2026):** Reduktion auf **3 Steps** + Datenmodell-Konsolidierung. Plan: `docs/superpowers/plans/2026-05-13-loesungsfinder-3step-rewrite.md`. Wartet auf [Experten-Klärungen](https://www.notion.so/35f670e19e1a815e806cf49e759d0b2b).
+- **Nächste Iteration (Team-Review pendant):** Persona-Analyse (Planer + Verleger) ergab Empfehlung Option B (R-Klasse + Druckfestigkeit, 5-Dot-Skala als Tooltip statt Spalte). Quick-Wins in V2.5 umgesetzt; ggf. weitere Iteration nach Team-Review. Lösungsfinder-3-Step-Rewrite weiterhin offen (Plan: `docs/superpowers/plans/2026-05-13-loesungsfinder-3step-rewrite.md`).
 
 ## Tech-Stack
 
