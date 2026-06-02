@@ -23,7 +23,7 @@ const OPTIONEN: Array<{
   {
     id: "punktuell",
     Icon: IconTarget,
-    titel: "Punktuelle Reparatur",
+    titel: "Schnelle punktuelle Sanierung",
     hint: "unter 100 m²",
     beschreibung: "Einzelne Schadstellen, Treppen, Wände, Fugenprofile",
   },

@@ -110,7 +110,7 @@
     "opt_industriebau_desc": "Bauteile, Fugen, Treppen, Fundamente",
     "opt_verkehr": "Verkehrs- & Logistikflächen",
     "opt_verkehr_desc": "Höfe, Parkhäuser, Häfen, Brücken",
-    "opt_punktuell": "Punktuelle Reparatur",
+    "opt_punktuell": "Schnelle punktuelle Sanierung",
     "opt_punktuell_desc": "Löcher, Fugen, einzelne Flächen",
     "opt_flaechensanierung": "Flächensanierung",
     "opt_flaechensanierung_desc": "Komplette Halle oder Abschnitt",
