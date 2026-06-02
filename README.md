@@ -11,7 +11,7 @@ Verfügbar in: [Deutsch](https://sfleischmann-3steps2.github.io/KORODUR-Sanierun
 ## Features
 
 - **4 Sprachen** – DE / EN / FR / PL, komplett übersetzt (UI + Inhalte), gegen KORODUR-Glossar geprüft
-- **Lösungsfinder** – 4-Schritt-Assistent: Sanierungsart → Einsatzbereich → Dringlichkeit → Zusatzfunktion → Referenzen + Produkte
+- **Lösungsfinder** – adaptiver Wizard: Fläche → Innen/Außen → Einsatzbereich (6 referenzgedeckte Cluster) → Zeitfenster → Top-Produkt + passende Referenzen
 - **51 Referenzprojekte** mit Herausforderungen, Lösung, Vorteilen, Produktdaten und **Bildergalerie** (3–8 Fotos pro Referenz, Lightbox mit Pfeiltasten)
 - **18 Produkte** mit technischen Daten, Normen, Qualitätsklassen und **Produkt-Mockups** (13 davon in der Sanierungs-Matrix)
 - **Einsatzbereich-Filter** über alle Referenzen (8 Bereiche: Lager & Logistik, Industrie & Produktion, Lebensmittel, Flugzeug, Parkdeck, Infrastruktur & Zufahrten, Verkaufsräume, Schwerindustrie)
@@ -91,6 +91,16 @@ GitHub Pages via GitHub Actions – bei jedem Push auf `main` wird automatisch g
 
 ### Backlog Themen
 Commit: 0deae98c191a84ed9aded5fbff50f664f9336561 -> Sanierungssysteme (Systemdarstellung als Konzeptbasis)
+
+### V2.6 – Lösungsfinder Schritt 3 final (Juni 2026)
+- [x] **Referenzgedeckter 3+3-Schnitt** in Schritt 3: 6 Cluster statt 8 (zwei leere Außen-Cluster entfernt), jeder Cluster hat Referenzen
+  - Innen: Industrie- & Hallenboden, Nass-/Hygiene-/Chemiefläche, Sicht- & Designboden
+  - Außen: Verkehrs- & Infrastrukturfläche, Parkdeck & Parkfläche, Umwelt- & WHG-Fläche
+- [x] **Belastungs-Tags aufgeräumt**: `chemie` gesplittet in `chemie-treibstoff` (Öl/Lösemittel) und `chemie-aggressiv` (Säuren), `thermik` entfernt, `whg` ergänzt – nicht aus Sulfat/Chlorid abgeleitet
+- [x] **Produkt-Tags TDS-korrigiert**: DOT ohne chemie, HE-Welt → treibstoff, Reparaturmörtel → aggressiv, HE 65 Plus + whg
+- [x] **51 Referenzen neu auf 6 Cluster gemappt** (WHG-Split Waschstraße/Tankfläche/Hafen), reproduzierbar via `scripts/migrate-refs-v25.ts`
+- [x] **Referenz-Fallback** (stufenweises Lockern): zu jeder Empfehlung mindestens eine Referenz, gelockerte Treffer als „Verwandte Projekte"
+- [ ] **Team-Hardcore-Test**: Filter-Feinjustierung + Tag-Sign-off (Frank) als Feedback-Schleife. Spec: `docs/2026-06-02-loesungsfinder-step3-spec.md`
 
 ### V2.5 – Produktmatrix V5 (Juni 2026)
 - [x] **Sanierungs-fokussierte Produktmatrix** statt generischer Eignungstabelle: 13 Matrix-Produkte in 2 Kategorien (6 Industrieestriche + 7 Schnellreparaturmörtel)
