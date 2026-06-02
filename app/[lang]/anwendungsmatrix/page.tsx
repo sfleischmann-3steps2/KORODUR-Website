@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getDictionary, hasLocale } from "../dictionaries";
+import { hasLocale } from "../dictionaries";
 import Anwendungsmatrix from "../../../components/Anwendungsmatrix";
 import type { Locale } from "../../../lib/i18n";
 
@@ -24,7 +24,6 @@ export default async function AnwendungsmatrixPage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  await getDictionary(lang);
 
   return (
     <section style={{ padding: "32px 24px 64px" }}>
@@ -44,7 +43,7 @@ export default async function AnwendungsmatrixPage({
               marginBottom: 14,
             }}
           >
-            Alternative Produktmatrix
+            Anwendungsmatrix
           </div>
           <div
             style={{
@@ -120,21 +119,62 @@ export default async function AnwendungsmatrixPage({
 
         <Anwendungsmatrix lang={lang as Locale} />
 
-        <section
+        <div
           style={{
-            marginTop: 28,
-            padding: "20px 24px",
-            borderRadius: 12,
             background: BG_SOFT,
-            color: NAVY_72,
-            fontSize: 14,
-            lineHeight: 1.55,
+            borderRadius: 14,
+            marginTop: 56,
+            padding: 32,
+            textAlign: "center",
           }}
         >
-          <strong style={{ color: NAVY }}>Review-Hinweis:</strong> Die Einstufung basiert auf den
-          bereitgestellten TDS. Ein Punkt bedeutet keine technische Zulassung im Einzelfall. Für
-          Planung und Ausführung bleibt das jeweilige TDS maßgeblich.
-        </section>
+          <p style={{ color: NAVY, fontSize: 18, marginBottom: 20 }}>
+            Unsicher? Der Lösungsfinder führt Sie in wenigen Schritten zur passenden Lösung – oder
+            sprechen Sie direkt mit unseren Beratern.
+          </p>
+          <div
+            style={{
+              display: "inline-flex",
+              gap: 12,
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            <Link
+              href={`/${lang}/loesungsfinder/`}
+              style={{
+                display: "inline-block",
+                padding: "12px 28px",
+                background: CYAN,
+                color: "#fff",
+                fontWeight: 700,
+                borderRadius: 10,
+                textDecoration: "none",
+                fontSize: 15,
+              }}
+            >
+              Lösungsfinder starten
+            </Link>
+            <a
+              href="https://www.korodur.de/kontakt.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                padding: "12px 28px",
+                background: "#fff",
+                color: NAVY,
+                fontWeight: 700,
+                borderRadius: 10,
+                textDecoration: "none",
+                fontSize: 15,
+                border: `1.5px solid ${NAVY}`,
+              }}
+            >
+              Kontakt zu unseren Beratern
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

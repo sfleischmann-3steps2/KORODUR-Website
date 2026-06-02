@@ -87,7 +87,7 @@ export default function Anwendungsmatrix({ lang }: { lang: Locale }) {
           display: "flex",
           flexWrap: "wrap",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "flex-start",
           gap: 18,
           marginBottom: 18,
           padding: "16px 18px",
@@ -106,9 +106,6 @@ export default function Anwendungsmatrix({ lang }: { lang: Locale }) {
           <LegendItem marker={<Marker status="core" />} label="Kernanwendung im TDS explizit" />
           <LegendItem marker={<Marker status="secondary" />} label="geeignet oder sekundär" />
           <LegendItem marker={<Marker status="none" />} label="nicht vorgesehen" />
-        </div>
-        <div style={{ color: NAVY_56, fontSize: 12, lineHeight: 1.4 }}>
-          Interner Review-Stand: Bedarfsmatrix als Alternative zur technischen Produktmatrix
         </div>
       </section>
 

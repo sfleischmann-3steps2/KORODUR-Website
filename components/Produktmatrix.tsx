@@ -167,25 +167,6 @@ function ProduktRow({ p, lang, dict }: { p: Produkt; lang: Locale; dict?: Dict }
       </td>
       <td
         style={{
-          padding: "18px 16px 16px",
-          borderBottom: `1px solid ${LINE_SOFT}`,
-          verticalAlign: "middle",
-        }}
-      >
-        <span
-          style={{
-            fontSize: 14,
-            fontWeight: 600,
-            color: NAVY,
-            whiteSpace: "nowrap",
-            fontVariantNumeric: "tabular-nums",
-          }}
-        >
-          {p.druckfestigkeit ?? "–"}
-        </span>
-      </td>
-      <td
-        style={{
           textAlign: "center",
           padding: "18px 12px 16px",
           borderBottom: `1px solid ${LINE_SOFT}`,
@@ -298,7 +279,7 @@ function KategorieHeader({
   return (
     <tr>
       <td
-        colSpan={8}
+        colSpan={7}
         style={{
           background: BG_SOFT,
           padding: "14px 20px",
@@ -389,22 +370,6 @@ export default function Produktmatrix({
                 }}
               >
                 {t(dict, "spalte_klassifizierung", "Klassifizierung")}
-              </th>
-              <th
-                style={{
-                  background: "#fff",
-                  color: NAVY,
-                  textAlign: "left",
-                  padding: "18px 16px 14px",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  borderBottom: `2px solid ${NAVY}`,
-                  width: 110,
-                }}
-              >
-                {t(dict, "spalte_druckfestigkeit", "Druckfestigkeit")}
               </th>
               <th
                 style={{

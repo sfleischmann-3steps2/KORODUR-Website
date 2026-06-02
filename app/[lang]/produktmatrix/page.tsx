@@ -90,7 +90,7 @@ export default async function ProduktmatrixPage({
               marginBottom: 14,
             }}
           >
-            Technische Produktmatrix
+            Technische Matrix
           </div>
           <div
             style={{
