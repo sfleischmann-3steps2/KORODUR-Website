@@ -1,4 +1,4 @@
-const CACHE_NAME = "korodur-v1";
+const CACHE_NAME = "korodur-v2";
 
 // Install: cache app shell
 self.addEventListener("install", (event) => {
@@ -30,7 +30,12 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch: cache-first for assets, network-first for pages
+// Fetch-Strategie:
+// - Unveränderliche Assets (content-gehashte /_next/static/, Bilder, Fonts):
+//   cache-first. Bei Hash-Wechsel ändert sich die URL, also nie stale.
+// - Alles andere (HTML, NICHT gehashte JS/CSS): network-first mit Cache nur als
+//   Offline-Fallback. Verhindert, dass nach einem Deploy alter Code hängen bleibt.
+//   (Der frühere cache-first auf alle .js war genau dieser Bug.)
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   const url = new URL(request.url);
@@ -41,11 +46,15 @@ self.addEventListener("fetch", (event) => {
   // Skip external
   if (url.origin !== self.location.origin) return;
 
-  // Images & static assets: cache-first
-  if (
-    url.pathname.match(/\.(jpg|jpeg|png|webp|svg|css|js|woff2?)$/) ||
-    url.pathname.startsWith("/images/")
-  ) {
+  const p = url.pathname; // enthält ggf. den GitHub-Pages-basePath
+
+  // Unveränderliche, gehashte Assets + Medien: cache-first
+  const istUnveraenderlich =
+    p.includes("/_next/static/") ||
+    p.includes("/images/") ||
+    /\.(jpg|jpeg|png|webp|svg|woff2?)$/.test(p);
+
+  if (istUnveraenderlich) {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached;
@@ -61,31 +70,16 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // HTML pages: network-first, fallback to cache
-  if (request.headers.get("accept")?.includes("text/html")) {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          return response;
-        })
-        .catch(() => caches.match(request))
-    );
-    return;
-  }
-
-  // Everything else: stale-while-revalidate
+  // Alles andere (HTML, nicht gehashte JS/CSS): network-first, Cache als Fallback
   event.respondWith(
-    caches.match(request).then((cached) => {
-      const fetched = fetch(request).then((response) => {
+    fetch(request)
+      .then((response) => {
         if (response.ok) {
           const clone = response.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
         }
         return response;
-      });
-      return cached || fetched;
-    })
+      })
+      .catch(() => caches.match(request))
   );
 });
