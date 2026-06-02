@@ -13,9 +13,9 @@ Verfügbar in: [Deutsch](https://sfleischmann-3steps2.github.io/KORODUR-Sanierun
 - **4 Sprachen** – DE / EN / FR / PL, komplett übersetzt (UI + Inhalte), gegen KORODUR-Glossar geprüft
 - **Lösungsfinder** – 4-Schritt-Assistent: Sanierungsart → Einsatzbereich → Dringlichkeit → Zusatzfunktion → Referenzen + Produkte
 - **51 Referenzprojekte** mit Herausforderungen, Lösung, Vorteilen, Produktdaten und **Bildergalerie** (3–8 Fotos pro Referenz, Lightbox mit Pfeiltasten)
-- **17 Produkte** mit technischen Daten, Normen, Qualitätsklassen und **Produkt-Mockups**
+- **18 Produkte** mit technischen Daten, Normen, Qualitätsklassen und **Produkt-Mockups** (13 davon in der Sanierungs-Matrix)
 - **Einsatzbereich-Filter** über alle Referenzen (8 Bereiche: Lager & Logistik, Industrie & Produktion, Lebensmittel, Flugzeug, Parkdeck, Infrastruktur & Zufahrten, Verkaufsräume, Schwerindustrie)
-- **Produktmatrix** – Interaktive Vergleichstabelle mit Eignungen pro Produkt
+- **Produktmatrix V5** – Sanierungs-fokussierte Vergleichstabelle: 13 Produkte in 2 Kategorien (Industrieestriche + Schnellreparaturmörtel), 7 Spalten (Klassifizierung mit Q-Klasse + Norm, Druckfestigkeit, Außen, Belastbarkeit mit 5-Stufen-Skala, Schichtdicke, Belastbar nach, TDS-Download)
 - **Volltextsuche** (Cmd/Ctrl+K) über Referenzen, Kategorien und Produkte
 - **Responsive** – Desktop, Tablet, Mobile
 - **PWA-fähig** – Service Worker, Manifest
@@ -63,7 +63,7 @@ npm run dev
 │   └── ...                  # LanguageSwitcher, TileGrid, etc.
 ├── data/
 │   ├── referenzen.ts        # 51 Referenzen (DE-Basis, 26 historisch + 25 aus Notion-Import)
-│   ├── produkte.ts          # 16 Produkte mit technischen Daten + Mockup-Bildern
+│   ├── produkte.ts          # 18 Produkte mit technischen Daten + Mockup-Bildern (13 in Sanierungs-Matrix)
 │   ├── loesungsfinder.ts    # 4-Step-Definitionen + Scoring-Logik
 │   ├── types.ts             # Referenz-Interface: sanierungsart/einsatzbereiche/
 │   │                        #   zeitDringlichkeit/zusatzfunktionen
@@ -91,6 +91,24 @@ GitHub Pages via GitHub Actions – bei jedem Push auf `main` wird automatisch g
 
 ### Backlog Themen
 Commit: 0deae98c191a84ed9aded5fbff50f664f9336561 -> Sanierungssysteme (Systemdarstellung als Konzeptbasis)
+
+### V2.5 – Produktmatrix V5 (Juni 2026)
+- [x] **Sanierungs-fokussierte Produktmatrix** statt generischer Eignungstabelle: 13 Matrix-Produkte in 2 Kategorien (6 Industrieestriche + 7 Schnellreparaturmörtel)
+- [x] **Sortiments-Konsolidierung**:
+  - 3 neue Produkte: NEODUR HE 40, DOT Europe CONCRETE MIX, Rapid Set Schnellbeton
+  - 2 entfernt: Rapid Set CONCRETE MIX (→ DOT Europe), KORODUR FSCem Screed
+  - KOROCRETE-Refresh aus TDS 09/2021 (FSCem-Basis, C35/45–C50/60)
+  - Q-Klassen ergänzt, Schichtdicken korrigiert (HE 65 12–15 mm, Level 5–10 mm, ASPHALT 30–600 mm)
+- [x] **Persona-Review-Iteration** (Planer/Architekt + Verleger/GU + Benchmarks MC, Sika, PCI):
+  - Spalte "Klassifizierung": Q-Klasse-Pill + Norm (z. B. CT-C60-F8-A6 / DIN 18560-7)
+  - Spalte "Druckfestigkeit" (N/mm² 28 d) als Specifying-Anker für Planer
+  - Spalte "TDS" mit Download-Icon → Original-PDFs auf korodur.de
+  - 5-Dot-Belastbarkeits-Skala für schnelle Last-Einordnung
+- [x] **Hero "Produktportfolio Sanierung"** mit 2-Button-CTA (Lösungsfinder + Kontakt korodur.de)
+- [x] **i18n-Erweiterung**: Top-Level-Key `produktmatrix` in DE/EN/FR/PL
+- [x] **Datenmodell-Erweiterung**: 9 neue Felder am `Produkt`-Interface (`inSanierungsMatrix`, `belastbarkeitsStufe`, `belastbarNach`, `belastbarNachZusatz`, `aussenbereich`, `whgZulassung`, `systemProdukt`, `sichtestrich`, `norm`, `druckfestigkeit`)
+- [x] **Validate-Skript erweitert**: Pflichtfelder pro Matrix-Produkt, Min-1-pro-Kategorie
+- [x] **TDS-URLs aus Notion-Produktdatenbank** statt Phantom-URLs
 
 ### V2.4 (April 2026)
 - [x] **Notion-Reconciliation** – App ↔ Notion-Referenzverzeichnis konsolidiert
