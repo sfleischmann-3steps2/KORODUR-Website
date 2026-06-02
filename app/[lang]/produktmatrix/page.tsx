@@ -87,6 +87,51 @@ export default async function ProduktmatrixPage({
           >
             {tx(dict, "title", "Produktportfolio Sanierung")}
           </h1>
+          <div
+            style={{
+              display: "inline-flex",
+              flexWrap: "wrap",
+              gap: 10,
+              justifyContent: "center",
+              marginTop: 18,
+            }}
+          >
+            <Link
+              href={`/${lang}/produktmatrix/`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                minHeight: 42,
+                padding: "0 16px",
+                borderRadius: 8,
+                color: "#fff",
+                background: CYAN,
+                textDecoration: "none",
+                fontSize: 14,
+                fontWeight: 800,
+              }}
+            >
+              Technische Matrix
+            </Link>
+            <Link
+              href={`/${lang}/anwendungsmatrix/`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                minHeight: 42,
+                padding: "0 16px",
+                borderRadius: 8,
+                border: `1px solid ${LINE}`,
+                color: NAVY,
+                background: "#fff",
+                textDecoration: "none",
+                fontSize: 14,
+                fontWeight: 800,
+              }}
+            >
+              Anwendungsmatrix
+            </Link>
+          </div>
         </header>
 
         <Produktmatrix produkte={localizedProdukte} lang={lang as Locale} dict={dict} />
