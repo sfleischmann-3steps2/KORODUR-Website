@@ -14,7 +14,7 @@ export default function ReferenceCard({
   lang?: string;
 }) {
   // Badge = primäre Branche der Referenz (gleiche Facette wie der Galerie-Filter).
-  const primary = referenz.einsatzbereiche[0];
+  const primary = referenz.einsatzbereiche?.[0];
   const label = primary ? bereichLabel(primary, lang) : "";
 
   return (

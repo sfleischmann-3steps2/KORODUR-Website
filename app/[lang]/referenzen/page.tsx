@@ -70,7 +70,8 @@ function ReferenzenContent() {
   const bereicheSortiert = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const r of referenzen) {
-      for (const b of r.einsatzbereiche) counts[b] = (counts[b] ?? 0) + 1;
+      // Defensiv: künftige/importierte Referenzen könnten das Feld (noch) nicht haben.
+      for (const b of r.einsatzbereiche ?? []) counts[b] = (counts[b] ?? 0) + 1;
     }
     return (Object.keys(counts) as EinsatzbereichKategorie[]).sort(
       (a, b) => counts[b] - counts[a]
@@ -82,7 +83,7 @@ function ReferenzenContent() {
     return referenzen.filter(
       (r) =>
         !filters.bereich ||
-        r.einsatzbereiche.includes(filters.bereich as EinsatzbereichKategorie)
+        r.einsatzbereiche?.includes(filters.bereich as EinsatzbereichKategorie)
     );
   }, [referenzen, filters.bereich]);
 

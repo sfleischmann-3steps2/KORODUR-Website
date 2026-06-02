@@ -55,7 +55,7 @@ export default async function ReferenzDetailPage({
 
   const referenz = await localizeReferenz(baseReferenz, lang as "de" | "en" | "fr");
 
-  const primaryEinsatzbereich = referenz.einsatzbereiche[0];
+  const primaryEinsatzbereich = referenz.einsatzbereiche?.[0];
   const kategorieLabel = primaryEinsatzbereich ? bereichLabel(primaryEinsatzbereich, lang) : "";
   const baseProduktDetails = getProdukteByNames(referenz.produkte);
   const produktDetails = await localizeProdukte(baseProduktDetails, lang as "de" | "en" | "fr");
@@ -65,7 +65,7 @@ export default async function ReferenzDetailPage({
     .filter(
       (r) =>
         r.slug !== referenz.slug &&
-        r.einsatzbereiche.some((e) => referenz.einsatzbereiche.includes(e))
+        r.einsatzbereiche?.some((e) => referenz.einsatzbereiche?.includes(e))
     )
     .slice(0, 3);
   const related = await localizeReferenzen(baseRelated, lang as "de" | "en" | "fr");
