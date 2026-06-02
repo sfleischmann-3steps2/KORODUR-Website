@@ -12,10 +12,16 @@
  */
 import { referenzen } from "../data/referenzen";
 import { produkte } from "../data/produkte";
+import { REFERENZ_FILTER_V25 } from "../data/referenzenV25";
 import type {
   Sanierungsart,
   EinsatzbereichKategorie,
+  EinsatzbereichV25,
+  Flaechenkategorie,
+  InnenAussen,
+  Schadenstyp,
   ZeitKategorie,
+  Zeitfenster,
   Zusatzfunktion,
 } from "../data/types";
 
@@ -117,6 +123,36 @@ for (const p of matrixProdukte) {
 for (const kat of ["estrich", "schnellzement"] as const) {
   if (!kategorienInMatrix.has(kat)) {
     issues.push({ slug: `kategorie:${kat}`, level: "error", msg: `Keine Matrix-Produkte in Kategorie '${kat}'` });
+  }
+}
+
+// === Lösungsfinder V2.5: Vollständigkeit + Enums der generierten Filter-Map ===
+const ALLOWED_FLAECHE: ReadonlySet<Flaechenkategorie> = new Set<Flaechenkategorie>(["punktuell", "mittel", "gross"]);
+const ALLOWED_INNENAUSSEN: ReadonlySet<InnenAussen> = new Set<InnenAussen>(["innen", "aussen"]);
+const ALLOWED_ZEITFENSTER: ReadonlySet<Zeitfenster> = new Set<Zeitfenster>(["sehr-kurz", "kurz", "planbar"]);
+const ALLOWED_EINSATZ_V25: ReadonlySet<EinsatzbereichV25> = new Set<EinsatzbereichV25>([
+  "innen-industrie-halle", "innen-nass-hygiene-chemie", "innen-sicht-design",
+  "aussen-verkehr-infrastruktur", "aussen-parkdeck", "aussen-umwelt-whg",
+]);
+const ALLOWED_SCHADEN: ReadonlySet<Schadenstyp> = new Set<Schadenstyp>([
+  "verschleissschaeden", "ausbrueche", "risse", "frueher-sanierung",
+]);
+
+for (const r of referenzen) {
+  const f = REFERENZ_FILTER_V25[r.slug];
+  if (!f) {
+    issues.push({ slug: r.slug, level: "error", msg: "kein V2.5-Filter-Eintrag (data/referenzenV25.ts neu generieren)" });
+    continue;
+  }
+  if (!ALLOWED_FLAECHE.has(f.flaecheKategorie)) issues.push({ slug: r.slug, level: "error", msg: `V25 flaecheKategorie '${f.flaecheKategorie}' ungültig` });
+  if (!ALLOWED_INNENAUSSEN.has(f.innenAussen)) issues.push({ slug: r.slug, level: "error", msg: `V25 innenAussen '${f.innenAussen}' ungültig` });
+  if (!ALLOWED_EINSATZ_V25.has(f.einsatzbereich)) issues.push({ slug: r.slug, level: "error", msg: `V25 einsatzbereich '${f.einsatzbereich}' ungültig` });
+  if (!ALLOWED_ZEITFENSTER.has(f.zeitfenster)) issues.push({ slug: r.slug, level: "error", msg: `V25 zeitfenster '${f.zeitfenster}' ungültig` });
+  if (f.innenAussen !== (f.einsatzbereich.startsWith("innen-") ? "innen" : "aussen")) {
+    issues.push({ slug: r.slug, level: "error", msg: "V25 innenAussen passt nicht zum einsatzbereich-Präfix" });
+  }
+  for (const s of f.schadenstypen) {
+    if (!ALLOWED_SCHADEN.has(s)) issues.push({ slug: r.slug, level: "error", msg: `V25 schadenstyp '${s}' ungültig` });
   }
 }
 
