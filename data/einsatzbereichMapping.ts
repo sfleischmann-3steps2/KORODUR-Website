@@ -10,7 +10,8 @@
 // `Produkt.belastungenAbgedeckt`. Schnittmenge ≥ 1 = relevant; größere
 // Schnittmenge = höherer Match-Score.
 
-import type { BelastungsTag, EinsatzbereichV25, InnenAussen } from "./types";
+import type { BelastungsTag, EinsatzbereichKategorie, EinsatzbereichV25, InnenAussen } from "./types";
+import { getProduktByName } from "./produkte";
 
 export const EINSATZBEREICH_TAGS: Record<EinsatzbereichV25, BelastungsTag[]> = {
   // Innen
@@ -63,3 +64,80 @@ export const EINSATZBEREICH_LABELS: Record<EinsatzbereichV25, { titel: string; s
     stichworte: "Tankstelle, Waschplatz, Auffangbehälter, Hafen, Gefahrgut",
   },
 };
+
+// === Lokalisierte Bereichs-Labels (Branchen-Facette, 4 Sprachen) =============
+// Feine Branchen-Ebene für die Referenzgalerie ("zeig mir ein Projekt wie
+// meins"). Bewusst granularer als die 6 Lösungsfinder-Cluster: hier soll der
+// Nutzer seine eigene Branche wiedererkennen. Aus dieser Ebene rollen die
+// Finder-Cluster hoch — eine Hierarchie, zwei Zoomstufen.
+export const BEREICH_LABELS_I18N: Record<string, Record<EinsatzbereichKategorie, string>> = {
+  de: {
+    "lager-logistik": "Lager & Logistik",
+    "industrie-produktion": "Industrie & Produktion",
+    "lebensmittel": "Lebensmittel",
+    "flugzeug": "Flugzeug",
+    "parkdeck": "Parkdeck",
+    "infrastruktur-zufahrten": "Infrastruktur & Zufahrten",
+    "verkaufsraeume": "Verkaufsräume",
+    "schwerindustrie": "Schwerindustrie",
+  },
+  en: {
+    "lager-logistik": "Warehouse & Logistics",
+    "industrie-produktion": "Industrial & Production",
+    "lebensmittel": "Food Processing",
+    "flugzeug": "Aviation",
+    "parkdeck": "Parking Deck",
+    "infrastruktur-zufahrten": "Infrastructure & Access",
+    "verkaufsraeume": "Retail",
+    "schwerindustrie": "Heavy Industry",
+  },
+  fr: {
+    "lager-logistik": "Entrepôts & Logistique",
+    "industrie-produktion": "Industrie & Production",
+    "lebensmittel": "Agroalimentaire",
+    "flugzeug": "Aviation",
+    "parkdeck": "Parking",
+    "infrastruktur-zufahrten": "Infrastructure & Accès",
+    "verkaufsraeume": "Commerce",
+    "schwerindustrie": "Industrie lourde",
+  },
+  pl: {
+    "lager-logistik": "Magazyn i logistyka",
+    "industrie-produktion": "Przemysł i produkcja",
+    "lebensmittel": "Przemysł spożywczy",
+    "flugzeug": "Lotnictwo",
+    "parkdeck": "Parking",
+    "infrastruktur-zufahrten": "Infrastruktura i dojazdy",
+    "verkaufsraeume": "Handel",
+    "schwerindustrie": "Przemysł ciężki",
+  },
+};
+
+/** Bereichs-Label in der gewünschten Sprache, mit DE-Fallback. */
+export function bereichLabel(b: EinsatzbereichKategorie, lang: string): string {
+  return BEREICH_LABELS_I18N[lang]?.[b] ?? BEREICH_LABELS_I18N.de[b];
+}
+
+// === Produkt-Familien (gruppierter Produktfilter, 4 Sprachen) ================
+// Gruppiert die Produktnamen einer Referenz nach Produktkategorie, damit der
+// (progressiv eingeblendete) Produktfilter nicht als lange Flachliste erscheint.
+export const PRODUKT_FAMILIE_LABELS_I18N: Record<string, Record<string, string>> = {
+  de: { estrich: "Estriche", schnellzement: "Schnellreparatur & Schnellbeton", grundierung: "Grundierung & Haftbrücke", nachbehandlung: "Nachbehandlung", beschichtung: "Beschichtung", sonstige: "Sonstige" },
+  en: { estrich: "Screeds", schnellzement: "Rapid repair & concrete", grundierung: "Primer & bonding", nachbehandlung: "Curing", beschichtung: "Coating", sonstige: "Other" },
+  fr: { estrich: "Chapes", schnellzement: "Réparation rapide & béton", grundierung: "Primaire & accrochage", nachbehandlung: "Cure", beschichtung: "Revêtement", sonstige: "Autres" },
+  pl: { estrich: "Jastrychy", schnellzement: "Szybka naprawa i beton", grundierung: "Grunt i warstwa szczepna", nachbehandlung: "Pielęgnacja", beschichtung: "Powłoka", sonstige: "Inne" },
+};
+
+/** Produktkategorie eines Produktnamens (für die Gruppierung); unbekannt = "sonstige". */
+export function produktFamilie(produktName: string): string {
+  return getProduktByName(produktName)?.kategorie ?? "sonstige";
+}
+
+/** Familien-Label in der gewünschten Sprache, mit DE-Fallback. */
+export function produktFamilieLabel(kategorie: string, lang: string): string {
+  return (
+    PRODUKT_FAMILIE_LABELS_I18N[lang]?.[kategorie] ??
+    PRODUKT_FAMILIE_LABELS_I18N.de[kategorie] ??
+    kategorie
+  );
+}
