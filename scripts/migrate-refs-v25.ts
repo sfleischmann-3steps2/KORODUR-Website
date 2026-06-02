@@ -55,19 +55,33 @@ const ZEIT_MIGRATION: Record<ZeitKategorie, Zeitfenster> = {
   normal: "planbar",
 };
 
-// --- Abgeleitet: Einsatzbereich (alt → neu) ---
+// --- Abgeleitet: Einsatzbereich (V2.4-Kategorie → 6-Cluster-Schnitt V2.5) ---
+// Spec docs/2026-06-02-loesungsfinder-step3-spec.md §5. Die alten 8 Cluster
+// (mit zwei leeren Außen-Clustern) sind ersetzt durch den referenzgedeckten
+// 3+3-Schnitt.
 const EINSATZBEREICH_MIGRATION: Record<EinsatzbereichKategorie, EinsatzbereichV25> = {
-  "lager-logistik": "innen-lager-logistik",
-  "industrie-produktion": "innen-industrie-produktion",
-  "lebensmittel": "innen-lebensmittel-pharma",
-  "verkaufsraeume": "innen-verkauf-showroom",
-  "schwerindustrie": "innen-industrie-produktion",
-  "parkdeck": "aussen-parkdeck-tiefgarage",
-  "infrastruktur-zufahrten": "aussen-infrastruktur-verkehr",
-  "flugzeug": "aussen-infrastruktur-verkehr",
+  "lager-logistik": "innen-industrie-halle",
+  "industrie-produktion": "innen-industrie-halle",
+  "schwerindustrie": "innen-industrie-halle",
+  "lebensmittel": "innen-nass-hygiene-chemie",
+  "verkaufsraeume": "innen-sicht-design",
+  "parkdeck": "aussen-parkdeck",
+  "infrastruktur-zufahrten": "aussen-verkehr-infrastruktur",
+  "flugzeug": "aussen-verkehr-infrastruktur",
+};
+
+// WHG-Split (§5): drei der überladenen Infra-Referenzen sind fachlich
+// Umwelt-/WHG-Flächen (Waschplatz, Tankfläche, Hafen). Slug-genaues Override,
+// damit das Re-Mapping reproduzierbar ist statt heuristisch. Helipads bleiben
+// bewusst Infrastruktur.
+const SLUG_OVERRIDE: Record<string, EinsatzbereichV25> = {
+  "lkw-waschstrasse": "aussen-umwelt-whg",
+  "texaco-tankflache-arnheim": "aussen-umwelt-whg",
+  "hafen-catania": "aussen-umwelt-whg",
 };
 
 function ableitenEinsatzbereich(r: Referenz): EinsatzbereichV25 {
+  if (SLUG_OVERRIDE[r.slug]) return SLUG_OVERRIDE[r.slug];
   const erster = r.einsatzbereiche[0] ?? "industrie-produktion";
   return EINSATZBEREICH_MIGRATION[erster];
 }
@@ -110,8 +124,8 @@ for (const r of referenzen) result[r.slug] = migriere(r);
 
 // --- Report ---
 const ALLE_BEREICHE: EinsatzbereichV25[] = [
-  "innen-lager-logistik", "innen-industrie-produktion", "innen-lebensmittel-pharma", "innen-verkauf-showroom",
-  "aussen-parkdeck-tiefgarage", "aussen-verladezone-rampe", "aussen-werkhof-aussenlager", "aussen-infrastruktur-verkehr",
+  "innen-industrie-halle", "innen-nass-hygiene-chemie", "innen-sicht-design",
+  "aussen-verkehr-infrastruktur", "aussen-parkdeck", "aussen-umwelt-whg",
 ];
 const bereichCount = Object.fromEntries(ALLE_BEREICHE.map((b) => [b, 0])) as Record<EinsatzbereichV25, number>;
 const flaecheCount: Record<string, number> = {};

@@ -80,18 +80,18 @@ export type Flaechenkategorie =
 /** Step 2 — Innen oder Außen. Aktiviert Frost-/Tausalz-Anforderungen. */
 export type InnenAussen = "innen" | "aussen";
 
-/** Step 3 — Einsatzbereich (Branchen-Cluster), 4 Innen + 4 Außen. */
+/** Step 3 — Einsatzbereich (Branchen-Cluster), 3 Innen + 3 Außen.
+ *  Referenzgedeckter Schnitt (Spec docs/2026-06-02-loesungsfinder-step3-spec.md §4):
+ *  keine Cluster ohne Referenzen. Ersetzt das alte 4+4-Schema. */
 export type EinsatzbereichV25 =
   // Innen
-  | "innen-lager-logistik"
-  | "innen-industrie-produktion"
-  | "innen-lebensmittel-pharma"
-  | "innen-verkauf-showroom"
+  | "innen-industrie-halle"
+  | "innen-nass-hygiene-chemie"
+  | "innen-sicht-design"
   // Außen
-  | "aussen-parkdeck-tiefgarage"
-  | "aussen-verladezone-rampe"
-  | "aussen-werkhof-aussenlager"
-  | "aussen-infrastruktur-verkehr";
+  | "aussen-verkehr-infrastruktur"
+  | "aussen-parkdeck"
+  | "aussen-umwelt-whg";
 
 /** Step 4 — Zeitfenster. Bleibt `null` bei flaeche === "punktuell". */
 export type Zeitfenster =
@@ -101,17 +101,22 @@ export type Zeitfenster =
 
 /** Implizit aus dem Einsatzbereich abgeleitete Belastungs-Tags
  *  (Mapping siehe data/einsatzbereichMapping.ts). */
+// chemie-Tag in Treibstoff (Öl/Benzin/Lösemittel) und aggressiv (viele chem.
+// Angriffe/Säuren) gesplittet (Steffi 2026-06-02). NICHT aus Sulfat/Chlorid
+// abgeleitet — die sind Boilerplate bzw. Boolean-Eigenschaft, keine Match-Tags.
+// `thermik` gestrichen (kein TDS-Beleg), `whg` neu (flüssigkeitsdicht/WHG).
 export type BelastungsTag =
   | "schwerlast"
   | "verschleiss"
   | "staplerverkehr"
-  | "chemie"
-  | "thermik"
+  | "chemie-treibstoff"
+  | "chemie-aggressiv"
   | "hygiene"
   | "fleckschutz"
   | "optik"
   | "publikumsverkehr"
-  | "frost-tausalz";
+  | "frost-tausalz"
+  | "whg";
 
 /** Schadenstypen — als Pill-Filter auf der Ergebnisseite, NICHT als Wizard-Step.
  *  Grenzt Referenzen ein, nicht Produkte. */

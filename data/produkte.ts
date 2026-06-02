@@ -126,7 +126,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "24 h",
     aussenbereich: true,
-    belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie", "frost-tausalz", "staplerverkehr"],
+    belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie-treibstoff", "frost-tausalz", "staplerverkehr"],
     systemBegleitprodukte: ["korodur-hb-5-rapid"],
   },
   {
@@ -161,7 +161,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "3 d",
     aussenbereich: false,
-    belastungenAbgedeckt: ["schwerlast", "verschleiss", "staplerverkehr"],
+    belastungenAbgedeckt: ["schwerlast", "verschleiss", "staplerverkehr", "chemie-treibstoff"],
   },
   {
     id: "neodur-he-65-plus",
@@ -206,7 +206,7 @@ export const produkte: Produkt[] = [
     belastbarNach: "3 d",
     aussenbereich: true,
     whgZulassung: true,
-    belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie", "frost-tausalz", "staplerverkehr"],
+    belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie-treibstoff", "frost-tausalz", "staplerverkehr", "whg"],
   },
   {
     id: "neodur-he-40",
@@ -237,7 +237,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "3 d",
     aussenbereich: false,
-    belastungenAbgedeckt: ["schwerlast", "verschleiss"],
+    belastungenAbgedeckt: ["schwerlast", "verschleiss", "staplerverkehr", "chemie-treibstoff"],
   },
   {
     id: "neodur-level",
@@ -408,7 +408,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 3,
     belastbarNach: "1 h",
     aussenbereich: true,
-    belastungenAbgedeckt: ["frost-tausalz", "verschleiss"],
+    belastungenAbgedeckt: ["frost-tausalz", "verschleiss", "chemie-aggressiv"],
   },
   {
     id: "rapid-set-mortar-mix",
@@ -442,7 +442,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 3,
     belastbarNach: "1 h",
     aussenbereich: true,
-    belastungenAbgedeckt: ["frost-tausalz"],
+    belastungenAbgedeckt: ["frost-tausalz", "chemie-aggressiv"],
   },
   {
     id: "rapid-set-mortar-mix-dur",
@@ -507,7 +507,7 @@ export const produkte: Produkt[] = [
     belastbarNach: "30 min",
     belastbarNachZusatz: "Verkehrsfreigabe",
     aussenbereich: true,
-    belastungenAbgedeckt: ["frost-tausalz", "schwerlast"],
+    belastungenAbgedeckt: ["frost-tausalz", "schwerlast", "chemie-aggressiv"],
   },
   {
     id: "dot-europe-concrete-mix",
@@ -545,7 +545,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "1 h",
     aussenbereich: true,
-    belastungenAbgedeckt: ["frost-tausalz", "schwerlast", "chemie", "verschleiss"],
+    belastungenAbgedeckt: ["frost-tausalz", "schwerlast", "verschleiss"],
   },
   {
     id: "korocrete",

@@ -30,7 +30,7 @@ export type V25Referenz = Referenz & ReferenzFilterV25;
 const FALLBACK_REF_FILTER: ReferenzFilterV25 = {
   flaecheKategorie: "mittel",
   innenAussen: "innen",
-  einsatzbereich: "innen-industrie-produktion",
+  einsatzbereich: "innen-industrie-halle",
   zeitfenster: "planbar",
   schadenstypen: [],
 };
@@ -42,6 +42,10 @@ export interface ErgebnisV25 {
   refs: V25Referenz[];
   /** Gesamttreffer-Zähler (gleich refs.length, da Schaden-Pill-Filter entfernt). */
   refsGesamt: number;
+  /** true, wenn die Referenzen über einen gelockerten Fallback gefunden wurden
+   *  (nicht der strikte Fläche×Innen/Außen×Cluster-Treffer). UI zeigt dann
+   *  dezent "Verwandte Projekte" statt "Passende Referenzen". */
+  refsGelockert: boolean;
 }
 
 /**
@@ -58,12 +62,12 @@ export interface ErgebnisV25 {
  */
 export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
   if (!state.flaeche || !state.innenAussen || !state.einsatzbereich) {
-    return { topProdukt: null, refs: [], refsGesamt: 0 };
+    return { topProdukt: null, refs: [], refsGesamt: 0, refsGelockert: false };
   }
 
   // Mittel/Gross brauchen ein Zeitfenster; Punktuell ist davon befreit.
   if (state.flaeche !== "punktuell" && !state.zeitfenster) {
-    return { topProdukt: null, refs: [], refsGesamt: 0 };
+    return { topProdukt: null, refs: [], refsGesamt: 0, refsGelockert: false };
   }
 
   const branchenTags = EINSATZBEREICH_TAGS[state.einsatzbereich];
@@ -126,29 +130,49 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
 
   const topProdukt = kandidaten[0] ?? null;
 
-  // --- Referenzen filtern ---
+  // --- Referenzen filtern: stufenweises Lockern (§6 Step-3-Spec) ---
+  // Ziel: zu jeder Produktempfehlung steht mindestens eine Referenz. Bei schiefem
+  // Referenz-Set (z. B. großflächiger Außen-Job, aber nur mittelflächige Refs im
+  // Cluster) liefert der strikte UND-Filter sonst null. Wir lockern stufenweise.
   const v25Refs: V25Referenz[] = referenzen.map((r) => ({
     ...r,
     ...(REFERENZ_FILTER_V25[r.slug] ?? FALLBACK_REF_FILTER),
   }));
-  let refsAlle = v25Refs
-    .filter((r) => r.flaecheKategorie === state.flaeche)
-    .filter((r) => r.innenAussen === state.innenAussen)
-    .filter((r) => r.einsatzbereich === state.einsatzbereich);
 
-  // Zeitfenster-Filter nur für mittel/gross: bei "sehr-kurz" nur passende Refs,
-  // bei "kurz" auch sehr-kurz dabei, bei "planbar" alle. Punktuell: kein Filter.
-  if (state.flaeche !== "punktuell") {
-    if (state.zeitfenster === "sehr-kurz") {
-      refsAlle = refsAlle.filter((r) => r.zeitfenster === "sehr-kurz");
-    } else if (state.zeitfenster === "kurz") {
-      refsAlle = refsAlle.filter(
-        (r) => r.zeitfenster === "sehr-kurz" || r.zeitfenster === "kurz",
-      );
-    }
+  // Zeitfenster-Filter nur für mittel/gross: "sehr-kurz" nur passende, "kurz"
+  // auch sehr-kurz, "planbar" alle. Punktuell ist befreit.
+  const passtZeitfenster = (r: V25Referenz): boolean => {
+    if (state.flaeche === "punktuell") return true;
+    if (state.zeitfenster === "sehr-kurz") return r.zeitfenster === "sehr-kurz";
+    if (state.zeitfenster === "kurz") return r.zeitfenster === "sehr-kurz" || r.zeitfenster === "kurz";
+    return true;
+  };
+
+  const imBereich = v25Refs.filter((r) => r.innenAussen === state.innenAussen);
+
+  // Stufe 0 — strikt: Fläche × Innen/Außen × Cluster (+ Zeitfenster).
+  let refs = imBereich
+    .filter((r) => r.flaecheKategorie === state.flaeche)
+    .filter((r) => r.einsatzbereich === state.einsatzbereich)
+    .filter(passtZeitfenster);
+  let gelockert = false;
+
+  // Stufe 1 — Fläche fallen lassen (Cluster + Zeitfenster bleiben).
+  if (refs.length === 0) {
+    refs = imBereich
+      .filter((r) => r.einsatzbereich === state.einsatzbereich)
+      .filter(passtZeitfenster);
+    gelockert = refs.length > 0;
   }
 
-  return { topProdukt, refs: refsAlle, refsGesamt: refsAlle.length };
+  // Stufe 2 — Cluster fallen lassen: Referenzen, die das empfohlene Produkt
+  // verwenden (clusterunabhängig, innerhalb Innen/Außen).
+  if (refs.length === 0 && topProdukt) {
+    refs = imBereich.filter((r) => r.produkte.includes(topProdukt.name));
+    gelockert = refs.length > 0;
+  }
+
+  return { topProdukt, refs, refsGesamt: refs.length, refsGelockert: gelockert };
 }
 
 /** Labels für die Auswahl-Chips oben auf der Ergebnisseite. */

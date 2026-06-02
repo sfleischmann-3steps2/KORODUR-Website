@@ -189,7 +189,7 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
         }}
       >
         <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
-          Passende Referenzen{" "}
+          {ergebnis.refsGelockert ? "Verwandte Projekte" : "Passende Referenzen"}{" "}
           <span style={{ fontSize: 12, color: "#6B7280", fontWeight: 400 }}>
             · {ergebnis.refsGesamt} {ergebnis.refsGesamt === 1 ? "Treffer" : "Treffer"}
           </span>

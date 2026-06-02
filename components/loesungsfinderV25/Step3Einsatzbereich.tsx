@@ -14,13 +14,11 @@ import type { EinsatzbereichV25, InnenAussen } from "@/data/types";
 import { EINSATZBEREICH_LABELS, einsatzbereicheFuer } from "@/data/einsatzbereichMapping";
 import OptionCard from "./OptionCard";
 import {
-  IconForklift,
   IconFactory,
   IconChefHat,
   IconShoppingCart,
   IconParking,
   IconTruckLoading,
-  IconBuildings,
   IconRoad,
 } from "./icons";
 
@@ -36,14 +34,12 @@ const NAVY = "#002d59";
 type IconComp = ComponentType<Omit<SVGProps<SVGSVGElement>, "children" | "viewBox" | "fill" | "stroke">>;
 
 const ICON_FUER_BEREICH: Record<EinsatzbereichV25, IconComp> = {
-  "innen-lager-logistik": IconForklift,
-  "innen-industrie-produktion": IconFactory,
-  "innen-lebensmittel-pharma": IconChefHat,
-  "innen-verkauf-showroom": IconShoppingCart,
-  "aussen-parkdeck-tiefgarage": IconParking,
-  "aussen-verladezone-rampe": IconTruckLoading,
-  "aussen-werkhof-aussenlager": IconBuildings,
-  "aussen-infrastruktur-verkehr": IconRoad,
+  "innen-industrie-halle": IconFactory,
+  "innen-nass-hygiene-chemie": IconChefHat,
+  "innen-sicht-design": IconShoppingCart,
+  "aussen-verkehr-infrastruktur": IconRoad,
+  "aussen-parkdeck": IconParking,
+  "aussen-umwelt-whg": IconTruckLoading,
 };
 
 // TODO i18n: Texte in dictionaries/{de,en,fr,pl}.json überführen.

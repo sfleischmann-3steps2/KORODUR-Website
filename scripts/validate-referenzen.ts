@@ -131,8 +131,8 @@ const ALLOWED_FLAECHE: ReadonlySet<Flaechenkategorie> = new Set<Flaechenkategori
 const ALLOWED_INNENAUSSEN: ReadonlySet<InnenAussen> = new Set<InnenAussen>(["innen", "aussen"]);
 const ALLOWED_ZEITFENSTER: ReadonlySet<Zeitfenster> = new Set<Zeitfenster>(["sehr-kurz", "kurz", "planbar"]);
 const ALLOWED_EINSATZ_V25: ReadonlySet<EinsatzbereichV25> = new Set<EinsatzbereichV25>([
-  "innen-lager-logistik", "innen-industrie-produktion", "innen-lebensmittel-pharma", "innen-verkauf-showroom",
-  "aussen-parkdeck-tiefgarage", "aussen-verladezone-rampe", "aussen-werkhof-aussenlager", "aussen-infrastruktur-verkehr",
+  "innen-industrie-halle", "innen-nass-hygiene-chemie", "innen-sicht-design",
+  "aussen-verkehr-infrastruktur", "aussen-parkdeck", "aussen-umwelt-whg",
 ]);
 const ALLOWED_SCHADEN: ReadonlySet<Schadenstyp> = new Set<Schadenstyp>([
   "verschleissschaeden", "ausbrueche", "risse", "frueher-sanierung",
