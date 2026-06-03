@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anwendungsmatrix Poster-Mockups</title>
+  <style>
+    :root {
+      --navy: #002d59;
+      --cyan: #009ee3;
+      --green: #009a44;
+      --red: #d68a84;
+      --line: #dfe7f1;
+      --soft: #f4f6f9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--navy);
+      background: #f7f9fc;
+    }
+    header {
+      padding: 28px 34px 18px;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    .sub {
+      margin: 0;
+      color: rgba(0,45,89,.68);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    main {
+      padding: 24px 34px 60px;
+      display: grid;
+      gap: 34px;
+    }
+    section {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: auto;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    .sectionHead {
+      position: sticky;
+      left: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      z-index: 4;
+    }
+    h2 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    .note {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(0,45,89,.66);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .badge {
+      flex: 0 0 auto;
+      padding: 6px 9px;
+      border-radius: 5px;
+      background: var(--soft);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: rgba(0,45,89,.72);
+    }
+    .tableWrap { padding: 18px 20px 24px; min-width: max-content; }
+    .legend {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin: 0 0 12px;
+      font-size: 12px;
+      color: rgba(0,45,89,.72);
+    }
+    .inlineLegend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      align-items: center;
+      margin: 10px 0 0;
+      color: rgba(0,45,89,.72);
+      font-size: 12px;
+    }
+    .yes { color: var(--green); font-size: 15px; font-weight: 900; }
+    .no { color: var(--red); font-size: 14px; font-weight: 900; }
+    .blank { color: rgba(0,45,89,.18); font-size: 13px; }
+    .posterTable {
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: auto;
+      color: var(--navy);
+      font-size: 11px;
+    }
+    .posterTable th, .posterTable td {
+      border: 1px solid var(--line);
+      text-align: center;
+      vertical-align: middle;
+    }
+    .posterTable .corner {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      width: 280px;
+      min-width: 280px;
+      padding: 8px 10px;
+      background: var(--navy);
+      color: #fff;
+      text-align: left;
+      font-size: 12px;
+    }
+    .posterTable .productHead {
+      position: relative;
+      width: 58px;
+      min-width: 58px;
+      height: 158px;
+      background: #fff;
+      border-bottom: 2px solid var(--navy);
+    }
+    .posterTable .productHead > span {
+      position: absolute;
+      left: 13px;
+      bottom: 18px;
+      width: 150px;
+      transform: rotate(-48deg);
+      transform-origin: left bottom;
+      text-align: left;
+      white-space: nowrap;
+      font-weight: 900;
+      font-size: 11px;
+      line-height: 1.1;
+    }
+    .posterTable .productHead small {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 3px;
+      justify-content: center;
+    }
+    .posterTable .productHead b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #eaf8fe;
+      color: var(--cyan);
+      font-size: 10px;
+    }
+    .posterTable .productHead b.rapid {
+      background: rgba(0,158,227,.14);
+      color: var(--cyan);
+      font-size: 12px;
+    }
+    .posterTable .productHead b.load {
+      background: rgba(0,45,89,.08);
+      color: var(--navy);
+      font-size: 10px;
+    }
+    .legendBadge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: rgba(0,45,89,.08);
+      color: var(--navy);
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .legendBadge.rapid {
+      background: rgba(0,158,227,.14);
+      color: var(--cyan);
+      font-size: 12px;
+    }
+    .posterTable .groupRow td {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      padding: 7px 10px;
+      background: var(--navy);
+      color: #fff;
+      text-align: left;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .01em;
+    }
+    .posterTable .usecase {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      width: 280px;
+      min-width: 280px;
+      padding: 6px 10px;
+      background: #fff;
+      text-align: left;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .posterTable .usecaseRow:nth-child(even) td {
+      background-color: #fbfcfe;
+    }
+    .posterTable td {
+      width: 58px;
+      min-width: 58px;
+      height: 28px;
+      padding: 3px;
+    }
+    .posterTable .emptyRow .usecase {
+      color: rgba(0,45,89,.48);
+      font-style: italic;
+    }
+    .familyLike .familyHead {
+      height: 28px;
+      padding: 5px 8px;
+      background: #eaf8fe;
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 900;
+      border-bottom: 1px solid var(--cyan);
+    }
+    .familyLike .familyCorner {
+      background: var(--navy);
+    }
+    .familyLike .productHead {
+      height: 132px;
+    }
+    .familyLike td {
+      width: 52px;
+      min-width: 52px;
+    }
+    .splitPoster {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      min-width: 1320px;
+      padding: 18px 20px 24px;
+    }
+    .splitLegend {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: -2px;
+      color: rgba(0,45,89,.72);
+      font-size: 12px;
+    }
+    .splitPoster h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+    .compact {
+      width: 100%;
+    }
+    .compact .corner,
+    .compact .usecase {
+      width: 230px;
+      min-width: 230px;
+    }
+    .compact .productHead {
+      width: 56px;
+      min-width: 56px;
+      height: 120px;
+    }
+    .compact td {
+      width: 56px;
+      min-width: 56px;
+      height: 24px;
+    }
+    @media print {
+      header { position: static; }
+      main { padding: 12px; gap: 14px; }
+      section { break-inside: avoid; box-shadow: none; }
+      .sectionHead { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Anwendungsmatrix Sanierung · Poster-Mockups</h1>
+    <p class="sub">Struktur aus der Experten-Excel: Anwendungsfelder als Zeilen, Produkte als Spalten. Ziel: Website und Messeplakat aus derselben Logik denken.</p>
+  </header>
+  <main>
+    <section>
+      <div class="sectionHead">
+        <div>
+          <h2>1. Excel nah: eine große Matrix</h2>
+          <p class="note">Alle Produkte bleiben sichtbar. Blitz = rapid/schnell, H/M = Belastbarkeit. Sehr gut für Plakatlogik, aber im Web nur mit Horizontal-Scroll realistisch.</p>
+        </div>
+        <span class="badge">Maximale Vollständigkeit</span>
+      </div>
+      <div class="tableWrap">
+        <div class="legend"><span><b class="yes">✓</b> geeignet</span><span><b class="no">×</b> nicht vorgesehen</span><span><b class="legendBadge rapid">⚡</b> rapid / schnell</span><span><b class="legendBadge">H</b> Belastbarkeit hoch</span><span><b class="legendBadge">M</b> Belastbarkeit mittel</span></div>
+        <table class='posterTable excelLike'><thead><tr><th class='corner'>Anwendungsfeld</th><th class='productHead'><span>HE 60 rapid</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>HE 65</span><small><b class='load'>H</b></small></th><th class='productHead'><span>HE 65 Plus</span><small><b class='load'>H</b></small></th><th class='productHead'><span>HE 40</span><small><b class='load'>M</b></small></th><th class='productHead'><span>Level</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th><th class='productHead'><span>TRU PC</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th><th class='productHead'><span>CEMENT ALL</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>MORTAR MIX</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>ASPHALT</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th><th class='productHead'><span>DOT</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>KOROCRETE</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>RS Schnellbeton</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>DUROP</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th></tr></thead><tbody><tr class='groupRow'><td colspan='14'>Höchstbelastbare Flächen</td></tr><tr class='usecaseRow'><td class='usecase'>Schwerindustrie</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Schüttgüter (Glas, Schrott, Müll, Sand, Salz)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Militärlogistik</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr><tr class='groupRow'><td colspan='14'>Logistikflächen u. Lagerhallen</td></tr><tr class='usecaseRow'><td class='usecase'>Distributions- &amp; Verteilzentren (HUBs)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow emptyRow'><td class='usecase'>Hochregallager</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='groupRow'><td colspan='14'>Montage- und Werkstattflächen</td></tr><tr class='usecaseRow'><td class='usecase'>Kfz Werkstätten</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Holzbearbeitung</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Metallbearbeitung</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr><tr class='groupRow'><td colspan='14'>Fachmärkte u. Fachzentren</td></tr><tr class='usecaseRow'><td class='usecase'>Lebensmittelmärkte</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Einzelhandel</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Baumärkte</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='groupRow'><td colspan='14'>Verkehrsflächen u. Infrastruktur</td></tr><tr class='usecaseRow'><td class='usecase'>Flughäfen</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Helicopter-Landeflächen</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Bushaltestellen</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Tankstellen</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Asphaltflächen (Schlaglöcher, Ausbrüche)</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Kreisverkehre</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Autobahnkreuze / Autobahnabfahrten</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>RHD-Beläge (Klapp- u. Schwenkbrücken, Dienststege, Schrammnorde)</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td></tr><tr class='groupRow'><td colspan='14'>Parkflächen- u. Parkhäuser</td></tr><tr class='usecaseRow'><td class='usecase'>Tiefgaragen</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Private Garagen</td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>LKW-Abstellflächen</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td></tr><tr class='groupRow'><td colspan='14'>Verkaufs- u. Präsentationsflächen</td></tr><tr class='usecaseRow'><td class='usecase'>Veranstaltungsräume, Messen u. Events</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Museen</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Boutiqen</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Showrooms</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='groupRow'><td colspan='14'>Betonreparatur u. Instandsetzung</td></tr><tr class='usecaseRow'><td class='usecase'>Betonflächen (Abplatzungen, Ecken)</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Fertigteilindustrie</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Bordsteine</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Schachtsanierung</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Balkone</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Betonfugen, Fugenprofile, Schwellensanierung</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td></tr><tr class='usecaseRow'><td class='usecase'>Betonfelder (Stelcon-Plattenersatz)</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">×</span></td></tr></tbody></table>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionHead">
+        <div>
+          <h2>2. Familienlogik: Produkte oben gruppieren</h2>
+          <p class="note">Immer noch eine Matrix, aber Produktfamilien strukturieren die Spalten. Leere Zellen werden ruhiger dargestellt, damit die vielen Anwendungsfelder dominieren.</p>
+        </div>
+        <span class="badge">Meine Empfehlung</span>
+      </div>
+      <div class="tableWrap">
+        <div class="legend"><span><b class="yes">✓</b> geeignet</span><span><b class="blank">·</b> nicht vorgesehen</span><span><b class="legendBadge rapid">⚡</b> rapid / schnell</span><span><b class="legendBadge">H</b> Belastbarkeit hoch</span><span><b class="legendBadge">M</b> Belastbarkeit mittel</span></div>
+        <table class='posterTable familyLike'><thead><tr><th class='corner familyCorner'>Anwendungsfeld</th><th class='familyHead' colspan='4'>Hartstoffestriche</th><th class='familyHead' colspan='2'>Dünn- &amp; Sichtestriche</th><th class='familyHead' colspan='2'>Reparaturmörtel</th><th class='familyHead' colspan='4'>Verkehr &amp; Systeme</th><th class='familyHead' colspan='1'>Kunstharz</th></tr><tr><th class='corner'>Anwendungsfeld</th><th class='productHead'><span>HE 60 rapid</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>HE 65</span><small><b class='load'>H</b></small></th><th class='productHead'><span>HE 65 Plus</span><small><b class='load'>H</b></small></th><th class='productHead'><span>HE 40</span><small><b class='load'>M</b></small></th><th class='productHead'><span>Level</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th><th class='productHead'><span>TRU PC</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th><th class='productHead'><span>CEMENT ALL</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>MORTAR MIX</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>ASPHALT</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th><th class='productHead'><span>DOT</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>KOROCRETE</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>RS Schnellbeton</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>DUROP</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th></tr></thead><tbody><tr class='groupRow'><td colspan='14'>Höchstbelastbare Flächen</td></tr><tr class='usecaseRow'><td class='usecase'>Schwerindustrie</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Schüttgüter (Glas, Schrott, Müll, Sand, Salz)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Militärlogistik</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='14'>Logistikflächen u. Lagerhallen</td></tr><tr class='usecaseRow'><td class='usecase'>Distributions- &amp; Verteilzentren (HUBs)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow emptyRow'><td class='usecase'>Hochregallager</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='14'>Montage- und Werkstattflächen</td></tr><tr class='usecaseRow'><td class='usecase'>Kfz Werkstätten</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Holzbearbeitung</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Metallbearbeitung</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='14'>Fachmärkte u. Fachzentren</td></tr><tr class='usecaseRow'><td class='usecase'>Lebensmittelmärkte</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Einzelhandel</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Baumärkte</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='14'>Verkehrsflächen u. Infrastruktur</td></tr><tr class='usecaseRow'><td class='usecase'>Flughäfen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Helicopter-Landeflächen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Bushaltestellen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Tankstellen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Asphaltflächen (Schlaglöcher, Ausbrüche)</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Kreisverkehre</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Autobahnkreuze / Autobahnabfahrten</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>RHD-Beläge (Klapp- u. Schwenkbrücken, Dienststege, Schrammnorde)</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='groupRow'><td colspan='14'>Parkflächen- u. Parkhäuser</td></tr><tr class='usecaseRow'><td class='usecase'>Tiefgaragen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Private Garagen</td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>LKW-Abstellflächen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='groupRow'><td colspan='14'>Verkaufs- u. Präsentationsflächen</td></tr><tr class='usecaseRow'><td class='usecase'>Veranstaltungsräume, Messen u. Events</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Museen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Boutiqen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Showrooms</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='14'>Betonreparatur u. Instandsetzung</td></tr><tr class='usecaseRow'><td class='usecase'>Betonflächen (Abplatzungen, Ecken)</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Fertigteilindustrie</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Bordsteine</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Schachtsanierung</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Balkone</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Betonfugen, Fugenprofile, Schwellensanierung</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Betonfelder (Stelcon-Plattenersatz)</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr></tbody></table>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionHead">
+        <div>
+          <h2>3. Messeplakat: zwei Produktwelten</h2>
+          <p class="note">Alle Anwendungsfelder bleiben sichtbar, aber Produkte werden auf zwei nebeneinanderliegende Matrizen verteilt. Das ist ruhiger für A0/A1 und vermeidet extreme Spaltenbreite.</p>
+          <p class="inlineLegend"><span><b class="yes">✓</b> geeignet</span><span><b class="blank">·</b> nicht vorgesehen</span><span><b class="legendBadge rapid">⚡</b> rapid / schnell</span><span><b class="legendBadge">H</b> Belastbarkeit hoch</span><span><b class="legendBadge">M</b> Belastbarkeit mittel</span></p>
+        </div>
+        <span class="badge">Plakatfreundlich</span>
+      </div>
+      <div class='splitPoster'><div class='splitLegend'><span><b class='yes'>✓</b> geeignet</span><span><b class='blank'>·</b> nicht vorgesehen</span><span><b class='legendBadge rapid'>⚡</b> rapid / schnell</span><span><b class='legendBadge'>H</b> Belastbarkeit hoch</span><span><b class='legendBadge'>M</b> Belastbarkeit mittel</span></div><div><h3>Boden, Estrich, Sichtfläche</h3><table class='posterTable compact'><thead><tr><th class='corner'>Anwendungsfeld</th><th class='productHead'><span>HE 60 rapid</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>HE 65</span><small><b class='load'>H</b></small></th><th class='productHead'><span>HE 65 Plus</span><small><b class='load'>H</b></small></th><th class='productHead'><span>HE 40</span><small><b class='load'>M</b></small></th><th class='productHead'><span>Level</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th><th class='productHead'><span>TRU PC</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th></tr></thead><tbody><tr class='groupRow'><td colspan='7'>Höchstbelastbare Flächen</td></tr><tr class='usecaseRow'><td class='usecase'>Schwerindustrie</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Schüttgüter (Glas, Schrott, Müll, Sand, Salz)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Militärlogistik</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='7'>Logistikflächen u. Lagerhallen</td></tr><tr class='usecaseRow'><td class='usecase'>Distributions- &amp; Verteilzentren (HUBs)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='7'>Montage- und Werkstattflächen</td></tr><tr class='usecaseRow'><td class='usecase'>Kfz Werkstätten</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Holzbearbeitung</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Metallbearbeitung</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='7'>Fachmärkte u. Fachzentren</td></tr><tr class='usecaseRow'><td class='usecase'>Lebensmittelmärkte</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Einzelhandel</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Baumärkte</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='7'>Verkehrsflächen u. Infrastruktur</td></tr><tr class='usecaseRow'><td class='usecase'>Helicopter-Landeflächen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Tankstellen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='7'>Parkflächen- u. Parkhäuser</td></tr><tr class='usecaseRow'><td class='usecase'>Tiefgaragen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Private Garagen</td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>LKW-Abstellflächen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='7'>Verkaufs- u. Präsentationsflächen</td></tr><tr class='usecaseRow'><td class='usecase'>Veranstaltungsräume, Messen u. Events</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Museen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Boutiqen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Showrooms</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr></tbody></table></div><div><h3>Reparatur, Verkehr, Systeme</h3><table class='posterTable compact'><thead><tr><th class='corner'>Anwendungsfeld</th><th class='productHead'><span>CEMENT ALL</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>MORTAR MIX</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>ASPHALT</span><small><b class='rapid'>⚡</b><b class='load'>M</b></small></th><th class='productHead'><span>DOT</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>KOROCRETE</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>RS Schnellbeton</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th><th class='productHead'><span>DUROP</span><small><b class='rapid'>⚡</b><b class='load'>H</b></small></th></tr></thead><tbody><tr class='groupRow'><td colspan='8'>Höchstbelastbare Flächen</td></tr><tr class='usecaseRow'><td class='usecase'>Militärlogistik</td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='8'>Logistikflächen u. Lagerhallen</td></tr><tr class='usecaseRow'><td class='usecase'>Distributions- &amp; Verteilzentren (HUBs)</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='8'>Montage- und Werkstattflächen</td></tr><tr class='usecaseRow'><td class='usecase'>Kfz Werkstätten</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Holzbearbeitung</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Metallbearbeitung</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='groupRow'><td colspan='8'>Verkehrsflächen u. Infrastruktur</td></tr><tr class='usecaseRow'><td class='usecase'>Flughäfen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Helicopter-Landeflächen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Bushaltestellen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Tankstellen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Asphaltflächen (Schlaglöcher, Ausbrüche)</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Kreisverkehre</td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Autobahnkreuze / Autobahnabfahrten</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>RHD-Beläge (Klapp- u. Schwenkbrücken, Dienststege, Schrammnorde)</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='groupRow'><td colspan='8'>Parkflächen- u. Parkhäuser</td></tr><tr class='usecaseRow'><td class='usecase'>Tiefgaragen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>Private Garagen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='usecaseRow'><td class='usecase'>LKW-Abstellflächen</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td></tr><tr class='groupRow'><td colspan='8'>Betonreparatur u. Instandsetzung</td></tr><tr class='usecaseRow'><td class='usecase'>Betonflächen (Abplatzungen, Ecken)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Fertigteilindustrie</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Bordsteine</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Schachtsanierung</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Balkone</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Betonfugen, Fugenprofile, Schwellensanierung</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td></tr><tr class='usecaseRow'><td class='usecase'>Betonfelder (Stelcon-Plattenersatz)</td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="blank">·</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="blank">·</span></td></tr></tbody></table></div></div>
+    </section>
+  </main>
+</body>
+</html>
