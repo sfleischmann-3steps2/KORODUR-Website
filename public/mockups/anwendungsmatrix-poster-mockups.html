@@ -88,6 +88,98 @@
       color: rgba(0,45,89,.72);
     }
     .tableWrap { padding: 18px 20px 24px; min-width: max-content; }
+    .posterWrap {
+      padding: 30px;
+      min-width: 1540px;
+      background: #111820;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .posterCanvas {
+      width: 1500px;
+      height: 500px;
+      background: #fff;
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: 0 18px 46px rgba(0,0,0,.34);
+      display: grid;
+      grid-template-rows: 84px 1fr;
+      overflow: hidden;
+    }
+    .posterTop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 8px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .posterLogo {
+      display: flex;
+      align-items: center;
+      min-width: 250px;
+    }
+    .posterLogoFull {
+      display: block;
+      width: auto;
+      height: 62px;
+      object-fit: contain;
+    }
+    .posterTitle {
+      flex: 1 1 auto;
+    }
+    .posterTitle h3 {
+      margin: 0;
+      font-size: 23px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .posterTitle p {
+      margin: 4px 0 0;
+      color: rgba(0,45,89,.66);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .posterBody {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      min-height: 0;
+    }
+    .matrixPanel {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .imagePanel {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 0;
+      padding: 0;
+      background: #07192a;
+      border-left: 1px solid var(--line);
+      min-width: 0;
+    }
+    .imageTile {
+      position: relative;
+      overflow: hidden;
+      background: #dfe7f1;
+      margin: 0;
+    }
+    .imageTile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .imageTile span {
+      position: absolute;
+      left: 6px;
+      bottom: 6px;
+      padding: 3px 5px;
+      background: rgba(0,45,89,.9);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
     .legend {
       display: flex;
       gap: 18px;
@@ -114,6 +206,111 @@
       width: auto;
       color: var(--navy);
       font-size: 11px;
+    }
+    .reducedMatrix {
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 1000px;
+      color: var(--navy);
+      font-size: 12px;
+    }
+    .reducedMatrix th,
+    .reducedMatrix td {
+      border: 1px solid var(--line);
+      text-align: center;
+      vertical-align: middle;
+    }
+    .reducedCorner {
+      width: 214px;
+      padding: 9px 14px;
+      background: var(--navy);
+      color: #fff;
+      text-align: left;
+      font-size: 13px;
+    }
+    .reducedProductHead {
+      width: 131px;
+      padding: 7px 7px 8px;
+      background: #eaf8fe;
+      border-bottom: 2px solid var(--cyan);
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+    .reducedProductHead span {
+      display: block;
+      font-size: 15px;
+    }
+    .techRow td {
+      height: 30px;
+      padding: 5px 7px;
+      background: #fbfcfe;
+      font-weight: 800;
+    }
+    .techRow .techLabel {
+      background: #fff;
+      text-align: left;
+      font-weight: 900;
+      color: rgba(0,45,89,.78);
+    }
+    .reducedDivider td {
+      padding: 7px 14px;
+      background: var(--navy);
+      color: #fff;
+      text-align: left;
+      font-weight: 900;
+      letter-spacing: .01em;
+    }
+    .reducedUsecase {
+      padding: 8px 14px;
+      text-align: left;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .reducedUsecaseRow td {
+      height: 34px;
+    }
+    .reducedUsecaseRow:nth-child(even) td {
+      background-color: #fbfcfe;
+    }
+    .reducedMatrix .yes {
+      font-size: 21px;
+      line-height: 1;
+    }
+    .reducedMatrix .best {
+      letter-spacing: -1px;
+    }
+    .speedPill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 62px;
+      height: 25px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-weight: 900;
+    }
+    .speedUltra {
+      background: #ffd84d;
+      color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(255,216,77,.26);
+    }
+    .speedVeryFast {
+      background: #ffe47a;
+      color: var(--navy);
+    }
+    .speedFast {
+      background: rgba(255,216,77,.48);
+      color: var(--navy);
+    }
+    .speedDay {
+      background: #fff;
+      color: var(--navy);
+      border: 2px solid rgba(255,216,77,.82);
+    }
+    .speedNormal {
+      background: rgba(0,45,89,.07);
+      color: rgba(0,45,89,.68);
     }
     .posterTable th, .posterTable td {
       border: 1px solid var(--line);
@@ -252,11 +449,24 @@
       background: var(--navy);
     }
     .familyLike .productHead {
-      height: 132px;
+      width: 48px;
+      min-width: 48px;
+      height: 152px;
+    }
+    .familyLike .productHead > span {
+      left: 10px;
+      bottom: 16px;
+      width: 145px;
+      transform: rotate(-64deg);
+      font-size: 11.5px;
+      line-height: 1.05;
+    }
+    .familyLike .productHead small {
+      top: 9px;
     }
     .familyLike td {
-      width: 52px;
-      min-width: 52px;
+      width: 48px;
+      min-width: 48px;
     }
     .splitPoster {
       display: grid;
@@ -307,10 +517,76 @@
 </head>
 <body>
   <header>
-    <h1>Anwendungsmatrix Sanierung · Poster-Mockups</h1>
-    <p class="sub">Struktur aus der Experten-Excel: Anwendungsfelder als Zeilen, Produkte als Spalten. Ziel: Website und Messeplakat aus derselben Logik denken.</p>
+    <h1>Anwendungsmatrix Sanierung</h1>
+    <p class="sub">Produkte, Kernwerte und Anwendungskategorien auf einen Blick.</p>
   </header>
   <main>
+    <section>
+      <div class="sectionHead">
+        <div>
+          <h2>Poster 3:1</h2>
+          <p class="note">Messeposter als Beratungswerkzeug: technische Kernwerte, Geschwindigkeit und Anwendungspassung auf einer breiten Fläche.</p>
+        </div>
+        <span class="badge">Poster 3 rechts</span>
+      </div>
+      <div class="posterWrap">
+        <div class="posterCanvas">
+          <div class="posterTop">
+            <div class="posterLogo">
+              <img class="posterLogoFull" src="/images/korodur-logo-full-colour.png" alt="KORODUR">
+            </div>
+            <div class="posterTitle">
+              <h3>Sanierungssysteme, auf die Sie bauen können.</h3>
+              <p>Produkte, Tempo und Einsatzbereiche für hochbelastete Flächen.</p>
+            </div>
+          </div>
+          <div class="posterBody">
+            <div class="matrixPanel">
+              <table class='reducedMatrix'><thead><tr><th class='reducedCorner'>Produkt</th><th class='reducedProductHead'><span>HE 60 rapid</span></th><th class='reducedProductHead'><span>HE 65 Plus</span></th><th class='reducedProductHead'><span>NEODUR Level</span></th><th class='reducedProductHead'><span>Rapid Set</span></th><th class='reducedProductHead'><span>KOROCRETE</span></th><th class='reducedProductHead'><span>ARM</span></th></tr></thead><tbody><tr class='techRow'><td class='techLabel'>Klassifizierung</td><td>CT-C60-F8-A6</td><td>CT-C70-F9-A6</td><td>CT-C40-F10</td><td>C55/67</td><td>C35/45-C50/60</td><td>n. a.</td></tr><tr class='techRow'><td class='techLabel'>Schichtdicke</td><td>10-60 mm</td><td>15-30 mm</td><td>5-10 mm</td><td>&quot;0&quot;-600 mm</td><td>projektabh.</td><td>30-600 mm</td></tr><tr class='techRow'><td class='techLabel'>belastbar nach</td><td><span class='speedPill speedDay'>24 h</span></td><td><span class='speedPill speedNormal'>48 h</span></td><td><span class='speedPill speedDay'>24 h</span></td><td><span class='speedPill speedVeryFast'>1 h</span></td><td><span class='speedPill speedFast'>6 h</span></td><td><span class='speedPill speedUltra'>30 min</span></td></tr><tr class='reducedDivider'><td colspan='7'>Anwendungen</td></tr><tr class='reducedUsecaseRow'><td class='reducedUsecase'>Höchstbelastbare Flächen</td><td><span class="yes best">✓✓</span></td><td><span class="yes best">✓✓</span></td><td></td><td><span class="yes">✓</span></td><td></td><td></td></tr><tr class='reducedUsecaseRow'><td class='reducedUsecase'>Logistikflächen u. Lagerhallen</td><td><span class="yes best">✓✓</span></td><td><span class="yes best">✓✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td></td></tr><tr class='reducedUsecaseRow'><td class='reducedUsecase'>Montage- und Werkstattflächen</td><td><span class="yes best">✓✓</span></td><td><span class="yes best">✓✓</span></td><td><span class="yes">✓</span></td><td></td><td><span class="yes">✓</span></td><td></td></tr><tr class='reducedUsecaseRow'><td class='reducedUsecase'>Fachmärkte u. Fachzentren</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes best">✓✓</span></td><td></td><td></td><td></td></tr><tr class='reducedUsecaseRow'><td class='reducedUsecase'>Verkehrsflächen u. Infrastruktur</td><td></td><td><span class="yes">✓</span></td><td></td><td><span class="yes best">✓✓</span></td><td><span class="yes">✓</span></td><td><span class="yes best">✓✓</span></td></tr><tr class='reducedUsecaseRow'><td class='reducedUsecase'>Parkflächen- u. Parkhäuser</td><td><span class="yes">✓</span></td><td><span class="yes best">✓✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td></td><td></td></tr><tr class='reducedUsecaseRow'><td class='reducedUsecase'>Verkaufs- u. Präsentationsflächen</td><td></td><td></td><td><span class="yes best">✓✓</span></td><td></td><td></td><td></td></tr></tbody></table>
+            </div>
+            <div class="imagePanel">
+              <figure class="imageTile">
+                <img src="/images/referenzen/haidberg.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/lkw-waschstrasse.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/werkstatt-neutraubling.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/theodor-heuss-bruecke.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/autohaus-versmold.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/helipad-finnland.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/zuerich-parkhaus.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/sinusfugen.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/lkw-umfahrt-darmstadt.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/haidberg-3.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/werkstatt-neutraubling-3.jpg" alt="">
+              </figure>
+              <figure class="imageTile">
+                <img src="/images/referenzen/theodor-heuss-bruecke-2.jpg" alt="">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="sectionHead">
         <div>
