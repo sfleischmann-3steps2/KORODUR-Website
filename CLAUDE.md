@@ -12,7 +12,7 @@ Interaktive Web-App (Next.js 16 Static Export, GitHub Pages) für den Sanierungs
 - **V2.6 — Lösungsfinder Schritt 3 final (deployed 2026-06-02, PR #6):** Schritt 3 auf referenzgedeckten 3+3-Schnitt (6 Cluster statt 8). `chemie`-Tag gesplittet in `chemie-treibstoff`/`chemie-aggressiv`, `thermik` raus, `whg` rein (nicht aus Sulfat/Chlorid). Produkt-Tags TDS-korrigiert, 51 Refs neu gemappt (WHG-Split), Referenz-Fallback („Verwandte Projekte"). Entscheidung Steffi: TDS-fundierte Defaults shippen, Team testet hardcore, Filter-Feinjustierung über Feedback. Offen: Frank-Sign-off §3/§9, Ranking-Nuancen. Spec: `docs/2026-06-02-loesungsfinder-step3-spec.md`.
 - **V2.5 — Produktmatrix V5 (deployed 2026-06-02):** Sanierungs-fokussierte Matrix (13 Produkte in 2 Kategorien), 7 Spalten (Klassifizierung mit Q-Klasse + Norm, Druckfestigkeit, Außen, 5-Dot-Belastbarkeit, Schichtdicke, Belastbar nach, TDS), TDS-URLs aus Notion-Produktdatenbank. PRs #3 und #4 gemerged. Plan: `docs/plans/2026-06-01-produktmatrix-v5-umsetzung.md`.
 - **V2.4 (deployed 2026-04-23):** App ↔ Notion-Referenzverzeichnis konsolidiert, 4-Schritt-Lösungsfinder, Reconciliation-Pipeline, 380 statische Seiten. Siehe [Entwicklungs-Log](https://www.notion.so/35f670e19e1a81c2a17bf0ac00adf80d).
-- **Nächste Iteration (Team-Hardcore-Test pendant):** Lösungsfinder Schritt 3 ist final deployed (V2.6); Team testet jetzt, Filter-Feinjustierung + Tag-Sign-off (Frank) laufen über deren Feedback. Bewusst draußen: Anwendungsfall-Matrix (`docs/2026-06-02-matrix-dev-konzept.md`). Produktmatrix: Persona-Analyse ergab Option B (R-Klasse + Druckfestigkeit, 5-Dot als Tooltip), Quick-Wins in V2.5 umgesetzt, ggf. weitere Iteration nach Team-Review.
+- **Nächste Iteration (Team-Hardcore-Test pendant):** Lösungsfinder Schritt 3 ist final deployed (V2.6); Team testet jetzt, Filter-Feinjustierung + Tag-Sign-off (Frank) laufen über deren Feedback. Bewusst draußen: Anwendungsfall-Matrix (`docs/specs/2026-06-02-matrix-dev-konzept.md`). Produktmatrix: Persona-Analyse ergab Option B (R-Klasse + Druckfestigkeit, 5-Dot als Tooltip), Quick-Wins in V2.5 umgesetzt, ggf. weitere Iteration nach Team-Review.
 
 ## Tech-Stack
 
@@ -40,8 +40,22 @@ data/
   i18n/                  Inhalts-Übersetzungen (EN/FR/PL)
 lib/                     i18n-Helper, LocaleContext, basePath-Helper für GitHub Pages
 scripts/                 CLI-Skripte (Build, Validierung, Notion-Sync — siehe Workflows)
-docs/                    Pläne, Specs, Reconciliation-Reports
+docs/                    Projektdoku (siehe Ablage-Regeln unten)
+  specs/                 Design-/Spec-Dokumente
+  plans/                 Umsetzungspläne
+  reviews/               Review-/Analyse-Reports
+  reference/             Referenz-Material (Taxonomien, Cluster-Tabellen)
+  superpowers/           Superpowers-Workflow-Outputs (plans/, specs/)
+  tds-quellen/           TDS-Evidenzbasis (PDFs + extrahierte Texte, bewusst committed)
+  mockups/               Design-Mockups (HTML/PDF + Assets)
+  app-notion-match.md, gallery-mapping.json, referenz-import-log.md,
+  KORODUR_Referenz_Vorlage.xlsx, referenz-delta-plan.md  ← Skript-I/O, fixe Pfade, NICHT verschieben
 ```
+
+**Ablage-Regeln (gegen Wildwuchs):**
+- **Repo-Root** bleibt Code + Config + `README`/`CLAUDE`/`AGENTS`/`PLAN`. Keine PDFs/PPTX/Screenshots/xlsx im Root (per `.gitignore` blockiert) — solche Dateien gehören nach Google Drive, nicht ins Git.
+- **Doku** nach `docs/{specs,plans,reviews,reference}/` einsortieren. Logs (`*.log`) sind Artefakte und gitignored.
+- **App-Assets** (Bilder, die die App rendert) unter `public/images/`, niemals in `docs/`.
 
 ## Daten-Modell & Notion-Sync
 
