@@ -10,3 +10,18 @@ next-env.d.ts
 # Lokale Zwischen-Artefakte (Reconciliation-Pipeline)
 docs/cache/
 Sanierungsprodukte_db.zip
+
+# Repo-Hygiene: keine losen Office-/Bild-Exporte im Root committen
+# (root-scoped via führendem /, damit public/images/ und docs/tds-quellen/ unberührt bleiben)
+/*.pdf
+/*.pptx
+/*.png
+/*.jpg
+/*.jpeg
+/*.xlsx
+/*.docx
+/Bildschirmfoto*
+
+# Maschinen-Artefakte
+*.log
+__pycache__/
