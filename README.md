@@ -15,7 +15,7 @@ Verfügbar in: [Deutsch](https://sfleischmann-3steps2.github.io/KORODUR-Sanierun
 - **51 Referenzprojekte** mit Herausforderungen, Lösung, Vorteilen, Produktdaten und **Bildergalerie** (3–8 Fotos pro Referenz, Lightbox mit Pfeiltasten)
 - **18 Produkte** mit technischen Daten, Normen, Qualitätsklassen und **Produkt-Mockups** (13 davon in der Sanierungs-Matrix)
 - **Einsatzbereich-Filter** über alle Referenzen (8 Bereiche: Lager & Logistik, Industrie & Produktion, Lebensmittel, Flugzeug, Parkdeck, Infrastruktur & Zufahrten, Verkaufsräume, Schwerindustrie)
-- **Produktmatrix V5** – Sanierungs-fokussierte Vergleichstabelle: 13 Produkte in 2 Kategorien (Industrieestriche + Schnellreparaturmörtel), 7 Spalten (Klassifizierung mit Q-Klasse + Norm, Druckfestigkeit, Außen, Belastbarkeit mit 5-Stufen-Skala, Schichtdicke, Belastbar nach, TDS-Download)
+- **Anwendungsmatrix** – Web-Projektion des Messeposters: 6 kuratierte Produkte als Spalten, technische Kernwerte (Klassifizierung, Schichtdicke, belastbar nach) + Vorteil-Zeile + 6 Anwendungs-Zeilen (✓✓ Kernanwendung / ✓ geeignet), „Mehr Infos"-Link je Produkt (TDS bzw. Produktseite)
 - **Volltextsuche** (Cmd/Ctrl+K) über Referenzen, Kategorien und Produkte
 - **Responsive** – Desktop, Tablet, Mobile
 - **PWA-fähig** – Service Worker, Manifest
@@ -91,6 +91,13 @@ GitHub Pages via GitHub Actions – bei jedem Push auf `main` wird automatisch g
 
 ### Backlog Themen
 Commit: 0deae98c191a84ed9aded5fbff50f664f9336561 -> Sanierungssysteme (Systemdarstellung als Konzeptbasis)
+
+### V2.8 – Anwendungsmatrix (Poster 1:1) (Juni 2026)
+- [x] **Anwendungsmatrix als alleinige Matrix**: Web-Projektion des Messeposters (Poster 3:1) – 6 kuratierte Produkte als Spalten, Tech-Werte + Vorteil-Zeile + 6 Anwendungs-Zeilen (✓✓/✓), viersprachig
+- [x] **HE 65 Plus durchgängig Kernanwendung** (✓✓ in allen Zeilen)
+- [x] **„Mehr Infos"-Link je Produkt**: 5× TDS-PDF, Rapid Set → `korodur.de/bereiche/rapid-set/`
+- [x] **Technische Matrix (Produktmatrix V5) entfernt**: Route `/produktmatrix` + `Produktmatrix.tsx` gelöscht, Navigation + Suche zeigen auf die Anwendungsmatrix, toter i18n-Block bereinigt
+- [ ] **Schleifverschleiß-Zeile** ausgeklammert (nur 2/6 Produkte mit Böhme-Wert) – intern zu klären, ggf. später nachziehen
 
 ### V2.6 – Lösungsfinder Schritt 3 final (Juni 2026)
 - [x] **Referenzgedeckter 3+3-Schnitt** in Schritt 3: 6 Cluster statt 8 (zwei leere Außen-Cluster entfernt), jeder Cluster hat Referenzen
