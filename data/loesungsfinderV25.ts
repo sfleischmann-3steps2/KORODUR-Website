@@ -21,6 +21,14 @@ import { EINSATZBEREICH_TAGS } from "./einsatzbereichMapping";
 import { produkte, produktFilterV25, type Produkt } from "./produkte";
 import { referenzen } from "./referenzen";
 import { REFERENZ_FILTER_V25 } from "./referenzenV25";
+import { kuratierteEmpfehlungId } from "./produktEmpfehlungKuratiert";
+
+// Produkt-Empfehlungsmodus (Steffi 2026-06-09):
+//  - "tags"      = A1, automatische Tag-Schnittmenge (aktuell live).
+//  - "kuratiert" = A2, strategische Tabelle (data/produktEmpfehlungKuratiert.ts).
+// Umschalten auf "kuratiert" erst nach Frank-Sign-off der Tabelle. Die
+// Referenz-Logik ist davon unabhängig und bleibt in beiden Modi gleich.
+export const EMPFEHLUNGS_MODUS: "tags" | "kuratiert" = "tags";
 
 export type V25Produkt = Produkt & ProduktFilterV25;
 export type V25Referenz = Referenz & ReferenzFilterV25;
@@ -135,7 +143,14 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
     return a.wiederbelastungInH - b.wiederbelastungInH;
   });
 
-  const topProdukt = kandidaten[0] ?? null;
+  // A1: bestes tag-gerankte Produkt. A2: kuratierte Tabelle gewinnt, sofern ein
+  // Eintrag existiert und das Produkt auffindbar ist (sonst Fallback auf A1).
+  let topProdukt = kandidaten[0] ?? null;
+  if (EMPFEHLUNGS_MODUS === "kuratiert") {
+    const id = kuratierteEmpfehlungId(state.einsatzbereich, state.flaeche, state.zeitfenster);
+    const kuratiert = id ? v25Produkte.find((p) => p.id === id) : undefined;
+    if (kuratiert) topProdukt = kuratiert;
+  }
 
   // --- Referenzen filtern: produktunabhängig, mit Auffüllen auf MIN_REFS ---
   // Steffi 2026-06-09: Die Referenzanzeige läuft bewusst UNABHÄNGIG von der
