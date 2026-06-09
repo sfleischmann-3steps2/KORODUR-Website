@@ -1,234 +1,129 @@
-export type AnwendungId =
-  | "industrie"
-  | "parken"
-  | "verkehr"
-  | "whg"
-  | "sicht"
-  | "reparatur";
+// Anwendungsmatrix — Web-Projektion des Messeposters "Poster 3:1".
+// Quelle der Wahrheit: public/mockups/anwendungsmatrix-poster-mockups.html (Poster 3:1).
+// 6 kuratierte Produkte als Spalten, Tech-Werte + Vorteil-Zeile + Anwendungs-Zeilen (✓✓ / ✓ / leer).
+// Einziges Web-Plus gegenüber dem Poster: "Mehr Infos"-Link je Produkt.
 
-export type AnwendungStatus = "core" | "secondary" | "none";
+export type Mark = "best" | "yes" | "none"; // ✓✓ Kernanwendung · ✓ geeignet · – leer
+export type SpeedTier = "ultra" | "veryFast" | "fast" | "day" | "normal";
 
-export interface AnwendungColumn {
-  id: AnwendungId;
-  label: string;
-  shortLabel: string;
-  description: string;
-}
+// Übersetzbarer Wert: { key, de }; sprachneutraler Wert (Zahlen/Normbezeichnung): string.
+export type Cell = string | { key: string; de: string };
 
-export interface AnwendungMatrixProduct {
+export type ProductLink =
+  | { kind: "tds"; productId: string } // echtes Produkt → TDS-PDF aus produkte.ts
+  | { kind: "website"; url: string }; // konsolidierte Spalte → Website-Seite ("Mehr Infos")
+
+export interface MatrixProduct {
   id: string;
-  name: string;
-  family: string;
-  role: string;
-  applications: Record<AnwendungId, AnwendungStatus>;
+  name: string; // Spaltenkopf (Markenname, sprachneutral)
+  klassifizierung: Cell;
+  schichtdicke: Cell;
+  belastbarNach: Cell;
+  speed: SpeedTier;
+  vorteil: { key: string; de: string };
+  link: ProductLink;
 }
 
-export const anwendungColumns: AnwendungColumn[] = [
-  {
-    id: "industrie",
-    label: "Industrie/Halle",
-    shortLabel: "Industrie",
-    description: "Hallen, Produktionsflächen, Lager, Werkstätten, Hochregallager, Staplerverkehr.",
-  },
-  {
-    id: "parken",
-    label: "Parken/Deck",
-    shortLabel: "Parken",
-    description: "Parkhäuser, Tiefgaragen, Parkflächen, PKW-Verkehr, Tausalz- und Reifenabrieb.",
-  },
-  {
-    id: "verkehr",
-    label: "Verkehr/Infra",
-    shortLabel: "Verkehr",
-    description: "Straßen, Brücken, Fahrbahnen, Flugbetriebsflächen und schnelle Verkehrsfreigabe.",
-  },
-  {
-    id: "whg",
-    label: "WHG/Chemie/Nass",
-    shortLabel: "WHG/Chemie",
-    description: "Waschplätze, Auffangbehälter, Nassbereiche, chemische Angriffe oder wassergefährdende Stoffe.",
-  },
-  {
-    id: "sicht",
-    label: "Sicht/Design",
-    shortLabel: "Design",
-    description: "Dekorative, repräsentative oder geschliffene Nutzschichten.",
-  },
-  {
-    id: "reparatur",
-    label: "Reparatur/Betonersatz",
-    shortLabel: "Reparatur",
-    description: "Punktuelle Reparaturen, Betonersatz, Asphaltreparatur, Verguss- oder Ausgleichsanwendungen.",
-  },
-];
+export interface UsecaseRow {
+  key: string;
+  de: string;
+  marks: Mark[]; // Reihenfolge = anwendungMatrixProducts
+}
 
-export const anwendungMatrixProducts: AnwendungMatrixProduct[] = [
-  {
-    id: "neodur-he-40",
-    name: "NEODUR HE 40",
-    family: "Hartstoffestrich",
-    role: "Klassischer Industrieboden",
-    applications: {
-      industrie: "core",
-      parken: "secondary",
-      verkehr: "none",
-      whg: "none",
-      sicht: "none",
-      reparatur: "none",
-    },
-  },
+export const RAPID_SET_URL = "https://www.korodur.de/bereiche/rapid-set/";
+
+export const anwendungMatrixProducts: MatrixProduct[] = [
   {
     id: "neodur-he-60-rapid",
-    name: "NEODUR HE 60 rapid",
-    family: "Hartstoffestrich schnell",
-    role: "Schnell nutzbarer Industrieboden",
-    applications: {
-      industrie: "core",
-      parken: "secondary",
-      verkehr: "none",
-      whg: "none",
-      sicht: "none",
-      reparatur: "none",
-    },
-  },
-  {
-    id: "neodur-he-65",
-    name: "NEODUR HE 65",
-    family: "Hartstoffestrich",
-    role: "Hochbelastbarer Industrieboden",
-    applications: {
-      industrie: "core",
-      parken: "secondary",
-      verkehr: "none",
-      whg: "none",
-      sicht: "none",
-      reparatur: "none",
-    },
+    name: "HE 60 rapid",
+    klassifizierung: "CT-C60-F8-A6",
+    schichtdicke: { key: "cell_ab10mm", de: "ab 10 mm" },
+    belastbarNach: "24 h",
+    speed: "day",
+    vorteil: { key: "vorteil_schnelligkeit", de: "Schnelligkeit" },
+    link: { kind: "tds", productId: "neodur-he-60-rapid" },
   },
   {
     id: "neodur-he-65-plus",
-    name: "NEODUR HE 65 Plus",
-    family: "Hartstoffestrich WHG",
-    role: "WHG- und Parkdeck-Flächen",
-    applications: {
-      industrie: "core",
-      parken: "core",
-      verkehr: "secondary",
-      whg: "core",
-      sicht: "none",
-      reparatur: "none",
-    },
+    name: "HE 65 Plus",
+    klassifizierung: "CT-C70-F9-A6",
+    schichtdicke: "15-30 mm",
+    belastbarNach: { key: "cell_7tage", de: "7 Tage" },
+    speed: "normal",
+    vorteil: { key: "vorteil_aussen", de: "Außenbereich" },
+    link: { kind: "tds", productId: "neodur-he-65-plus" },
   },
   {
     id: "neodur-level",
     name: "NEODUR Level",
-    family: "Dünnestrich",
-    role: "Selbstverlaufende Nutzschicht",
-    applications: {
-      industrie: "core",
-      parken: "secondary",
-      verkehr: "none",
-      whg: "none",
-      sicht: "secondary",
-      reparatur: "none",
-    },
+    klassifizierung: "CT-C40-F10",
+    schichtdicke: "5-10 mm",
+    belastbarNach: "24 h",
+    speed: "day",
+    vorteil: { key: "vorteil_ebenheit", de: "Ebenheit" },
+    link: { kind: "tds", productId: "neodur-level" },
   },
   {
-    id: "tru-self-leveling",
-    name: "TRU Self-Leveling",
-    family: "Sichtestrich",
-    role: "Dekorativer Designboden",
-    applications: {
-      industrie: "none",
-      parken: "none",
-      verkehr: "none",
-      whg: "none",
-      sicht: "core",
-      reparatur: "none",
-    },
+    id: "rapid-set",
+    name: "Rapid Set",
+    klassifizierung: "C35/45 – C55/67",
+    schichtdicke: "„0“-600 mm",
+    belastbarNach: "1 h",
+    speed: "veryFast",
+    vorteil: { key: "vorteil_multifunktional", de: "Multifunktionalität" },
+    link: { kind: "website", url: RAPID_SET_URL },
   },
   {
     id: "korocrete",
     name: "KOROCRETE Schnellbeton",
-    family: "Beton-System",
-    role: "Schnell nutzbarer Betonboden",
-    applications: {
-      industrie: "core",
-      parken: "secondary",
-      verkehr: "secondary",
-      whg: "none",
-      sicht: "none",
-      reparatur: "secondary",
-    },
-  },
-  {
-    id: "rapid-set-cement-all",
-    name: "CEMENT ALL",
-    family: "Schnellreparaturmörtel",
-    role: "Universelle Schnellreparatur",
-    applications: {
-      industrie: "none",
-      parken: "none",
-      verkehr: "secondary",
-      whg: "secondary",
-      sicht: "none",
-      reparatur: "core",
-    },
-  },
-  {
-    id: "rapid-set-mortar-mix",
-    name: "MORTAR MIX",
-    family: "Schnellreparaturmörtel",
-    role: "Reparatur in größerer Schichtdicke",
-    applications: {
-      industrie: "secondary",
-      parken: "none",
-      verkehr: "secondary",
-      whg: "secondary",
-      sicht: "none",
-      reparatur: "core",
-    },
-  },
-  {
-    id: "dot-europe-concrete-mix",
-    name: "DOT Europe CONCRETE MIX",
-    family: "Reparaturbeton",
-    role: "Verkehrswege und Betoninstandsetzung",
-    applications: {
-      industrie: "secondary",
-      parken: "secondary",
-      verkehr: "core",
-      whg: "secondary",
-      sicht: "none",
-      reparatur: "core",
-    },
+    klassifizierung: "C35/45-C50/60",
+    schichtdicke: { key: "cell_projektabh", de: "projektabh." },
+    belastbarNach: "8 h",
+    speed: "fast",
+    vorteil: { key: "vorteil_mischtechnik", de: "Mischtechnik" },
+    link: { kind: "tds", productId: "korocrete" },
   },
   {
     id: "asphalt-repair-mix",
-    name: "ASPHALT REPAIR MIX",
-    family: "Asphalt-Reparatur",
-    role: "Schlaglöcher und Asphaltflächen",
-    applications: {
-      industrie: "none",
-      parken: "secondary",
-      verkehr: "core",
-      whg: "none",
-      sicht: "none",
-      reparatur: "secondary",
-    },
+    name: "ARM",
+    klassifizierung: "n. a.",
+    schichtdicke: "30-600 mm",
+    belastbarNach: "30 min",
+    speed: "ultra",
+    vorteil: { key: "vorteil_asphalt", de: "Asphalt-Alternative" },
+    link: { kind: "tds", productId: "asphalt-repair-mix" },
+  },
+];
+
+export const anwendungUsecases: UsecaseRow[] = [
+  {
+    key: "usecase_hoechstbelastbar",
+    de: "Höchstbelastbare Flächen",
+    marks: ["best", "best", "none", "best", "yes", "none"],
   },
   {
-    id: "rapid-set-schnellbeton",
-    name: "System Rapid Set Concrete",
-    family: "Beton-System",
-    role: "Schnelle Verkehrsfreigabe",
-    applications: {
-      industrie: "secondary",
-      parken: "secondary",
-      verkehr: "core",
-      whg: "none",
-      sicht: "none",
-      reparatur: "secondary",
-    },
+    key: "usecase_logistik",
+    de: "Logistikflächen u. Lagerhallen",
+    marks: ["best", "best", "best", "best", "yes", "none"],
+  },
+  {
+    key: "usecase_werkstatt",
+    de: "Montage- und Werkstattflächen",
+    marks: ["best", "best", "yes", "best", "yes", "none"],
+  },
+  {
+    key: "usecase_fachmarkt",
+    de: "Fachmärkte u. Fachzentren",
+    marks: ["best", "best", "best", "none", "none", "none"],
+  },
+  {
+    key: "usecase_verkehr",
+    de: "Verkehrsflächen u. Infrastruktur",
+    marks: ["none", "best", "none", "best", "best", "best"],
+  },
+  {
+    key: "usecase_parken",
+    de: "Parkflächen u. Parkhäuser",
+    marks: ["best", "best", "yes", "best", "yes", "best"],
   },
 ];
