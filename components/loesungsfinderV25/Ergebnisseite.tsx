@@ -11,11 +11,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 import type { CSSProperties } from "react";
 import type { Locale } from "@/lib/i18n";
-import type { LoesungsfinderState } from "@/data/types";
-import { EINSATZBEREICH_LABELS } from "@/data/einsatzbereichMapping";
-import { berechneErgebnisV25 } from "@/data/loesungsfinderV25";
+import { useLocale } from "@/lib/LocaleContext";
+import type { LoesungsfinderState, Referenz } from "@/data/types";
+import type { Produkt } from "@/data/produkte";
+import { einsatzbereichLabel } from "@/data/einsatzbereichMapping";
+import { berechneErgebnisV25, type ErgebnisV25 } from "@/data/loesungsfinderV25";
 import { withBasePath } from "@/lib/basePath";
 import { IconFlame, IconPhone, IconArrowRight, IconArrowLeft, IconRefresh } from "./icons";
 
@@ -53,33 +56,74 @@ const clamp = (zeilen: number): CSSProperties => ({
 // das Jahr soll nicht auf der Ergebnisseite stehen (Steffi 2026-06-09).
 const ohneJahr = (titel: string): string => titel.replace(/\s*\(\d{4}\)\s*$/, "");
 
-const FLAECHE_LABEL: Record<string, string> = {
-  punktuell: "Punktuelle Reparatur",
-  mittel: "Mittlere Fläche",
-  gross: "Großflächige Sanierung",
-};
-
-const ZEIT_LABEL: Record<string, string> = {
-  "sehr-kurz": "Sehr kurzfristig",
-  kurz: "1 – 2 Wochen",
-  planbar: "Planbar",
-};
+// Polnisch braucht drei Pluralformen (1 projekt, 2–4 projekty, 5+ projektów);
+// die übrigen Sprachen kommen mit Singular/Plural aus.
+function projektWort(
+  n: number,
+  t: { refs_projekt_singular: string; refs_projekt_plural: string; refs_projekt_plural5: string },
+  lang: string,
+): string {
+  if (n === 1) return t.refs_projekt_singular;
+  if (lang === "pl") {
+    const r10 = n % 10;
+    const r100 = n % 100;
+    const fewForm = r10 >= 2 && r10 <= 4 && !(r100 >= 12 && r100 <= 14);
+    return fewForm ? t.refs_projekt_plural : t.refs_projekt_plural5;
+  }
+  return t.refs_projekt_plural;
+}
 
 export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: ErgebnisseiteProps) {
-  const ergebnis = berechneErgebnisV25(state);
+  const { dict } = useLocale();
+  const t = dict.loesungsfinder;
+  const ergebnis = useMemo<ErgebnisV25>(() => berechneErgebnisV25(state), [state]);
+
+  // Inhalts-Lokalisierung (Referenz-Titel, Produkt-Kurzbeschreibung): der
+  // Match-Algorithmus läuft auf der DE-Basis; die Overrides werden hier
+  // nachgeladen. `fuer` koppelt das Ergebnis an die aktuelle Berechnung,
+  // damit nach einer Auswahl-Änderung keine veralteten Texte stehen bleiben.
+  const [lokalisiert, setLokalisiert] = useState<{
+    fuer: ErgebnisV25;
+    refs: Referenz[];
+    topProdukt: Produkt | null;
+  } | null>(null);
+
+  useEffect(() => {
+    if (lang === "de") return;
+    let aktiv = true;
+    (async () => {
+      const { localizeReferenzen, localizeProdukt } = await import("@/data/i18n/getLocalized");
+      const [refs, topProdukt] = await Promise.all([
+        localizeReferenzen(ergebnis.refs.slice(0, 6), lang),
+        ergebnis.topProdukt ? localizeProdukt(ergebnis.topProdukt, lang) : Promise.resolve(null),
+      ]);
+      if (aktiv) setLokalisiert({ fuer: ergebnis, refs, topProdukt });
+    })();
+    return () => {
+      aktiv = false;
+    };
+  }, [ergebnis, lang]);
+
+  const refsAnzeige: Referenz[] =
+    lokalisiert?.fuer === ergebnis ? lokalisiert.refs : ergebnis.refs.slice(0, 6);
+  const topProduktAnzeige: Produkt | null =
+    lokalisiert?.fuer === ergebnis ? lokalisiert.topProdukt : ergebnis.topProdukt;
 
   // Chip-Labels in der oberen Leiste (reine Zusammenfassung der Auswahl)
   const chips: string[] = [];
-  if (state.flaeche) chips.push(FLAECHE_LABEL[state.flaeche]);
-  if (state.innenAussen === "innen") chips.push("Innen");
-  if (state.innenAussen === "aussen") chips.push("Außen");
-  if (state.einsatzbereich) chips.push(EINSATZBEREICH_LABELS[state.einsatzbereich].titel);
-  if (state.flaeche !== "punktuell" && state.zeitfenster)
-    chips.push(ZEIT_LABEL[state.zeitfenster]);
+  if (state.flaeche === "punktuell") chips.push(t.chip_punktuell);
+  if (state.flaeche === "mittel") chips.push(t.chip_mittel);
+  if (state.flaeche === "gross") chips.push(t.chip_gross);
+  if (state.innenAussen === "innen") chips.push(t.chip_innen);
+  if (state.innenAussen === "aussen") chips.push(t.chip_aussen);
+  if (state.einsatzbereich) chips.push(einsatzbereichLabel(state.einsatzbereich, lang).titel);
+  if (state.flaeche !== "punktuell" && state.zeitfenster === "sehr-kurz") chips.push(t.chip_sehrkurz);
+  if (state.flaeche !== "punktuell" && state.zeitfenster === "kurz") chips.push(t.chip_kurz);
+  if (state.flaeche !== "punktuell" && state.zeitfenster === "planbar") chips.push(t.chip_planbar);
 
   // Referenz-Sektion: Überschrift + Hinweis abhängig von der Trefferlage.
   const hatExakte = ergebnis.exaktTreffer > 0;
-  const refTitel = hatExakte ? "Passende Referenzen" : "Verwandte Projekte";
+  const refTitel = hatExakte ? t.refs_exakt : t.refs_verwandt;
 
   return (
     <div className="rounded-2xl p-6 md:p-8" style={{ background: HELLGRAU }}>
@@ -103,13 +147,13 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
       </div>
 
       <h2 className="text-[20px] font-medium mb-4" style={{ color: NAVY }}>
-        Unsere Empfehlung für Ihre Sanierung
+        {t.ergebnis_title}
       </h2>
 
       {/* Top-Empfehlung als kompakter Banner */}
-      {ergebnis.topProdukt ? (
+      {topProduktAnzeige ? (
         <Link
-          href={`/${lang}/produkte/${ergebnis.topProdukt.id}/`}
+          href={`/${lang}/produkte/${topProduktAnzeige.id}/`}
           style={{
             background: "#fff",
             border: `1px solid ${MITTELGRAU}`,
@@ -149,10 +193,10 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
                 marginBottom: 2,
               }}
             >
-              Top-Empfehlung
+              {t.ergebnis_top}
             </div>
             <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
-              {ergebnis.topProdukt.name}
+              {topProduktAnzeige.name}
             </div>
             <div
               style={{
@@ -164,7 +208,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
                 whiteSpace: "nowrap",
               }}
             >
-              {ergebnis.topProdukt.kurzbeschreibung}
+              {topProduktAnzeige.kurzbeschreibung}
             </div>
           </div>
           <div
@@ -177,12 +221,12 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
               gap: 4,
             }}
           >
-            Details
+            {t.ergebnis_details}
             <IconArrowRight width={13} height={13} aria-hidden="true" />
           </div>
         </Link>
       ) : (
-        <EmptyEmpfehlung />
+        <EmptyEmpfehlung titel={t.ergebnis_empty_title} text={t.ergebnis_empty_text} />
       )}
 
       {/* Referenzen-Header */}
@@ -197,7 +241,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
         <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
           {refTitel}{" "}
           <span style={{ fontSize: 12, color: "#6B7280", fontWeight: 400 }}>
-            · {ergebnis.refsGesamt} {ergebnis.refsGesamt === 1 ? "Projekt" : "Projekte"}
+            · {ergebnis.refsGesamt} {projektWort(ergebnis.refsGesamt, t, lang)}
           </span>
         </div>
         {ergebnis.refsGesamt > 6 && (
@@ -212,7 +256,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
               gap: 4,
             }}
           >
-            Alle anzeigen
+            {t.refs_alle}
             <IconArrowRight width={12} height={12} aria-hidden="true" />
           </Link>
         )}
@@ -221,14 +265,13 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
       {/* Hinweis, wenn kein exakter Treffer dabei ist (aufgefüllt auf min. 3) */}
       {ergebnis.refsGelockert && (
         <div style={{ fontSize: 12, color: "#6B7280", marginBottom: 12, lineHeight: 1.5 }}>
-          Kein exakt passendes Projekt gefunden? Wir zeigen hier verwandte Ausschnitte und beraten
-          Sie gern individuell.
+          {t.refs_gelockert}
         </div>
       )}
       {!ergebnis.refsGelockert && <div style={{ marginBottom: 12 }} />}
 
       {/* Referenz-Grid */}
-      {ergebnis.refs.length > 0 ? (
+      {refsAnzeige.length > 0 ? (
         <div
           style={{
             display: "grid",
@@ -237,7 +280,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
             marginBottom: 16,
           }}
         >
-          {ergebnis.refs.slice(0, 6).map((r) => (
+          {refsAnzeige.map((r) => (
             <Link
               key={r.id}
               href={`/${lang}/referenzen/${r.slug}/`}
@@ -286,8 +329,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
             marginBottom: 16,
           }}
         >
-          Für die aktuelle Auswahl haben wir noch keine veröffentlichten Referenzen.
-          Wir erweitern unsere Datenbank laufend.
+          {t.refs_keine}
         </div>
       )}
 
@@ -306,10 +348,10 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
       >
         <div>
           <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 2 }}>
-            Sprechen Sie mit unseren Sanierungs-Experten
+            {t.cta_title}
           </div>
           <div style={{ fontSize: 12.5, color: "rgba(255,255,255,0.8)" }}>
-            Wir besprechen Ihr Vorhaben und stimmen das passende Produkt auf Ihre Baustelle ab.
+            {t.cta_text}
           </div>
         </div>
         <a
@@ -331,7 +373,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
           }}
         >
           <IconPhone width={15} height={15} aria-hidden="true" />
-          Beratung anfragen
+          {t.cta_button}
         </a>
       </div>
 
@@ -353,7 +395,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
           style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
         >
           <IconArrowLeft width={14} height={14} aria-hidden="true" />
-          Zurück
+          {t.back}
         </button>
         <button
           type="button"
@@ -362,14 +404,14 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
           style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
         >
           <IconRefresh width={14} height={14} aria-hidden="true" />
-          Neu starten
+          {t.neu_starten}
         </button>
       </div>
     </div>
   );
 }
 
-function EmptyEmpfehlung() {
+function EmptyEmpfehlung({ titel, text }: { titel: string; text: string }) {
   return (
     <div
       style={{
@@ -382,11 +424,10 @@ function EmptyEmpfehlung() {
       }}
     >
       <div style={{ fontSize: 16, fontWeight: 500, color: NAVY, marginBottom: 6 }}>
-        Keine direkte Produktempfehlung
+        {titel}
       </div>
       <div style={{ fontSize: 13, color: "#6B7280", lineHeight: 1.55 }}>
-        Für diese Kombination haben wir aktuell keinen perfekten Produkt-Match.
-        Sprechen Sie uns direkt an – wir finden eine passende Lösung.
+        {text}
       </div>
     </div>
   );

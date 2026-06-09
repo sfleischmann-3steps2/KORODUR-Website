@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Referenz } from "@/data/types";
 import { withBasePath } from "@/lib/basePath";
+import { useLocale } from "@/lib/LocaleContext";
 
 interface ProduktInfo {
   name: string;
@@ -17,6 +18,7 @@ interface ReferenzPdfProps {
 }
 
 export default function ReferenzPdf({ referenz, produkt }: ReferenzPdfProps) {
+  const { dict } = useLocale();
   const [loading, setLoading] = useState(false);
 
   async function handleClick() {
@@ -24,7 +26,7 @@ export default function ReferenzPdf({ referenz, produkt }: ReferenzPdfProps) {
     try {
       const { generateReferenzPdf } = await import("@/lib/pdf");
       const bildUrl = withBasePath(referenz.bild);
-      await generateReferenzPdf(referenz, produkt, bildUrl);
+      await generateReferenzPdf(referenz, produkt, bildUrl, dict.pdf);
     } catch (err) {
       console.error("PDF generation failed:", err);
     } finally {
@@ -59,7 +61,7 @@ export default function ReferenzPdf({ referenz, produkt }: ReferenzPdfProps) {
         <polyline points="7 10 12 15 17 10" />
         <line x1="12" y1="15" x2="12" y2="3" />
       </svg>
-      {loading ? "PDF wird erstellt..." : "PDF herunterladen"}
+      {loading ? dict.pdf.button_loading : dict.pdf.button}
     </button>
   );
 }

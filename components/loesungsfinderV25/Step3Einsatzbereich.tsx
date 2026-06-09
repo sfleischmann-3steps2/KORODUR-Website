@@ -11,7 +11,8 @@
 
 import type { ComponentType, SVGProps } from "react";
 import type { EinsatzbereichV25, InnenAussen } from "@/data/types";
-import { EINSATZBEREICH_LABELS, einsatzbereicheFuer } from "@/data/einsatzbereichMapping";
+import { einsatzbereichLabel, einsatzbereicheFuer } from "@/data/einsatzbereichMapping";
+import { useLocale } from "@/lib/LocaleContext";
 import OptionCard from "./OptionCard";
 import {
   IconFactory,
@@ -42,29 +43,24 @@ const ICON_FUER_BEREICH: Record<EinsatzbereichV25, IconComp> = {
   "aussen-umwelt-whg": IconTruckLoading,
 };
 
-// TODO i18n: Texte in dictionaries/{de,en,fr,pl}.json überführen.
-const SUBLINE_FUER: Record<InnenAussen, string> = {
-  innen:
-    "Aus der Branche leiten wir die typische Belastung ab – Staplerverkehr, Chemie, Hygiene oder Optik wirken sich direkt auf die Produktwahl aus.",
-  aussen:
-    "Außenflächen unterscheiden sich stark zwischen PKW-Verkehr, Schwerlast und reiner Witterungsfläche – die Branche entscheidet über das Anforderungsprofil.",
-};
-
 export default function Step3Einsatzbereich({ innenAussen, value, onSelect }: Step3Props) {
+  const { lang, dict } = useLocale();
+  const t = dict.loesungsfinder;
   const bereiche = einsatzbereicheFuer(innenAussen);
+  const subline = innenAussen === "innen" ? t.step3_subline_innen : t.step3_subline_aussen;
 
   return (
     <div>
       <header className="mb-6">
         <h2 className="text-[22px] font-medium" style={{ color: NAVY }}>
-          In welcher Branche wird der Boden eingesetzt?
+          {t.step3_question}
         </h2>
-        <p className="text-sm text-gray-600 mt-2 leading-relaxed">{SUBLINE_FUER[innenAussen]}</p>
+        <p className="text-sm text-gray-600 mt-2 leading-relaxed">{subline}</p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {bereiche.map((b) => {
-          const labels = EINSATZBEREICH_LABELS[b];
+          const labels = einsatzbereichLabel(b, lang);
           const Icon = ICON_FUER_BEREICH[b];
           return (
             <OptionCard

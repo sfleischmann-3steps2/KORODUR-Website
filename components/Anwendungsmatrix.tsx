@@ -59,12 +59,12 @@ function SpeedPill({ tier, label }: { tier: SpeedTier; label: string }) {
   );
 }
 
-function MarkCell({ mark }: { mark: Mark }) {
+function MarkCell({ mark, dict }: { mark: Mark; dict: Dict | undefined }) {
   if (mark === "none") return null;
   const isBest = mark === "best";
   return (
     <span
-      aria-label={isBest ? "Kernanwendung" : "geeignet"}
+      aria-label={isBest ? t(dict, "legend_best", "Kernanwendung") : t(dict, "legend_yes", "geeignet")}
       style={{
         color: GREEN,
         fontWeight: 900,
@@ -267,7 +267,7 @@ export default function Anwendungsmatrix({
                 </td>
                 {row.marks.map((mark, i) => (
                   <td key={anwendungMatrixProducts[i].id} style={{ ...td, height: 34, padding: "6px 7px" }}>
-                    <MarkCell mark={mark} />
+                    <MarkCell mark={mark} dict={dict} />
                   </td>
                 ))}
               </tr>

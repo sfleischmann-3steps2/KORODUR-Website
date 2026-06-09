@@ -65,6 +65,98 @@ export const EINSATZBEREICH_LABELS: Record<EinsatzbereichV25, { titel: string; s
   },
 };
 
+// === Lokalisierte Finder-Cluster-Labels (Step 3 + Ergebnisseite, 4 Sprachen) ==
+// EN/FR/PL-Overrides für EINSATZBEREICH_LABELS. DE bleibt die Basis oben,
+// damit bestehende Aufrufer (Skripte, Tests) unverändert weiterlaufen.
+const EINSATZBEREICH_LABELS_I18N: Record<string, Record<EinsatzbereichV25, { titel: string; stichworte: string }>> = {
+  en: {
+    "innen-industrie-halle": {
+      titel: "Industrial & warehouse floors",
+      stichworte: "Heavy loads, forklift traffic, waste management, mechanical engineering, high-bay warehouses",
+    },
+    "innen-nass-hygiene-chemie": {
+      titel: "Wet, hygiene & chemical areas",
+      stichworte: "Wet areas, food processing, pharma, cleaning, acids",
+    },
+    "innen-sicht-design": {
+      titel: "Decorative & exposed floors",
+      stichworte: "Appearance, representative spaces, retail, public traffic",
+    },
+    "aussen-verkehr-infrastruktur": {
+      titel: "Traffic & infrastructure areas",
+      stichworte: "Roads, bridges, aviation, fast reopening",
+    },
+    "aussen-parkdeck": {
+      titel: "Parking decks & parking areas",
+      stichworte: "Car traffic, de-icing salt, tyre abrasion, oil drips",
+    },
+    "aussen-umwelt-whg": {
+      titel: "Environmental & containment areas",
+      stichworte: "Filling stations, wash bays, containment basins, ports, hazardous goods",
+    },
+  },
+  fr: {
+    "innen-industrie-halle": {
+      titel: "Sols industriels & halls",
+      stichworte: "Charges lourdes, trafic de chariots, gestion des déchets, construction mécanique, entrepôts grande hauteur",
+    },
+    "innen-nass-hygiene-chemie": {
+      titel: "Zones humides, hygiène & chimie",
+      stichworte: "Zones humides, agroalimentaire, pharma, nettoyage, acides",
+    },
+    "innen-sicht-design": {
+      titel: "Sols décoratifs & apparents",
+      stichworte: "Esthétique, espaces représentatifs, vente, fort passage",
+    },
+    "aussen-verkehr-infrastruktur": {
+      titel: "Voiries & infrastructures",
+      stichworte: "Routes, ponts, aviation, remise en service rapide",
+    },
+    "aussen-parkdeck": {
+      titel: "Parkings & dalles de stationnement",
+      stichworte: "Trafic VL, sels de déverglaçage, abrasion des pneus, gouttes d'huile",
+    },
+    "aussen-umwelt-whg": {
+      titel: "Zones environnementales & rétention",
+      stichworte: "Stations-service, aires de lavage, bacs de rétention, ports, marchandises dangereuses",
+    },
+  },
+  pl: {
+    "innen-industrie-halle": {
+      titel: "Posadzki przemysłowe i hale",
+      stichworte: "Duże obciążenia, ruch wózków widłowych, gospodarka odpadami, budowa maszyn, magazyny wysokiego składowania",
+    },
+    "innen-nass-hygiene-chemie": {
+      titel: "Strefy mokre, higieniczne i chemiczne",
+      stichworte: "Strefy mokre, przemysł spożywczy, farmacja, czyszczenie, kwasy",
+    },
+    "innen-sicht-design": {
+      titel: "Posadzki dekoracyjne i reprezentacyjne",
+      stichworte: "Estetyka, powierzchnie reprezentacyjne, sprzedaż, ruch publiczny",
+    },
+    "aussen-verkehr-infrastruktur": {
+      titel: "Powierzchnie komunikacyjne i infrastruktura",
+      stichworte: "Drogi, mosty, lotniska, szybkie oddanie do użytku",
+    },
+    "aussen-parkdeck": {
+      titel: "Parkingi i tarasy parkingowe",
+      stichworte: "Ruch samochodowy, sól drogowa, ścieranie opon, plamy oleju",
+    },
+    "aussen-umwelt-whg": {
+      titel: "Powierzchnie środowiskowe i wanny wychwytowe",
+      stichworte: "Stacje paliw, myjnie, wanny wychwytowe, porty, towary niebezpieczne",
+    },
+  },
+};
+
+/** Finder-Cluster-Label (titel + stichworte) in der gewünschten Sprache, DE-Fallback. */
+export function einsatzbereichLabel(
+  b: EinsatzbereichV25,
+  lang: string,
+): { titel: string; stichworte: string } {
+  return EINSATZBEREICH_LABELS_I18N[lang]?.[b] ?? EINSATZBEREICH_LABELS[b];
+}
+
 // === Lokalisierte Bereichs-Labels (Branchen-Facette, 4 Sprachen) =============
 // Feine Branchen-Ebene für die Referenzgalerie ("zeig mir ein Projekt wie
 // meins"). Bewusst granularer als die 6 Lösungsfinder-Cluster: hier soll der
