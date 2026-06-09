@@ -215,6 +215,7 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     aussenbereich: true,
     whgZulassung: true,
+    belastbarNach: "7 d", // 7 Tage Wiederbelastbarkeit (Steffi 2026-06-09); kein Schnellprodukt
     belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie-treibstoff", "frost-tausalz", "staplerverkehr", "whg"],
   },
   {
