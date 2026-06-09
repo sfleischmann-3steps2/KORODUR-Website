@@ -41,7 +41,7 @@ export function einsatzbereicheFuer(ia: InnenAussen): EinsatzbereichV25[] {
 export const EINSATZBEREICH_LABELS: Record<EinsatzbereichV25, { titel: string; stichworte: string }> = {
   "innen-industrie-halle": {
     titel: "Industrie- & Hallenboden",
-    stichworte: "Staplerverkehr, Schwerlast, Abrieb, Maschinen, Hochregallager",
+    stichworte: "Schwerlast, Staplerverkehr, Entsorgung, Maschinenbau, Hochregallager",
   },
   "innen-nass-hygiene-chemie": {
     titel: "Nass-, Hygiene- & Chemiefläche",

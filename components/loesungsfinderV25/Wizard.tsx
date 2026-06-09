@@ -92,13 +92,21 @@ export default function Wizard({ lang }: WizardProps) {
     setShowResults(false);
   }, []);
 
-  const reopenWizard = useCallback(() => {
+  // Zurück aus dem Ergebnis: zur letzten Frage, Auswahl bleibt erhalten.
+  const zurueckZurAuswahl = useCallback(() => {
     setShowResults(false);
-    setCurrentStep(1);
-  }, []);
+    setCurrentStep(totalSteps);
+  }, [totalSteps]);
 
   if (showResults) {
-    return <Ergebnisseite lang={lang} state={state} onAuswahlAendern={reopenWizard} />;
+    return (
+      <Ergebnisseite
+        lang={lang}
+        state={state}
+        onZurueck={zurueckZurAuswahl}
+        onNeustart={cancel}
+      />
+    );
   }
 
   return (
