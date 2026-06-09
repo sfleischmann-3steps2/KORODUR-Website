@@ -76,6 +76,15 @@ export function IconCheck(props: IconProps) {
   );
 }
 
+export function IconRefresh(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M20 11a8 8 0 1 0-2.34 5.66" />
+      <path d="M20 5v6h-6" />
+    </svg>
+  );
+}
+
 export function IconArrowLeft(props: IconProps) {
   return (
     <svg {...base} {...props}>

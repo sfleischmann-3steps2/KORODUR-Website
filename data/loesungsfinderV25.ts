@@ -35,16 +35,23 @@ const FALLBACK_REF_FILTER: ReferenzFilterV25 = {
   schadenstypen: [],
 };
 
+/** Mindestanzahl Referenzen, die die Ergebnisseite immer zeigen soll. */
+export const MIN_REFS = 3;
+
 export interface ErgebnisV25 {
   /** Beste Produkt-Empfehlung oder null wenn keine passt. */
   topProdukt: V25Produkt | null;
-  /** Passende Referenzen, nach Aktualität sortiert. */
+  /** Anzuzeigende Referenzen: mindestens MIN_REFS, falls die Datenbasis es
+   *  hergibt. Exakte Treffer stehen vorne, danach (bei Bedarf) gelockerte. */
   refs: V25Referenz[];
-  /** Gesamttreffer-Zähler (gleich refs.length, da Schaden-Pill-Filter entfernt). */
+  /** refs.length (für den Header-Zähler). */
   refsGesamt: number;
-  /** true, wenn die Referenzen über einen gelockerten Fallback gefunden wurden
-   *  (nicht der strikte Fläche×Innen/Außen×Cluster-Treffer). UI zeigt dann
-   *  dezent "Verwandte Projekte" statt "Passende Referenzen". */
+  /** Anzahl strikt passender Referenzen (Fläche × Innen/Außen × Cluster ×
+   *  Zeitfenster). < MIN_REFS heißt: wir haben aufgefüllt. */
+  exaktTreffer: number;
+  /** true, wenn über die strikten Treffer hinaus aufgefüllt wurde
+   *  (exaktTreffer < refs.length). UI zeigt dann den Hinweis "kein exaktes
+   *  Projekt wie Ihres dabei" und beschriftet die Sektion entsprechend. */
   refsGelockert: boolean;
 }
 
@@ -62,12 +69,12 @@ export interface ErgebnisV25 {
  */
 export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
   if (!state.flaeche || !state.innenAussen || !state.einsatzbereich) {
-    return { topProdukt: null, refs: [], refsGesamt: 0, refsGelockert: false };
+    return { topProdukt: null, refs: [], refsGesamt: 0, exaktTreffer: 0, refsGelockert: false };
   }
 
   // Mittel/Gross brauchen ein Zeitfenster; Punktuell ist davon befreit.
   if (state.flaeche !== "punktuell" && !state.zeitfenster) {
-    return { topProdukt: null, refs: [], refsGesamt: 0, refsGelockert: false };
+    return { topProdukt: null, refs: [], refsGesamt: 0, exaktTreffer: 0, refsGelockert: false };
   }
 
   const branchenTags = EINSATZBEREICH_TAGS[state.einsatzbereich];
@@ -130,10 +137,12 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
 
   const topProdukt = kandidaten[0] ?? null;
 
-  // --- Referenzen filtern: stufenweises Lockern (§6 Step-3-Spec) ---
-  // Ziel: zu jeder Produktempfehlung steht mindestens eine Referenz. Bei schiefem
-  // Referenz-Set (z. B. großflächiger Außen-Job, aber nur mittelflächige Refs im
-  // Cluster) liefert der strikte UND-Filter sonst null. Wir lockern stufenweise.
+  // --- Referenzen filtern: produktunabhängig, mit Auffüllen auf MIN_REFS ---
+  // Steffi 2026-06-09: Die Referenzanzeige läuft bewusst UNABHÄNGIG von der
+  // Produktempfehlung (kein Filter auf das empfohlene Produkt mehr). Wir wollen
+  // immer mindestens MIN_REFS Projekte zeigen. Dazu sammeln wir strikte Treffer
+  // und lockern danach stufenweise auf, bis MIN_REFS erreicht ist. Exakte
+  // Treffer stehen vorne; `exaktTreffer` sagt der UI, ob aufgefüllt wurde.
   const v25Refs: V25Referenz[] = referenzen.map((r) => ({
     ...r,
     ...(REFERENZ_FILTER_V25[r.slug] ?? FALLBACK_REF_FILTER),
@@ -150,29 +159,39 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
 
   const imBereich = v25Refs.filter((r) => r.innenAussen === state.innenAussen);
 
-  // Stufe 0 — strikt: Fläche × Innen/Außen × Cluster (+ Zeitfenster).
-  let refs = imBereich
+  // Lockerungs-Leiter (von strikt nach weit), produktunabhängig:
+  const strikt = imBereich
     .filter((r) => r.flaecheKategorie === state.flaeche)
     .filter((r) => r.einsatzbereich === state.einsatzbereich)
     .filter(passtZeitfenster);
-  let gelockert = false;
+  const stufen: V25Referenz[][] = [
+    strikt,
+    // Fläche fallen lassen (Cluster + Zeitfenster bleiben).
+    imBereich.filter((r) => r.einsatzbereich === state.einsatzbereich).filter(passtZeitfenster),
+    // Zeitfenster fallen lassen (Cluster bleibt).
+    imBereich.filter((r) => r.einsatzbereich === state.einsatzbereich),
+    // Cluster fallen lassen (nur noch Innen/Außen).
+    imBereich,
+  ];
 
-  // Stufe 1 — Fläche fallen lassen (Cluster + Zeitfenster bleiben).
-  if (refs.length === 0) {
-    refs = imBereich
-      .filter((r) => r.einsatzbereich === state.einsatzbereich)
-      .filter(passtZeitfenster);
-    gelockert = refs.length > 0;
+  // Strikte Treffer vollständig übernehmen (auch wenn > MIN_REFS), danach nur
+  // so weit auffüllen, bis MIN_REFS erreicht ist (Zähler bleibt aussagekräftig).
+  const seen = new Set<string>(strikt.map((r) => r.slug));
+  const refs: V25Referenz[] = [...strikt];
+  for (const stufe of stufen.slice(1)) {
+    if (refs.length >= MIN_REFS) break;
+    for (const r of stufe) {
+      if (refs.length >= MIN_REFS) break;
+      if (seen.has(r.slug)) continue;
+      seen.add(r.slug);
+      refs.push(r);
+    }
   }
 
-  // Stufe 2 — Cluster fallen lassen: Referenzen, die das empfohlene Produkt
-  // verwenden (clusterunabhängig, innerhalb Innen/Außen).
-  if (refs.length === 0 && topProdukt) {
-    refs = imBereich.filter((r) => r.produkte.includes(topProdukt.name));
-    gelockert = refs.length > 0;
-  }
+  const exaktTreffer = strikt.length;
+  const gelockert = exaktTreffer < refs.length;
 
-  return { topProdukt, refs, refsGesamt: refs.length, refsGelockert: gelockert };
+  return { topProdukt, refs, refsGesamt: refs.length, exaktTreffer, refsGelockert: gelockert };
 }
 
 /** Labels für die Auswahl-Chips oben auf der Ergebnisseite. */

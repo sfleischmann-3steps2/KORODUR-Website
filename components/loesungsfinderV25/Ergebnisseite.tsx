@@ -1,19 +1,23 @@
 // Ergebnisseite des V2.5-Lösungsfinders.
 // Plan: docs/superpowers/plans/2026-06-01-loesungsfinder-4step-adaptive.md
 //
-// Layout (nach Steffi-Review 2026-06-01):
-//   1. Auswahl-Chips oben + "Auswahl ändern"
-//   2. Top-Empfehlung als kompakter Banner (nicht zentraler Card-Block)
-//   3. Referenz-Grid mit Treffer-Zähler
-//   4. Beratungs-Banner unten (für Sondernormen-Fälle)
-// Schaden-Pill-Filter wurde entfernt — Steffi: "brauchen wir nicht im letzten Schritt".
+// Layout (Steffi-Review 2026-06-09):
+//   1. Auswahl-Chips oben (reine Zusammenfassung)
+//   2. Top-Empfehlung als kompakter Banner (genau EIN Produkt)
+//   3. Referenz-Grid: Bild + Titel + Untertitel, min. 3 Projekte, mit
+//      Hinweis wenn kein exakter Treffer dabei ist
+//   4. Allgemeiner Berater-CTA (ergebnis-unabhängig)
+//   5. Navigation: Zurück (zur letzten Frage) + Neu starten — kein Dead End mehr
 
 import Link from "next/link";
+import Image from "next/image";
+import type { CSSProperties } from "react";
 import type { Locale } from "@/lib/i18n";
 import type { LoesungsfinderState } from "@/data/types";
 import { EINSATZBEREICH_LABELS } from "@/data/einsatzbereichMapping";
 import { berechneErgebnisV25 } from "@/data/loesungsfinderV25";
-import { IconFlame, IconEdit, IconPhone, IconArrowRight } from "./icons";
+import { withBasePath } from "@/lib/basePath";
+import { IconFlame, IconPhone, IconArrowRight, IconArrowLeft, IconRefresh } from "./icons";
 
 const KONTAKT_URLS: Record<string, string> = {
   de: "https://www.korodur.de/kontakt/deutschland/",
@@ -25,13 +29,29 @@ const KONTAKT_URLS: Record<string, string> = {
 interface ErgebnisseiteProps {
   lang: Locale;
   state: LoesungsfinderState;
-  onAuswahlAendern: () => void;
+  /** Zurück zur letzten Frage (Auswahl bleibt erhalten). */
+  onZurueck: () => void;
+  /** Lösungsfinder komplett neu starten. */
+  onNeustart: () => void;
 }
 
 const NAVY = "#002d59";
 const CYAN = "#009ee3";
 const HELLGRAU = "#ececed";
 const MITTELGRAU = "#d9dada";
+
+// Mehrzeiliges Abschneiden mit Ellipsis (verhindert mitten-im-Wort-Schnitte).
+const clamp = (zeilen: number): CSSProperties => ({
+  display: "-webkit-box",
+  WebkitLineClamp: zeilen,
+  WebkitBoxOrient: "vertical",
+  overflow: "hidden",
+});
+
+// Endständige Jahreszahl in Klammern aus dem Titel entfernen, z. B.
+// "Naturex, Burgdorf (2013)" → "Naturex, Burgdorf". Manche Referenzen sind alt;
+// das Jahr soll nicht auf der Ergebnisseite stehen (Steffi 2026-06-09).
+const ohneJahr = (titel: string): string => titel.replace(/\s*\(\d{4}\)\s*$/, "");
 
 const FLAECHE_LABEL: Record<string, string> = {
   punktuell: "Punktuelle Reparatur",
@@ -45,10 +65,10 @@ const ZEIT_LABEL: Record<string, string> = {
   planbar: "Planbar",
 };
 
-export default function Ergebnisseite({ lang, state, onAuswahlAendern }: ErgebnisseiteProps) {
+export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: ErgebnisseiteProps) {
   const ergebnis = berechneErgebnisV25(state);
 
-  // Chip-Labels in der oberen Leiste
+  // Chip-Labels in der oberen Leiste (reine Zusammenfassung der Auswahl)
   const chips: string[] = [];
   if (state.flaeche) chips.push(FLAECHE_LABEL[state.flaeche]);
   if (state.innenAussen === "innen") chips.push("Innen");
@@ -57,9 +77,13 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
   if (state.flaeche !== "punktuell" && state.zeitfenster)
     chips.push(ZEIT_LABEL[state.zeitfenster]);
 
+  // Referenz-Sektion: Überschrift + Hinweis abhängig von der Trefferlage.
+  const hatExakte = ergebnis.exaktTreffer > 0;
+  const refTitel = hatExakte ? "Passende Referenzen" : "Verwandte Projekte";
+
   return (
     <div className="rounded-2xl p-6 md:p-8" style={{ background: HELLGRAU }}>
-      {/* Auswahl-Chips */}
+      {/* Auswahl-Chips (Zusammenfassung) */}
       <div className="flex flex-wrap items-center gap-2 mb-3">
         {chips.map((c) => (
           <span
@@ -76,24 +100,6 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
             {c}
           </span>
         ))}
-        <button
-          type="button"
-          onClick={onAuswahlAendern}
-          style={{
-            fontSize: 12,
-            color: CYAN,
-            padding: "4px 6px",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 4,
-            background: "transparent",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          <IconEdit width={13} height={13} aria-hidden="true" />
-          Auswahl ändern
-        </button>
       </div>
 
       <h2 className="text-[20px] font-medium mb-4" style={{ color: NAVY }}>
@@ -185,13 +191,13 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          marginBottom: 12,
+          marginBottom: 4,
         }}
       >
         <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
-          {ergebnis.refsGelockert ? "Verwandte Projekte" : "Passende Referenzen"}{" "}
+          {refTitel}{" "}
           <span style={{ fontSize: 12, color: "#6B7280", fontWeight: 400 }}>
-            · {ergebnis.refsGesamt} {ergebnis.refsGesamt === 1 ? "Treffer" : "Treffer"}
+            · {ergebnis.refsGesamt} {ergebnis.refsGesamt === 1 ? "Projekt" : "Projekte"}
           </span>
         </div>
         {ergebnis.refsGesamt > 6 && (
@@ -211,6 +217,15 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
           </Link>
         )}
       </div>
+
+      {/* Hinweis, wenn kein exakter Treffer dabei ist (aufgefüllt auf min. 3) */}
+      {ergebnis.refsGelockert && (
+        <div style={{ fontSize: 12, color: "#6B7280", marginBottom: 12, lineHeight: 1.5 }}>
+          Kein exakt passendes Projekt gefunden? Wir zeigen hier verwandte Ausschnitte und beraten
+          Sie gern individuell.
+        </div>
+      )}
+      {!ergebnis.refsGelockert && <div style={{ marginBottom: 12 }} />}
 
       {/* Referenz-Grid */}
       {ergebnis.refs.length > 0 ? (
@@ -236,25 +251,24 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
                 display: "block",
               }}
             >
-              <div
-                style={{
-                  height: 80,
-                  background: `linear-gradient(135deg, ${MITTELGRAU}, #b0b0b0)`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#fff",
-                  fontSize: 11,
-                }}
-              >
-                Referenz-Bild
+              <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 10", background: HELLGRAU }}>
+                <Image
+                  src={withBasePath(r.bild)}
+                  alt={r.bildAlt ?? r.titel}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 200px"
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <div style={{ padding: "10px 12px" }}>
-                <div style={{ fontSize: 13, fontWeight: 500 }}>{r.titel}</div>
-                <div style={{ fontSize: 11, color: "#6B7280", marginTop: 2 }}>
-                  {r.flaeche ?? "—"}
-                  {r.produkte[0] && ` · ${r.produkte[0]}`}
+                <div style={{ fontSize: 13, fontWeight: 600, color: NAVY, lineHeight: 1.3, ...clamp(2) }}>
+                  {ohneJahr(r.titel)}
                 </div>
+                {r.untertitel && (
+                  <div style={{ fontSize: 11, color: "#6B7280", marginTop: 3, lineHeight: 1.35, ...clamp(2) }}>
+                    {ohneJahr(r.untertitel)}
+                  </div>
+                )}
               </div>
             </Link>
           ))}
@@ -277,13 +291,12 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
         </div>
       )}
 
-      {/* Beratungs-Banner */}
+      {/* Allgemeiner Berater-CTA (ergebnis-unabhängig) */}
       <div
         style={{
-          background: "#fff",
-          border: `1px solid ${MITTELGRAU}`,
-          borderRadius: 8,
-          padding: "14px 16px",
+          background: NAVY,
+          borderRadius: 10,
+          padding: "16px 18px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -292,11 +305,11 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
         }}
       >
         <div>
-          <div style={{ fontSize: 14, fontWeight: 500, color: NAVY, marginBottom: 2 }}>
-            Sondernormen oder Sonderfall?
+          <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 2 }}>
+            Sprechen Sie mit unseren Sanierungs-Experten
           </div>
-          <div style={{ fontSize: 12, color: "#6B7280" }}>
-            Trinkwasser, WHG, Denkmal, Barrierefreiheit – wir beraten persönlich.
+          <div style={{ fontSize: 12.5, color: "rgba(255,255,255,0.8)" }}>
+            Wir besprechen Ihr Vorhaben und stimmen das passende Produkt auf Ihre Baustelle ab.
           </div>
         </div>
         <a
@@ -306,10 +319,10 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
           style={{
             background: CYAN,
             color: "#fff",
-            padding: "8px 16px",
+            padding: "10px 18px",
             borderRadius: 8,
             fontSize: 13,
-            fontWeight: 500,
+            fontWeight: 600,
             textDecoration: "none",
             display: "inline-flex",
             alignItems: "center",
@@ -317,9 +330,40 @@ export default function Ergebnisseite({ lang, state, onAuswahlAendern }: Ergebni
             flexShrink: 0,
           }}
         >
-          <IconPhone width={14} height={14} aria-hidden="true" />
+          <IconPhone width={15} height={15} aria-hidden="true" />
           Beratung anfragen
         </a>
+      </div>
+
+      {/* Navigation — kein Dead End */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginTop: 20,
+          paddingTop: 16,
+          borderTop: `1px solid ${MITTELGRAU}`,
+        }}
+      >
+        <button
+          type="button"
+          onClick={onZurueck}
+          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm transition hover:bg-white"
+          style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
+        >
+          <IconArrowLeft width={14} height={14} aria-hidden="true" />
+          Zurück
+        </button>
+        <button
+          type="button"
+          onClick={onNeustart}
+          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm transition hover:bg-white"
+          style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
+        >
+          <IconRefresh width={14} height={14} aria-hidden="true" />
+          Neu starten
+        </button>
       </div>
     </div>
   );
