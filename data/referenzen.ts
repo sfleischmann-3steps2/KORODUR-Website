@@ -1338,6 +1338,60 @@ export const referenzen: Referenz[] = [
     zusatzfunktionen: [],
   },
 
+  {
+    id: "neodur-level-norderstedt",
+    slug: "neodur-level-norderstedt",
+    titel: "Wenn die erste Sanierung versagt",
+    untertitel: "Teilflächensanierung mit NEODUR Level nach mangelhaftem Hartstoffestrich",
+    ort: "Norderstedt",
+    land: "Deutschland",
+    jahr: 2026,
+    flaeche: "20 m²",
+    menge: "500 kg",
+    produkte: ["NEODUR Level", "KORODUR PC"],
+    projekttyp: "sanierung",
+    ausgangssituation:
+      "In mehreren Produktionshallen bestand Sanierungsbedarf. In einer Halle war ein Hartstoffestrich mangelhaft eingebaut worden, es kam zu Abplatzungen und beschädigten Teilbereichen.",
+    herausforderungen: [
+      "Eine missglückte Vorsanierung korrigieren",
+      "Unebenheiten und Höhenunterschiede im Bestandsboden ausgleichen",
+      "Beschädigte Teilbereiche im laufenden Hallenbetrieb wieder nutzbar machen",
+    ],
+    loesung:
+      "Wir haben die betroffenen Teilflächen mit NEODUR Level saniert, einem selbstverlaufenden Belag für mineralische Untergründe im Innenbereich. KORODUR PC diente als Grundierung für die Untergrundvorbereitung. So ließen sich Unebenheiten und Höhenunterschiede ausgleichen und die beschädigten Bereiche neu beschichten.",
+    ergebnis:
+      "Unebenheiten und Höhenunterschiede wurden ausgeglichen, die beschädigten Teilbereiche neu beschichtet und wieder nutzbar gemacht.",
+    vorteile: [
+      "Selbstverlaufend: ebener Verlauf ohne aufwendiges Abziehen",
+      "Gleicht Unebenheiten und Höhenunterschiede zuverlässig aus",
+      "Abgestimmtes System aus Grundierung (KORODUR PC) und Nutzschicht (NEODUR Level)",
+      "Teilflächen wieder voll nutzbar, Hallenbetrieb bleibt erhalten",
+    ],
+    bild: "/images/referenzen/neodur-level-norderstedt/nachher.png",
+    bildAlt: "Frisch verlaufene NEODUR Level Fläche auf saniertem Bestandsboden in Norderstedt",
+    bilder: {
+      vorher: {
+        src: "/images/referenzen/neodur-level-norderstedt/vorher.png",
+        caption: "Vorher: abgeplatzter, geschädigter Bestandsboden",
+      },
+      nachher: {
+        src: "/images/referenzen/neodur-level-norderstedt/nachher.png",
+        caption: "Nachher: ebene, neu beschichtete Fläche",
+      },
+    },
+    galerieBilder: [
+      "/images/referenzen/neodur-level-norderstedt/vorher-flaeche.png",
+      "/images/referenzen/neodur-level-norderstedt/verarbeitung.png",
+      "/images/referenzen/neodur-level-norderstedt/uebergang.png",
+      "/images/referenzen/neodur-level-norderstedt/abgesperrt.png",
+    ],
+    releaseStatus: "oeffentlich-anonymisiert",
+    sanierungsart: "punktuell",
+    einsatzbereiche: ["lebensmittel"],
+    zeitDringlichkeit: "normal", // TODO: beim Einreicher bestätigen (Rückfrage offen)
+    zusatzfunktionen: [],
+  },
+
 ];
 
 export function getReferenzBySlug(slug: string): Referenz | undefined {
