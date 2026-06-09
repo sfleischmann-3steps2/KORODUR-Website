@@ -50,9 +50,9 @@ export default function SearchOverlay({
     });
     items.push({
       type: "kategorie",
-      title: "Produktmatrix",
-      subtitle: "Alle Produkte und ihre Einsatzbereiche auf einen Blick",
-      href: `/${lang}/produktmatrix/`,
+      title: "Anwendungsmatrix",
+      subtitle: "Produkte und Anwendungsbereiche auf einen Blick",
+      href: `/${lang}/anwendungsmatrix/`,
     });
 
     // Referenzen

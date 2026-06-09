@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { hasLocale } from "../dictionaries";
+import { getDictionary, hasLocale } from "../dictionaries";
 import Anwendungsmatrix from "../../../components/Anwendungsmatrix";
 import type { Locale } from "../../../lib/i18n";
+
+type Dict = Record<string, string>;
+const t = (dict: Dict | undefined, key: string, fallback: string) => dict?.[key] ?? fallback;
 
 export const metadata: Metadata = {
   title: "Anwendungsmatrix Sanierung",
@@ -15,7 +18,6 @@ const NAVY = "#002d59";
 const NAVY_72 = "rgba(0, 45, 89, 0.72)";
 const CYAN = "#009ee3";
 const BG_SOFT = "#eef1f5";
-const LINE = "#e8edf5";
 
 export default async function AnwendungsmatrixPage({
   params,
@@ -24,6 +26,8 @@ export default async function AnwendungsmatrixPage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
+  const rawDict = await getDictionary(lang);
+  const dict: Dict | undefined = (rawDict as unknown as { anwendungsmatrix?: Dict }).anwendungsmatrix;
 
   return (
     <section style={{ padding: "32px 24px 64px" }}>
@@ -43,81 +47,24 @@ export default async function AnwendungsmatrixPage({
               marginBottom: 14,
             }}
           >
-            Anwendungsmatrix
+            {t(dict, "badge", "Anwendungsmatrix")}
           </div>
-          <div
+          <h1
             style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 24,
-              alignItems: "flex-end",
-              justifyContent: "space-between",
+              fontSize: 42,
+              lineHeight: 1.05,
+              fontWeight: 900,
+              color: NAVY,
+              letterSpacing: "-0.02em",
+              margin: 0,
+              maxWidth: 820,
             }}
           >
-            <div style={{ flex: "1 1 620px", minWidth: 0 }}>
-              <h1
-                style={{
-                  fontSize: 42,
-                  lineHeight: 1.05,
-                  fontWeight: 900,
-                  color: NAVY,
-                  letterSpacing: "-0.02em",
-                  margin: 0,
-                  maxWidth: 820,
-                }}
-              >
-                Welche Produkte passen zu Ihrem Sanierungsbedarf?
-              </h1>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "flex-end",
-                gap: 10,
-                flex: "0 1 360px",
-              }}
-            >
-              <Link
-                href={`/${lang}/produktmatrix/`}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  minHeight: 42,
-                  padding: "0 16px",
-                  borderRadius: 8,
-                  border: `1px solid ${LINE}`,
-                  color: NAVY,
-                  background: "#fff",
-                  textDecoration: "none",
-                  fontSize: 14,
-                  fontWeight: 800,
-                }}
-              >
-                Technische Matrix
-              </Link>
-              <Link
-                href={`/${lang}/anwendungsmatrix/`}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  minHeight: 42,
-                  padding: "0 16px",
-                  borderRadius: 8,
-                  color: "#fff",
-                  background: CYAN,
-                  textDecoration: "none",
-                  fontSize: 14,
-                  fontWeight: 800,
-                }}
-              >
-                Anwendungsmatrix
-              </Link>
-            </div>
-          </div>
+            {t(dict, "h1", "Welche Produkte passen zu Ihrem Sanierungsbedarf?")}
+          </h1>
         </header>
 
-        <Anwendungsmatrix lang={lang as Locale} />
+        <Anwendungsmatrix lang={lang as Locale} dict={dict} />
 
         <div
           style={{
@@ -129,8 +76,11 @@ export default async function AnwendungsmatrixPage({
           }}
         >
           <p style={{ color: NAVY, fontSize: 18, marginBottom: 20 }}>
-            Unsicher? Der Lösungsfinder führt Sie in wenigen Schritten zur passenden Lösung – oder
-            sprechen Sie direkt mit unseren Beratern.
+            {t(
+              dict,
+              "cta_text",
+              "Unsicher? Der Lösungsfinder führt Sie in wenigen Schritten zur passenden Lösung – oder sprechen Sie direkt mit unseren Beratern.",
+            )}
           </p>
           <div
             style={{
@@ -153,7 +103,7 @@ export default async function AnwendungsmatrixPage({
                 fontSize: 15,
               }}
             >
-              Lösungsfinder starten
+              {t(dict, "cta_loesungsfinder", "Lösungsfinder starten")}
             </Link>
             <a
               href="https://www.korodur.de/kontakt.html"
@@ -171,7 +121,7 @@ export default async function AnwendungsmatrixPage({
                 border: `1.5px solid ${NAVY}`,
               }}
             >
-              Kontakt zu unseren Beratern
+              {t(dict, "cta_kontakt", "Kontakt zu unseren Beratern")}
             </a>
           </div>
         </div>

@@ -57,7 +57,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
     { href: `/${lang}/`, label: dict.nav.home },
     { href: `/${lang}/loesungsfinder/`, label: dict.nav.loesungsfinder },
     { href: `/${lang}/referenzen/`, label: dict.nav.referenzen },
-    { href: `/${lang}/produktmatrix/`, label: dict.nav.produktmatrix },
+    { href: `/${lang}/anwendungsmatrix/`, label: dict.nav.anwendungsmatrix },
     { href: `/${lang}/produkte/`, label: dict.nav.produkte },
   ];
 

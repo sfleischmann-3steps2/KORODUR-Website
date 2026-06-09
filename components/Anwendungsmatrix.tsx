@@ -1,343 +1,325 @@
-import Link from "next/link";
-import type { ReactNode } from "react";
+import type { CSSProperties } from "react";
 import type { Locale } from "@/lib/i18n";
 import {
-  anwendungColumns,
   anwendungMatrixProducts,
-  type AnwendungStatus,
+  anwendungUsecases,
+  type Cell,
+  type Mark,
+  type ProductLink,
+  type SpeedTier,
 } from "@/data/anwendungsmatrix";
 import { produkte } from "@/data/produkte";
 
 const NAVY = "#002d59";
-const NAVY_72 = "rgba(0, 45, 89, 0.72)";
-const NAVY_56 = "rgba(0, 45, 89, 0.56)";
-const NAVY_20 = "rgba(0, 45, 89, 0.20)";
 const CYAN = "#009ee3";
-const LINE = "#e8edf5";
-const BG_SOFT = "#f4f6f9";
-const BG_COOL = "#eef1f5";
+const GREEN = "#009a44";
+const LINE = "#dfe7f1";
+const HEAD_BG = "#eaf8fe";
+const TECH_BG = "#fbfcfe";
+const VORTEIL_BG = "#eef9ff";
 
-const produktTdsUrls = new Map(produkte.map((produkt) => [produkt.id, produkt.tdsUrl]));
+type Dict = Record<string, string>;
 
-function Marker({ status }: { status: AnwendungStatus }) {
-  if (status === "none") {
-    return (
-      <span
-        aria-label="nicht vorgesehen"
-        style={{
-          color: NAVY_20,
-          fontSize: 22,
-          lineHeight: 1,
-          fontWeight: 700,
-        }}
-      >
-        –
-      </span>
-    );
-  }
-
-  const isCore = status === "core";
-
-  return (
-    <span
-      aria-label={isCore ? "Kernanwendung" : "geeignet oder sekundär"}
-      title={isCore ? "Kernanwendung" : "geeignet oder sekundär"}
-      style={{
-        display: "inline-block",
-        width: isCore ? 12 : 11,
-        height: isCore ? 12 : 11,
-        borderRadius: "50%",
-        background: isCore ? CYAN : "transparent",
-        border: isCore ? `2px solid ${CYAN}` : `1.8px solid ${NAVY_56}`,
-        boxSizing: "border-box",
-      }}
-    />
-  );
+function t(dict: Dict | undefined, key: string, fallback: string): string {
+  return dict?.[key] ?? fallback;
 }
 
-function LegendItem({
-  marker,
-  label,
-}: {
-  marker: ReactNode;
-  label: string;
-}) {
+function cell(dict: Dict | undefined, value: Cell): string {
+  return typeof value === "string" ? value : t(dict, value.key, value.de);
+}
+
+const produktTdsUrls = new Map(produkte.map((p) => [p.id, p.tdsUrl]));
+
+const speedStyles: Record<SpeedTier, CSSProperties> = {
+  ultra: { background: "#ffd84d", color: NAVY, boxShadow: "0 0 0 3px rgba(255,216,77,.26)" },
+  veryFast: { background: "#ffe47a", color: NAVY },
+  fast: { background: "rgba(255,216,77,.48)", color: NAVY },
+  day: { background: "#fff", color: NAVY, border: "2px solid rgba(255,216,77,.82)" },
+  normal: { background: "rgba(0,45,89,.07)", color: "rgba(0,45,89,.68)" },
+};
+
+function SpeedPill({ tier, label }: { tier: SpeedTier; label: string }) {
   return (
     <span
       style={{
         display: "inline-flex",
         alignItems: "center",
-        gap: 8,
-        color: NAVY_72,
-        fontSize: 13,
-        lineHeight: 1.4,
+        justifyContent: "center",
+        minWidth: 62,
+        height: 25,
+        padding: "0 8px",
+        borderRadius: 999,
+        fontWeight: 900,
+        fontSize: 12,
+        ...speedStyles[tier],
       }}
     >
-      {marker}
       {label}
     </span>
   );
 }
 
-export default function Anwendungsmatrix({ lang }: { lang: Locale }) {
+function MarkCell({ mark }: { mark: Mark }) {
+  if (mark === "none") return null;
+  const isBest = mark === "best";
+  return (
+    <span
+      aria-label={isBest ? "Kernanwendung" : "geeignet"}
+      style={{
+        color: GREEN,
+        fontWeight: 900,
+        fontSize: 21,
+        lineHeight: 1,
+        letterSpacing: isBest ? "-1px" : undefined,
+      }}
+    >
+      {isBest ? "✓✓" : "✓"}
+    </span>
+  );
+}
+
+function resolveLink(link: ProductLink): string | undefined {
+  return link.kind === "tds" ? produktTdsUrls.get(link.productId) : link.url;
+}
+
+const td: CSSProperties = {
+  border: `1px solid ${LINE}`,
+  textAlign: "center",
+  verticalAlign: "middle",
+};
+
+const labelCol: CSSProperties = {
+  position: "sticky",
+  left: 0,
+  zIndex: 1,
+};
+
+export default function Anwendungsmatrix({
+  lang,
+  dict,
+}: {
+  lang: Locale;
+  dict?: Dict;
+}) {
+  void lang;
   return (
     <div>
-      <section
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          gap: 18,
-          marginBottom: 18,
-          padding: "16px 18px",
-          borderRadius: 10,
-          background: BG_SOFT,
-          border: `1px solid ${LINE}`,
-        }}
-      >
-        <div
+      <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", borderRadius: 12 }}>
+        <table
           style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "12px 22px",
+            borderCollapse: "collapse",
+            tableLayout: "fixed",
+            width: "100%",
+            minWidth: 980,
+            color: NAVY,
+            fontSize: 13,
           }}
         >
-          <LegendItem marker={<Marker status="core" />} label="Kernanwendung im TDS explizit" />
-          <LegendItem marker={<Marker status="secondary" />} label="geeignet oder sekundär" />
-          <LegendItem marker={<Marker status="none" />} label="nicht vorgesehen" />
-        </div>
-      </section>
-
-      <div
-        style={{
-          border: `1px solid ${LINE}`,
-          borderRadius: 14,
-          overflow: "hidden",
-          background: "#fff",
-        }}
-      >
-        <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
-          <table
-            style={{
-              width: "100%",
-              minWidth: 980,
-              borderCollapse: "collapse",
-              tableLayout: "fixed",
-            }}
-          >
-            <thead>
-              <tr>
-                <th
-                  style={{
-                    textAlign: "left",
-                    padding: "18px 22px 14px",
-                    color: NAVY,
-                    fontSize: 13,
-                    letterSpacing: "0.04em",
-                    textTransform: "uppercase",
-                    borderBottom: `2px solid ${NAVY}`,
-                    width: 260,
-                  }}
-                >
-                  Produkt
-                </th>
-                {anwendungColumns.map((column) => (
+          <colgroup>
+            <col style={{ width: 220 }} />
+            {anwendungMatrixProducts.map((p) => (
+              <col key={p.id} style={{ width: 132 }} />
+            ))}
+          </colgroup>
+          <thead>
+            <tr>
+              <th
+                style={{
+                  ...td,
+                  ...labelCol,
+                  background: NAVY,
+                  color: "#fff",
+                  textAlign: "left",
+                  padding: "9px 14px",
+                  fontSize: 13,
+                }}
+              >
+                {t(dict, "corner_produkt", "Produkt")}
+              </th>
+              {anwendungMatrixProducts.map((p) => {
+                const href = resolveLink(p.link);
+                return (
                   <th
-                    key={column.id}
+                    key={p.id}
                     style={{
-                      textAlign: "center",
-                      padding: "18px 12px 14px",
-                      color: NAVY,
-                      fontSize: 13,
-                      lineHeight: 1.25,
-                      letterSpacing: "0.01em",
-                      borderBottom: `2px solid ${NAVY}`,
-                      width: 128,
+                      ...td,
+                      background: HEAD_BG,
+                      borderBottom: `2px solid ${CYAN}`,
+                      padding: "8px 7px 9px",
+                      verticalAlign: "top",
+                      height: 0, // erlaubt height:100% des Inhalts → Link bündig unten
                     }}
                   >
-                    {column.label}
-                  </th>
-                ))}
-                <th
-                  style={{
-                    textAlign: "center",
-                    padding: "18px 12px 14px",
-                    color: NAVY,
-                    fontSize: 13,
-                    lineHeight: 1.25,
-                    letterSpacing: "0.04em",
-                    textTransform: "uppercase",
-                    borderBottom: `2px solid ${NAVY}`,
-                    width: 76,
-                  }}
-                >
-                  TDS
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {anwendungMatrixProducts.map((product) => {
-                const tdsUrl = produktTdsUrls.get(product.id);
-                return (
-                  <tr key={product.id}>
-                    <td
+                    <span
                       style={{
-                        padding: "18px 22px",
-                        borderBottom: `1px solid ${LINE}`,
-                        verticalAlign: "middle",
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                        gap: 5,
                       }}
                     >
-                      <Link
-                        href={`/${lang}/produkte/${product.id}/`}
-                        style={{
-                          display: "inline-block",
-                          color: NAVY,
-                          fontSize: 15,
-                          lineHeight: 1.25,
-                          fontWeight: 800,
-                          textDecoration: "none",
-                          marginBottom: 5,
-                        }}
-                      >
-                        {product.name}
-                      </Link>
-                      <div
-                        style={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          alignItems: "center",
-                          gap: 8,
-                        }}
-                      >
-                        <span
-                          style={{
-                            display: "inline-block",
-                            padding: "2px 7px",
-                            borderRadius: 4,
-                            background: BG_COOL,
-                            color: NAVY_72,
-                            fontSize: 11,
-                            fontWeight: 700,
-                            lineHeight: 1.4,
-                          }}
-                        >
-                          {product.family}
-                        </span>
-                      </div>
-                      <div
-                        style={{
-                          marginTop: 7,
-                          color: NAVY_56,
-                          fontSize: 12,
-                          lineHeight: 1.35,
-                          fontWeight: 600,
-                        }}
-                      >
-                        {product.role}
-                      </div>
-                    </td>
-                    {anwendungColumns.map((column) => (
-                      <td
-                        key={column.id}
-                        style={{
-                          textAlign: "center",
-                          padding: "18px 12px",
-                          borderBottom: `1px solid ${LINE}`,
-                          verticalAlign: "middle",
-                        }}
-                      >
-                        <Marker status={product.applications[column.id]} />
-                      </td>
-                    ))}
-                    <td
-                      style={{
-                        textAlign: "center",
-                        padding: "18px 12px",
-                        borderBottom: `1px solid ${LINE}`,
-                        verticalAlign: "middle",
-                      }}
-                    >
-                      {tdsUrl ? (
+                      <span style={{ fontSize: 15, fontWeight: 900, lineHeight: 1.15 }}>
+                        {p.name}
+                      </span>
+                      {href && (
                         <a
-                          href={tdsUrl}
+                          href={href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`${product.name} TDS herunterladen`}
-                          title="TDS-Datenblatt herunterladen"
                           style={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            width: 32,
-                            height: 32,
-                            borderRadius: 6,
+                            marginTop: "auto",
                             color: CYAN,
+                            fontSize: 11,
+                            fontWeight: 800,
                             textDecoration: "none",
                           }}
                         >
-                          <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                          </svg>
+                          {t(dict, "link_more", "Mehr Infos")} ↗
                         </a>
-                      ) : (
-                        <Marker status="none" />
                       )}
-                    </td>
-                  </tr>
+                    </span>
+                  </th>
                 );
               })}
-            </tbody>
-          </table>
-        </div>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Tech-Zeilen */}
+            <TechRow
+              label={t(dict, "row_klassifizierung", "Klassifizierung")}
+              values={anwendungMatrixProducts.map((p) => cell(dict, p.klassifizierung))}
+            />
+            <TechRow
+              label={t(dict, "row_schichtdicke", "Schichtdicke")}
+              values={anwendungMatrixProducts.map((p) => cell(dict, p.schichtdicke))}
+            />
+            <tr>
+              <td style={{ ...td, ...labelCol, ...techLabelStyle }}>
+                {t(dict, "row_belastbar", "belastbar nach")}
+              </td>
+              {anwendungMatrixProducts.map((p) => (
+                <td key={p.id} style={{ ...td, background: TECH_BG, padding: "5px 7px" }}>
+                  <SpeedPill tier={p.speed} label={cell(dict, p.belastbarNach)} />
+                </td>
+              ))}
+            </tr>
+            {/* Vorteil-Zeile */}
+            <tr>
+              <td
+                style={{
+                  ...td,
+                  ...labelCol,
+                  background: CYAN,
+                  color: "#fff",
+                  textAlign: "left",
+                  padding: "7px 14px",
+                  fontWeight: 900,
+                }}
+              >
+                {t(dict, "row_vorteil", "Vorteil")}
+              </td>
+              {anwendungMatrixProducts.map((p) => (
+                <td
+                  key={p.id}
+                  style={{
+                    ...td,
+                    background: VORTEIL_BG,
+                    color: NAVY,
+                    fontWeight: 800,
+                    padding: "7px",
+                  }}
+                >
+                  {t(dict, p.vorteil.key, p.vorteil.de)}
+                </td>
+              ))}
+            </tr>
+            {/* Trenner */}
+            <tr>
+              <td
+                colSpan={anwendungMatrixProducts.length + 1}
+                style={{
+                  ...td,
+                  background: NAVY,
+                  color: "#fff",
+                  textAlign: "left",
+                  padding: "7px 14px",
+                  fontWeight: 900,
+                }}
+              >
+                {t(dict, "divider_anwendungen", "Anwendungen")}
+              </td>
+            </tr>
+            {/* Anwendungs-Zeilen */}
+            {anwendungUsecases.map((row, idx) => (
+              <tr key={row.key} style={{ background: idx % 2 === 1 ? TECH_BG : undefined }}>
+                <td
+                  style={{
+                    ...td,
+                    ...labelCol,
+                    background: idx % 2 === 1 ? TECH_BG : "#fff",
+                    textAlign: "left",
+                    padding: "8px 14px",
+                    fontWeight: 900,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {t(dict, row.key, row.de)}
+                </td>
+                {row.marks.map((mark, i) => (
+                  <td key={anwendungMatrixProducts[i].id} style={{ ...td, height: 34, padding: "6px 7px" }}>
+                    <MarkCell mark={mark} />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <section
+      {/* dezente Legende unter der Tabelle */}
+      <p
         style={{
-          marginTop: 22,
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
-          gap: 12,
+          margin: "10px 2px 0",
+          color: "rgba(0,45,89,.5)",
+          fontSize: 12,
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "2px 16px",
         }}
       >
-        {anwendungColumns.map((column) => (
-          <article
-            key={column.id}
-            style={{
-              border: `1px solid ${LINE}`,
-              borderRadius: 10,
-              padding: "14px 16px",
-              background: "#fff",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                gap: 8,
-                alignItems: "baseline",
-                color: NAVY,
-                marginBottom: 6,
-              }}
-            >
-              <h2 style={{ margin: 0, fontSize: 15, lineHeight: 1.25 }}>{column.label}</h2>
-            </div>
-            <p style={{ margin: 0, color: NAVY_72, fontSize: 13, lineHeight: 1.45 }}>
-              {column.description}
-            </p>
-          </article>
-        ))}
-      </section>
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+          <span style={{ color: GREEN, fontWeight: 900, letterSpacing: "-1px" }}>✓✓</span>
+          {t(dict, "legend_best", "Kernanwendung")}
+        </span>
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+          <span style={{ color: GREEN, fontWeight: 900 }}>✓</span>
+          {t(dict, "legend_yes", "geeignet")}
+        </span>
+      </p>
     </div>
+  );
+}
+
+const techLabelStyle: CSSProperties = {
+  background: "#fff",
+  textAlign: "left",
+  fontWeight: 900,
+  color: "rgba(0,45,89,.78)",
+  padding: "5px 14px",
+};
+
+function TechRow({ label, values }: { label: string; values: string[] }) {
+  return (
+    <tr>
+      <td style={{ ...td, ...labelCol, ...techLabelStyle }}>{label}</td>
+      {values.map((value, i) => (
+        <td
+          key={anwendungMatrixProducts[i].id}
+          style={{ ...td, background: TECH_BG, fontWeight: 800, padding: "5px 7px" }}
+        >
+          {value}
+        </td>
+      ))}
+    </tr>
   );
 }
