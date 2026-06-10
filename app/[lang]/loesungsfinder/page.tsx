@@ -1,14 +1,22 @@
-import { hasLocale } from "../dictionaries";
+import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import Wizard from "../../../components/loesungsfinderV25/Wizard";
 import type { Locale } from "../../../lib/i18n";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Lösungsfinder",
-  description:
-    "Finden Sie in 4 Schritten die passende Sanierungslösung für Ihren Industrieboden.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.loesungsfinder.page_title,
+    description: dict.loesungsfinder.meta_description,
+  };
+}
 
 export default async function LoesungsfinderPage({
   params,
@@ -17,6 +25,7 @@ export default async function LoesungsfinderPage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
+  const dict = await getDictionary(lang);
 
   return (
     <section className="py-24 px-8">
@@ -25,11 +34,10 @@ export default async function LoesungsfinderPage({
           className="text-4xl text-[#002d59] text-center mb-4"
           style={{ fontWeight: 900 }}
         >
-          Lösungsfinder
+          {dict.loesungsfinder.page_title}
         </h1>
         <p className="text-lg text-[#002d59]/72 text-center mb-12 max-w-2xl mx-auto">
-          Beschreiben Sie Ihre Situation, und wir zeigen Ihnen passende Produkte
-          und Referenzprojekte.
+          {dict.loesungsfinder.page_subtitle}
         </p>
         <Wizard lang={lang as Locale} />
       </div>

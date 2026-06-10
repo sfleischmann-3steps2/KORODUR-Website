@@ -73,9 +73,6 @@ export default function Footer({
             </span>
           </div>
           <div className="flex items-center gap-6 text-[14px]">
-            <Link href={`/${lang}/portfolio`} className="text-white opacity-70 hover:opacity-100 no-underline transition-opacity">
-              {dict.nav.portfolio}
-            </Link>
             <Link href={`/${lang}/referenzen`} className="text-white opacity-70 hover:opacity-100 no-underline transition-opacity">
               {dict.nav.referenzen}
             </Link>

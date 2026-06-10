@@ -90,6 +90,7 @@ export const produkte: Produkt[] = [
   // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
     id: "neodur-he-60-rapid",
+    websiteUrl: "https://www.korodur.de/produkt/neodur-he-60-rapid/",
     name: "NEODUR HE 60 rapid",
     kategorie: "estrich",
     kurzbeschreibung: "Hochbelastbarer Hartstoff-Schnellestrich",
@@ -138,6 +139,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-65",
+    websiteUrl: "https://www.korodur.de/produkt/neodur-he-65/",
     name: "NEODUR HE 65",
     kategorie: "estrich",
     kurzbeschreibung: "Hochbelastbarer Hartstoffestrich",
@@ -173,6 +175,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-65-plus",
+    websiteUrl: "https://www.korodur.de/produkt/neodur-he-65-plus/",
     name: "NEODUR HE 65 Plus",
     kategorie: "estrich",
     kurzbeschreibung: "Hochbelastbarer Hartstoffestrich",
@@ -220,6 +223,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-40",
+    websiteUrl: "https://www.korodur.de/produkt/neodur-he-40-und-he-40-8/",
     name: "NEODUR HE 40",
     kategorie: "estrich",
     kurzbeschreibung: "Hochbelastbarer Hartstoffestrich",
@@ -252,6 +256,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-level",
+    websiteUrl: "https://www.korodur.de/produkt/neodur-level/",
     name: "NEODUR Level",
     kategorie: "estrich",
     kurzbeschreibung: "Selbstverlaufender, schnellerhärtender Dünnestrich",
@@ -342,6 +347,7 @@ export const produkte: Produkt[] = [
   // === GRUNDIERUNGEN / HAFTBRÜCKEN (nicht in Sanierungs-Matrix) ===
   {
     id: "korodur-hb-5-rapid",
+    websiteUrl: "https://www.korodur.de/produkt/korodur-hb-5-rapid/",
     name: "KORODUR HB 5 rapid",
     kategorie: "grundierung",
     kurzbeschreibung: "Schnellerhärtende Haftbrücke für kraftschlüssigen Verbund zum Untergrund",
@@ -364,6 +370,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-pc",
+    websiteUrl: "https://www.korodur.de/produkt/korodur-pc/",
     name: "KORODUR PC",
     kategorie: "grundierung",
     kurzbeschreibung: "Kunstharzdispersion-Grundierung für Dünnestrich-Systeme",
@@ -386,6 +393,7 @@ export const produkte: Produkt[] = [
   // === SCHNELLREPARATURMÖRTEL ===
   {
     id: "rapid-set-cement-all",
+    websiteUrl: "https://www.korodur.de/bereiche/rapid-set/",
     name: "Rapid Set CEMENT ALL",
     kategorie: "schnellzement",
     kurzbeschreibung: "Universeller Schnellreparaturmörtel",
@@ -432,6 +440,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-mortar-mix",
+    websiteUrl: "https://www.korodur.de/bereiche/rapid-set/",
     name: "Rapid Set MORTAR MIX",
     kategorie: "schnellzement",
     kurzbeschreibung: "Universeller Schnellreparaturmörtel",
@@ -470,6 +479,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-mortar-mix-dur",
+    websiteUrl: "https://www.korodur.de/bereiche/rapid-set/",
     name: "Rapid Set MORTAR MIX DUR",
     kategorie: "schnellzement",
     kurzbeschreibung: "Schnellreparaturmörtel mit Hartstoff DIN 1100 A",
@@ -623,6 +633,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-schnellbeton",
+    websiteUrl: "https://www.korodur.de/bereiche/rapid-set/",
     name: "Rapid Set Schnellbeton",
     kategorie: "schnellzement",
     kurzbeschreibung: "Volumetrisch gemischter Schnellbeton (Rapid Set), TL BEB-StB",
@@ -685,6 +696,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koromineral-cure",
+    websiteUrl: "https://www.korodur.de/produkt/koromineral-cure/",
     name: "KOROMINERAL CURE",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Oberflächenschutz mittels Silikatisierung",
