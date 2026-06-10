@@ -4,8 +4,7 @@
     "loesungsfinder": "Solution Finder",
     "referenzen": "References",
     "anwendungsmatrix": "Application Matrix",
-    "produkte": "Products",
-    "portfolio": "Portfolio"
+    "produkte": "Products"
   },
   "home": {
     "hero_title": "The reliable renovation solution for your industrial floor",
@@ -27,12 +26,6 @@
     "cta_title": "Do you have a specific project?",
     "cta_description": "Our technical consultants will help you find the optimal renovation solution.",
     "cta_button": "Contact a consultant"
-  },
-  "portfolio": {
-    "breadcrumb": "Portfolio",
-    "title": "Product Portfolio",
-    "description": "KORODUR offers well-designed renovation systems for three key application areas. Each system is engineered for maximum durability, minimal downtime, and long-term cost-effectiveness.",
-    "learn_more": "Learn more"
   },
   "referenzen": {
     "breadcrumb": "References",
@@ -64,7 +57,8 @@
     "reference_singular": "Reference",
     "reference_plural": "References",
     "home": "Home",
-    "back": "Back"
+    "back": "Back",
+    "page": "Page"
   },
   "produkte": {
     "breadcrumb": "Products",
