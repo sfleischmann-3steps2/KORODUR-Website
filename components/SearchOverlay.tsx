@@ -44,14 +44,14 @@ export default function SearchOverlay({
     // Neue Seiten
     items.push({
       type: "kategorie",
-      title: "Lösungsfinder",
-      subtitle: "In 5 Schritten zur passenden Sanierungslösung",
+      title: dict.nav.loesungsfinder,
+      subtitle: dict.home.finder_teaser_title,
       href: `/${lang}/loesungsfinder/`,
     });
     items.push({
       type: "kategorie",
-      title: "Anwendungsmatrix",
-      subtitle: "Produkte und Anwendungsbereiche auf einen Blick",
+      title: dict.nav.anwendungsmatrix,
+      subtitle: dict.anwendungsmatrix.h1,
       href: `/${lang}/anwendungsmatrix/`,
     });
 
@@ -120,7 +120,7 @@ export default function SearchOverlay({
 
   const typeLabels: Record<string, string> = {
     referenz: dict.common.reference_singular,
-    kategorie: dict.portfolio.breadcrumb,
+    kategorie: dict.common.page,
     produkt: dict.referenzen.filter_all_products.replace("Alle ", "").replace("All ", "").replace("Tous les ", ""),
   };
 

@@ -4,8 +4,7 @@
     "loesungsfinder": "Lösungsfinder",
     "referenzen": "Referenzen",
     "anwendungsmatrix": "Anwendungsmatrix",
-    "produkte": "Produkte",
-    "portfolio": "Portfolio"
+    "produkte": "Produkte"
   },
   "home": {
     "hero_title": "Die sichere Sanierungslösung für Ihren Industrieboden",
@@ -27,12 +26,6 @@
     "cta_title": "Sie haben ein konkretes Projekt?",
     "cta_description": "Unsere technischen Berater helfen Ihnen, die optimale Sanierungslösung zu finden.",
     "cta_button": "Berater kontaktieren"
-  },
-  "portfolio": {
-    "breadcrumb": "Portfolio",
-    "title": "Produktportfolio",
-    "description": "KORODUR bietet durchdachte Sanierungssysteme für drei zentrale Anwendungsbereiche. Jedes System ist auf maximale Belastbarkeit, minimale Ausfallzeiten und langfristige Wirtschaftlichkeit ausgelegt.",
-    "learn_more": "Mehr erfahren"
   },
   "referenzen": {
     "breadcrumb": "Referenzen",
@@ -64,7 +57,8 @@
     "reference_singular": "Referenz",
     "reference_plural": "Referenzen",
     "home": "Home",
-    "back": "Zurück"
+    "back": "Zurück",
+    "page": "Seite"
   },
   "produkte": {
     "breadcrumb": "Produkte",
