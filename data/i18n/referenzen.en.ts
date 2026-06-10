@@ -538,4 +538,282 @@ export const referenzenEN: Record<string, {
     bildAlt: "Renovated truck bypass in Darmstadt",
   },
 
+
+  // === Nachübersetzung 2026-06-10 (25 Referenzen, Workflow translate+verify) ===
+
+  "sanierung-lkw-zufahrt-logistikzentrum-sankt": {
+    titel: "Renovation of the Truck Access Road at the Spedition Brummer Logistics Centre, Sankt Marienkirchen (Austria)",
+    untertitel: "Localised renovation of the heavily frequented truck access road of a logistics centre built in 2021 on the A8 near Schärding",
+    land: "Austria",
+    herausforderungen: [
+      "Renovation of a heavily frequented truck access road with minimal interruption to use; installation during very hot summer temperatures on 25 June 2025 (challenging for the application window and curing); technical problems with the spraying equipment for the curing compound required manual application of the paraffin-based curing compound as well as additional measures (water spraying, covering with plastic sheeting) due to high slab temperatures. The second concrete pour took place the following week in the evening hours.",
+    ],
+    loesung: "OPEN: to be clarified with Alexander. Assumption: rapid return to traffic due to high truck frequency and warranty deadline pressure from the general contractor. However, the actual decision criteria have not been verified.",
+    bildAlt: "Renovation of the truck access road at the Spedition Brummer logistics centre, Sankt Marienkirchen (Austria) (image to follow)",
+  },
+
+  "texaco-tankflache-arnheim": {
+    titel: "TEXACO Refuelling Area, Arnhem (2018)",
+    untertitel: "Liquid-tight concrete renovation of a filling station in accordance with CUR Recommendation 63 for LAU facilities.",
+    land: "Netherlands",
+    herausforderungen: [
+      "The concrete used must provide a high level of liquid-tightness to meet the requirements for LAU facilities and guarantee resistance in accordance with CUR Recommendation 63.",
+    ],
+    loesung: "Rapid Set rapid concrete was chosen because it delivered excellent results in liquid-tightness testing and showed rapid early strength development, allowing the new refuelling areas to be put back in service at short notice.",
+    bildAlt: "TEXACO Refuelling Area, Arnhem (2018) (image to follow)",
+  },
+
+  "naturex-burgdorf": {
+    titel: "Naturex, Burgdorf (2013)",
+    untertitel: "Complete renovation of a spray cooling tower in just three weeks.",
+    land: "Switzerland",
+    herausforderungen: [
+      "The complete renovation had to be completed within just three weeks. The tower floor of approx. 200 m² was to be chiselled out and relaid within one week, with a foodstuff-resistant PU coating required.",
+    ],
+    loesung: "High-strength rapid concrete CONCRETE MIX was used for the renovation; it can be overlaid with the PU coating after just 16 hours. At temperatures above 30 °C, the retarder SET Control was added to extend the working time.",
+    bildAlt: "Naturex, Burgdorf (2013) (image to follow)",
+  },
+
+  "torschwelle-lagerhalle": {
+    titel: "Warehouse Gate Threshold (unknown location) (2017)",
+    untertitel: "Renovation of a heavily worn threshold area with exposed reinforcement.",
+    land: "Germany",
+    herausforderungen: [
+      "Fast and durable repair of the damaged concrete layer without disrupting traffic to the warehouse.",
+    ],
+    loesung: "Use of the rapid mortar MORTAR MIX, applied to a milled, load-bearing substrate; the work was completed within 4 hours.",
+    bildAlt: "Warehouse gate threshold (unknown location) (2017) (image to follow)",
+  },
+
+  "wellpappenfabrik-gross-versmold": {
+    titel: "Wellpappenfabrik Gross, Versmold (2013)",
+    untertitel: "Repair of sunken asphalt and concrete surfaces at the transition to the production hall.",
+    land: "Germany",
+    herausforderungen: [
+      "The area was subjected to heavy forklift traffic, causing undulations that compromised the transport safety of the packaging.",
+    ],
+    loesung: "The use of Rapid Set CONCRETE MIX enabled rapid renovation of the surfaces with layer thicknesses of up to 200 mm, and traffic could resume after just one hour.",
+    bildAlt: "Wellpappenfabrik Gross, Versmold (2013) (image to follow)",
+  },
+
+  "korodur-demo-bochum": {
+    titel: "KORODUR Demo, Bochum-Wattenscheid (2012)",
+    untertitel: "Rapid repair of damaged Stelcon slabs under daily truck and forklift traffic.",
+    land: "Germany",
+    herausforderungen: [
+      "Damage to the concrete slabs from truck and forklift traffic requires rapid replacement, as procuring and installing a new slab takes several days.",
+    ],
+    loesung: "The use of Rapid Set CONCRETE MIX rapid repair concrete enables fast repair of the damaged slabs within a few hours to keep operations running.",
+    bildAlt: "KORODUR Demo, Bochum-Wattenscheid (2012) (image to follow)",
+  },
+
+  "kreisverkehr-goppingen": {
+    titel: "Roundabout, Göppingen (2021)",
+    untertitel: "Redesign of a two-lane roundabout to improve traffic safety.",
+    land: "Germany",
+    herausforderungen: [
+      "The paving heightened the perception of the traffic lane and led to cramped and hazardous traffic situations, particularly at the entries and exits.",
+    ],
+    loesung: "The municipal civil engineering office commissioned Blessing GmbH to bring the paving level with the asphalt surface using a special renovation process, with the aim of improving traffic safety. The rapid repair mortar MORTAR MIX was used, which can be worked and milled within approx. 2 hours.",
+    bildAlt: "Roundabout, Göppingen (2021) (image to follow)",
+  },
+
+  "barmenia-parkhaus-wuppertal": {
+    titel: "Barmenia Car Park, Wuppertal (2015)",
+    untertitel: "Prompt repair of damaged in-situ concrete and precast elements with partially exposed reinforcement.",
+    land: "Germany",
+    herausforderungen: [
+      "Damaged areas in in-situ concrete and precast elements, some with exposed reinforcement, requiring prompt repair.",
+    ],
+    loesung: "Rapid Set Cement All and Mortar Mix were used for fast, effective repair of the damaged areas, followed by a new coat of paint for the car park.",
+    bildAlt: "Barmenia Car Park, Wuppertal (2015) (image to follow)",
+  },
+
+  "john-lewis-lager-stevenage": {
+    titel: "John Lewis Warehouse, Stevenage (2013)",
+    untertitel: "Repair of deep ruts after more than 20 years of forklift traffic in a high-bay warehouse.",
+    land: "United Kingdom",
+    herausforderungen: [
+      "The forklift trucks in the high-bay warehouse had followed the same route for over 20 years, leading to the formation of a deep rut that impeded traffic.",
+    ],
+    loesung: "For the renovation, the racking was removed and the Rapid Set multi-purpose repair mortar CEMENT ALL was chosen to level out the rut. A three-man team repaired 50-100 linear metres per day, resulting in a fast and satisfactory renovation.",
+    bildAlt: "John Lewis Warehouse, Stevenage (2013) (image to follow)",
+  },
+
+  "fraport-frankfurt": {
+    titel: "Fraport, Frankfurt/Main (2012)",
+    untertitel: "Rapid renovation of a damaged container storage area at the airport with WHG coating.",
+    land: "Germany",
+    herausforderungen: [
+      "The renovation had to be carried out within a very short time, including the required WHG coating.",
+    ],
+    loesung: "Wiedemann und Sohn GmbH used Rapid Set cement technology to solve the problem faster and more easily, applying the repair mortar CEMENT ALL for the renovation.",
+    bildAlt: "Fraport, Frankfurt/Main (2012) (image to follow)",
+  },
+
+  "sncf-bordeaux": {
+    titel: "SNCF, Bordeaux (2016)",
+    untertitel: "Elimination of hazardous uneven areas in metro access routes during night-time works.",
+    land: "France",
+    herausforderungen: [
+      "During construction works, subsidence occurred in the walkways to the metro stations, causing numerous uneven spots and a risk of injury for passengers. The repairs had to be carried out during night hours (00:00 to 05:00).",
+    ],
+    loesung: "SNCF opted for the Rapid Set repair mortar CEMENT ALL, which is fast-hardening, low-shrinkage and durable. The repair works were completed within two weeks, to the satisfaction of the client.",
+    bildAlt: "SNCF, Bordeaux (2016) (image to follow)",
+  },
+
+  "parkhaus-freiburger-munster-freiburg": {
+    titel: "Freiburg Minster Car Park, Freiburg",
+    untertitel: "Renovation of the Karlsbau Freiburg underground car park (670 parking spaces, 3 levels) with Triflex ProPark and DUROP coating",
+    land: "Germany",
+    herausforderungen: [
+      "Heavy traffic caused massive damage to the mastic asphalt surface and the reinforced concrete structure. Aggressive media (oil, chlorides) and mechanical stress made urgent renovation of the approx. 5,000 m² traffic surface necessary.",
+    ],
+    loesung: "Triflex ProPark with DUROP coating: trafficable waterproofing system with improved wear resistance. DUROP offers slip-resistant, polish-resistant properties – proven for decades. Fast execution during ongoing operations.",
+    bildAlt: "Freiburg Minster Car Park, Freiburg (image to follow)",
+  },
+
+  "olympiastadion-berlin": {
+    titel: "Olympiastadion Berlin (2023)",
+    untertitel: "Renovation under heritage protection requirements while preserving the historic appearance.",
+    land: "Germany",
+    herausforderungen: [
+      "Preservation of the historic appearance under heritage protection requirements, high mechanical stress from sporting and major events, integration of modern technical requirements into a building ensemble of historic character.",
+    ],
+    loesung: "For the renovation, a specially developed design screed was used that is aesthetically appealing and offers high abrasion resistance. It was applied in layers without the need for an additional bonding agent, and with targeted curing to optimise the surface properties.",
+    bildAlt: "Olympiastadion Berlin (2023) (image to follow)",
+  },
+
+  "wirtgen-produktionshallen-weltweit": {
+    titel: "WIRTGEN Production Halls, Worldwide",
+    untertitel: "Over 150,000 m² of hard aggregate industrial floors in production facilities worldwide for road construction machinery weighing up to 500 tonnes.",
+    land: "Andorra",
+    herausforderungen: [
+      "Extreme mechanical stress from machines with crawler track drives weighing up to 500 tonnes. Maximum wear resistance combined with high flexural strength. Long-term use under continuous stress.",
+    ],
+    loesung: "As part of the renovation, KORODUR hard aggregate industrial floors were used. In accordance with DIN 18560-7, a hard aggregate layer of 10 to 15 mm was installed, and for particularly stressed areas, hard aggregate screed with metallic aggregates in accordance with DIN 1100-M was used to ensure maximum flexural strength and wear resistance.",
+    bildAlt: "WIRTGEN Production Halls, Worldwide (image to follow)",
+  },
+
+  "fh-lichtschacht-nurnberg": {
+    titel: "FH Light Well, Nürnberg (2012)",
+    untertitel: "Renovation of a heavily stressed concrete surround on the last day of the university term before the summer break.",
+    land: "Germany",
+    herausforderungen: [
+      "High mechanical stress from heavy-duty traffic, exposure to weathering and pollutants, and tight scheduling requirements for the renovation on the last day of the university term before the summer break.",
+    ],
+    loesung: "The Rapid Set multi-purpose repair mortar CEMENT ALL was used, selected for its rapid-setting, high-strength formula. CEMENT ALL requires no primer or bonding agent, only pre-wetting with water, and allowed the driveway to be back in service after just three hours.",
+    bildAlt: "FH Light Well, Nürnberg (2012) (image to follow)",
+  },
+
+  "klaranlage-nako": {
+    titel: "Sewage Treatment Plant, Nakło (2014)",
+    untertitel: "Renovation of a basin crown destroyed by acids (approx. 180 m²) using rapid-setting cement. Repair completed in just a few hours.",
+    land: "Poland",
+    herausforderungen: [
+      "Permanent exposure to aggressive raw sewage. Aeration system no longer functional. Fast repair required to avoid downtime.",
+    ],
+    loesung: "CEMENT ALL was chosen for its rapid hardening and high resistance to aggressive acids and raw sewage, enabling repair of the basin crown within a few hours. Specialised application techniques ensured optimal adhesion to the difficult substrate.",
+    bildAlt: "Sewage Treatment Plant, Nakło (2014) (image to follow)",
+  },
+
+  "bruckensanierung-amberg": {
+    titel: "Bridge Renovation, Amberg (2012)",
+    untertitel: "Bridge renovation with levelling of gradient differences of up to 100 mm on the footpaths.",
+    land: "Germany",
+    herausforderungen: [
+      "Meeting a tight nine-month schedule, levelling of gradient differences from 0 to 100 mm on the footpaths, precise shaping of the plinth profiles along the bridge railing under demanding structural conditions.",
+    ],
+    loesung: "The multifunctional Rapid Set repair mortar CEMENT ALL was used for the renovation – thanks to its rapid hardening and high-performance properties, it served both for levelling the pedestrian walkways and for shaping the plinth profiles. CEMENT ALL was chosen for its technical properties, which enabled efficient and precise implementation of the structural requirements.",
+    bildAlt: "Bridge Renovation, Amberg (2012) (image to follow)",
+  },
+
+  "parkplatzsanierung-metzingen": {
+    titel: "Car Park Renovation, Metzingen (2017)",
+    untertitel: "Renovation of a heavily worn car park with surface cracks and spalling.",
+    land: "Germany",
+    herausforderungen: [
+      "High mechanical loads from daily car and delivery traffic, need for a rapid renovation, evening out surface cracks and unevenness to ensure uniform load distribution.",
+    ],
+    loesung: "Rapid Set MORTAR MIX was chosen as a high-performance renovation solution, distinguished by its rapid setting time and excellent adhesion. The surface was prepared by removing loose material, and MORTAR MIX was applied to a defined layer thickness to level out unevenness. The fast-setting mortar enabled rapid recommissioning of the car park.",
+    bildAlt: "Car park renovation, Metzingen (2017) (image to follow)",
+  },
+
+  "schachtregulierung-fahrbahn-nittenau": {
+    titel: "Roadway Manhole Adjustment, Nittenau (2019)",
+    untertitel: "Adjustment of 28 sewer manholes to the new road surface level during a road renovation.",
+    land: "Germany",
+    herausforderungen: [
+      "Adjustment of 28 sewer manholes to a higher road surface level, need for a rapid-hardening, volume-stable repair mortar, time pressure for rapid installation of the new asphalt.",
+    ],
+    loesung: "The MORTAR MIX repair mortar was used for the first time by the construction company Rädlinger, mixed on site and applied manually to install the manhole frame at the correct height. One hour after application, a heavily loaded truck could drive over the manhole cover, and the final asphalt surface course completed the solution.",
+    bildAlt: "Roadway manhole adjustment, Nittenau (2019) (image to follow)",
+  },
+
+  "treppensanierung-gehweg-esslingen": {
+    titel: "Staircase Renovation on a Walkway, Esslingen (2015)",
+    untertitel: "Renovation of individual staircase steps with frost and de-icing salt damage on a public walkway.",
+    land: "Germany",
+    herausforderungen: [
+      "High exposure to frost and de-icing salt, renovation of individual steps in a public facility, and execution of the work under time pressure to quickly restore use of the walkway.",
+    ],
+    loesung: "CEMENT ALL was used to protect the exposed reinforcing steel, followed by MORTAR MIX to match the surface to its surroundings. This combination allowed a fast and durable renovation without extensive preparatory work.",
+    bildAlt: "Staircase renovation on a walkway, Esslingen (2015) (image to follow)",
+  },
+
+  "burger-king-munster": {
+    titel: "Burger King, Münster-Hiltrup (2021)",
+    untertitel: "Renovation of the heavily stressed pick-up counter area during ongoing restaurant operations. Repair of asphalt damage.",
+    land: "Germany",
+    herausforderungen: [
+      "High mechanical loads from vehicles, work had to be carried out during ongoing operations, special treatment of the asphalt required.",
+    ],
+    loesung: "Removal of the damaged metal plates, stripping of the asphalt, stabilisation of the substrate with KORODUR PC, followed by application of Rapid Set DOT Europe CONCRETE MIX; renovation at a layer thickness of 70-80 mm, work completed in just two and a half hours.",
+    bildAlt: "Burger King, Münster-Hiltrup (2021) (image to follow)",
+  },
+
+  "kraftwerk-bergamo": {
+    titel: "Power Plant, Bergamo (2011)",
+    untertitel: "Heritage-compliant renovation restoring the historic small-format tile look of the 1960s to 1980s.",
+    land: "Italy",
+    herausforderungen: [
+      "Preserving the historic appearance while modernising the floor technology; restoring the small-format tile look (30 cm x 30 cm); ensuring high wear resistance in industrial operation.",
+    ],
+    loesung: "Use of KORODUR small-format tiles matching the standards of the 1960s to 1980s. 38 mm thick tiles with a 12 mm KORODUR hard aggregate layer in anthracite (NEODUR HE 65 anthrazit) were professionally installed, preserving the historic character while meeting the technical requirements.",
+    bildAlt: "Power Plant, Bergamo (2011) (image to follow)",
+  },
+
+  "fahrbahnsanierung-wien": {
+    titel: "Roadway Renovation, Vienna (2020)",
+    untertitel: "Partial roadway renovation of Donaukanalstraße in Vienna with DOT Europe CONCRETE MIX. 15 patch repairs overnight at a layer thickness of 5–10 cm.",
+    land: "Austria",
+    herausforderungen: [
+      "Renovation of a four-lane main road under ongoing traffic. Repairs had to be carried out overnight, with the road reopened to traffic within a few hours. 15 damaged areas over a length of 500–700 m in a single night.",
+    ],
+    loesung: "A test area from May 2019 showed no damage whatsoever after one year despite heavy traffic loads. DOT Europe CONCRETE MIX: rapid-setting, fibre-reinforced, polymer-modified, CO2-reduced. A crew of seven repaired 15 patches in one night.",
+    bildAlt: "Roadway Renovation, Vienna (2020) (image to follow)",
+  },
+
+  "oelie-saur-saint": {
+    titel: "Oélie/Saur, Saint-Étienne (2024)",
+    untertitel: "Municipal sidewalk renovation with rapid repair mortar. Slip-resistant, visually matched surface – back in service after 30 minutes.",
+    land: "France",
+    herausforderungen: [
+      "Rapid reopening for pedestrians and traffic required. Slip-resistant surface specified. Visual matching to the existing sidewalk surface desired.",
+    ],
+    loesung: "Rapid Set Asphalt Repair Mix (ARM) was used together with Set Control after being rated the superior solution in tests. The material was mixed with a twin-paddle mixer and precisely installed by the contractor Trema. The product was chosen for its ease of application and rapid return to service.",
+    bildAlt: "Oélie/Saur, Saint-Étienne (2024) (image to follow)",
+  },
+
+  "decathlon-dortmund": {
+    titel: "Decathlon, Dortmund-Aplerbeck (2023)",
+    untertitel: "Installation of hard aggregate screed via silo technology for an interim sales area during the retail store conversion.",
+    land: "Germany",
+    herausforderungen: [
+      "Tight deadlines for completion. Load-bearing industrial floor required for temporary sales operation on an area already in use.",
+    ],
+    loesung: "Use of NEODUR HE 65, a cement-bound hard aggregate screed, at a layer thickness of 10 mm, applied with the modern KORODUR silo system.",
+    bildAlt: "Decathlon, Dortmund-Aplerbeck (2023) (image to follow)",
+  },
+
 };
