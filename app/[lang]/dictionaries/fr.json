@@ -254,16 +254,18 @@
     "count_produkte_5plus": "{n} produits"
   },
   "footer": {
-    "tagline": "Rénovation systématique. Depuis 1936.",
+    "tagline": "La qualité pour des générations. Depuis 1936.",
     "copyright": "Tous droits réservés.",
     "contact_cta": "Conseil technique",
     "contact_desc": "Parlez directement à nos experts.",
     "col_bereiche": "Domaines",
     "col_unternehmen": "Entreprise",
     "col_kontakt": "Contact",
-    "col_sprachen": "Langues",
     "impressum": "Mentions légales",
-    "datenschutz": "Protection des données"
+    "datenschutz": "Protection des données",
+    "col_social": "Réseaux sociaux",
+    "ausschreibungen": "Textes d'appel d'offres",
+    "jahre_badge": "90 ans"
   },
   "bereiche": {
     "breadcrumb_home": "Accueil",
@@ -309,12 +311,13 @@
     "card_matrix_text": "Quel produit pour quelle application : la vue d'ensemble complète avec données techniques et fiches techniques.",
     "card_referenzen_title": "Références",
     "card_referenzen_text": "Des solutions de rénovation éprouvées en pratique, avec situation initiale, solution et résultat.",
-    "cta": "Commencer"
+    "cta": "Commencer",
+    "slogan": "Rénover avec méthode."
   },
   "unternehmen": {
     "title": "À propos de KORODUR",
     "intro1": "Depuis 1936, nous sommes spécialisés dans la fabrication d'agrégats durs minéraux pour sols industriels cimentaires à hautes performances. Plus de 750 millions de m² de sols industriels KORODUR sont posés dans le monde. Nous entretenons aujourd'hui des relations commerciales avec plus de 40 pays.",
-    "intro2": "Fondée à Berlin en 1936, propriété de la famille Heckmann depuis 1969 et basée à Amberg depuis 1978 : nous agissons dans l'esprit de la cohérence, de la crédibilité et de la continuité. La production a lieu à Amberg, Bochum-Wattenscheid, Schwarzenfeld et Hanovre-Misburg.",
+    "intro2": "Fondée à Berlin en 1936, propriété de la famille Heckmann depuis 1969 et basée à Amberg depuis 1978 : nous agissons dans l'esprit de la cohérence, de la crédibilité et de la continuité. La production a lieu sur notre site de Bochum-Wattenscheid.",
     "standorte_title": "Sites",
     "standort_zentrale": "Siège",
     "standort_werk": "Usine",
@@ -327,11 +330,10 @@
     "title": "Contact",
     "intro": "Parlez directement à nos conseillers techniques : produits, projets ou points de vente.",
     "zentrale_title": "Siège KORODUR Amberg",
-    "firma1": "KORODUR Westphal Hartbeton GmbH & Co. KG",
-    "firma2": "KORODUR International GmbH",
     "tel_label": "Téléphone",
     "email_label": "E-mail",
     "websites_title": "Sites associés",
-    "cta_mail": "Écrire un e-mail"
+    "cta_mail": "Écrire un e-mail",
+    "fax_label": "Fax"
   }
 }

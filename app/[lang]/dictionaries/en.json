@@ -254,16 +254,18 @@
     "count_produkte_5plus": "{n} products"
   },
   "footer": {
-    "tagline": "Systematic renovation. Since 1936.",
+    "tagline": "Quality for generations. Since 1936.",
     "copyright": "All rights reserved.",
     "contact_cta": "Technical Advisory",
     "contact_desc": "Talk directly to our experts.",
     "col_bereiche": "Business Areas",
     "col_unternehmen": "Company",
     "col_kontakt": "Contact",
-    "col_sprachen": "Languages",
     "impressum": "Legal Notice",
-    "datenschutz": "Privacy Policy"
+    "datenschutz": "Privacy Policy",
+    "col_social": "Social Media",
+    "ausschreibungen": "Tender specifications",
+    "jahre_badge": "90 years"
   },
   "bereiche": {
     "breadcrumb_home": "Home",
@@ -309,12 +311,13 @@
     "card_matrix_text": "Which product for which application: the complete overview with technical data and data sheets.",
     "card_referenzen_title": "References",
     "card_referenzen_text": "Proven renovation solutions from practice, with initial situation, solution and result.",
-    "cta": "Start now"
+    "cta": "Start now",
+    "slogan": "Systematic renovation."
   },
   "unternehmen": {
     "title": "About KORODUR",
     "intro1": "Since 1936 we have specialised in producing mineral hard aggregates for heavy-duty cementitious industrial floors. More than 750 million m² of KORODUR industrial floors have been installed worldwide. Today we maintain business relationships with more than 40 countries.",
-    "intro2": "Founded in Berlin in 1936, owned by the Heckmann family since 1969 and headquartered in Amberg since 1978: we act in the spirit of consistency, credibility and continuity. Production takes place in Amberg, Bochum-Wattenscheid, Schwarzenfeld and Hannover-Misburg.",
+    "intro2": "Founded in Berlin in 1936, owned by the Heckmann family since 1969 and headquartered in Amberg since 1978: we act in the spirit of consistency, credibility and continuity. Production takes place at our Bochum-Wattenscheid plant.",
     "standorte_title": "Locations",
     "standort_zentrale": "Headquarters",
     "standort_werk": "Plant",
@@ -327,11 +330,10 @@
     "title": "Contact",
     "intro": "Talk directly to our technical consultants: about products, projects or suppliers.",
     "zentrale_title": "KORODUR Headquarters Amberg",
-    "firma1": "KORODUR Westphal Hartbeton GmbH & Co. KG",
-    "firma2": "KORODUR International GmbH",
     "tel_label": "Phone",
     "email_label": "Email",
     "websites_title": "Related websites",
-    "cta_mail": "Send an email"
+    "cta_mail": "Send an email",
+    "fax_label": "Fax"
   }
 }
