@@ -92,6 +92,14 @@ GitHub Pages via GitHub Actions – bei jedem Push auf `main` wird automatisch g
 ### Backlog Themen
 Commit: 0deae98c191a84ed9aded5fbff50f664f9336561 -> Sanierungssysteme (Systemdarstellung als Konzeptbasis)
 
+### V3.0 – UI-Refactoring shadcn/ui + Mobile-First (Juni 2026)
+- [x] **shadcn/ui + lucide-react** (PRs #28-#35): UI-Kit in `components/ui/` (CD-kalibriert), Design-Tokens statt Hex, Gabarito self-hosted
+- [x] **Overlays auf Radix**: Drawer→Sheet, Suche→CommandDialog, Sprachwahl→DropdownMenu, Lightbox→Dialog+Carousel (Swipe!)
+- [x] **Mobile-First**: 44px-Touch-Targets, sticky Wizard-Footer, keine Fonts <12px, Anwendungsmatrix mobil als Anwendungs-Accordion
+- [x] **Service-Worker-Fix**: Precache mit basePath (SW installierte in Production nie), Cache `korodur-v3`
+- [x] **Aufräumen**: ~700 LOC tote V1-Komponenten + 3 Stub-Routen entfernt, Dev-Server-Skripte `_server.sh`/`_stop_server.sh`
+- [ ] Team-Review der neuen Optik; a11y-Folgeentscheidung Link-Kontrast (Brand-Cyan ~2,9:1)
+
 ### V2.9 – A2-Gerüst + Referenz-Pilot Norderstedt (Juni 2026)
 - [x] **Lösungsfinder A2-Gerüst** (PR #20): kuratierte Zwei-Produkt-Empfehlung hinter Flag `EMPFEHLUNGS_MODUS` (steht auf `"tags"`, A1 bleibt live; Go-Live nach Frank-Sign-off)
 - [x] **Referenz #52 `neodur-level-norderstedt`** (PR #25): erste 2026er-Sanierungsreferenz, viersprachig, eigener Bildsatz (6 Bilder, JPEG-optimiert), Schadenstyp `frueher-sanierung`
