@@ -8,6 +8,29 @@ interface ProduktInfo {
   verarbeitung?: { besonderheiten: string };
 }
 
+/** Beschriftungen des PDF-Dokuments (aus `dict.pdf`, viersprachig). */
+export interface PdfLabels {
+  doc_subtitle: string;
+  herausforderungen: string;
+  loesung: string;
+  vorteile: string;
+  produkt: string;
+  besonderheiten: string;
+  verarbeitungshinweis: string;
+  seite: string;
+}
+
+const LABELS_DE: PdfLabels = {
+  doc_subtitle: "Sanierungssysteme | Referenz-Datenblatt",
+  herausforderungen: "Herausforderungen",
+  loesung: "Lösung",
+  vorteile: "Vorteile",
+  produkt: "Produkt",
+  besonderheiten: "Besonderheiten",
+  verarbeitungshinweis: "Verarbeitungshinweis",
+  seite: "Seite",
+};
+
 const NAVY = "#002d59";
 const CYAN = "#009ee3";
 const PAGE_WIDTH = 210;
@@ -26,7 +49,8 @@ function checkPageOverflow(doc: jsPDF, y: number): number {
 export async function generateReferenzPdf(
   referenz: Referenz,
   produkt: ProduktInfo | undefined,
-  bildUrl: string
+  bildUrl: string,
+  labels: PdfLabels = LABELS_DE
 ): Promise<void> {
   const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
 
@@ -41,7 +65,7 @@ export async function generateReferenzPdf(
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
-  doc.text("Sanierungssysteme | Referenz-Datenblatt", MARGIN, 24);
+  doc.text(labels.doc_subtitle, MARGIN, 24);
 
   let y = 48;
 
@@ -95,7 +119,7 @@ export async function generateReferenzPdf(
   doc.setFont("helvetica", "bold");
   doc.setFontSize(13);
   doc.setTextColor(0, 45, 89);
-  doc.text("Herausforderungen", MARGIN, y);
+  doc.text(labels.herausforderungen, MARGIN, y);
   y += 7;
 
   doc.setFont("helvetica", "normal");
@@ -115,7 +139,7 @@ export async function generateReferenzPdf(
   doc.setFont("helvetica", "bold");
   doc.setFontSize(13);
   doc.setTextColor(0, 45, 89);
-  doc.text("Lösung", MARGIN, y);
+  doc.text(labels.loesung, MARGIN, y);
   y += 7;
 
   doc.setFont("helvetica", "normal");
@@ -134,7 +158,7 @@ export async function generateReferenzPdf(
   doc.setFont("helvetica", "bold");
   doc.setFontSize(13);
   doc.setTextColor(0, 45, 89);
-  doc.text("Vorteile", MARGIN, y);
+  doc.text(labels.vorteile, MARGIN, y);
   y += 7;
 
   doc.setFont("helvetica", "normal");
@@ -155,7 +179,7 @@ export async function generateReferenzPdf(
     doc.setFont("helvetica", "bold");
     doc.setFontSize(13);
     doc.setTextColor(0, 45, 89);
-    doc.text(`Produkt: ${produkt.name}`, MARGIN, y);
+    doc.text(`${labels.produkt}: ${produkt.name}`, MARGIN, y);
     y += 7;
 
     doc.setFont("helvetica", "normal");
@@ -173,7 +197,7 @@ export async function generateReferenzPdf(
       y = checkPageOverflow(doc, y);
       doc.setFont("helvetica", "bold");
       doc.setFontSize(10);
-      doc.text("Besonderheiten:", MARGIN, y);
+      doc.text(`${labels.besonderheiten}:`, MARGIN, y);
       y += 6;
       doc.setFont("helvetica", "normal");
       for (const b of produkt.besonderheiten) {
@@ -190,7 +214,7 @@ export async function generateReferenzPdf(
       y = checkPageOverflow(doc, y);
       doc.setFont("helvetica", "bold");
       doc.setFontSize(10);
-      doc.text("Verarbeitungshinweis:", MARGIN, y);
+      doc.text(`${labels.verarbeitungshinweis}:`, MARGIN, y);
       y += 6;
       doc.setFont("helvetica", "normal");
       const vLines = doc.splitTextToSize(produkt.verarbeitung.besonderheiten, CONTENT_WIDTH);
@@ -218,7 +242,7 @@ export async function generateReferenzPdf(
       291,
       { align: "center" }
     );
-    doc.text(`Seite ${i} / ${pageCount}`, PAGE_WIDTH - MARGIN, 291, { align: "right" });
+    doc.text(`${labels.seite} ${i} / ${pageCount}`, PAGE_WIDTH - MARGIN, 291, { align: "right" });
   }
 
   doc.save(`KORODUR-Referenz-${referenz.slug}.pdf`);

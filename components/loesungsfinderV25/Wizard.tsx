@@ -9,6 +9,7 @@
 
 import { useCallback, useMemo, useState } from "react";
 import type { Locale } from "@/lib/i18n";
+import { useLocale } from "@/lib/LocaleContext";
 import type {
   EinsatzbereichV25,
   Flaechenkategorie,
@@ -39,6 +40,8 @@ interface WizardProps {
 }
 
 export default function Wizard({ lang }: WizardProps) {
+  const { dict } = useLocale();
+  const t = dict.loesungsfinder;
   const [state, setState] = useState<LoesungsfinderState>(INITIAL_STATE);
   const [currentStep, setCurrentStep] = useState<1 | 2 | 3 | 4>(1);
   const [showResults, setShowResults] = useState(false);
@@ -139,7 +142,7 @@ export default function Wizard({ lang }: WizardProps) {
             style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
           >
             <IconArrowLeft width={14} height={14} aria-hidden="true" />
-            Zurück
+            {t.back}
           </button>
         ) : (
           <span />
@@ -157,7 +160,7 @@ export default function Wizard({ lang }: WizardProps) {
             cursor: stepIsReady ? "pointer" : "not-allowed",
           }}
         >
-          {isFinalStep ? "Lösung anzeigen" : "Weiter"}
+          {isFinalStep ? t.show_solution : t.next}
           <IconArrowRight width={14} height={14} aria-hidden="true" />
         </button>
       </div>

@@ -1,6 +1,7 @@
 // Adaptive Progress-Anzeige: 4 Dots regulär, 3 Dots wenn flaeche === "punktuell".
 // Der Wechsel passiert stillschweigend (kein Badge, kein Hinweis-Text).
 
+import { useLocale } from "@/lib/LocaleContext";
 import { IconX } from "./icons";
 
 interface ProgressHeaderProps {
@@ -15,6 +16,8 @@ interface ProgressHeaderProps {
 const NAVY = "#002d59";
 
 export default function ProgressHeader({ currentStep, totalSteps, onCancel }: ProgressHeaderProps) {
+  const { dict } = useLocale();
+  const t = dict.loesungsfinder;
   return (
     <div className="flex items-center justify-between mb-6">
       <div className="flex items-center gap-3">
@@ -32,7 +35,9 @@ export default function ProgressHeader({ currentStep, totalSteps, onCancel }: Pr
           ))}
         </div>
         <span className="text-xs text-gray-600">
-          Schritt {currentStep} von {totalSteps}
+          {t.progress_step
+            .replace("{current}", String(currentStep))
+            .replace("{total}", String(totalSteps))}
         </span>
       </div>
 
@@ -42,7 +47,7 @@ export default function ProgressHeader({ currentStep, totalSteps, onCancel }: Pr
         className="text-xs text-gray-500 hover:text-gray-700 inline-flex items-center gap-1.5"
       >
         <IconX width={14} height={14} aria-hidden="true" />
-        Abbrechen
+        {t.cancel}
       </button>
     </div>
   );

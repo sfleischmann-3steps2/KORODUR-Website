@@ -244,7 +244,7 @@ export default async function ProduktDetailPage({
             {dict.produkte.view_on_website}
           </p>
           <a
-            href={`https://korodur.de/?s=${encodeURIComponent(produkt.name)}`}
+            href={produkt.websiteUrl ?? `https://korodur.de/?s=${encodeURIComponent(produkt.name)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-white no-underline rounded-[8px] bg-[#009ee3] hover:bg-[#0090d0] transition-colors duration-200 shrink-0"
