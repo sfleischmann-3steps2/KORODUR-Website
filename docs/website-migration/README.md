@@ -28,6 +28,8 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 
 ## Migrationsstatus je Bereich
 
+**Stufe 1 (IA-Gerüst) ist live seit 2026-06-11 (PR #42):** Alle 8 Bereichs-Routen existieren mit Quell-Intro (4 Sprachen) und Produktgrid des Bestands; "Bereichsseite" unten meint den vollen Content-Ausbau aus Stufe 2.
+
 | Bereich | DE-Daten | Bereichsseite | EN | FR | PL | Bilder | PR |
 |---|---|---|---|---|---|---|---|
 | industrieboden (Teil 1: NEODUR + Hartstoffe) | teilweise (10/25 aus Bestand) | — | teilweise | teilweise | teilweise | teilweise | PR 5 geplant |
