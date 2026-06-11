@@ -166,6 +166,26 @@ export interface ReferenzFilterV25 {
   schadenstypen: Schadenstyp[];
 }
 
+// === Website-Integration: Bereichs-Taxonomie (2026-06-11) ===
+// Plan: docs/plans/2026-06-11-website-integration-plan.md
+// Die App wächst zur neuen korodur.de. Jedes Produkt gehört genau einem
+// Bereich der korodur.de-Struktur an. Trennt Website-Navigation strikt vom
+// Sanierungs-Funnel: Lösungsfinder und Anwendungsmatrix filtern weiterhin
+// ausschließlich über ihre kuratierten Felder, NIE über `bereich`.
+//
+// Regional-ready (Spec 2026-04-17 §4): regionalisierte Felder wie
+// `sichtbarInLaendern?: CountryCode[]` werden später ausschließlich als
+// optionale Felder ergänzt, damit bestehende Aufrufer nicht brechen.
+export type Produktbereich =
+  | "industrieboden"
+  | "sichtestrich"
+  | "microtop"
+  | "rapid-set"
+  | "schnellbetonsysteme"
+  | "spezialbaustoffe"
+  | "3d-concrete-printing"
+  | "katzenstreu";
+
 /** V2.5-Filter-Eigenschaften pro Produkt.
  *  Wird durch `mapProduktV24toV25()` aus dem alten Schema abgeleitet,
  *  Overrides in `data/v25ProduktOverrides.ts`. */

@@ -1,6 +1,7 @@
 import type {
   BelastungsTag,
   Flaechenkategorie,
+  Produktbereich,
   ProduktFilterV25,
   Verarbeitung,
   ZeitKategorie,
@@ -28,6 +29,11 @@ export interface Produkt {
   id: string;
   name: string;
   kategorie: "estrich" | "grundierung" | "schnellzement" | "beschichtung" | "nachbehandlung" | "sonstige";
+  /** korodur.de-Bereich (Website-Integration 2026-06-11). Reine Website-
+   *  Navigation/Gruppierung — wird NICHT vom Lösungsfinder oder der
+   *  Anwendungsmatrix ausgewertet. Quelle: KORODUR-website-Scrape
+   *  (01_analyse/scraped_content/produktuebersicht.md). */
+  bereich: Produktbereich;
   kurzbeschreibung: string;
   schichtdicke?: string;
   qualitaetsklasse?: string;
@@ -90,6 +96,7 @@ export const produkte: Produkt[] = [
   // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
     id: "neodur-he-60-rapid",
+    bereich: "industrieboden",
     websiteUrl: "https://www.korodur.de/produkt/neodur-he-60-rapid/",
     name: "NEODUR HE 60 rapid",
     kategorie: "estrich",
@@ -139,6 +146,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-65",
+    bereich: "industrieboden",
     websiteUrl: "https://www.korodur.de/produkt/neodur-he-65/",
     name: "NEODUR HE 65",
     kategorie: "estrich",
@@ -175,6 +183,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-65-plus",
+    bereich: "industrieboden",
     websiteUrl: "https://www.korodur.de/produkt/neodur-he-65-plus/",
     name: "NEODUR HE 65 Plus",
     kategorie: "estrich",
@@ -223,6 +232,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-40",
+    bereich: "industrieboden",
     websiteUrl: "https://www.korodur.de/produkt/neodur-he-40-und-he-40-8/",
     name: "NEODUR HE 40",
     kategorie: "estrich",
@@ -256,6 +266,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-level",
+    bereich: "industrieboden",
     websiteUrl: "https://www.korodur.de/produkt/neodur-level/",
     name: "NEODUR Level",
     kategorie: "estrich",
@@ -306,6 +317,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "tru-self-leveling",
+    bereich: "sichtestrich",
     name: "TRU Self-Leveling",
     kategorie: "estrich",
     kurzbeschreibung: "Selbstverlaufender, geschliffener dekorativer Sichtestrich",
@@ -347,6 +359,7 @@ export const produkte: Produkt[] = [
   // === GRUNDIERUNGEN / HAFTBRÜCKEN (nicht in Sanierungs-Matrix) ===
   {
     id: "korodur-hb-5-rapid",
+    bereich: "industrieboden",
     websiteUrl: "https://www.korodur.de/produkt/korodur-hb-5-rapid/",
     name: "KORODUR HB 5 rapid",
     kategorie: "grundierung",
@@ -370,6 +383,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-pc",
+    bereich: "industrieboden",
     websiteUrl: "https://www.korodur.de/produkt/korodur-pc/",
     name: "KORODUR PC",
     kategorie: "grundierung",
@@ -393,6 +407,7 @@ export const produkte: Produkt[] = [
   // === SCHNELLREPARATURMÖRTEL ===
   {
     id: "rapid-set-cement-all",
+    bereich: "rapid-set",
     websiteUrl: "https://www.korodur.de/bereiche/rapid-set/",
     name: "Rapid Set CEMENT ALL",
     kategorie: "schnellzement",
@@ -440,6 +455,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-mortar-mix",
+    bereich: "rapid-set",
     websiteUrl: "https://www.korodur.de/bereiche/rapid-set/",
     name: "Rapid Set MORTAR MIX",
     kategorie: "schnellzement",
@@ -479,6 +495,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-mortar-mix-dur",
+    bereich: "rapid-set",
     websiteUrl: "https://www.korodur.de/bereiche/rapid-set/",
     name: "Rapid Set MORTAR MIX DUR",
     kategorie: "schnellzement",
@@ -516,6 +533,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "asphalt-repair-mix",
+    bereich: "rapid-set",
     name: "ASPHALT REPAIR MIX",
     kategorie: "schnellzement",
     kurzbeschreibung: "Schnellreparaturmaterial für Asphaltflächen",
@@ -552,6 +570,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "dot-europe-concrete-mix",
+    bereich: "rapid-set",
     name: "DOT Europe CONCRETE MIX",
     kategorie: "schnellzement",
     kurzbeschreibung: "Universeller Schnellreparaturbeton, DIN EN 1504-3",
@@ -593,6 +612,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korocrete",
+    bereich: "spezialbaustoffe",
     name: "KOROCRETE Schnellbeton",
     kategorie: "schnellzement",
     kurzbeschreibung: "Volumetrisch gemischter Schnellbeton (FSCem-Basis)",
@@ -633,6 +653,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-schnellbeton",
+    bereich: "rapid-set",
     websiteUrl: "https://www.korodur.de/bereiche/rapid-set/",
     name: "Rapid Set Schnellbeton",
     kategorie: "schnellzement",
@@ -676,6 +697,7 @@ export const produkte: Produkt[] = [
   // === NACHBEHANDLUNG (nicht in Sanierungs-Matrix) ===
   {
     id: "korocure",
+    bereich: "industrieboden",
     name: "KOROCURE",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Curing-Compound zur kontrollierten Nachbehandlung von Estrichflächen",
@@ -696,6 +718,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koromineral-cure",
+    bereich: "industrieboden",
     websiteUrl: "https://www.korodur.de/produkt/koromineral-cure/",
     name: "KOROMINERAL CURE",
     kategorie: "nachbehandlung",
@@ -717,6 +740,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korotex",
+    bereich: "industrieboden",
     name: "KOROTEX",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Curing-Mittel zur kontrollierten Aushärtung",
