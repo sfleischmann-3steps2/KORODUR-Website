@@ -244,7 +244,9 @@
     "cell_7tage": "7 Tage",
     "cta_text": "Unsicher? Der Lösungsfinder führt Sie in wenigen Schritten zur passenden Lösung – oder sprechen Sie direkt mit unseren Beratern.",
     "cta_loesungsfinder": "Lösungsfinder starten",
-    "cta_kontakt": "Kontakt zu unseren Beratern"
+    "cta_kontakt": "Kontakt zu unseren Beratern",
+    "count_produkte": "{n} Produkte",
+    "count_produkte_5plus": "{n} Produkte"
   },
   "footer": {
     "tagline": "Sanieren mit System. Seit 1936.",

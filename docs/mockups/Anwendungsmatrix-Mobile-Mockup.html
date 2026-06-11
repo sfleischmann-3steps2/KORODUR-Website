@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anwendungsmatrix Mobile (PR 6) – Konzept-Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #002d59; --cyan: #009ee3; --cyan-hover: #0090d0;
+    --icon-bg: #f5f5f6; --bullet-bg: #e8edf5; --light-gray: #ececed;
+    --mid-gray: #d9dada; --muted: #6b7280; --green: #009a44;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: "Gabarito", Arial, sans-serif; background: #f0f2f5; color: var(--navy); padding: 32px 16px 64px; }
+  .intro { max-width: 900px; margin: 0 auto 28px; }
+  .intro h1 { font-weight: 900; font-size: 26px; margin-bottom: 8px; }
+  .intro p { font-size: 14px; line-height: 1.55; color: #334; max-width: 70ch; }
+  .intro .hint { margin-top: 10px; padding: 10px 14px; background: #fff; border-left: 4px solid var(--cyan); border-radius: 6px; font-size: 13px; }
+  .frames { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: flex-start; }
+  .variant-label { text-align: center; margin-bottom: 12px; }
+  .variant-label .tag { display: inline-block; background: var(--navy); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+  .variant-label h2 { font-size: 16px; font-weight: 800; margin-top: 8px; }
+  .variant-label p { font-size: 12.5px; color: var(--muted); max-width: 300px; margin: 4px auto 0; }
+  .phone { width: 390px; background: #111; border-radius: 38px; padding: 10px; box-shadow: 0 24px 60px rgba(0,45,89,.25); }
+  .screen { background: #fff; border-radius: 30px; overflow: hidden; height: 740px; display: flex; flex-direction: column; }
+  .appbar { background: #fff; border-bottom: 1px solid var(--bullet-bg); padding: 14px 16px 10px; }
+  .appbar .brand { font-weight: 900; font-size: 15px; letter-spacing: .02em; }
+  .appbar .brand span { color: var(--cyan); }
+  .scroll { overflow-y: auto; flex: 1; padding: 16px 14px 24px; background: var(--icon-bg); }
+  .pagetitle { font-weight: 900; font-size: 21px; line-height: 1.1; margin-bottom: 2px; }
+  .pagesub { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
+
+  /* Produkt-Card (beide Varianten) */
+  .card { background: #fff; border: 1px solid var(--bullet-bg); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+  .card-head { padding: 14px 14px 10px; display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+  .card-head .name { font-weight: 900; font-size: 16px; line-height: 1.15; }
+  .card-head .vorteil { font-size: 12px; color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+  .pill { flex-shrink: 0; background: var(--navy); color: #fff; font-size: 12px; font-weight: 800; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+  .pill.fast { background: var(--cyan); }
+
+  /* Variante A: Anwendungs-Liste in der Karte */
+  .uses { padding: 0 14px 6px; }
+  .use { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid var(--icon-bg); font-size: 13px; }
+  .mark { flex-shrink: 0; width: 34px; font-weight: 900; font-size: 13px; text-align: left; }
+  .mark.best { color: var(--green); }
+  .mark.yes { color: var(--muted); }
+  .use.dim { color: #9aa3ad; }
+  .use.dim .mark { color: #c4cad1; }
+
+  /* Accordion */
+  details { border-top: 1px solid var(--bullet-bg); }
+  summary { list-style: none; cursor: pointer; padding: 11px 14px; font-size: 13px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
+  summary::-webkit-details-marker { display: none; }
+  summary .chev { transition: transform .2s; color: var(--muted); }
+  details[open] summary .chev { transform: rotate(180deg); }
+  .tech { padding: 0 14px 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tech div { background: var(--icon-bg); border-radius: 8px; padding: 8px 10px; }
+  .tech .k { font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+  .tech .v { font-size: 13.5px; font-weight: 800; margin-top: 2px; }
+  .card-cta { display: flex; gap: 8px; padding: 10px 14px 14px; }
+  .btn { flex: 1; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 10px; font-weight: 800; font-size: 14px; text-decoration: none; cursor: pointer; border: none; font-family: inherit; }
+  .btn.primary { background: var(--cyan); color: #fff; }
+  .btn.outline { background: #fff; color: var(--navy); border: 2px solid var(--navy); }
+
+  /* Variante B: Anwendungs-Chips. Umbrechend statt horizontal scrollend:
+     alle 6 Optionen sofort sichtbar, 1 Tap zum Wechseln. Ein Dropdown wäre
+     kompakter, versteckt aber die Optionen und kostet 2 Taps pro Wechsel. */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 10px; margin-bottom: 6px; }
+  .chip { min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--mid-gray); background: #fff; font-size: 13px; font-weight: 700; color: var(--navy); cursor: pointer; font-family: inherit; }
+  .chip.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .groupline { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 14px 2px 8px; }
+  .groupline.best { color: var(--green); }
+  .mini { display: flex; justify-content: space-between; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--bullet-bg); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+  .mini .name { font-weight: 900; font-size: 15px; }
+  .mini .meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .mini a { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; background: var(--icon-bg); color: var(--navy); text-decoration: none; font-weight: 900; }
+  .empty { font-size: 13px; color: var(--muted); padding: 8px 2px; }
+  footer.note { max-width: 900px; margin: 36px auto 0; font-size: 13px; color: #334; background: #fff; border-radius: 10px; padding: 16px 20px; line-height: 1.6; }
+  footer.note strong { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Anwendungsmatrix mobil: zwei Varianten (PR 6)</h1>
+  <p>Desktop (ab 1024px) behält die Poster-Tabelle 1:1. Darunter ersetzt eines der beiden folgenden Layouts den heutigen 980px-Zwangs-Scroll. Beide Varianten nutzen echte Daten aus <code>data/anwendungsmatrix.ts</code> und shadcn-Bausteine (Card, Accordion, Badge, Button).</p>
+  <div class="hint"><strong>Empfehlung (Stand 2):</strong> Variante C als Mobile-Standard. Die Anwendungen sind selbst die Liste (Accordion, immer nur eine offen), die Produkte klappen direkt unter der Anwendung auf. Kein Filter-State, kein Zurückscrollen. Variante A bliebe als optionale „Alle Produkte"-Ansicht denkbar.</div>
+</div>
+
+<div class="frames">
+  <div>
+    <div class="variant-label">
+      <span class="tag">Variante A</span>
+      <h2>Produkt-Karten + Accordion</h2>
+      <p>Eine Karte je Produkt. Anwendungen als Liste (✓✓ Kernanwendung, ✓ geeignet), technische Daten eingeklappt.</p>
+    </div>
+    <div class="phone"><div class="screen">
+      <div class="appbar"><div class="brand">KORODUR <span>Sanierung</span></div></div>
+      <div class="scroll">
+        <div class="pagetitle">Anwendungsmatrix</div>
+        <div class="pagesub">6 Produkte für die Sanierung, nach Produkt</div>
+        <div id="variantA"></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div>
+    <div class="variant-label">
+      <span class="tag">Variante C</span>
+      <h2>Anwendungs-Accordion</h2>
+      <p>Die Anwendungen sind die Liste. Antippen klappt die Produkte direkt darunter auf, kein Zurückscrollen.</p>
+    </div>
+    <div class="phone"><div class="screen">
+      <div class="appbar"><div class="brand">KORODUR <span>Sanierung</span></div></div>
+      <div class="scroll">
+        <div class="pagetitle">Anwendungsmatrix</div>
+        <div class="pagesub">Anwendung antippen, Produkte direkt darunter</div>
+        <div id="variantC"></div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<footer class="note">
+  <strong>Diskussionspunkte fürs Review:</strong><br>
+  1. Variante C: immer nur eine Anwendung offen (Seite bleibt kurz) oder mehrere gleichzeitig aufklappbar?<br>
+  2. Erste Anwendung initial geöffnet (wie im Mockup) oder alle zu?<br>
+  3. Nur Variante C mobil, oder zusätzlich Variante A als „Alle Produkte"-Umschalter?<br>
+  4. ✓✓/✓-Doppelhaken vom Poster beibehalten oder mobil als Text („Kernanwendung" / „geeignet")?
+</footer>
+
+<script>
+const produkte = [
+  { name: "HE 60 rapid", klass: "CT-C60-F8-A6", schicht: "ab 10 mm", belastbar: "24 h", fast: false, vorteil: "Schnelligkeit" },
+  { name: "HE 65 Plus", klass: "CT-C70-F9-A6", schicht: "15-30 mm", belastbar: "7 Tage", fast: false, vorteil: "Außenbereich" },
+  { name: "NEODUR Level", klass: "CT-C40-F10", schicht: "5-10 mm", belastbar: "24 h", fast: false, vorteil: "Ebenheit" },
+  { name: "Rapid Set", klass: "C35/45 bis C55/67", schicht: "„0“-600 mm", belastbar: "1 h", fast: true, vorteil: "Multifunktionalität" },
+  { name: "KOROCRETE Schnellbeton", klass: "C35/45-C50/60", schicht: "projektabh.", belastbar: "8 h", fast: true, vorteil: "Mischtechnik" },
+  { name: "ARM", klass: "n. a.", schicht: "30-600 mm", belastbar: "30 min", fast: true, vorteil: "Asphalt-Alternative" },
+];
+const usecases = [
+  { de: "Höchstbelastbare Flächen", marks: ["best","best","none","best","yes","none"] },
+  { de: "Logistikflächen u. Lagerhallen", marks: ["best","best","best","best","yes","none"] },
+  { de: "Montage- und Werkstattflächen", marks: ["best","best","yes","best","yes","none"] },
+  { de: "Fachmärkte u. Fachzentren", marks: ["best","best","best","none","none","none"] },
+  { de: "Verkehrsflächen u. Infrastruktur", marks: ["none","best","none","best","best","best"] },
+  { de: "Parkflächen u. Parkhäuser", marks: ["best","best","yes","best","yes","best"] },
+];
+const M = { best: "✓✓", yes: "✓", none: "–" };
+
+// Variante A
+document.getElementById("variantA").innerHTML = produkte.map((p, i) => `
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="vorteil">${p.vorteil}</div>
+        <div class="name">${p.name}</div>
+      </div>
+      <div class="pill${p.fast ? " fast" : ""}">belastbar n. ${p.belastbar}</div>
+    </div>
+    <div class="uses">
+      ${usecases.map(u => {
+        const m = u.marks[i];
+        return `<div class="use${m === "none" ? " dim" : ""}"><span class="mark ${m}">${M[m]}</span>${u.de}</div>`;
+      }).join("")}
+    </div>
+    <details>
+      <summary>Technische Daten <span class="chev">▾</span></summary>
+      <div class="tech">
+        <div><div class="k">Klassifizierung</div><div class="v">${p.klass}</div></div>
+        <div><div class="k">Schichtdicke</div><div class="v">${p.schicht}</div></div>
+      </div>
+    </details>
+    <div class="card-cta"><a class="btn outline" href="#">TDS (PDF)</a></div>
+  </div>`).join("");
+
+// Variante C: Anwendungs-Accordion (exklusiv via details[name],
+// d. h. es ist immer nur eine Anwendung offen, die Seite bleibt kurz)
+const grp = (u, mark, label, cls) => {
+  const items = produkte.filter((_, i) => u.marks[i] === mark);
+  if (!items.length) return "";
+  return `<div class="groupline ${cls}">${label}</div>` + items.map(p => `
+    <div class="mini">
+      <div>
+        <div class="name">${p.name}</div>
+        <div class="meta">${p.vorteil} · belastbar nach ${p.belastbar} · ${p.schicht}</div>
+      </div>
+      <a href="#" title="TDS (PDF)">↧</a>
+    </div>`).join("");
+};
+document.getElementById("variantC").innerHTML = usecases.map((u, idx) => {
+  const anzahl = u.marks.filter(m => m !== "none").length;
+  return `
+  <div class="card">
+    <details name="anwendung"${idx === 0 ? " open" : ""}>
+      <summary style="min-height:56px;font-size:14.5px;">
+        <span>${u.de}<br><span style="font-weight:400;font-size:12px;color:var(--muted)">${anzahl} Produkte</span></span>
+        <span class="chev">▾</span>
+      </summary>
+      <div style="padding:0 14px 14px;">
+        ${grp(u, "best", "✓✓ Kernanwendung", "best")}
+        ${grp(u, "yes", "✓ Geeignet", "")}
+      </div>
+    </details>
+  </div>`;
+}).join("");
+</script>
+</body>
+</html>

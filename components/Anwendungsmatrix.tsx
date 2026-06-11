@@ -9,6 +9,12 @@ import {
   type SpeedTier,
 } from "@/data/anwendungsmatrix";
 import { produkte } from "@/data/produkte";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const NAVY = "var(--navy)";
 const CYAN = "var(--cyan)";
@@ -104,6 +110,12 @@ export default function Anwendungsmatrix({
   void lang;
   return (
     <div>
+      {/* Mobil (<lg): Anwendungs-Accordion (Variante C, Mockup 2026-06-11).
+          Die Anwendungen sind die Liste, Produkte klappen direkt darunter auf —
+          ersetzt den 980px-Zwangs-Scroll der Tabelle. */}
+      <MobileAnwendungen dict={dict} />
+
+      <div className="hidden lg:block">
       <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", borderRadius: 12 }}>
         <table
           style={{
@@ -296,6 +308,117 @@ export default function Anwendungsmatrix({
           {t(dict, "legend_yes", "geeignet")}
         </span>
       </p>
+      </div>
+    </div>
+  );
+}
+
+function MobileAnwendungen({ dict }: { dict: Dict | undefined }) {
+  return (
+    <Accordion
+      type="single"
+      collapsible
+      defaultValue={anwendungUsecases[0].key}
+      className="lg:hidden"
+    >
+      {anwendungUsecases.map((row) => {
+        const n = row.marks.filter((m) => m !== "none").length;
+        // PL braucht ab 5 die zweite Pluralform (produkty/produktów);
+        // de/en/fr haben in beiden Keys denselben Wert.
+        const countTpl = t(
+          dict,
+          n >= 5 ? "count_produkte_5plus" : "count_produkte",
+          "{n} Produkte"
+        );
+        return (
+          <AccordionItem
+            key={row.key}
+            value={row.key}
+            className="mb-3 rounded-xl border border-bullet-bg bg-card px-4 last:border-b"
+          >
+            <AccordionTrigger className="py-3 text-left hover:no-underline">
+              <span>
+                <span className="block text-[15px] font-black text-navy">
+                  {t(dict, row.key, row.de)}
+                </span>
+                <span className="mt-0.5 block text-xs font-normal text-muted-foreground">
+                  {countTpl.replace("{n}", String(n))}
+                </span>
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pb-4">
+              <MarkGruppe
+                row={row}
+                mark="best"
+                label={`✓✓ ${t(dict, "legend_best", "Kernanwendung")}`}
+                best
+                dict={dict}
+              />
+              <MarkGruppe
+                row={row}
+                mark="yes"
+                label={`✓ ${t(dict, "legend_yes", "geeignet")}`}
+                dict={dict}
+              />
+            </AccordionContent>
+          </AccordionItem>
+        );
+      })}
+    </Accordion>
+  );
+}
+
+function MarkGruppe({
+  row,
+  mark,
+  label,
+  best,
+  dict,
+}: {
+  row: (typeof anwendungUsecases)[number];
+  mark: Mark;
+  label: string;
+  best?: boolean;
+  dict: Dict | undefined;
+}) {
+  const items = anwendungMatrixProducts.filter((_, i) => row.marks[i] === mark);
+  if (!items.length) return null;
+  return (
+    <div className="mt-3 first:mt-0">
+      <p
+        className="mb-2 text-xs font-extrabold tracking-wide uppercase"
+        style={{ color: best ? GREEN : "var(--muted-foreground)" }}
+      >
+        {label}
+      </p>
+      {items.map((p) => {
+        const href = resolveLink(p.link);
+        return (
+          <div
+            key={p.id}
+            className="mb-2 flex items-center justify-between gap-3 rounded-lg bg-icon-bg p-3 last:mb-0"
+          >
+            <div className="min-w-0">
+              <p className="text-sm font-black text-navy">{p.name}</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">
+                {t(dict, p.vorteil.key, p.vorteil.de)} ·{" "}
+                {t(dict, "row_belastbar", "belastbar nach")}{" "}
+                {cell(dict, p.belastbarNach)} · {cell(dict, p.schichtdicke)}
+              </p>
+            </div>
+            {href && (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-11 shrink-0 items-center gap-1 text-xs font-extrabold text-cyan no-underline"
+              >
+                {t(dict, "link_more", "Mehr Infos")} ↗
+              </a>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

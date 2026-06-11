@@ -244,7 +244,9 @@
     "cell_7tage": "7 dni",
     "cta_text": "Niepewny? Wyszukiwarka rozwiązań poprowadzi Cię w kilku krokach do odpowiedniego rozwiązania – lub porozmawiaj bezpośrednio z naszymi doradcami.",
     "cta_loesungsfinder": "Uruchom wyszukiwarkę rozwiązań",
-    "cta_kontakt": "Kontakt z naszymi doradcami"
+    "cta_kontakt": "Kontakt z naszymi doradcami",
+    "count_produkte": "{n} produkty",
+    "count_produkte_5plus": "{n} produktów"
   },
   "footer": {
     "tagline": "Renowacja z systemem. Od 1936.",
