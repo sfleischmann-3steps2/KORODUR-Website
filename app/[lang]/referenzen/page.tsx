@@ -159,7 +159,7 @@ function ReferenzenContent() {
       </section>
 
       <section
-        className="bg-[#f5f5f6] sticky top-0 z-30"
+        className="bg-[#f5f5f6] sticky top-16 z-30"
         style={{ padding: "16px 16px", borderBottom: "1px solid #e8edf5" }}
       >
         <div className="mx-auto sm:px-4" style={{ maxWidth: 1320 }}>

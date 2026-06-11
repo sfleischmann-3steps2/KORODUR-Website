@@ -20,14 +20,8 @@ import type { Produkt } from "@/data/produkte";
 import { einsatzbereichLabel } from "@/data/einsatzbereichMapping";
 import { berechneErgebnisV25, type ErgebnisV25 } from "@/data/loesungsfinderV25";
 import { withBasePath } from "@/lib/basePath";
+import { KONTAKT_URLS } from "@/lib/kontakt";
 import { IconFlame, IconPhone, IconArrowRight, IconArrowLeft, IconRefresh } from "./icons";
-
-const KONTAKT_URLS: Record<string, string> = {
-  de: "https://www.korodur.de/kontakt/deutschland/",
-  en: "https://www.korodur.de/kontakt/international/",
-  fr: "https://www.korodur.de/kontakt/international/",
-  pl: "https://www.korodur.de/kontakt/international/",
-};
 
 interface ErgebnisseiteProps {
   lang: Locale;
