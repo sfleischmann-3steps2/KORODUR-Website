@@ -91,7 +91,8 @@
     "tds_download": "Pobierz kartę techniczną",
     "referenzen_title": "Ten produkt w akcji",
     "referenzen_alle": "Wszystkie referencje z tym produktem",
-    "cta_verarbeitung": "Pytania dotyczące zastosowania? Nasi doradcy techniczni chętnie pomogą."
+    "cta_verarbeitung": "Pytania dotyczące zastosowania? Nasi doradcy techniczni chętnie pomogą.",
+    "varianten_title": "Dostępne jakości"
   },
   "sanierung": {
     "title": "Wyszukiwarka produktów",
@@ -300,7 +301,16 @@
     "microtop_intro": "W ramach linii produktów MICROTOP opracowaliśmy mineralną, modyfikowaną mikrokrzemionką zaprawę natryskową do renowacji i budowy zbiorników wody pitnej. Produkty są zgodne z arkuszami roboczymi i wytycznymi DVGW i są stosowane przez przedsiębiorstwa wodociągowe na całym świecie.",
     "katzenstreu_name": "Żwirek dla kotów",
     "katzenstreu_teaser": "Higieniczny żwirek bentonitowy dla handlu i marek własnych",
-    "katzenstreu_intro": "Od 1992 roku produkujemy i dystrybuujemy bentonitowy żwirek dla kotów dla europejskich odbiorców: sieci spożywczych, dyskontów i hurtowni zoologicznych, także jako marka własna. Wszystkie produkty są w pełni naturalne, bez dodatków chemicznych, z certyfikatami ISO 9001, ISO 14001 i BRC Global Standard. Zapraszamy do kontaktu."
+    "katzenstreu_intro": "Od 1992 roku produkujemy i dystrybuujemy bentonitowy żwirek dla kotów dla europejskich odbiorców: sieci spożywczych, dyskontów i hurtowni zoologicznych, także jako marka własna. Wszystkie produkty są w pełni naturalne, bez dodatków chemicznych, z certyfikatami ISO 9001, ISO 14001 i BRC Global Standard. Zapraszamy do kontaktu.",
+    "gruppe_hartstoffestriche": "Jastrychy z kruszywem twardym",
+    "gruppe_hartstoffeinstreuung": "Posypki utwardzające",
+    "gruppe_hartstoffe": "Kruszywa twarde wg DIN 1100",
+    "gruppe_schnellestrich": "Systemy szybkich jastrychów",
+    "gruppe_selbstverlaufend": "Systemy samopoziomujące",
+    "gruppe_untergrund-haftbruecken": "Podłoże, warstwy sczepne i grunty",
+    "gruppe_kunstharz-hartstoffe": "Kruszywa twarde do systemów żywicznych",
+    "gruppe_systeme": "Systemy i wykonawstwo",
+    "gruppe_nachbehandlung": "Pielęgnacja i ochrona powierzchni"
   },
   "sanierungHub": {
     "title": "Renowacja z KORODUR",

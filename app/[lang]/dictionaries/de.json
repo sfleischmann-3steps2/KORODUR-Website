@@ -91,7 +91,8 @@
     "tds_download": "Technisches Datenblatt herunterladen",
     "referenzen_title": "Dieses Produkt im Einsatz",
     "referenzen_alle": "Alle Referenzen mit diesem Produkt",
-    "cta_verarbeitung": "Fragen zur Verarbeitung? Unsere technischen Berater helfen weiter."
+    "cta_verarbeitung": "Fragen zur Verarbeitung? Unsere technischen Berater helfen weiter.",
+    "varianten_title": "Lieferbare Qualitäten"
   },
   "sanierung": {
     "title": "Produktfinder",
@@ -300,7 +301,16 @@
     "microtop_intro": "Mit der Produktlinie MICROTOP haben wir einen mineralischen, microsilika-vergüteten Spritzmörtel für die Sanierung und den Neubau von Trinkwasserbehältern entwickelt. Die Produkte entsprechen den Arbeitsblättern und Richtlinien des DVGW und werden weltweit von Versorgungsunternehmen eingesetzt.",
     "katzenstreu_name": "Katzenstreu",
     "katzenstreu_teaser": "Bentonit-Hygienestreu für Handel und Private Label",
-    "katzenstreu_intro": "Seit 1992 produzieren und vertreiben wir Bentonit-Katzenstreu für europäische Abnehmer: Lebensmitteleinzelhandel, Discounter und Großhandel für Tierbedarf, auch als Private Label. Alle Produkte sind rein natürlich, ohne chemische Zusätze und nach ISO 9001, ISO 14001 und BRC Global Standard zertifiziert. Sprechen Sie uns an."
+    "katzenstreu_intro": "Seit 1992 produzieren und vertreiben wir Bentonit-Katzenstreu für europäische Abnehmer: Lebensmitteleinzelhandel, Discounter und Großhandel für Tierbedarf, auch als Private Label. Alle Produkte sind rein natürlich, ohne chemische Zusätze und nach ISO 9001, ISO 14001 und BRC Global Standard zertifiziert. Sprechen Sie uns an.",
+    "gruppe_hartstoffestriche": "Hartstoffestriche",
+    "gruppe_hartstoffeinstreuung": "Hartstoffeinstreuung",
+    "gruppe_hartstoffe": "Hartstoffe nach DIN 1100",
+    "gruppe_schnellestrich": "Schnellestrich-Systeme",
+    "gruppe_selbstverlaufend": "Selbstverlaufende Systeme",
+    "gruppe_untergrund-haftbruecken": "Untergrund, Haftbrücken & Grundierungen",
+    "gruppe_kunstharz-hartstoffe": "Hartstoffe für Kunstharzsysteme",
+    "gruppe_systeme": "Systeme & Verarbeitung",
+    "gruppe_nachbehandlung": "Nachbehandlung & Oberflächenschutz"
   },
   "sanierungHub": {
     "title": "Sanieren mit KORODUR",

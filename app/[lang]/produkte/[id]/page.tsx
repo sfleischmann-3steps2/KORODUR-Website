@@ -101,10 +101,45 @@ export default async function ProduktDetailPage({
             <p className="text-navy opacity-70 mb-0" style={{ fontSize: 20, lineHeight: 1.5, maxWidth: 700 }}>
               {produkt.kurzbeschreibung}
             </p>
+            {produkt.beschreibung && (
+              <p className="text-navy/70 mt-4 mb-0" style={{ fontSize: 16, lineHeight: 1.7, maxWidth: 700 }}>
+                {produkt.beschreibung}
+              </p>
+            )}
             {produkt.schichtdicke && (
               <p className="text-cyan mt-3 mb-0" style={{ fontSize: 16, fontWeight: 700 }}>
                 {dict.produkte.layer_thickness}: {produkt.schichtdicke}
               </p>
+            )}
+            {produkt.varianten && produkt.varianten.length > 0 && (
+              <div className="mt-6" style={{ maxWidth: 700 }}>
+                <h2 className="text-navy text-[15px] mb-3" style={{ fontWeight: 900 }}>
+                  {dict.produkte.varianten_title}
+                </h2>
+                <div
+                  className="bg-white border border-bullet-bg overflow-hidden"
+                  style={{ borderRadius: 12 }}
+                >
+                  {produkt.varianten.map((v, i) => (
+                    <div
+                      key={v.name}
+                      className="flex flex-wrap justify-between items-baseline gap-x-4 gap-y-1 px-5 py-3"
+                      style={
+                        i < (produkt.varianten?.length ?? 0) - 1
+                          ? { borderBottom: "1px solid var(--bullet-bg)" }
+                          : {}
+                      }
+                    >
+                      <span className="text-navy text-[14px]" style={{ fontWeight: 700 }}>
+                        {v.name}
+                      </span>
+                      <span className="text-navy/60 text-[13px]">
+                        {[v.qualitaetsklasse, v.hinweis].filter(Boolean).join(" · ")}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             )}
           </div>
           {produkt.bild && (

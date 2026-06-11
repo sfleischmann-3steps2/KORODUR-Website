@@ -91,7 +91,8 @@
     "tds_download": "Download Technical Data Sheet",
     "referenzen_title": "This Product in Action",
     "referenzen_alle": "All references with this product",
-    "cta_verarbeitung": "Questions about application? Our technical advisors are here to help."
+    "cta_verarbeitung": "Questions about application? Our technical advisors are here to help.",
+    "varianten_title": "Available grades"
   },
   "sanierung": {
     "title": "Product Finder",
@@ -300,7 +301,16 @@
     "microtop_intro": "With the MICROTOP product line we have developed a mineral, microsilica-modified spray mortar for the refurbishment and new construction of drinking water reservoirs. The products comply with the DVGW worksheets and guidelines and are used by utility companies worldwide.",
     "katzenstreu_name": "Cat Litter",
     "katzenstreu_teaser": "Bentonite hygiene litter for retail and private label",
-    "katzenstreu_intro": "Since 1992 we have been producing and distributing bentonite cat litter for European customers: food retailers, discounters and pet supply wholesalers, also as private label. All products are purely natural, free of chemical additives and certified to ISO 9001, ISO 14001 and BRC Global Standard. Get in touch with us."
+    "katzenstreu_intro": "Since 1992 we have been producing and distributing bentonite cat litter for European customers: food retailers, discounters and pet supply wholesalers, also as private label. All products are purely natural, free of chemical additives and certified to ISO 9001, ISO 14001 and BRC Global Standard. Get in touch with us.",
+    "gruppe_hartstoffestriche": "Hard Aggregate Screeds",
+    "gruppe_hartstoffeinstreuung": "Dry-Shake Toppings",
+    "gruppe_hartstoffe": "Hard Aggregates to DIN 1100",
+    "gruppe_schnellestrich": "Rapid Screed Systems",
+    "gruppe_selbstverlaufend": "Self-Levelling Systems",
+    "gruppe_untergrund-haftbruecken": "Substrate, Bonding Agents & Primers",
+    "gruppe_kunstharz-hartstoffe": "Hard Aggregates for Resin Systems",
+    "gruppe_systeme": "Systems & Application",
+    "gruppe_nachbehandlung": "Curing & Surface Protection"
   },
   "sanierungHub": {
     "title": "Renovating with KORODUR",

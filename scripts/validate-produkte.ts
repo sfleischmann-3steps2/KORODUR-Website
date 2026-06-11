@@ -17,6 +17,7 @@
  * Exit-Code 1 bei jeglicher Verletzung.
  */
 import { produkte } from "../data/produkte";
+import { bereiche } from "../data/bereiche";
 import type { BelastungsTag, Produktbereich } from "../data/types";
 
 const ALLOWED_BEREICH: ReadonlySet<Produktbereich> = new Set<Produktbereich>([
@@ -95,6 +96,19 @@ for (const p of produkte) {
   for (const s of p.systemBegleitprodukte ?? []) {
     if (!alleIds.has(s)) {
       issues.push({ id: p.id, level: "error", msg: `systemBegleitprodukt '${s}' existiert nicht` });
+    }
+  }
+
+  // produktgruppe muss in der Gruppen-Liste des Bereichs definiert sein
+  // (Zuordnung mit Sign-off, docs/website-migration/zuordnung-<bereich>.md)
+  if (p.produktgruppe !== undefined) {
+    const bereich = bereiche.find((b) => b.slug === p.bereich);
+    if (!bereich?.produktgruppen?.includes(p.produktgruppe)) {
+      issues.push({
+        id: p.id,
+        level: "error",
+        msg: `produktgruppe '${p.produktgruppe}' nicht in bereiche.ts für '${p.bereich}' definiert`,
+      });
     }
   }
 }

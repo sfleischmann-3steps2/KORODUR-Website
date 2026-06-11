@@ -14,10 +14,27 @@ export interface Bereich {
   haendlerHinweis?: boolean;
   /** Katzenstreu: eigener Geschäftsbereich, optisch abgegrenzt (Review-Entscheidung). */
   abgegrenzt?: boolean;
+  /** Geordnete Produktgruppen-Keys für die Bereichsseiten-Gliederung.
+   *  Labels in den Dictionaries unter `bereiche.gruppe_<key>`.
+   *  Kuratiert mit Sign-off: docs/website-migration/zuordnung-<bereich>.md */
+  produktgruppen?: string[];
 }
 
 export const bereiche: Bereich[] = [
-  { slug: "industrieboden" },
+  {
+    slug: "industrieboden",
+    produktgruppen: [
+      "hartstoffestriche",
+      "hartstoffeinstreuung",
+      "hartstoffe",
+      "schnellestrich",
+      "selbstverlaufend",
+      "untergrund-haftbruecken",
+      "nachbehandlung",
+      "kunstharz-hartstoffe",
+      "systeme",
+    ],
+  },
   { slug: "sichtestrich" },
   { slug: "schnellbetonsysteme" },
   { slug: "rapid-set", haendlerHinweis: true, externeWebsite: "https://www.korodur-rapidset.com" },
