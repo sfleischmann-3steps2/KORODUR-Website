@@ -816,4 +816,24 @@ export const referenzenEN: Record<string, {
     bildAlt: "Decathlon, Dortmund-Aplerbeck (2023) (image to follow)",
   },
 
+  "neodur-level-norderstedt": {
+    titel: "When the First Renovation Fails",
+    untertitel: "Partial-area renovation with NEODUR Level after a defective hard aggregate screed",
+    land: "Germany",
+    herausforderungen: [
+      "Correcting a failed previous renovation",
+      "Levelling unevenness and height differences in the existing floor",
+      "Restoring damaged partial areas while the hall remained in operation",
+    ],
+    loesung:
+      "We renovated the affected partial areas with NEODUR Level, a self-levelling topping for mineral substrates in interior areas. KORODUR PC served as primer for substrate preparation. This allowed unevenness and height differences to be levelled out and the damaged areas to be recoated.",
+    vorteile: [
+      "Self-levelling: even surface without laborious screeding",
+      "Reliably levels out unevenness and height differences",
+      "Coordinated system of primer (KORODUR PC) and wearing layer (NEODUR Level)",
+      "Partial areas fully usable again, hall operation maintained",
+    ],
+    bildAlt: "Freshly levelled NEODUR Level surface on a renovated existing floor in Norderstedt",
+  },
+
 };

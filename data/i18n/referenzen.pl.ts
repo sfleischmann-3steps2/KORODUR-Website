@@ -538,4 +538,24 @@ export const referenzenPL: Record<string, {
     bildAlt: "Odnowiony objazd ciężarówek w Darmstadt",
   },
 
+  "neodur-level-norderstedt": {
+    titel: "Gdy pierwsza renowacja zawodzi",
+    untertitel: "Renowacja częściowa z NEODUR Level po wadliwie wykonanym jastrychu z kruszywem twardym",
+    land: "Niemcy",
+    herausforderungen: [
+      "Korekta nieudanej wcześniejszej renowacji",
+      "Wyrównanie nierówności i różnic wysokości istniejącej posadzki",
+      "Przywrócenie do użytku uszkodzonych stref przy zachowaniu pracy hali",
+    ],
+    loesung:
+      "Uszkodzone powierzchnie częściowe wyremontowaliśmy z użyciem NEODUR Level, samopoziomującej warstwy na podłoża mineralne wewnątrz budynków. KORODUR PC posłużył jako grunt do przygotowania podłoża. Pozwoliło to wyrównać nierówności i różnice wysokości oraz pokryć uszkodzone strefy nową warstwą.",
+    vorteile: [
+      "Samopoziomowanie: równa powierzchnia bez pracochłonnego ściągania",
+      "Niezawodnie wyrównuje nierówności i różnice wysokości",
+      "Spójny system gruntu (KORODUR PC) i warstwy użytkowej (NEODUR Level)",
+      "Powierzchnie częściowe znów w pełni użytkowe, praca hali utrzymana",
+    ],
+    bildAlt: "Świeżo rozlana powierzchnia NEODUR Level na wyremontowanej posadzce w Norderstedt",
+  },
+
 };
