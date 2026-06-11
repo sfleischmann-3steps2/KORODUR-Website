@@ -312,7 +312,13 @@
     "gruppe_systeme": "Systèmes et mise en œuvre",
     "gruppe_nachbehandlung": "Cure et protection de surface",
     "gruppe_impraegnierung": "Imprégnation et silicatisation",
-    "gruppe_additive": "Additifs et auxiliaires de mise en œuvre"
+    "gruppe_additive": "Additifs et auxiliaires de mise en œuvre",
+    "gruppe_geschliffen": "Chape décorative poncée",
+    "gruppe_geglaettet": "Chape décorative lissée",
+    "gruppe_truazzo": "TRUazzo (technologie Rapid Set)",
+    "gruppe_trockenspritz": "Projection à sec",
+    "gruppe_nassspritz": "Projection humide",
+    "gruppe_beschichtung-schutz": "Revêtement et protection de surface"
   },
   "sanierungHub": {
     "title": "Rénover avec KORODUR",

@@ -37,12 +37,18 @@ export const bereiche: Bereich[] = [
       "systeme",
     ],
   },
-  { slug: "sichtestrich" },
+  {
+    slug: "sichtestrich",
+    produktgruppen: ["geschliffen", "geglaettet", "truazzo"],
+  },
   { slug: "schnellbetonsysteme" },
   { slug: "rapid-set", haendlerHinweis: true, externeWebsite: "https://www.korodur-rapidset.com" },
   { slug: "spezialbaustoffe" },
   { slug: "3d-concrete-printing", externeWebsite: "https://www.3d-concrete-printing.com" },
-  { slug: "microtop" },
+  {
+    slug: "microtop",
+    produktgruppen: ["trockenspritz", "nassspritz", "beschichtung-schutz"],
+  },
   { slug: "katzenstreu", abgegrenzt: true, externeWebsite: "https://www.goodcat.de" },
 ];
 

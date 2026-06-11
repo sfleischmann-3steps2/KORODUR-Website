@@ -312,7 +312,13 @@
     "gruppe_systeme": "Systemy i wykonawstwo",
     "gruppe_nachbehandlung": "Pielęgnacja i ochrona powierzchni",
     "gruppe_impraegnierung": "Impregnacja i silikatyzacja",
-    "gruppe_additive": "Dodatki i środki pomocnicze"
+    "gruppe_additive": "Dodatki i środki pomocnicze",
+    "gruppe_geschliffen": "Jastrych dekoracyjny szlifowany",
+    "gruppe_geglaettet": "Jastrych dekoracyjny zacierany",
+    "gruppe_truazzo": "TRUazzo (technologia Rapid Set)",
+    "gruppe_trockenspritz": "Natrysk suchy",
+    "gruppe_nassspritz": "Natrysk mokry",
+    "gruppe_beschichtung-schutz": "Powłoki i ochrona powierzchni"
   },
   "sanierungHub": {
     "title": "Renowacja z KORODUR",

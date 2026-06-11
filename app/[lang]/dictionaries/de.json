@@ -312,7 +312,13 @@
     "gruppe_systeme": "Systeme & Verarbeitung",
     "gruppe_nachbehandlung": "Nachbehandlung & Oberflächenschutz",
     "gruppe_impraegnierung": "Imprägnierung & Silikatisierung",
-    "gruppe_additive": "Additive & Verarbeitungshilfen"
+    "gruppe_additive": "Additive & Verarbeitungshilfen",
+    "gruppe_geschliffen": "Geschliffener Sichtestrich",
+    "gruppe_geglaettet": "Geglätteter Sichtestrich",
+    "gruppe_truazzo": "TRUazzo (Rapid Set Technologie)",
+    "gruppe_trockenspritz": "Trockenspritzverfahren",
+    "gruppe_nassspritz": "Nassspritzverfahren",
+    "gruppe_beschichtung-schutz": "Beschichtung & Oberflächenschutz"
   },
   "sanierungHub": {
     "title": "Sanieren mit KORODUR",
