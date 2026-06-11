@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Gabarito } from "next/font/google";
 import "../globals.css";
 import AppShell from "../../components/AppShell";
 import { getDictionary, hasLocale } from "./dictionaries";
@@ -6,6 +7,14 @@ import { LOCALES } from "../../lib/i18n";
 import { LocaleProvider } from "../../lib/LocaleContext";
 import type { Locale } from "../../lib/i18n";
 import { notFound } from "next/navigation";
+
+// Variable Font (wght 400-900), self-hosted via next/font statt
+// render-blockendem Google-Fonts-@import. latin-ext für PL-Diakritika.
+const gabarito = Gabarito({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-gabarito",
+});
 import { withBasePath } from "../../lib/basePath";
 import ServiceWorkerRegistrar from "../../components/ServiceWorkerRegistrar";
 
@@ -40,17 +49,14 @@ export default async function LangLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className="antialiased">
+    <html lang={lang} className={`${gabarito.variable} antialiased`}>
       <head>
         <meta name="theme-color" content="#002d59" />
         <link rel="manifest" href={withBasePath("/manifest.json")} />
         <link rel="icon" href={withBasePath("/icons/icon-192.svg")} type="image/svg+xml" />
         <link rel="apple-touch-icon" href={withBasePath("/icons/icon-192.svg")} />
       </head>
-      <body
-        className="min-h-screen"
-        style={{ fontFamily: "'Gabarito', Arial, sans-serif" }}
-      >
+      <body className="min-h-screen font-sans">
         <a href="#main-content" className="skip-to-content">
           {lang === "de" ? "Zum Inhalt springen" : lang === "fr" ? "Aller au contenu" : lang === "pl" ? "Przejdź do treści" : "Skip to content"}
         </a>
