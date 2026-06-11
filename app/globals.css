@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700;800;900&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
   /* KORODUR Brand Colors */
@@ -13,10 +13,31 @@
   --mid-gray: #d9dada;
   --footer-dark: #001a35;
 
-  /* Semantic */
+  /* Semantic (shadcn-Vertrag: --background/--foreground waren schon korrekt belegt) */
   --background: var(--white);
   --foreground: var(--navy);
-  --accent: var(--cyan);
+
+  /* shadcn/ui Design-Tokens, auf die KORODUR-Palette gemappt.
+     Achtung Semantik: --primary = CTA (Cyan), --accent = dezenter
+     Hover-Hintergrund in Menüs (NICHT die Brand-Akzentfarbe). */
+  --card: var(--white);
+  --card-foreground: var(--navy);
+  --popover: var(--white);
+  --popover-foreground: var(--navy);
+  --primary: var(--cyan);
+  --primary-foreground: var(--white);
+  --secondary: var(--bullet-bg);
+  --secondary-foreground: var(--navy);
+  --muted: var(--icon-bg);
+  --muted-foreground: #6b7280;
+  --accent: var(--icon-bg);
+  --accent-foreground: var(--navy);
+  --destructive: #dc2626;
+  --destructive-foreground: var(--white);
+  --border: var(--bullet-bg);
+  --input: var(--mid-gray);
+  --ring: var(--cyan);
+  --radius: 0.75rem;
 
   /* App Shell Layout */
   --sidebar-width: 272px;
@@ -35,13 +56,34 @@
   --color-footer-dark: var(--footer-dark);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Gabarito", Arial, sans-serif;
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-gabarito), Arial, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Gabarito", Arial, sans-serif;
+  font-family: var(--font-gabarito), Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
