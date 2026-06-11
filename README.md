@@ -107,7 +107,7 @@ Commit: 0deae98c191a84ed9aded5fbff50f664f9336561 -> Sanierungssysteme (Systemdar
 - [x] **Produkt-Tags TDS-korrigiert**: DOT ohne chemie, HE-Welt → treibstoff, Reparaturmörtel → aggressiv, HE 65 Plus + whg
 - [x] **51 Referenzen neu auf 6 Cluster gemappt** (WHG-Split Waschstraße/Tankfläche/Hafen), reproduzierbar via `scripts/migrate-refs-v25.ts`
 - [x] **Referenz-Fallback** (stufenweises Lockern): zu jeder Empfehlung mindestens eine Referenz, gelockerte Treffer als „Verwandte Projekte"
-- [ ] **Team-Hardcore-Test**: Filter-Feinjustierung + Tag-Sign-off (Frank) als Feedback-Schleife. Spec: `docs/2026-06-02-loesungsfinder-step3-spec.md`
+- [ ] **Team-Hardcore-Test**: Filter-Feinjustierung + Tag-Sign-off (Frank) als Feedback-Schleife. Spec: `docs/specs/2026-06-02-loesungsfinder-step3-spec.md`
 
 ### V2.5 – Produktmatrix V5 (Juni 2026)
 - [x] **Sanierungs-fokussierte Produktmatrix** statt generischer Eignungstabelle: 13 Matrix-Produkte in 2 Kategorien (6 Industrieestriche + 7 Schnellreparaturmörtel)

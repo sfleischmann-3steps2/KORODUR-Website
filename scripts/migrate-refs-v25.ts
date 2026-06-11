@@ -56,7 +56,7 @@ const ZEIT_MIGRATION: Record<ZeitKategorie, Zeitfenster> = {
 };
 
 // --- Abgeleitet: Einsatzbereich (V2.4-Kategorie → 6-Cluster-Schnitt V2.5) ---
-// Spec docs/2026-06-02-loesungsfinder-step3-spec.md §5. Die alten 8 Cluster
+// Spec docs/specs/2026-06-02-loesungsfinder-step3-spec.md §5. Die alten 8 Cluster
 // (mit zwei leeren Außen-Clustern) sind ersetzt durch den referenzgedeckten
 // 3+3-Schnitt.
 const EINSATZBEREICH_MIGRATION: Record<EinsatzbereichKategorie, EinsatzbereichV25> = {
