@@ -11,8 +11,6 @@ interface Step2Props {
   onSelect: (v: InnenAussen) => void;
 }
 
-const NAVY = "var(--navy)";
-
 const OPTIONEN: Array<{
   id: InnenAussen;
   Icon: typeof IconWarehouse;
@@ -29,9 +27,7 @@ export default function Step2InnenAussen({ value, onSelect }: Step2Props) {
   return (
     <div>
       <header className="mb-6">
-        <h2 className="text-[22px] font-medium" style={{ color: NAVY }}>
-          {t.step2_question}
-        </h2>
+        <h2 className="text-xl sm:text-[22px] font-medium text-navy">{t.step2_question}</h2>
         <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{t.step2_subline}</p>
       </header>
 

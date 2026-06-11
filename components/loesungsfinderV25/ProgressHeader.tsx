@@ -2,7 +2,9 @@
 // Der Wechsel passiert stillschweigend (kein Badge, kein Hinweis-Text).
 
 import { useLocale } from "@/lib/LocaleContext";
-import { IconX } from "./icons";
+import { X } from "lucide-react";
+import { AppIcon } from "@/components/ui/icon";
+import { Button } from "@/components/ui/button";
 
 interface ProgressHeaderProps {
   /** 1-basierter Step-Index. */
@@ -13,24 +15,19 @@ interface ProgressHeaderProps {
   onCancel: () => void;
 }
 
-const NAVY = "var(--navy)";
-
 export default function ProgressHeader({ currentStep, totalSteps, onCancel }: ProgressHeaderProps) {
   const { dict } = useLocale();
   const t = dict.loesungsfinder;
   return (
-    <div className="flex items-center justify-between mb-6">
+    <div className="flex items-center justify-between gap-2 mb-6">
       <div className="flex items-center gap-3">
         <div className="flex gap-1" role="progressbar" aria-valuemin={1} aria-valuemax={totalSteps} aria-valuenow={currentStep}>
           {Array.from({ length: totalSteps }).map((_, i) => (
             <span
               key={i}
-              className="block rounded-sm transition"
-              style={{
-                width: 32,
-                height: 4,
-                background: i < currentStep ? NAVY : "var(--mid-gray)",
-              }}
+              className={`block h-1 w-6 rounded-sm transition sm:w-8 ${
+                i < currentStep ? "bg-navy" : "bg-mid-gray"
+              }`}
             />
           ))}
         </div>
@@ -41,14 +38,15 @@ export default function ProgressHeader({ currentStep, totalSteps, onCancel }: Pr
         </span>
       </div>
 
-      <button
+      <Button
         type="button"
+        variant="ghost"
         onClick={onCancel}
-        className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5"
+        className="h-11 gap-1.5 px-2 -mr-2 text-xs text-muted-foreground hover:text-foreground md:h-9"
       >
-        <IconX width={14} height={14} aria-hidden="true" />
+        <AppIcon icon={X} className="size-3.5" aria-hidden="true" />
         {t.cancel}
-      </button>
+      </Button>
     </div>
   );
 }

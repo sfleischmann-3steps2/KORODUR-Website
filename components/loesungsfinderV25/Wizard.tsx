@@ -23,7 +23,8 @@ import Step2InnenAussen from "./Step2InnenAussen";
 import Step3Einsatzbereich from "./Step3Einsatzbereich";
 import Step4Zeitfenster from "./Step4Zeitfenster";
 import Ergebnisseite from "./Ergebnisseite";
-import { IconArrowLeft, IconArrowRight } from "./icons";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { AppIcon } from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 
 const INITIAL_STATE: LoesungsfinderState = {
@@ -111,7 +112,7 @@ export default function Wizard({ lang }: WizardProps) {
   }
 
   return (
-    <div className="rounded-2xl p-6 md:p-8" style={{ background: "var(--light-gray)" }}>
+    <div className="rounded-2xl bg-light-gray p-4 sm:p-6 md:p-8">
       <ProgressHeader currentStep={currentStep} totalSteps={totalSteps} onCancel={cancel} />
 
       {currentStep === 1 && (
@@ -131,19 +132,28 @@ export default function Wizard({ lang }: WizardProps) {
         <Step4Zeitfenster value={state.zeitfenster} onSelect={selectZeitfenster} />
       )}
 
-      <div className="flex items-center justify-between mt-8">
+      {/* Footer-Navigation: mobil sticky am Viewport-Boden (Step-3-Weiter-Button
+          sonst unter dem Fold), ab md regulär im Fluss. Negative Margins gleichen
+          das Container-Padding aus, damit die Leiste mobil volle Breite hat. */}
+      <div className="sticky bottom-0 z-10 -mx-4 mt-8 flex items-center justify-between gap-3 border-t border-mid-gray bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 md:static md:z-auto md:mx-0 md:border-t-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
         {currentStep > 1 ? (
-          <Button type="button" variant="outline" onClick={goBack}>
-            <IconArrowLeft width={14} height={14} aria-hidden="true" />
+          <Button type="button" variant="outline" onClick={goBack} className="h-11 md:h-9">
+            <AppIcon icon={ArrowLeft} className="size-3.5" aria-hidden="true" />
             {t.back}
           </Button>
         ) : (
           <span />
         )}
 
-        <Button type="button" variant="navy" onClick={goNext} disabled={!stepIsReady}>
+        <Button
+          type="button"
+          variant="navy"
+          onClick={goNext}
+          disabled={!stepIsReady}
+          className="h-11 md:h-9"
+        >
           {isFinalStep ? t.show_solution : t.next}
-          <IconArrowRight width={14} height={14} aria-hidden="true" />
+          <AppIcon icon={ArrowRight} className="size-3.5" aria-hidden="true" />
         </Button>
       </div>
     </div>

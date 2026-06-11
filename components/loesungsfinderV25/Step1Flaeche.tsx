@@ -11,8 +11,6 @@ interface Step1Props {
   onSelect: (v: Flaechenkategorie) => void;
 }
 
-const NAVY = "var(--navy)";
-
 const OPTIONEN: Array<{
   id: Flaechenkategorie;
   Icon: typeof IconTarget;
@@ -30,9 +28,7 @@ export default function Step1Flaeche({ value, onSelect }: Step1Props) {
   return (
     <div>
       <header className="mb-6">
-        <h2 className="text-[22px] font-medium" style={{ color: NAVY }}>
-          {t.step1_question}
-        </h2>
+        <h2 className="text-xl sm:text-[22px] font-medium text-navy">{t.step1_question}</h2>
         <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{t.step1_subline}</p>
       </header>
 
