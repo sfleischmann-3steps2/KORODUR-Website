@@ -42,8 +42,16 @@ export const bereiche: Bereich[] = [
     produktgruppen: ["geschliffen", "geglaettet", "truazzo"],
   },
   { slug: "schnellbetonsysteme" },
-  { slug: "rapid-set", haendlerHinweis: true, externeWebsite: "https://www.korodur-rapidset.com" },
-  { slug: "spezialbaustoffe" },
+  {
+    slug: "rapid-set",
+    haendlerHinweis: true,
+    externeWebsite: "https://www.korodur-rapidset.com",
+    produktgruppen: ["reparaturmoertel", "schnellbeton", "additive"],
+  },
+  {
+    slug: "spezialbaustoffe",
+    produktgruppen: ["verguss", "anker-injektion", "betoninstandsetzung", "schnellbeton"],
+  },
   { slug: "3d-concrete-printing", externeWebsite: "https://www.3d-concrete-printing.com" },
   {
     slug: "microtop",

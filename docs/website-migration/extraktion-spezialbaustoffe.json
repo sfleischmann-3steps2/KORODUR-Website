@@ -1,0 +1,411 @@
+{
+  "quelle": "/Users/sfleischmann/KORODUR/KORODUR-website/01_analyse/scraped_content/bereiche_spezialbaustoffe_details.md",
+  "quelleArchivDatum": "20240101 (Wayback Machine, korodur.de)",
+  "extraktionsDatum": "2026-06-12",
+  "hinweisQuellenlage": "ALLE 7 Einzelproduktseiten in Teil 2 (durop, neodur-vergussmoertel-vm-basic, neodur-vergussmoertel-beton, neodur-pfm-1k-easyfix, neodur-pfm-ze, neodur-msm-3-msm-5-msb-8, korocrete) sind Scrape-Fehlschlaege und enthalten ausschliesslich Wayback-Machine-Boilerplate (Internet-Archive-Navigationsmenue), null Produktinhalt. Substanzielle Inhalte liegen nur in den 3 Bereichs-Unterseiten (Montage- und Vergusssystem, Anker-/Injektionssystem, Betoninstandsetzung) mit Kategorie-Texten und Produkttabellen (Qualitaet + Vergussquerschnitt bzw. Koernung). Beschreibungen unten stammen daher aus den Kategorie-Texten, nicht aus produktspezifischen Seiten.",
+  "produkte": [
+    {
+      "name": "NEODUR VM 1",
+      "bestand": false,
+      "kurzbeschreibung": "Hochfliessfaehiger NEODUR Vergussmoertel der Qualitaet C 60/75 fuer Vergussquerschnitte von 5 bis 20 mm.",
+      "beschreibung": "Hochfliessfaehige Verguss- oder Schnellvergussmoertel werden zum hohlraumfreien Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und anderen Stahlkonstruktionen sowie Aussparungen und Anschluessen verwendet, ebenso fuer die Schachtregulierung. Beim Verguss von Maschinen werden die Kraefte direkt ins Fundament abgeleitet. Montage- und Vergussmoertel sind hochfest, schrumpfungsfrei, wasserundurchlaessig und frost-/tausalzbestaendig und koennen im Innen- wie Aussenbereich verwendet werden.",
+      "produktart": "Vergussmoertel (Montage- und Vergusssystem)",
+      "schichtdicke": "5 – 20 mm (Vergussquerschnitt)",
+      "qualitaetsklasse": "C 60/75",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 60/75" },
+        { "label": "Vergussquerschnitt", "wert": "5 – 20 mm" }
+      ],
+      "besonderheiten": [
+        "hochfest",
+        "schrumpfungsfrei",
+        "wasserundurchlaessig",
+        "frost-/tausalzbestaendig",
+        "innen und aussen einsetzbar"
+      ],
+      "anwendungen": [
+        "hohlraumfreies Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und Stahlkonstruktionen",
+        "Aussparungen und Anschluesse",
+        "Schachtregulierung",
+        "Maschinenverguss (Kraftableitung ins Fundament)"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite in der Quelle; alle Angaben stammen aus der Bereichsseite 'Montage- und Vergusssystem' (Tabelle + Kategorietext). Besonderheiten und Anwendungen gelten kategorieweit, nicht produktspezifisch verifiziert.",
+        "Keine Normenangaben, keine weiteren technischen Daten (Druckfestigkeit N/mm2, Verarbeitungszeit, Verbrauch) in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR VM 3",
+      "bestand": false,
+      "kurzbeschreibung": "Hochfliessfaehiger NEODUR Vergussmoertel der Qualitaet C 60/75 fuer Vergussquerschnitte von 10 bis 50 mm.",
+      "beschreibung": "Hochfliessfaehige Verguss- oder Schnellvergussmoertel werden zum hohlraumfreien Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und anderen Stahlkonstruktionen sowie Aussparungen und Anschluessen verwendet, ebenso fuer die Schachtregulierung. Montage- und Vergussmoertel sind hochfest, schrumpfungsfrei, wasserundurchlaessig und frost-/tausalzbestaendig und koennen im Innen- wie Aussenbereich verwendet werden.",
+      "produktart": "Vergussmoertel (Montage- und Vergusssystem)",
+      "schichtdicke": "10 – 50 mm (Vergussquerschnitt)",
+      "qualitaetsklasse": "C 60/75",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 60/75" },
+        { "label": "Vergussquerschnitt", "wert": "10 – 50 mm" }
+      ],
+      "besonderheiten": [
+        "hochfest",
+        "schrumpfungsfrei",
+        "wasserundurchlaessig",
+        "frost-/tausalzbestaendig",
+        "innen und aussen einsetzbar"
+      ],
+      "anwendungen": [
+        "hohlraumfreies Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und Stahlkonstruktionen",
+        "Aussparungen und Anschluesse",
+        "Schachtregulierung",
+        "Maschinenverguss (Kraftableitung ins Fundament)"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite in der Quelle; Angaben aus Bereichsseite 'Montage- und Vergusssystem'. Besonderheiten/Anwendungen kategorieweit.",
+        "Keine Normenangaben, keine weiteren technischen Daten in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR VM 5",
+      "bestand": false,
+      "kurzbeschreibung": "Hochfliessfaehiger NEODUR Vergussmoertel der Qualitaet C 80/95 fuer Vergussquerschnitte bis 200 mm.",
+      "beschreibung": "Hochfliessfaehige Verguss- oder Schnellvergussmoertel werden zum hohlraumfreien Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und anderen Stahlkonstruktionen sowie Aussparungen und Anschluessen verwendet, ebenso fuer die Schachtregulierung. Mit C 80/95 ist VM 5 die hoechste in der Quelle genannte Qualitaet der Vergussmoertel-Familie. Montage- und Vergussmoertel sind hochfest, schrumpfungsfrei, wasserundurchlaessig und frost-/tausalzbestaendig.",
+      "produktart": "Vergussmoertel (Montage- und Vergusssystem)",
+      "schichtdicke": "bis 200 mm (Vergussquerschnitt)",
+      "qualitaetsklasse": "C 80/95",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 80/95" },
+        { "label": "Vergussquerschnitt", "wert": "bis 200 mm" }
+      ],
+      "besonderheiten": [
+        "hochfest",
+        "schrumpfungsfrei",
+        "wasserundurchlaessig",
+        "frost-/tausalzbestaendig",
+        "innen und aussen einsetzbar"
+      ],
+      "anwendungen": [
+        "hohlraumfreies Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und Stahlkonstruktionen",
+        "Aussparungen und Anschluesse",
+        "Schachtregulierung",
+        "Maschinenverguss (Kraftableitung ins Fundament)"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite in der Quelle; Angaben aus Bereichsseite 'Montage- und Vergusssystem'. Besonderheiten/Anwendungen kategorieweit.",
+        "Keine Normenangaben, keine weiteren technischen Daten in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR VB 8",
+      "bestand": false,
+      "kurzbeschreibung": "NEODUR Vergussprodukt (VB = Vergussbeton) der Qualitaet C 60/75 fuer Vergussquerschnitte ueber 50 mm.",
+      "beschreibung": "In der Vergussmoertel-Tabelle der Bereichsseite 'Montage- und Vergusssystem' als NEODUR VB 8 mit Qualitaet C 60/75 und Vergussquerschnitt groesser 50 mm gefuehrt. Die Kategorie umfasst hochfliessfaehige Verguss- oder Schnellvergussmoertel zum hohlraumfreien Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und anderen Stahlkonstruktionen. Montage- und Vergussmoertel sind hochfest, schrumpfungsfrei, wasserundurchlaessig und frost-/tausalzbestaendig.",
+      "produktart": "Vergussbeton (Montage- und Vergusssystem); Quelle fuehrt es in der Tabelle 'NEODUR Vergussmoertel'",
+      "schichtdicke": "> 50 mm (Vergussquerschnitt)",
+      "qualitaetsklasse": "C 60/75",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 60/75" },
+        { "label": "Vergussquerschnitt", "wert": "> 50 mm" }
+      ],
+      "besonderheiten": [
+        "hochfest",
+        "schrumpfungsfrei",
+        "wasserundurchlaessig",
+        "frost-/tausalzbestaendig",
+        "innen und aussen einsetzbar"
+      ],
+      "anwendungen": [
+        "hohlraumfreies Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und Stahlkonstruktionen",
+        "Aussparungen und Anschluesse",
+        "Schachtregulierung",
+        "Maschinenverguss (Kraftableitung ins Fundament)"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite in der Quelle; Angaben aus Bereichsseite 'Montage- und Vergusssystem'. Besonderheiten/Anwendungen kategorieweit.",
+        "Die Quelle erklaert die Abkuerzung VB nicht; 'Vergussbeton' ist plausibel (vgl. erwartete 'VM/VB-Familie'), aber nicht aus der Quelle belegt.",
+        "Keine Normenangaben, keine weiteren technischen Daten in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR SVM 03",
+      "bestand": false,
+      "kurzbeschreibung": "NEODUR Schnellvergussmoertel der Qualitaet C 45/55 fuer Vergussquerschnitte von 5 bis 20 mm.",
+      "beschreibung": "In der Vergussmoertel-Tabelle der Bereichsseite 'Montage- und Vergusssystem' mit Qualitaet C 45/55 und Vergussquerschnitt 5 bis 20 mm gefuehrt. Laut Kategorietext koennen die Moertel fuer schnelle Montagearbeiten und Belastungen auch als schnellerhaertende Variante eingestellt werden; SVM steht im Kontext der Quelle ('Verguss-/Schnellvergussmoertel') fuer die Schnellvergussmoertel-Variante.",
+      "produktart": "Schnellvergussmoertel (Montage- und Vergusssystem)",
+      "schichtdicke": "5 – 20 mm (Vergussquerschnitt)",
+      "qualitaetsklasse": "C 45/55",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 45/55" },
+        { "label": "Vergussquerschnitt", "wert": "5 – 20 mm" }
+      ],
+      "besonderheiten": [
+        "schnellerhaertende Variante fuer schnelle Montagearbeiten und Belastungen",
+        "hochfest",
+        "schrumpfungsfrei",
+        "wasserundurchlaessig",
+        "frost-/tausalzbestaendig"
+      ],
+      "anwendungen": [
+        "hohlraumfreies Vergiessen von Ankern, Bolzen, Pfeilern, Schienen und Stahlkonstruktionen",
+        "schnelle Montagearbeiten",
+        "Schachtregulierung"
+      ],
+      "luecken": [
+        "Produkt war NICHT in der erwarteten Uebersicht, steht aber in der Quelltabelle — als Zusatzfund aufgenommen.",
+        "Keine eigene Produktseite; Angaben aus Bereichsseite 'Montage- und Vergusssystem'. Deutung 'SVM = Schnellvergussmoertel' aus Kategorietext abgeleitet, nicht explizit definiert.",
+        "Keine Normenangaben, keine weiteren technischen Daten in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR Vergussmörtel VM Basic",
+      "bestand": false,
+      "kurzbeschreibung": null,
+      "beschreibung": null,
+      "produktart": "Vergussmoertel (laut URL-Slug 'neodur-vergussmoertel-vm-basic' dem Montage- und Vergusssystem zuzuordnen)",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [],
+      "anwendungen": [],
+      "luecken": [
+        "Produktseite in der Quelle ist ein Scrape-Fehlschlag: enthaelt nur Wayback-Machine-Boilerplate, null Produktinhalt.",
+        "Produkt taucht auch NICHT in der Vergussmoertel-Tabelle der Bereichsseite auf (dort nur VM 1, VM 3, VM 5, VB 8, SVM 03). Verhaeltnis von 'VM Basic' zu dieser Familie unklar — moeglicherweise Einstiegsvariante, aus der Quelle nicht belegbar.",
+        "Saemtliche Felder offen: Beschreibung, Qualitaet, Vergussquerschnitt, Normen, technische Daten, Anwendungen. Re-Scrape der Wayback-Seite oder TDS noetig."
+      ]
+    },
+    {
+      "name": "NEODUR Vergussmörtel Beton",
+      "bestand": false,
+      "kurzbeschreibung": null,
+      "beschreibung": null,
+      "produktart": "Vergussbeton/Vergussmoertel (laut URL-Slug 'neodur-vergussmoertel-beton' dem Montage- und Vergusssystem zuzuordnen)",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [],
+      "anwendungen": [],
+      "luecken": [
+        "Produktseite in der Quelle ist ein Scrape-Fehlschlag: nur Wayback-Machine-Boilerplate, null Produktinhalt.",
+        "Vermutlich ist diese Seite die Sammelseite der VM/VB-Familie (VM 1, VM 3, VM 5, VB 8 — siehe separate Objekte aus der Bereichstabelle); das ist aus der Quelle aber nicht verifizierbar, da die Seite leer ist.",
+        "Saemtliche produktspezifischen Felder offen. Re-Scrape oder TDS noetig."
+      ]
+    },
+    {
+      "name": "NEODUR PFM 1K EasyFix",
+      "bestand": false,
+      "kurzbeschreibung": null,
+      "beschreibung": null,
+      "produktart": null,
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [],
+      "anwendungen": [],
+      "luecken": [
+        "Produktseite in der Quelle ist ein Scrape-Fehlschlag: nur Wayback-Machine-Boilerplate, null Produktinhalt.",
+        "Einziger inhaltlicher Beleg in der Quelle: Namensnennung 'NEODUR PFM 1-K Easyfix' in einer Bestellformular-/Navigationsliste (Katzenstreu-Unterseite) — bestaetigt nur die Existenz und Schreibweise '1-K Easyfix', keine Daten.",
+        "Bedeutung 'PFM' (vermutlich Pflastermoertel o. ae.) aus der Quelle nicht belegbar. Saemtliche Felder offen. Re-Scrape oder TDS noetig."
+      ]
+    },
+    {
+      "name": "NEODUR PFM ZE",
+      "bestand": false,
+      "kurzbeschreibung": null,
+      "beschreibung": null,
+      "produktart": null,
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [],
+      "anwendungen": [],
+      "luecken": [
+        "Produktseite in der Quelle ist ein Scrape-Fehlschlag: nur Wayback-Machine-Boilerplate, null Produktinhalt. Keine weitere Erwaehnung des Produkts irgendwo in der Quelle.",
+        "Saemtliche Felder offen (auch Bedeutung 'PFM ZE'). Re-Scrape oder TDS noetig."
+      ]
+    },
+    {
+      "name": "NEODUR AM Super",
+      "bestand": false,
+      "kurzbeschreibung": "Schrumpfungsfreier NEODUR Anker-/Injektionsmoertel der Qualitaet C 30/37 mit Koernung 0 bis 1 mm.",
+      "beschreibung": "Ankermoertel werden in Verbindung mit Gebirgsankern aller Art im Berg- und Tunnelbau eingesetzt; der schrumpfungsfreie Ankermoertel wird in plastischer Konsistenz in das Bohrloch gepumpt und der Ankerstab eingeschoben. Darueber hinaus dienen Ankermoertel fuer Baugruben, zum Verankern von Felsnaegeln und zur Hangsicherung im Lawinen- und Steinschlagverbau. Aufgrund hoher Fruehfestigkeit sind sie besonders fuer die schnelle Sicherung geeignet und koennen problemlos fuer Ueberkopfarbeit verarbeitet werden.",
+      "produktart": "Anker-/Injektionsmoertel",
+      "schichtdicke": null,
+      "qualitaetsklasse": "C 30/37",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 30/37" },
+        { "label": "Koernung", "wert": "0 – 1 mm" }
+      ],
+      "besonderheiten": [
+        "schrumpfungsfrei",
+        "hohe Fruehfestigkeit (schnelle Sicherung)",
+        "fuer Ueberkopfarbeit verarbeitbar",
+        "plastische Konsistenz, pumpbar"
+      ],
+      "anwendungen": [
+        "Gebirgsanker im Berg- und Tunnelbau (Verankerung der Tunnelinnenschale)",
+        "Baugruben, Felsnaegel, Hangsicherung (Lawinen- und Steinschlagverbau)",
+        "Unterstopfen",
+        "Formteile in der Ziegelindustrie"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite in der Quelle; Angaben aus Bereichsseite 'Anker-/Injektionssystem' (Tabelle + Kategorietext). Besonderheiten/Anwendungen kategorieweit, nicht produktspezifisch verifiziert.",
+        "Keine Normenangaben, keine Fruehfestigkeitswerte oder Verarbeitungsdaten in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR AM Plus",
+      "bestand": false,
+      "kurzbeschreibung": "Schrumpfungsfreier NEODUR Anker-/Injektionsmoertel der Qualitaet C 40/50 mit Koernung 0 bis 1 mm.",
+      "beschreibung": "Ankermoertel werden in Verbindung mit Gebirgsankern aller Art im Berg- und Tunnelbau eingesetzt; bei schwierigen, bruechigen Gebirgsverhaeltnissen kommen alternativ selbstbohrende Injektionsbohranker zum Einsatz, durch deren Injektionsoeffnungen der Injektionsbohrankermoertel austritt. Ankermoertel dienen zudem fuer Baugruben, Felsnaegel und Hangsicherung im Lawinen- und Steinschlagverbau. Aufgrund hoher Fruehfestigkeit besonders fuer die schnelle Sicherung geeignet, problemlos fuer Ueberkopfarbeit verarbeitbar.",
+      "produktart": "Anker-/Injektionsmoertel",
+      "schichtdicke": null,
+      "qualitaetsklasse": "C 40/50",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 40/50" },
+        { "label": "Koernung", "wert": "0 – 1 mm" }
+      ],
+      "besonderheiten": [
+        "schrumpfungsfrei",
+        "hohe Fruehfestigkeit (schnelle Sicherung)",
+        "fuer Ueberkopfarbeit verarbeitbar",
+        "plastische Konsistenz, pumpbar"
+      ],
+      "anwendungen": [
+        "Gebirgsanker im Berg- und Tunnelbau (Verankerung der Tunnelinnenschale)",
+        "Injektionsbohranker bei bruechigen Gebirgsverhaeltnissen",
+        "Baugruben, Felsnaegel, Hangsicherung (Lawinen- und Steinschlagverbau)",
+        "Unterstopfen, Formteile in der Ziegelindustrie"
+      ],
+      "luecken": [
+        "Produkt war NICHT in der erwarteten Uebersicht, steht aber in der Quelltabelle 'NEODUR Anker-/Injektionsmoertel' — als Zusatzfund aufgenommen (zusammen mit AM Super die einzigen Ankermoertel der Quelle).",
+        "Keine eigene Produktseite; Angaben aus Bereichsseite 'Anker-/Injektionssystem'. Besonderheiten/Anwendungen kategorieweit.",
+        "Keine Normenangaben, keine weiteren technischen Daten in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR MSM 3",
+      "bestand": false,
+      "kurzbeschreibung": "Mineralischer NEODUR Betoninstandsetzungs-Spritzmoertel der Qualitaet C 30/37 mit Koernung 0 bis 3 mm.",
+      "beschreibung": "Fehlstellen und Ausbrueche in der Betonoberflaeche werden nach entsprechender Untergrundvorbereitung mit Betonersatzsystemen reprofiliert; der Betonersatz mit rein mineralischen Systemen erfolgt im Spritzverfahren mit Spritzmoertel oder Spritzbeton. Spritzmoertel werden maschinell im Nass- oder Trockenspritzverfahren verarbeitet; bei dieser Applikationsart wird in der Regel keine Haftbruecke auf der Bestandsoberflaeche gefordert. Einsatz vermehrt zur Verstaerkung, zur Hang- und Baugrubensicherung, im Tunnel- und Bergbau sowie im Neubau.",
+      "produktart": "Betoninstandsetzungsmoertel / Spritzmoertel",
+      "schichtdicke": null,
+      "qualitaetsklasse": "C 30/37",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 30/37" },
+        { "label": "Koernung", "wert": "0 – 3 mm" }
+      ],
+      "besonderheiten": [
+        "rein mineralisches Betonersatzsystem",
+        "maschinelle Verarbeitung im Nass- oder Trockenspritzverfahren",
+        "in der Regel keine Haftbruecke erforderlich",
+        "im Trockenspritzverfahren Erstarrungsbeschleuniger zugebbar",
+        "Varianten mit Microsilika oder Hartstoff-Verschleisstraeger verfuegbar (kategorieweit)"
+      ],
+      "anwendungen": [
+        "Reprofilierung und flaechige Instandsetzung von Betonteilen im Hoch- und Tiefbau",
+        "Verstaerkung, Hang- und Baugrubensicherung",
+        "Tunnel- und Bergbau, Neubau",
+        "verschleissbeanspruchte Betonflaechen (Kohle-, Berge- und Rohstoffbunker, Silobehaelter; Variante mit Hartstoff-Verschleisstraeger)"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite (Sammelseite 'neodur-msm-3-msm-5-msb-8' ist Scrape-Fehlschlag); Angaben aus Bereichsseite 'Betoninstandsetzung'. Besonderheiten/Anwendungen kategorieweit, nicht je Variante verifiziert.",
+        "Bedeutung MSM/MSB aus der Quelle nicht definiert (plausibel Mineralischer Spritzmoertel/Spritzbeton, nicht belegt).",
+        "Keine Normenangaben (z. B. EN 1504), keine Schichtdicken, keine weiteren technischen Daten in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR MSM 5",
+      "bestand": false,
+      "kurzbeschreibung": "Mineralischer NEODUR Betoninstandsetzungs-Spritzmoertel der Qualitaet C 30/37 mit Koernung 0 bis 5 mm.",
+      "beschreibung": "Wie NEODUR MSM 3 ein rein mineralisches Betonersatzsystem fuer die Reprofilierung und flaechige Instandsetzung von Betonteilen im Hoch- und Tiefbau, verarbeitet maschinell im Nass- oder Trockenspritzverfahren. Durch das Spritzverfahren wird eine bessere Verdichtung des Materials erzielt; in der Regel ist keine Haftbruecke auf der Bestandsoberflaeche gefordert.",
+      "produktart": "Betoninstandsetzungsmoertel / Spritzmoertel",
+      "schichtdicke": null,
+      "qualitaetsklasse": "C 30/37",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 30/37" },
+        { "label": "Koernung", "wert": "0 – 5 mm" }
+      ],
+      "besonderheiten": [
+        "rein mineralisches Betonersatzsystem",
+        "maschinelle Verarbeitung im Nass- oder Trockenspritzverfahren",
+        "in der Regel keine Haftbruecke erforderlich",
+        "bessere Verdichtung durch Spritzapplikation"
+      ],
+      "anwendungen": [
+        "Reprofilierung und flaechige Instandsetzung von Betonteilen im Hoch- und Tiefbau",
+        "Verstaerkung, Hang- und Baugrubensicherung",
+        "Tunnel- und Bergbau, Neubau"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite (Sammelseite ist Scrape-Fehlschlag); Angaben aus Bereichsseite 'Betoninstandsetzung'. Besonderheiten/Anwendungen kategorieweit.",
+        "Keine Normenangaben, keine Schichtdicken, keine weiteren technischen Daten in der Quelle."
+      ]
+    },
+    {
+      "name": "NEODUR MSB 8",
+      "bestand": false,
+      "kurzbeschreibung": "Mineralischer NEODUR Betoninstandsetzungs-Spritzbeton der Qualitaet C 30/37 mit Koernung 0 bis 8 mm.",
+      "beschreibung": "Grobkoernigste Variante der NEODUR Betoninstandsetzungsreihe (Koernung 0 bis 8 mm spricht fuer die Spritzbeton-Variante der Kategorie). Spritzmoertel oder Spritzbetone werden maschinell im Nass- oder Trockenspritzverfahren verarbeitet und vermehrt zur Verstaerkung, zur Hang- und Baugrubensicherung, im Tunnel- und Bergbau sowie fuer Neubau eingesetzt. Durch das Spritzverfahren wird eine bessere Verdichtung erzielt; in der Regel ist keine Haftbruecke gefordert.",
+      "produktart": "Betoninstandsetzung / Spritzbeton",
+      "schichtdicke": null,
+      "qualitaetsklasse": "C 30/37",
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Qualitaet", "wert": "C 30/37" },
+        { "label": "Koernung", "wert": "0 – 8 mm" }
+      ],
+      "besonderheiten": [
+        "rein mineralisches Betonersatzsystem",
+        "maschinelle Verarbeitung im Nass- oder Trockenspritzverfahren",
+        "in der Regel keine Haftbruecke erforderlich",
+        "bessere Verdichtung durch Spritzapplikation"
+      ],
+      "anwendungen": [
+        "Reprofilierung und flaechige Instandsetzung von Betonteilen im Hoch- und Tiefbau",
+        "Verstaerkung, Hang- und Baugrubensicherung",
+        "Tunnel- und Bergbau, Neubau"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite (Sammelseite ist Scrape-Fehlschlag); Angaben aus Bereichsseite 'Betoninstandsetzung'. Einordnung als 'Spritzbeton' (B in MSB) aus Koernung/Kontext abgeleitet, nicht explizit belegt.",
+        "Keine Normenangaben, keine Schichtdicken, keine weiteren technischen Daten in der Quelle."
+      ]
+    },
+    {
+      "name": "DUROP",
+      "bestand": true,
+      "kurzbeschreibung": null,
+      "beschreibung": null,
+      "produktart": null,
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [],
+      "anwendungen": [],
+      "luecken": [
+        "KONFLIKT-BEFUND ZUR UEBERSICHT: Die Uebersicht fuehrt DUROP im Spezialbaustoffe-Bereich als 'Ankermoertel'. Die Quelle liefert dafuer KEINEN Beleg: (1) Die Einzelproduktseite 'Spezialbaustoffe: durop' ist ein Scrape-Fehlschlag (nur Wayback-Boilerplate, null Inhalt). (2) Die Bereichsseite 'Anker-/Injektionssystem' nennt DUROP nirgends — die dort gelisteten Ankermoertel sind ausschliesslich NEODUR AM Super (C 30/37) und NEODUR AM Plus (C 40/50). (3) Auch die uebrigen Bereichsseiten (Montage-/Vergusssystem, Betoninstandsetzung) erwaehnen DUROP nicht.",
+        "Einziger DUROP-Hinweis in der Quelle ist der URL-Slug 'spezialbaustoffe/durop' selbst — er belegt, dass die alte Website eine DUROP-Seite unter Spezialbaustoffe hatte, aber nicht deren Inhalt oder Produktcharakter.",
+        "App-Bestand (data/produkte.ts, id 'korodur-durop'): KORODUR DUROP ist dort ein SYNTHETISCHER HARTSTOFF als Fuell-/Abstreumaterial fuer Kunstharzbeschichtungen (Koernungen 0,5/1, 1/2, 2/3, 2/5) — kein Ankermoertel. Ein separater 'DUROP-Ankermoertel' ist aus der Quelle NICHT nachweisbar; moeglich ist eine Fehlklassifikation in der Uebersicht oder eine Doppelnutzung des Namens. Klaerung noetig: Re-Scrape der Wayback-Seite spezialbaustoffe/durop oder Rueckfrage Frank/Technik.",
+        "Saemtliche Produktdaten offen, da Quellseite leer."
+      ]
+    }
+  ],
+  "nichtAufgenommen": [
+    {
+      "name": "KOROCRETE",
+      "grund": "Bedingung 'nur aufnehmen, falls Quelle mehr Daten hat' nicht erfuellt: Die Einzelproduktseite 'Spezialbaustoffe: korocrete' ist ein Scrape-Fehlschlag (nur Wayback-Boilerplate). KOROCRETE wird in der Quelle sonst nirgends inhaltlich beschrieben. App-Bestand (id 'korocrete', KOROCRETE Schnellbeton, bestand=true) bleibt unveraendert massgeblich."
+    }
+  ]
+}
