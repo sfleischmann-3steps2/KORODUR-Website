@@ -13,7 +13,7 @@ Die KORODUR-Sanierung_app wird zur neuen korodur.de. Alle Inhalte der alten Word
 
 | # | Entscheidung | Konsequenz |
 |---|---|---|
-| 1 | **Voller Scope:** Alle 8 Bereiche werden integriert, auch Rapid Set, Schnellbetonsysteme, 3D Concrete Printing und Katzenstreu | Keine Bereichs-Ausnahmen. Katzenstreu (B2C) wird **optisch klar abgegrenzt**, Konzept dazu via Mockup |
+| 1 | **Voller Scope:** Alle 8 Bereiche werden integriert, auch Rapid Set, Schnellbetonsysteme, 3D Concrete Printing und Katzenstreu | Keine Bereichs-Ausnahmen. Katzenstreu ist **B2B mit komplett anderer Zielgruppe** (kein B2C): Ziel ist Kontaktaufnahme + Produktübersicht, initial wenig Inhalt, Ausbau später. Wird **optisch klar abgegrenzt** (farblich oder anders), Konzept via Mockup |
 | 2 | **Analytics läuft** seit 2026-06-11 auf der alten Site | Baseline wächst parallel zur Migration. Priorisierung des Cutovers (Stufe 5) wird gegen echte Traffic-Daten geprüft |
 | 3 | **Hosting am Ende**, Cloudflare favorisiert (bereits im Unternehmen im Einsatz), aber offen | Bis Stufe 5 bleibt GitHub Pages + basePath. Keine Hosting-Arbeit vorziehen |
 | 4 | **Notion als CMS** (statt Payload-Prototyp) | Zwei DBs nach Ownership (Technik / Marketing), bestehende Sync-Pipeline ausbauen. Pflicht: dokumentierter Trigger-Prozess, damit klar ist, was eine Inhaltsänderung auslöst (Stufe 4) |
@@ -77,7 +77,7 @@ Reihenfolge nach Größe und Überlapp, je Bereich derselbe Workflow:
 | 6 | Industrieboden, Teil 2: Bauchemie (KOROTAN, KOROTEX, KOROCLEAN, KOROPOX, ...) | ~19 Produkte |
 | 7 | Sichtestrich (GRANIDUR, KCF, TRU) + Microtop (TW-Serie) | 6 + 8 Produkte |
 | 8 | Spezialbaustoffe + Rapid Set + Schnellbetonsysteme + 3D Printing | 7 + 7 Produkte + 2 Bereichsseiten |
-| 9 | Katzenstreu (goodcat) inkl. **eigenem Mockup zur optischen B2C-Abgrenzung** (eigene Farbwelt/Sub-Brand-Rahmen innerhalb der Site) | 3 Produkte, Mockup-Freigabe vor Umsetzung |
+| 9 | Katzenstreu (goodcat) inkl. **eigenem Mockup zur optischen Abgrenzung** (eigene Farbwelt/Rahmen innerhalb der Site; B2B, andere Zielgruppe, Fokus Kontaktaufnahme + Produktübersicht, bewusst schlank, Ausbau später) | 3 Produkte, Mockup-Freigabe vor Umsetzung |
 | 10 | Unternehmensseiten: Über uns, Geschichte, Nachhaltigkeit, Standorte, Kontakt | 5 Seiten aus `unternehmen_content.md` |
 | 11 | Sprachpass EN (alle neuen Inhalte) | Alte EN-Site als Referenz, wo vorhanden |
 | 12 | Sprachpässe FR + PL | FR-Altbestand als Referenz, PL komplett neu |
@@ -100,7 +100,7 @@ Umsetzung des Handoff-Konzepts aus dem `KORODUR-website`-Branch (`notion_cms_kon
 - **Sync-Richtung:** Notion ist Source of Truth, das Repo ist Build-Quelle. Skript `import-notion-produkte.py` analog zum Referenzen-Import: idempotent, erzeugt Diff in `data/produkte.ts`, niemals stiller Overwrite.
 - **Trigger-Prozess (explizite Anforderung Steffi):** dokumentiert in `docs/reference/notion-sync-prozess.md`:
   1. Inhalt in Notion ändern (Technik- oder Marketing-DB)
-  2. Sync auslösen: lokal per Skript oder GitHub Action mit `workflow_dispatch` (manueller Knopf, kein automatischer Webhook in Phase 1)
+  2. Sync auslösen: lokal per Skript, GitHub Action mit `workflow_dispatch` (manueller Knopf) oder Webhook/Hook bei Notion-Änderung. **Welcher Trigger-Mechanismus, wird in Stufe 4 geklärt (Steffi: Hook ist prinzipiell möglich und gewünscht)** — die Schritte 3 bis 5 bleiben in jedem Fall gleich
   3. Sync erzeugt Branch + PR mit dem Daten-Diff
   4. Mensch reviewt den Diff, merged
   5. Merge auf `main` deployt automatisch (bestehende Pipeline)
