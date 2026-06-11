@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { withBasePath } from "../lib/basePath";
 import { Menu, Search, X } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
@@ -82,20 +84,19 @@ export default function TopNav({ lang, dict }: TopNavProps) {
           className="mx-auto flex items-center justify-between"
           style={{ maxWidth: 1320, height: 64, padding: "0 24px" }}
         >
-          {/* Logo */}
+          {/* Logo (Original, Quelle docs/reference/brand/) */}
           <Link
             href={`/${lang}`}
-            className="flex items-center gap-2 no-underline shrink-0"
+            className="flex items-center no-underline shrink-0"
+            aria-label="KORODUR"
           >
-            <div
-              className="w-8 h-8 rounded-md flex items-center justify-center bg-navy text-white text-[13px] shrink-0"
-              style={{ fontWeight: 900 }}
-            >
-              K
-            </div>
-            <span className="text-navy text-[18px] tracking-tight" style={{ fontWeight: 900 }}>
-              KORODUR
-            </span>
+            <Image
+              src={withBasePath("/images/brand/logo-korodur.png")}
+              alt="KORODUR"
+              width={71}
+              height={48}
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -176,18 +177,16 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                 <div className="flex items-center justify-between p-4 border-b border-bullet-bg">
                   <Link
                     href={`/${lang}`}
-                    className="flex items-center gap-2 no-underline"
+                    className="flex items-center no-underline"
                     onClick={() => setMobileOpen(false)}
+                    aria-label="KORODUR"
                   >
-                    <div
-                      className="w-8 h-8 rounded-md flex items-center justify-center bg-navy text-white text-[13px]"
-                      style={{ fontWeight: 900 }}
-                    >
-                      K
-                    </div>
-                    <span className="text-navy text-[18px] tracking-tight" style={{ fontWeight: 900 }}>
-                      KORODUR
-                    </span>
+                    <Image
+                      src={withBasePath("/images/brand/logo-korodur.png")}
+                      alt="KORODUR"
+                      width={62}
+                      height={42}
+                    />
                   </Link>
                   <SheetClose asChild>
                     <button

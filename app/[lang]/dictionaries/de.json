@@ -254,16 +254,18 @@
     "count_produkte_5plus": "{n} Produkte"
   },
   "footer": {
-    "tagline": "Sanieren mit System. Seit 1936.",
+    "tagline": "Qualität für Generationen. Seit 1936.",
     "copyright": "Alle Rechte vorbehalten.",
     "contact_cta": "Technische Beratung",
     "contact_desc": "Sprechen Sie direkt mit unseren Experten.",
     "col_bereiche": "Bereiche",
     "col_unternehmen": "Unternehmen",
     "col_kontakt": "Kontakt",
-    "col_sprachen": "Sprachen",
     "impressum": "Impressum",
-    "datenschutz": "Datenschutz"
+    "datenschutz": "Datenschutz",
+    "col_social": "Social Media",
+    "ausschreibungen": "Ausschreibungstexte",
+    "jahre_badge": "90 Jahre"
   },
   "bereiche": {
     "breadcrumb_home": "Start",
@@ -309,12 +311,13 @@
     "card_matrix_text": "Welches Produkt für welche Anwendung: die komplette Übersicht mit technischen Daten und Datenblättern.",
     "card_referenzen_title": "Referenzen",
     "card_referenzen_text": "Bewährte Sanierungslösungen aus der Praxis, mit Ausgangslage, Lösung und Ergebnis.",
-    "cta": "Jetzt starten"
+    "cta": "Jetzt starten",
+    "slogan": "Sanieren mit System."
   },
   "unternehmen": {
     "title": "Über KORODUR",
     "intro1": "Seit 1936 sind wir Spezialist für die Herstellung mineralischer Hartstoffe für hochbelastbare, zementäre Industrieböden. Weltweit sind mehr als 750 Mio. m² KORODUR Industrieböden verlegt. Geschäftsbeziehungen bestehen heute zu über 40 Ländern.",
-    "intro2": "1936 in Berlin gegründet, seit 1969 im Besitz der Familie Heckmann und seit 1978 mit Hauptsitz in Amberg: Wir handeln im Sinne des Dreiklangs Konsequenz, Glaubwürdigkeit und Kontinuität. Produziert wird in Amberg, Bochum-Wattenscheid, Schwarzenfeld und Hannover-Misburg.",
+    "intro2": "1936 in Berlin gegründet, seit 1969 im Besitz der Familie Heckmann und seit 1978 mit Hauptsitz in Amberg: Wir handeln im Sinne des Dreiklangs Konsequenz, Glaubwürdigkeit und Kontinuität. Produziert wird am Standort Bochum-Wattenscheid.",
     "standorte_title": "Standorte",
     "standort_zentrale": "Zentrale",
     "standort_werk": "Werk",
@@ -327,11 +330,10 @@
     "title": "Kontakt",
     "intro": "Sprechen Sie direkt mit unseren technischen Beratern: zu Produkten, Projekten oder Bezugsquellen.",
     "zentrale_title": "KORODUR Zentrale Amberg",
-    "firma1": "KORODUR Westphal Hartbeton GmbH & Co. KG",
-    "firma2": "KORODUR International GmbH",
     "tel_label": "Telefon",
     "email_label": "E-Mail",
     "websites_title": "Verbundene Websites",
-    "cta_mail": "E-Mail schreiben"
+    "cta_mail": "E-Mail schreiben",
+    "fax_label": "Telefax"
   }
 }

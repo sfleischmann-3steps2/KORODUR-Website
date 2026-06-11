@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
-import { KORODUR_ZENTRALE } from "../../../lib/kontaktDaten";
+import { KORODUR_FIRMA, KORODUR_ZENTRALE } from "../../../lib/kontaktDaten";
 import { AppIcon } from "@/components/ui/icon";
-import { ExternalLink, Mail, Phone } from "lucide-react";
+import { ExternalLink, Mail, Phone, Printer } from "lucide-react";
 
 type Params = Promise<{ lang: string }>;
 
@@ -48,8 +48,7 @@ export default async function KontaktPage({ params }: { params: Params }) {
               {dict.kontakt.zentrale_title}
             </h2>
             <p className="text-navy/80 text-[15px] mt-0 mb-6 leading-[1.8]">
-              <span className="block" style={{ fontWeight: 700 }}>{dict.kontakt.firma1}</span>
-              <span className="block" style={{ fontWeight: 700 }}>{dict.kontakt.firma2}</span>
+              <span className="block" style={{ fontWeight: 700 }}>{KORODUR_FIRMA}</span>
               {KORODUR_ZENTRALE.strasse}
               <br />
               {KORODUR_ZENTRALE.plzOrt}
@@ -82,6 +81,15 @@ export default async function KontaktPage({ params }: { params: Params }) {
                   {KORODUR_ZENTRALE.email}
                 </span>
               </a>
+              <p className="m-0 flex items-center gap-3 text-navy" style={{ fontWeight: 700, fontSize: 16, minHeight: 44 }}>
+                <AppIcon icon={Printer} width={18} height={18} strokeWidth={2} className="text-cyan" aria-hidden="true" />
+                <span>
+                  <span className="text-navy/50 text-[13px] block" style={{ fontWeight: 600 }}>
+                    {dict.kontakt.fax_label}
+                  </span>
+                  {KORODUR_ZENTRALE.fax}
+                </span>
+              </p>
             </div>
 
             <a

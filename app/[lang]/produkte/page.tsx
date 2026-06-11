@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumb from "../../../components/Breadcrumb";
 import { produkte } from "../../../data/produkte";
+import { bereiche } from "../../../data/bereiche";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { localizeProdukte } from "../../../data/i18n/getLocalized";
@@ -15,8 +16,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return { title: dict.produkte.title, description: dict.produkte.subtitle };
 }
 
-const categoryOrder = ["estrich", "schnellzement", "grundierung", "beschichtung", "nachbehandlung", "sonstige"] as const;
-
 export default async function ProduktePage({
   params,
 }: {
@@ -26,12 +25,16 @@ export default async function ProduktePage({
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
   const localizedProdukte = await localizeProdukte(produkte, lang as "de" | "en" | "fr");
+  const bereichTexte = dict.bereiche as Record<string, string>;
 
-  const grouped = categoryOrder
-    .map((cat) => ({
-      category: cat,
-      label: (dict.produkte as Record<string, string>)[`category_${cat}`] || cat,
-      items: localizedProdukte.filter((p) => p.kategorie === cat),
+  // Gruppierung nach korodur.de-Bereich (Website-Integration Stufe 1).
+  // Anker-Chips statt Filter-State: Inhalte bleiben in situ erreichbar,
+  // mit jedem migrierten Bereich (Stufe 2) wächst die Liste automatisch.
+  const grouped = bereiche
+    .map((b) => ({
+      slug: b.slug,
+      label: bereichTexte[`${b.slug}_name`] ?? b.slug,
+      items: localizedProdukte.filter((p) => p.bereich === b.slug),
     }))
     .filter((g) => g.items.length > 0);
 
@@ -54,15 +57,32 @@ export default async function ProduktePage({
           <p className="text-navy opacity-60 mb-0" style={{ fontSize: 18, maxWidth: 700 }}>
             {dict.produkte.subtitle}
           </p>
+
+          {/* Bereichs-Anker-Chips (springen zu den Gruppen, kein Filter-State) */}
+          <div className="flex flex-wrap gap-2 mt-6">
+            {grouped.map((group) => (
+              <a
+                key={group.slug}
+                href={`#${group.slug}`}
+                className="inline-flex items-center rounded-full border border-bullet-bg bg-white text-navy text-[14px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan"
+                style={{ padding: "10px 18px", fontWeight: 700, minHeight: 44 }}
+              >
+                {group.label}
+                <span className="ml-2 text-navy/40 text-[12px]" style={{ fontWeight: 600 }}>
+                  {group.items.length}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
       {grouped.map((group) => (
         <section
-          key={group.category}
-          className="bg-icon-bg"
+          key={group.slug}
+          className="bg-icon-bg scroll-mt-20"
           style={{ padding: "56px 32px 64px" }}
-          id={group.category}
+          id={group.slug}
         >
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <h2

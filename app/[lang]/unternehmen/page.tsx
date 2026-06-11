@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import {
+  KORODUR_FIRMA,
   KORODUR_ZENTRALE,
   KORODUR_WERK_BOCHUM,
-  KORODUR_WEITERE_WERKE,
 } from "../../../lib/kontaktDaten";
 
 type Params = Promise<{ lang: string }>;
@@ -63,11 +63,9 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
                 Amberg
               </h3>
               <p className="text-navy/70 text-[14px] m-0 leading-[1.8]">
-                {KORODUR_ZENTRALE.firmen.map((f) => (
-                  <span key={f} className="block" style={{ fontWeight: 700 }}>
-                    {f}
-                  </span>
-                ))}
+                <span className="block" style={{ fontWeight: 700 }}>
+                  {KORODUR_FIRMA}
+                </span>
                 {KORODUR_ZENTRALE.strasse}
                 <br />
                 {KORODUR_ZENTRALE.plzOrt}
@@ -94,6 +92,9 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
                 {KORODUR_WERK_BOCHUM.name}
               </h3>
               <p className="text-navy/70 text-[14px] m-0 leading-[1.8]">
+                <span className="block" style={{ fontWeight: 700 }}>
+                  {KORODUR_FIRMA}
+                </span>
                 {KORODUR_WERK_BOCHUM.strasse}
                 <br />
                 {KORODUR_WERK_BOCHUM.plzOrt}
@@ -101,23 +102,12 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
                 <a href={KORODUR_WERK_BOCHUM.telefonHref} className="text-cyan no-underline hover:underline">
                   {KORODUR_WERK_BOCHUM.telefon}
                 </a>
+                <br />
+                <a href={`mailto:${KORODUR_WERK_BOCHUM.email}`} className="text-cyan no-underline hover:underline">
+                  {KORODUR_WERK_BOCHUM.email}
+                </a>
               </p>
             </div>
-
-            {/* Weitere Werke (Quelle nennt nur Ortsnamen) */}
-            {KORODUR_WEITERE_WERKE.map((werk) => (
-              <div key={werk} className="bg-white p-7" style={{ borderRadius: 14 }}>
-                <span
-                  className="inline-block bg-navy text-white text-[11px] uppercase tracking-wider rounded mb-4"
-                  style={{ padding: "4px 10px", fontWeight: 700 }}
-                >
-                  {dict.unternehmen.standort_werk}
-                </span>
-                <h3 className="text-navy text-[18px] mt-0 mb-0" style={{ fontWeight: 900 }}>
-                  {werk}
-                </h3>
-              </div>
-            ))}
           </div>
         </div>
       </section>

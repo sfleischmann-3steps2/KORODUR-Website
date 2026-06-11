@@ -1,4 +1,4 @@
-const CACHE_NAME = "korodur-v3";
+const CACHE_NAME = "korodur-v4";
 
 // Install: cache app shell.
 // Pfade RELATIV zum SW-Scope ("./de/" statt "/de/"), damit der
@@ -13,7 +13,8 @@ self.addEventListener("install", (event) => {
         "./en/",
         "./fr/",
         "./pl/",
-        "./images/hero.jpg",
+        "./images/brand/key-visual.jpg",
+        "./images/brand/logo-korodur.png",
       ])
     )
   );

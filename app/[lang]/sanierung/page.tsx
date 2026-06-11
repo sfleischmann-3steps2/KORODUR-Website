@@ -44,6 +44,13 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
     <>
       <section style={{ padding: "48px 32px 40px" }}>
         <div className="mx-auto text-center" style={{ maxWidth: 800 }}>
+          {/* Slogan hier statt im Footer (Steffi, 2026-06-11) */}
+          <p
+            className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-4"
+            style={{ fontWeight: 700 }}
+          >
+            {dict.sanierungHub.slogan}
+          </p>
           <h1
             className="mb-4"
             style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}
