@@ -92,6 +92,13 @@ GitHub Pages via GitHub Actions – bei jedem Push auf `main` wird automatisch g
 ### Backlog Themen
 Commit: 0deae98c191a84ed9aded5fbff50f664f9336561 -> Sanierungssysteme (Systemdarstellung als Konzeptbasis)
 
+### V2.9 – A2-Gerüst + Referenz-Pilot Norderstedt (Juni 2026)
+- [x] **Lösungsfinder A2-Gerüst** (PR #20): kuratierte Zwei-Produkt-Empfehlung hinter Flag `EMPFEHLUNGS_MODUS` (steht auf `"tags"`, A1 bleibt live; Go-Live nach Frank-Sign-off)
+- [x] **Referenz #52 `neodur-level-norderstedt`** (PR #25): erste 2026er-Sanierungsreferenz, viersprachig, eigener Bildsatz (6 Bilder, JPEG-optimiert), Schadenstyp `frueher-sanierung`
+- [x] **Branch-Hygiene**: obsolete Branches gelöscht, PR #12 geschlossen, remote nur noch `main`
+- [ ] `zeitDringlichkeit` Norderstedt: Einreicher-Bestätigung ausstehend
+- [ ] `belastbarNach` für NEODUR HE 65 / HE 40: TDS-Daten fehlen, Input Frank
+
 ### V2.8 – Anwendungsmatrix (Poster 1:1) (Juni 2026)
 - [x] **Anwendungsmatrix als alleinige Matrix**: Web-Projektion des Messeposters (Poster 3:1) – 6 kuratierte Produkte als Spalten, Tech-Werte + Vorteil-Zeile + 6 Anwendungs-Zeilen (✓✓/✓), viersprachig
 - [x] **HE 65 Plus durchgängig Kernanwendung** (✓✓ in allen Zeilen)
