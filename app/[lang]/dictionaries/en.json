@@ -310,7 +310,9 @@
     "gruppe_untergrund-haftbruecken": "Substrate, Bonding Agents & Primers",
     "gruppe_kunstharz-hartstoffe": "Hard Aggregates for Resin Systems",
     "gruppe_systeme": "Systems & Application",
-    "gruppe_nachbehandlung": "Curing & Surface Protection"
+    "gruppe_nachbehandlung": "Curing & Surface Protection",
+    "gruppe_impraegnierung": "Impregnation & Silicate Treatment",
+    "gruppe_additive": "Additives & Application Aids"
   },
   "sanierungHub": {
     "title": "Renovating with KORODUR",

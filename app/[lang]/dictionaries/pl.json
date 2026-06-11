@@ -310,7 +310,9 @@
     "gruppe_untergrund-haftbruecken": "Podłoże, warstwy sczepne i grunty",
     "gruppe_kunstharz-hartstoffe": "Kruszywa twarde do systemów żywicznych",
     "gruppe_systeme": "Systemy i wykonawstwo",
-    "gruppe_nachbehandlung": "Pielęgnacja i ochrona powierzchni"
+    "gruppe_nachbehandlung": "Pielęgnacja i ochrona powierzchni",
+    "gruppe_impraegnierung": "Impregnacja i silikatyzacja",
+    "gruppe_additive": "Dodatki i środki pomocnicze"
   },
   "sanierungHub": {
     "title": "Renowacja z KORODUR",
