@@ -366,4 +366,11 @@ export const REFERENZ_FILTER_V25: Record<string, ReferenzFilterV25> = {
     zeitfenster: "sehr-kurz",
     schadenstypen: [],
   },
+  "neodur-level-norderstedt": {
+    flaecheKategorie: "punktuell",
+    innenAussen: "innen",
+    einsatzbereich: "innen-nass-hygiene-chemie",
+    zeitfenster: "planbar",
+    schadenstypen: ["frueher-sanierung"],
+  },
 };

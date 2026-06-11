@@ -512,4 +512,24 @@ export const referenzenFR: Record<string, {
     ],
     bildAlt: "Voie de contournement poids lourds rénovée à Darmstadt",
   },
+
+  "neodur-level-norderstedt": {
+    titel: "Quand la première rénovation échoue",
+    untertitel: "Rénovation partielle avec NEODUR Level après une chape à granulats durs défectueuse",
+    land: "Allemagne",
+    herausforderungen: [
+      "Corriger une rénovation précédente ratée",
+      "Compenser les inégalités et différences de niveau du sol existant",
+      "Remettre en service les zones endommagées pendant l'exploitation du hall",
+    ],
+    loesung:
+      "Nous avons rénové les surfaces partielles concernées avec NEODUR Level, un revêtement autonivelant pour supports minéraux en intérieur. KORODUR PC a servi de primaire pour la préparation du support. Les inégalités et différences de niveau ont ainsi pu être compensées et les zones endommagées recouvertes.",
+    vorteile: [
+      "Autonivelant : surface plane sans tirage à la règle laborieux",
+      "Compense de manière fiable les inégalités et différences de niveau",
+      "Système coordonné de primaire (KORODUR PC) et de couche d'usure (NEODUR Level)",
+      "Surfaces partielles à nouveau pleinement utilisables, exploitation du hall maintenue",
+    ],
+    bildAlt: "Surface NEODUR Level fraîchement coulée sur un sol existant rénové à Norderstedt",
+  },
 };

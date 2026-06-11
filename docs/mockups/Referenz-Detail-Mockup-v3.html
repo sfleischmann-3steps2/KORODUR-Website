@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Referenz-Detailseite — Mockup v3 (dynamisch)</title>
+<style>
+  :root{
+    --navy:#002d59; --cyan:#009ee3; --green:#009a44;
+    --ink:rgba(0,45,89,.88); --muted:rgba(0,45,89,.55);
+    --line:#e3e9f2; --soft:#f4f6f9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 24px 64px}
+  a{color:var(--cyan);text-decoration:none}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .crumb b{color:var(--ink);font-weight:700}
+
+  h1{color:var(--navy);font-size:clamp(28px,4.6vw,42px);line-height:1.06;font-weight:900;letter-spacing:-.02em;margin:0 0 8px}
+  .sub{color:var(--cyan);font-size:18px;font-weight:800;margin:0 0 22px}
+
+  /* Hero Vorher/Nachher */
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+  .shot figure{margin:0}
+  .shot img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;display:block;border:1px solid var(--line)}
+  .shot figcaption{font-size:12px;color:var(--muted);margin-top:7px;font-weight:700;letter-spacing:.02em}
+
+  /* Eckdaten-Störer */
+  .stoerer{display:flex;flex-wrap:wrap;gap:0;background:var(--navy);border-radius:12px;overflow:hidden;margin-bottom:22px}
+  .stoerer .f{flex:1 1 0;min-width:120px;padding:14px 18px;border-left:1px solid rgba(255,255,255,.12)}
+  .stoerer .f:first-child{border-left:0}
+  .stoerer .lab{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.6)}
+  .stoerer .val{display:block;font-size:17px;font-weight:800;color:#fff;margin-top:2px}
+
+  /* 2-Spalten: Story + Produkt */
+  .cols{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start}
+  .story h2{color:var(--navy);font-size:18px;font-weight:900;margin:0 0 8px}
+  .story h2:not(:first-child){margin-top:24px}
+  .story p{margin:0 0 12px;font-size:15px}
+  .chall{list-style:none;padding:0;margin:6px 0 0}
+  .chall li{position:relative;padding-left:22px;font-size:14.5px;margin-bottom:5px}
+  .chall li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+
+  /* Produkt-Box (Sidebar) */
+  .pbox{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;position:sticky;top:20px}
+  .pbox .ph{background:var(--soft);padding:18px;text-align:center;border-bottom:1px solid var(--line)}
+  .pbox .ph img{max-width:150px;max-height:150px;object-fit:contain}
+  .pbox .pb{padding:16px 18px}
+  .pbox .plabel{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .pbox .pname{font-size:19px;font-weight:900;color:var(--navy);margin:2px 0 6px}
+  .chip{display:inline-block;font-size:11px;font-weight:800;color:var(--navy);background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:2px 7px;margin-bottom:8px}
+  .pbox .pclaim{font-size:13.5px;color:var(--ink);margin:0 0 12px}
+  .pbox .second{border-top:1px solid var(--line);padding-top:12px;margin-top:4px;font-size:13.5px}
+  .pbox .second b{color:var(--navy)}
+  .plink{display:inline-block;margin-top:12px;font-weight:800;font-size:14px}
+
+  /* Galerie */
+  .galsec{margin-top:34px}
+  .galsec h2{color:var(--navy);font-size:16px;font-weight:900;margin:0 0 12px}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
+  .gal figcaption{font-size:11px;color:var(--muted);margin-top:5px}
+
+  /* Verwandte + CTA */
+  .rel{margin-top:40px}
+  .rel h2{color:var(--navy);font-size:16px;font-weight:900;margin:0 0 12px}
+  .relgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .relcard{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .relcard .rimg{height:120px;background:var(--soft);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
+  .relcard .rt{padding:12px 14px;font-size:14px;font-weight:800;color:var(--navy)}
+  .cta{margin-top:40px;background:var(--soft);border-radius:14px;padding:28px;text-align:center}
+  .cta p{margin:0 0 16px;color:var(--navy);font-size:17px}
+  .btn{display:inline-block;padding:12px 26px;border-radius:10px;font-weight:800;font-size:15px;margin:0 5px}
+  .btn-cyan{background:var(--cyan);color:#fff}
+  .btn-out{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+
+  .note{margin-top:36px;padding:14px 16px;border:1px dashed var(--cyan);border-radius:10px;background:#f3fbff;font-size:13px;color:var(--navy)}
+
+  @media(max-width:820px){
+    .cols{grid-template-columns:1fr}
+    .pbox{position:static}
+    .gal{grid-template-columns:repeat(2,1fr)}
+    .relgrid{grid-template-columns:1fr}
+    .stoerer .f{flex:1 1 45%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="crumb">Start / Referenzen / <b>Wenn die erste Sanierung versagt</b></div>
+
+  <!-- KEINE Tags/Badges mehr -->
+  <h1>Wenn die erste Sanierung versagt</h1>
+  <p class="sub">Teilflächensanierung mit NEODUR Level nach mangelhaftem Hartstoffestrich</p>
+
+  <!-- Hero Vorher / Nachher: object-fit cover (kein Schnittrand), schlichte Captions -->
+  <div class="hero">
+    <div class="shot"><figure>
+      <img src="../../public/images/referenzen/neodur-level-norderstedt/vorher.png" alt="Vorher">
+      <figcaption>Vorher</figcaption>
+    </figure></div>
+    <div class="shot"><figure>
+      <img src="../../public/images/referenzen/neodur-level-norderstedt/nachher.png" alt="Nachher">
+      <figcaption>Nachher</figcaption>
+    </figure></div>
+  </div>
+
+  <!-- Eckdaten als Störer-Reihe (statt hoher Box) -->
+  <div class="stoerer">
+    <div class="f"><span class="lab">Ort</span><span class="val">Norderstedt</span></div>
+    <div class="f"><span class="lab">Baujahr</span><span class="val">2026</span></div>
+    <div class="f"><span class="lab">Fläche</span><span class="val">20 m²</span></div>
+    <div class="f"><span class="lab">Menge</span><span class="val">500 kg</span></div>
+  </div>
+
+  <!-- 2-Spalten: Story (links) + Produkt-Box (rechts) -->
+  <div class="cols">
+    <div class="story">
+      <h2>Ausgangssituation</h2>
+      <p>In mehreren Produktionshallen bestand Sanierungsbedarf. In einer Halle war ein Hartstoffestrich mangelhaft eingebaut worden, es kam zu Abplatzungen und beschädigten Teilbereichen.</p>
+      <ul class="chall">
+        <li>Eine missglückte Vorsanierung korrigieren</li>
+        <li>Unebenheiten und Höhenunterschiede ausgleichen</li>
+        <li>Beschädigte Teilbereiche im laufenden Betrieb nutzbar machen</li>
+      </ul>
+
+      <h2>Unsere Lösung</h2>
+      <p>Wir haben die betroffenen Teilflächen mit NEODUR Level saniert, einem selbstverlaufenden Belag für mineralische Untergründe im Innenbereich. KORODUR PC diente als Grundierung für die Untergrundvorbereitung. So ließen sich Unebenheiten und Höhenunterschiede ausgleichen und die beschädigten Bereiche neu beschichten.</p>
+
+      <h2>Ergebnis</h2>
+      <p>Unebenheiten und Höhenunterschiede wurden ausgeglichen, die beschädigten Teilbereiche neu beschichtet und wieder voll nutzbar gemacht. Der Hallenbetrieb blieb erhalten.</p>
+    </div>
+
+    <aside class="pbox">
+      <div class="ph"><img src="../../public/images/produkte/neodur-level.png" alt="NEODUR Level"></div>
+      <div class="pb">
+        <span class="plabel">Eingesetztes Produkt</span>
+        <div class="pname">NEODUR Level</div>
+        <span class="chip">CT-C40-F10</span>
+        <p class="pclaim">Selbstverlaufender Belag für mineralische Untergründe im Innenbereich.</p>
+        <div class="second"><b>KORODUR PC</b> — Grundierung zur Untergrundvorbereitung.</div>
+        <a class="plink" href="#">Zum Produkt →</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Galerie: restliche Bilder -->
+  <div class="galsec">
+    <h2>Bildergalerie</h2>
+    <div class="gal">
+      <figure style="margin:0"><img src="../../public/images/referenzen/neodur-level-norderstedt/vorher-flaeche.png" alt=""><figcaption>Geschädigte Bestandsfläche</figcaption></figure>
+      <figure style="margin:0"><img src="../../public/images/referenzen/neodur-level-norderstedt/verarbeitung.png" alt=""><figcaption>Einbau</figcaption></figure>
+      <figure style="margin:0"><img src="../../public/images/referenzen/neodur-level-norderstedt/uebergang.png" alt=""><figcaption>Verlauf</figcaption></figure>
+      <figure style="margin:0"><img src="../../public/images/referenzen/neodur-level-norderstedt/abgesperrt.png" alt=""><figcaption>Fertige Fläche</figcaption></figure>
+    </div>
+  </div>
+
+  <!-- Verwandte Referenzen -->
+  <div class="rel">
+    <h2>Verwandte Referenzen</h2>
+    <div class="relgrid">
+      <div class="relcard"><div class="rimg">Bild</div><div class="rt">Referenz A</div></div>
+      <div class="relcard"><div class="rimg">Bild</div><div class="rt">Referenz B</div></div>
+      <div class="relcard"><div class="rimg">Bild</div><div class="rt">Referenz C</div></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <p>Unsicher? Der Lösungsfinder führt Sie in wenigen Schritten zur passenden Lösung.</p>
+    <a class="btn btn-cyan" href="#">Lösungsfinder starten</a>
+    <a class="btn btn-out" href="#">Kontakt zu unseren Beratern</a>
+  </div>
+
+  <div class="note"><b>Mockup-Notizen:</b> Tags entfernt · Farben auf CD (Navy #002d59 / Cyan #009ee3) · Hero mit <code>object-fit:cover</code> (kein Schnittrand) · Captions schlicht · Eckdaten als Störer-Reihe statt hoher Box · Story (Ausgangssituation inkl. Herausforderung → Lösung → Ergebnis) links, Produkt-Box rechts (sticky) · Text kompakter. Design-Feinschliff folgt am Ende.</div>
+
+</div>
+</body>
+</html>
