@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORODUR Website-IA-Mockup (Stufe 1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #002d59;
+    --cyan: #009ee3;
+    --cyan-hover: #0090d0;
+    --white: #ffffff;
+    --icon-bg: #f5f5f6;
+    --bullet-bg: #e8edf5;
+    --light-gray: #ececed;
+    --mid-gray: #d9dada;
+    --footer-dark: #001a35;
+    --radius: 0.75rem;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Gabarito", Arial, sans-serif;
+    color: var(--navy);
+    background: var(--light-gray);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4 { font-weight: 900; color: var(--navy); }
+  .highlight-cyan { color: var(--cyan); }
+  a { color: var(--cyan); text-decoration: none; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 22px;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none;
+  }
+  .btn-primary { background: var(--cyan); color: var(--white); }
+  .btn-primary:hover { background: var(--cyan-hover); }
+  .btn-outline { background: var(--white); color: var(--navy); border-color: var(--navy); }
+  .btn-outline:hover { background: var(--icon-bg); }
+  .btn-ghost-white { background: transparent; color: var(--white); border-color: var(--white); }
+  .btn-ghost-white:hover { background: rgba(255,255,255,0.1); }
+
+  /* ---------- Mockup-Rahmen: Sprungnavigation + Abschnitts-Labels ---------- */
+  .jumpnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--footer-dark);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .jumpnav .jumpnav-title {
+    font-weight: 900;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-right: 12px;
+    color: var(--cyan);
+  }
+  .jumpnav a {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 14px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: calc(var(--radius) - 4px);
+  }
+  .jumpnav a:hover { background: rgba(255,255,255,0.12); }
+
+  .mockup-intro {
+    max-width: 860px;
+    margin: 32px auto 0;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .mockup-intro h1 { font-size: 28px; margin-bottom: 8px; }
+  .mockup-intro p { font-size: 15px; color: #41576f; }
+
+  .section-label {
+    max-width: 1320px;
+    margin: 56px auto 16px;
+    padding: 0 20px;
+    scroll-margin-top: 76px;
+  }
+  .section-label .tag {
+    display: inline-block;
+    background: var(--cyan);
+    color: var(--white);
+    font-weight: 900;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+  }
+  .section-label h2 { font-size: 24px; }
+  .section-label p { font-size: 14px; color: #41576f; max-width: 760px; margin-top: 4px; }
+
+  .frame {
+    max-width: 1320px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--mid-gray);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  @media (min-width: 1360px) {
+    .frame { box-shadow: 0 8px 32px rgba(0,45,89,0.08); }
+  }
+
+  .note {
+    display: inline-block;
+    border: 1px dashed var(--cyan);
+    color: var(--cyan);
+    background: rgba(0,158,227,0.05);
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 6px 10px;
+    margin: 8px 0;
+  }
+
+  /* ---------- A) Homepage: Header ---------- */
+  .site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--bullet-bg);
+    padding: 0 24px;
+  }
+  .site-header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 68px;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; min-height: 44px; }
+  .logo-mark {
+    width: 34px; height: 34px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 15px;
+  }
+  .logo-word { font-weight: 900; font-size: 19px; letter-spacing: -0.01em; color: var(--navy); }
+
+  .main-nav { display: flex; align-items: center; gap: 2px; }
+  .main-nav a {
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 10px 14px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: calc(var(--radius) - 4px);
+  }
+  .main-nav a:hover { background: var(--icon-bg); }
+  .main-nav a.active { color: var(--cyan); }
+
+  .header-utils { display: flex; align-items: center; gap: 10px; }
+  .lang-pill {
+    background: var(--icon-bg);
+    border-radius: calc(var(--radius) - 4px);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 12px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .burger {
+    display: none;
+    width: 44px; height: 44px;
+    border: none; background: transparent; cursor: pointer;
+    flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  }
+  .burger span { display: block; width: 22px; height: 2.5px; background: var(--navy); border-radius: 2px; }
+
+  @media (max-width: 980px) {
+    .main-nav { display: none; }
+    .burger { display: flex; }
+    .header-utils .btn { display: none; }
+  }
+
+  /* ---------- A) Hero ---------- */
+  .hero {
+    background: linear-gradient(120deg, var(--navy) 0%, #003e76 55%, #00599c 100%);
+    color: var(--white);
+    padding: 72px 24px;
+  }
+  .hero-inner { max-width: 1280px; margin: 0 auto; }
+  .hero h2 {
+    color: var(--white);
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.1;
+    max-width: 720px;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: clamp(16px, 2vw, 19px);
+    max-width: 620px;
+    color: #d3e2f0;
+    margin-bottom: 28px;
+  }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* ---------- Sections ---------- */
+  .home-section { padding: 56px 24px; }
+  .home-section-inner { max-width: 1280px; margin: 0 auto; }
+  .home-section h3 { font-size: 26px; margin-bottom: 6px; }
+  .home-section .section-sub { color: #41576f; font-size: 15px; margin-bottom: 24px; }
+  .home-section.alt { background: var(--icon-bg); }
+
+  /* Bereichs-Grid */
+  .area-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 1080px) { .area-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .area-grid { grid-template-columns: 1fr; } }
+  .area-card {
+    background: var(--white);
+    border: 1px solid var(--bullet-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .area-card .thumb {
+    height: 120px;
+    display: flex; align-items: flex-end;
+    padding: 10px 14px;
+    color: rgba(255,255,255,0.85);
+    font-size: 12px; font-weight: 500;
+  }
+  .area-card .body { padding: 16px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .area-card h4 { font-size: 17px; }
+  .area-card .count { font-size: 13.5px; color: #41576f; }
+  .area-card .subnote { font-size: 12.5px; color: #6b7d90; font-weight: 500; }
+  .area-card .link {
+    margin-top: auto; padding-top: 8px;
+    font-weight: 700; font-size: 14px;
+    min-height: 44px; display: inline-flex; align-items: center;
+  }
+  /* Katzenstreu: dezent abgesetzt */
+  .area-card.offbrand {
+    border: 1px dashed var(--mid-gray);
+    background: #fbfbfc;
+  }
+  .area-card.offbrand .thumb {
+    background: linear-gradient(135deg, #8d9aa8, #c4ccd4) !important;
+  }
+  .offbrand-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--light-gray);
+    color: #41576f;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    margin-bottom: 4px;
+  }
+
+  /* Gradient-Thumbs (Platzhalter) */
+  .g1 { background: linear-gradient(135deg, #002d59, #009ee3); }
+  .g2 { background: linear-gradient(135deg, #00264c, #0073b3); }
+  .g3 { background: linear-gradient(135deg, #003a6e, #00b2ff); }
+  .g4 { background: linear-gradient(135deg, #001f3f, #008cc9); }
+  .g5 { background: linear-gradient(135deg, #00355f, #33b8ec); }
+  .g6 { background: linear-gradient(135deg, #00284f, #006ca8); }
+  .g7 { background: linear-gradient(135deg, #004072, #00a3e8); }
+
+  /* Referenz-Highlights */
+  .ref-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 1080px) { .ref-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .ref-grid { grid-template-columns: 1fr; } }
+  .ref-card {
+    background: var(--white);
+    border: 1px solid var(--bullet-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .ref-card .thumb {
+    height: 140px;
+    display: flex; align-items: flex-end;
+    padding: 10px 14px;
+    color: rgba(255,255,255,0.85);
+    font-size: 12px; font-weight: 500;
+  }
+  .ref-card .body { padding: 16px; }
+  .ref-card h4 { font-size: 16px; margin-bottom: 2px; }
+  .ref-card .meta { font-size: 13.5px; color: #41576f; }
+
+  /* Kontakt-CTA-Band */
+  .cta-band {
+    background: var(--navy);
+    color: var(--white);
+    padding: 48px 24px;
+  }
+  .cta-band-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .cta-band h3 { color: var(--white); font-size: 24px; margin-bottom: 4px; }
+  .cta-band p { color: #d3e2f0; font-size: 15px; }
+  .cta-band .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Footer (Homepage), Redesign nach Review 2026-06-11: heller, aufgeräumter */
+  .site-footer {
+    background: var(--navy);
+    border-top: 3px solid var(--cyan);
+    color: #c8d4e0;
+  }
+  .site-footer-inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 64px 24px 56px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+  }
+  @media (max-width: 900px) { .site-footer-inner { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .site-footer-inner { grid-template-columns: 1fr; } }
+  .site-footer h5 {
+    color: var(--white);
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .site-footer ul { list-style: none; }
+  .site-footer li { margin-bottom: 2px; }
+  .site-footer a { color: #c8d4e0; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; }
+  .site-footer a:hover { color: var(--cyan); }
+  .site-footer .contact-line {
+    min-height: 44px;
+    display: flex; align-items: center;
+    font-size: 15px;
+  }
+  .footer-lang-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .footer-lang-pills .pill {
+    min-height: 44px;
+    min-width: 52px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: calc(var(--radius) - 4px);
+    border: 1px solid rgba(255,255,255,0.3);
+    font-weight: 700; font-size: 14px;
+    color: #c8d4e0;
+    padding: 0 14px;
+  }
+  .footer-lang-pills .pill.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
+  .footer-lang-pills a.pill:hover { border-color: var(--cyan); color: var(--cyan); }
+  .site-footer .legal-bar { background: rgba(255,255,255,0.08); }
+  .site-footer .legal {
+    max-width: 1280px; margin: 0 auto;
+    padding: 20px 24px;
+    font-size: 14px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .site-footer .legal a { font-size: 14px; }
+
+  /* ---------- B) Bereichsseite ---------- */
+  .breadcrumb {
+    padding: 16px 24px 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-size: 13.5px;
+    color: #41576f;
+  }
+  .breadcrumb a { color: #41576f; font-weight: 500; }
+  .breadcrumb a:hover { color: var(--cyan); }
+  .breadcrumb .sep { margin: 0 6px; color: var(--mid-gray); }
+  .breadcrumb .current { font-weight: 700; color: var(--navy); }
+
+  .area-header { padding: 24px 24px 8px; max-width: 1280px; margin: 0 auto; }
+  .area-header h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 10px; }
+  .area-header p { max-width: 760px; font-size: 16px; color: #41576f; }
+
+  .chipbar-wrap {
+    position: sticky;
+    top: 60px; /* unter der Mockup-Sprungnavigation */
+    z-index: 50;
+    background: var(--white);
+    border-top: 1px solid var(--bullet-bg);
+    border-bottom: 1px solid var(--bullet-bg);
+    margin-top: 20px;
+  }
+  .chipbar {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 10px 24px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .chip {
+    flex: 0 0 auto;
+    background: var(--icon-bg);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 999px;
+    padding: 10px 18px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .chip:hover { background: var(--bullet-bg); }
+
+  .hint-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--light-gray);
+    border-radius: calc(var(--radius) - 4px);
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #41576f;
+    margin-bottom: 8px;
+  }
+  .hint-box .hint-icon {
+    flex: 0 0 auto;
+    font-weight: 900;
+    color: var(--navy);
+  }
+
+  .product-group { padding: 40px 24px 8px; max-width: 1280px; margin: 0 auto; scroll-margin-top: 132px; }
+  .product-group h3 { font-size: 21px; margin-bottom: 4px; }
+  .product-group .group-sub { font-size: 14px; color: #41576f; margin-bottom: 18px; }
+
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 1080px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .product-grid { grid-template-columns: 1fr; } }
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--bullet-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .product-card h4 { font-size: 17px; }
+  .product-card p { font-size: 14px; color: #41576f; flex: 1; }
+  .badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--bullet-bg);
+    color: var(--navy);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+  }
+  .product-card .link {
+    font-weight: 700; font-size: 14.5px;
+    min-height: 44px; display: inline-flex; align-items: center;
+  }
+  .product-card.ghost {
+    border-style: dashed;
+    background: var(--icon-bg);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #41576f;
+    font-weight: 700;
+    font-size: 14px;
+    min-height: 140px;
+  }
+
+  .area-refs { padding: 48px 24px 8px; max-width: 1280px; margin: 0 auto; }
+  .area-refs h3 { font-size: 21px; margin-bottom: 18px; }
+  .area-refs .ref-grid { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 640px) { .area-refs .ref-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- C) Mobile-Navigation ---------- */
+  .phone-stage {
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px 56px;
+    background: var(--icon-bg);
+  }
+  .phone {
+    width: 390px;
+    max-width: 100%;
+    background: var(--white);
+    border: 10px solid var(--footer-dark);
+    border-radius: 40px;
+    overflow: hidden;
+  }
+  .phone-notch {
+    height: 26px;
+    background: var(--footer-dark);
+    border-radius: 0 0 16px 16px;
+    width: 140px;
+    margin: 0 auto;
+  }
+  .phone-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--bullet-bg);
+  }
+  .phone-close {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 20px;
+    color: var(--navy);
+    border: none; background: transparent; cursor: pointer;
+  }
+  .phone-menu { padding: 12px 14px 8px; display: flex; flex-direction: column; gap: 2px; }
+  .phone-menu a {
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 17px;
+    padding: 12px 14px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: calc(var(--radius) - 4px);
+  }
+  .phone-menu a:hover { background: var(--icon-bg); }
+  .phone-menu a .chev { color: var(--mid-gray); font-weight: 900; }
+  .phone-cta { padding: 8px 14px 4px; }
+  .phone-cta .btn { width: 100%; min-height: 48px; font-size: 16px; }
+  .phone-langs {
+    padding: 16px 18px 28px;
+    border-top: 1px solid var(--bullet-bg);
+    margin-top: 12px;
+  }
+  .phone-langs .label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #41576f; margin-bottom: 10px;
+  }
+  .phone-langs .pills { display: flex; gap: 8px; }
+  .phone-langs .pill {
+    flex: 1;
+    min-height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: calc(var(--radius) - 4px);
+    border: 1px solid var(--bullet-bg);
+    font-weight: 700; font-size: 14px;
+    color: var(--navy);
+  }
+  .phone-langs .pill.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  /* ---------- Diskussionspunkte ---------- */
+  .discussion {
+    background: var(--footer-dark);
+    color: var(--white);
+    padding: 56px 24px 64px;
+    margin-top: 56px;
+    scroll-margin-top: 76px;
+  }
+  .discussion-inner { max-width: 960px; margin: 0 auto; }
+  .discussion h2 { color: var(--white); font-size: 26px; margin-bottom: 8px; }
+  .discussion .sub { color: #b9c8d8; font-size: 15px; margin-bottom: 28px; }
+  .discussion h3 { color: var(--cyan); font-size: 18px; margin: 32px 0 14px; }
+  .discussion ol { list-style: none; counter-reset: dp; display: flex; flex-direction: column; gap: 18px; }
+  .discussion li {
+    counter-increment: dp;
+    display: flex;
+    gap: 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    font-size: 15px;
+    color: #d3e2f0;
+  }
+  .discussion li::before {
+    content: counter(dp);
+    flex: 0 0 36px;
+    height: 36px;
+    background: var(--cyan);
+    color: var(--white);
+    font-weight: 900;
+    font-size: 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .discussion li strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<!-- Sprungnavigation des Mockups -->
+<nav class="jumpnav" aria-label="Mockup-Navigation">
+  <span class="jumpnav-title">IA-Mockup</span>
+  <a href="#sec-a">A · Homepage</a>
+  <a href="#sec-b">B · Bereichsseite</a>
+  <a href="#sec-c">C · Mobile-Navigation</a>
+  <a href="#diskussion">Review-Stand</a>
+</nav>
+
+<div class="mockup-intro">
+  <h1>korodur.de <span class="highlight-cyan">IA-Umbau</span>, Stufe 1</h1>
+  <p>Entwurf für neue Homepage, neue Hauptnavigation und Bereichsseiten-Template. Stand nach Review der Auftraggeberin (2026-06-11): 6 Hauptpunkte inkl. "Sanierung" plus Lösungsfinder-CTA. Entscheidungen und offene Punkte stehen am Seitenende.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- A) HOMEPAGE                                                   -->
+<!-- ============================================================ -->
+<div class="section-label" id="sec-a">
+  <span class="tag">Abschnitt A</span>
+  <h2>Homepage-Entwurf</h2>
+  <p>Sticky Header mit 6 Hauptpunkten + Lösungsfinder-CTA, Hero mit zwei Einstiegen, Bereichs-Grid mit echten Produktzahlen, Referenz-Highlights, Kontakt-Band, Footer. Zielgruppen-Einstiege sind für V2 vorgemerkt.</p>
+</div>
+
+<div class="frame">
+
+  <!-- Header / Hauptnavigation -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="logo">
+        <div class="logo-mark">K</div>
+        <span class="logo-word">KORODUR</span>
+      </div>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="#sec-b">Produkte</a>
+        <a href="#sec-a">Sanierung</a>
+        <a href="#sec-a">Anwendungen</a>
+        <a href="#sec-a">Referenzen</a>
+        <a href="#sec-a">Unternehmen</a>
+        <a href="#sec-a">Kontakt</a>
+      </nav>
+      <div class="header-utils">
+        <span class="lang-pill">DE ▾</span>
+        <a class="btn btn-primary" href="#sec-a">Lösungsfinder</a>
+        <button class="burger" aria-label="Menü öffnen (siehe Abschnitt C)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Mineralische Böden, die <span class="highlight-cyan">Generationen</span> tragen.</h2>
+      <p>Hartstoffeinstreuungen, Industrieböden und Sanierungssysteme seit 1936. Wir begleiten Ihr Projekt von der Planung bis zur Nutzung.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#sec-a">Lösungsfinder starten</a>
+        <a class="btn btn-ghost-white" href="#sec-b">Produkte entdecken</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bereichs-Grid (Zielgruppen-Einstiege entfernt, vorgemerkt für V2) -->
+  <section class="home-section alt">
+    <div class="home-section-inner">
+      <h3>Unsere Bereiche</h3>
+      <p class="section-sub">Acht Produktbereiche, ein Sortiment. Produktzahlen aus dem aktuellen Katalog.</p>
+      <div class="area-grid">
+        <div class="area-card">
+          <div class="thumb g1">Bild: Logistikhalle</div>
+          <div class="body">
+            <h4>Industrieboden</h4>
+            <span class="count">44 Produkte</span>
+            <a class="link" href="#sec-b">Zum Bereich →</a>
+          </div>
+        </div>
+        <div class="area-card">
+          <div class="thumb g2">Bild: Geschliffener Boden</div>
+          <div class="body">
+            <h4>Sichtestrich</h4>
+            <span class="count">6 Produkte</span>
+            <a class="link" href="#sec-a">Zum Bereich →</a>
+          </div>
+        </div>
+        <div class="area-card">
+          <div class="thumb g5">Bild: Betonage</div>
+          <div class="body">
+            <h4>Schnellbetonsysteme</h4>
+            <span class="count">Systemlösungen</span>
+            <a class="link" href="#sec-a">Zum Bereich →</a>
+          </div>
+        </div>
+        <div class="area-card">
+          <div class="thumb g4">Bild: Reparatur-Einsatz</div>
+          <div class="body">
+            <h4>Rapid Set</h4>
+            <span class="count">7 Produkte</span>
+            <span class="subnote">Vertrieb über Fachhändler</span>
+            <a class="link" href="#sec-a">Zum Bereich →</a>
+          </div>
+        </div>
+        <div class="area-card">
+          <div class="thumb g6">Bild: Verguss-Detail</div>
+          <div class="body">
+            <h4>Spezialbaustoffe</h4>
+            <span class="count">7 Produkte</span>
+            <a class="link" href="#sec-a">Zum Bereich →</a>
+          </div>
+        </div>
+        <div class="area-card">
+          <div class="thumb g7">Bild: 3D-Druck-Element</div>
+          <div class="body">
+            <h4>3D Concrete Printing</h4>
+            <span class="count">Technologiefeld</span>
+            <a class="link" href="#sec-a">Zum Bereich →</a>
+          </div>
+        </div>
+        <div class="area-card">
+          <div class="thumb g3">Bild: Trinkwasserbehälter</div>
+          <div class="body">
+            <h4>Microtop</h4>
+            <span class="count">8 Produkte</span>
+            <a class="link" href="#sec-a">Zum Bereich →</a>
+          </div>
+        </div>
+        <div class="area-card offbrand">
+          <div class="thumb">Bild: goodcat</div>
+          <div class="body">
+            <span class="offbrand-badge">Eigener Bereich</span>
+            <h4>Katzenstreu</h4>
+            <span class="count">3 Produkte (goodcat)</span>
+            <a class="link" href="#sec-a">Zum Bereich →</a>
+          </div>
+        </div>
+      </div>
+      <span class="note">Hinweis Mockup: Katzenstreu-Kachel bewusst dezent abgesetzt (gedämpfter Verlauf, gestrichelter Rahmen, Badge). Im Review freigegeben, Detail-Mockup folgt in PR 9.</span>
+    </div>
+  </section>
+
+  <!-- Referenz-Highlights -->
+  <section class="home-section">
+    <div class="home-section-inner">
+      <h3>Referenzen, die überzeugen</h3>
+      <p class="section-sub">Eine Auswahl aus über 50 dokumentierten Projekten.</p>
+      <div class="ref-grid">
+        <div class="ref-card">
+          <div class="thumb g1">Bild: Halle Sylt</div>
+          <div class="body">
+            <h4>Strandkorbhalle Sylt</h4>
+            <span class="meta">Sylt · 2.200 m² schnell &amp; wirtschaftlich</span>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="thumb g3">Bild: Retail-Fläche</div>
+          <div class="body">
+            <h4>Nike Store Polen</h4>
+            <span class="meta">Szczecin · Design und Funktion</span>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="thumb g4">Bild: Produktionshalle</div>
+          <div class="body">
+            <h4>Produktionshalle Kleemann</h4>
+            <span class="meta">Göppingen · Schwerlast, schnell realisiert</span>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="thumb g6">Bild: Betriebshof</div>
+          <div class="body">
+            <h4>WEAG Entsorgungsbetrieb</h4>
+            <span class="meta">Deutschland · Schnell, robust, dauerhaft in 24 h</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 20px;">
+        <a class="btn btn-outline" href="#sec-a">Alle Referenzen ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt-CTA-Band -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div>
+        <h3>Sie planen ein Projekt?</h3>
+        <p>Wir beraten Sie persönlich, von der Produktauswahl bis zur Ausführung.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="#sec-a">Kontakt aufnehmen</a>
+        <a class="btn btn-ghost-white" href="#sec-a">Lösungsfinder starten</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Redesign nach Review 2026-06-11) -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>
+        <h5>Bereiche</h5>
+        <ul>
+          <li><a href="#sec-b">Industrieboden</a></li>
+          <li><a href="#sec-a">Sichtestrich</a></li>
+          <li><a href="#sec-a">Schnellbetonsysteme</a></li>
+          <li><a href="#sec-a">Rapid Set</a></li>
+          <li><a href="#sec-a">Alle Bereiche</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Unternehmen</h5>
+        <ul>
+          <li><a href="#sec-a">Über KORODUR</a></li>
+          <li><a href="#sec-a">Referenzen</a></li>
+          <li><a href="#sec-a">Standorte</a></li>
+          <li><a href="#sec-a">Karriere</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="tel:+4996214759-0">+49 9621 4759-0</a></li>
+          <li><a href="mailto:info@korodur.de">info@korodur.de</a></li>
+          <li><a href="#sec-a">Kontaktformular</a></li>
+          <li><a href="#sec-a">Ansprechpartner</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Sprachen</h5>
+        <div class="footer-lang-pills">
+          <span class="pill active">DE</span>
+          <a class="pill" href="#sec-a">EN</a>
+          <a class="pill" href="#sec-a">FR</a>
+          <a class="pill" href="#sec-a">PL</a>
+        </div>
+      </div>
+    </div>
+    <div class="legal-bar">
+      <div class="legal">
+        <span>© KORODUR International GmbH</span>
+        <span><a href="#sec-a">Impressum</a> · <a href="#sec-a">Datenschutz</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- B) BEREICHSSEITE                                              -->
+<!-- ============================================================ -->
+<div class="section-label" id="sec-b">
+  <span class="tag">Abschnitt B</span>
+  <h2>Bereichsseiten-Template, Beispiel Industrieboden</h2>
+  <p>Breadcrumb, Intro, Produktgruppen als Anker-Chips (scrollen nach unten zu den Gruppen, kein Zurückscrollen zum Filtern), Produktkarten, Bereichs-Referenzen, CTA-Band.</p>
+</div>
+
+<div class="frame">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="#sec-a">Startseite</a><span class="sep">/</span><a href="#sec-a">Produkte</a><span class="sep">/</span><span class="current">Industrieboden</span>
+  </nav>
+
+  <header class="area-header">
+    <h2>Industrieboden</h2>
+    <p>Industrieböden sind unser Kerngeschäft. Wir liefern Hartstoffeinstreuungen, Hartstoffschichten und Estrichsysteme für hochbeanspruchte Flächen in Produktion, Logistik und Gewerbe. Auf dieser Seite führen wir das komplette Sortiment des Bereichs zusammen, vom Neubau bis zur Sanierung.</p>
+  </header>
+
+  <!-- Anker-Chips (sticky) -->
+  <div class="chipbar-wrap">
+    <div class="chipbar">
+      <a class="chip" href="#grp-hartstoffeinstreuung">Hartstoffeinstreuung</a>
+      <a class="chip" href="#grp-he3">NEODUR HE 3-Familie</a>
+      <a class="chip" href="#grp-he65">NEODUR HE 65-Familie</a>
+      <a class="chip" href="#grp-schnellestrich">Schnellestrich</a>
+      <a class="chip" href="#grp-selbstverlaufend">Selbstverlaufend</a>
+      <a class="chip" href="#grp-bauchemie">Bauchemie, Untergrund &amp; Haftbrücken</a>
+    </div>
+  </div>
+
+  <div style="max-width: 1280px; margin: 12px auto 0; padding: 0 24px;">
+    <div class="hint-box">
+      <span class="hint-icon">&#8505;</span>
+      <span>Hinweis: Die Produktgruppen-Zuordnung der alten Website ist teilweise fehlerhaft. Vor der Migration wird die Zuordnung je Bereich kuratiert und freigegeben.</span>
+    </div>
+    <span class="note">Interaktionsprinzip: Die Chips sind echte Anker-Links und bleiben beim Scrollen sichtbar. Man springt zur Gruppe, statt zum Filtern nach oben zurückzuscrollen.</span>
+  </div>
+
+  <!-- Gruppe: Hartstoffeinstreuung -->
+  <section class="product-group" id="grp-hartstoffeinstreuung">
+    <h3>Hartstoffeinstreuung</h3>
+    <p class="group-sub">Hartstoffe zum Einstreuen in den frischen Beton, für monolithische Industrieböden.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <h4>KORODUR 0-4</h4>
+        <p>Klassische Hartstoffeinstreuung für monolithische Industrieböden.</p>
+        <span class="badge">Hartstoffeinstreuung</span>
+        <a class="link" href="#grp-hartstoffeinstreuung">Details →</a>
+      </div>
+      <div class="product-card ghost">+ weitere Produkte<br>dieser Gruppe</div>
+    </div>
+  </section>
+
+  <!-- Gruppe: NEODUR HE 3 -->
+  <section class="product-group" id="grp-he3">
+    <h3>NEODUR HE 3-Familie</h3>
+    <p class="group-sub">Hartstoffschichten der HE 3-Reihe, inklusive green-, metallisch- und SVS-Varianten.</p>
+    <div class="product-grid">
+      <div class="product-card ghost">6 Produkte dieser Gruppe<br>(HE 3, green, metallisch, SVS-Varianten)</div>
+    </div>
+  </section>
+
+  <!-- Gruppe: NEODUR HE 65 -->
+  <section class="product-group" id="grp-he65">
+    <h3>NEODUR HE 65-Familie</h3>
+    <p class="group-sub">Hartstoffschichten der HE 65-Reihe sowie weitere Hartstoffschichten (u. a. HE 2, HE 40, HE 60 Rapid).</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <h4>NEODUR HE 65</h4>
+        <p>Mineralische Hartstoffschicht für hochbeanspruchte Industrieflächen.</p>
+        <span class="badge">EN 13813</span>
+        <a class="link" href="#grp-he65">Details →</a>
+      </div>
+      <div class="product-card">
+        <h4>NEODUR HE 60 Rapid</h4>
+        <p>Schnell nutzbare Hartstoffschicht für die Sanierung unter Zeitdruck.</p>
+        <span class="badge">EN 13813</span>
+        <a class="link" href="#grp-he65">Details →</a>
+      </div>
+      <div class="product-card ghost">+ weitere Produkte<br>dieser Gruppe</div>
+    </div>
+  </section>
+
+  <!-- Gruppe: Schnellestrich -->
+  <section class="product-group" id="grp-schnellestrich">
+    <h3>Schnellestrich</h3>
+    <p class="group-sub">Schnell erhärtende Estrichsysteme für enge Zeitfenster.</p>
+    <div class="product-grid">
+      <div class="product-card ghost">2 Produkte dieser Gruppe<br>(FSCem, FSCem Screed)</div>
+    </div>
+  </section>
+
+  <!-- Gruppe: Selbstverlaufend -->
+  <section class="product-group" id="grp-selbstverlaufend">
+    <h3>Selbstverlaufend</h3>
+    <p class="group-sub">Selbstverlaufende Systeme für ebene, schnell belegbare Flächen.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <h4>NEODUR Level</h4>
+        <p>Selbstverlaufendes System für ebene Flächen, auch in der Sanierung.</p>
+        <span class="badge">EN 13813</span>
+        <a class="link" href="#grp-selbstverlaufend">Details →</a>
+      </div>
+      <div class="product-card ghost">+ weitere Produkte<br>dieser Gruppe</div>
+    </div>
+  </section>
+
+  <!-- Gruppe: Bauchemie, Untergrund & Haftbrücken -->
+  <section class="product-group" id="grp-bauchemie">
+    <h3>Bauchemie, Untergrund &amp; Haftbrücken</h3>
+    <p class="group-sub">Bauchemische Ergänzungsprodukte für Vorbereitung, Untergrund, Haftverbund, Nachbehandlung und Pflege.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <h4>KOROTEX</h4>
+        <p>Bauchemisches Ergänzungsprodukt im KORODUR-Systemaufbau.</p>
+        <span class="badge">Bauchemie</span>
+        <a class="link" href="#grp-bauchemie">Details →</a>
+      </div>
+      <div class="product-card">
+        <h4>KORODUR HB 5 Rapid</h4>
+        <p>Produkt für Untergrund und Haftverbund. Auf der alten Website fälschlich unter Hartstoffeinstreuung geführt, hier kuratiert zugeordnet.</p>
+        <span class="badge">Haftbrücke</span>
+        <a class="link" href="#grp-bauchemie">Details →</a>
+      </div>
+      <div class="product-card ghost">+ weitere Produkte<br>dieser Gruppe</div>
+    </div>
+  </section>
+
+  <!-- Referenzen aus diesem Bereich -->
+  <section class="area-refs">
+    <h3>Referenzen aus diesem Bereich</h3>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="thumb g2">Bild: Produktionshalle</div>
+        <div class="body">
+          <h4>Produktionshalle Guben</h4>
+          <span class="meta">Guben · Sanierung im laufenden Betrieb</span>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="thumb g5">Bild: Werkhalle</div>
+        <div class="body">
+          <h4>Sanierung im laufenden Betrieb, Loosen</h4>
+          <span class="meta">Klausen (Moselregion) · Schnell. Stabil. Zuverlässig.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA-Band -->
+  <section class="cta-band" style="margin-top: 48px;">
+    <div class="cta-band-inner">
+      <div>
+        <h3>Unsicher, welches Produkt passt?</h3>
+        <p>Wir beraten Sie zu Aufbau, Produktwahl und Ausführung.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="#sec-a">Beratung anfragen</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- C) MOBILE-NAVIGATION                                          -->
+<!-- ============================================================ -->
+<div class="section-label" id="sec-c">
+  <span class="tag">Abschnitt C</span>
+  <h2>Mobile-Navigation (Burger-Menü geöffnet)</h2>
+  <p>Phone-Frame ~390 px: die 6 Hauptpunkte, Lösungsfinder-CTA in voller Breite, Sprachumschalter DE/EN/FR/PL. Alle Touch-Targets mindestens 44 px.</p>
+</div>
+
+<div class="frame">
+  <div class="phone-stage">
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-header">
+        <div class="logo">
+          <div class="logo-mark">K</div>
+          <span class="logo-word" style="font-size: 17px;">KORODUR</span>
+        </div>
+        <button class="phone-close" aria-label="Menü schließen">✕</button>
+      </div>
+      <nav class="phone-menu" aria-label="Mobile Hauptnavigation">
+        <a href="#sec-b">Produkte <span class="chev">›</span></a>
+        <a href="#sec-c">Sanierung <span class="chev">›</span></a>
+        <a href="#sec-c">Anwendungen <span class="chev">›</span></a>
+        <a href="#sec-c">Referenzen <span class="chev">›</span></a>
+        <a href="#sec-c">Unternehmen <span class="chev">›</span></a>
+        <a href="#sec-c">Kontakt <span class="chev">›</span></a>
+      </nav>
+      <div class="phone-cta">
+        <a class="btn btn-primary" href="#sec-c">Lösungsfinder starten</a>
+      </div>
+      <div class="phone-langs">
+        <div class="label">Sprache</div>
+        <div class="pills">
+          <span class="pill active">DE</span>
+          <span class="pill">EN</span>
+          <span class="pill">FR</span>
+          <span class="pill">PL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- DISKUSSIONSPUNKTE                                             -->
+<!-- ============================================================ -->
+<footer class="discussion" id="diskussion">
+  <div class="discussion-inner">
+    <h2>Review-Stand</h2>
+    <p class="sub">Ergebnis des Reviews mit der Auftraggeberin am 2026-06-11. Die Entscheidungen sind in dieses Mockup eingearbeitet.</p>
+
+    <h3>Entscheidungen aus dem Review (2026-06-11)</h3>
+    <ol>
+      <li><span><strong>Navigation:</strong> 6 Punkte (inkl. neuem Punkt "Sanierung") + Lösungsfinder-CTA. Freigegeben.</span></li>
+      <li><span><strong>Zielgruppen-Einstiege:</strong> in V1 raus, Konzept bleibt für V2 vorgemerkt.</span></li>
+      <li><span><strong>"Für Planer" und "Service &amp; Downloads / Download-Center":</strong> Nice-to-have-Liste.</span></li>
+      <li><span><strong>Bereichs-Reihenfolge:</strong> wie jetzt gezeigt. Freigegeben.</span></li>
+      <li><span><strong>Katzenstreu-Abgrenzung:</strong> freigegeben (Detail-Mockup folgt in PR 9).</span></li>
+      <li><span><strong>Produktgruppen-Zuordnung:</strong> wird je Bereich kuratiert und freigegeben (Quelle alte Website fehlerhaft, z.&nbsp;B. HB 5 Rapid).</span></li>
+      <li><span><strong>Händler-Thema:</strong> nur Rapid-Set-relevant, gehört auf die Rapid-Set-Bereichsseite.</span></li>
+    </ol>
+
+    <h3>Offen / Feedback erbeten</h3>
+    <ol>
+      <li><span><strong>Footer-Redesign:</strong> wie jetzt gezeigt OK?</span></li>
+      <li><span><strong>V2-Backlog notiert:</strong> Lösungsfinder um Neubau erweitern (vorgelagerter Schritt), Referenzen-Filter Neubau/Sanierung.</span></li>
+    </ol>
+  </div>
+</footer>
+
+</body>
+</html>

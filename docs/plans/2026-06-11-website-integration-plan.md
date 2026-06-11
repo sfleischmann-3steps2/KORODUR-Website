@@ -18,6 +18,19 @@ Die KORODUR-Sanierung_app wird zur neuen korodur.de. Alle Inhalte der alten Word
 | 3 | **Hosting am Ende**, Cloudflare favorisiert (bereits im Unternehmen im Einsatz), aber offen | Bis Stufe 5 bleibt GitHub Pages + basePath. Keine Hosting-Arbeit vorziehen |
 | 4 | **Notion als CMS** (statt Payload-Prototyp) | Zwei DBs nach Ownership (Technik / Marketing), bestehende Sync-Pipeline ausbauen. Pflicht: dokumentierter Trigger-Prozess, damit klar ist, was eine Inhaltsänderung auslöst (Stufe 4) |
 
+### 2b. Mockup-Review-Entscheidungen (Steffi, 2026-06-11, `docs/mockups/Website-IA-Mockup.html`)
+
+| # | Entscheidung |
+|---|---|
+| 1 | **Navigation: 6 Punkte** (Produkte · Sanierung · Anwendungen · Referenzen · Unternehmen · Kontakt) + Lösungsfinder-CTA. Sanierung wird gezielt gepusht: eigener Menüpunkt + prominenter Hero-CTA + Bereichskachel |
+| 2 | **Zielgruppen-Einstiege (Planer/Verarbeiter/Handel) in V1 raus** — die Perspektiven brauchen passende Inhalte, die es noch nicht gibt. Konzept bleibt im Mockup für V2 vorgemerkt |
+| 3 | **Nice-to-have-Liste:** "Für Planer"-Bereich, "Service & Downloads" (zentrales Download-Center für alle Datenblätter + Broschüren — gute Idee, klares Nice-to-have, je nach Fortschritt) |
+| 4 | **Bereichs-Reihenfolge:** Industrieboden, Sichtestrich, Schnellbetonsysteme, Rapid Set, Spezialbaustoffe, 3D Concrete Printing, Microtop, Katzenstreu |
+| 5 | **Händler-Thema nur Rapid-Set-relevant:** Rapid-Set-Produkte werden ausschließlich über Händler verkauft; Händler-Gewinnung gehört auf die Rapid-Set-Bereichsseite (Inhalt PR 8), kein globaler Händlerbereich |
+| 6 | **Produktgruppen-Zuordnung der Alt-Site ist fehlerhaft** (Beispiel: HB 5 Rapid dort unter "Hartstoffeinstreuung", ist aber Haftbrücke/Untergrund; Notion-Produktdatenbank hat ebenfalls Zuordnungsprobleme). Pflichtschritt je Bereich: kuratierte Zuordnungs-Tabelle mit Sign-off VOR der Daten-Migration |
+| 7 | **Footer-Upgrade:** bisheriger Footer zu dunkel — heller (Navy statt Fast-Schwarz), strukturierter, Umsetzung in PR 3, finales OK am Mockup/Live-Stand |
+| 8 | **V2-Backlog:** Lösungsfinder um Neubau erweitern (vorgelagerter Schritt vor Step 1), Referenzen-Filter Neubau/Sanierung, Zielgruppen-Einstiege (s. #2) |
+
 ## 3. Rahmenbedingungen und Schutzgüter
 
 - **Static Export bleibt.** Keine API-Routes, alles zu Build-Zeit, `withBasePath()` bis zum Hosting-Wechsel.
@@ -56,9 +69,9 @@ Die Stufen 0 bis 2 sind sequenziell sinnvoll, Stufe 3 und 4 können parallel zu 
 
 **PR 2 (Mockup, kein App-Code):** `docs/mockups/Website-IA-Mockup.html` mit drei Teilen: (a) Homepage mit Zielgruppen-Einstiegen (Planer / Verarbeiter / Handel) und Bereichs-Kacheln nach Template-Konzept aus `03_konzept/page_templates.md`, (b) Hauptnavigation (Top-Level: Produkte, Anwendungen, Referenzen, Unternehmen, Kontakt; Sanierung samt Lösungsfinder prominent als Einstieg), (c) Bereichsseiten-Template. Diskussionspunkte nummeriert im Footer. **Besprechung mit Steffi vor PR 3.**
 
-**PR 3:** Navigation und Homepage gemäß freigegebenem Mockup. Sanierungs-Flows (Lösungsfinder, Anwendungsmatrix) bleiben unter ihren bestehenden Routen erreichbar.
+**PR 3:** Navigation (6 Punkte inkl. "Sanierung" + Lösungsfinder-CTA) und Homepage gemäß Review-Stand des Mockups: Hero mit Sanierungs-CTA, Bereichs-Grid in der freigegebenen Reihenfolge (Katzenstreu abgegrenzt, Rapid Set mit Händler-Hinweis), Referenz-Highlights, Kontakt-Band, **Footer-Upgrade** (heller, strukturiert). KEINE Zielgruppen-Kacheln (V2). Sanierungs-Flows (Lösungsfinder, Anwendungsmatrix) bleiben unter ihren bestehenden Routen erreichbar.
 
-**PR 4:** Bereichsseiten-Template und Routen `app/[lang]/bereiche/[slug]/` (statisch generiert aus `data/bereiche.ts`), zunächst mit dem Sanierungs-Bestand und Platzhaltern für die noch nicht migrierten Bereiche.
+**PR 4:** Bereichsseiten-Template und Routen `app/[lang]/bereiche/[slug]/` (statisch generiert aus `data/bereiche.ts`), zunächst mit dem Sanierungs-Bestand und Platzhaltern für die noch nicht migrierten Bereiche. PR 3 und PR 4 dürfen zusammengelegt werden (Homepage-Kacheln verlinken auf die Bereichs-Routen).
 
 **Verifikation je PR:** Build, Smoke-Tests, Deploy-Stichprobe in allen 4 Sprachen, Mobile-Check.
 
@@ -67,9 +80,10 @@ Die Stufen 0 bis 2 sind sequenziell sinnvoll, Stufe 3 und 4 können parallel zu 
 Reihenfolge nach Größe und Überlapp, je Bereich derselbe Workflow:
 
 1. Quelle vollständig lesen (`bereiche_<x>_details.md` + `produktuebersicht.md`)
-2. Produktdaten strukturieren nach `data/produkte.ts`-Schema (DE), Texte überarbeiten: Wir-Form, CTAs, technische Daten als HTML-Tabelle (größter SEO-Hebel laut Audit), keine erfundenen Werte
-3. Bereichsseite mit überarbeitetem Content füllen
-4. `validate-produkte.ts` + `test-loesungsfinder.ts` grün, Build, PR, Merge, Live-Stichprobe
+2. **Zuordnungs-Tabelle erstellen und Sign-off einholen (Steffi/Frank):** Produkt → Produktgruppe innerhalb des Bereichs. Die Alt-Site-Struktur ist als Quelle dafür NICHT verlässlich (Review-Entscheidung #6), die Notion-Produktdatenbank ebenfalls nicht. Erst nach Freigabe weiter
+3. Produktdaten strukturieren nach `data/produkte.ts`-Schema (DE), Texte überarbeiten: Wir-Form, CTAs, technische Daten als HTML-Tabelle (größter SEO-Hebel laut Audit), keine erfundenen Werte
+4. Bereichsseite mit überarbeitetem Content füllen
+5. `validate-produkte.ts` + `test-loesungsfinder.ts` grün, Build, PR, Merge, Live-Stichprobe
 
 | PR | Bereich | Umfang (Quelle) |
 |---|---|---|
