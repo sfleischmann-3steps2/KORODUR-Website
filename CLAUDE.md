@@ -87,6 +87,10 @@ docs/                    Projektdoku (siehe Ablage-Regeln unten)
 - **Bilder:** unter `public/images/referenzen/<slug>/` (TOP3 + Galerie). Platzhalter: `public/images/_placeholder.jpg`
 - **Static Export:** Keine API-Routes, kein `getServerSideProps`. Alle Daten zu Build-Zeit auflösen. `basePath` für GitHub Pages über `lib/basePath.ts`.
 
+## Commit-Regel (Steffi, 2026-06-11)
+
+**Jedes logisch abgeschlossene Feature sofort committen und pushen** — keine uncommitteten Stände über mehrere Features ansammeln. Heißt konkret: Feature fertig → Commit → Push, im selben Arbeitsschritt, ohne Rückfrage. Der PR-Flow für `main` bleibt bestehen (Push geht auf den Feature-Branch); kleine Doku-/Konfig-Änderungen auf explizite Anweisung auch direkt auf `main`.
+
 ## Workflows
 
 ```bash
