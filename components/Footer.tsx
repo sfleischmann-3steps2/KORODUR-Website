@@ -1,12 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "../lib/i18n";
 import type { Dictionary } from "../app/[lang]/dictionaries";
-
-const CONTACT_URLS: Record<string, string> = {
-  de: "https://www.korodur.de/kontakt/deutschland/",
-  en: "https://www.korodur.de/kontakt/international/",
-  fr: "https://www.korodur.de/kontakt/international/",
-};
+import { KONTAKT_URLS } from "../lib/kontakt";
 
 export default function Footer({
   lang,
@@ -15,7 +10,7 @@ export default function Footer({
   lang: Locale;
   dict: Dictionary;
 }) {
-  const contactUrl = CONTACT_URLS[lang] || CONTACT_URLS.en;
+  const contactUrl = KONTAKT_URLS[lang] ?? KONTAKT_URLS.en;
 
   return (
     <footer className="bg-[#001a35] text-white mt-auto">
