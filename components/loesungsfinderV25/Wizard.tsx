@@ -115,22 +115,27 @@ export default function Wizard({ lang }: WizardProps) {
     <div className="rounded-2xl bg-light-gray p-4 sm:p-6 md:p-8">
       <ProgressHeader currentStep={currentStep} totalSteps={totalSteps} onCancel={cancel} />
 
-      {currentStep === 1 && (
-        <Step1Flaeche value={state.flaeche} onSelect={selectFlaeche} />
-      )}
-      {currentStep === 2 && (
-        <Step2InnenAussen value={state.innenAussen} onSelect={selectInnenAussen} />
-      )}
-      {currentStep === 3 && state.innenAussen && (
-        <Step3Einsatzbereich
-          innenAussen={state.innenAussen}
-          value={state.einsatzbereich}
-          onSelect={selectEinsatzbereich}
-        />
-      )}
-      {currentStep === 4 && state.flaeche !== "punktuell" && (
-        <Step4Zeitfenster value={state.zeitfenster} onSelect={selectZeitfenster} />
-      )}
+      {/* Mindesthöhe = höchster Step (Schritt 3, 6 Karten im 2er-Grid), damit
+          Container und Footer beim Weiterklicken nicht springen. Mobil bleibt
+          die Höhe natürlich (Sticky-Footer hält die Navigation ohnehin fest). */}
+      <div className="md:min-h-[500px]">
+        {currentStep === 1 && (
+          <Step1Flaeche value={state.flaeche} onSelect={selectFlaeche} />
+        )}
+        {currentStep === 2 && (
+          <Step2InnenAussen value={state.innenAussen} onSelect={selectInnenAussen} />
+        )}
+        {currentStep === 3 && state.innenAussen && (
+          <Step3Einsatzbereich
+            innenAussen={state.innenAussen}
+            value={state.einsatzbereich}
+            onSelect={selectEinsatzbereich}
+          />
+        )}
+        {currentStep === 4 && state.flaeche !== "punktuell" && (
+          <Step4Zeitfenster value={state.zeitfenster} onSelect={selectZeitfenster} />
+        )}
+      </div>
 
       {/* Footer-Navigation: mobil sticky am Viewport-Boden (Step-3-Weiter-Button
           sonst unter dem Fold), ab md regulär im Fluss. Negative Margins gleichen
