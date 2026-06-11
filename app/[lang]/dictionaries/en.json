@@ -244,7 +244,9 @@
     "cell_7tage": "7 days",
     "cta_text": "Not sure? The solution finder guides you in a few steps to the right solution – or talk directly to our advisors.",
     "cta_loesungsfinder": "Start solution finder",
-    "cta_kontakt": "Contact our advisors"
+    "cta_kontakt": "Contact our advisors",
+    "count_produkte": "{n} products",
+    "count_produkte_5plus": "{n} products"
   },
   "footer": {
     "tagline": "Systematic renovation. Since 1936.",

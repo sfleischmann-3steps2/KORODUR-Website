@@ -244,7 +244,9 @@
     "cell_7tage": "7 jours",
     "cta_text": "Vous hésitez ? Le sélecteur de solutions vous guide en quelques étapes vers la solution adaptée – ou parlez directement à nos conseillers.",
     "cta_loesungsfinder": "Démarrer le sélecteur",
-    "cta_kontakt": "Contacter nos conseillers"
+    "cta_kontakt": "Contacter nos conseillers",
+    "count_produkte": "{n} produits",
+    "count_produkte_5plus": "{n} produits"
   },
   "footer": {
     "tagline": "Rénovation systématique. Depuis 1936.",
