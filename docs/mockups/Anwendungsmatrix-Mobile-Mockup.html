@@ -63,10 +63,11 @@
   .btn.primary { background: var(--cyan); color: #fff; }
   .btn.outline { background: #fff; color: var(--navy); border: 2px solid var(--navy); }
 
-  /* Variante B: Anwendungs-Chips */
-  .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 6px; scrollbar-width: none; }
-  .chips::-webkit-scrollbar { display: none; }
-  .chip { flex-shrink: 0; min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--mid-gray); background: #fff; font-size: 13px; font-weight: 700; color: var(--navy); cursor: pointer; font-family: inherit; }
+  /* Variante B: Anwendungs-Chips. Umbrechend statt horizontal scrollend:
+     alle 6 Optionen sofort sichtbar, 1 Tap zum Wechseln. Ein Dropdown wäre
+     kompakter, versteckt aber die Optionen und kostet 2 Taps pro Wechsel. */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 10px; margin-bottom: 6px; }
+  .chip { min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--mid-gray); background: #fff; font-size: 13px; font-weight: 700; color: var(--navy); cursor: pointer; font-family: inherit; }
   .chip.active { background: var(--navy); border-color: var(--navy); color: #fff; }
   .groupline { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 14px 2px 8px; }
   .groupline.best { color: var(--green); }
