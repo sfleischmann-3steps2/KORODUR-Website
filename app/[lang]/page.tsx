@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ReferenceCard from "../../components/ReferenceCard";
-import { getReferenzBySlug, referenzen } from "../../data/referenzen";
+import { getReferenzBySlug } from "../../data/referenzen";
 import { FEATURED_SLUGS } from "../../data/featured";
+import { bereiche } from "../../data/bereiche";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 import { withBasePath } from "../../lib/basePath";
@@ -34,14 +35,8 @@ export default async function Home({
     .map((slug) => getReferenzBySlug(slug))
     .filter((r): r is NonNullable<typeof r> => r !== undefined);
 
-  // Outdoor references: Einsatzbereiche enthalten Infrastruktur/Zufahrten oder Parkdeck
-  const outdoorRefs = referenzen
-    .filter(
-      (r) =>
-        r.einsatzbereiche.includes("infrastruktur-zufahrten") ||
-        r.einsatzbereiche.includes("parkdeck")
-    )
-    .slice(0, 2);
+  // Bereichs-Labels (lokalisiert, Keys: `<slug>_name` / `<slug>_teaser`)
+  const bereichTexte = dict.bereiche as Record<string, string>;
 
   // Finder steps
   const finderSteps = [
@@ -78,7 +73,7 @@ export default async function Home({
             className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-5"
             style={{ fontWeight: 700 }}
           >
-            KORODUR Sanierung
+            {dict.home.hero_kicker}
           </p>
           <h1
             className="leading-[1.08] mb-6"
@@ -97,7 +92,7 @@ export default async function Home({
           >
             {dict.home.hero_subtitle}
           </p>
-          <div>
+          <div className="flex flex-wrap gap-4">
             <Link
               href={`/${lang}/loesungsfinder/`}
               className="inline-block text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
@@ -105,6 +100,67 @@ export default async function Home({
             >
               {dict.home.hero_cta}
             </Link>
+            <Link
+              href={`/${lang}/produkte/`}
+              className="inline-block text-white no-underline rounded-[6px] border-2 border-white/50 hover:bg-white/10 transition-colors duration-200"
+              style={{ padding: "16px 34px", fontWeight: 800, fontSize: 16 }}
+            >
+              {dict.home.hero_cta_secondary}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 1b: Bereichs-Grid */}
+      <section className="bg-white" style={{ padding: "88px 32px 100px" }}>
+        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <h2
+            className="text-center mb-4"
+            style={{ fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 900, lineHeight: 1.12 }}
+          >
+            {dict.home.bereiche_title}
+          </h2>
+          <p
+            className="text-center text-navy opacity-60 mb-12 mx-auto"
+            style={{ maxWidth: 600, fontSize: 18 }}
+          >
+            {dict.home.bereiche_subtitle}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {bereiche.map((bereich) => (
+              <Link
+                key={bereich.slug}
+                href={`/${lang}/bereiche/${bereich.slug}/`}
+                className={`flex flex-col gap-2 rounded-xl bg-white p-6 no-underline transition-all duration-200 hover:border-cyan hover:shadow-lg ${
+                  bereich.abgegrenzt
+                    ? "border border-dashed border-mid-gray"
+                    : "border border-bullet-bg"
+                }`}
+              >
+                {bereich.abgegrenzt && (
+                  <span
+                    className="self-start bg-icon-bg text-navy text-xs rounded-full px-2 py-1"
+                    style={{ fontWeight: 700 }}
+                  >
+                    {dict.bereiche.katzenstreu_badge}
+                  </span>
+                )}
+                <span className="flex items-center justify-between gap-2 text-navy text-[17px]" style={{ fontWeight: 800 }}>
+                  {bereichTexte[`${bereich.slug}_name`]}
+                  <AppIcon
+                    icon={ChevronRight}
+                    width={18}
+                    height={18}
+                    strokeWidth={2}
+                    className="text-cyan shrink-0"
+                    aria-hidden="true"
+                  />
+                </span>
+                <span className="text-sm text-navy opacity-60 leading-[1.6]">
+                  {bereichTexte[`${bereich.slug}_teaser`]}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -184,31 +240,6 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Section 4: Außenflächen Cross-Selling */}
-      {outdoorRefs.length > 0 && (
-        <section className="bg-white" style={{ padding: "88px 32px 100px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <h2
-              className="text-center mb-4"
-              style={{ fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 900, lineHeight: 1.12 }}
-            >
-              {dict.home.outdoor_title}
-            </h2>
-            <p
-              className="text-center text-navy opacity-60 mb-12 mx-auto"
-              style={{ maxWidth: 600, fontSize: 18 }}
-            >
-              {dict.home.outdoor_description}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ maxWidth: 880, margin: "0 auto" }}>
-              {outdoorRefs.map((ref) => (
-                <ReferenceCard key={ref.id} referenz={ref} lang={lang} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Section 5: CTA + Footer area */}
       <section className="bg-navy text-white text-center" style={{ padding: "72px 32px" }}>
         <div className="mx-auto" style={{ maxWidth: 700 }}>
@@ -218,15 +249,13 @@ export default async function Home({
           <p className="text-white opacity-70 mb-8" style={{ fontSize: 18, lineHeight: 1.65 }}>
             {dict.home.cta_description}
           </p>
-          <a
-            href="https://www.korodur.de/kontakt/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={`/${lang}/kontakt/`}
             className="inline-block text-white no-underline rounded-[6px] border-2 border-white/40 hover:bg-white/10 transition-colors duration-200"
             style={{ padding: "14px 28px", fontWeight: 800, fontSize: 15 }}
           >
             {dict.home.cta_button}
-          </a>
+          </Link>
         </div>
       </section>
     </>

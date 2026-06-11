@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Search, X } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetTrigger,
@@ -63,11 +64,12 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   };
 
   const navLinks = [
-    { href: `/${lang}/`, label: dict.nav.home },
-    { href: `/${lang}/loesungsfinder/`, label: dict.nav.loesungsfinder },
-    { href: `/${lang}/referenzen/`, label: dict.nav.referenzen },
-    { href: `/${lang}/anwendungsmatrix/`, label: dict.nav.anwendungsmatrix },
     { href: `/${lang}/produkte/`, label: dict.nav.produkte },
+    { href: `/${lang}/sanierung/`, label: dict.nav.sanierung },
+    { href: `/${lang}/anwendungsmatrix/`, label: dict.nav.anwendungen },
+    { href: `/${lang}/referenzen/`, label: dict.nav.referenzen },
+    { href: `/${lang}/unternehmen/`, label: dict.nav.unternehmen },
+    { href: `/${lang}/kontakt/`, label: dict.nav.kontakt },
   ];
 
   return (
@@ -91,14 +93,9 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             >
               K
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-navy text-[18px] tracking-tight" style={{ fontWeight: 900 }}>
-                KORODUR
-              </span>
-              <span className="text-cyan text-[10px] uppercase tracking-wider" style={{ fontWeight: 700 }}>
-                Sanierung
-              </span>
-            </div>
+            <span className="text-navy text-[18px] tracking-tight" style={{ fontWeight: 900 }}>
+              KORODUR
+            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -146,6 +143,13 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             </button>
 
             <LanguageSwitcher lang={lang} />
+
+            {/* Desktop Lösungsfinder-CTA */}
+            <Button asChild size="lg" className="hidden lg:inline-flex">
+              <Link href={`/${lang}/loesungsfinder/`}>
+                {dict.nav.loesungsfinder}
+              </Link>
+            </Button>
 
             {/* Mobile drawer (Sheet) */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -210,6 +214,18 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                     </Link>
                   ))}
                 </nav>
+
+                {/* Mobile Lösungsfinder-CTA */}
+                <div className="px-4 pb-4">
+                  <Button asChild size="lg" className="w-full h-11 text-[15px]">
+                    <Link
+                      href={`/${lang}/loesungsfinder/`}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {dict.nav.loesungsfinder}
+                    </Link>
+                  </Button>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
