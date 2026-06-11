@@ -21,6 +21,14 @@ import { EINSATZBEREICH_TAGS } from "./einsatzbereichMapping";
 import { produkte, produktFilterV25, type Produkt } from "./produkte";
 import { referenzen } from "./referenzen";
 import { REFERENZ_FILTER_V25 } from "./referenzenV25";
+import { kuratierteEmpfehlung } from "./produktEmpfehlungKuratiert";
+
+// Produkt-Empfehlungsmodus (Steffi 2026-06-09):
+//  - "tags"      = A1, automatische Tag-Schnittmenge (aktuell live).
+//  - "kuratiert" = A2, strategische Tabelle (data/produktEmpfehlungKuratiert.ts).
+// Umschalten auf "kuratiert" erst nach Frank-Sign-off der Tabelle. Die
+// Referenz-Logik ist davon unabhängig und bleibt in beiden Modi gleich.
+export const EMPFEHLUNGS_MODUS: "tags" | "kuratiert" = "tags";
 
 export type V25Produkt = Produkt & ProduktFilterV25;
 export type V25Referenz = Referenz & ReferenzFilterV25;
@@ -41,6 +49,11 @@ export const MIN_REFS = 3;
 export interface ErgebnisV25 {
   /** Beste Produkt-Empfehlung oder null wenn keine passt. */
   topProdukt: V25Produkt | null;
+  /** Kuratierte Alternative zum Top-Produkt (nur im Modus "kuratiert",
+   *  null wo Frank bewusst keine Alternative vorgesehen hat). */
+  alternativProdukt: V25Produkt | null;
+  /** Anzeigehinweis zur Alternative (z. B. Systemaufbau), DE-Basis. */
+  alternativHinweis: string | null;
   /** Anzuzeigende Referenzen: mindestens MIN_REFS, falls die Datenbasis es
    *  hergibt. Exakte Treffer stehen vorne, danach (bei Bedarf) gelockerte. */
   refs: V25Referenz[];
@@ -69,12 +82,12 @@ export interface ErgebnisV25 {
  */
 export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
   if (!state.flaeche || !state.innenAussen || !state.einsatzbereich) {
-    return { topProdukt: null, refs: [], refsGesamt: 0, exaktTreffer: 0, refsGelockert: false };
+    return { topProdukt: null, alternativProdukt: null, alternativHinweis: null, refs: [], refsGesamt: 0, exaktTreffer: 0, refsGelockert: false };
   }
 
   // Mittel/Gross brauchen ein Zeitfenster; Punktuell ist davon befreit.
   if (state.flaeche !== "punktuell" && !state.zeitfenster) {
-    return { topProdukt: null, refs: [], refsGesamt: 0, exaktTreffer: 0, refsGelockert: false };
+    return { topProdukt: null, alternativProdukt: null, alternativHinweis: null, refs: [], refsGesamt: 0, exaktTreffer: 0, refsGelockert: false };
   }
 
   const branchenTags = EINSATZBEREICH_TAGS[state.einsatzbereich];
@@ -135,7 +148,24 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
     return a.wiederbelastungInH - b.wiederbelastungInH;
   });
 
-  const topProdukt = kandidaten[0] ?? null;
+  // A1: bestes tag-gerankte Produkt. A2: kuratierte Tabelle gewinnt, sofern ein
+  // Eintrag existiert und das Produkt auffindbar ist (sonst Fallback auf A1).
+  // Die Alternative (produkt2) gibt es nur im kuratierten Modus; A1 bleibt
+  // unverändert ein Ein-Produkt-Ergebnis.
+  let topProdukt = kandidaten[0] ?? null;
+  let alternativProdukt: V25Produkt | null = null;
+  let alternativHinweis: string | null = null;
+  if (EMPFEHLUNGS_MODUS === "kuratiert") {
+    const eintrag = kuratierteEmpfehlung(state.einsatzbereich, state.flaeche, state.zeitfenster);
+    const kuratiert = eintrag ? v25Produkte.find((p) => p.id === eintrag.produkt1) : undefined;
+    if (kuratiert && eintrag) {
+      topProdukt = kuratiert;
+      alternativProdukt = eintrag.produkt2
+        ? v25Produkte.find((p) => p.id === eintrag.produkt2) ?? null
+        : null;
+      alternativHinweis = alternativProdukt ? eintrag.produkt2Hinweis ?? null : null;
+    }
+  }
 
   // --- Referenzen filtern: produktunabhängig, mit Auffüllen auf MIN_REFS ---
   // Steffi 2026-06-09: Die Referenzanzeige läuft bewusst UNABHÄNGIG von der
@@ -191,7 +221,15 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
   const exaktTreffer = strikt.length;
   const gelockert = exaktTreffer < refs.length;
 
-  return { topProdukt, refs, refsGesamt: refs.length, exaktTreffer, refsGelockert: gelockert };
+  return {
+    topProdukt,
+    alternativProdukt,
+    alternativHinweis,
+    refs,
+    refsGesamt: refs.length,
+    exaktTreffer,
+    refsGelockert: gelockert,
+  };
 }
 
 /** Labels für die Auswahl-Chips oben auf der Ergebnisseite. */

@@ -86,6 +86,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
     fuer: ErgebnisV25;
     refs: Referenz[];
     topProdukt: Produkt | null;
+    alternativProdukt: Produkt | null;
   } | null>(null);
 
   useEffect(() => {
@@ -93,11 +94,14 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
     let aktiv = true;
     (async () => {
       const { localizeReferenzen, localizeProdukt } = await import("@/data/i18n/getLocalized");
-      const [refs, topProdukt] = await Promise.all([
+      const [refs, topProdukt, alternativProdukt] = await Promise.all([
         localizeReferenzen(ergebnis.refs.slice(0, 6), lang),
         ergebnis.topProdukt ? localizeProdukt(ergebnis.topProdukt, lang) : Promise.resolve(null),
+        ergebnis.alternativProdukt
+          ? localizeProdukt(ergebnis.alternativProdukt, lang)
+          : Promise.resolve(null),
       ]);
-      if (aktiv) setLokalisiert({ fuer: ergebnis, refs, topProdukt });
+      if (aktiv) setLokalisiert({ fuer: ergebnis, refs, topProdukt, alternativProdukt });
     })();
     return () => {
       aktiv = false;
@@ -108,6 +112,8 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
     lokalisiert?.fuer === ergebnis ? lokalisiert.refs : ergebnis.refs.slice(0, 6);
   const topProduktAnzeige: Produkt | null =
     lokalisiert?.fuer === ergebnis ? lokalisiert.topProdukt : ergebnis.topProdukt;
+  const alternativAnzeige: Produkt | null =
+    lokalisiert?.fuer === ergebnis ? lokalisiert.alternativProdukt : ergebnis.alternativProdukt;
 
   // Chip-Labels in der oberen Leiste (reine Zusammenfassung der Auswahl)
   const chips: string[] = [];
@@ -164,7 +170,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
             gap: 16,
             textDecoration: "none",
             color: NAVY,
-            marginBottom: 20,
+            marginBottom: alternativAnzeige ? 10 : 20,
           }}
         >
           <div
@@ -227,6 +233,85 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
         </Link>
       ) : (
         <EmptyEmpfehlung titel={t.ergebnis_empty_title} text={t.ergebnis_empty_text} />
+      )}
+
+      {/* Alternative (nur im kuratierten Modus belegt): bewusst dem Top-Banner
+          untergeordnet — Icon-Box outlined statt gefüllt, Label grau. */}
+      {alternativAnzeige && (
+        <Link
+          href={`/${lang}/produkte/${alternativAnzeige.id}/`}
+          style={{
+            background: "#fff",
+            border: `1px solid ${MITTELGRAU}`,
+            borderRadius: 12,
+            padding: "14px 18px",
+            display: "flex",
+            alignItems: "center",
+            gap: 16,
+            textDecoration: "none",
+            color: NAVY,
+            marginBottom: 20,
+          }}
+        >
+          <div
+            style={{
+              flexShrink: 0,
+              width: 40,
+              height: 40,
+              borderRadius: 8,
+              background: "#fff",
+              border: `1.5px solid ${NAVY}`,
+              color: NAVY,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <IconFlame width={22} height={22} aria-hidden="true" />
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div
+              style={{
+                fontSize: 10,
+                color: "#6B7280",
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
+                fontWeight: 500,
+                marginBottom: 2,
+              }}
+            >
+              {t.ergebnis_alternative}
+            </div>
+            <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
+              {alternativAnzeige.name}
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: "#6B7280",
+                marginTop: 2,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {ergebnis.alternativHinweis ?? alternativAnzeige.kurzbeschreibung}
+            </div>
+          </div>
+          <div
+            style={{
+              flexShrink: 0,
+              fontSize: 13,
+              color: CYAN,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 4,
+            }}
+          >
+            {t.ergebnis_details}
+            <IconArrowRight width={13} height={13} aria-hidden="true" />
+          </div>
+        </Link>
       )}
 
       {/* Referenzen-Header */}
