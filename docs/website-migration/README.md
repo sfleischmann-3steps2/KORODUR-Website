@@ -33,7 +33,7 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 | Bereich | DE-Daten | Bereichsseite | EN | FR | PL | Bilder | PR |
 |---|---|---|---|---|---|---|---|
 | industrieboden (Teil 1: NEODUR + Hartstoffe) | ✓ DE (17 neue Produkte + Bestand mit Varianten, 2026-06-11; AM Super + SVM 03 mangels Quelldaten offen) | ✓ Gruppen-Gliederung mit Anker-Chips | teilweise | teilweise | teilweise | — (neue Produkte ohne Bilder) | PR 5: umgesetzt, Sign-off Zuordnung offen |
-| industrieboden (Teil 2: Bauchemie) | teilweise (3/19 aus Bestand) | — | teilweise | teilweise | teilweise | — | PR 6 geplant |
+| industrieboden (Teil 2: Bauchemie) | ✓ DE (9 neue Produkte + Bestand angereichert, 2026-06-12; KOROMINERAL Lasur ohne Quelldaten offen) | ✓ (Gruppen Imprägnierung + Additive ergänzt) | teilweise | teilweise | teilweise | — | PR 6: umgesetzt |
 | sichtestrich | teilweise (1/6) | — | — | — | — | — | PR 7 geplant |
 | microtop | — (0/8) | — | — | — | — | — | PR 7 geplant |
 | spezialbaustoffe | teilweise (1/7) | — | — | — | — | — | PR 8 geplant |

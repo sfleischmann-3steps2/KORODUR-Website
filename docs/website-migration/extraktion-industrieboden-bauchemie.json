@@ -1,0 +1,340 @@
+[
+  {
+    "name": "KOROTAN",
+    "bestand": false,
+    "kurzbeschreibung": "KOROTAN ist ein flüssiges Spezial-Additiv mit verflüssigender und stabilisierender Wirkung für KORODUR-KOROTAN Industrieböden.",
+    "beschreibung": "KOROTAN wird als Verarbeitungshilfe verwendet: für einschichtige KORODUR Hartstoffestriche auf frischem oder erhärtetem Tragbeton, für alle zweischichtigen Systeme sowie als Zusatzmittel bei Estrichen aller Art. Die Übersichtsseite Bauchemische Produkte beschreibt es als Estrichfließmittel, Spezial-Additiv mit stabilisierenden Eigenschaften, speziell für KORODUR-KOROTAN Industrieböden.",
+    "produktart": "Additiv (Estrichfließmittel, Spezial-Additiv)",
+    "technischeDaten": [
+      { "label": "Form", "wert": "grüne Flüssigkeit" },
+      { "label": "Dichte (20°C)", "wert": "1,13 g/cm³" },
+      { "label": "pH-Wert", "wert": "ca. 9" },
+      { "label": "Dosierung", "wert": "bis ca. 1-2 % vom Zementgewicht" },
+      { "label": "SKU", "wert": "1320565" }
+    ],
+    "besonderheiten": [
+      "verflüssigende und stabilisierende Wirkung",
+      "speziell für KORODUR-KOROTAN Industrieböden",
+      "Verarbeitungshilfe für einschichtige Hartstoffestriche auf frischem oder erhärtetem Tragbeton",
+      "für alle zweischichtigen Systeme",
+      "als Zusatzmittel bei Estrichen aller Art"
+    ],
+    "anwendungen": [
+      "einschichtige KORODUR Hartstoffestriche auf frischem oder erhärtetem Tragbeton",
+      "zweischichtige Systeme",
+      "Zusatzmittel bei Estrichen aller Art",
+      "Industriebodensanierung (Querverweis in der Quelle)"
+    ],
+    "normen": [],
+    "luecken": [
+      "Kein Gebinde-/Verbrauchswert pro m² in der Quelle (nur Dosierung in % vom Zementgewicht)",
+      "Keine Normen explizit genannt"
+    ]
+  },
+  {
+    "name": "KOROCLEAN",
+    "bestand": false,
+    "kurzbeschreibung": "KOROCLEAN ist ein speziell entwickeltes Schleifverfahren zur optischen Aufwertung von KORODUR Industrieböden, aber auch für alle sonstigen zementären Industrieböden.",
+    "beschreibung": "Der Boden ist nach der KOROCLEAN Bearbeitung leichter zu reinigen und zu pflegen, farbliche Irritationen werden reduziert. Die Bearbeitung ist eine technisch wie ökonomisch sinnvolle Alternative zur herkömmlichen Bau-Schlussreinigung vor Inbetriebnahme der Bodenflächen. Gewerblich genutzte Lager- und Produktionsflächen erhalten eine hochwertige, staubfreie und leicht zu reinigende Oberfläche; das Verfahren kann auch für KORODUR Designböden empfohlen werden.",
+    "produktart": "Mechanisches Schleifverfahren / Reinigungsschliff (Oberflächenbearbeitung, kein Material)",
+    "technischeDaten": [
+      { "label": "Verfahren", "wert": "Mechanisches Verfahren, Reinigungsschliff (System der MKS Funke Schleiftechnik)" }
+    ],
+    "besonderheiten": [
+      "Verbesserung der optischen Eigenschaften, Sicherheit und Rutschhemmung zementgebundener Industrieböden",
+      "Alternative zur herkömmlichen Bau-Schlussreinigung",
+      "staubfreie, leicht zu reinigende Oberfläche",
+      "auch für KORODUR Designböden empfohlen"
+    ],
+    "anwendungen": [
+      "KORODUR Industrieböden",
+      "sonstige zementäre Industrieböden",
+      "KORODUR Designböden"
+    ],
+    "normen": [],
+    "luecken": [
+      "Keine technischen Kennwerte in der Quelle (Verfahren, kein Produkt)",
+      "Keine Normen explizit genannt",
+      "Quelle verweist auf 'Leitfaden KOROCLEAN' und 'Pflegehinweise' (nur als Links, ohne Inhalt)"
+    ]
+  },
+  {
+    "name": "KOROPOX",
+    "bestand": false,
+    "kurzbeschreibung": "KOROPOX ist ein wasseremulgierbares, transparentes, 2-komponentiges Epoxidharz (Konzentrat) zur Imprägnierung von KOROPLAN-, KORODUR- und NEODUR Industrieböden bzw. zementgebundenen Belägen.",
+    "beschreibung": "KOROPOX erhöht die Dichtig- und Beständigkeit gegen Wasser, Fett, Öl, Mineralöl, Treibstoff, Bremsflüssigkeiten usw. Laut Übersichtsseite Bauchemische Produkte erfolgt die Anwendung in 2 Arbeitsgängen.",
+    "produktart": "Epoxidharz-Imprägnierung (2-komponentig, wasseremulgierbares Konzentrat)",
+    "technischeDaten": [
+      { "label": "Form", "wert": "flüssig" },
+      { "label": "Farbe", "wert": "farblos" },
+      { "label": "Dichte", "wert": "1,0 g/cm³" },
+      { "label": "Verbrauch", "wert": "2 Arbeitsgänge, ca. 75-175 g/m² Konzentrat (Komp. A + B)" }
+    ],
+    "besonderheiten": [
+      "wasseremulgierbar und transparent",
+      "erhöht Dichtigkeit und Beständigkeit gegen Wasser, Fett, Öl, Mineralöl, Treibstoff, Bremsflüssigkeiten"
+    ],
+    "anwendungen": [
+      "Imprägnierung von KOROPLAN-, KORODUR- und NEODUR Industrieböden",
+      "Imprägnierung zementgebundener Beläge"
+    ],
+    "normen": [],
+    "luecken": [
+      "Keine Normen explizit genannt",
+      "Keine Angaben zu Topfzeit, Mischungsverhältnis A:B oder Trocknungszeiten in der Quelle"
+    ]
+  },
+  {
+    "name": "KOROMINERAL",
+    "bestand": false,
+    "kurzbeschreibung": "KOROMINERAL ist eine flüssige, transparente Imprägnierung auf Silikatbasis zur Oberflächenverkieselung mineralischer Baustoffe.",
+    "beschreibung": "KOROMINERAL dient der Imprägnierung von Beton- oder Estrichflächen in Lager- und Produktionsräumen, Kühlräumen etc. Es eignet sich speziell für mineralische Untergründe wie Estriche, zementgebundene Industrieböden, Beton, Mauermörtel und zementgebundenen Putz. KOROMINERAL erhöht die Dichtigkeit und besitzt eine wasserabweisende Wirkung.",
+    "produktart": "Imprägnierung (Silikatbasis, mit Verkieselungseffekt)",
+    "technischeDaten": [
+      { "label": "Farbe", "wert": "transparent" },
+      { "label": "Dichte", "wert": "ca. 1,12 g/cm³" },
+      { "label": "pH-Wert", "wert": "ca. 11" },
+      { "label": "Verbrauch", "wert": "ca. 100-200 g/m² (je nach Saugfähigkeit)" }
+    ],
+    "besonderheiten": [
+      "Oberflächenverkieselung mineralischer Baustoffe",
+      "erhöht die Dichtigkeit",
+      "wasserabweisende Wirkung"
+    ],
+    "anwendungen": [
+      "Beton- oder Estrichflächen in Lager- und Produktionsräumen, Kühlräumen",
+      "Estriche, zementgebundene Industrieböden, Beton, Mauermörtel, zementgebundener Putz"
+    ],
+    "normen": [],
+    "luecken": [
+      "Keine Normen explizit genannt"
+    ]
+  },
+  {
+    "name": "KOROMINERAL Cure",
+    "bestand": false,
+    "kurzbeschreibung": "KOROMINERAL CURE ist ein flüssiges, einkomponentiges, membranbildendes Nachbehandlungsmittel gegen vorzeitige Austrocknung mit kombinierter Silikatisierung.",
+    "beschreibung": "KOROMINERAL CURE schützt langfristig gegen Feuchtigkeit, Schmutz und Abnutzung. Das Silikat dringt tief in die Poren des Betons ein, reagiert mit dem freien Kalzium und bildet eine dauerhafte Verbindung mit dem Beton, sowohl im Innen- als auch im Außenbereich. Die Oberfläche ist nach der Applizierung staubfest und wasserabweisend; KOROMINERAL CURE trocknet transparent auf. Die Übersichtsseite ergänzt: Oberflächenschutz für zementäre Beton- und Industrieböden, 1 Arbeitsgang.",
+    "produktart": "Nachbehandlungsmittel (Curing) mit kombinierter Silikatisierung",
+    "technischeDaten": [
+      { "label": "Farbe", "wert": "milchig weiß" },
+      { "label": "Verbrauch", "wert": "ca. 60-100 ml/m² (1 Arbeitsgang, je nach Saugfähigkeit)" },
+      { "label": "pH-Wert", "wert": "11" }
+    ],
+    "besonderheiten": [
+      "membranbildend gegen vorzeitige Austrocknung",
+      "kombinierte Silikatisierung als Oberflächenschutz",
+      "Oberfläche nach Applizierung staubfest und wasserabweisend",
+      "trocknet transparent auf",
+      "innen und außen einsetzbar"
+    ],
+    "anwendungen": [
+      "Nachbehandlung zementärer Beton- und Industrieböden",
+      "Oberflächenschutz im Innen- und Außenbereich"
+    ],
+    "normen": [],
+    "luecken": [
+      "Keine Normen explizit genannt",
+      "Keine Angaben zu Form/Dichte in der Quelle",
+      "Schreibweisen-Varianz in der Quelle: 'KOROMINERAL CURE' vs. 'KOROMINERAL Cure'"
+    ]
+  },
+  {
+    "name": "KOROMINERAL Li+",
+    "bestand": false,
+    "kurzbeschreibung": "Flüssige, transparente Imprägnierung auf Basis Hybrid-Lithiumsilikat mit integriertem Basis-Fleckschutz.",
+    "beschreibung": "Die Quelle enthält nur die Tabellenzeile der Übersichtsseite Bauchemische Produkte: flüssige, transparente Imprägnierung auf Basis Hybrid-Lithiumsilikat mit integriertem Basis-Fleckschutz, Verbrauch ca. 40-100 g/m² je nach Saugfähigkeit.",
+    "produktart": "Imprägnierung (Hybrid-Lithiumsilikat)",
+    "technischeDaten": [
+      { "label": "Verbrauch", "wert": "ca. 40-100 g/m² (je nach Saugfähigkeit)" }
+    ],
+    "besonderheiten": [
+      "Basis Hybrid-Lithiumsilikat",
+      "integrierter Basis-Fleckschutz",
+      "transparent"
+    ],
+    "anwendungen": [],
+    "luecken": [
+      "Eigene Produktseite im Archiv nicht vorhanden (Wayback: 'has not archived that URL') — nur Tabellenzeile der Übersichtsseite",
+      "Keine technischen Kennwerte (Form, Dichte, pH) in der Quelle",
+      "Keine Anwendungsgebiete in der Quelle",
+      "Keine Normen explizit genannt",
+      "Schreibweisen-Varianz in der Quelle: 'KOROMINERAL Li+', 'KOROMINERAL Li +', 'KOROMINERAL LI+' (Navigationslisten)"
+    ],
+    "normen": []
+  },
+  {
+    "name": "KORODUR easyFinish",
+    "bestand": false,
+    "kurzbeschreibung": "KORODUR easyFinish ist eine flüssige, lösemittelfreie und gebrauchsfertige Glätthilfe für NEODUR HE 60 rapid und KOROCRETE.",
+    "beschreibung": "KORODUR easyFinish wird auf die getellerte NEODUR HE 60 rapid oder KOROCRETE Oberfläche vor dem ersten Flügelglätten aufgesprüht und eingearbeitet. Der Glättvorgang wird erleichtert, die Oberfläche wird zusätzlich vergütet, die Dichtigkeit wird erhöht und der Schutz gegen chemische Angriffe wird verbessert. Verwendbar für die Herstellung von Beton- und Estrichflächen auf frischen bis mattfeuchten Oberflächen.",
+    "produktart": "Glätthilfe (Verarbeitungshilfe)",
+    "technischeDaten": [
+      { "label": "Form", "wert": "flüssig" },
+      { "label": "Farbe", "wert": "bläulich" },
+      { "label": "Dichte", "wert": "1,0 +/- 0,02 kg/m³ (Einheit so in der Quelle)" },
+      { "label": "SKU", "wert": "1320570G30KG" }
+    ],
+    "besonderheiten": [
+      "lösemittelfrei und gebrauchsfertig",
+      "erleichtert den Glättvorgang (vor dem ersten Flügelglätten aufsprühen)",
+      "vergütet die Oberfläche und erhöht die Dichtigkeit",
+      "verbessert den Schutz gegen chemische Angriffe"
+    ],
+    "anwendungen": [
+      "Glätthilfe für NEODUR HE 60 rapid",
+      "Glätthilfe für KOROCRETE",
+      "Beton- und Estrichflächen, auf frische bis mattfeuchte Oberflächen"
+    ],
+    "normen": [],
+    "luecken": [
+      "Dichte-Einheit in der Quelle vermutlich fehlerhaft ('kg/m³' statt plausibel kg/dm³) — unverändert übernommen",
+      "Verweist auf Produkt 'KOROCRETE', das in der Quelle sonst nirgends beschrieben wird",
+      "Kein Verbrauchswert in der Quelle",
+      "Keine Normen explizit genannt"
+    ]
+  },
+  {
+    "name": "KORODUR nanoFinish",
+    "bestand": false,
+    "kurzbeschreibung": "KORODUR nanoFinish ist ein hochwertiges, flüssiges, gebrauchsfertiges Nano-Silica für die Veredelung von KORODUR Industrieböden.",
+    "beschreibung": "KORODUR nanoFinish verlangsamt den Feuchtigkeitsverlust und verlängert die Verarbeitungszeit; dadurch wird die Oberflächenbearbeitung beim Glätten selbst unter heißen, trockenen, sonnigen und windigen Bedingungen erleichtert und verbessert. Durch die Nano-Silica-Technologie wird die Wasserverdunstung verlangsamt, die Feuchtigkeit während der Oberflächenbearbeitung eingeschlossen und so eine vollständige Hydratation mit maximaler Festigkeitsentwicklung ermöglicht. Die Wahrscheinlichkeit von Ausblühungen, Rissbildungen infolge von Frühschwinden (plastisches Schwinden) und sonstigen Oberflächenirritationen wird reduziert.",
+    "produktart": "Nano-Silica-Verarbeitungshilfe / Oberflächenveredelung (Glätthilfe)",
+    "technischeDaten": [
+      { "label": "Form", "wert": "flüssig" },
+      { "label": "Farbe", "wert": "milchig trüb" },
+      { "label": "Dichte", "wert": "1,035 cm³ (Einheit so in der Quelle)" },
+      { "label": "pH-Wert", "wert": "5" }
+    ],
+    "besonderheiten": [
+      "Nano-Silica-Technologie",
+      "verlangsamt Feuchtigkeitsverlust, verlängert Verarbeitungszeit",
+      "erleichtert Glätten auch unter heißen, trockenen, windigen Bedingungen",
+      "ermöglicht vollständige Hydratation mit maximaler Festigkeitsentwicklung",
+      "reduziert Ausblühungen und Rissbildung durch Frühschwinden"
+    ],
+    "anwendungen": [
+      "Veredelung von KORODUR Industrieböden",
+      "Systemkomponente laut Quelle zu: NEODUR HE 65, NEODUR HE 65 plus, NEODUR HE 40, NEODUR HE 3, NEODUR HE 2"
+    ],
+    "normen": [],
+    "luecken": [
+      "Dichte-Einheit in der Quelle defekt ('1,035 cm³', vermutlich g/cm³) — unverändert übernommen",
+      "Kein Verbrauchswert in der Quelle",
+      "Keine Normen explizit genannt",
+      "Fehlt in der Tabelle der Übersichtsseite 'Bauchemische Produkte' (dort nicht gelistet)"
+    ]
+  },
+  {
+    "name": "KORODUR uniPrimer",
+    "bestand": false,
+    "kurzbeschreibung": "KORODUR uniPrimer ist die flüssige, lösemittelfreie, einkomponentige, gebrauchsfertige Universalgrundierung auf Acrylat-Co-Polymer- und Silikatbasis zur Vorbehandlung unterschiedlich saugender Betonuntergründe.",
+    "beschreibung": "KORODUR uniPrimer dient zum Grundieren von saugenden Untergründen für die Beschichtung mit zementgebundenen Hartstoffestrichen, geeignet für nachfolgende Beschichtungen mit Haftbrücke und KORODUR/NEODUR Hartstoffestrichen als Schutz vor zu schnellem Wasserentzug. Er reduziert das Saugverhalten trockener Untergründe und somit das zeitaufwändige Vornässen bei Industriebodensanierungen, z. B. mit NEODUR HE 65 oder NEODUR HE 60 rapid. Ein Verdunsten der KORODUR HB 5 oder HB 5 rapid Haftbrücke wird durch kontrolliertes Untergrund-Saugverhalten minimiert und eine gleichmäßigere Hydratation des Verbundsystems erreicht.",
+    "produktart": "Grundierung (Universalgrundierung, Acrylat-Co-Polymer- und Silikatbasis)",
+    "technischeDaten": [
+      { "label": "Form", "wert": "flüssig" },
+      { "label": "Farbe", "wert": "milchig weiß" },
+      { "label": "Dichte", "wert": "1,05 g/m³ (Einheit so in der Quelle)" },
+      { "label": "pH-Wert", "wert": "11,6" },
+      { "label": "SKU", "wert": "1320606G30KG" }
+    ],
+    "besonderheiten": [
+      "lösemittelfrei, einkomponentig, gebrauchsfertig",
+      "reduziert Saugverhalten trockener Untergründe — ersetzt zeitaufwändiges Vornässen",
+      "minimiert Verdunsten der Haftbrücke (KORODUR HB 5 / HB 5 rapid)",
+      "gleichmäßigere Hydratation des Verbundsystems"
+    ],
+    "anwendungen": [
+      "Grundieren saugender Betonuntergründe vor Beschichtung mit zementgebundenen Hartstoffestrichen",
+      "Industriebodensanierungen, z. B. mit NEODUR HE 65 oder NEODUR HE 60 rapid",
+      "Systemkomponente laut Quelle zu: NEODUR HE 65, NEODUR HE 40, NEODUR HE 3, NEODUR HE 60 rapid"
+    ],
+    "normen": [],
+    "luecken": [
+      "Dichte-Einheit in der Quelle vermutlich fehlerhaft ('g/m³' statt plausibel g/cm³) — unverändert übernommen",
+      "Kein Verbrauchswert in der Quelle",
+      "Keine Normen explizit genannt",
+      "In der Quelle nur Kategorie 'Industrieboden', nicht explizit 'Bauchemische Produkte'; fehlt auch in der Tabelle der Übersichtsseite"
+    ]
+  },
+  {
+    "name": "KOROTEX",
+    "bestand": true,
+    "kurzbeschreibung": "KOROTEX ist ein Nachbehandlungsmittel gegen vorzeitige Austrocknung für KORODUR Industrieböden und Zementestriche.",
+    "beschreibung": "Gemäß DIN 18353 'Estricharbeiten' und DIN 18560 'Estriche im Bauwesen' müssen Estriche vor ungleichmäßigem und zu raschem Austrocknen geschützt werden; neben Zusammensetzung und Verarbeitung bestimmt auch die richtige Nachbehandlung die Güte eines KORODUR Industriebodens. KOROTEX Nachbehandlung ist besonders wichtig bei erhöhten Temperaturen, niedriger Luftfeuchtigkeit und starker Zugluft. Das Aufsprühen von KOROTEX ist die rationellste Methode bei frisch verlegten Estrichflächen. Die Übersichtsseite beschreibt es als Nachbehandlungsmittel auf Kunstharzbasis.",
+    "produktart": "Nachbehandlungsmittel (Verdunstungsschutz, Kunstharzbasis)",
+    "technischeDaten": [
+      { "label": "Form", "wert": "weiße Flüssigkeit" },
+      { "label": "Dichte (20°C)", "wert": "1,01 kg/dm³" },
+      { "label": "Verbrauch", "wert": "ca. 150 g/m²" }
+    ],
+    "besonderheiten": [
+      "Schutz gegen vorzeitige Austrocknung",
+      "seit Jahren bewährt",
+      "besonders wichtig bei erhöhten Temperaturen, niedriger Luftfeuchtigkeit und Zugluft",
+      "Aufsprühen als rationellste Applikationsmethode"
+    ],
+    "anwendungen": [
+      "Nachbehandlung frisch hergestellter KORODUR Industrieböden",
+      "Nachbehandlung von Betonflächen und zementgebundenen Estrichen"
+    ],
+    "normen": ["DIN 18353", "DIN 18560"],
+    "luecken": [
+      "Kein pH-Wert in der Quelle"
+    ]
+  },
+  {
+    "name": "KOROCURE",
+    "bestand": true,
+    "kurzbeschreibung": "KOROCURE ist ein flüssiger, temporärer Verdunstungsschutz zur Zwischen-Nachbehandlung.",
+    "beschreibung": "Zum Schutz des jungen Betons sind je nach Betonqualität, Umgebungs- und Witterungsverhältnissen gem. DIN EN 13670 in Verbindung mit DIN 1045-3 Zwischen-Nachbehandlungsmaßnahmen erforderlich; die Zwischen-Nachbehandlung schützt das im Beton enthaltene Wasser vor Verdunstung, damit der Zement vollständig hydratisieren kann. Die Anwendung beginnt unmittelbar und abschnittsweise nach dem Einbau des Betons; bei Verdunstung größer als das zu erwartende Bluten oder bei W/Z-Wert < 0,5 so früh wie möglich. Beim Einsatz primär als Grundierung für nachfolgende Hartstoffbeschichtungen ist KOROCURE unmittelbar nach Begehbarkeit des Betons aufzutragen (Oberfläche mattfeucht, kein stehendes Wasser).",
+    "produktart": "Temporärer Verdunstungsschutz / Zwischen-Nachbehandlungsmittel",
+    "technischeDaten": [
+      { "label": "Form", "wert": "gelbliche Flüssigkeit" },
+      { "label": "Dichte", "wert": "i. M. 1,0 kg/dm³" },
+      { "label": "pH-Wert", "wert": "ca. 11" },
+      { "label": "Verbrauch", "wert": "ca. 120 g/m²" },
+      { "label": "SKU", "wert": "1320576G30KG" }
+    ],
+    "besonderheiten": [
+      "temporärer Verdunstungsschutz zur Zwischen-Nachbehandlung",
+      "Anwendung unmittelbar und abschnittsweise nach Betoneinbau",
+      "auch als Grundierung für nachfolgende Hartstoffbeschichtungen einsetzbar",
+      "wichtig bei Betoneinbau mit W/Z-Wert < 0,5"
+    ],
+    "anwendungen": [
+      "Zwischen-Nachbehandlung von jungem Beton",
+      "Grundierung für nachfolgende Hartstoffbeschichtungen"
+    ],
+    "normen": ["DIN EN 13670", "DIN 1045-3"],
+    "luecken": []
+  },
+  {
+    "name": "System KORODUR-KOROTAN",
+    "bestand": false,
+    "kurzbeschreibung": "KORODUR-KOROTAN Industrieboden ist ein zementgebundener KORODUR Hartstoffestrich, der einschichtig im Verbund mit Haftbrücke auf erhärtetem Tragbeton i. M. in einer Nenndicke von 15 mm verlegt wird.",
+    "beschreibung": "Die Verlegung erfolgt weitgehend ohne Fugen, vorhandene Fugen im Untergrund müssen übernommen werden. In Kombination mit der KORODUR Haftbrücke HB 5 entsteht ein kraftschlüssiger Verbund. Eines von drei KORODUR-Sanierungssystemen für Industrieböden (neben System NEODUR HE 60 rapid und System NEODUR Level); KORODUR HB 5 ist laut Quelle 'besonders bewährt in Verbindung mit dem KORODUR-KOROTAN Industriebodensystem'.",
+    "produktart": "Industriebodensystem (Sanierungssystem: Hartstoffestrich im Verbund mit Haftbrücke)",
+    "technischeDaten": [
+      { "label": "Nenndicke / Schichtstärke", "wert": "i. M. 15 mm" },
+      { "label": "Aufbau", "wert": "einschichtig im Verbund mit Haftbrücke (KORODUR HB 5) auf erhärtetem Tragbeton" }
+    ],
+    "besonderheiten": [
+      "Hartstoffestrich nach DIN 18560 bzw. DIN EN 13813",
+      "Druck- und Verschleißeigenschaften gem. DIN 1100",
+      "rein mineralisch",
+      "weitgehend fugenlos",
+      "durch Langlebigkeit eine gute, wirtschaftliche Alternative"
+    ],
+    "anwendungen": [
+      "Sanierung und Modernisierung von Industrieböden",
+      "überall im Industrie- und Gewerbebau"
+    ],
+    "normen": ["DIN 18560", "DIN EN 13813", "DIN 1100"],
+    "luecken": [
+      "Systemkomponenten KOROTAN (Additiv) und konkrete Hartstoffestrich-Qualitäten werden im Systemtext nicht einzeln spezifiziert",
+      "Keine technischen Kennwerte (Festigkeiten) für das System selbst — Quelle verweist auf 'Hartstoffschicht'",
+      "Schichtdickentabelle nennt nur '15 mm', keine Bandbreite"
+    ]
+  }
+]

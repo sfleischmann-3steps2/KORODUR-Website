@@ -310,7 +310,9 @@
     "gruppe_untergrund-haftbruecken": "Support, ponts d'adhérence et primaires",
     "gruppe_kunstharz-hartstoffe": "Agrégats durs pour systèmes résine",
     "gruppe_systeme": "Systèmes et mise en œuvre",
-    "gruppe_nachbehandlung": "Cure et protection de surface"
+    "gruppe_nachbehandlung": "Cure et protection de surface",
+    "gruppe_impraegnierung": "Imprégnation et silicatisation",
+    "gruppe_additive": "Additifs et auxiliaires de mise en œuvre"
   },
   "sanierungHub": {
     "title": "Rénover avec KORODUR",

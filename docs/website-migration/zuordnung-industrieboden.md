@@ -42,6 +42,20 @@ Begründung: weniger Fast-Duplikat-Seiten, bessere UX; Redirect-Map (Stufe 5) le
 | Silosystem Tagesleistung 1.000–1.500 vs. 1.000–2.000 m² | Beide Angaben übernommen mit Quellenvermerk — TDS-Klärung offen |
 | HB 5 rapid: "KORODUR HB 5 rapid" vs. "HB 5/60 rapid" | Bestandsname "KORODUR HB 5 rapid" bleibt |
 
+## Teil 2: Bauchemie (2026-06-12, Extraktion `extraktion-industrieboden-bauchemie.json`)
+
+| Gruppe | Produkte | Bemerkung |
+|---|---|---|
+| Nachbehandlung (`nachbehandlung`) | KOROTEX · KOROCURE · KOROMINERAL CURE (Bestand) + easyFinish · nanoFinish (neu) | Schnitt gemäß Excel |
+| Imprägnierung & Silikatisierung (`impraegnierung`) | KOROMINERAL · KOROMINERAL Li+ · KOROPOX | Excel-Gruppe; KOROPOX (2K-Epoxid-Imprägnierung) dazugestellt |
+| Additive (`additive`) | KOROTAN | Estrichfließmittel/Spezial-Additiv, in der Excel nicht erfasst |
+| Untergrund/Grundierungen | uniPrimer (neu dazu) | Excel: Grundierung |
+| Systeme & Verarbeitung | KOROCLEAN (neu) · System KORODUR-KOROTAN (neu) | **KOROCLEAN ist ein Schleifverfahren, kein Material** — als Verfahren unter Systeme einsortiert |
+
+**Quellfehler, bewusst NICHT übernommen (TDS-Klärung offen):** defekte Dichte-Einheiten der Alt-Site bei easyFinish ("1,0 kg/m³"), nanoFinish ("1,035 cm³") und uniPrimer ("1,05 g/m³") — plausibel wären kg/dm³ bzw. g/cm³, aber wir erfinden keine Werte.
+
+**Dünn migriert:** KOROMINERAL Li+ (nur Tabellenzeile, eigene Seite nicht archiviert). **Nicht migriert:** "KOROMINERAL Lasur" (nur Navigationseintrag bei HE 60 rapid, null Inhalt).
+
 ## Nicht migriert (Datenlage)
 
 - **NEODUR AM Super(/Plus):** nur Navigationseintrag, keinerlei Inhalte im Scrape → braucht TDS/Input Frank

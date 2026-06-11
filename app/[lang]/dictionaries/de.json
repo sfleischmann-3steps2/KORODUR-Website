@@ -310,7 +310,9 @@
     "gruppe_untergrund-haftbruecken": "Untergrund, Haftbrücken & Grundierungen",
     "gruppe_kunstharz-hartstoffe": "Hartstoffe für Kunstharzsysteme",
     "gruppe_systeme": "Systeme & Verarbeitung",
-    "gruppe_nachbehandlung": "Nachbehandlung & Oberflächenschutz"
+    "gruppe_nachbehandlung": "Nachbehandlung & Oberflächenschutz",
+    "gruppe_impraegnierung": "Imprägnierung & Silikatisierung",
+    "gruppe_additive": "Additive & Verarbeitungshilfen"
   },
   "sanierungHub": {
     "title": "Sanieren mit KORODUR",

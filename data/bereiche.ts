@@ -31,6 +31,8 @@ export const bereiche: Bereich[] = [
       "selbstverlaufend",
       "untergrund-haftbruecken",
       "nachbehandlung",
+      "impraegnierung",
+      "additive",
       "kunstharz-hartstoffe",
       "systeme",
     ],
