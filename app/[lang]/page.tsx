@@ -7,6 +7,8 @@ import { FEATURED_SLUGS } from "../../data/featured";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 import { withBasePath } from "../../lib/basePath";
+import { AppIcon } from "@/components/ui/icon";
+import { ChevronRight } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -74,7 +76,7 @@ export default async function Home({
           style={{ maxWidth: 1320, padding: "120px 32px 140px", minHeight: 560 }}
         >
           <p
-            className="text-[#009ee3] text-[13px] uppercase tracking-[0.2em] mb-5"
+            className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-5"
             style={{ fontWeight: 700 }}
           >
             KORODUR Sanierung
@@ -85,7 +87,7 @@ export default async function Home({
               fontSize: "clamp(32px, 5vw, 54px)",
               fontWeight: 900,
               maxWidth: 650,
-              color: "#ffffff",
+              color: "var(--white)",
             }}
           >
             {dict.home.hero_title}
@@ -99,7 +101,7 @@ export default async function Home({
           <div>
             <Link
               href={`/${lang}/loesungsfinder/`}
-              className="inline-block text-white no-underline rounded-[6px] bg-[#009ee3] hover:bg-[#0090d0] transition-colors duration-200"
+              className="inline-block text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
               style={{ padding: "18px 36px", fontWeight: 800, fontSize: 16 }}
             >
               {dict.home.hero_cta}
@@ -126,13 +128,11 @@ export default async function Home({
             <div className="text-center mt-10">
               <Link
                 href={`/${lang}/referenzen/`}
-                className="inline-flex items-center gap-2 text-[#009ee3] text-[15px] no-underline hover:underline"
+                className="inline-flex items-center gap-2 text-cyan text-[15px] no-underline hover:underline"
                 style={{ fontWeight: 700 }}
               >
                 {dict.home.featured_link}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
+                <AppIcon icon={ChevronRight} width={16} height={16} strokeWidth={2} aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default async function Home({
       )}
 
       {/* Section 3: Lösungsfinder-Teaser */}
-      <section className="bg-[#f5f5f6]" style={{ padding: "88px 32px 100px" }}>
+      <section className="bg-icon-bg" style={{ padding: "88px 32px 100px" }}>
         <div className="mx-auto text-center" style={{ maxWidth: 900 }}>
           <h2
             className="mb-4"
@@ -149,7 +149,7 @@ export default async function Home({
             {dict.home.finder_teaser_title}
           </h2>
           <p
-            className="text-[#002d59] opacity-60 mb-12 mx-auto"
+            className="text-navy opacity-60 mb-12 mx-auto"
             style={{ maxWidth: 600, fontSize: 18 }}
           >
             {dict.home.finder_teaser_description}
@@ -161,12 +161,12 @@ export default async function Home({
               <div key={i} className="flex flex-col items-center gap-3">
                 <div
                   className="w-[52px] h-[52px] flex items-center justify-center text-white text-[18px] rounded-full"
-                  style={{ backgroundColor: "#009ee3", fontWeight: 900 }}
+                  style={{ backgroundColor: "var(--cyan)", fontWeight: 900 }}
                 >
                   {i + 1}
                 </div>
                 <span
-                  className="text-[#002d59] text-[14px]"
+                  className="text-navy text-[14px]"
                   style={{ fontWeight: 700 }}
                 >
                   {label}
@@ -177,7 +177,7 @@ export default async function Home({
 
           <Link
             href={`/${lang}/loesungsfinder/`}
-            className="inline-block text-white no-underline rounded-[6px] bg-[#009ee3] hover:bg-[#0090d0] transition-colors duration-200"
+            className="inline-block text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
             style={{ padding: "16px 30px", fontWeight: 800, fontSize: 15 }}
           >
             {dict.home.finder_teaser_cta}
@@ -196,7 +196,7 @@ export default async function Home({
               {dict.home.outdoor_title}
             </h2>
             <p
-              className="text-center text-[#002d59] opacity-60 mb-12 mx-auto"
+              className="text-center text-navy opacity-60 mb-12 mx-auto"
               style={{ maxWidth: 600, fontSize: 18 }}
             >
               {dict.home.outdoor_description}
@@ -211,7 +211,7 @@ export default async function Home({
       )}
 
       {/* Section 5: CTA + Footer area */}
-      <section className="bg-[#002d59] text-white text-center" style={{ padding: "72px 32px" }}>
+      <section className="bg-navy text-white text-center" style={{ padding: "72px 32px" }}>
         <div className="mx-auto" style={{ maxWidth: 700 }}>
           <h2 className="text-white mb-4" style={{ fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 900 }}>
             {dict.home.cta_title}

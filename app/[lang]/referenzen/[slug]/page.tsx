@@ -21,7 +21,7 @@ type Lang = "de" | "en" | "fr" | "pl";
 const container = { maxWidth: 1080 };
 const sectionPad = { padding: "0 24px 16px" };
 const cardStyle = {
-  backgroundColor: "#fff",
+  backgroundColor: "var(--white)",
   border: "1px solid #e2e8ef",
   borderRadius: 8,
 };
@@ -71,7 +71,7 @@ function DetailSection({
     <section style={sectionPad}>
       <div className="mx-auto" style={container}>
         <div className="p-6 md:p-7" style={cardStyle}>
-          <h2 className="text-[#002d59] text-[20px] m-0 mb-4 leading-tight" style={{ fontWeight: 900 }}>
+          <h2 className="text-navy text-[20px] m-0 mb-4 leading-tight" style={{ fontWeight: 900 }}>
             {title}
           </h2>
           {children}
@@ -109,7 +109,7 @@ function CheckList({ items }: { items: string[] }) {
   return (
     <ul className="list-none m-0 p-0 flex flex-col gap-3">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-3 text-[#002d59] text-[15px] leading-[1.55]">
+        <li key={item} className="flex items-start gap-3 text-navy text-[15px] leading-[1.55]">
           <span className="text-[#00a9e0] mt-1" aria-hidden="true">
             ✓
           </span>
@@ -142,7 +142,7 @@ function LabeledImage({
       </div>
       <div className="flex items-center gap-3 px-4 py-3">
         <span
-          className="text-[11px] uppercase tracking-wide px-2 py-1 rounded-[4px] text-[#002d59]"
+          className="text-[11px] uppercase tracking-wide px-2 py-1 rounded-[4px] text-navy"
           style={{ backgroundColor: "#e7f0fa", fontWeight: 800 }}
         >
           {label}
@@ -156,7 +156,7 @@ function LabeledImage({
 function renderResult(referenz: Referenz) {
   if (Array.isArray(referenz.ergebnis)) return <CheckList items={referenz.ergebnis} />;
   if (referenz.ergebnis) {
-    return <p className="text-[#002d59] text-[15px] leading-[1.7] m-0">{referenz.ergebnis}</p>;
+    return <p className="text-navy text-[15px] leading-[1.7] m-0">{referenz.ergebnis}</p>;
   }
   return <CheckList items={referenz.vorteile} />;
 }
@@ -233,7 +233,7 @@ export default async function ReferenzDetailPage({
             <div className="flex flex-wrap items-center gap-2 mb-4">
               {kategorieLabel && (
                 <span
-                  className="text-[11px] uppercase tracking-wide px-3 py-1 rounded-[4px] text-[#002d59]"
+                  className="text-[11px] uppercase tracking-wide px-3 py-1 rounded-[4px] text-navy"
                   style={{ backgroundColor: "#e7f0fa", fontWeight: 800 }}
                 >
                   {kategorieLabel}
@@ -256,7 +256,7 @@ export default async function ReferenzDetailPage({
                 </span>
               )}
             </div>
-            <h1 className="text-[#002d59] m-0 mb-2 leading-tight" style={{ fontSize: "clamp(30px, 5vw, 44px)", fontWeight: 900 }}>
+            <h1 className="text-navy m-0 mb-2 leading-tight" style={{ fontSize: "clamp(30px, 5vw, 44px)", fontWeight: 900 }}>
               {referenz.titel}
             </h1>
             <p className="text-[#0079a3] text-[18px] m-0 mb-3" style={{ fontWeight: 800 }}>
@@ -289,7 +289,7 @@ export default async function ReferenzDetailPage({
                   <span className="text-[11px] uppercase tracking-wide text-[#5d6b7a]" style={{ fontWeight: 800 }}>
                     {row.label}
                   </span>
-                  <span className="text-[#002d59] text-[14px] text-right" style={{ fontWeight: 800 }}>
+                  <span className="text-navy text-[14px] text-right" style={{ fontWeight: 800 }}>
                     {row.value}
                   </span>
                 </div>
@@ -304,7 +304,7 @@ export default async function ReferenzDetailPage({
                       key={product.id}
                       href={`/${lang}/produkte/${product.id}/`}
                       className="text-[12px] text-white no-underline rounded-[4px] px-2.5 py-1"
-                      style={{ backgroundColor: "#002d59", fontWeight: 800 }}
+                      style={{ backgroundColor: "var(--navy)", fontWeight: 800 }}
                     >
                       {product.name}
                     </Link>
@@ -320,7 +320,7 @@ export default async function ReferenzDetailPage({
           {referenz.kennwerte && referenz.kennwerte.length > 0 && (
             <div className="grid grid-cols-2 gap-3">
               {referenz.kennwerte.map((metric) => (
-                <div key={`${metric.value}-${metric.label}`} className="text-center p-4 rounded-[8px] bg-[#002d59]">
+                <div key={`${metric.value}-${metric.label}`} className="text-center p-4 rounded-[8px] bg-navy">
                   <div className="text-white text-[22px] leading-tight" style={{ fontWeight: 900 }}>
                     {metric.value}
                   </div>
@@ -341,7 +341,7 @@ export default async function ReferenzDetailPage({
       {showSituation && (
         <DetailSection title="Ausgangssituation und Herausforderung">
           {referenz.ausgangssituation && (
-            <p className="text-[#002d59] text-[15px] leading-[1.7] mt-0 mb-5">{referenz.ausgangssituation}</p>
+            <p className="text-navy text-[15px] leading-[1.7] mt-0 mb-5">{referenz.ausgangssituation}</p>
           )}
           <CheckList items={referenz.herausforderungen} />
         </DetailSection>
@@ -350,7 +350,7 @@ export default async function ReferenzDetailPage({
       <DetailSection title="Unsere Lösung">
         <div className={solutionImage ? "grid grid-cols-1 md:grid-cols-2 gap-5 items-start" : ""}>
           <div>
-            <p className="text-[#002d59] text-[15px] leading-[1.7] mt-0 mb-4">{referenz.loesung}</p>
+            <p className="text-navy text-[15px] leading-[1.7] mt-0 mb-4">{referenz.loesung}</p>
             {produktDetails[0] && (
               <Link
                 href={`/${lang}/produkte/${produktDetails[0].id}/`}
@@ -381,7 +381,7 @@ export default async function ReferenzDetailPage({
                 <div className="text-[11px] text-[#5d6b7a] uppercase tracking-wide" style={{ fontWeight: 800 }}>
                   {row.label}
                 </div>
-                <div className="text-[#002d59] text-[14px]" style={{ fontWeight: 800 }}>
+                <div className="text-navy text-[14px]" style={{ fontWeight: 800 }}>
                   {row.value}
                 </div>
               </div>
@@ -394,7 +394,7 @@ export default async function ReferenzDetailPage({
         <DetailSection title="Ergebnis und Wirkung">
           {renderResult(referenz)}
           {referenz.langzeit && (
-            <p className="text-[#002d59] text-[15px] leading-[1.7] mb-0 mt-5">
+            <p className="text-navy text-[15px] leading-[1.7] mb-0 mt-5">
               <strong>Langzeit-Beobachtung:</strong> {referenz.langzeit}
             </p>
           )}
@@ -403,7 +403,7 @@ export default async function ReferenzDetailPage({
 
       {referenz.nachhaltigkeit && (
         <DetailSection title="Nachhaltigkeit">
-          <p className="text-[#002d59] text-[15px] leading-[1.7] mt-0">{referenz.nachhaltigkeit.text}</p>
+          <p className="text-navy text-[15px] leading-[1.7] mt-0">{referenz.nachhaltigkeit.text}</p>
           {referenz.nachhaltigkeit.facts && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
               {referenz.nachhaltigkeit.facts.map((fact) => (
@@ -411,7 +411,7 @@ export default async function ReferenzDetailPage({
                   <div className="text-[11px] text-[#5d6b7a] uppercase tracking-wide" style={{ fontWeight: 800 }}>
                     {fact.label}
                   </div>
-                  <div className="text-[#002d59] text-[14px]" style={{ fontWeight: 800 }}>
+                  <div className="text-navy text-[14px]" style={{ fontWeight: 800 }}>
                     {fact.value}
                   </div>
                 </div>
@@ -436,7 +436,7 @@ export default async function ReferenzDetailPage({
               )}
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <h3 className="text-[#002d59] text-[18px] m-0" style={{ fontWeight: 900 }}>
+                  <h3 className="text-navy text-[18px] m-0" style={{ fontWeight: 900 }}>
                     {produkt.name}
                   </h3>
                   {produkt.qualitaetsklasse && (
@@ -450,7 +450,7 @@ export default async function ReferenzDetailPage({
                   {produkt.technischeDaten.slice(0, 6).map((td) => (
                     <div key={`${produkt.id}-${td.label}`} className="rounded-[8px] bg-[#f4f6f8] px-3 py-2">
                       <div className="text-[11px] text-[#5d6b7a]">{td.label}</div>
-                      <div className="text-[#002d59] text-[13px]" style={{ fontWeight: 800 }}>
+                      <div className="text-navy text-[13px]" style={{ fontWeight: 800 }}>
                         {td.wert}
                       </div>
                     </div>
@@ -458,7 +458,7 @@ export default async function ReferenzDetailPage({
                 </div>
                 {produkt.normen.length > 0 && (
                   <p className="text-[#5d6b7a] text-[13px] mt-4 mb-0">
-                    <strong className="text-[#002d59]">Normen und Zulassungen:</strong> {produkt.normen.join(" · ")}
+                    <strong className="text-navy">Normen und Zulassungen:</strong> {produkt.normen.join(" · ")}
                   </p>
                 )}
                 <Link
@@ -474,7 +474,7 @@ export default async function ReferenzDetailPage({
           {referenz.produkte
             .filter((name) => !produktDetails.find((p) => p.name === name))
             .map((name) => (
-              <div key={name} className="rounded-[8px] border border-[#e2e8ef] p-4 text-[#002d59]" style={{ fontWeight: 800 }}>
+              <div key={name} className="rounded-[8px] border border-[#e2e8ef] p-4 text-navy" style={{ fontWeight: 800 }}>
                 {name}
               </div>
             ))}
@@ -487,7 +487,7 @@ export default async function ReferenzDetailPage({
             {parties.map((party) => (
               <div key={`${party.role}-${party.name}`} className="flex items-baseline justify-between gap-4 rounded-[8px] bg-[#f4f6f8] px-4 py-3">
                 <span className="text-[#5d6b7a] text-[13px]">{party.role}</span>
-                <span className="text-[#002d59] text-[14px] text-right" style={{ fontWeight: 800 }}>
+                <span className="text-navy text-[14px] text-right" style={{ fontWeight: 800 }}>
                   {isAnonymized || party.anonymized ? party.role : party.name}
                 </span>
               </div>
@@ -507,7 +507,7 @@ export default async function ReferenzDetailPage({
       )}
 
       <section style={{ padding: "16px 24px 40px" }}>
-        <div className="mx-auto text-center p-7 rounded-[8px] bg-[#002d59]" style={container}>
+        <div className="mx-auto text-center p-7 rounded-[8px] bg-navy" style={container}>
           <h2 className="text-white text-[22px] m-0 mb-2" style={{ fontWeight: 900 }}>
             Ähnliches Projekt?
           </h2>

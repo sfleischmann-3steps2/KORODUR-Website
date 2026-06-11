@@ -150,7 +150,7 @@ function ReferenzenContent() {
             {dict.referenzen.title}
           </h1>
           <p
-            className="text-[#002d59] opacity-60 mb-0"
+            className="text-navy opacity-60 mb-0"
             style={{ fontSize: 18, maxWidth: 600 }}
           >
             {referenzen.length} {dict.referenzen.description_prefix}
@@ -159,15 +159,15 @@ function ReferenzenContent() {
       </section>
 
       <section
-        className="bg-[#f5f5f6] sticky top-16 z-30"
-        style={{ padding: "16px 16px", borderBottom: "1px solid #e8edf5" }}
+        className="bg-icon-bg sticky top-16 z-30"
+        style={{ padding: "16px 16px", borderBottom: "1px solid var(--bullet-bg)" }}
       >
         <div className="mx-auto sm:px-4" style={{ maxWidth: 1320 }}>
           <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2 sm:gap-3">
             <select
               value={filters.bereich}
               onChange={(e) => setBereich(e.target.value)}
-              className="text-[14px] text-[#002d59] bg-white border border-[#d9dada] rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-[#009ee3]"
+              className="text-[14px] text-navy bg-white border border-mid-gray rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-cyan"
               style={{ fontWeight: 700, fontFamily: "inherit" }}
             >
               <option value="">{dict.referenzen.filter_all_areas}</option>
@@ -182,7 +182,7 @@ function ReferenzenContent() {
               <select
                 value={filters.produkt}
                 onChange={(e) => setProdukt(e.target.value)}
-                className="text-[14px] text-[#002d59] bg-white border border-[#d9dada] rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-[#009ee3]"
+                className="text-[14px] text-navy bg-white border border-mid-gray rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-cyan"
                 style={{ fontWeight: 700, fontFamily: "inherit" }}
               >
                 <option value="">{dict.referenzen.filter_all_products}</option>
@@ -201,14 +201,14 @@ function ReferenzenContent() {
             {hasActiveFilters && (
               <button
                 onClick={resetFilters}
-                className="text-[14px] text-[#009ee3] bg-transparent border-none cursor-pointer underline"
+                className="text-[14px] text-cyan bg-transparent border-none cursor-pointer underline"
                 style={{ fontWeight: 700, fontFamily: "inherit" }}
               >
                 {dict.referenzen.filter_reset}
               </button>
             )}
 
-            <span className="text-[13px] text-[#002d59] opacity-40 ml-auto" style={{ fontWeight: 700 }}>
+            <span className="text-[13px] text-navy opacity-40 ml-auto" style={{ fontWeight: 700 }}>
               {gefilterteReferenzen.length} {dict.referenzen.of} {referenzen.length} {dict.referenzen.references}
             </span>
           </div>
@@ -225,12 +225,12 @@ function ReferenzenContent() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-[#002d59] opacity-40 text-[18px] mb-4">
+              <p className="text-navy opacity-40 text-[18px] mb-4">
                 {dict.referenzen.no_results}
               </p>
               <button
                 onClick={resetFilters}
-                className="text-white text-[15px] bg-[#009ee3] hover:bg-[#0090d0] border-none rounded-[6px] cursor-pointer transition-colors duration-200"
+                className="text-white text-[15px] bg-cyan hover:bg-cyan-hover border-none rounded-[6px] cursor-pointer transition-colors duration-200"
                 style={{ padding: "14px 28px", fontWeight: 800, fontFamily: "inherit" }}
               >
                 {dict.referenzen.show_all}

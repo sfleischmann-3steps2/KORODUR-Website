@@ -1,4 +1,13 @@
+import { Fragment } from "react";
 import Link from "next/link";
+import {
+  Breadcrumb as BreadcrumbRoot,
+  BreadcrumbList,
+  BreadcrumbItem as BreadcrumbListItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 interface BreadcrumbItem {
   label: string;
@@ -13,26 +22,28 @@ export default function Breadcrumb({
   lang: string;
 }) {
   return (
-    <nav aria-label="Breadcrumb" className="py-4">
-      <ol className="flex flex-wrap items-center gap-1 list-none m-0 p-0 text-[14px]">
-        <li>
-          <Link href={`/${lang}`} className="text-[#009ee3] no-underline hover:underline">
-            Home
-          </Link>
-        </li>
+    <BreadcrumbRoot aria-label="Breadcrumb" className="py-4">
+      <BreadcrumbList className="gap-1 sm:gap-1 text-[14px]">
+        <BreadcrumbListItem>
+          <BreadcrumbLink asChild className="text-cyan no-underline hover:text-cyan hover:underline">
+            <Link href={`/${lang}`}>Home</Link>
+          </BreadcrumbLink>
+        </BreadcrumbListItem>
         {items.map((item, i) => (
-          <li key={i} className="flex items-center gap-1">
-            <span className="text-[#002d59] opacity-40 mx-1">/</span>
-            {item.href ? (
-              <Link href={item.href} className="text-[#009ee3] no-underline hover:underline">
-                {item.label}
-              </Link>
-            ) : (
-              <span className="text-[#002d59] font-bold">{item.label}</span>
-            )}
-          </li>
+          <Fragment key={i}>
+            <BreadcrumbSeparator className="text-navy/40 mx-1">/</BreadcrumbSeparator>
+            <BreadcrumbListItem>
+              {item.href ? (
+                <BreadcrumbLink asChild className="text-cyan no-underline hover:text-cyan hover:underline">
+                  <Link href={item.href}>{item.label}</Link>
+                </BreadcrumbLink>
+              ) : (
+                <BreadcrumbPage className="text-navy font-bold">{item.label}</BreadcrumbPage>
+              )}
+            </BreadcrumbListItem>
+          </Fragment>
         ))}
-      </ol>
-    </nav>
+      </BreadcrumbList>
+    </BreadcrumbRoot>
   );
 }

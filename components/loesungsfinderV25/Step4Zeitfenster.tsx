@@ -13,7 +13,7 @@ interface Step4Props {
   onSelect: (v: Zeitfenster) => void;
 }
 
-const NAVY = "#002d59";
+const NAVY = "var(--navy)";
 
 const OPTIONEN: Array<{
   id: Zeitfenster;
@@ -35,7 +35,7 @@ export default function Step4Zeitfenster({ value, onSelect }: Step4Props) {
         <h2 className="text-[22px] font-medium" style={{ color: NAVY }}>
           {t.step4_question}
         </h2>
-        <p className="text-sm text-gray-600 mt-2 leading-relaxed">{t.step4_subline}</p>
+        <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{t.step4_subline}</p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">

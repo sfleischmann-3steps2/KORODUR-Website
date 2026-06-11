@@ -11,7 +11,7 @@ interface Step2Props {
   onSelect: (v: InnenAussen) => void;
 }
 
-const NAVY = "#002d59";
+const NAVY = "var(--navy)";
 
 const OPTIONEN: Array<{
   id: InnenAussen;
@@ -32,7 +32,7 @@ export default function Step2InnenAussen({ value, onSelect }: Step2Props) {
         <h2 className="text-[22px] font-medium" style={{ color: NAVY }}>
           {t.step2_question}
         </h2>
-        <p className="text-sm text-gray-600 mt-2 leading-relaxed">{t.step2_subline}</p>
+        <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{t.step2_subline}</p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

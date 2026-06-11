@@ -24,9 +24,7 @@ import Step3Einsatzbereich from "./Step3Einsatzbereich";
 import Step4Zeitfenster from "./Step4Zeitfenster";
 import Ergebnisseite from "./Ergebnisseite";
 import { IconArrowLeft, IconArrowRight } from "./icons";
-
-const NAVY = "#002d59";
-const MITTELGRAU = "#d9dada";
+import { Button } from "@/components/ui/button";
 
 const INITIAL_STATE: LoesungsfinderState = {
   flaeche: null,
@@ -113,7 +111,7 @@ export default function Wizard({ lang }: WizardProps) {
   }
 
   return (
-    <div className="rounded-2xl p-6 md:p-8" style={{ background: "#ececed" }}>
+    <div className="rounded-2xl p-6 md:p-8" style={{ background: "var(--light-gray)" }}>
       <ProgressHeader currentStep={currentStep} totalSteps={totalSteps} onCancel={cancel} />
 
       {currentStep === 1 && (
@@ -135,34 +133,18 @@ export default function Wizard({ lang }: WizardProps) {
 
       <div className="flex items-center justify-between mt-8">
         {currentStep > 1 ? (
-          <button
-            type="button"
-            onClick={goBack}
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm transition hover:bg-white"
-            style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
-          >
+          <Button type="button" variant="outline" onClick={goBack}>
             <IconArrowLeft width={14} height={14} aria-hidden="true" />
             {t.back}
-          </button>
+          </Button>
         ) : (
           <span />
         )}
 
-        <button
-          type="button"
-          onClick={goNext}
-          disabled={!stepIsReady}
-          className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-lg text-sm font-medium transition"
-          style={{
-            background: stepIsReady ? NAVY : "#E5E4DE",
-            color: stepIsReady ? "#fff" : "#8A8983",
-            border: `1px solid ${stepIsReady ? NAVY : MITTELGRAU}`,
-            cursor: stepIsReady ? "pointer" : "not-allowed",
-          }}
-        >
+        <Button type="button" variant="navy" onClick={goNext} disabled={!stepIsReady}>
           {isFinalStep ? t.show_solution : t.next}
           <IconArrowRight width={14} height={14} aria-hidden="true" />
-        </button>
+        </Button>
       </div>
     </div>
   );

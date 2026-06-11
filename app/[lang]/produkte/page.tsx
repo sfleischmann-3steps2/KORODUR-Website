@@ -51,7 +51,7 @@ export default async function ProduktePage({
           >
             {dict.produkte.title}
           </h1>
-          <p className="text-[#002d59] opacity-60 mb-0" style={{ fontSize: 18, maxWidth: 700 }}>
+          <p className="text-navy opacity-60 mb-0" style={{ fontSize: 18, maxWidth: 700 }}>
             {dict.produkte.subtitle}
           </p>
         </div>
@@ -60,7 +60,7 @@ export default async function ProduktePage({
       {grouped.map((group) => (
         <section
           key={group.category}
-          className="bg-[#f5f5f6]"
+          className="bg-icon-bg"
           style={{ padding: "56px 32px 64px" }}
           id={group.category}
         >
@@ -84,23 +84,23 @@ export default async function ProduktePage({
                   >
                     <div className="flex flex-col gap-3 flex-1 min-w-0">
                       <div className="flex items-start justify-between gap-3">
-                        <h3 className="text-[#002d59] text-[17px] m-0" style={{ fontWeight: 900 }}>
+                        <h3 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
                           {produkt.name}
                         </h3>
                         {produkt.qualitaetsklasse && (
                           <span
                             className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
-                            style={{ backgroundColor: "#009ee3", fontWeight: 700 }}
+                            style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}
                           >
                             {produkt.qualitaetsklasse}
                           </span>
                         )}
                       </div>
-                      <p className="text-[#002d59] opacity-60 text-[14px] m-0 leading-[1.5]">
+                      <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">
                         {produkt.kurzbeschreibung}
                       </p>
                       {produkt.schichtdicke && (
-                        <p className="text-[#009ee3] text-[12px] m-0" style={{ fontWeight: 700 }}>
+                        <p className="text-cyan text-[12px] m-0" style={{ fontWeight: 700 }}>
                           {dict.produkte.layer_thickness}: {produkt.schichtdicke}
                         </p>
                       )}
@@ -108,14 +108,14 @@ export default async function ProduktePage({
                         {produkt.normen.slice(0, 2).map((norm) => (
                           <span
                             key={norm}
-                            className="text-[10px] text-[#002d59] opacity-50 px-2 py-0.5 rounded"
-                            style={{ backgroundColor: "#f5f5f6", fontWeight: 600 }}
+                            className="text-[10px] text-navy opacity-50 px-2 py-0.5 rounded"
+                            style={{ backgroundColor: "var(--icon-bg)", fontWeight: 600 }}
                           >
                             {norm}
                           </span>
                         ))}
                         {produkt.normen.length > 2 && (
-                          <span className="text-[10px] text-[#002d59] opacity-30 px-1 py-0.5">
+                          <span className="text-[10px] text-navy opacity-30 px-1 py-0.5">
                             +{produkt.normen.length - 2}
                           </span>
                         )}

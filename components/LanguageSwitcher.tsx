@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ChevronDown } from "lucide-react";
+import { AppIcon } from "@/components/ui/icon";
 import type { Locale } from "../lib/i18n";
 import { LOCALES } from "../lib/i18n";
 
@@ -59,35 +61,30 @@ export default function LanguageSwitcher({ lang }: { lang: Locale }) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-1.5 bg-[#f5f5f6] hover:bg-[#e8edf5] border-none rounded-lg cursor-pointer transition-colors duration-150"
+        className="flex items-center gap-1.5 bg-icon-bg hover:bg-bullet-bg border-none rounded-lg cursor-pointer transition-colors duration-150"
         style={{ padding: "6px 10px", fontFamily: "inherit" }}
         aria-label={`Sprache: ${LABEL[lang]}`}
         aria-expanded={open}
         aria-haspopup="true"
       >
         <span className="text-[18px] leading-none">{FLAG[lang]}</span>
-        <span className="text-[12px] text-[#002d59] uppercase" style={{ fontWeight: 700, letterSpacing: "0.05em" }}>
+        <span className="text-[12px] text-navy uppercase" style={{ fontWeight: 700, letterSpacing: "0.05em" }}>
           {lang}
         </span>
-        <svg
-          width="12"
-          height="12"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#002d59"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="opacity-40 transition-transform duration-200"
+        <AppIcon
+          icon={ChevronDown}
+          width={12}
+          height={12}
+          strokeWidth={2.5}
+          className="text-navy opacity-40 transition-transform duration-200"
           style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
-        >
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
+          aria-hidden="true"
+        />
       </button>
 
       {open && (
         <div
-          className="absolute right-0 mt-1.5 bg-white rounded-lg shadow-lg border border-[#e8edf5] overflow-hidden z-50"
+          className="absolute right-0 mt-1.5 bg-white rounded-lg shadow-lg border border-bullet-bg overflow-hidden z-50"
           style={{ minWidth: 150 }}
           role="menu"
         >
@@ -97,8 +94,8 @@ export default function LanguageSwitcher({ lang }: { lang: Locale }) {
               href={getLocalePath(l)}
               className={`flex items-center gap-2.5 no-underline transition-colors duration-150 ${
                 l === lang
-                  ? "bg-[#f0f8ff] text-[#009ee3]"
-                  : "text-[#002d59] hover:bg-[#f5f5f6]"
+                  ? "bg-[#f0f8ff] text-cyan"
+                  : "text-navy hover:bg-icon-bg"
               }`}
               style={{ padding: "10px 14px", fontWeight: 600, fontSize: 14 }}
               role="menuitem"

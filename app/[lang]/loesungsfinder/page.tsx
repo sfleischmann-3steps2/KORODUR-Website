@@ -31,12 +31,12 @@ export default async function LoesungsfinderPage({
     <section className="py-24 px-8">
       <div className="max-w-3xl mx-auto">
         <h1
-          className="text-4xl text-[#002d59] text-center mb-4"
+          className="text-4xl text-navy text-center mb-4"
           style={{ fontWeight: 900 }}
         >
           {dict.loesungsfinder.page_title}
         </h1>
-        <p className="text-lg text-[#002d59]/72 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-lg text-navy/72 text-center mb-12 max-w-2xl mx-auto">
           {dict.loesungsfinder.page_subtitle}
         </p>
         <Wizard lang={lang as Locale} />

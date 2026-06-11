@@ -32,10 +32,10 @@ interface ErgebnisseiteProps {
   onNeustart: () => void;
 }
 
-const NAVY = "#002d59";
-const CYAN = "#009ee3";
-const HELLGRAU = "#ececed";
-const MITTELGRAU = "#d9dada";
+const NAVY = "var(--navy)";
+const CYAN = "var(--cyan)";
+const HELLGRAU = "var(--light-gray)";
+const MITTELGRAU = "var(--mid-gray)";
 
 // Mehrzeiliges Abschneiden mit Ellipsis (verhindert mitten-im-Wort-Schnitte).
 const clamp = (zeilen: number): CSSProperties => ({
@@ -134,7 +134,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
             key={c}
             style={{
               fontSize: 11,
-              background: "rgba(0, 158, 227, 0.12)",
+              background: "color-mix(in srgb, var(--cyan) 12%, transparent)",
               color: NAVY,
               padding: "4px 10px",
               borderRadius: 8,
@@ -155,7 +155,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
         <Link
           href={`/${lang}/produkte/${topProduktAnzeige.id}/`}
           style={{
-            background: "#fff",
+            background: "var(--white)",
             border: `1px solid ${MITTELGRAU}`,
             borderRadius: 12,
             padding: "14px 18px",
@@ -174,7 +174,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
               height: 40,
               borderRadius: 8,
               background: NAVY,
-              color: "#fff",
+              color: "var(--white)",
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
@@ -201,7 +201,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
             <div
               style={{
                 fontSize: 12,
-                color: "#6B7280",
+                color: "var(--muted-foreground)",
                 marginTop: 2,
                 overflow: "hidden",
                 textOverflow: "ellipsis",
@@ -235,7 +235,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
         <Link
           href={`/${lang}/produkte/${alternativAnzeige.id}/`}
           style={{
-            background: "#fff",
+            background: "var(--white)",
             border: `1px solid ${MITTELGRAU}`,
             borderRadius: 12,
             padding: "14px 18px",
@@ -253,7 +253,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
               width: 40,
               height: 40,
               borderRadius: 8,
-              background: "#fff",
+              background: "var(--white)",
               border: `1.5px solid ${NAVY}`,
               color: NAVY,
               display: "inline-flex",
@@ -267,7 +267,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
             <div
               style={{
                 fontSize: 10,
-                color: "#6B7280",
+                color: "var(--muted-foreground)",
                 textTransform: "uppercase",
                 letterSpacing: "0.5px",
                 fontWeight: 500,
@@ -282,7 +282,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
             <div
               style={{
                 fontSize: 12,
-                color: "#6B7280",
+                color: "var(--muted-foreground)",
                 marginTop: 2,
                 overflow: "hidden",
                 textOverflow: "ellipsis",
@@ -319,7 +319,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
       >
         <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
           {refTitel}{" "}
-          <span style={{ fontSize: 12, color: "#6B7280", fontWeight: 400 }}>
+          <span style={{ fontSize: 12, color: "var(--muted-foreground)", fontWeight: 400 }}>
             · {ergebnis.refsGesamt} {projektWort(ergebnis.refsGesamt, t, lang)}
           </span>
         </div>
@@ -343,7 +343,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
 
       {/* Hinweis, wenn kein exakter Treffer dabei ist (aufgefüllt auf min. 3) */}
       {ergebnis.refsGelockert && (
-        <div style={{ fontSize: 12, color: "#6B7280", marginBottom: 12, lineHeight: 1.5 }}>
+        <div style={{ fontSize: 12, color: "var(--muted-foreground)", marginBottom: 12, lineHeight: 1.5 }}>
           {t.refs_gelockert}
         </div>
       )}
@@ -364,7 +364,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
               key={r.id}
               href={`/${lang}/referenzen/${r.slug}/`}
               style={{
-                background: "#fff",
+                background: "var(--white)",
                 border: `1px solid ${MITTELGRAU}`,
                 borderRadius: 8,
                 overflow: "hidden",
@@ -387,7 +387,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
                   {ohneJahr(r.titel)}
                 </div>
                 {r.untertitel && (
-                  <div style={{ fontSize: 11, color: "#6B7280", marginTop: 3, lineHeight: 1.35, ...clamp(2) }}>
+                  <div style={{ fontSize: 11, color: "var(--muted-foreground)", marginTop: 3, lineHeight: 1.35, ...clamp(2) }}>
                     {ohneJahr(r.untertitel)}
                   </div>
                 )}
@@ -398,13 +398,13 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
       ) : (
         <div
           style={{
-            background: "#fff",
+            background: "var(--white)",
             border: `1px dashed ${MITTELGRAU}`,
             borderRadius: 8,
             padding: 24,
             textAlign: "center",
             fontSize: 13,
-            color: "#6B7280",
+            color: "var(--muted-foreground)",
             marginBottom: 16,
           }}
         >
@@ -426,10 +426,10 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
         }}
       >
         <div>
-          <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 2 }}>
+          <div style={{ fontSize: 15, fontWeight: 600, color: "var(--white)", marginBottom: 2 }}>
             {t.cta_title}
           </div>
-          <div style={{ fontSize: 12.5, color: "rgba(255,255,255,0.8)" }}>
+          <div style={{ fontSize: 12.5, color: "color-mix(in srgb, var(--white) 80%, transparent)" }}>
             {t.cta_text}
           </div>
         </div>
@@ -439,7 +439,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
           rel="noopener noreferrer"
           style={{
             background: CYAN,
-            color: "#fff",
+            color: "var(--white)",
             padding: "10px 18px",
             borderRadius: 8,
             fontSize: 13,
@@ -494,7 +494,7 @@ function EmptyEmpfehlung({ titel, text }: { titel: string; text: string }) {
   return (
     <div
       style={{
-        background: "#fff",
+        background: "var(--white)",
         border: `1px dashed ${MITTELGRAU}`,
         borderRadius: 12,
         padding: 24,
@@ -505,7 +505,7 @@ function EmptyEmpfehlung({ titel, text }: { titel: string; text: string }) {
       <div style={{ fontSize: 16, fontWeight: 500, color: NAVY, marginBottom: 6 }}>
         {titel}
       </div>
-      <div style={{ fontSize: 13, color: "#6B7280", lineHeight: 1.55 }}>
+      <div style={{ fontSize: 13, color: "var(--muted-foreground)", lineHeight: 1.55 }}>
         {text}
       </div>
     </div>
