@@ -1,0 +1,295 @@
+{
+  "quelle": "/Users/sfleischmann/KORODUR/KORODUR-website/01_analyse/scraped_content/bereiche_microtop_details.md",
+  "extrahiertAm": "2026-06-12",
+  "hinweise": [
+    "Quelle ist ein Wayback-Machine-Scrape der alten korodur.de (Bereich Microtop, Spritzmoertel fuer Trinkwasserbehaelter).",
+    "Die Bereichsseite 'Trockenspritzverfahren' nennt fuer alle MICROTOP Trockenspritzmoertel gemeinsam: zertifiziert nach DVGW-Arbeitsblaettern W 270, W 300, W 347; rein mineralisch; microsilika-verguetet; geringe Porositaet; hohe Festigkeiten; abreibfaehig und glaettbar; wasserundurchlaessig.",
+    "MICROTOP TW NSD kommt in der Quelle nirgends vor und wurde daher NICHT als Objekt aufgenommen.",
+    "Die Datei enthaelt am Ende eine Rapid-Set-Produktseite (CEMENT ALL), die nicht zum Microtop-Bereich gehoert und nicht extrahiert wurde.",
+    "Moeglicher Namenskonflikt TW 2 vs. TW 02: Die Erwartungsliste fuehrt 'TW 2 (Duennschicht)', die Quelle hat eine (leere) Seite 'microtop-tw-2', waehrend alle Navigationslisten und Teasertexte nur 'MICROTOP TW 02' nennen. Unklar, ob es sich um dasselbe Produkt handelt."
+  ],
+  "produkte": [
+    {
+      "name": "MICROTOP TW 2",
+      "bestand": false,
+      "kurzbeschreibung": null,
+      "beschreibung": null,
+      "produktart": null,
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [],
+      "anwendungen": [],
+      "luecken": [
+        "Produktseite 'microtop-tw-2' (Archiv 20240101) enthaelt ausschliesslich Wayback-Machine-Boilerplate, keinerlei Produktinhalt.",
+        "TW 2 erscheint in keiner Produkt-Navigationsliste der Quelle; dort existiert nur 'MICROTOP TW 02'. Konflikt: moeglicherweise identisch mit TW 02 (Erwartung 'TW 2 Duennschicht' vs. Quelle 'TW 02').",
+        "Kurzbeschreibung, Beschreibung, Produktart, Schichtdicke, Qualitaetsklasse, Normen, technische Daten, Anwendungen fehlen vollstaendig."
+      ]
+    },
+    {
+      "name": "MICROTOP TW 02",
+      "bestand": false,
+      "kurzbeschreibung": "Für die Herstellung von Spritzmörtel im Nassspritzdichtstromverfahren, für die Beschichtung von Flächen sowie zur Erhöhung der Betondeckung und Finish im Trinkwasserbereich.",
+      "beschreibung": "MICROTOP TW 02 wird im Nassspritzdichtstromverfahren verarbeitet und dient der Beschichtung von Flächen sowie der Erhöhung der Betondeckung und dem Finish im Trinkwasserbereich. Das Produkt hat ein äußerst geringes Porenvolumen. Es kann auch als Korrosionsschutz und Haftbrücke eingesetzt werden.",
+      "produktart": "Spritzmörtel (Nassspritzdichtstromverfahren)",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [
+        "Äußerst geringes Porenvolumen",
+        "Auch als Korrosionsschutz einsetzbar",
+        "Auch als Haftbrücke einsetzbar"
+      ],
+      "anwendungen": [
+        "Beschichtung von Flächen im Trinkwasserbereich",
+        "Erhöhung der Betondeckung",
+        "Finish im Trinkwasserbereich",
+        "Korrosionsschutz",
+        "Haftbrücke"
+      ],
+      "luecken": [
+        "Keine eigene Produktseite in der Quelle; alle Angaben stammen aus 'Ähnliche Produkte'-Teasern auf den Seiten TW 5, TW 8 und TW Mineral.",
+        "Technische Kennwerte (Korngröße, Druckfestigkeit, Dichte), Schichtdicke, Qualitätsklasse und Normen fehlen.",
+        "Konflikt: moeglicherweise identisch mit dem erwarteten 'TW 2 (Duennschicht)' — siehe Hinweis TW 2."
+      ]
+    },
+    {
+      "name": "MICROTOP TW 3",
+      "bestand": false,
+      "kurzbeschreibung": "Für die Herstellung von Spritzmörtel/-beton im Trockenspritzverfahren, für die Reprofilierung und Beschichtung von Flächen sowie zur Erhöhung der Betondeckung und Finish im Trinkwasserbereich.",
+      "beschreibung": "MICROTOP TW 3 wird im Trockenspritzverfahren verarbeitet und dient der Reprofilierung und Beschichtung von Flächen sowie der Erhöhung der Betondeckung und dem Finish im Trinkwasserbereich. Die Materialien werden einlagig verarbeitet und können problemlos gerieben und geglättet werden; kleine Arbeiten können per Hand ausgeführt werden. Laut Bereichsseite Trockenspritzverfahren ist der Mörtel rein mineralisch, microsilika-vergütet, wasserundurchlässig und nach DVGW zertifiziert.",
+      "produktart": "Zementspritzmörtel (Trockenspritzverfahren)",
+      "schichtdicke": "9 – 20 mm",
+      "qualitaetsklasse": null,
+      "normen": [
+        "DVGW W 270",
+        "DVGW W 300",
+        "DVGW W 347"
+      ],
+      "technischeDaten": [
+        { "label": "Schichtstärken", "wert": "9 – 20 mm" },
+        { "label": "Druckfestigkeit 28 d", "wert": "≥ 45 N/mm²" },
+        { "label": "Gesamtporosität 90 d", "wert": "≤ 10 Vol. %" }
+      ],
+      "besonderheiten": [
+        "Rein mineralisch",
+        "Microsilika-vergütet",
+        "Geringe Porosität",
+        "Abreibfähig und glättbar",
+        "Wasserundurchlässig"
+      ],
+      "anwendungen": [
+        "Reprofilierung von Flächen im Trinkwasserbereich",
+        "Beschichtung von Flächen im Trinkwasserbereich",
+        "Erhöhung der Betondeckung",
+        "Finish im Trinkwasserbereich"
+      ],
+      "luecken": [
+        "Eigene Produktseite (Archiv 20221206110406) enthaelt nur Navigationslisten, keinen Produktinhalt; Kurzbeschreibung stammt aus 'Ähnliche Produkte'-Teasern (TW 5/TW 8/TW Mineral), technische Daten und Normen aus der Bereichsseite 'Trockenspritzverfahren'.",
+        "DVGW-Zertifizierung und Eigenschaften (rein mineralisch usw.) sind auf der Bereichsseite pauschal fuer MICROTOP Trockenspritzmoertel angegeben, nicht produktspezifisch bestaetigt.",
+        "Korngröße, Dichte, Qualitätsklasse/Festigkeitsklasse und SKU fehlen."
+      ]
+    },
+    {
+      "name": "MICROTOP TW 5",
+      "bestand": false,
+      "kurzbeschreibung": "Für die Herstellung von Spritzmörtel/-beton im Trockenspritzverfahren, für die Reprofilierung und Beschichtung von Flächen sowie zur Erhöhung der Betondeckung und Finish im Trinkwasserbereich.",
+      "beschreibung": "MICROTOP TW 5 ist ein rein mineralischer, hydraulisch abbindender, microsilicavergüteter Zementspritzmörtel zur Reprofilierung, Egalisierung und Beschichtung von Flächen im Trinkwasserbehälter. Er wird im Trockenspritzverfahren (Dünnstromverfahren) verarbeitet und auch zur Erhöhung der Betondeckung und für das Finish verwendet. MICROTOP TW 5 kann problemlos gerieben und geglättet werden, kleine Arbeiten können per Hand ausgeführt werden. Er entspricht den DVGW Arbeitsblättern W 270, W 300 und W 347.",
+      "produktart": "Zementspritzmörtel (Trockenspritzverfahren / Dünnstromverfahren)",
+      "schichtdicke": "10 – 30 mm",
+      "qualitaetsklasse": null,
+      "normen": [
+        "DVGW W 270",
+        "DVGW W 300",
+        "DVGW W 347"
+      ],
+      "technischeDaten": [
+        { "label": "Korngröße", "wert": "0 – 5 mm" },
+        { "label": "Druckfestigkeit", "wert": "≥ 45 N/mm²" },
+        { "label": "Dichte", "wert": "2,25 kg/dm³" },
+        { "label": "Schichtstärken (lt. Bereichsseite)", "wert": "10 – 30 mm" },
+        { "label": "Gesamtporosität 90 d (lt. Bereichsseite)", "wert": "≤ 10 Vol. %" },
+        { "label": "SKU", "wert": "1220398S25KG" }
+      ],
+      "besonderheiten": [
+        "Rein mineralisch, hydraulisch abbindend",
+        "Microsilica-vergütet",
+        "Einlagige Verarbeitung",
+        "Problemlos reib- und glättbar, kleine Arbeiten per Hand möglich",
+        "Ergänzende Systemkomponente: Imprägnierung mit MICROTOP TW Mineral"
+      ],
+      "anwendungen": [
+        "Reprofilierung von Flächen im Trinkwasserbehälter",
+        "Egalisierung von Flächen im Trinkwasserbehälter",
+        "Beschichtung von Flächen im Trinkwasserbehälter",
+        "Erhöhung der Betondeckung",
+        "Finish im Trinkwasserbereich"
+      ],
+      "luecken": [
+        "Keine Qualitäts-/Festigkeitsklasse angegeben (anders als TW 8 mit C30/37).",
+        "Unklare Angabe auf der Produktseite: unter 'Ergänzende Systemkomponenten / Untergrund' sind MICROTOP TW 5 und TW 8 gelistet — vermutlich Untergrund-/Systemaufbau, aus dem Scrape nicht eindeutig interpretierbar."
+      ]
+    },
+    {
+      "name": "MICROTOP TW 8",
+      "bestand": false,
+      "kurzbeschreibung": "Für die Herstellung von Spritzmörtel/-beton im Trockenspritzverfahren, für die Reprofilierung und Beschichtung von Flächen sowie zur Erhöhung der Betondeckung und Finish im Trinkwasserbereich.",
+      "beschreibung": "MICROTOP TW 8 ist ein hydraulisch abbindender, microsilicavergüteter Zementspritzbeton für den Trinkwasserbereich, Verarbeitung gemäß DIN 18551. Es ist ein Beton der Festigkeitsklasse C30/37 und wird zur Herstellung von Spritzbeton im Trockenspritzverfahren, zur Reprofilierung von Ausbrüchen und zur Erhöhung der Betondeckung von Decken usw. im Trinkwasserbereich verwendet. MICROTOP TW 8 ist problemlos zu reiben und zu glätten; kleine Arbeiten können per Hand ausgeführt werden. Er entspricht den DVGW Arbeitsblättern W 270, W 300 und W 347.",
+      "produktart": "Zementspritzbeton (Trockenspritzverfahren)",
+      "schichtdicke": "≥ 25 mm",
+      "qualitaetsklasse": "C30/37",
+      "normen": [
+        "DVGW W 270",
+        "DVGW W 300",
+        "DVGW W 347",
+        "DIN 18551"
+      ],
+      "technischeDaten": [
+        { "label": "Korngröße", "wert": "0 – 8 mm" },
+        { "label": "Druckfestigkeit", "wert": "≥ 45 N/mm²" },
+        { "label": "Dichte", "wert": "2,27 kg/dm³" },
+        { "label": "Schichtstärke (lt. Bereichsseite)", "wert": "≥ 25 mm" },
+        { "label": "Gesamtporosität 90 d (lt. Bereichsseite)", "wert": "≤ 10 Vol. %" },
+        { "label": "SKU", "wert": "1220405S25KG" }
+      ],
+      "besonderheiten": [
+        "Festigkeitsklasse C30/37",
+        "Microsilica-vergütet, hydraulisch abbindend",
+        "Verarbeitung gemäß DIN 18551",
+        "Problemlos reib- und glättbar, kleine Arbeiten per Hand möglich",
+        "Ergänzende Systemkomponente: Imprägnierung mit MICROTOP TW Mineral"
+      ],
+      "anwendungen": [
+        "Herstellung von Spritzbeton im Trockenspritzverfahren",
+        "Reprofilierung von Ausbrüchen im Trinkwasserbereich",
+        "Erhöhung der Betondeckung von Decken im Trinkwasserbereich",
+        "Beschichtung von Flächen im Trinkwasserbereich",
+        "Finish im Trinkwasserbereich"
+      ],
+      "luecken": []
+    },
+    {
+      "name": "MICROTOP TW BM",
+      "bestand": false,
+      "kurzbeschreibung": "Für die Innenauskleidung von neuen Trinkwasserrohren, -behältern oder auch für die Rohrinstandsetzung sowie anderen Gewerken.",
+      "beschreibung": "MICROTOP TW BM ist ein werksmäßig hergestellter, gebrauchsfertiger Spezialmörtel zur Innenbeschichtung von Trinkwasserrohren/-behältern sowie anderen Gewerken. Durch seine spezielle Zusammensetzung sind seine Verarbeitungs- und Gebrauchseigenschaften hervorragend; er kann problemlos im Schleuder-, Spritz- und Handauftrag verarbeitet werden. MICROTOP TW BM ist auch als Haftbrücke für Bodenbeschichtungen und als Korrosionsschutz verwendbar und wird in natur und weiß geliefert. Er entspricht den DVGW Arbeitsblättern W 270, W 300 und W 347.",
+      "produktart": "Spezialmörtel / Beschichtungsmörtel (Schleuder-, Spritz- und Handauftrag)",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [
+        "DVGW W 270",
+        "DVGW W 300",
+        "DVGW W 347"
+      ],
+      "technischeDaten": [
+        { "label": "Korngröße", "wert": "0 – 1,0 mm" },
+        { "label": "Druckfestigkeit", "wert": "35 N/mm²" },
+        { "label": "Biegezugfestigkeit", "wert": "6,3 N/mm²" },
+        { "label": "Farben", "wert": "natur, weiß" },
+        { "label": "SKU", "wert": "1220407S25KG" }
+      ],
+      "besonderheiten": [
+        "Verarbeitung im Schleuder-, Spritz- und Handauftrag",
+        "Auch als Haftbrücke für Bodenbeschichtungen verwendbar",
+        "Auch als Korrosionsschutz verwendbar",
+        "Lieferbar in natur und weiß",
+        "Werksmäßig hergestellt, gebrauchsfertig"
+      ],
+      "anwendungen": [
+        "Innenauskleidung von neuen Trinkwasserrohren und -behältern",
+        "Rohrinstandsetzung",
+        "Innenbeschichtung anderer Gewerke",
+        "Haftbrücke für Bodenbeschichtungen",
+        "Korrosionsschutz"
+      ],
+      "luecken": [
+        "Keine Schichtdicken-Angabe in der Quelle.",
+        "Keine Qualitäts-/Festigkeitsklasse angegeben; bei Druck-/Biegezugfestigkeit fehlt der Prüfzeitpunkt (vermutlich 28 d, in Quelle nicht genannt)."
+      ]
+    },
+    {
+      "name": "MICROTOP TW NSM",
+      "bestand": false,
+      "kurzbeschreibung": "Für die Herstellung von Spritzmörtel im Nassspritzverfahren, für die Reprofilierung und Beschichtung von Flächen sowie zur Erhöhung der Betondeckung und Finish im Trinkwasserbereich.",
+      "beschreibung": "MICROTOP TW NSM wird im Nassspritzverfahren verarbeitet und dient der Reprofilierung und Beschichtung von Flächen sowie der Erhöhung der Betondeckung und dem Finish im Trinkwasserbereich. Die Materialien können problemlos gerieben und geglättet werden; kleine Arbeiten können per Hand in Verbindung mit einer Haftbrücke ausgeführt werden.",
+      "produktart": "Spritzmörtel (Nassspritzverfahren)",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [
+        "Problemlos reib- und glättbar",
+        "Handverarbeitung kleiner Arbeiten in Verbindung mit einer Haftbrücke möglich"
+      ],
+      "anwendungen": [
+        "Reprofilierung von Flächen im Trinkwasserbereich",
+        "Beschichtung von Flächen im Trinkwasserbereich",
+        "Erhöhung der Betondeckung",
+        "Finish im Trinkwasserbereich"
+      ],
+      "luecken": [
+        "Eigene Produktseite (Archiv 20240101) enthaelt nur Navigationslisten und Linklabels ('Technisches Datenblatt', 'Leistungsverzeichnis'), keinen Produkttext; alle Angaben stammen aus 'Ähnliche Produkte'-Teasern (TW 5/TW 8/TW Mineral).",
+        "Technische Kennwerte, Schichtdicke, Qualitätsklasse, Normen (DVGW-Status) und SKU fehlen vollstaendig."
+      ]
+    },
+    {
+      "name": "MICROTOP TW VSM",
+      "bestand": false,
+      "kurzbeschreibung": "Für die Innenauskleidung und Instandsetzung von neuen wie auch alten Trinkwasserbehältern sowie Mauerwerk.",
+      "beschreibung": "MICROTOP TW VSM dient der Innenauskleidung und Instandsetzung von neuen wie auch alten Trinkwasserbehältern sowie Mauerwerk. Durch seine spezielle Zusammensetzung hat er hervorragende Verarbeitungs- und Gebrauchseigenschaften. MICROTOP TW VSM kann problemlos gerieben und geglättet werden; kleine Arbeiten können per Hand ausgeführt werden.",
+      "produktart": null,
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [
+        "Hervorragende Verarbeitungs- und Gebrauchseigenschaften durch spezielle Zusammensetzung",
+        "Problemlos reib- und glättbar, kleine Arbeiten per Hand möglich",
+        "Auch für Mauerwerk geeignet"
+      ],
+      "anwendungen": [
+        "Innenauskleidung von Trinkwasserbehältern (neu und alt)",
+        "Instandsetzung von Trinkwasserbehältern",
+        "Mauerwerk"
+      ],
+      "luecken": [
+        "Eigene Produktseite (Archiv 20240101) enthaelt nur Navigationslisten und Linklabels, keinen Produkttext; alle Angaben stammen aus 'Ähnliche Produkte'-Teasern (TW 5/TW BM).",
+        "Konflikt: Erwartungsliste fuehrt TW VSM als 'Vorspritz(-mörtel)', der Quellen-Teaser beschreibt aber Innenauskleidung/Instandsetzung — eine Vorspritz-Funktion wird in der Quelle nirgends genannt.",
+        "Produktart, technische Kennwerte, Schichtdicke, Qualitätsklasse, Normen und SKU fehlen vollstaendig."
+      ]
+    },
+    {
+      "name": "MICROTOP TW Mineral",
+      "bestand": false,
+      "kurzbeschreibung": "Für die Verfestigung von mineralischen Oberflächen und gleichzeitiger Oberflächenabdichtung.",
+      "beschreibung": "MICROTOP TW Mineral ist ein flüssiges Bautenschutzmittel auf Silikatbasis. Es bewirkt eine Verfestigung an mineralischen Baustoffen und porösen Untergründen durch chemische Reaktionen mit den Bindemitteln und Zuschlagsstoffen des Substrats (Verkieselungsreaktion) und verbessert dadurch die Gefügestruktur mineralisch gebundener Baustoffe bei gleichzeitiger Oberflächenabdichtung. Es dient als Imprägnierung im MICROTOP-System (Untergründe: TW 3, TW 5, TW 8, TW NSM, TW VSM, TW BM, TW 02).",
+      "produktart": "Flüssiges Bautenschutzmittel auf Silikatbasis (Imprägnierung)",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Form", "wert": "flüssig" },
+        { "label": "Farbe", "wert": "transparent" },
+        { "label": "Dichte", "wert": "ca. 1,14 g/cm³" },
+        { "label": "pH-Wert", "wert": "ca. 11,3" },
+        { "label": "SKU", "wert": "1320892G30KG" }
+      ],
+      "besonderheiten": [
+        "Verkieselungsreaktion mit Bindemitteln und Zuschlagsstoffen des Substrats",
+        "Verfestigung und Oberflächenabdichtung in einem Arbeitsgang",
+        "Systemkomponente (Imprägnierung) für alle MICROTOP-TW-Mörtel"
+      ],
+      "anwendungen": [
+        "Verfestigung mineralischer Oberflächen",
+        "Oberflächenabdichtung",
+        "Imprägnierung von MICROTOP-Spritzmörtel-/Spritzbetonflächen (TW 3, TW 5, TW 8, TW NSM, TW VSM, TW BM, TW 02)"
+      ],
+      "luecken": [
+        "Keine Normen-/DVGW-Angabe auf der Produktseite (auffällig fuer ein Trinkwasser-Produkt; in der Quelle nicht belegt).",
+        "Schichtdicke/Auftragsmenge (Verbrauch) nicht angegeben."
+      ]
+    }
+  ]
+}

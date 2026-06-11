@@ -312,7 +312,13 @@
     "gruppe_systeme": "Systems & Application",
     "gruppe_nachbehandlung": "Curing & Surface Protection",
     "gruppe_impraegnierung": "Impregnation & Silicate Treatment",
-    "gruppe_additive": "Additives & Application Aids"
+    "gruppe_additive": "Additives & Application Aids",
+    "gruppe_geschliffen": "Ground Decorative Screed",
+    "gruppe_geglaettet": "Trowelled Decorative Screed",
+    "gruppe_truazzo": "TRUazzo (Rapid Set technology)",
+    "gruppe_trockenspritz": "Dry-Spray Process",
+    "gruppe_nassspritz": "Wet-Spray Process",
+    "gruppe_beschichtung-schutz": "Coating & Surface Protection"
   },
   "sanierungHub": {
     "title": "Renovating with KORODUR",
