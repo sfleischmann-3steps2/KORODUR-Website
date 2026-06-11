@@ -34,7 +34,19 @@ export interface Produkt {
    *  Anwendungsmatrix ausgewertet. Quelle: KORODUR-website-Scrape
    *  (01_analyse/scraped_content/produktuebersicht.md). */
   bereich: Produktbereich;
+  /** Produktgruppe innerhalb des Bereichs (Bereichsseiten-Gliederung).
+   *  Kuratierte Zuordnung mit Sign-off, NICHT aus der Alt-Site übernommen —
+   *  siehe docs/website-migration/zuordnung-<bereich>.md. Muss in
+   *  `bereiche.ts` unter `produktgruppen` des Bereichs gelistet sein. */
+  produktgruppe?: string;
   kurzbeschreibung: string;
+  /** Längerer Beschreibungstext (2-4 Sätze) für die Produktdetailseite.
+   *  SEO-relevant: technischer Inhalt als HTML statt nur im TDS-PDF. */
+  beschreibung?: string;
+  /** Lieferbare Qualitäten/Varianten (z. B. SVS 3, SVS 1,5, metallisch).
+   *  Entscheidung 2026-06-11: Varianten am Stammprodukt statt eigener
+   *  Produktseiten — siehe zuordnung-industrieboden.md. */
+  varianten?: { name: string; qualitaetsklasse?: string; hinweis?: string }[];
   schichtdicke?: string;
   qualitaetsklasse?: string;
   normen: string[];
@@ -97,6 +109,12 @@ export const produkte: Produkt[] = [
   {
     id: "neodur-he-60-rapid",
     bereich: "industrieboden",
+    produktgruppe: "schnellestrich",
+    varianten: [
+      { name: "NEODUR HE 60 rapid SVS 3", qualitaetsklasse: "CT-C60-F8-A3" },
+      { name: "NEODUR HE 60 rapid SVS 1,5", qualitaetsklasse: "CT-C60-F8-A1,5" },
+      { name: "NEODUR HE 60 rapid metallisch", qualitaetsklasse: "CT-C60-F8-A3", hinweis: "Hartstoffgruppe M" },
+    ],
     websiteUrl: "https://www.korodur.de/produkt/neodur-he-60-rapid/",
     name: "NEODUR HE 60 rapid",
     kategorie: "estrich",
@@ -147,6 +165,13 @@ export const produkte: Produkt[] = [
   {
     id: "neodur-he-65",
     bereich: "industrieboden",
+    produktgruppe: "hartstoffestriche",
+    varianten: [
+      { name: "NEODUR HE 65 SVS 3", qualitaetsklasse: "CT-C70-F9-A3" },
+      { name: "NEODUR HE 65 SVS 1,5", qualitaetsklasse: "CT-C70-F9-A1,5", hinweis: "Hartstoffgruppe KS" },
+      { name: "NEODUR HE 65 SVS 1,5 extra", qualitaetsklasse: "CT-C70-F9-A1,5" },
+      { name: "NEODUR HE 65 metallisch", qualitaetsklasse: "CT-C80-F11-A3", hinweis: "Hartstoffgruppe M" },
+    ],
     websiteUrl: "https://www.korodur.de/produkt/neodur-he-65/",
     name: "NEODUR HE 65",
     kategorie: "estrich",
@@ -184,6 +209,10 @@ export const produkte: Produkt[] = [
   {
     id: "neodur-he-65-plus",
     bereich: "industrieboden",
+    produktgruppe: "hartstoffestriche",
+    varianten: [
+      { name: "NEODUR HE 65 plus SVS 3", qualitaetsklasse: "CT-C70-F9-A3" },
+    ],
     websiteUrl: "https://www.korodur.de/produkt/neodur-he-65-plus/",
     name: "NEODUR HE 65 Plus",
     kategorie: "estrich",
@@ -233,6 +262,10 @@ export const produkte: Produkt[] = [
   {
     id: "neodur-he-40",
     bereich: "industrieboden",
+    produktgruppe: "hartstoffestriche",
+    varianten: [
+      { name: "NEODUR HE 40/8", qualitaetsklasse: "CT-C40-F7-A6" },
+    ],
     websiteUrl: "https://www.korodur.de/produkt/neodur-he-40-und-he-40-8/",
     name: "NEODUR HE 40",
     kategorie: "estrich",
@@ -267,6 +300,7 @@ export const produkte: Produkt[] = [
   {
     id: "neodur-level",
     bereich: "industrieboden",
+    produktgruppe: "selbstverlaufend",
     websiteUrl: "https://www.korodur.de/produkt/neodur-level/",
     name: "NEODUR Level",
     kategorie: "estrich",
@@ -360,6 +394,7 @@ export const produkte: Produkt[] = [
   {
     id: "korodur-hb-5-rapid",
     bereich: "industrieboden",
+    produktgruppe: "untergrund-haftbruecken",
     websiteUrl: "https://www.korodur.de/produkt/korodur-hb-5-rapid/",
     name: "KORODUR HB 5 rapid",
     kategorie: "grundierung",
@@ -384,6 +419,7 @@ export const produkte: Produkt[] = [
   {
     id: "korodur-pc",
     bereich: "industrieboden",
+    produktgruppe: "untergrund-haftbruecken",
     websiteUrl: "https://www.korodur.de/produkt/korodur-pc/",
     name: "KORODUR PC",
     kategorie: "grundierung",
@@ -698,6 +734,7 @@ export const produkte: Produkt[] = [
   {
     id: "korocure",
     bereich: "industrieboden",
+    produktgruppe: "nachbehandlung",
     name: "KOROCURE",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Curing-Compound zur kontrollierten Nachbehandlung von Estrichflächen",
@@ -719,6 +756,7 @@ export const produkte: Produkt[] = [
   {
     id: "koromineral-cure",
     bereich: "industrieboden",
+    produktgruppe: "nachbehandlung",
     websiteUrl: "https://www.korodur.de/produkt/koromineral-cure/",
     name: "KOROMINERAL CURE",
     kategorie: "nachbehandlung",
@@ -741,6 +779,7 @@ export const produkte: Produkt[] = [
   {
     id: "korotex",
     bereich: "industrieboden",
+    produktgruppe: "nachbehandlung",
     name: "KOROTEX",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Curing-Mittel zur kontrollierten Aushärtung",
@@ -757,6 +796,347 @@ export const produkte: Produkt[] = [
       "Sprühbare Anwendung",
     ],
     eignungen: ["grossflaechige-sanierung"],
+    zeitKategorie: "normal",
+  },
+
+  // === WEBSITE-MIGRATION STUFE 2, INDUSTRIEBODEN TEIL 1 (2026-06-11) ===
+  // Quellen: KORODUR-website-Scrape (extraktion-industrieboden-teil1.json)
+  // + Normen produkte.xlsx (Qualitaetsklassen). Zuordnung mit Sign-off:
+  // docs/website-migration/zuordnung-industrieboden.md
+  // Fehlende Werte bewusst leer (nie erfinden); TDS-Vervollstaendigung folgt.
+  {
+    id: "neodur-he-3",
+    name: "NEODUR HE 3",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffeinstreuung",
+    kurzbeschreibung: "Zementgebundener Trockenbaustoff für Industrieböden im Einstreuverfahren",
+    beschreibung: "NEODUR HE 3 gem. DIN 18557 (Werkmörtel) und DIN EN 13813, basierend auf Hartstoffen gem. DIN 1100: gebrauchsfertiger, zementgebundener Trockenbaustoff zur Herstellung von Industrieböden im Einstreuverfahren. Auch farbig lieferbar.",
+    qualitaetsklasse: "CT-C70-F9-A6",
+    normen: ["DIN EN 13813", "DIN 1100", "DIN 18557"],
+    technischeDaten: [
+      { label: "Hartstoffgruppe (DIN 1100)", wert: "A" },
+      { label: "Schleifverschleiß", wert: "≤ 5 cm³/50 cm²" },
+    ],
+    besonderheiten: [
+      "Einstreuverfahren (trocken auf frische Estrich-/Betonoberflächen)",
+      "Auch farbig lieferbar",
+      "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
+    ],
+    varianten: [
+      { name: "NEODUR HE 3 SVS 3", qualitaetsklasse: "CT-C70-F9-A3" },
+      { name: "NEODUR HE 3 SVS 1,5", qualitaetsklasse: "CT-C70-F9-A1,5", hinweis: "Hartstoffgruppe KS" },
+      { name: "NEODUR HE 3 SVS 1,5 extra", qualitaetsklasse: "CT-C70-F9-A1,5" },
+      { name: "NEODUR HE 3 metallisch", qualitaetsklasse: "CT-C80-F11-A3", hinweis: "Hartstoffgruppe M" },
+    ],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-he-3-green",
+    name: "NEODUR HE 3 green",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffeinstreuung",
+    kurzbeschreibung: "Ressourcenschonende Variante von NEODUR HE 3 mit bis zu 30 % reduziertem CO₂-Ausstoß",
+    beschreibung: "Mit der ressourcenschonenden Variante NEODUR HE 3 green kann der CO₂-Ausstoß in der Herstellung um bis zu 30 Prozent reduziert werden. Für Bauherren, Architekten, Planer und Bauunternehmen stehen entsprechende Umweltproduktdeklarationen (EPD) bereit.",
+    qualitaetsklasse: "CT-C70-F9-A6",
+    normen: ["DIN 1100"],
+    technischeDaten: [
+      { label: "Hartstoffgruppe (DIN 1100)", wert: "A" },
+      { label: "Schleifverschleiß", wert: "≤ 5 cm³/50 cm²" },
+      { label: "CO₂-Reduktion", wert: "bis zu 30 %" },
+    ],
+    besonderheiten: [
+      "Bis zu 30 % CO₂-Reduktion in der Herstellung",
+      "Produkt-EPD verfügbar",
+      "Einstreuverfahren",
+    ],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-he-2",
+    name: "NEODUR HE 2",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffeinstreuung",
+    kurzbeschreibung: "Zementgebundener Trockenbaustoff für Industrieböden im Einstreuverfahren",
+    beschreibung: "NEODUR HE 2 gem. DIN 18557 (Werkmörtel) und DIN EN 13813: gebrauchsfertiger, zementgebundener Trockenbaustoff zur Herstellung von Industrieböden im Einstreuverfahren. Auch farbig lieferbar.",
+    qualitaetsklasse: "CT-C70-F9-A8",
+    normen: ["DIN EN 13813", "DIN 18557"],
+    technischeDaten: [
+      { label: "Korngröße", wert: "0–3 mm" },
+      { label: "Druckfestigkeit", wert: "70 N/mm²" },
+      { label: "Biegezugfestigkeit", wert: "9 N/mm²" },
+      { label: "Schleifverschleiß", wert: "≤ 8 cm³/50 cm²" },
+    ],
+    besonderheiten: ["Einstreuverfahren", "Auch farbig lieferbar"],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-0-4",
+    name: "KORODUR 0/4",
+    kategorie: "sonstige",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffe",
+    kurzbeschreibung: "KORODUR Hartstoff (ohne Bindemittel) der Gruppe A nach DIN 1100",
+    beschreibung: "Hartstoff für die Herstellung hochbeanspruchter Industrieböden, z. B. Parkhäuser, Industriehallen, Montagehallen, Flugzeughallen, Werkstätten und Hochregallager. Für innen und außen.",
+    qualitaetsklasse: "CT-C70-F10-A6",
+    normen: ["DIN 1100"],
+    technischeDaten: [
+      { label: "Hartstoffgruppe (DIN 1100)", wert: "A" },
+      { label: "Schleifverschleiß", wert: "≤ 5 cm³/50 cm²" },
+    ],
+    besonderheiten: ["Hartstoff ohne Bindemittel"],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-vs-0-5",
+    name: "KORODUR VS 0/5",
+    kategorie: "sonstige",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffe",
+    kurzbeschreibung: "KORODUR Hartstoff (ohne Bindemittel) der Gruppe A nach DIN 1100, Basis u. a. für NEODUR HE 65",
+    beschreibung: "KORODUR Hartstoff ohne Bindemittel gem. DIN 1100. Dient als Hartstoffbasis für NEODUR HE 65 und als Hartstoffzuschlag für verschleißfeste Nutzestriche, z. B. mit KORODUR FSCem.",
+    qualitaetsklasse: "CT-C70-F10-A6",
+    normen: ["DIN 1100"],
+    technischeDaten: [
+      { label: "Hartstoffgruppe (DIN 1100)", wert: "A" },
+      { label: "Schleifverschleiß", wert: "≤ 5 cm³/50 cm²" },
+    ],
+    besonderheiten: ["Hartstoff ohne Bindemittel", "Hartstoffbasis für NEODUR HE 65"],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-wh-spezial",
+    name: "KORODUR WH-Spezial",
+    kategorie: "sonstige",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffe",
+    kurzbeschreibung: "KORODUR Hartstoff (ohne Bindemittel) der Gruppe A nach DIN 1100 für hochbeanspruchte Industrieböden",
+    beschreibung: "Hartstoff für die Herstellung hochbeanspruchter Industrieböden. Hartstoffbasis für NEODUR HE 65 SVS 3 und NEODUR HE 65 plus SVS 3. Für innen und außen.",
+    qualitaetsklasse: "CT-C70-F10-A3",
+    normen: ["DIN 1100"],
+    technischeDaten: [
+      { label: "Hartstoffgruppe (DIN 1100)", wert: "A" },
+      { label: "Schleifverschleiß", wert: "≤ 3 cm³/50 cm²" },
+    ],
+    besonderheiten: ["Hartstoff ohne Bindemittel"],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-wh-metallisch",
+    name: "KORODUR WH-metallisch",
+    kategorie: "sonstige",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffe",
+    kurzbeschreibung: "Metallischer KORODUR Hartstoff (Gruppe M nach DIN 1100) für Panzerestriche und schweren Eisenräderverkehr",
+    beschreibung: "Metallischer Hartstoff für hochbeanspruchte Industrieböden, besonders geeignet für schweren Eisenräderverkehr, Koller und hartes Absetzen scharfkantiger Werkstücke, zur Herstellung sogenannter Panzerestriche. Basis für NEODUR HE 3 metallisch und NEODUR HE 65 metallisch. Für innen und außen.",
+    qualitaetsklasse: "CT-C60-F12-A3",
+    normen: ["DIN 1100"],
+    technischeDaten: [
+      { label: "Hartstoffgruppe (DIN 1100)", wert: "M" },
+      { label: "Schleifverschleiß", wert: "≤ 3 cm³/50 cm²" },
+    ],
+    besonderheiten: ["Metallischer Hartstoff", "Für sogenannte Panzerestriche"],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-diamantbeton",
+    name: "KORODUR Diamantbeton",
+    kategorie: "sonstige",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffe",
+    kurzbeschreibung: "KORODUR Hartstoff der Gruppe KS nach DIN 1100 für höchstmöglichen Abnutzungswiderstand",
+    beschreibung: "Hartstoff für die Herstellung hochbeanspruchter Industrieböden bei höchstmöglichem Abnutzungswiderstand. Hartstoffbasis für NEODUR HE 65 SVS 1,5. Für innen und außen.",
+    qualitaetsklasse: "CT-C70-F10-A1,5",
+    normen: ["DIN 1100"],
+    technischeDaten: [
+      { label: "Hartstoffgruppe (DIN 1100)", wert: "KS" },
+      { label: "Schleifverschleiß", wert: "≤ 1,5 cm³/50 cm²" },
+    ],
+    besonderheiten: ["Höchstmöglicher Abnutzungswiderstand (Gruppe KS)"],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-fscem",
+    name: "KORODUR FSCem",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "schnellestrich",
+    kurzbeschreibung: "Zementäres, volumenstabiles, schwindarmes Schnellestrich-Bindemittel auf ternärer Basis",
+    beschreibung: "KORODUR FSCem ist ein zementäres, volumenstabiles, schwindarmes Schnellestrich-Bindemittel auf ternärer Basis zur Herstellung hochbelastbarer, schnell nutzbarer und verlegereifer Estriche gem. DIN 18560 und EN 13813. Für schnell belegbare Zementestriche im Verbund, auf Trennschicht, auf Dämmschicht und als Heizestrich, innen und außen. Auch zum Ausbessern und Sanieren alter Betonböden geeignet.",
+    qualitaetsklasse: "CT-C50-F7 / CT-C40-F6",
+    normen: ["DIN 18560", "DIN EN 13813", "DIN 18560-1"],
+    technischeDaten: [
+      { label: "Mischungsverhältnis (CT-C50-F7)", wert: "1:4 Gewichtsteile (75 kg FSCem : 300 kg Estrichsand A8–B8), W/Z ca. 0,42" },
+      { label: "Mischungsverhältnis (CT-C40-F6)", wert: "1:5 Gewichtsteile (60 kg FSCem : 300 kg Estrichsand A8–B8), W/Z ca. 0,40" },
+      { label: "Restfeuchte (CM-Messung)", wert: "nach 24 h ca. 5,9 %, nach 3 Tagen ca. 1,9 %, nach 28 Tagen ca. 1,3 %" },
+      { label: "Schwindklasse (DIN 18560-1)", wert: "SW 1, schwindarm (< 0,2 mm/m)" },
+    ],
+    besonderheiten: [
+      "Ternäres Bindemittel (Estrichsand bauseits)",
+      "Schnell belegbar",
+      "Verschleißfeste Nutzestriche mit Hartstoffzuschlag KORODUR VS 0/5 herstellbar",
+    ],
+    zeitKategorie: "schnell",
+  },
+  {
+    id: "korodur-fscem-screed",
+    name: "KORODUR FSCem Screed",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "schnellestrich",
+    kurzbeschreibung: "Volumenstabiler, schwindarmer Schnellestrich-Trockenmörtel, nach 3 Tagen belegbar",
+    beschreibung: "KORODUR FSCem Screed ist ein volumenstabiler, schwindarmer Schnellestrich-Trockenmörtel auf ternärer Basis zur Herstellung schnell verlegereifer Estriche für Schichtdicken bis 120 mm gem. DIN 18560 und DIN EN 13813. Bereits nach 3 Tagen belegbar, muss grundsätzlich belegt werden. Auch zum Ausbessern und Sanieren alter Betonböden geeignet.",
+    schichtdicke: "bis 120 mm",
+    qualitaetsklasse: "CT-C40-F6",
+    normen: ["DIN 18560", "DIN EN 13813", "DIN EN 13892-2"],
+    technischeDaten: [
+      { label: "Körnung", wert: "0–6 mm" },
+      { label: "Druckfestigkeit (DIN EN 13892-2)", wert: "nach 1 Tag ca. 20 N/mm², nach 28 Tagen ca. 40 N/mm²" },
+      { label: "Biegezugfestigkeit (DIN EN 13892-2)", wert: "nach 1 Tag ca. 4 N/mm², nach 28 Tagen ca. 6 N/mm²" },
+      { label: "Schwindklasse (DIN 18560-1)", wert: "SW 1, schwindarm (< 0,2 mm/m)" },
+      { label: "Belegbar", wert: "nach 3 Tagen" },
+    ],
+    besonderheiten: [
+      "Gebrauchsfertiger Trockenmörtel",
+      "Muss grundsätzlich belegt werden",
+      "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
+    ],
+    zeitKategorie: "schnell",
+  },
+  {
+    id: "neodur-level-au",
+    name: "NEODUR Level AU",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "selbstverlaufend",
+    kurzbeschreibung: "Schnellerhärtende, polymermodifizierte Bodenausgleichsmasse für 5 bis 50 mm",
+    beschreibung: "NEODUR Level AU ist eine zementgebundene, mineralische, schnellerhärtende, polymermodifizierte, dünnschichtige Bodenausgleichsmasse für Schichtdicken von 5 bis 50 mm. Im Verbund auf zementärem Untergrund, idealer Untergrund für Linoleum, Textil- und PVC-Beläge, Laminat, Keramik und Naturstein.",
+    schichtdicke: "5–50 mm",
+    qualitaetsklasse: "CT-C30-F5",
+    normen: [],
+    technischeDaten: [
+      { label: "Verarbeitungszeit", wert: "bei +20 °C ca. 30 Minuten" },
+      { label: "Begehbar", wert: "nach ca. 3–4 Stunden" },
+      { label: "Druckfestigkeit", wert: "nach 28 Tagen ≥ 33 N/mm²" },
+      { label: "Verbrauch", wert: "ca. 1,7 kg/mm/m²" },
+    ],
+    besonderheiten: ["Ausgleichsschicht unter NEODUR Level", "Grundierung mit KORODUR PC"],
+    systemBegleitprodukte: ["korodur-pc"],
+    zeitKategorie: "schnell",
+  },
+  {
+    id: "rapid-set-levelflor",
+    name: "Rapid Set LevelFlor",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "selbstverlaufend",
+    kurzbeschreibung: "Schnellerhärtende, selbstverlaufende Ausgleichsmasse auf Rapid-Set-Zementtechnologie für innen und außen",
+    beschreibung: "Rapid Set LevelFlor ist eine auf spezieller Zementtechnologie basierende, selbstverlaufende Ausgleichsmasse für innen und außen im Wohnungs- und Industriebau. Eine finale Deckschicht kann nach 6 bis 16 Stunden (bei +20 °C) aufgebracht werden. Für Neubau und Sanierung geeignet, muss grundsätzlich belegt werden.",
+    schichtdicke: "bis 70 mm",
+    qualitaetsklasse: "CT-C30-F6",
+    normen: [],
+    technischeDaten: [
+      { label: "Verarbeitungszeit", wert: "30 Min." },
+      { label: "Fließzeit", wert: "15 Min." },
+      { label: "Druckfestigkeit (ASTM C-109 mod.)", wert: "nach 25 h ca. 20 N/mm², nach 7 Tagen ca. 24 N/mm², nach 28 Tagen ca. 34 N/mm²" },
+      { label: "Biegezugfestigkeit (ASTM C-348)", wert: "nach 7 Tagen ca. 7,9 N/mm²" },
+      { label: "Deckschicht aufbringbar", wert: "nach 6–16 Stunden (bei +20 °C)" },
+    ],
+    besonderheiten: [
+      "Rapid-Set-Zementtechnologie",
+      "Selbstverlaufend",
+      "Muss grundsätzlich belegt werden",
+    ],
+    systemBegleitprodukte: ["korodur-txpk", "korodur-pc"],
+    zeitKategorie: "schnell",
+  },
+  {
+    id: "korodur-hb-5",
+    name: "KORODUR HB 5",
+    kategorie: "grundierung",
+    bereich: "industrieboden",
+    produktgruppe: "untergrund-haftbruecken",
+    kurzbeschreibung: "Zementgebundene Haftbrücke für den kraftschlüssigen Verbund von Hartstoffestrichen auf erhärtetem Beton",
+    beschreibung: "KORODUR HB 5 ist eine gebrauchsfertige, zementgebundene Haftbrücke für den kraftschlüssigen Verbund von KORODUR Hartstoffestrichen und zementgebundenen Estrichen aller Güteklassen auf erhärtetem Beton. Besonders bewährt im KORODUR-KOROTAN Industriebodensystem, unempfindlich gegen Untergrundfeuchte.",
+    normen: [],
+    technischeDaten: [{ label: "Verbrauch", wert: "ca. 2 kg/m²" }],
+    besonderheiten: [
+      "Unempfindlich gegen Untergrundfeuchte",
+      "Für frische und zeitversetzte Verlegetechnik",
+    ],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-txpk",
+    name: "KORODUR TXPK",
+    kategorie: "grundierung",
+    bereich: "industrieboden",
+    produktgruppe: "untergrund-haftbruecken",
+    kurzbeschreibung: "Zweikomponentige Epoxidharz-Spezialgrundierung für selbstverlaufende Beschichtungen",
+    beschreibung: "Epoxidharz-Spezialgrundierung, zweikomponentig, für selbstverlaufende Beschichtungen wie TRU Self-Leveling, LevelFlor und NEODUR Level sowie zur Grundierung von Beton- und Estrichflächen, bei denen mit nachträglicher, rückseitiger Feuchteeinwirkung gerechnet werden muss.",
+    normen: [],
+    technischeDaten: [
+      { label: "Verbrauch", wert: "ca. 400–500 g/m² je nach Rauigkeit des Untergrundes" },
+    ],
+    besonderheiten: ["Zweikomponentig", "Geeignet bei rückseitiger Feuchteeinwirkung"],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-durop",
+    name: "KORODUR DUROP",
+    kategorie: "sonstige",
+    bereich: "industrieboden",
+    produktgruppe: "kunstharz-hartstoffe",
+    kurzbeschreibung: "Synthetischer Hartstoff als Füll- und Abstreumaterial für Kunstharzbeschichtungen und -estriche",
+    beschreibung: "Synthetische Hartstoffe des Produktsystems KORODUR DUROP werden überwiegend als Füll- und Abstreumaterial für Kunstharzbeschichtungen und Kunstharzestriche verwendet. DUROP verbessert die Griffigkeit und reduziert Rollgeräusche; im Straßenbau wurden bereits mehr als 1,5 Mio. m² Autobahnteilstrecken als kunstharzgebundene Dünnbeschichtung mit DUROP ausgeführt.",
+    normen: [],
+    technischeDaten: [{ label: "Härte nach Mohs", wert: "8" }],
+    besonderheiten: ["Verschleißfest, rutschhemmend, polierresistent"],
+    varianten: [
+      { name: "DUROP 0,5/1", hinweis: "Körnung 0,5–1 mm" },
+      { name: "DUROP 1/2", hinweis: "Körnung 1–2 mm" },
+      { name: "DUROP 2/3", hinweis: "Körnung 2–3 mm" },
+      { name: "DUROP 2/5", hinweis: "Körnung 2–5 mm" },
+    ],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-robust",
+    name: "KORODUR Robust",
+    kategorie: "sonstige",
+    bereich: "industrieboden",
+    produktgruppe: "kunstharz-hartstoffe",
+    kurzbeschreibung: "Synthetischer Hartstoff (Körnung 0–3 mm) als Füll- und Abstreumaterial für Kunstharzsysteme",
+    beschreibung: "Mit den Produktsystemen KORODUR DUROP und KORODUR Robust stehen für hochwertige Kunstharzbeschichtungen und -estriche passende Füll- und Abstreumaterialien bereit.",
+    normen: [],
+    technischeDaten: [
+      { label: "Körnung", wert: "0–3 mm" },
+      { label: "Härte nach Mohs", wert: "7" },
+    ],
+    besonderheiten: [],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "korodur-silosystem",
+    name: "KORODUR Silosystem",
+    kategorie: "sonstige",
+    bereich: "industrieboden",
+    produktgruppe: "systeme",
+    kurzbeschreibung: "Baustellensilo mit Misch- und Pumptechnik für die wirtschaftliche Verlegung von Hartstoffschichten",
+    beschreibung: "Das KORODUR Silosystem ermöglicht die wirtschaftliche Verlegung von KORODUR Hartstoffschichten durch rationelle Arbeitstechnik: Siloware (z. B. NEODUR HE 65), am Silo befestigte Misch- und Pumptechnik und maschinentechnische Betreuung. Kein Einrichten von Mischplätzen, keine Verpackungsentsorgung, gleichbleibende Mörtelqualität.",
+    normen: [],
+    technischeDaten: [
+      { label: "Siloeinheit", wert: "22,5 m³" },
+      { label: "Pumpleistung", wert: "ca. 100 l/min (ca. 600 m² in rd. 1 Stunde)" },
+      { label: "Tagesleistung", wert: "ca. 1.000–2.000 m² (Quelle nennt auch 1.000–1.500 m²)" },
+      { label: "Förderstrecke", wert: "bis zu 80 m" },
+    ],
+    besonderheiten: [
+      "Verarbeitbare Qualitäten: NEODUR HE 65, HE 65 SVS 3, HE 65 SVS 1,5, HE 40",
+      "Gleichbleibende Mörtelqualität, wichtig bei farbigen Ausführungen",
+    ],
     zeitKategorie: "normal",
   },
 ];

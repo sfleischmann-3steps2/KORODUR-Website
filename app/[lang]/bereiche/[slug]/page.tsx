@@ -12,6 +12,48 @@ import { ExternalLink, Info } from "lucide-react";
 
 type Params = Promise<{ lang: string; slug: string }>;
 
+function ProduktGrid({
+  produkte: items,
+  lang,
+}: {
+  produkte: { id: string; name: string; kurzbeschreibung: string; qualitaetsklasse?: string }[];
+  lang: string;
+}) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {items.map((produkt) => (
+        <Link
+          key={produkt.id}
+          href={`/${lang}/produkte/${produkt.id}`}
+          className="no-underline group block"
+        >
+          <div
+            className="bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg"
+            style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <h4 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
+                {produkt.name}
+              </h4>
+              {produkt.qualitaetsklasse && (
+                <span
+                  className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
+                  style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}
+                >
+                  {produkt.qualitaetsklasse}
+                </span>
+              )}
+            </div>
+            <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">
+              {produkt.kurzbeschreibung}
+            </p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
 export function generateStaticParams() {
   return bereiche.flatMap((b) => LOCALES.map((lang) => ({ lang, slug: b.slug })));
 }
@@ -36,6 +78,21 @@ export default async function BereichPage({ params }: { params: Params }) {
     produkte.filter((p) => p.bereich === bereich.slug),
     lang
   );
+
+  // Gliederung nach kuratierten Produktgruppen (Anker-Chips, kein Filter-State).
+  // Bereiche ohne Gruppen-Definition zeigen das flache Grid.
+  const gruppen = (bereich.produktgruppen ?? [])
+    .map((key) => ({
+      key,
+      label: tb(`gruppe_${key}`),
+      items: localizedProdukte.filter((p) => p.produktgruppe === key),
+    }))
+    .filter((g) => g.items.length > 0);
+  const ohneGruppe = bereich.produktgruppen
+    ? localizedProdukte.filter(
+        (p) => !p.produktgruppe || !bereich.produktgruppen?.includes(p.produktgruppe)
+      )
+    : localizedProdukte;
 
   return (
     <>
@@ -116,37 +173,44 @@ export default async function BereichPage({ params }: { params: Params }) {
           </h2>
 
           {localizedProdukte.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {localizedProdukte.map((produkt) => (
-                <Link
-                  key={produkt.id}
-                  href={`/${lang}/produkte/${produkt.id}`}
-                  className="no-underline group block"
-                >
-                  <div
-                    className="bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg"
-                    style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}
+            <>
+              {/* Gruppen-Anker-Chips (springen zu den Gruppen, kein Filter-State) */}
+              {gruppen.length > 1 && (
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {gruppen.map((g) => (
+                    <a
+                      key={g.key}
+                      href={`#${g.key}`}
+                      className="inline-flex items-center rounded-full border border-mid-gray bg-white text-navy text-[14px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan"
+                      style={{ padding: "10px 18px", fontWeight: 700, minHeight: 44 }}
+                    >
+                      {g.label}
+                      <span className="ml-2 text-navy/40 text-[12px]" style={{ fontWeight: 600 }}>
+                        {g.items.length}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {gruppen.map((g) => (
+                <div key={g.key} id={g.key} className="scroll-mt-20 mb-10 last:mb-0">
+                  <h3
+                    className="mb-5"
+                    style={{ fontSize: "clamp(17px, 2.4vw, 22px)", fontWeight: 900, lineHeight: 1.2 }}
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
-                        {produkt.name}
-                      </h3>
-                      {produkt.qualitaetsklasse && (
-                        <span
-                          className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
-                          style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}
-                        >
-                          {produkt.qualitaetsklasse}
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">
-                      {produkt.kurzbeschreibung}
-                    </p>
-                  </div>
-                </Link>
+                    {g.label}
+                  </h3>
+                  <ProduktGrid produkte={g.items} lang={lang} />
+                </div>
               ))}
-            </div>
+
+              {ohneGruppe.length > 0 && (
+                <div className={gruppen.length > 0 ? "mt-10" : undefined}>
+                  <ProduktGrid produkte={ohneGruppe} lang={lang} />
+                </div>
+              )}
+            </>
           ) : (
             <div
               className="bg-white rounded-2xl text-center"

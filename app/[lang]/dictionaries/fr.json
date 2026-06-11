@@ -91,7 +91,8 @@
     "tds_download": "Télécharger la fiche technique",
     "referenzen_title": "Ce produit en action",
     "referenzen_alle": "Toutes les références avec ce produit",
-    "cta_verarbeitung": "Des questions sur la mise en oeuvre ? Nos conseillers techniques sont à votre disposition."
+    "cta_verarbeitung": "Des questions sur la mise en oeuvre ? Nos conseillers techniques sont à votre disposition.",
+    "varianten_title": "Qualités disponibles"
   },
   "sanierung": {
     "title": "Trouveur de produits",
@@ -300,7 +301,16 @@
     "microtop_intro": "Avec la gamme MICROTOP, nous avons développé un mortier projeté minéral enrichi en microsilice pour la rénovation et la construction de réservoirs d'eau potable. Les produits sont conformes aux fiches techniques et directives du DVGW et sont utilisés par des compagnies des eaux dans le monde entier.",
     "katzenstreu_name": "Litière pour chats",
     "katzenstreu_teaser": "Litière hygiénique à la bentonite pour le commerce et les marques de distributeur",
-    "katzenstreu_intro": "Depuis 1992, nous produisons et distribuons de la litière pour chats à la bentonite pour des clients européens : grande distribution alimentaire, discounters et grossistes en animalerie, également en marque de distributeur. Tous les produits sont purement naturels, sans additifs chimiques et certifiés ISO 9001, ISO 14001 et BRC Global Standard. Contactez-nous."
+    "katzenstreu_intro": "Depuis 1992, nous produisons et distribuons de la litière pour chats à la bentonite pour des clients européens : grande distribution alimentaire, discounters et grossistes en animalerie, également en marque de distributeur. Tous les produits sont purement naturels, sans additifs chimiques et certifiés ISO 9001, ISO 14001 et BRC Global Standard. Contactez-nous.",
+    "gruppe_hartstoffestriche": "Chapes à agrégats durs",
+    "gruppe_hartstoffeinstreuung": "Saupoudrages durcisseurs",
+    "gruppe_hartstoffe": "Agrégats durs selon DIN 1100",
+    "gruppe_schnellestrich": "Systèmes de chape rapide",
+    "gruppe_selbstverlaufend": "Systèmes autonivelants",
+    "gruppe_untergrund-haftbruecken": "Support, ponts d'adhérence et primaires",
+    "gruppe_kunstharz-hartstoffe": "Agrégats durs pour systèmes résine",
+    "gruppe_systeme": "Systèmes et mise en œuvre",
+    "gruppe_nachbehandlung": "Cure et protection de surface"
   },
   "sanierungHub": {
     "title": "Rénover avec KORODUR",
