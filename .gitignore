@@ -25,3 +25,4 @@ Sanierungsprodukte_db.zip
 # Maschinen-Artefakte
 *.log
 __pycache__/
+.server/
