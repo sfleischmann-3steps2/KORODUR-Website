@@ -7,7 +7,7 @@
 
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { useLocale } from "@/lib/LocaleContext";
 import type {
@@ -100,6 +100,27 @@ export default function Wizard({ lang }: WizardProps) {
     setCurrentStep(totalSteps);
   }, [totalSteps]);
 
+  // Scroll-Reset beim Step-Wechsel (v. a. mobil): Wer in einem langen Step
+  // (Schritt 3, 6 Karten) nach unten gescrollt hat, soll im nächsten Step
+  // wieder die Frage oben sehen — aber nur scrollen, wenn der Wizard-Anfang
+  // tatsächlich aus dem Viewport gescrollt ist. Beim Ergebnis: ganz nach oben.
+  const containerRef = useRef<HTMLDivElement>(null);
+  const erstesRender = useRef(true);
+  useEffect(() => {
+    if (erstesRender.current) {
+      erstesRender.current = false;
+      return;
+    }
+    if (showResults) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const el = containerRef.current;
+    if (el && el.getBoundingClientRect().top < 0) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [currentStep, showResults]);
+
   if (showResults) {
     return (
       <Ergebnisseite
@@ -112,7 +133,7 @@ export default function Wizard({ lang }: WizardProps) {
   }
 
   return (
-    <div className="rounded-2xl bg-light-gray p-4 sm:p-6 md:p-8">
+    <div ref={containerRef} className="scroll-mt-20 rounded-2xl bg-light-gray p-4 sm:p-6 md:p-8">
       <ProgressHeader currentStep={currentStep} totalSteps={totalSteps} onCancel={cancel} />
 
       {/* Mindesthöhe = höchster Step (Schritt 3, 6 Karten im 2er-Grid), damit
