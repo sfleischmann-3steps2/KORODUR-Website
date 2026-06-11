@@ -8,20 +8,24 @@
 //      Hinweis wenn kein exakter Treffer dabei ist
 //   4. Allgemeiner Berater-CTA (ergebnis-unabhängig)
 //   5. Navigation: Zurück (zur letzten Frage) + Neu starten — kein Dead End mehr
+//
+// Logik (Berechnung, Lokalisierung, PL-Plural) liegt in useErgebnis.ts;
+// hier nur noch Darstellung (UI-Refactoring PR 5).
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
-import type { CSSProperties } from "react";
 import type { Locale } from "@/lib/i18n";
 import { useLocale } from "@/lib/LocaleContext";
-import type { LoesungsfinderState, Referenz } from "@/data/types";
-import type { Produkt } from "@/data/produkte";
+import type { LoesungsfinderState } from "@/data/types";
 import { einsatzbereichLabel } from "@/data/einsatzbereichMapping";
-import { berechneErgebnisV25, type ErgebnisV25 } from "@/data/loesungsfinderV25";
 import { withBasePath } from "@/lib/basePath";
 import { KONTAKT_URLS } from "@/lib/kontakt";
-import { IconFlame, IconPhone, IconArrowRight, IconArrowLeft, IconRefresh } from "./icons";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { IconPhone, IconArrowRight, IconArrowLeft, IconRefresh } from "./icons";
+import ProduktBanner from "./ProduktBanner";
+import { projektWort, useErgebnis } from "./useErgebnis";
 
 interface ErgebnisseiteProps {
   lang: Locale;
@@ -32,82 +36,15 @@ interface ErgebnisseiteProps {
   onNeustart: () => void;
 }
 
-const NAVY = "var(--navy)";
-const CYAN = "var(--cyan)";
-const HELLGRAU = "var(--light-gray)";
-const MITTELGRAU = "var(--mid-gray)";
-
-// Mehrzeiliges Abschneiden mit Ellipsis (verhindert mitten-im-Wort-Schnitte).
-const clamp = (zeilen: number): CSSProperties => ({
-  display: "-webkit-box",
-  WebkitLineClamp: zeilen,
-  WebkitBoxOrient: "vertical",
-  overflow: "hidden",
-});
-
 // Endständige Jahreszahl in Klammern aus dem Titel entfernen, z. B.
 // "Naturex, Burgdorf (2013)" → "Naturex, Burgdorf". Manche Referenzen sind alt;
 // das Jahr soll nicht auf der Ergebnisseite stehen (Steffi 2026-06-09).
 const ohneJahr = (titel: string): string => titel.replace(/\s*\(\d{4}\)\s*$/, "");
 
-// Polnisch braucht drei Pluralformen (1 projekt, 2–4 projekty, 5+ projektów);
-// die übrigen Sprachen kommen mit Singular/Plural aus.
-function projektWort(
-  n: number,
-  t: { refs_projekt_singular: string; refs_projekt_plural: string; refs_projekt_plural5: string },
-  lang: string,
-): string {
-  if (n === 1) return t.refs_projekt_singular;
-  if (lang === "pl") {
-    const r10 = n % 10;
-    const r100 = n % 100;
-    const fewForm = r10 >= 2 && r10 <= 4 && !(r100 >= 12 && r100 <= 14);
-    return fewForm ? t.refs_projekt_plural : t.refs_projekt_plural5;
-  }
-  return t.refs_projekt_plural;
-}
-
 export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: ErgebnisseiteProps) {
   const { dict } = useLocale();
   const t = dict.loesungsfinder;
-  const ergebnis = useMemo<ErgebnisV25>(() => berechneErgebnisV25(state), [state]);
-
-  // Inhalts-Lokalisierung (Referenz-Titel, Produkt-Kurzbeschreibung): der
-  // Match-Algorithmus läuft auf der DE-Basis; die Overrides werden hier
-  // nachgeladen. `fuer` koppelt das Ergebnis an die aktuelle Berechnung,
-  // damit nach einer Auswahl-Änderung keine veralteten Texte stehen bleiben.
-  const [lokalisiert, setLokalisiert] = useState<{
-    fuer: ErgebnisV25;
-    refs: Referenz[];
-    topProdukt: Produkt | null;
-    alternativProdukt: Produkt | null;
-  } | null>(null);
-
-  useEffect(() => {
-    if (lang === "de") return;
-    let aktiv = true;
-    (async () => {
-      const { localizeReferenzen, localizeProdukt } = await import("@/data/i18n/getLocalized");
-      const [refs, topProdukt, alternativProdukt] = await Promise.all([
-        localizeReferenzen(ergebnis.refs.slice(0, 6), lang),
-        ergebnis.topProdukt ? localizeProdukt(ergebnis.topProdukt, lang) : Promise.resolve(null),
-        ergebnis.alternativProdukt
-          ? localizeProdukt(ergebnis.alternativProdukt, lang)
-          : Promise.resolve(null),
-      ]);
-      if (aktiv) setLokalisiert({ fuer: ergebnis, refs, topProdukt, alternativProdukt });
-    })();
-    return () => {
-      aktiv = false;
-    };
-  }, [ergebnis, lang]);
-
-  const refsAnzeige: Referenz[] =
-    lokalisiert?.fuer === ergebnis ? lokalisiert.refs : ergebnis.refs.slice(0, 6);
-  const topProduktAnzeige: Produkt | null =
-    lokalisiert?.fuer === ergebnis ? lokalisiert.topProdukt : ergebnis.topProdukt;
-  const alternativAnzeige: Produkt | null =
-    lokalisiert?.fuer === ergebnis ? lokalisiert.alternativProdukt : ergebnis.alternativProdukt;
+  const { ergebnis, refsAnzeige, topProduktAnzeige, alternativAnzeige } = useErgebnis(state, lang);
 
   // Chip-Labels in der oberen Leiste (reine Zusammenfassung der Auswahl)
   const chips: string[] = [];
@@ -126,105 +63,33 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
   const refTitel = hatExakte ? t.refs_exakt : t.refs_verwandt;
 
   return (
-    <div className="rounded-2xl p-6 md:p-8" style={{ background: HELLGRAU }}>
+    <div className="rounded-2xl bg-light-gray p-6 md:p-8">
       {/* Auswahl-Chips (Zusammenfassung) */}
-      <div className="flex flex-wrap items-center gap-2 mb-3">
+      <div className="mb-3 flex flex-wrap items-center gap-2">
         {chips.map((c) => (
-          <span
+          <Badge
             key={c}
-            style={{
-              fontSize: 11,
-              background: "color-mix(in srgb, var(--cyan) 12%, transparent)",
-              color: NAVY,
-              padding: "4px 10px",
-              borderRadius: 8,
-              fontWeight: 500,
-            }}
+            variant="secondary"
+            className="rounded-lg bg-[color-mix(in_srgb,var(--cyan)_12%,transparent)] px-2.5 py-1 text-xs font-medium whitespace-normal text-navy"
           >
             {c}
-          </span>
+          </Badge>
         ))}
       </div>
 
-      <h2 className="text-[20px] font-medium mb-4" style={{ color: NAVY }}>
-        {t.ergebnis_title}
-      </h2>
+      <h2 className="mb-4 text-xl font-medium text-navy">{t.ergebnis_title}</h2>
 
       {/* Top-Empfehlung als kompakter Banner */}
       {topProduktAnzeige ? (
-        <Link
-          href={`/${lang}/produkte/${topProduktAnzeige.id}/`}
-          style={{
-            background: "var(--white)",
-            border: `1px solid ${MITTELGRAU}`,
-            borderRadius: 12,
-            padding: "14px 18px",
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-            textDecoration: "none",
-            color: NAVY,
-            marginBottom: alternativAnzeige ? 10 : 20,
-          }}
-        >
-          <div
-            style={{
-              flexShrink: 0,
-              width: 40,
-              height: 40,
-              borderRadius: 8,
-              background: NAVY,
-              color: "var(--white)",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <IconFlame width={22} height={22} aria-hidden="true" />
-          </div>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div
-              style={{
-                fontSize: 10,
-                color: CYAN,
-                textTransform: "uppercase",
-                letterSpacing: "0.5px",
-                fontWeight: 500,
-                marginBottom: 2,
-              }}
-            >
-              {t.ergebnis_top}
-            </div>
-            <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
-              {topProduktAnzeige.name}
-            </div>
-            <div
-              style={{
-                fontSize: 12,
-                color: "var(--muted-foreground)",
-                marginTop: 2,
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {topProduktAnzeige.kurzbeschreibung}
-            </div>
-          </div>
-          <div
-            style={{
-              flexShrink: 0,
-              fontSize: 13,
-              color: CYAN,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 4,
-            }}
-          >
-            {t.ergebnis_details}
-            <IconArrowRight width={13} height={13} aria-hidden="true" />
-          </div>
-        </Link>
+        <ProduktBanner
+          lang={lang}
+          variant="top"
+          produkt={topProduktAnzeige}
+          label={t.ergebnis_top}
+          beschreibung={topProduktAnzeige.kurzbeschreibung}
+          detailsLabel={t.ergebnis_details}
+          className={alternativAnzeige ? "mb-2.5" : "mb-5"}
+        />
       ) : (
         <EmptyEmpfehlung titel={t.ergebnis_empty_title} text={t.ergebnis_empty_text} />
       )}
@@ -232,108 +97,29 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
       {/* Alternative (nur im kuratierten Modus belegt): bewusst dem Top-Banner
           untergeordnet — Icon-Box outlined statt gefüllt, Label grau. */}
       {alternativAnzeige && (
-        <Link
-          href={`/${lang}/produkte/${alternativAnzeige.id}/`}
-          style={{
-            background: "var(--white)",
-            border: `1px solid ${MITTELGRAU}`,
-            borderRadius: 12,
-            padding: "14px 18px",
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-            textDecoration: "none",
-            color: NAVY,
-            marginBottom: 20,
-          }}
-        >
-          <div
-            style={{
-              flexShrink: 0,
-              width: 40,
-              height: 40,
-              borderRadius: 8,
-              background: "var(--white)",
-              border: `1.5px solid ${NAVY}`,
-              color: NAVY,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <IconFlame width={22} height={22} aria-hidden="true" />
-          </div>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div
-              style={{
-                fontSize: 10,
-                color: "var(--muted-foreground)",
-                textTransform: "uppercase",
-                letterSpacing: "0.5px",
-                fontWeight: 500,
-                marginBottom: 2,
-              }}
-            >
-              {t.ergebnis_alternative}
-            </div>
-            <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
-              {alternativAnzeige.name}
-            </div>
-            <div
-              style={{
-                fontSize: 12,
-                color: "var(--muted-foreground)",
-                marginTop: 2,
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {ergebnis.alternativHinweis ?? alternativAnzeige.kurzbeschreibung}
-            </div>
-          </div>
-          <div
-            style={{
-              flexShrink: 0,
-              fontSize: 13,
-              color: CYAN,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 4,
-            }}
-          >
-            {t.ergebnis_details}
-            <IconArrowRight width={13} height={13} aria-hidden="true" />
-          </div>
-        </Link>
+        <ProduktBanner
+          lang={lang}
+          variant="alternative"
+          produkt={alternativAnzeige}
+          label={t.ergebnis_alternative}
+          beschreibung={ergebnis.alternativHinweis ?? alternativAnzeige.kurzbeschreibung}
+          detailsLabel={t.ergebnis_details}
+          className="mb-5"
+        />
       )}
 
       {/* Referenzen-Header */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginBottom: 4,
-        }}
-      >
-        <div style={{ fontSize: 15, fontWeight: 500, color: NAVY }}>
+      <div className="mb-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+        <div className="text-[15px] font-medium text-navy">
           {refTitel}{" "}
-          <span style={{ fontSize: 12, color: "var(--muted-foreground)", fontWeight: 400 }}>
+          <span className="text-xs font-normal text-muted-foreground">
             · {ergebnis.refsGesamt} {projektWort(ergebnis.refsGesamt, t, lang)}
           </span>
         </div>
         {ergebnis.refsGesamt > 6 && (
           <Link
             href={`/${lang}/referenzen/`}
-            style={{
-              fontSize: 12,
-              color: CYAN,
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 4,
-            }}
+            className="inline-flex min-h-11 items-center gap-1 text-xs text-cyan no-underline"
           >
             {t.refs_alle}
             <IconArrowRight width={12} height={12} aria-hidden="true" />
@@ -342,149 +128,75 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
       </div>
 
       {/* Hinweis, wenn kein exakter Treffer dabei ist (aufgefüllt auf min. 3) */}
-      {ergebnis.refsGelockert && (
-        <div style={{ fontSize: 12, color: "var(--muted-foreground)", marginBottom: 12, lineHeight: 1.5 }}>
-          {t.refs_gelockert}
-        </div>
+      {ergebnis.refsGelockert ? (
+        <div className="mb-3 text-xs leading-normal text-muted-foreground">{t.refs_gelockert}</div>
+      ) : (
+        <div className="mb-3" />
       )}
-      {!ergebnis.refsGelockert && <div style={{ marginBottom: 12 }} />}
 
       {/* Referenz-Grid */}
       {refsAnzeige.length > 0 ? (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-            gap: 10,
-            marginBottom: 16,
-          }}
-        >
+        <div className="mb-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
           {refsAnzeige.map((r) => (
             <Link
               key={r.id}
               href={`/${lang}/referenzen/${r.slug}/`}
-              style={{
-                background: "var(--white)",
-                border: `1px solid ${MITTELGRAU}`,
-                borderRadius: 8,
-                overflow: "hidden",
-                textDecoration: "none",
-                color: NAVY,
-                display: "block",
-              }}
+              className="group block no-underline"
             >
-              <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 10", background: HELLGRAU }}>
-                <Image
-                  src={withBasePath(r.bild)}
-                  alt={r.bildAlt ?? r.titel}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 200px"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div style={{ padding: "10px 12px" }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: NAVY, lineHeight: 1.3, ...clamp(2) }}>
-                  {ohneJahr(r.titel)}
+              <Card className="gap-0 overflow-hidden rounded-lg border-mid-gray py-0 text-navy shadow-none transition-colors group-hover:border-cyan">
+                <div className="relative aspect-[16/10] w-full bg-light-gray">
+                  <Image
+                    src={withBasePath(r.bild)}
+                    alt={r.bildAlt ?? r.titel}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 200px"
+                    className="object-cover"
+                  />
                 </div>
-                {r.untertitel && (
-                  <div style={{ fontSize: 11, color: "var(--muted-foreground)", marginTop: 3, lineHeight: 1.35, ...clamp(2) }}>
-                    {ohneJahr(r.untertitel)}
+                <div className="px-3 py-2.5">
+                  <div className="line-clamp-2 text-[13px] leading-snug font-semibold text-navy">
+                    {ohneJahr(r.titel)}
                   </div>
-                )}
-              </div>
+                  {r.untertitel && (
+                    <div className="mt-1 line-clamp-2 text-xs leading-snug text-muted-foreground">
+                      {ohneJahr(r.untertitel)}
+                    </div>
+                  )}
+                </div>
+              </Card>
             </Link>
           ))}
         </div>
       ) : (
-        <div
-          style={{
-            background: "var(--white)",
-            border: `1px dashed ${MITTELGRAU}`,
-            borderRadius: 8,
-            padding: 24,
-            textAlign: "center",
-            fontSize: 13,
-            color: "var(--muted-foreground)",
-            marginBottom: 16,
-          }}
-        >
+        <Card className="mb-4 rounded-lg border-dashed border-mid-gray p-6 text-center text-[13px] text-muted-foreground shadow-none">
           {t.refs_keine}
-        </div>
+        </Card>
       )}
 
       {/* Allgemeiner Berater-CTA (ergebnis-unabhängig) */}
-      <div
-        style={{
-          background: NAVY,
-          borderRadius: 10,
-          padding: "16px 18px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 16,
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="flex flex-col gap-4 rounded-[10px] bg-navy px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-[18px]">
         <div>
-          <div style={{ fontSize: 15, fontWeight: 600, color: "var(--white)", marginBottom: 2 }}>
-            {t.cta_title}
-          </div>
-          <div style={{ fontSize: 12.5, color: "color-mix(in srgb, var(--white) 80%, transparent)" }}>
-            {t.cta_text}
-          </div>
+          <div className="mb-0.5 text-[15px] font-semibold text-white">{t.cta_title}</div>
+          <div className="text-[12.5px] text-white/80">{t.cta_text}</div>
         </div>
-        <a
-          href={KONTAKT_URLS[lang] ?? KONTAKT_URLS.de}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            background: CYAN,
-            color: "var(--white)",
-            padding: "10px 18px",
-            borderRadius: 8,
-            fontSize: 13,
-            fontWeight: 600,
-            textDecoration: "none",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 6,
-            flexShrink: 0,
-          }}
-        >
-          <IconPhone width={15} height={15} aria-hidden="true" />
-          {t.cta_button}
-        </a>
+        <Button asChild className="min-h-11 w-full shrink-0 sm:w-auto">
+          <a href={KONTAKT_URLS[lang] ?? KONTAKT_URLS.de} target="_blank" rel="noopener noreferrer">
+            <IconPhone width={15} height={15} aria-hidden="true" />
+            {t.cta_button}
+          </a>
+        </Button>
       </div>
 
       {/* Navigation — kein Dead End */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginTop: 20,
-          paddingTop: 16,
-          borderTop: `1px solid ${MITTELGRAU}`,
-        }}
-      >
-        <button
-          type="button"
-          onClick={onZurueck}
-          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm transition hover:bg-white"
-          style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
-        >
+      <div className="mt-5 flex items-center justify-between gap-3 border-t border-mid-gray pt-4">
+        <Button type="button" variant="outline" onClick={onZurueck} className="min-h-11">
           <IconArrowLeft width={14} height={14} aria-hidden="true" />
           {t.back}
-        </button>
-        <button
-          type="button"
-          onClick={onNeustart}
-          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm transition hover:bg-white"
-          style={{ border: `1px solid ${MITTELGRAU}`, color: NAVY, background: "transparent" }}
-        >
+        </Button>
+        <Button type="button" variant="ghost" onClick={onNeustart} className="min-h-11 text-navy">
           <IconRefresh width={14} height={14} aria-hidden="true" />
           {t.neu_starten}
-        </button>
+        </Button>
       </div>
     </div>
   );
@@ -492,22 +204,9 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
 
 function EmptyEmpfehlung({ titel, text }: { titel: string; text: string }) {
   return (
-    <div
-      style={{
-        background: "var(--white)",
-        border: `1px dashed ${MITTELGRAU}`,
-        borderRadius: 12,
-        padding: 24,
-        textAlign: "center",
-        marginBottom: 20,
-      }}
-    >
-      <div style={{ fontSize: 16, fontWeight: 500, color: NAVY, marginBottom: 6 }}>
-        {titel}
-      </div>
-      <div style={{ fontSize: 13, color: "var(--muted-foreground)", lineHeight: 1.55 }}>
-        {text}
-      </div>
-    </div>
+    <Card className="mb-5 gap-1.5 rounded-xl border-dashed border-mid-gray p-6 text-center shadow-none">
+      <div className="text-base font-medium text-navy">{titel}</div>
+      <div className="text-[13px] leading-relaxed text-muted-foreground">{text}</div>
+    </Card>
   );
 }

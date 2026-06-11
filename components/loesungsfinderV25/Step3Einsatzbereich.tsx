@@ -30,8 +30,6 @@ interface Step3Props {
   onSelect: (v: EinsatzbereichV25) => void;
 }
 
-const NAVY = "var(--navy)";
-
 type IconComp = ComponentType<Omit<SVGProps<SVGSVGElement>, "children" | "viewBox" | "fill" | "stroke">>;
 
 const ICON_FUER_BEREICH: Record<EinsatzbereichV25, IconComp> = {
@@ -52,13 +50,12 @@ export default function Step3Einsatzbereich({ innenAussen, value, onSelect }: St
   return (
     <div>
       <header className="mb-6">
-        <h2 className="text-[22px] font-medium" style={{ color: NAVY }}>
-          {t.step3_question}
-        </h2>
+        <h2 className="text-xl sm:text-[22px] font-medium text-navy">{t.step3_question}</h2>
         <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{subline}</p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      {/* 6 Karten: ab sm zweispaltig, damit der Weiter-Button mobil nicht so weit unter den Fold rutscht (Mobile-Audit §6 Nr. 10). */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {bereiche.map((b) => {
           const labels = einsatzbereichLabel(b, lang);
           const Icon = ICON_FUER_BEREICH[b];
