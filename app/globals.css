@@ -163,25 +163,6 @@ h1, h2, h3, h4, h5, h6 {
 .stagger-5 { animation-delay: 0.25s; }
 .stagger-6 { animation-delay: 0.3s; }
 
-/* Mobile drawer animation */
-@keyframes slideInFromLeft {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
-}
-
-@keyframes fadeInOverlay {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.animate-drawer {
-  animation: slideInFromLeft 0.25s ease-out both;
-}
-
-.animate-overlay {
-  animation: fadeInOverlay 0.2s ease-out both;
-}
-
 /* Responsive section padding */
 .section-px {
   padding-left: 16px;
