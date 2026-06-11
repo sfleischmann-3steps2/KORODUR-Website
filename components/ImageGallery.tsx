@@ -1,8 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { withBasePath } from "@/lib/basePath";
+import { useLocale } from "@/lib/LocaleContext";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 interface ImageGalleryProps {
   images: string[];
@@ -10,9 +20,41 @@ interface ImageGalleryProps {
 }
 
 export default function ImageGallery({ images, alt }: ImageGalleryProps) {
+  const { lang } = useLocale();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   if (!images || images.length === 0) return null;
+
+  const closeLabel =
+    lang === "de" ? "Schließen" : lang === "fr" ? "Fermer" : lang === "pl" ? "Zamknij" : "Close";
+  const prevLabel =
+    lang === "de"
+      ? "Vorheriges Bild"
+      : lang === "fr"
+      ? "Image précédente"
+      : lang === "pl"
+      ? "Poprzednie zdjęcie"
+      : "Previous image";
+  const nextLabel =
+    lang === "de"
+      ? "Nächstes Bild"
+      : lang === "fr"
+      ? "Image suivante"
+      : lang === "pl"
+      ? "Następne zdjęcie"
+      : "Next image";
 
   return (
     <>
@@ -38,83 +80,49 @@ export default function ImageGallery({ images, alt }: ImageGalleryProps) {
       </div>
 
       {/* Lightbox */}
-      {selectedIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center"
-          style={{ backgroundColor: "rgba(0,0,0,0.85)" }}
-          onClick={() => setSelectedIndex(null)}
-          onKeyDown={(e) => {
-            if (e.key === "Escape") setSelectedIndex(null);
-            if (e.key === "ArrowRight") setSelectedIndex((selectedIndex + 1) % images.length);
-            if (e.key === "ArrowLeft") setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
-          }}
-          role="dialog"
-          tabIndex={0}
+      <Dialog
+        open={selectedIndex !== null}
+        onOpenChange={(open) => {
+          if (!open) setSelectedIndex(null);
+        }}
+      >
+        <DialogContent
+          closeLabel={closeLabel}
+          aria-describedby={undefined}
+          overlayClassName="bg-black/85"
+          className="w-[95vw] max-w-5xl gap-2 border-none bg-transparent p-0 text-white shadow-none"
         >
-          {/* Close button */}
-          <button
-            type="button"
-            onClick={() => setSelectedIndex(null)}
-            className="absolute top-4 right-4 text-white cursor-pointer z-10"
-            style={{ background: "none", border: "none", fontSize: 32, lineHeight: 1 }}
-            aria-label="Schließen"
+          <DialogTitle className="sr-only">{alt}</DialogTitle>
+          <Carousel
+            setApi={setApi}
+            opts={{ startIndex: selectedIndex ?? 0, loop: true }}
+            className="w-full"
           >
-            ✕
-          </button>
-
-          {/* Previous */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
-            }}
-            className="absolute left-4 text-white cursor-pointer z-10"
-            style={{ background: "none", border: "none", fontSize: 40, lineHeight: 1, top: "50%", transform: "translateY(-50%)" }}
-            aria-label="Vorheriges Bild"
-          >
-            ‹
-          </button>
-
-          {/* Image */}
-          <div
-            className="relative"
-            style={{ width: "90vw", height: "80vh", maxWidth: 1200 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={withBasePath(images[selectedIndex])}
-              alt={`${alt} – Bild ${selectedIndex + 1}`}
-              fill
-              sizes="90vw"
-              className="object-contain"
-              priority
-            />
-          </div>
-
-          {/* Next */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelectedIndex((selectedIndex + 1) % images.length);
-            }}
-            className="absolute right-4 text-white cursor-pointer z-10"
-            style={{ background: "none", border: "none", fontSize: 40, lineHeight: 1, top: "50%", transform: "translateY(-50%)" }}
-            aria-label="Nächstes Bild"
-          >
-            ›
-          </button>
+            <CarouselContent>
+              {images.map((src, i) => (
+                <CarouselItem key={src} className="flex items-center justify-center">
+                  <Image
+                    src={withBasePath(src)}
+                    alt={`${alt} – Bild ${i + 1}`}
+                    width={1600}
+                    height={1200}
+                    sizes="95vw"
+                    className="h-auto w-auto max-h-[80vh] max-w-full rounded-lg object-contain"
+                    priority={i === selectedIndex}
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious label={prevLabel} className="left-2 size-11" />
+            <CarouselNext label={nextLabel} className="right-2 size-11" />
+          </Carousel>
 
           {/* Counter */}
-          <div
-            className="absolute bottom-4 left-1/2 text-white text-sm"
-            style={{ transform: "translateX(-50%)", fontWeight: 600, opacity: 0.7 }}
-          >
-            {selectedIndex + 1} / {images.length}
+          <div className="text-center text-sm font-semibold text-white/70">
+            {current + 1} / {images.length}
           </div>
-        </div>
-      )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

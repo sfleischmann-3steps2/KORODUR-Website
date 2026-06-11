@@ -5,6 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Search, X } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SearchOverlay from "./SearchOverlay";
 import type { Locale } from "../lib/i18n";
@@ -140,78 +147,74 @@ export default function TopNav({ lang, dict }: TopNavProps) {
 
             <LanguageSwitcher lang={lang} />
 
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMobileOpen((prev) => !prev)}
-              className="lg:hidden p-2 bg-transparent border-none cursor-pointer"
-              aria-label={lang === "de" ? "Menü öffnen" : lang === "fr" ? "Ouvrir le menu" : lang === "pl" ? "Otwórz menu" : "Open menu"}
-            >
-              <AppIcon icon={Menu} width={20} height={20} strokeWidth={2} className="text-navy" aria-hidden="true" />
-            </button>
+            {/* Mobile drawer (Sheet) */}
+            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+              <SheetTrigger asChild>
+                <button
+                  className="lg:hidden size-11 flex items-center justify-center bg-transparent border-none cursor-pointer"
+                  aria-label={lang === "de" ? "Menü öffnen" : lang === "fr" ? "Ouvrir le menu" : lang === "pl" ? "Otwórz menu" : "Open menu"}
+                >
+                  <AppIcon icon={Menu} width={20} height={20} strokeWidth={2} className="text-navy" aria-hidden="true" />
+                </button>
+              </SheetTrigger>
+              <SheetContent
+                side="left"
+                showCloseButton={false}
+                closeLabel={lang === "de" ? "Schließen" : lang === "fr" ? "Fermer" : lang === "pl" ? "Zamknij" : "Close"}
+                aria-describedby={undefined}
+                className="lg:hidden bg-white p-0 gap-0 overflow-y-auto"
+              >
+                <SheetTitle className="sr-only">
+                  {lang === "de" ? "Navigationsmenü" : lang === "fr" ? "Menu de navigation" : lang === "pl" ? "Menu nawigacji" : "Navigation menu"}
+                </SheetTitle>
+
+                {/* Logo + close */}
+                <div className="flex items-center justify-between p-4 border-b border-bullet-bg">
+                  <Link
+                    href={`/${lang}`}
+                    className="flex items-center gap-2 no-underline"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <div
+                      className="w-8 h-8 rounded-md flex items-center justify-center bg-navy text-white text-[13px]"
+                      style={{ fontWeight: 900 }}
+                    >
+                      K
+                    </div>
+                    <span className="text-navy text-[18px] tracking-tight" style={{ fontWeight: 900 }}>
+                      KORODUR
+                    </span>
+                  </Link>
+                  <SheetClose asChild>
+                    <button
+                      className="size-11 flex items-center justify-center bg-transparent border-none cursor-pointer"
+                      aria-label={lang === "de" ? "Schließen" : lang === "fr" ? "Fermer" : lang === "pl" ? "Zamknij" : "Close"}
+                    >
+                      <AppIcon icon={X} width={20} height={20} strokeWidth={2} className="text-navy" aria-hidden="true" />
+                    </button>
+                  </SheetClose>
+                </div>
+
+                <nav className="p-4 flex flex-col gap-1">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`block rounded-lg no-underline text-[15px] ${
+                        isActive(link.href) ? "text-cyan" : "text-navy"
+                      }`}
+                      style={{ padding: "12px 16px", fontWeight: 700 }}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
-
-      {/* Mobile drawer */}
-      {mobileOpen && (
-        <div
-          className="lg:hidden fixed inset-0 z-50 flex flex-col"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Navigation menu"
-        >
-          <div
-            className="absolute inset-0 bg-black/30 animate-overlay"
-            onClick={() => setMobileOpen(false)}
-          />
-          <div
-            className="relative z-10 bg-white shadow-2xl animate-drawer overflow-y-auto"
-            style={{ maxHeight: "85vh" }}
-          >
-            {/* Close button */}
-            <div className="flex items-center justify-between p-4 border-b border-bullet-bg">
-              <Link
-                href={`/${lang}`}
-                className="flex items-center gap-2 no-underline"
-                onClick={() => setMobileOpen(false)}
-              >
-                <div
-                  className="w-8 h-8 rounded-md flex items-center justify-center bg-navy text-white text-[13px]"
-                  style={{ fontWeight: 900 }}
-                >
-                  K
-                </div>
-                <span className="text-navy text-[18px] tracking-tight" style={{ fontWeight: 900 }}>
-                  KORODUR
-                </span>
-              </Link>
-              <button
-                onClick={() => setMobileOpen(false)}
-                className="p-2 bg-transparent border-none cursor-pointer"
-                aria-label="Close"
-              >
-                <AppIcon icon={X} width={20} height={20} strokeWidth={2} className="text-navy" aria-hidden="true" />
-              </button>
-            </div>
-
-            <nav className="p-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`block rounded-lg no-underline text-[15px] ${
-                    isActive(link.href) ? "text-cyan" : "text-navy"
-                  }`}
-                  style={{ padding: "12px 16px", fontWeight: 700 }}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </div>
-      )}
 
       <SearchOverlay
         lang={lang}
