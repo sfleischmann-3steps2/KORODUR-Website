@@ -318,7 +318,12 @@
     "gruppe_truazzo": "TRUazzo (Rapid Set Technologie)",
     "gruppe_trockenspritz": "Trockenspritzverfahren",
     "gruppe_nassspritz": "Nassspritzverfahren",
-    "gruppe_beschichtung-schutz": "Beschichtung & Oberflächenschutz"
+    "gruppe_beschichtung-schutz": "Beschichtung & Oberflächenschutz",
+    "gruppe_verguss": "Montage- & Vergusssystem",
+    "gruppe_anker-injektion": "Anker- & Injektionssystem",
+    "gruppe_betoninstandsetzung": "Betoninstandsetzung",
+    "gruppe_schnellbeton": "Schnellbeton-Systeme",
+    "gruppe_reparaturmoertel": "Schnellreparaturmörtel"
   },
   "sanierungHub": {
     "title": "Sanieren mit KORODUR",

@@ -1,0 +1,330 @@
+{
+  "quelle": {
+    "dateien": [
+      "/Users/sfleischmann/KORODUR/KORODUR-website/01_analyse/scraped_content/bereiche_rapid_set_details.md",
+      "/Users/sfleischmann/KORODUR/KORODUR-website/01_analyse/scraped_content/bereiche_schnellbetonsysteme_details.md (Stub, verweist auf bereiche_content.md Abschnitt 5 und bereiche_spezialbaustoffe_details.md)",
+      "/Users/sfleischmann/KORODUR/KORODUR-website/01_analyse/scraped_content/bereiche_content.md (Abschnitte 4 + 5)"
+    ],
+    "archiv": "Wayback Machine, korodur.de, gescrapt 2026-04-13"
+  },
+  "bereichsinfo": {
+    "rapid-set-technologie": [
+      "Technologie-Erklärung: B-CSA Zement, kein Portlandzement, keine Chloride/Beschleuniger zugesetzt; einzigartiger Charakter durch präzisen Herstellungsprozess",
+      "Reaktionsprozess-Vergleich Portlandzement vs. Rapid-Set-Zement: bei W/Z-Wert 0,45 wird zugegebenes Wasser bis zu 100 % chemisch gebunden",
+      "Performance-Daten: bereits 1 h nach Erstarrungsende Druckfestigkeiten > 20,0 N/mm² zielsicher erreichbar; Schwundfreiheit < 0,05 % (US Army Corps of Engineers Shrinkage Limit) wird zielsicher erreicht — gut verwertbar als Technologie-/USP-Sektion mit zwei Grafiken (Frühfestigkeit, Schwundverlauf)",
+      "Ergänzend aus Bereichs-Hauptseite Rapid Set: seit 50 Jahren in USA bewährt, exklusiv durch KORODUR in Europa; Vorteilsliste (Boden/Wand/Decke, innen/außen, Konsistenz standfest bis fließfähig, 0–60 cm im ersten Arbeitsgang, nach 1 h belastbar, frostbeständig); Nachhaltigkeit: 30 % weniger CO2 als Portlandzement, LEED-konform, CTS Cement Mitglied U.S. Green Building Council; Vertrieb exklusiv über Baustofffachhandel bzw. Vertriebspartner im Ausland"
+    ],
+    "haeufige-fragen": [
+      "Die zentrale Bereichsseite 'Häufige Fragen' ist im Wayback-Archiv NICHT erfasst (404, 'has not archived that URL') — kein eigener Seiteninhalt verfügbar",
+      "Verwertbarer FAQ-Content liegt stattdessen auf den Unterseiten cement-all und mortar-mix: je ca. 15 Fragen zu Oberflächenvorbereitung, Haftbrücke (nicht erforderlich), Mischen (nur Wasser), Verlegen in einer Schicht, Wassernachbehandlung, Überstreichbarkeit (wasserbasiert 1–4 h, lösemittelhaltig/Epoxid 16 h), Verarbeitungszeit-Verlängerung (SET Control/kühlen), Pigmentierbarkeit, Unterwasserverlegung (hydraulischer Zement), Ergiebigkeit (~13 l/Sack), Lagerfähigkeit (9 Monate), Temperatureinfluss"
+    ],
+    "schnellbetonsysteme": [
+      "Bereichsseite hat nur eine Hauptseite ohne Unterseiten; Einleitung: zeitoptimierte Instandsetzung von Infrastruktur- und Industrieanlagen zur Verminderung von Ausfallkosten, höchste Anforderungen an Festigkeit, Dauerhaftigkeit, Widerstandsfähigkeit; KORODUR unterstützt von Planung/Betonrezeptur bis Herstellung des Betons direkt auf der Baustelle",
+      "Zwei Systeme: 'System Rapid Set Concrete' (TL BEB-StB geprüft, geforderte Frühfestigkeit >= 20 MPa nach 5 h wird bereits nach 2 h erreicht; Referenz 'Nachtsanierung am Flughafen') und 'System KOROCRETE Schnellbeton' (Basis KORODUR FSCem, ternäres Bindemittel, C35/45 bis C50/60 in Anlehnung an DIN EN 206; Referenz 'Sanierung in laufendem Betrieb')",
+      "Downloads: Datenblatt Rapid Set Concrete, Datenblatt KOROCRETE"
+    ]
+  },
+  "produkte": [
+    {
+      "name": "Rapid Set CEMENT ALL",
+      "bestand": true,
+      "kurzbeschreibung": "Multifunktionaler Schnellreparaturmörtel (Rapid-Set-Zement + feinkörniger Sand), Schichtdicken nahezu 0–100 mm, belastbar nach ca. 1 Stunde.",
+      "beschreibung": "Rapid Set CEMENT ALL ist ein auf spezieller Zementtechnologie basierender, mineralischer, multifunktionaler Schnellreparaturmörtel aus Hochleistungs-Rapid-Set-Zement und feinkörnigem Sand. Er ist schnell härtend, dauerhaft und schwundneutral; Erstarrungsbeginn nach ca. 15 Minuten, belastbar in ca. 1 Stunde. Nur mit Wasser anmischen, Konstruktionsfestigkeit innerhalb einer Stunde. Optisch vergleichbar mit Portlandzement-Baustoffen und in ähnlicher Weise verarbeitbar.",
+      "produktart": "Schnellreparaturmörtel (Multi-Reparaturmörtel)",
+      "schichtdicke": "0–100 mm",
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Körnung", "wert": "0–1 mm" },
+        { "label": "Einbaustärke", "wert": "0–100 mm" },
+        { "label": "Erstarrungsbeginn", "wert": "nach 15 Min." },
+        { "label": "Belastbar", "wert": "nach 60 Min." },
+        { "label": "Druckfestigkeit nach 60 Min.", "wert": "> 20,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 180 Min.", "wert": "> 31,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 7 Tagen", "wert": "> 41,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 28 Tagen", "wert": "62,0 N/mm²" },
+        { "label": "Biegezugfestigkeit nach 60 Min.", "wert": "6,0 N/mm²" },
+        { "label": "Biegezugfestigkeit nach 28 Tagen", "wert": "11,0 N/mm²" },
+        { "label": "E-Modul", "wert": "31.700 N/mm²" },
+        { "label": "Sulfatbeständigkeit", "wert": "ja" },
+        { "label": "Frost-Tausalzbeständigkeit", "wert": "ja" },
+        { "label": "Penetrationsverhalten", "wert": "ja" },
+        { "label": "Ergiebigkeit", "wert": "ca. 13 l fertiger Mörtel je Sack" },
+        { "label": "Lagerfähigkeit", "wert": "9 Monate (trocken, unbeschädigte Verpackung)" },
+        { "label": "SKU", "wert": "1220505S25KG" }
+      ],
+      "besonderheiten": [
+        "Keine Haftbrücke erforderlich (Oberflächenvorbereitung entscheidend)",
+        "Verlegung unter Wasser möglich (hydraulischer Zement)",
+        "Beschichtbar: wasserbasierte Beschichtungen nach 1–4 h, lösemittelhaltige/Epoxid nach 16 h",
+        "Verarbeitungszeit verlängerbar via SET Control (Concrete Pharmacy) oder gekühltes Anmachwasser",
+        "Pigmentierbar mit trockenen Pulver-Pigmenten"
+      ],
+      "anwendungen": [
+        "Betoninstandsetzung",
+        "Vergussarbeiten",
+        "Verankerung und Injektion",
+        "Spachteln / Ausgleichsschichten",
+        "Schalungsarbeiten",
+        "Bodenbeschichtungen (ab 10 mm wird MORTAR MIX empfohlen)"
+      ],
+      "luecken": [
+        "Keine Norm/Klassifizierung auf der Seite genannt (Leistungserklärung als Download vorhanden, Inhalt nicht im Scrape)",
+        "Nachbehandlung mit Wasser zwingend (mind. 1 h nass halten) — relevanter Verarbeitungshinweis, keine Lücke i.e.S.",
+        "13 Referenzen auf der Produktseite gelistet (u.a. Bahnhof Bordeaux, John Lewis Stevenage, Nabburger Tor Brücke Amberg, Fraport Containerstellplatz)"
+      ]
+    },
+    {
+      "name": "Rapid Set MORTAR MIX",
+      "bestand": true,
+      "kurzbeschreibung": "Multifunktionaler Schnellreparaturmörtel (Rapid-Set-Zement + abgestufter Quarzsand), horizontal, vertikal und über Kopf verarbeitbar, belastbar nach 1 Stunde.",
+      "beschreibung": "Rapid Set MORTAR MIX ist eine Mischung aus Hochleistungs-Rapid-Set-Zement mit abgestuftem Quarzsand. Schnell härtend, dauerhaft und schwundneutral; kann horizontal, vertikal und über Kopf verarbeitet werden. Nur mit Wasser mischen, Konstruktionsfestigkeit innerhalb einer Stunde. Einsetzbar innen und außen, auch in Nassbereichen.",
+      "produktart": "Schnellreparaturmörtel",
+      "schichtdicke": "10–150 mm (Übersichtstabelle) bzw. 15–150 mm (FAQ) — siehe luecken/Konflikt",
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Erstarrungsbeginn", "wert": "nach 15 Min." },
+        { "label": "Belastbar", "wert": "nach 60 Min." },
+        { "label": "Druckfestigkeit nach 60 Min.", "wert": "> 17,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 180 Min.", "wert": "> 28,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 7 Tagen", "wert": "> 35,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 28 Tagen", "wert": "> 50,0 N/mm²" },
+        { "label": "E-Modul", "wert": "26.827 N/mm²" },
+        { "label": "Sulfatbeständigkeit", "wert": "ja" },
+        { "label": "Frost-Tausalzbeständigkeit", "wert": "ja" },
+        { "label": "Penetrationsverhalten", "wert": "NPD (Kennwert nicht festgelegt)" },
+        { "label": "Ergiebigkeit", "wert": "ca. 13 l fertiger Mörtel je Sack" },
+        { "label": "Lagerfähigkeit", "wert": "9 Monate (trocken, unbeschädigte Verpackung)" }
+      ],
+      "besonderheiten": [
+        "Über-Kopf-Verarbeitung möglich (horizontal, vertikal, über Kopf)",
+        "Keine Haftbrücke erforderlich",
+        "Verlegung unter Wasser möglich (hydraulischer Zement)",
+        "Verarbeitungszeit verlängerbar via SET Control",
+        "Pigmentierbar mit trockenen Pulver-Pigmenten"
+      ],
+      "anwendungen": [
+        "Betoninstandsetzung",
+        "Reparatur von Stuck und Putz",
+        "Einschichtige Außenputze",
+        "Ausgleichsschichten",
+        "Schalungsarbeiten",
+        "Reparatur von Fahrbahnen"
+      ],
+      "luecken": [
+        "KONFLIKT Schichtdicke: Produktübersichts-Tabelle nennt 10–150 mm, FAQ auf derselben Domain nennt 15–150 mm",
+        "Keine Biegezugfestigkeits-Werte im Scrape (eigene Produktseite des alten Shops nur Navigation, ohne Inhalt)",
+        "Keine Norm/Klassifizierung genannt",
+        "Keine Körnungsangabe"
+      ]
+    },
+    {
+      "name": "Rapid Set CONCRETE MIX",
+      "bestand": false,
+      "kurzbeschreibung": "Schnellerhärtender Schnellbeton/Reparaturmörtel für Einbaustärken 50–600 mm, Erstarrungsbeginn nach 15 Minuten, belastbar in 1 Stunde.",
+      "beschreibung": "CONCRETE MIX ist ein schnellerhärtender, qualitativ hochwertiger, gut zu verarbeitender Reparaturmörtel auf Basis Rapid-Set-Zement mit speziell ausgewählten mineralischen Zuschlagstoffen. Ideal dort, wo schnelle Festigkeiten, Dauerhaftigkeit und schwindarmes Aushärten gefordert sind. Verarbeitbar in Stärken von 50 bis 600 mm, geeignet auch in Nassräumen. Nicht-metallisch, ohne Zusätze von Chloriden; optisch vergleichbar mit Portlandzement-Baustoffen.",
+      "produktart": "Schnellbeton / Reparaturmörtel",
+      "schichtdicke": "50–600 mm",
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [
+        { "label": "Körnung", "wert": "0–8 mm" },
+        { "label": "Einbaustärke", "wert": "50–600 mm" },
+        { "label": "Erstarrungsbeginn", "wert": "nach 15 Min." },
+        { "label": "Belastbar", "wert": "nach 60 Min." },
+        { "label": "Druckfestigkeit nach 60 Min.", "wert": "19,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 180 Min.", "wert": "> 25,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 7 Tagen", "wert": "> 35,0 N/mm²" },
+        { "label": "Druckfestigkeit nach 28 Tagen", "wert": "41,0 N/mm²" },
+        { "label": "Biegezugfestigkeit nach 60 Min.", "wert": "4,5 N/mm²" },
+        { "label": "Biegezugfestigkeit nach 28 Tagen", "wert": "7,0 N/mm²" },
+        { "label": "E-Modul", "wert": "30.690 N/mm²" },
+        { "label": "Sulfatbeständigkeit", "wert": "ja" },
+        { "label": "Frost-Tausalzbeständigkeit", "wert": "ja" },
+        { "label": "Penetrationsverhalten", "wert": "NPD (Kennwert nicht festgelegt)" }
+      ],
+      "besonderheiten": [
+        "Große Einbaustärken bis 600 mm in einem Arbeitsgang",
+        "Nicht-metallisch, ohne Chlorid-Zusätze",
+        "Geeignet in Nassräumen",
+        "Ergänzende Systemkomponenten: CEMENT ALL, MORTAR MIX, CONCRETE PHARMACY"
+      ],
+      "anwendungen": [
+        "Allgemeine Betoninstandsetzung",
+        "Reparatur und Bau von Gehwegen",
+        "Schalungsarbeiten",
+        "Vergussarbeiten",
+        "Industrieböden",
+        "Maschinenfundamente"
+      ],
+      "luecken": [
+        "Keine Norm/Klassifizierung genannt (anders als DOT Europe CONCRETE MIX, der EN 1504-3 trägt)",
+        "Druckfestigkeitswerte teils mit '>' (Übersichtstabelle), teils ohne (Produktseite) — Werte identisch (19/41 N/mm²), kein inhaltlicher Konflikt"
+      ]
+    },
+    {
+      "name": "CONCRETE PHARMACY",
+      "bestand": false,
+      "kurzbeschreibung": "Additiv-System für Rapid-Set-Reparaturmörtel: SET Control (Verzögerer), FLOW Control (Verflüssiger), FAST (Beschleuniger).",
+      "beschreibung": "Die CONCRETE PHARMACY umfasst drei hochwertige Additive zur Steuerung der Verarbeitungseigenschaften von Rapid-Set-Produkten. SET Control verzögert die Abbindezeit und verlängert die Verarbeitungszeit, z. B. bei großen Verlegungen oder hohen Temperaturen. FLOW Control verbessert die Fließfähigkeit erheblich und reduziert den Anmachwasserbedarf bei gleicher Konsistenz um 20–40 %, was die Festigkeiten erhöht. FAST beschleunigt die Abbindezeit von CEMENT ALL, MORTAR MIX und CONCRETE MIX, ideal bei kalten Temperaturen.",
+      "produktart": "Additiv-System (Verzögerer, Verflüssiger, Beschleuniger)",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [
+        "SET Control: Verzögerer für längere Verarbeitungszeit (große/komplexe Verlegungen, hohe Temperaturen)",
+        "FLOW Control: Verflüssiger, 20–40 % weniger Anmachwasser bei gleichem Ausbreitmaß, erhöht Festigkeiten",
+        "FAST: Beschleuniger für kalte Temperaturen und kürzeste Abbindezeiten",
+        "Wirkt auf CEMENT ALL, MORTAR MIX und CONCRETE MIX"
+      ],
+      "anwendungen": [
+        "Steuerung der Abbinde- und Verarbeitungszeit von Rapid-Set-Reparaturmörteln",
+        "Verbesserung der Fließfähigkeit / Konsistenzsteuerung"
+      ],
+      "luecken": [
+        "Keine technischen Kennwerte, Dosierungen oder Gebindegrößen im Scrape (Verweis 'Grundsätzlich gilt das aktuelle technische Datenblatt')",
+        "Eigene Produktseite des alten Shops nur Navigation, ohne Inhalt"
+      ]
+    },
+    {
+      "name": "Rapid Set ASPHALT REPAIR MIX",
+      "bestand": true,
+      "kurzbeschreibung": "Schwarz eingefärbtes Schnellreparaturmaterial für Schlaglöcher im Asphalt, Verkehrsfreigabe nach ca. 30 Minuten.",
+      "beschreibung": "ASPHALT REPAIR MIX ist ein hochwertiges Reparaturmaterial für die schnelle, einfache und dauerhafte Beseitigung von Schlaglöchern im Asphalt. Es eignet sich für Straßenschäden, Frostaufbrüche, Grundstücks- und Garageneinfahrten, Parkplätze, Gehwege, industrielle Verkehrsflächen und die Einfassung/Angleichung von Straßenkanalschächten bei kurz gehaltenen Sperrzeiten. Bereits nach ca. 30 Minuten kann der Verkehr wieder rollen. Das Material ist schwarz eingefärbt und hat eine hervorragende Haftung.",
+      "produktart": "Asphalt-Reparaturmaterial",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [
+        "Verkehrsfreigabe nach ca. 30 Minuten",
+        "Schwarz eingefärbt (asphaltoptisch)",
+        "Hervorragende Haftung",
+        "Kurz gehaltene Sperrzeiten"
+      ],
+      "anwendungen": [
+        "Schlaglochreparatur im Asphalt",
+        "Straßenschäden und Frostaufbrüche",
+        "Grundstücks- und Garageneinfahrten, Parkplätze, Gehwege",
+        "Industrielle Verkehrsflächen",
+        "Einfassung/Angleichung von Straßenkanalschächten"
+      ],
+      "luecken": [
+        "Eigene Produktseite im Archiv nur Navigation, ohne Inhalt — Beschreibung stammt aus 'Ähnliche Produkte'-Teasern anderer Produktseiten",
+        "Keine technischen Kennwerte (Körnung, Schichtdicke, Festigkeiten) im Scrape; Downloads laut Navigation: Technisches Datenblatt, Asphalt Repair Mix Flyer"
+      ]
+    },
+    {
+      "name": "DOT Europe CONCRETE MIX",
+      "bestand": true,
+      "kurzbeschreibung": "Polymermodifizierter, faserverstärkter Schnellbeton nach DIN EN 1504-3 für statisch und nicht statisch relevante Instandsetzungen, 50–600 mm, belastbar nach 1 Stunde.",
+      "beschreibung": "DOT Europe CONCRETE MIX ist ein leistungsstarker, polymermodifizierter, schnellabbindender, faserverstärkter Schnellbeton für innen und außen. Er ist gemäß DIN EN 1504-3 sowohl für statisch als auch nicht statisch relevante Instandsetzungen einsetzbar, ideal wo schnelle Festigkeiten, Dauerhaftigkeit und schwindarmes Aushärten gefordert sind. Verarbeitbar in Stärken von 50–600 mm, bereits nach 1 Stunde belastbar; auch in Nassbereichen einsetzbar.",
+      "produktart": "Reparaturbeton / Schnellbeton (polymermodifiziert, faserverstärkt)",
+      "schichtdicke": "50–600 mm",
+      "qualitaetsklasse": null,
+      "normen": ["DIN EN 1504-3"],
+      "technischeDaten": [
+        { "label": "Körnung", "wert": "0–8 mm" },
+        { "label": "Einbaustärke", "wert": "50–600 mm" },
+        { "label": "Belastbar", "wert": "nach 60 Min." },
+        { "label": "Druckfestigkeit nach 28 Tagen", "wert": "ca. 60,0 N/mm²" },
+        { "label": "Biegezugfestigkeit nach 28 Tagen", "wert": "ca. 6,5 N/mm²" },
+        { "label": "SKU", "wert": "1220516S25KG" }
+      ],
+      "besonderheiten": [
+        "Für statisch relevante Betoninstandsetzung geeignet (EN 1504-3)",
+        "Polymermodifiziert und faserverstärkt",
+        "Einsetzbar in Nassbereichen",
+        "Ergänzende Systemkomponenten: CEMENT ALL, MORTAR MIX, CONCRETE MIX, CONCRETE PHARMACY"
+      ],
+      "anwendungen": [
+        "Statisch relevante Betoninstandsetzung",
+        "Reparatur und Bau von Straßen, Gehwegen, Fahrbahnen",
+        "Flug- und Landebahnen",
+        "Brücken, Parkdecks, Rampen, Treppen",
+        "Beton- und Maschinenfundamente, Schalungsarbeiten",
+        "Industrieböden"
+      ],
+      "luecken": [
+        "R-Klasse nach EN 1504-3 nicht genannt",
+        "Keine Frühfestigkeitswerte (60/180 Min.) im Scrape, nur 28-Tage-Werte",
+        "Referenzen auf der Seite: 'Schnelle Sanierung im Schnell-Restaurant', 'Fahrbahnsanierung, Wien'"
+      ]
+    },
+    {
+      "name": "Rapid Set Schnellbeton (Rapid Set Concrete)",
+      "bestand": true,
+      "kurzbeschreibung": "Schnellbeton-System für Infrastrukturprojekte, TL BEB-StB geprüft; geforderte Frühfestigkeit (>= 20 MPa nach 5 h) wird bereits nach 2 h erreicht.",
+      "beschreibung": "Der in den USA seit Jahrzehnten bewährte Rapid Set Concrete wird weltweit für unterschiedlichste Infrastrukturprojekte eingesetzt. Aufgrund der sehr schnellen Erhärtung können Instandsetzungsmaßnahmen zu verkehrsberuhigten Zeiten erfolgen, z. B. nachts. Rapid Set Concrete wurde gemäß der Festbetonprüfungen TL BEB-StB (Technische Lieferbedingungen für Baustoffe und Baustoffgemische für die Bauliche Erhaltung von Verkehrsflächenbefestigungen, Betonbauweisen) geprüft; die geforderten Frühfestigkeiten von mindestens 20 MPa nach 5 Stunden werden bereits nach 2 Stunden zielsicher erreicht.",
+      "produktart": "Schnellbeton-System (Baustellenbeton)",
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": ["TL BEB-StB (Festbetonprüfungen)"],
+      "technischeDaten": [
+        { "label": "Frühfestigkeit", "wert": ">= 20 MPa bereits nach 2 h (TL-BEB-StB-Anforderung: nach 5 h)" }
+      ],
+      "besonderheiten": [
+        "Nachtsanierung / Arbeiten in verkehrsberuhigten Zeiten möglich",
+        "Weltweit in Infrastrukturprojekten eingesetzt",
+        "Beratung von Betonrezeptur bis Herstellung direkt auf der Baustelle (Bereichsversprechen Schnellbetonsysteme)"
+      ],
+      "anwendungen": [
+        "Instandsetzung von Verkehrsflächenbefestigungen in Betonbauweise",
+        "Start- und Landebahnen (Referenz: Nachtsanierung am Flughafen)",
+        "Infrastrukturprojekte allgemein"
+      ],
+      "luecken": [
+        "Eigene Produktseite (rapid-set-concrete) im Wayback-Archiv nicht erfasst (404) — gesamter Inhalt stammt aus der Bereichsseite Schnellbetonsysteme",
+        "Keine weiteren technischen Kennwerte (Körnung, Einbaustärke, 28-Tage-Festigkeiten) im Scrape; 'Datenblatt Rapid Set Concrete' als Download gelistet"
+      ]
+    },
+    {
+      "name": "KOROCRETE",
+      "bestand": true,
+      "kurzbeschreibung": "Schnellbeton auf Basis KORODUR FSCem (ternäres Schnellestrich-Bindemittel) für hochbelastbare Betonböden, Festigkeitsklassen C35/45 bis C50/60 in Anlehnung an DIN EN 206.",
+      "beschreibung": "KOROCRETE ist ein Schnellbeton basierend auf KORODUR FSCem, einem zementären, volumenstabilen Schnellestrich-Bindemittel auf ternärer Basis zur Herstellung hochbelastbarer, schnell nutzbarer und verlegereifer Betonböden (Festigkeitsklassen C35/45 bis C50/60 in Anlehnung an DIN EN 206). Aufgrund der hohen Frühfestigkeit ist eine Nutzung und Verkehrsfreigabe bereits wenige Stunden nach Verlegung möglich, wodurch Ausfall- und Stillstandkosten von Produktions- und Lagerstätten minimiert werden.",
+      "produktart": "Schnellbeton-System (Basis KORODUR FSCem)",
+      "schichtdicke": null,
+      "qualitaetsklasse": "C35/45 bis C50/60 (in Anlehnung an DIN EN 206)",
+      "normen": ["DIN EN 206 (in Anlehnung)"],
+      "technischeDaten": [],
+      "besonderheiten": [
+        "Volumenstabiles ternäres Bindemittel (KORODUR FSCem)",
+        "Nutzung und Verkehrsfreigabe wenige Stunden nach Verlegung",
+        "Sanierung im laufenden Betrieb möglich (Referenz)",
+        "Minimiert Ausfall-/Stillstandkosten in Produktion und Lager"
+      ],
+      "anwendungen": [
+        "Sanierung von Betonbodenplatten",
+        "Betonböden in Produktions- und Lagerhallen"
+      ],
+      "luecken": [
+        "Eigene Produktseite (Spezialbaustoffe: korocrete) im Wayback-Archiv nicht erfasst (404) — gesamter Inhalt stammt aus der Bereichsseite Schnellbetonsysteme",
+        "Keine technischen Kennwerte (Frühfestigkeitswerte, Schichtdicken, Körnung) im Scrape; 'Datenblatt KOROCRETE' als Download gelistet"
+      ]
+    },
+    {
+      "name": "Rapid Set CEMENT ALL Plus",
+      "bestand": false,
+      "kurzbeschreibung": null,
+      "beschreibung": null,
+      "produktart": null,
+      "schichtdicke": null,
+      "qualitaetsklasse": null,
+      "normen": [],
+      "technischeDaten": [],
+      "besonderheiten": [],
+      "anwendungen": [],
+      "luecken": [
+        "Produkt kommt in keiner der gescrapten Seiten vor (weder Navigation noch Inhalt) — nur aus Excel bekannt; Quelle für alle Inhalte fehlt komplett"
+      ]
+    }
+  ],
+  "konflikte": [
+    "MORTAR MIX Schichtdicke: Produktübersichts-Tabelle 'Einzigartige Rapid Set Produkte' nennt 10–150 mm, die FAQ auf der mortar-mix-Unterseite nennt 15–150 mm; zusätzlich empfiehlt der CEMENT-ALL-Teaser MORTAR MIX 'ab 10 mm' — TDS prüfen",
+    "CEMENT ALL Druckfestigkeit 28 d: Übersichtstabelle '> 62,0 N/mm²', Produktseite '62,0 N/mm²' — inhaltlich konsistent, Schreibweise abweichend",
+    "Die Bereichsseite Rapid Set nennt Aufbaustärken '0 bis 60 cm im ersten Arbeitsgang' als Systemversprechen — gilt produktübergreifend (CEMENT ALL 0–100 mm, MORTAR MIX 10/15–150 mm, CONCRETE MIX / DOT 50–600 mm), nicht je Einzelprodukt"
+  ]
+}

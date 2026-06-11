@@ -36,8 +36,8 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 | industrieboden (Teil 2: Bauchemie) | ✓ DE (9 neue Produkte + Bestand angereichert, 2026-06-12; KOROMINERAL Lasur ohne Quelldaten offen) | ✓ (Gruppen Imprägnierung + Additive ergänzt) | teilweise | teilweise | teilweise | — | PR 6: umgesetzt |
 | sichtestrich | ✓ DE (5 neue Produkte + TRU SL angereichert, 2026-06-12) | ✓ (3 Gruppen) | — | — | — | — | PR 7: umgesetzt |
 | microtop | ✓ DE (8 neue Produkte, 2026-06-12; TW NSD nicht in Quelle) | ✓ (3 Gruppen) | — | — | — | — | PR 7: umgesetzt |
-| spezialbaustoffe | teilweise (1/7) | — | — | — | — | — | PR 8 geplant |
-| rapid-set | teilweise (6/7) | — | teilweise | teilweise | teilweise | teilweise | PR 8 geplant |
+| spezialbaustoffe | ✓ DE (11 neue Produkte, 2026-06-12; PFM 1K/PFM ZE ohne Quelldaten offen) | ✓ (4 Gruppen) | — | — | — | — | PR 8: umgesetzt |
+| rapid-set | ✓ DE (2 neue + Bestand angereichert, 2026-06-12) | ✓ (3 Gruppen) | teilweise | teilweise | teilweise | teilweise | PR 8: umgesetzt |
 | schnellbetonsysteme | n/a | — | — | — | — | — | PR 8 geplant |
 | 3d-concrete-printing | n/a | — | — | — | — | — | PR 8 geplant |
 | katzenstreu | — (0/3) | — | — | — | — | — | PR 9 geplant (Mockup zuerst) |
@@ -49,5 +49,5 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 2. `belastbarNach` für neodur-he-65 / neodur-he-40 (TDS-Daten fehlen, Input Frank) — Bestand, nicht migrationsbedingt
 3. Rapid Set: Unterseiten Flow Control / Fast Control / Set Control fehlen im Scrape (Wayback-Lücke) — bei Bedarf von Live-Site nachsichern
 4. Sign-off Zuordnung Industrieboden (`zuordnung-industrieboden.md`): Gruppen-Schnitt, Varianten-Modell, DUROP-Frage (Hartstoff vs. Ankermörtel) — Steffi/Frank
-5. NEODUR AM Super(/Plus) + NEODUR SVM 03(/4): keine Quelldaten im Scrape, TDS/Input Frank nötig
+5. ~~NEODUR AM Super(/Plus) + SVM 03~~ GELÖST (2026-06-12): Daten auf der Spezialbaustoffe-Bereichsseite gefunden und migriert. NEU offen: PFM 1K EasyFix + PFM ZE (keine Quelldaten), Klassen-Konflikte Alt-Site vs. Excel (zuordnung-spezialbaustoffe-rapidset.md)
 6. ausschreiben.de-Deeplink + Key Visual in hoher Auflösung — liefert Steffi (2026-06-12)

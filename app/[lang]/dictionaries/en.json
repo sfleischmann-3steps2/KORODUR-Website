@@ -318,7 +318,12 @@
     "gruppe_truazzo": "TRUazzo (Rapid Set technology)",
     "gruppe_trockenspritz": "Dry-Spray Process",
     "gruppe_nassspritz": "Wet-Spray Process",
-    "gruppe_beschichtung-schutz": "Coating & Surface Protection"
+    "gruppe_beschichtung-schutz": "Coating & Surface Protection",
+    "gruppe_verguss": "Assembly & Grouting System",
+    "gruppe_anker-injektion": "Anchoring & Injection System",
+    "gruppe_betoninstandsetzung": "Concrete Repair",
+    "gruppe_schnellbeton": "Rapid Concrete Systems",
+    "gruppe_reparaturmoertel": "Rapid Repair Mortars"
   },
   "sanierungHub": {
     "title": "Renovating with KORODUR",

@@ -318,7 +318,12 @@
     "gruppe_truazzo": "TRUazzo (technologia Rapid Set)",
     "gruppe_trockenspritz": "Natrysk suchy",
     "gruppe_nassspritz": "Natrysk mokry",
-    "gruppe_beschichtung-schutz": "Powłoki i ochrona powierzchni"
+    "gruppe_beschichtung-schutz": "Powłoki i ochrona powierzchni",
+    "gruppe_verguss": "System montażu i podlewek",
+    "gruppe_anker-injektion": "System kotwienia i iniekcji",
+    "gruppe_betoninstandsetzung": "Naprawa betonu",
+    "gruppe_schnellbeton": "Systemy szybkiego betonu",
+    "gruppe_reparaturmoertel": "Zaprawy do szybkich napraw"
   },
   "sanierungHub": {
     "title": "Renowacja z KORODUR",

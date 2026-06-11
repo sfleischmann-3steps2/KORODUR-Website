@@ -318,7 +318,12 @@
     "gruppe_truazzo": "TRUazzo (technologie Rapid Set)",
     "gruppe_trockenspritz": "Projection à sec",
     "gruppe_nassspritz": "Projection humide",
-    "gruppe_beschichtung-schutz": "Revêtement et protection de surface"
+    "gruppe_beschichtung-schutz": "Revêtement et protection de surface",
+    "gruppe_verguss": "Système de montage et de scellement",
+    "gruppe_anker-injektion": "Système d'ancrage et d'injection",
+    "gruppe_betoninstandsetzung": "Réparation du béton",
+    "gruppe_schnellbeton": "Systèmes de béton rapide",
+    "gruppe_reparaturmoertel": "Mortiers de réparation rapide"
   },
   "sanierungHub": {
     "title": "Rénover avec KORODUR",
