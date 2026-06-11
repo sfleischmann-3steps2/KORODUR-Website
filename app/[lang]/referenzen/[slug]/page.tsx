@@ -318,7 +318,7 @@ export default async function ReferenzDetailPage({
           </div>
 
           {referenz.kennwerte && referenz.kennwerte.length > 0 && (
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {referenz.kennwerte.map((metric) => (
                 <div key={`${metric.value}-${metric.label}`} className="text-center p-4 rounded-[8px] bg-navy">
                   <div className="text-white text-[22px] leading-tight" style={{ fontWeight: 900 }}>

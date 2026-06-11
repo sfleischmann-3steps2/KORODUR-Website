@@ -1,15 +1,19 @@
-const CACHE_NAME = "korodur-v2";
+const CACHE_NAME = "korodur-v3";
 
-// Install: cache app shell
+// Install: cache app shell.
+// Pfade RELATIV zum SW-Scope ("./de/" statt "/de/"), damit der
+// GitHub-Pages-basePath mitkommt — absolute Pfade liefen dort auf 404,
+// addAll rejectete und die SW-Installation schlug in Production fehl.
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
       cache.addAll([
-        "/",
-        "/de/",
-        "/en/",
-        "/fr/",
-        "/images/hero.jpg",
+        "./",
+        "./de/",
+        "./en/",
+        "./fr/",
+        "./pl/",
+        "./images/hero.jpg",
       ])
     )
   );

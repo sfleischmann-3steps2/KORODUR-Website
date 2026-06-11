@@ -51,7 +51,7 @@ export default async function AnwendungsmatrixPage({
           </div>
           <h1
             style={{
-              fontSize: 42,
+              fontSize: "clamp(28px, 5vw, 42px)",
               lineHeight: 1.05,
               fontWeight: 900,
               color: NAVY,
