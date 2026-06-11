@@ -23,16 +23,16 @@ interface OptionCardProps {
   layout?: "stacked" | "horizontal";
 }
 
-const NAVY = "#002d59";
-const CYAN = "#009ee3";
+const NAVY = "var(--navy)";
+const CYAN = "var(--cyan)";
 // Sehr leichter Cyan-Tint (12% der Sekundärfarbe) für die Icon-Box im
 // Default-State. Bleibt in der Brand-Welt, statt ein fremdes Hellblau zu erfinden.
-const LIGHT_CYAN_BG = "rgba(0, 158, 227, 0.12)";
+const LIGHT_CYAN_BG = "color-mix(in srgb, var(--cyan) 12%, transparent)";
 
 const buttonReset: CSSProperties = {
   appearance: "none",
   WebkitAppearance: "none",
-  background: "#fff",
+  background: "var(--white)",
   textAlign: "left",
   width: "100%",
   cursor: "pointer",
@@ -60,7 +60,7 @@ const checkBadgeBase: CSSProperties = {
   justifyContent: "center",
   borderRadius: "50%",
   background: CYAN,
-  color: "#fff",
+  color: "var(--white)",
 };
 
 const titleStyle: CSSProperties = { fontSize: 15, fontWeight: 500, color: NAVY };
@@ -68,12 +68,12 @@ const hintStyle: CSSProperties = {
   fontSize: 11,
   textTransform: "uppercase",
   letterSpacing: "0.3px",
-  color: "#6B7280",
+  color: "var(--muted-foreground)",
   marginTop: 4,
 };
 const beschreibungStyle: CSSProperties = {
   fontSize: 12,
-  color: "#4B5563",
+  color: "var(--muted-foreground)",
   marginTop: 6,
   lineHeight: 1.55,
 };
@@ -90,10 +90,10 @@ export default function OptionCard({
 }: OptionCardProps) {
   const borderStyle: CSSProperties = selected
     ? { border: `2px solid ${NAVY}` }
-    : { border: "1px solid rgba(0, 45, 89, 0.15)" };
+    : { border: "1px solid color-mix(in srgb, var(--navy) 15%, transparent)" };
 
   const iconBoxColor: CSSProperties = selected
-    ? { background: NAVY, color: "#fff" }
+    ? { background: NAVY, color: "var(--white)" }
     : { background: LIGHT_CYAN_BG, color: NAVY };
 
   const sharedCardStyle: CSSProperties = {

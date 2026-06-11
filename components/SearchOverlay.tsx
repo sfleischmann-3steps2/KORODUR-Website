@@ -2,6 +2,9 @@
 
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import { Search, ExternalLink } from "lucide-react";
+import { AppIcon } from "@/components/ui/icon";
+import { Badge } from "@/components/ui/badge";
 import { referenzen } from "../data/referenzen";
 import { produkte } from "../data/produkte";
 import type { Dictionary } from "../app/[lang]/dictionaries";
@@ -124,10 +127,10 @@ export default function SearchOverlay({
     produkt: dict.referenzen.filter_all_products.replace("Alle ", "").replace("All ", "").replace("Tous les ", ""),
   };
 
-  const typeColors: Record<string, string> = {
-    referenz: "#009ee3",
-    kategorie: "#002d59",
-    produkt: "#0090d0",
+  const typeBadgeClasses: Record<string, string> = {
+    referenz: "bg-cyan/10 text-cyan",
+    kategorie: "bg-navy/10 text-navy",
+    produkt: "bg-cyan-hover/10 text-cyan-hover",
   };
 
   if (!open) return null;
@@ -149,11 +152,8 @@ export default function SearchOverlay({
         style={{ maxWidth: 600 }}
       >
         {/* Input */}
-        <div className="flex items-center gap-3 border-b border-[#e8edf5]" style={{ padding: "16px 20px" }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#009ee3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-            <circle cx="11" cy="11" r="8" />
-            <path d="M21 21l-4.35-4.35" />
-          </svg>
+        <div className="flex items-center gap-3 border-b border-bullet-bg" style={{ padding: "16px 20px" }}>
+          <AppIcon icon={Search} className="size-5 shrink-0 text-cyan" strokeWidth={2} aria-hidden="true" />
           <input
             ref={inputRef}
             type="text"
@@ -161,10 +161,10 @@ export default function SearchOverlay({
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={lang === "de" ? "Suchen..." : lang === "fr" ? "Rechercher..." : lang === "pl" ? "Szukaj..." : "Search..."}
-            className="flex-1 text-[16px] text-[#002d59] bg-transparent border-none outline-none placeholder:text-[#002d59] placeholder:opacity-30"
+            className="flex-1 text-[16px] text-navy bg-transparent border-none outline-none placeholder:text-navy placeholder:opacity-30"
             style={{ fontFamily: "inherit", fontWeight: 600 }}
           />
-          <kbd className="hidden sm:inline-flex items-center text-[11px] text-[#002d59] opacity-30 px-2 py-0.5 rounded border border-[#e8edf5]" style={{ fontWeight: 600 }}>
+          <kbd className="hidden sm:inline-flex items-center text-[11px] text-navy opacity-30 px-2 py-0.5 rounded border border-bullet-bg" style={{ fontWeight: 600 }}>
             ESC
           </kbd>
         </div>
@@ -178,34 +178,26 @@ export default function SearchOverlay({
                 onClick={() => navigateTo(result)}
                 onMouseEnter={() => setSelectedIndex(i)}
                 className={`w-full flex items-center gap-3 text-left rounded-xl border-none cursor-pointer transition-colors duration-100 ${
-                  i === selectedIndex ? "bg-[#f5f5f6]" : "bg-transparent hover:bg-[#f5f5f6]"
+                  i === selectedIndex ? "bg-icon-bg" : "bg-transparent hover:bg-icon-bg"
                 }`}
                 style={{ padding: "12px 16px", fontFamily: "inherit" }}
               >
-                <span
-                  className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
-                  style={{
-                    backgroundColor: typeColors[result.type] + "15",
-                    color: typeColors[result.type],
-                    fontWeight: 700,
-                  }}
+                <Badge
+                  variant="secondary"
+                  className={`rounded text-[10px] font-bold uppercase tracking-wider ${typeBadgeClasses[result.type] ?? ""}`}
                 >
                   {typeLabels[result.type] || result.type}
-                </span>
+                </Badge>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[#002d59] text-[14px] truncate" style={{ fontWeight: 700 }}>
+                  <div className="text-navy text-[14px] truncate" style={{ fontWeight: 700 }}>
                     {result.title}
                   </div>
-                  <div className="text-[#002d59] opacity-40 text-[12px] truncate">
+                  <div className="text-navy opacity-40 text-[12px] truncate">
                     {result.subtitle}
                   </div>
                 </div>
                 {result.href.startsWith("http") && (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#002d59" strokeWidth="2" opacity="0.3" className="shrink-0">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
+                  <AppIcon icon={ExternalLink} className="size-3.5 shrink-0 text-navy opacity-30" strokeWidth={2} aria-hidden="true" />
                 )}
               </button>
             ))}
@@ -214,14 +206,14 @@ export default function SearchOverlay({
 
         {/* Empty state */}
         {query.trim() && results.length === 0 && (
-          <div className="text-center py-10 text-[#002d59] opacity-30 text-[14px]" style={{ fontWeight: 600 }}>
+          <div className="text-center py-10 text-navy opacity-30 text-[14px]" style={{ fontWeight: 600 }}>
             {lang === "de" ? "Keine Ergebnisse" : lang === "fr" ? "Aucun résultat" : lang === "pl" ? "Brak wyników" : "No results"}
           </div>
         )}
 
         {/* Hint */}
         {!query.trim() && (
-          <div className="text-center py-8 text-[#002d59] opacity-25 text-[13px]" style={{ fontWeight: 500 }}>
+          <div className="text-center py-8 text-navy opacity-25 text-[13px]" style={{ fontWeight: 500 }}>
             {lang === "de"
               ? "Referenzen, Kategorien und Produkte durchsuchen"
               : lang === "fr"

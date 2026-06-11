@@ -24,7 +24,7 @@ export default function ImageGallery({ images, alt }: ImageGalleryProps) {
             type="button"
             onClick={() => setSelectedIndex(i)}
             className="relative overflow-hidden cursor-pointer group"
-            style={{ borderRadius: 10, aspectRatio: "4/3", border: "none", padding: 0, background: "#f5f5f6" }}
+            style={{ borderRadius: 10, aspectRatio: "4/3", border: "none", padding: 0, background: "var(--icon-bg)" }}
           >
             <Image
               src={withBasePath(src)}

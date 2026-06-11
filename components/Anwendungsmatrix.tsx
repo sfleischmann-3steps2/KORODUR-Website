@@ -10,8 +10,8 @@ import {
 } from "@/data/anwendungsmatrix";
 import { produkte } from "@/data/produkte";
 
-const NAVY = "#002d59";
-const CYAN = "#009ee3";
+const NAVY = "var(--navy)";
+const CYAN = "var(--cyan)";
 const GREEN = "#009a44";
 const LINE = "#dfe7f1";
 const HEAD_BG = "#eaf8fe";
@@ -34,7 +34,7 @@ const speedStyles: Record<SpeedTier, CSSProperties> = {
   ultra: { background: "#ffd84d", color: NAVY, boxShadow: "0 0 0 3px rgba(255,216,77,.26)" },
   veryFast: { background: "#ffe47a", color: NAVY },
   fast: { background: "rgba(255,216,77,.48)", color: NAVY },
-  day: { background: "#fff", color: NAVY, border: "2px solid rgba(255,216,77,.82)" },
+  day: { background: "var(--white)", color: NAVY, border: "2px solid rgba(255,216,77,.82)" },
   normal: { background: "rgba(0,45,89,.07)", color: "rgba(0,45,89,.68)" },
 };
 
@@ -128,7 +128,7 @@ export default function Anwendungsmatrix({
                   ...td,
                   ...labelCol,
                   background: NAVY,
-                  color: "#fff",
+                  color: "var(--white)",
                   textAlign: "left",
                   padding: "9px 14px",
                   fontSize: 13,
@@ -210,7 +210,7 @@ export default function Anwendungsmatrix({
                   ...td,
                   ...labelCol,
                   background: CYAN,
-                  color: "#fff",
+                  color: "var(--white)",
                   textAlign: "left",
                   padding: "7px 14px",
                   fontWeight: 900,
@@ -240,7 +240,7 @@ export default function Anwendungsmatrix({
                 style={{
                   ...td,
                   background: NAVY,
-                  color: "#fff",
+                  color: "var(--white)",
                   textAlign: "left",
                   padding: "7px 14px",
                   fontWeight: 900,
@@ -256,7 +256,7 @@ export default function Anwendungsmatrix({
                   style={{
                     ...td,
                     ...labelCol,
-                    background: idx % 2 === 1 ? TECH_BG : "#fff",
+                    background: idx % 2 === 1 ? TECH_BG : "var(--white)",
                     textAlign: "left",
                     padding: "8px 14px",
                     fontWeight: 900,
@@ -301,7 +301,7 @@ export default function Anwendungsmatrix({
 }
 
 const techLabelStyle: CSSProperties = {
-  background: "#fff",
+  background: "var(--white)",
   textAlign: "left",
   fontWeight: 900,
   color: "rgba(0,45,89,.78)",

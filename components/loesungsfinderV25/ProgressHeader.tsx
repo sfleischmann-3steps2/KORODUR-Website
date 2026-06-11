@@ -13,7 +13,7 @@ interface ProgressHeaderProps {
   onCancel: () => void;
 }
 
-const NAVY = "#002d59";
+const NAVY = "var(--navy)";
 
 export default function ProgressHeader({ currentStep, totalSteps, onCancel }: ProgressHeaderProps) {
   const { dict } = useLocale();
@@ -29,12 +29,12 @@ export default function ProgressHeader({ currentStep, totalSteps, onCancel }: Pr
               style={{
                 width: 32,
                 height: 4,
-                background: i < currentStep ? NAVY : "#d9dada",
+                background: i < currentStep ? NAVY : "var(--mid-gray)",
               }}
             />
           ))}
         </div>
-        <span className="text-xs text-gray-600">
+        <span className="text-xs text-muted-foreground">
           {t.progress_step
             .replace("{current}", String(currentStep))
             .replace("{total}", String(totalSteps))}
@@ -44,7 +44,7 @@ export default function ProgressHeader({ currentStep, totalSteps, onCancel }: Pr
       <button
         type="button"
         onClick={onCancel}
-        className="text-xs text-gray-500 hover:text-gray-700 inline-flex items-center gap-1.5"
+        className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5"
       >
         <IconX width={14} height={14} aria-hidden="true" />
         {t.cancel}

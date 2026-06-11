@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     "Alternative Bedarfsmatrix für KORODUR-Sanierungsprodukte nach Einsatzfällen wie Industrieboden, Parken, Verkehr, WHG, Sichtboden und Reparatur.",
 };
 
-const NAVY = "#002d59";
+const NAVY = "var(--navy)";
 const NAVY_72 = "rgba(0, 45, 89, 0.72)";
-const CYAN = "#009ee3";
+const CYAN = "var(--cyan)";
 const BG_SOFT = "#eef1f5";
 
 export default async function AnwendungsmatrixPage({
@@ -96,7 +96,7 @@ export default async function AnwendungsmatrixPage({
                 display: "inline-block",
                 padding: "12px 28px",
                 background: CYAN,
-                color: "#fff",
+                color: "var(--white)",
                 fontWeight: 700,
                 borderRadius: 10,
                 textDecoration: "none",
@@ -112,7 +112,7 @@ export default async function AnwendungsmatrixPage({
               style={{
                 display: "inline-block",
                 padding: "12px 28px",
-                background: "#fff",
+                background: "var(--white)",
                 color: NAVY,
                 fontWeight: 700,
                 borderRadius: 10,
