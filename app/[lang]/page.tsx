@@ -72,8 +72,7 @@ export default async function Home({
           }}
         />
         <div
-          className="relative mx-auto flex flex-col justify-center"
-          style={{ maxWidth: 1320, padding: "120px 32px 140px", minHeight: 560 }}
+          className="relative mx-auto flex max-w-[1320px] flex-col justify-center px-4 pt-16 pb-20 sm:px-8 md:pt-[120px] md:pb-[140px] md:min-h-[560px]"
         >
           <p
             className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-5"
