@@ -102,7 +102,7 @@ export type Flaechenkategorie =
 export type InnenAussen = "innen" | "aussen";
 
 /** Step 3 — Einsatzbereich (Branchen-Cluster), 3 Innen + 3 Außen.
- *  Referenzgedeckter Schnitt (Spec docs/2026-06-02-loesungsfinder-step3-spec.md §4):
+ *  Referenzgedeckter Schnitt (Spec docs/specs/2026-06-02-loesungsfinder-step3-spec.md §4):
  *  keine Cluster ohne Referenzen. Ersetzt das alte 4+4-Schema. */
 export type EinsatzbereichV25 =
   // Innen
