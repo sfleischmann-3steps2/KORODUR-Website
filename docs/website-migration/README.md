@@ -50,5 +50,5 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 2. ~~`belastbarNach` HE 65 / HE 40~~ GELÖST (Steffi, 2026-06-12): belastbar nach 7 Tagen — eingepflegt
 3. Rapid Set: Unterseiten Flow Control / Fast Control / Set Control fehlen im Scrape (Wayback-Lücke) — bei Bedarf von Live-Site nachsichern
 4. Sign-off Zuordnung Industrieboden (`zuordnung-industrieboden.md`): Gruppen-Schnitt, Varianten-Modell, DUROP-Frage (Hartstoff vs. Ankermörtel) — Steffi/Frank
-5. ~~NEODUR AM Super(/Plus) + SVM 03~~ GELÖST (2026-06-12): Daten auf der Spezialbaustoffe-Bereichsseite gefunden und migriert. NEU offen: PFM 1K EasyFix + PFM ZE (keine Quelldaten), Klassen-Konflikte Alt-Site vs. Excel (zuordnung-spezialbaustoffe-rapidset.md)
+5. ~~AM Super/Plus + SVM 03~~ GELÖST. ~~PFM 1K EasyFix + PFM-ZE(/Flex) + KOROMINERAL Lasur~~ GELÖST (TDS von Steffi, 2026-06-12, migriert). Klassen-Konflikte: Excel gilt, Kollegen-Review über Live-Site
 6. ~~ausschreiben.de-Deeplink~~ GELIEFERT (catalog/korodur). ~~Key Visual~~ GELIEFERT (1920×1080, Hero live seit PR #59). Bilder: Lieferung durch Kontakte (s. Punkt 1)

@@ -1976,6 +1976,80 @@ export const produkte: Produkt[] = [
     ],
     zeitKategorie: "normal",
   },
+
+  // === TDS-NACHLIEFERUNG STEFFI 2026-06-12 (docs/tds-quellen/) ===
+  {
+    id: "koromineral-lasur",
+    name: "KOROMINERAL Lasur",
+    kategorie: "beschichtung",
+    bereich: "industrieboden",
+    produktgruppe: "impraegnierung",
+    kurzbeschreibung: "Spezialimprägnierung mit farbiger Oberflächenvergütung auf Basis Lithiumsilikat",
+    beschreibung: "KOROMINERAL Lasur wird zur Imprägnierung von zementgebundenen Estrich- und Betonflächen und speziell von KORODUR Estrichen verwendet. Durch die Pigmentierung entsteht eine farbige Oberflächenvergütung. Verarbeitung mit kurzfloriger Nylonwalze in zwei Arbeitsgängen im Kreuzgang.",
+    normen: [],
+    technischeDaten: [
+      { label: "Form", wert: "flüssig" },
+      { label: "Farben", wert: "steingrau, mausgrau (keine RAL-Farben)" },
+      { label: "Oberflächentemperatur", wert: "+10 °C bis +25 °C" },
+      { label: "Trocknungszeit zwischen den Arbeitsgängen", wert: "1–3 Stunden (temperaturabhängig)" },
+    ],
+    besonderheiten: [
+      "Farbige Oberflächenvergütung auf Lithiumsilikat-Basis",
+      "Zwei Arbeitsgänge im Kreuzgang",
+    ],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-pfm-1k-easyfix",
+    name: "NEODUR PFM 1K Easyfix",
+    kategorie: "sonstige",
+    bereich: "spezialbaustoffe",
+    produktgruppe: "pflasterfugen",
+    kurzbeschreibung: "Fix- und fertiger, 1-komponentiger Pflasterfugenmörtel für Fußgängerbereiche",
+    beschreibung: "NEODUR PFM 1K Easyfix dient der Verfugung und Sanierung von Pflasterflächen bei leichter Belastung, z. B. Terrassen und Gehwege. Für Fugenbreiten ab 5 mm und Fugentiefen ab 30 mm.",
+    normen: [],
+    technischeDaten: [
+      { label: "Farben", wert: "natur, steingrau, basalt" },
+      { label: "Festmörtelrohdichte", wert: "ca. 1,37 kg/dm³" },
+      { label: "Druckfestigkeit", wert: "≥ 4,0 N/mm²" },
+      { label: "Biegezugfestigkeit", wert: "≥ 2,2 N/mm²" },
+      { label: "Verarbeitungszeit", wert: "ca. 20–30 Minuten" },
+      { label: "Temperatur", wert: "Untergrund > 8 °C, Verarbeitung > 10 °C" },
+      { label: "Begehbar", wert: "nach 24 Stunden" },
+    ],
+    besonderheiten: [
+      "Gebrauchsfertig, 1-komponentig",
+      "Fugenbreite ab 5 mm, Fugentiefe ab 30 mm",
+      "Nur für Fußgängerbereiche (leichte Belastung)",
+    ],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-pfm-ze",
+    name: "NEODUR PFM-ZE",
+    kategorie: "sonstige",
+    bereich: "spezialbaustoffe",
+    produktgruppe: "pflasterfugen",
+    kurzbeschreibung: "Pflasterfugenmörtel auf Zementbasis für Pflaster- und Plattenflächen in starrer Bauweise",
+    beschreibung: "NEODUR PFM-ZE und PFM-ZE Flex sind werksmäßig hergestellte Trockenmörtel auf Zement- und Natursandbasis (0–2 mm) für die Neuverfugung von Natur- und Betonpflaster bzw. Betonplatten in starrer Bauweise, Bauklasse IV bis VI. Die Fugenbreite sollte mindestens 8 mm betragen.",
+    normen: [],
+    technischeDaten: [
+      { label: "Basis", wert: "Zement- und Natursandbasis, Körnung 0–2 mm" },
+      { label: "Verarbeitungszeit", wert: "ca. 40 Minuten" },
+      { label: "Verarbeitungstemperatur", wert: "+5 °C bis +25 °C" },
+      { label: "Belastbar", wert: "mit Pkw nach 7 Tagen" },
+      { label: "Lieferform", wert: "25-kg-Papierspezialverpackung" },
+    ],
+    besonderheiten: [
+      "Starre Bauweise, Bauklasse IV bis VI",
+      "Nachbehandlung: 7 Tage Folienabdeckung",
+    ],
+    varianten: [
+      { name: "NEODUR PFM-ZE", hinweis: "Pflasterflächen · grau/hellgrau · Druckfestigkeit ≥ 50 N/mm²" },
+      { name: "NEODUR PFM-ZE Flex", hinweis: "Plattenflächen · grau · Druckfestigkeit ≥ 40 N/mm²" },
+    ],
+    zeitKategorie: "normal",
+  },
 ];
 
 // ===========================================================================
