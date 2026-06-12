@@ -395,6 +395,27 @@
     "email_label": "E-mail",
     "websites_title": "Powiązane strony",
     "cta_mail": "Napisz e-mail",
-    "fax_label": "Faks"
+    "fax_label": "Faks",
+    "form_title": "Formularz kontaktowy",
+    "form_intro": "Napisz do nas: odpowiemy najszybciej, jak to możliwe.",
+    "feld_name": "Imię i nazwisko",
+    "feld_firma": "Firma",
+    "feld_email": "E-mail",
+    "feld_telefon": "Telefon",
+    "feld_land": "Kraj",
+    "feld_bereich": "Obszar produktów",
+    "feld_funktion": "Twoja funkcja",
+    "feld_nachricht": "Wiadomość",
+    "funktion_verarbeiter": "Wykonawca",
+    "funktion_planer": "Architekt/Projektant",
+    "funktion_bauherr": "Inwestor",
+    "funktion_haendler": "Handlowiec",
+    "funktion_sonstiges": "Inne",
+    "bereich_sonstiges": "Inne",
+    "form_submit": "Wyślij wiadomość",
+    "form_hinweis": "Wysłanie otworzy Twój program pocztowy z przygotowaną wiadomością do info@korodur.de.",
+    "fachberater_title": "Doradztwo techniczne",
+    "fachberater_intro": "Nasi doradcy techniczni pomagają w pytaniach o produkty, obliczeniach ilości i zaleceniach wykonawczych, bezpłatnie i niezobowiązująco.",
+    "fachberater_plz": "Obszary kodów pocztowych"
   }
 }

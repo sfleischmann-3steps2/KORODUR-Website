@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { KORODUR_FIRMA, KORODUR_ZENTRALE } from "../../../lib/kontaktDaten";
+import { FACHBERATER } from "../../../data/fachberater";
+import KontaktFormular from "../../../components/KontaktFormular";
 import { AppIcon } from "@/components/ui/icon";
 import { ExternalLink, Mail, Phone, Printer } from "lucide-react";
 
@@ -41,7 +43,14 @@ export default async function KontaktPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      <section style={{ padding: "8px 32px 56px" }}>
+      {/* Zentrales Kontaktformular (Feldstruktur der Alt-Site; V1 via mailto, Stufe 5 echter Versand) */}
+      <section style={{ padding: "8px 32px 40px" }}>
+        <div className="mx-auto" style={{ maxWidth: 860 }}>
+          <KontaktFormular dict={dict} />
+        </div>
+      </section>
+
+      <section style={{ padding: "0 32px 56px" }}>
         <div className="mx-auto" style={{ maxWidth: 860 }}>
           <div className="bg-light-gray rounded-2xl" style={{ padding: "40px 36px" }}>
             <h2 className="text-navy mt-0 mb-4" style={{ fontSize: 22, fontWeight: 900 }}>
@@ -100,6 +109,39 @@ export default async function KontaktPage({ params }: { params: Params }) {
               {dict.kontakt.cta_mail}
             </a>
           </div>
+
+          {/* Technische Fachberatung (Quelle: LPs; vollständige Ansprechpartner-Seiten folgen) */}
+          <h2 className="text-navy mt-12 mb-2" style={{ fontSize: 20, fontWeight: 900 }}>
+            {dict.kontakt.fachberater_title}
+          </h2>
+          <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
+            {dict.kontakt.fachberater_intro}
+          </p>
+          {FACHBERATER.map((g) => (
+            <div key={g.gruppe} className="mb-6 last:mb-0">
+              <h3 className="text-navy/60 text-[13px] uppercase tracking-wider mt-0 mb-3" style={{ fontWeight: 800 }}>
+                {(dict.bereiche as Record<string, string>)[`${g.gruppe}_name`]}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {g.berater.map((b) => (
+                  <div key={b.email} className="border border-bullet-bg rounded-xl" style={{ padding: "18px 20px" }}>
+                    <p className="text-navy text-[16px] m-0" style={{ fontWeight: 900 }}>{b.name}</p>
+                    <p className="text-navy/60 text-[13px] mt-1 mb-1 leading-[1.5]">{b.rolle}</p>
+                    {b.gebiet && (
+                      <p className="text-navy/60 text-[13px] mt-0 mb-2">
+                        {dict.kontakt.fachberater_plz}: {b.gebiet}
+                      </p>
+                    )}
+                    <p className="m-0 text-[14px] leading-[1.8]">
+                      <a href={b.telefonHref} className="text-cyan no-underline hover:underline" style={{ fontWeight: 700 }}>{b.telefon}</a>
+                      <br />
+                      <a href={`mailto:${b.email}`} className="text-cyan no-underline hover:underline" style={{ fontWeight: 700 }}>{b.email}</a>
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
 
           {/* Verbundene Websites */}
           <h2 className="text-navy mt-12 mb-4" style={{ fontSize: 20, fontWeight: 900 }}>
