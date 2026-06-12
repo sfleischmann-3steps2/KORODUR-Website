@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Wizard from "../../../components/loesungsfinderV25/Wizard";
 import type { Locale } from "../../../lib/i18n";
 import type { Metadata } from "next";
+import { alternatesFor } from "../../../lib/seo";
 
 export async function generateMetadata({
   params,
@@ -15,6 +16,7 @@ export async function generateMetadata({
   return {
     title: dict.loesungsfinder.page_title,
     description: dict.loesungsfinder.meta_description,
+    alternates: alternatesFor(lang, "/loesungsfinder/"),
   };
 }
 

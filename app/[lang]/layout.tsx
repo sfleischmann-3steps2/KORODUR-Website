@@ -16,10 +16,13 @@ const gabarito = Gabarito({
   variable: "--font-gabarito",
 });
 import { withBasePath } from "../../lib/basePath";
+import { SITE_URL } from "../../lib/seo";
 import ServiceWorkerRegistrar from "../../components/ServiceWorkerRegistrar";
+import Analytics from "../../components/Analytics";
 
 export const metadata: Metadata = {
   // Website-Integration: App ist die neue korodur.de, nicht mehr nur Sanierung
+  metadataBase: new URL(SITE_URL),
   title: {
     template: "%s | KORODUR",
     default: "KORODUR | Industrieböden und Spezialbaustoffe",
@@ -29,6 +32,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "KORODUR",
+    images: [
+      {
+        url: withBasePath("/images/brand/og-default.jpg"),
+        width: 1200,
+        height: 630,
+        alt: "KORODUR | Industrieböden und Spezialbaustoffe",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
@@ -67,6 +81,7 @@ export default async function LangLayout({
           </AppShell>
         </LocaleProvider>
         <ServiceWorkerRegistrar />
+        <Analytics />
       </body>
     </html>
   );

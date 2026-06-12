@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { withBasePath } from "@/lib/basePath";
+import { thumbSrc } from "@/lib/images";
 import { useLocale } from "@/lib/LocaleContext";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import {
@@ -68,10 +69,14 @@ export default function ImageGallery({ images, alt }: ImageGalleryProps) {
             className="relative overflow-hidden cursor-pointer group"
             style={{ borderRadius: 10, aspectRatio: "4/3", border: "none", padding: 0, background: "var(--icon-bg)" }}
           >
+            {/* Grid lädt 640px-Thumbs statt Originale (bei images.unoptimized
+                lädt sonst jedes Grid-Bild in voller Auflösung); das erste Bild
+                eager, weil es auf Mobilgeräten das LCP-Element sein kann. */}
             <Image
-              src={withBasePath(src)}
+              src={withBasePath(thumbSrc(src))}
               alt={`${alt} – Bild ${i + 1}`}
               fill
+              priority={i === 0}
               sizes="(max-width: 768px) 50vw, 33vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />

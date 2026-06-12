@@ -255,7 +255,8 @@
     "cta_loesungsfinder": "Uruchom wyszukiwarkę rozwiązań",
     "cta_kontakt": "Kontakt z naszymi doradcami",
     "count_produkte": "{n} produkty",
-    "count_produkte_5plus": "{n} produktów"
+    "count_produkte_5plus": "{n} produktów",
+    "meta_description": "Matryca zastosowań produktów renowacyjnych KORODUR: posadzki przemysłowe, parkingi, ciągi komunikacyjne, ochrona wód, posadzki dekoracyjne i naprawy, z danymi technicznymi i kartami technicznymi."
   },
   "footer": {
     "tagline": "Jakość dla pokoleń. Od 1936 roku.",
@@ -421,5 +422,8 @@
     "fachberater_title": "Doradztwo techniczne",
     "fachberater_intro": "Nasi doradcy techniczni pomagają w pytaniach o produkty, obliczeniach ilości i zaleceniach wykonawczych, bezpłatnie i niezobowiązująco.",
     "fachberater_plz": "Obszary kodów pocztowych"
+  },
+  "rechtliches": {
+    "sprachhinweis": "Informacje prawne są dostępne w języku niemieckim; wiążąca jest wersja niemiecka."
   }
 }

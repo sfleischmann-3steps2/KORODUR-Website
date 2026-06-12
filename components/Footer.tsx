@@ -6,8 +6,6 @@ import {
   KORODUR_ZENTRALE,
   SOCIAL_LINKS,
   AUSSCHREIBEN_URL,
-  IMPRESSUM_URL,
-  DATENSCHUTZ_URL,
 } from "../lib/kontaktDaten";
 import { AppIcon } from "@/components/ui/icon";
 import { ExternalLink } from "lucide-react";
@@ -171,22 +169,18 @@ export default function Footer({
             </span>
           </div>
           <div className="flex items-center gap-6 text-[14px]">
-            <a
-              href={IMPRESSUM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={`/${lang}/impressum/`}
               className="text-white/70 hover:text-white no-underline transition-colors duration-150 py-2"
             >
               {dict.footer.impressum}
-            </a>
-            <a
-              href={DATENSCHUTZ_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              href={`/${lang}/datenschutz/`}
               className="text-white/70 hover:text-white no-underline transition-colors duration-150 py-2"
             >
               {dict.footer.datenschutz}
-            </a>
+            </Link>
           </div>
           <div className="text-[13px] text-white/40 text-center md:text-right">
             &copy; {new Date().getFullYear()} KORODUR. {dict.footer.copyright}

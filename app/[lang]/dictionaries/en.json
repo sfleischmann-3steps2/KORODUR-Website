@@ -255,7 +255,8 @@
     "cta_loesungsfinder": "Start solution finder",
     "cta_kontakt": "Contact our advisors",
     "count_produkte": "{n} products",
-    "count_produkte_5plus": "{n} products"
+    "count_produkte_5plus": "{n} products",
+    "meta_description": "Application matrix for KORODUR renovation products: use cases such as industrial floors, parking decks, traffic areas, water protection, decorative floors and repairs, with technical data and data sheets."
   },
   "footer": {
     "tagline": "Quality for generations. Since 1936.",
@@ -421,5 +422,8 @@
     "fachberater_title": "Technical Consulting",
     "fachberater_intro": "Our technical consultants help with product questions, quantity calculations and application advice, free of charge and without obligation.",
     "fachberater_plz": "Postcode areas"
+  },
+  "rechtliches": {
+    "sprachhinweis": "This legal information is provided in German; the German version is legally binding."
   }
 }

@@ -255,7 +255,8 @@
     "cta_loesungsfinder": "Démarrer le sélecteur",
     "cta_kontakt": "Contacter nos conseillers",
     "count_produkte": "{n} produits",
-    "count_produkte_5plus": "{n} produits"
+    "count_produkte_5plus": "{n} produits",
+    "meta_description": "Matrice d'application des produits de rénovation KORODUR : sols industriels, parkings, zones de circulation, protection des eaux, sols décoratifs et réparations, avec données techniques et fiches techniques."
   },
   "footer": {
     "tagline": "La qualité pour des générations. Depuis 1936.",
@@ -421,5 +422,8 @@
     "fachberater_title": "Conseil technique",
     "fachberater_intro": "Nos conseillers techniques vous aident pour les questions produits, les calculs de quantités et les recommandations de mise en œuvre, gratuitement et sans engagement.",
     "fachberater_plz": "Zones postales"
+  },
+  "rechtliches": {
+    "sprachhinweis": "Les mentions légales sont fournies en allemand ; la version allemande fait foi."
   }
 }

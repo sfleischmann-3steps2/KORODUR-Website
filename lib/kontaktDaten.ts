@@ -34,6 +34,10 @@ export const SOCIAL_LINKS = [
 /** Ausschreibungskatalog (Deeplink geliefert von Steffi, 2026-06-12). */
 export const AUSSCHREIBEN_URL = "https://www.ausschreiben.de/catalog/korodur";
 
-/** Rechtliches: bis zum Cutover auf die bestehenden Seiten der Alt-Site. */
-export const IMPRESSUM_URL = "https://www.korodur.de/impressum/";
-export const DATENSCHUTZ_URL = "https://www.korodur.de/datenschutz/";
+/** Registerdaten fürs Impressum (Quelle: korodur.de/impressum, Wayback 2026-01-31). */
+export const KORODUR_REGISTER = {
+  handelsregister: "HRB 368",
+  registergericht: "Amberg",
+  umsatzsteuerId: "DE 131 835 950",
+  vertretenDurch: "Nikola Heckmann, Michael Heckmann",
+} as const;

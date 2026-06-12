@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { KORODUR_FIRMA, KORODUR_ZENTRALE } from "../../../lib/kontaktDaten";
+import { alternatesFor } from "../../../lib/seo";
 import { FACHBERATER } from "../../../data/fachberater";
 import KontaktFormular from "../../../components/KontaktFormular";
 import { AppIcon } from "@/components/ui/icon";
@@ -19,7 +20,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
-  return { title: dict.kontakt.title, description: dict.kontakt.intro };
+  return {
+    title: dict.kontakt.title,
+    description: dict.kontakt.intro,
+    alternates: alternatesFor(lang, "/kontakt/"),
+  };
 }
 
 export default async function KontaktPage({ params }: { params: Params }) {

@@ -9,6 +9,7 @@ import { bereiche } from "../../data/bereiche";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 import { withBasePath } from "../../lib/basePath";
+import { alternatesFor } from "../../lib/seo";
 import { AppIcon } from "@/components/ui/icon";
 import { ChevronRight } from "lucide-react";
 
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     // in der SERP, nicht als "%s | KORODUR"-Anhang am Hero-Satz.
     title: { absolute: dict.home.meta_title },
     description: dict.home.hero_subtitle,
+    alternates: alternatesFor(lang, "/"),
   };
 }
 

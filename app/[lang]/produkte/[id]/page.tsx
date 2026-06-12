@@ -11,6 +11,7 @@ import { LOCALES } from "../../../../lib/i18n";
 import { notFound } from "next/navigation";
 import { localizeProdukt, localizeReferenzen } from "../../../../data/i18n/getLocalized";
 import { withBasePath } from "../../../../lib/basePath";
+import { alternatesFor } from "../../../../lib/seo";
 import { kontaktPath } from "../../../../lib/kontakt";
 import { AppIcon } from "@/components/ui/icon";
 import { CircleCheck } from "lucide-react";
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: produkt.name,
     description: localized.kurzbeschreibung,
+    alternates: alternatesFor(lang, `/produkte/${id}/`),
   };
 }
 

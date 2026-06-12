@@ -4,6 +4,7 @@ import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { AppIcon } from "@/components/ui/icon";
 import { ArrowRight, Building2, Compass, Grid3x3 } from "lucide-react";
+import { alternatesFor } from "../../../lib/seo";
 
 type Params = Promise<{ lang: string }>;
 
@@ -11,7 +12,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
-  return { title: dict.sanierungHub.title, description: dict.sanierungHub.intro };
+  return {
+    title: dict.sanierungHub.title,
+    description: dict.sanierungHub.intro,
+    alternates: alternatesFor(lang, "/sanierung/"),
+  };
 }
 
 export default async function SanierungHubPage({ params }: { params: Params }) {
