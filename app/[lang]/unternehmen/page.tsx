@@ -112,6 +112,35 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* Geschichte: Meilensteine (Quelle: Alt-Site /unternehmen/geschichte/) */}
+      <section style={{ padding: "56px 32px 8px" }}>
+        <div className="mx-auto" style={{ maxWidth: 860 }}>
+          <h2
+            className="mb-3"
+            style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}
+          >
+            {dict.unternehmen.geschichte_title}
+          </h2>
+          <p className="text-navy/70 mt-0 mb-7" style={{ fontSize: 16, lineHeight: 1.7 }}>
+            {dict.unternehmen.geschichte_intro}
+          </p>
+          <ol className="list-none m-0 p-0 border-l-2 border-bullet-bg">
+            {dict.unternehmen.meilensteine.map((m) => (
+              <li key={m.jahr} className="relative pl-7 pb-6 last:pb-0">
+                <span
+                  className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-cyan"
+                  aria-hidden="true"
+                />
+                <span className="block text-cyan text-[14px]" style={{ fontWeight: 800 }}>
+                  {m.jahr}
+                </span>
+                <span className="text-navy/80 text-[15px] leading-[1.6]">{m.text}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* Nachhaltigkeit */}
       <section style={{ padding: "56px 32px 64px" }}>
         <div className="mx-auto" style={{ maxWidth: 860 }}>

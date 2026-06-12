@@ -353,7 +353,39 @@
     "nachhaltigkeit_title": "Développement durable",
     "nachhaltigkeit_text": "Les sols industriels à agrégats durs sont extrêmement durables et réduisent les coûts du cycle de vie d'un bâtiment. Avec des développements comme NEODUR HE 3 green, nous réduisons les émissions de CO₂ de la production jusqu'à 30 %. Nous sommes certifiés DIN EN ISO 9001:2015 et membres de la DGNB.",
     "cta_title": "Vous souhaitez en savoir plus sur nous ?",
-    "cta_button": "Nous contacter"
+    "cta_button": "Nous contacter",
+    "geschichte_title": "Histoire",
+    "geschichte_intro": "L'enclume de notre logo symbolise les propriétés des sols KORODUR depuis la fondation de l'entreprise en 1936.",
+    "meilensteine": [
+      {
+        "jahr": "1936",
+        "text": "Fondation de KORODUR Westphal Hartbeton GmbH & Co. KG à Berlin par Werner Westphal"
+      },
+      {
+        "jahr": "1969",
+        "text": "Le groupe KORODUR passe à la famille Heckmann"
+      },
+      {
+        "jahr": "1976",
+        "text": "Création de KORODUR International GmbH pour développer un réseau de distribution international"
+      },
+      {
+        "jahr": "1978",
+        "text": "Transfert du siège de Berlin à Amberg, en Bavière"
+      },
+      {
+        "jahr": "1992",
+        "text": "Création du domaine d'activité litière hygiénique à la bentonite"
+      },
+      {
+        "jahr": "1995",
+        "text": "Fondation de KORODUR ENGINEERING (SINGAPORE) PTE LTD pour des projets spéciaux en Asie du Sud-Est"
+      },
+      {
+        "jahr": "2026",
+        "text": "90 ans de KORODUR"
+      }
+    ]
   },
   "kontakt": {
     "title": "Contact",

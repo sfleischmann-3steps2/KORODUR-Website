@@ -353,7 +353,39 @@
     "nachhaltigkeit_title": "Nachhaltigkeit",
     "nachhaltigkeit_text": "Hartstoffindustrieböden besitzen eine enorme Langlebigkeit und senken die Lebenszykluskosten eines Gebäudes. Mit Produktentwicklungen wie NEODUR HE 3 green reduzieren wir den CO₂-Ausstoß in der Produktion um bis zu 30 %. Wir sind nach DIN EN ISO 9001:2015 zertifiziert und Mitglied der DGNB.",
     "cta_title": "Sie möchten mehr über uns erfahren?",
-    "cta_button": "Kontakt aufnehmen"
+    "cta_button": "Kontakt aufnehmen",
+    "geschichte_title": "Geschichte",
+    "geschichte_intro": "Der Amboss im Firmenzeichen ist seit der Gründung im Jahr 1936 Symbol für die Eigenschaften des KORODUR Bodens.",
+    "meilensteine": [
+      {
+        "jahr": "1936",
+        "text": "Gründung der KORODUR Westphal Hartbeton GmbH & Co. KG in Berlin durch Firmengründer Werner Westphal"
+      },
+      {
+        "jahr": "1969",
+        "text": "Übergang der KORODUR-Gruppe an die Familie Heckmann"
+      },
+      {
+        "jahr": "1976",
+        "text": "Gründung der KORODUR International GmbH zum Aufbau eines internationalen Vertriebsnetzes"
+      },
+      {
+        "jahr": "1978",
+        "text": "Verlegung des Hauptsitzes von Berlin nach Amberg in Bayern"
+      },
+      {
+        "jahr": "1992",
+        "text": "Aufbau des Geschäftsbereichs Bentonit-Hygienestreu"
+      },
+      {
+        "jahr": "1995",
+        "text": "Gründung der KORODUR ENGINEERING (SINGAPORE) PTE LTD für Spezialprojekte in Südostasien"
+      },
+      {
+        "jahr": "2026",
+        "text": "90 Jahre KORODUR"
+      }
+    ]
   },
   "kontakt": {
     "title": "Kontakt",
