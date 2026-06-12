@@ -46,9 +46,9 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 
 ## Offene Punkte (laufend pflegen)
 
-1. Bild-Beschaffung: Produktbilder + Bereichs-Heros (Live-Site-Download vs. SharePoint-Originale) — Klärung Steffi
+1. Bild-Beschaffung: GEKLÄRT (Steffi, 2026-06-12) — Produktbilder + Bereichs-Heros werden von den Kontakten geliefert; bei Eingang unter public/images/ einpflegen (kein Live-Site-/Wayback-Scraping)
 2. ~~`belastbarNach` HE 65 / HE 40~~ GELÖST (Steffi, 2026-06-12): belastbar nach 7 Tagen — eingepflegt
 3. Rapid Set: Unterseiten Flow Control / Fast Control / Set Control fehlen im Scrape (Wayback-Lücke) — bei Bedarf von Live-Site nachsichern
 4. Sign-off Zuordnung Industrieboden (`zuordnung-industrieboden.md`): Gruppen-Schnitt, Varianten-Modell, DUROP-Frage (Hartstoff vs. Ankermörtel) — Steffi/Frank
 5. ~~NEODUR AM Super(/Plus) + SVM 03~~ GELÖST (2026-06-12): Daten auf der Spezialbaustoffe-Bereichsseite gefunden und migriert. NEU offen: PFM 1K EasyFix + PFM ZE (keine Quelldaten), Klassen-Konflikte Alt-Site vs. Excel (zuordnung-spezialbaustoffe-rapidset.md)
-6. ~~ausschreiben.de-Deeplink~~ GELIEFERT (ausschreiben.de/catalog/korodur, 2026-06-12). Key Visual hochauflösend weiter offen. NEU: Bild-Download von der Live-Site freigegeben (Steffi) — Beschaffung geplant, Achtung Bot-Schutz
+6. ~~ausschreiben.de-Deeplink~~ GELIEFERT (catalog/korodur). ~~Key Visual~~ GELIEFERT (1920×1080, Hero live seit PR #59). Bilder: Lieferung durch Kontakte (s. Punkt 1)
