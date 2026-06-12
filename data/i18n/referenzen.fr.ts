@@ -538,7 +538,7 @@ export const referenzenFR: Record<string, {
 
   "sanierung-lkw-zufahrt-logistikzentrum-sankt": {
     titel: "Rénovation de la voie d'accès poids lourds du centre logistique Spedition Brummer, Sankt Marienkirchen (Autriche)",
-    untertitel: "Rénovation ponctuelle de la voie d'accès poids lourds très fréquentée d'un centre logistique construit en 2021 sur l'A8 près de Schärding",
+    untertitel: "Rénovation ponctuelle de la voie d'accès poids lourds très fréquentée d'un centre logistique international sur l'A8. Plus de 100 poids lourds par jour n'autorisaient qu'une fenêtre de quelques heures pour la démolition et la mise en œuvre – impossible avec un béton conventionnel. 9 m³ de béton à base de ciment Rapid Set ont été mis en œuvre, offrant une résistance initiale de 32 N/mm² après 2 heures. Après neuf mois d'utilisation intensive par les poids lourds : résultat techniquement très bon, confirmé également par l'entreprise générale.",
     land: "Autriche",
     flaeche: "env. 500 m²",
     herausforderungen: [
@@ -551,7 +551,7 @@ export const referenzenFR: Record<string, {
 
   "texaco-tankflache-arnheim": {
     titel: "Piste de ravitaillement TEXACO, Arnhem (2018)",
-    untertitel: "Rénovation en béton étanche aux liquides d'une station-service selon la recommandation CUR 63 pour les installations LAU.",
+    untertitel: "Rénovation en béton étanche aux liquides d'une station-service selon la recommandation CUR 63 pour les installations LAU. Remise en état sur l'autoroute A50.",
     land: "Pays-Bas",
     herausforderungen: [
       "Le béton utilisé doit présenter une étanchéité aux liquides élevée afin de répondre aux exigences des installations LAU et de garantir une résistance conforme à la recommandation CUR 63.",
@@ -563,7 +563,7 @@ export const referenzenFR: Record<string, {
 
   "naturex-burgdorf": {
     titel: "Naturex, Burgdorf (2013)",
-    untertitel: "Rénovation complète d'une tour de refroidissement par pulvérisation en seulement trois semaines.",
+    untertitel: "Rénovation complète d'une tour de refroidissement par pulvérisation en seulement trois semaines. Revêtement résistant aux denrées alimentaires pour l'industrie des boissons.",
     land: "Suisse",
     herausforderungen: [
       "La rénovation complète devait être achevée en seulement trois semaines. Le sol de la tour, d'environ 200 m², devait être démoli et reposé en une semaine, avec un revêtement PU résistant aux denrées alimentaires.",
@@ -575,7 +575,7 @@ export const referenzenFR: Record<string, {
 
   "torschwelle-lagerhalle": {
     titel: "Seuil de porte d'un entrepôt (lieu non précisé) (2017)",
-    untertitel: "Rénovation d'une zone de seuil fortement usée avec armature apparente.",
+    untertitel: "Rénovation d'une zone de seuil fortement usée avec armature apparente. Réparation rapide sans perturber le trafic de l'entrepôt.",
     land: "Allemagne",
     herausforderungen: [
       "Réparation rapide et durable de la couche de béton endommagée, sans perturber le trafic vers l'entrepôt.",
@@ -587,7 +587,7 @@ export const referenzenFR: Record<string, {
 
   "wellpappenfabrik-gross-versmold": {
     titel: "Wellpappenfabrik Gross, Versmold (2013)",
-    untertitel: "Réparation de surfaces en asphalte et en béton affaissées à la transition vers le hall de production.",
+    untertitel: "Réparation de surfaces en asphalte et en béton affaissées à la transition vers le hall de production. Les ondulations compromettaient la sécurité de transport des emballages.",
     land: "Allemagne",
     herausforderungen: [
       "La zone était fortement sollicitée par les chariots de manutention, provoquant des ondulations qui compromettaient la sécurité de transport des emballages.",
@@ -599,7 +599,7 @@ export const referenzenFR: Record<string, {
 
   "korodur-demo-bochum": {
     titel: "KORODUR Demo, Bochum-Wattenscheid (2012)",
-    untertitel: "Réparation rapide de dalles Stelcon endommagées sous trafic quotidien de poids lourds et de chariots élévateurs.",
+    untertitel: "Réparation rapide de dalles Stelcon endommagées sous trafic quotidien de poids lourds et de chariots élévateurs. Sollicitations extrêmes sur le propre site de l'usine.",
     land: "Allemagne",
     herausforderungen: [
       "Les dommages aux dalles en béton causés par le trafic de poids lourds et de chariots élévateurs exigent un remplacement rapide, car l'approvisionnement et l'échange d'une nouvelle dalle prennent plusieurs jours.",
@@ -611,7 +611,7 @@ export const referenzenFR: Record<string, {
 
   "kreisverkehr-goppingen": {
     titel: "Carrefour giratoire, Göppingen (2021)",
-    untertitel: "Réaménagement d'un carrefour giratoire à deux voies pour améliorer la sécurité routière.",
+    untertitel: "Réaménagement d'un carrefour giratoire à deux voies pour améliorer la sécurité routière. Les gros pavés n'étaient pas perçus comme une voie de circulation.",
     land: "Allemagne",
     herausforderungen: [
       "Le pavage accentuait la perception de la voie de circulation et entraînait des situations de trafic exiguës et dangereuses, en particulier aux entrées et sorties.",
@@ -623,7 +623,7 @@ export const referenzenFR: Record<string, {
 
   "barmenia-parkhaus-wuppertal": {
     titel: "Parking Barmenia, Wuppertal (2015)",
-    untertitel: "Rénovation rapide d'éléments en béton coulé en place et préfabriqués endommagés, avec armature partiellement apparente.",
+    untertitel: "Rénovation rapide d'éléments en béton coulé en place et préfabriqués endommagés, avec armature partiellement apparente. Rétablissement de la stabilité structurelle du parking de la compagnie d'assurance.",
     land: "Allemagne",
     herausforderungen: [
       "Zones endommagées dans des éléments en béton coulé en place et préfabriqués, parfois avec armature apparente, nécessitant une rénovation rapide.",
@@ -635,7 +635,7 @@ export const referenzenFR: Record<string, {
 
   "john-lewis-lager-stevenage": {
     titel: "Entrepôt John Lewis, Stevenage (2013)",
-    untertitel: "Rénovation d'ornières profondes après plus de 20 ans de circulation de chariots élévateurs dans un entrepôt à rayonnages de grande hauteur.",
+    untertitel: "Rénovation d'ornières profondes après plus de 20 ans de circulation de chariots élévateurs dans un entrepôt à rayonnages de grande hauteur. Rétablissement de la sécurité de circulation dans l'entrepôt du grand magasin.",
     land: "Royaume-Uni",
     flaeche: "1 000 mètres linéaires",
     herausforderungen: [
@@ -648,7 +648,7 @@ export const referenzenFR: Record<string, {
 
   "fraport-frankfurt": {
     titel: "Fraport, Frankfurt/Main (2012)",
-    untertitel: "Rénovation éclair d'une aire de stationnement de conteneurs endommagée à l'aéroport, avec revêtement conforme WHG.",
+    untertitel: "Rénovation éclair d'une aire de stationnement de conteneurs endommagée à l'aéroport, avec revêtement conforme WHG. Remise en service la plus rapide possible pour l'exploitation aéroportuaire.",
     land: "Allemagne",
     herausforderungen: [
       "La rénovation devait être réalisée dans les plus brefs délais, y compris le revêtement WHG exigé.",
@@ -660,7 +660,7 @@ export const referenzenFR: Record<string, {
 
   "sncf-bordeaux": {
     titel: "SNCF, Bordeaux (2016)",
-    untertitel: "Élimination d'inégalités dangereuses dans les accès au métro lors de travaux de nuit.",
+    untertitel: "Élimination d'inégalités dangereuses dans les accès au métro lors de travaux de nuit. Préparation à la nouvelle ligne à grande vitesse Tours-Bordeaux.",
     land: "France",
     herausforderungen: [
       "Pendant les travaux, des affaissements se sont produits dans les couloirs d'accès aux stations de métro, provoquant de nombreuses inégalités et un risque de blessure pour les voyageurs. Les réparations devaient être effectuées pendant la nuit (de 0 h 00 à 5 h 00).",
@@ -672,7 +672,7 @@ export const referenzenFR: Record<string, {
 
   "parkhaus-freiburger-munster-freiburg": {
     titel: "Parking de la cathédrale de Freiburg, Freiburg",
-    untertitel: "Rénovation du parking souterrain Karlsbau à Freiburg (670 places, 3 niveaux) avec Triflex ProPark et revêtement DUROP",
+    untertitel: "Rénovation du parking souterrain Karlsbau à Freiburg (670 places, 3 niveaux) avec Triflex ProPark et revêtement DUROP (granulométrie 1–2 mm). Exécution rapide, résistance durable à l'usure, aspect clair.",
     land: "Allemagne",
     flaeche: "env. 5 000 m²",
     herausforderungen: [
@@ -685,7 +685,7 @@ export const referenzenFR: Record<string, {
 
   "olympiastadion-berlin": {
     titel: "Olympiastadion Berlin (2023)",
-    untertitel: "Rénovation sous contraintes de protection du patrimoine avec préservation de l'aspect historique.",
+    untertitel: "Rénovation sous contraintes de protection du patrimoine avec préservation de l'aspect historique. Haute résistance aux sollicitations pour les manifestations sportives et les grands événements.",
     land: "Allemagne",
     herausforderungen: [
       "Préservation de l'aspect historique sous contraintes de protection des monuments, fortes sollicitations mécaniques dues aux manifestations sportives et aux grands événements, intégration d'exigences techniques modernes dans un ensemble architectural à caractère historique.",
@@ -697,7 +697,7 @@ export const referenzenFR: Record<string, {
 
   "wirtgen-produktionshallen-weltweit": {
     titel: "Halls de production WIRTGEN, monde entier",
-    untertitel: "Plus de 150 000 m² de sols industriels à granulats durs dans des sites de production du monde entier pour des machines de construction routière jusqu'à 500 tonnes.",
+    untertitel: "Plus de 150 000 m² de sols industriels à granulats durs dans des sites de production du monde entier pour des machines de construction routière jusqu'à 500 tonnes. Une solution éprouvée depuis des décennies.",
     land: "Andorre",
     herausforderungen: [
       "Sollicitations mécaniques extrêmes par des machines à chenilles jusqu'à 500 tonnes. Résistance à l'usure maximale combinée à une haute résistance à la flexion. Utilisation à long terme sous sollicitation continue.",
@@ -709,7 +709,7 @@ export const referenzenFR: Record<string, {
 
   "fh-lichtschacht-nurnberg": {
     titel: "Puits de lumière FH, Nürnberg (2012)",
-    untertitel: "Rénovation d'un encadrement en béton fortement sollicité le dernier jour de cours avant les vacances d'été.",
+    untertitel: "Rénovation d'un encadrement en béton fortement sollicité le dernier jour de cours avant les vacances d'été. Réparation rapide sous contraintes climatiques et de trafic lourd.",
     land: "Allemagne",
     herausforderungen: [
       "Fortes sollicitations mécaniques par le trafic lourd, exposition aux intempéries et aux polluants, et délais très serrés pour la rénovation le dernier jour de cours avant les vacances d'été.",
@@ -721,7 +721,7 @@ export const referenzenFR: Record<string, {
 
   "klaranlage-nako": {
     titel: "Station d'épuration, Nakło (2014)",
-    untertitel: "Rénovation d'une crête de bassin détruite par les acides (env. 180 m²) avec un ciment rapide. Réparation en quelques heures.",
+    untertitel: "Rénovation d'une crête de bassin détruite par les acides (env. 180 m²) avec un ciment rapide. Réparation en quelques heures, remise en service immédiate.",
     land: "Pologne",
     flaeche: "env. 180 m²",
     herausforderungen: [
@@ -734,7 +734,7 @@ export const referenzenFR: Record<string, {
 
   "bruckensanierung-amberg": {
     titel: "Rénovation de pont, Amberg (2012)",
-    untertitel: "Rénovation de pont avec compensation de différences de pente jusqu'à 100 mm sur les cheminements piétons.",
+    untertitel: "Rénovation de pont avec compensation de différences de pente jusqu'à 100 mm sur les cheminements piétons. Achèvement en neuf mois, avant les fêtes de Noël.",
     land: "Allemagne",
     herausforderungen: [
       "Respect d'un calendrier serré de neuf mois, compensation de différences de pente de 0 à 100 mm sur les cheminements piétons, modelage précis des plinthes le long du garde-corps du pont dans des conditions de chantier exigeantes.",
@@ -746,7 +746,7 @@ export const referenzenFR: Record<string, {
 
   "parkplatzsanierung-metzingen": {
     titel: "Rénovation de parking, Metzingen (2017)",
-    untertitel: "Rénovation d'un parking fortement usé présentant des fissures de surface et des épaufrures.",
+    untertitel: "Rénovation d'un parking fortement usé présentant des fissures de surface et des épaufrures. Remise en état rapide pour une répartition uniforme des charges.",
     land: "Allemagne",
     herausforderungen: [
       "Fortes sollicitations mécaniques par le trafic quotidien de voitures et de livraisons, nécessité d'une rénovation rapide, compensation des fissures de surface et des inégalités pour une répartition uniforme des charges.",
@@ -758,7 +758,7 @@ export const referenzenFR: Record<string, {
 
   "schachtregulierung-fahrbahn-nittenau": {
     titel: "Mise à niveau de regards de chaussée, Nittenau (2019)",
-    untertitel: "Mise à niveau de 28 regards d'assainissement au nouveau niveau de la chaussée lors d'une rénovation routière.",
+    untertitel: "Mise à niveau de 28 regards d'assainissement au nouveau niveau de la chaussée lors d'une rénovation routière. Mortier de réparation à durcissement rapide pour une pose d'asphalte sans délai.",
     land: "Allemagne",
     herausforderungen: [
       "Mise à niveau de 28 regards d'assainissement à un niveau de chaussée rehaussé, nécessité d'un mortier de réparation à durcissement rapide et stable en volume, contrainte de temps pour la pose rapide du nouvel asphalte.",
@@ -770,7 +770,7 @@ export const referenzenFR: Record<string, {
 
   "treppensanierung-gehweg-esslingen": {
     titel: "Rénovation d'escalier sur trottoir, Esslingen (2015)",
-    untertitel: "Rénovation de marches d'escalier isolées présentant des dégâts dus au gel et aux sels de déverglaçage sur un trottoir public.",
+    untertitel: "Rénovation de marches d'escalier isolées présentant des dégâts dus au gel et aux sels de déverglaçage sur un trottoir public. Rétablissement rapide de l'usage du trottoir.",
     land: "Allemagne",
     herausforderungen: [
       "Fortes sollicitations par le gel et les sels de déverglaçage, rénovation de marches isolées dans un espace public, et exécution des travaux sous contrainte de temps pour rétablir rapidement l'usage du trottoir.",
@@ -782,7 +782,7 @@ export const referenzenFR: Record<string, {
 
   "burger-king-munster": {
     titel: "Burger King, Münster-Hiltrup (2021)",
-    untertitel: "Rénovation de la zone très sollicitée du guichet de retrait en cours d'exploitation du restaurant. Réparation des dégâts d'asphalte.",
+    untertitel: "Rénovation de la zone très sollicitée du guichet de retrait en cours d'exploitation du restaurant. Réparation des dégâts d'asphalte sous les plaques d'acier.",
     land: "Allemagne",
     herausforderungen: [
       "Fortes sollicitations mécaniques par les véhicules, travaux à réaliser en cours d'exploitation, traitement spécial de l'asphalte requis.",
@@ -794,7 +794,7 @@ export const referenzenFR: Record<string, {
 
   "kraftwerk-bergamo": {
     titel: "Centrale électrique, Bergamo (2011)",
-    untertitel: "Rénovation dans le respect du patrimoine avec restitution de l'aspect historique des dalles de petit format des années 60 à 80.",
+    untertitel: "Rénovation dans le respect du patrimoine avec restitution de l'aspect historique des dalles de petit format des années 60 à 80. Modernisation tout en préservant le caractère d'origine.",
     land: "Italie",
     herausforderungen: [
       "Préservation de l'aspect historique avec modernisation simultanée de la technologie de sol ; restitution de l'aspect des dalles de petit format (30 cm x 30 cm) ; garantie d'une haute résistance à l'usure en exploitation industrielle.",
@@ -806,7 +806,7 @@ export const referenzenFR: Record<string, {
 
   "fahrbahnsanierung-wien": {
     titel: "Rénovation de chaussée, Vienne (2020)",
-    untertitel: "Rénovation partielle de la chaussée de la Donaukanalstraße à Vienne avec DOT Europe CONCRETE MIX. 15 réparations ponctuelles en une nuit, en épaisseurs de 5–10 cm.",
+    untertitel: "Rénovation partielle de la chaussée de la Donaukanalstraße à Vienne avec DOT Europe CONCRETE MIX. 15 réparations ponctuelles remplies en une nuit, en épaisseurs de 5–10 cm, et chaussée rouverte à la circulation en quelques heures. Surface témoin concluante, sans dommage depuis 2019.",
     land: "Autriche",
     flaeche: "15 réparations ponctuelles sur env. 500–700 m de chaussée",
     herausforderungen: [
@@ -831,7 +831,7 @@ export const referenzenFR: Record<string, {
 
   "decathlon-dortmund": {
     titel: "Decathlon, Dortmund-Aplerbeck (2023)",
-    untertitel: "Pose d'une chape à granulats durs par technique de silo pour une surface de vente provisoire pendant la transformation du magasin spécialisé.",
+    untertitel: "Pose d'une chape à granulats durs par technique de silo pour une surface de vente provisoire pendant la transformation du magasin spécialisé. Solution économique pour une exploitation temporaire.",
     land: "Allemagne",
     herausforderungen: [
       "Délais serrés pour l'achèvement. Sol industriel résistant nécessaire pour une exploitation commerciale temporaire sur une surface déjà utilisée.",
@@ -839,5 +839,68 @@ export const referenzenFR: Record<string, {
     loesung:
       "Mise en oeuvre de NEODUR HE 65, une chape à granulats durs à liant ciment, en épaisseur de couche de 10 mm, appliquée avec le système de silo KORODUR moderne.",
     bildAlt: "Decathlon, Dortmund-Aplerbeck (2023) (photo à venir)",
+  },
+
+  "trinkwasserbehaelter-haidberg": {
+    titel: "Réservoir d'eau potable surélevé Haidberg",
+    untertitel: "Sécurité par le revêtement",
+    land: "Allemagne",
+    herausforderungen: [
+      "Support hétérogène avec dégâts de corrosion et défauts liés à l'hydrolyse",
+      "Préservation de la qualité de l'eau potable et respect des normes",
+      "Géométries complexes des éléments (murs, poteaux, plafonds) avec des exigences différentes",
+      "Le réservoir devait être remis en service après seulement un an",
+    ],
+    loesung:
+      "Remise en état avec le système complet MICROTOP TW : six produits coordonnés pour les zones fonctionnelles – égalisation, reprofilage, pont d'adhérence et consolidation de surface.",
+    vorteile: [
+      "Approche systémique globale pour tous les éléments",
+      "Protection contre la corrosion renouvelée et la destruction par hydrolyse",
+      "Remise en service dans le délai prévu (1 an)",
+      "Conformité aux exigences relatives à l'eau potable",
+    ],
+    bildAlt: "Réservoir d'eau potable surélevé Haidberg pendant la rénovation",
+  },
+
+  "trinkwasserbehaelter-bad-nauheim": {
+    titel: "Réservoir d'eau potable Bad Nauheim",
+    untertitel: "Normes sûres pour sol, mur et plafond",
+    land: "Allemagne",
+    herausforderungen: [
+      "Retrait des anciens carrelages, matériaux de jointement et revêtements existants",
+      "Garantie de matériaux hygiéniques et certifiés",
+      "Éléments de construction différents avec des sollicitations spécifiques",
+      "Mise en oeuvre et post-traitement dans des délais serrés",
+    ],
+    loesung:
+      "Système MICROTOP TW NSM – utilisé pour la première fois à Bad Nauheim en projection par voie humide, en tant que mortier projeté purement minéral enrichi en microsilice, sans additifs plastiques. Concept coloré : murs bleus, plafond blanc, sol gris.",
+    vorteile: [
+      "Matériau contrôlé sur le plan hygiénique conformément aux exigences DVGW",
+      "Surface sans joints",
+      "Revêtement minéral durable sans additifs plastiques",
+      "Valorisation esthétique par concept de couleur et revêtement moderne",
+    ],
+    bildAlt: "Réservoir d'eau potable rénové à Bad Nauheim",
+  },
+
+  "trinkwasserturm-budapest": {
+    titel: "Château d'eau de Budapest",
+    untertitel: "30 ans de charge rénovés avec protection minérale",
+    land: "Hongrie",
+    herausforderungen: [
+      "Support ancien sollicité depuis trois décennies",
+      "Solution économique exigée avec une haute durabilité simultanée",
+      "Géométrie complexe (murs, plafonds) nécessitant un revêtement uniforme",
+      "Créneau d'environ six mois pour la rénovation",
+    ],
+    loesung:
+      "Le système minéral MICROTOP a été utilisé, plus précisément les produits MICROTOP TW BM et MICROTOP TW 02, sur une phase de rénovation d'environ six mois.",
+    vorteile: [
+      "Protection à long terme sans composants plastiques – durablement minéral",
+      "Rénovation rentable grâce à l'approche système",
+      "Revêtement uniforme et homogène sur des éléments complexes",
+      "Réalisation dans le calendrier prévu",
+    ],
+    bildAlt: "Château d'eau en périphérie de Budapest pendant la rénovation",
   },
 };

@@ -6,6 +6,8 @@ import ReferenceCard from "../../../../components/ReferenceCard";
 import TileGrid from "../../../../components/TileGrid";
 import { produkte, getProduktById } from "../../../../data/produkte";
 import { PRODUKT_DOKUMENTE } from "../../../../data/produktDokumente";
+import { fachberaterFuerBereich } from "../../../../data/fachberater";
+import BeraterCard from "../../../../components/BeraterCard";
 import DokumentListe from "../../../../components/DokumentListe";
 import { referenzen } from "../../../../data/referenzen";
 import { getDictionary, hasLocale } from "../../dictionaries";
@@ -16,7 +18,8 @@ import { withBasePath } from "../../../../lib/basePath";
 import { alternatesFor } from "../../../../lib/seo";
 import { kontaktPath } from "../../../../lib/kontakt";
 import { AppIcon } from "@/components/ui/icon";
-import { CircleCheck } from "lucide-react";
+import { CircleCheck, Info } from "lucide-react";
+import { getBereichBySlug } from "../../../../data/bereiche";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; id: string }> }): Promise<Metadata> {
   const { lang, id } = await params;
@@ -73,6 +76,11 @@ export default async function ProduktDetailPage({
           <Breadcrumb
             items={[
               { label: dict.produkte.breadcrumb, href: `/${lang}/produkte` },
+              // Bereichs-Ebene im Pfad: Rücksprung in den Kontext (Korb 2)
+              {
+                label: (dict.bereiche as Record<string, string>)[`${produkt.bereich}_name`] ?? produkt.bereich,
+                href: `/${lang}/bereiche/${produkt.bereich}`,
+              },
               { label: produkt.name },
             ]}
             lang={lang}
@@ -118,6 +126,19 @@ export default async function ProduktDetailPage({
               <p className="text-cyan-text mt-3 mb-0" style={{ fontSize: 16, fontWeight: 700 }}>
                 {dict.produkte.layer_thickness}: {produkt.schichtdicke}
               </p>
+            )}
+            {/* Bezugsquellen-Hinweis (Rapid Set: exklusiv über den Fachhandel) —
+                Google-Direkteinstieg auf die PDP ist der Normalfall (Korb 2) */}
+            {getBereichBySlug(produkt.bereich)?.haendlerHinweis && (
+              <div
+                className="flex items-start gap-3 bg-icon-bg rounded-xl mt-5"
+                style={{ padding: "16px 18px", maxWidth: 700 }}
+              >
+                <AppIcon icon={Info} width={20} height={20} strokeWidth={2} className="text-cyan-text shrink-0 mt-0.5" aria-hidden="true" />
+                <p className="text-navy text-[14px] m-0 leading-[1.6]">
+                  {(dict.bereiche as Record<string, string>).haendler_hinweis}
+                </p>
+              </div>
             )}
             {produkt.varianten && produkt.varianten.length > 0 && (
               <div className="mt-6" style={{ maxWidth: 700 }}>
@@ -317,6 +338,22 @@ export default async function ProduktDetailPage({
                 </Link>
               </div>
             )}
+          </div>
+        </section>
+      )}
+
+      {/* Fachberater zum Bereich (Funnel-Karten, Korb 2) */}
+      {fachberaterFuerBereich(produkt.bereich).length > 0 && (
+        <section className="bg-icon-bg" style={{ padding: "56px 32px 64px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-6" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {dict.kontakt.fachberater_title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {fachberaterFuerBereich(produkt.bereich).map((b) => (
+                <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
+              ))}
+            </div>
           </div>
         </section>
       )}

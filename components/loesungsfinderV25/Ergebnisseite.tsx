@@ -20,6 +20,8 @@ import type { LoesungsfinderState } from "@/data/types";
 import { einsatzbereichLabel } from "@/data/einsatzbereichMapping";
 import { withBasePath } from "@/lib/basePath";
 import { kontaktPath } from "@/lib/kontakt";
+import { fachberaterFuerBereich } from "@/data/fachberater";
+import BeraterCard from "@/components/BeraterCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -171,6 +173,21 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
         <Card className="mb-4 rounded-lg border-dashed border-mid-gray p-6 text-center text-[13px] text-muted-foreground shadow-none">
           {t.refs_keine}
         </Card>
+      )}
+
+      {/* Fachberater zur Empfehlung (Funnel-Karten, Korb 2): persönlicher
+          Ansprechpartner mit Durchwahl direkt am Ergebnis */}
+      {topProduktAnzeige && fachberaterFuerBereich(topProduktAnzeige.bereich).length > 0 && (
+        <div className="mb-4">
+          <div className="mb-2 text-[15px] font-semibold text-navy">
+            {dict.kontakt.fachberater_title}
+          </div>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {fachberaterFuerBereich(topProduktAnzeige.bereich).slice(0, 2).map((b) => (
+              <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
+            ))}
+          </div>
+        </div>
       )}
 
       {/* Allgemeiner Berater-CTA (ergebnis-unabhängig) */}

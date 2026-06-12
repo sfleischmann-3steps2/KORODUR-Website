@@ -198,6 +198,12 @@ const MANUAL_MAP = {
   "KORODUR_Lieferprogramm_de_2025.pdf": "zentral",
 };
 
+// ---- Zusatz-TDS aus docs/tds-quellen (von Steffi geliefert, nicht auf der
+// Alt-Site-Datenblätterseite — z. B. neue Produkte) -------------------------
+const ZUSATZ_TDS_QUELLEN = {
+  "KOROMINERAL_Lasur_de_.pdf": ["koromineral-lasur"],
+};
+
 // ---- Service-Seiten parsen --------------------------------------------------
 const SEITEN = [
   ["dattenblaetter.html", "tds"],
@@ -289,6 +295,17 @@ for (const [snapDatei, typ] of SEITEN) {
       }
     }
   }
+}
+
+// Zusatz-TDS aus docs/tds-quellen kopieren und verknüpfen
+for (const [datei, ziel] of Object.entries(ZUSATZ_TDS_QUELLEN)) {
+  const quelle = path.join("docs/tds-quellen", datei);
+  if (!fs.existsSync(quelle)) { unzugeordnet.push(`ZUSATZ FEHLT: ${quelle}`); continue; }
+  const zielRel = `/downloads/tds/${datei}`;
+  fs.mkdirSync("public/downloads/tds", { recursive: true });
+  fs.copyFileSync(quelle, path.join("public", zielRel));
+  const eintrag = { typ: "tds", titel: titelAusDatei(datei, "tds"), url: zielRel, sprache: "de" };
+  for (const id of ziel) (produktDokumente[id] ??= []).push(eintrag);
 }
 
 // ---- Ausgabe -----------------------------------------------------------------
