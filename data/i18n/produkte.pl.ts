@@ -490,6 +490,7 @@ export const produktePL: Record<string, {
     technischeDaten: [
       { label: "Postać", wert: "płynna" },
       { label: "Barwa", wert: "niebieskawa" },
+      { label: "Zużycie materiału", wert: "ok. 150 g/m²" },
     ],
     besonderheiten: [
       "Bezrozpuszczalnikowy i gotowy do użycia",
@@ -504,6 +505,7 @@ export const produktePL: Record<string, {
       { label: "Postać", wert: "płynna" },
       { label: "Barwa", wert: "mlecznie mętna" },
       { label: "Wartość pH", wert: "5" },
+      { label: "Zużycie materiału", wert: "ok. 100 g/m²" },
     ],
     besonderheiten: [
       "Technologia nanokrzemionki",
@@ -545,7 +547,8 @@ export const produktePL: Record<string, {
     technischeDaten: [
       { label: "Barwa", wert: "transparentna" },
       { label: "Gęstość", wert: "ok. 1,12 g/cm³" },
-      { label: "Wartość pH", wert: "ok. 11" },
+      { label: "Wartość pH", wert: "ok. 11,3" },
+      { label: "Temperatura obróbki", wert: "+5 °C do +35 °C" },
       { label: "Zużycie", wert: "ok. 100–200 g/m² (w zależności od chłonności)" },
     ],
     besonderheiten: [
@@ -725,7 +728,10 @@ export const produktePL: Record<string, {
     kurzbeschreibung: "Zaprawa natryskowa w metodzie natrysku mokrego do reprofilacji i powlekania w obszarze wody pitnej",
     beschreibung: "MICROTOP TW NSM jest nakładany metodą natrysku mokrego i służy do reprofilacji i powlekania powierzchni oraz do zwiększania otuliny betonowej i wykończenia w obszarze wody pitnej. Materiały można bez problemu zacierać packą i wygładzać; małe prace możliwe są ręcznie w połączeniu z warstwą sczepną.",
     technischeDaten: [
-      { label: "Grubość warstwy", wert: "ok. 20 mm w jednym cyklu roboczym" },
+      { label: "Uziarnienie", wert: "0–3 mm" },
+      { label: "Grubość warstwy", wert: "ok. 20 mm, jednowarstwowo" },
+      { label: "Dodatek wody", wert: "ok. 3,6 l na opakowanie 25 kg" },
+      { label: "Kolory", wert: "naturalny, biały, niebieski" },
       { label: "Metoda", wert: "natrysk mokry (transport gęstostrumieniowy, niewielkie pylenie)" },
     ],
     besonderheiten: [
@@ -740,8 +746,9 @@ export const produktePL: Record<string, {
     kurzbeschreibung: "Zaprawa natryskowa w metodzie natrysku mokrego gęstostrumieniowego o wyjątkowo niskiej zawartości porów",
     beschreibung: "MICROTOP TW 02 jest nakładany metodą natrysku mokrego gęstostrumieniowego i służy do powlekania powierzchni oraz do zwiększania otuliny betonowej i wykończenia w obszarze wody pitnej. Produkt ma wyjątkowo niską zawartość porów i może być stosowany również jako ochrona antykorozyjna i warstwa sczepna.",
     technischeDaten: [
-      { label: "Grubość warstwy (wykładanie rur/zbiorników)", wert: "5–8 mm" },
-      { label: "Grubość warstwy (ochrona antykorozyjna/warstwa sczepna)", wert: "2–5 mm" },
+      { label: "Uziarnienie", wert: "0–0,2 mm" },
+      { label: "Grubość warstwy", wert: "ok. 2–5 mm" },
+      { label: "Dodatek wody", wert: "ok. 5–6,25 l na opakowanie 25 kg" },
       { label: "Metoda", wert: "nakładanie odśrodkowe, natrysk, szpachlowanie, nakładanie ręczne" },
     ],
     besonderheiten: [
@@ -753,7 +760,10 @@ export const produktePL: Record<string, {
     kurzbeschreibung: "Zaprawa natrysku wstępnego (warstwa sczepna) do wykładania od wewnątrz i napraw zbiorników wody pitnej oraz muru",
     beschreibung: "MICROTOP TW VSM służy do wykładania od wewnątrz i napraw nowych oraz starych zbiorników wody pitnej, a także muru. Dzięki specjalnemu składowi ma znakomite właściwości robocze i użytkowe; można go bez problemu zacierać packą i wygładzać.",
     technischeDaten: [
-      { label: "Grubość warstwy", wert: "15–20 mm" },
+      { label: "Uziarnienie", wert: "0–2 mm" },
+      { label: "Grubość warstwy", wert: "ok. 15–20 mm" },
+      { label: "Dodatek wody", wert: "ok. 3,75 l na opakowanie 25 kg" },
+      { label: "Wydajność", wert: "ok. 14 l na opakowanie 25 kg" },
       { label: "Metoda", wert: "natrysk, nakładanie ręczne" },
     ],
     besonderheiten: [
@@ -795,6 +805,18 @@ export const produktePL: Record<string, {
       "Reakcja krzemianowania z podłożem",
       "Wzmocnienie i uszczelnienie w jednym cyklu roboczym",
       "Impregnacja do wszystkich zapraw MICROTOP TW",
+    ],
+  },
+  "microtop-tw-nsd": {
+    kurzbeschreibung: "Uszlachetniona mikrokrzemionką cementowa zaprawa natryskowa (C30/37) w metodzie natrysku mokrego do obszaru wody pitnej",
+    beschreibung: "MICROTOP TW NSD to mineralna, wiążąca hydraulicznie, uszlachetniona mikrokrzemionką cementowa zaprawa natryskowa klasy wytrzymałości betonu C30/37 do obszaru wody pitnej. Aplikacja odbywa się metodą natrysku mokrego z transportem rzadkostrumieniowym lub gęstostrumieniowym; podłożem są nośne betony i mocno przylegające stare tynki o przyczepności co najmniej 1,5 N/mm². Spełnia wymagania arkuszy roboczych DVGW W 300 i W 347.",
+    technischeDaten: [
+      { label: "Uziarnienie", wert: "0–3 mm" },
+      { label: "Forma dostawy", wert: "specjalne opakowanie papierowe 25 kg" },
+    ],
+    besonderheiten: [
+      "Czysto mineralna, uszlachetniona mikrokrzemionką",
+      "Natrysk mokry z transportem rzadkostrumieniowym lub gęstostrumieniowym",
     ],
   },
   "neodur-vm-1": {
