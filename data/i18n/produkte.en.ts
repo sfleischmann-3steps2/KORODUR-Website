@@ -826,4 +826,45 @@ export const produkteEN: Record<string, {
       { label: "Pack size", wert: "7 litres" },
     ],
   },
+  "koromineral-lasur": {
+    kurzbeschreibung: "Special impregnation with coloured surface finish based on lithium silicate",
+    beschreibung: "KOROMINERAL Lasur is used for the impregnation of cement-bound screed and concrete surfaces and especially of KORODUR screeds. The pigmentation creates a coloured surface finish. Application with a short-pile nylon roller in two passes in a criss-cross pattern.",
+    besonderheiten: ["Coloured surface finish based on lithium silicate", "Two passes in a criss-cross pattern"],
+    technischeDaten: [
+      { label: "Form", wert: "liquid" },
+      { label: "Colours", wert: "stone grey, mouse grey (no RAL colours)" },
+      { label: "Surface temperature", wert: "+10 °C to +25 °C" },
+      { label: "Drying time between passes", wert: "1–3 hours (temperature-dependent)" },
+    ],
+  },
+  "neodur-pfm-1k-easyfix": {
+    kurzbeschreibung: "Ready-to-use, 1-component paving joint mortar for pedestrian areas",
+    beschreibung: "NEODUR PFM 1K Easyfix is used for the jointing and refurbishment of paved areas under light loads, e.g. terraces and footpaths. For joint widths from 5 mm and joint depths from 30 mm.",
+    besonderheiten: ["Ready to use, 1-component", "Joint width from 5 mm, joint depth from 30 mm", "Pedestrian areas only (light loads)"],
+    technischeDaten: [
+      { label: "Colours", wert: "natural, stone grey, basalt" },
+      { label: "Hardened mortar density", wert: "approx. 1.37 kg/dm³" },
+      { label: "Compressive strength", wert: "≥ 4.0 N/mm²" },
+      { label: "Flexural strength", wert: "≥ 2.2 N/mm²" },
+      { label: "Working time", wert: "approx. 20–30 minutes" },
+      { label: "Temperature", wert: "substrate > 8 °C, application > 10 °C" },
+      { label: "Walkable", wert: "after 24 hours" },
+    ],
+  },
+  "neodur-pfm-ze": {
+    kurzbeschreibung: "Cement-based paving joint mortar for paved and slab surfaces in rigid construction",
+    beschreibung: "NEODUR PFM-ZE and PFM-ZE Flex are factory-made dry mortars based on cement and natural sand (0–2 mm) for the re-jointing of natural stone and concrete paving or concrete slabs in rigid construction, road construction class IV to VI. The joint width should be at least 8 mm.",
+    besonderheiten: ["Rigid construction, road construction class IV to VI", "Curing: 7 days foil covering"],
+    technischeDaten: [
+      { label: "Base", wert: "cement and natural sand base, grain size 0–2 mm" },
+      { label: "Working time", wert: "approx. 40 minutes" },
+      { label: "Application temperature", wert: "+5 °C to +25 °C" },
+      { label: "Load-bearing", wert: "for cars after 7 days" },
+      { label: "Delivery form", wert: "25 kg special paper packaging" },
+    ],
+    varianten: [
+      { name: "NEODUR PFM-ZE", hinweis: "Paved surfaces · grey/light grey · compressive strength ≥ 50 N/mm²" },
+      { name: "NEODUR PFM-ZE Flex", hinweis: "Slab surfaces · grey · compressive strength ≥ 40 N/mm²" },
+    ],
+  },
 };

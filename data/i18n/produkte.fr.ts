@@ -812,4 +812,45 @@ export const produkteFR: Record<string, {
       { label: "Conditionnement", wert: "7 litres" },
     ],
   },
+  "koromineral-lasur": {
+    kurzbeschreibung: "Imprégnation spéciale avec finition de surface colorée à base de silicate de lithium",
+    beschreibung: "KOROMINERAL Lasur est utilisé pour l'imprégnation des surfaces de chape et de béton à liant ciment et spécialement des chapes KORODUR. La pigmentation crée une finition de surface colorée. Application au rouleau nylon à poils courts en deux passes croisées.",
+    besonderheiten: ["Finition de surface colorée à base de silicate de lithium", "Deux passes croisées"],
+    technischeDaten: [
+      { label: "Forme", wert: "liquide" },
+      { label: "Couleurs", wert: "gris pierre, gris souris (pas de couleurs RAL)" },
+      { label: "Température de surface", wert: "+10 °C à +25 °C" },
+      { label: "Temps de séchage entre les passes", wert: "1–3 heures (selon la température)" },
+    ],
+  },
+  "neodur-pfm-1k-easyfix": {
+    kurzbeschreibung: "Mortier de jointoiement pour pavés monocomposant prêt à l'emploi pour zones piétonnes",
+    beschreibung: "NEODUR PFM 1K Easyfix sert au jointoiement et à la rénovation des surfaces pavées soumises à de faibles charges, p. ex. terrasses et chemins piétons. Pour des largeurs de joint à partir de 5 mm et des profondeurs de joint à partir de 30 mm.",
+    besonderheiten: ["Prêt à l'emploi, monocomposant", "Largeur de joint à partir de 5 mm, profondeur de joint à partir de 30 mm", "Uniquement zones piétonnes (faibles charges)"],
+    technischeDaten: [
+      { label: "Couleurs", wert: "nature, gris pierre, basalte" },
+      { label: "Densité du mortier durci", wert: "env. 1,37 kg/dm³" },
+      { label: "Résistance à la compression", wert: "≥ 4,0 N/mm²" },
+      { label: "Résistance à la flexion", wert: "≥ 2,2 N/mm²" },
+      { label: "Temps de mise en œuvre", wert: "env. 20–30 minutes" },
+      { label: "Température", wert: "support > 8 °C, mise en œuvre > 10 °C" },
+      { label: "Praticable", wert: "après 24 heures" },
+    ],
+  },
+  "neodur-pfm-ze": {
+    kurzbeschreibung: "Mortier de jointoiement pour pavés à base de ciment pour surfaces pavées et dallées en construction rigide",
+    beschreibung: "NEODUR PFM-ZE et PFM-ZE Flex sont des mortiers secs fabriqués en usine à base de ciment et de sable naturel (0–2 mm) pour le rejointoiement de pavés en pierre naturelle et en béton ou de dalles en béton en construction rigide, classe de construction IV à VI. La largeur de joint doit être d'au moins 8 mm.",
+    besonderheiten: ["Construction rigide, classe de construction IV à VI", "Cure : 7 jours sous film"],
+    technischeDaten: [
+      { label: "Base", wert: "base ciment et sable naturel, granulométrie 0–2 mm" },
+      { label: "Temps de mise en œuvre", wert: "env. 40 minutes" },
+      { label: "Température de mise en œuvre", wert: "+5 °C à +25 °C" },
+      { label: "Charge admissible", wert: "voitures particulières après 7 jours" },
+      { label: "Forme de livraison", wert: "emballage spécial en papier de 25 kg" },
+    ],
+    varianten: [
+      { name: "NEODUR PFM-ZE", hinweis: "Surfaces pavées · gris/gris clair · résistance à la compression ≥ 50 N/mm²" },
+      { name: "NEODUR PFM-ZE Flex", hinweis: "Surfaces dallées · gris · résistance à la compression ≥ 40 N/mm²" },
+    ],
+  },
 };

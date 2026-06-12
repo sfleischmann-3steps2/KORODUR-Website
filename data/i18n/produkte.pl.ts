@@ -998,4 +998,55 @@ export const produktePL: Record<string, {
       "Ekstramocne zbrylanie",
     ],
   },
+  "koromineral-lasur": {
+    kurzbeschreibung: "Specjalna impregnacja z barwnym uszlachetnieniem powierzchni na bazie krzemianu litu",
+    beschreibung: "KOROMINERAL Lasur stosuje się do impregnacji powierzchni jastrychowych i betonowych na bazie cementu, a specjalnie jastrychów KORODUR. Dzięki pigmentacji powstaje barwne uszlachetnienie powierzchni. Obróbka wałkiem nylonowym o krótkim włosiu w dwóch przejściach na krzyż.",
+    technischeDaten: [
+      { label: "Forma", wert: "płynna" },
+      { label: "Kolory", wert: "szary kamienny, szary mysi (bez kolorów RAL)" },
+      { label: "Temperatura powierzchni", wert: "+10 °C do +25 °C" },
+      { label: "Czas schnięcia między przejściami", wert: "1–3 godziny (w zależności od temperatury)" },
+    ],
+    besonderheiten: [
+      "Barwne uszlachetnienie powierzchni na bazie krzemianu litu",
+      "Dwa przejścia na krzyż",
+    ],
+  },
+  "neodur-pfm-1k-easyfix": {
+    kurzbeschreibung: "Gotowa do użycia, 1-składnikowa zaprawa do fugowania kostki brukowej do stref pieszych",
+    beschreibung: "NEODUR PFM 1K Easyfix służy do fugowania i renowacji nawierzchni brukowych przy lekkim obciążeniu, np. tarasów i chodników. Do szerokości fug od 5 mm i głębokości fug od 30 mm.",
+    technischeDaten: [
+      { label: "Kolory", wert: "naturalny, szary kamienny, bazalt" },
+      { label: "Gęstość stwardniałej zaprawy", wert: "ok. 1,37 kg/dm³" },
+      { label: "Wytrzymałość na ściskanie", wert: "≥ 4,0 N/mm²" },
+      { label: "Wytrzymałość na zginanie", wert: "≥ 2,2 N/mm²" },
+      { label: "Czas obróbki", wert: "ok. 20–30 minut" },
+      { label: "Temperatura", wert: "podłoże > 8 °C, obróbka > 10 °C" },
+      { label: "Ruch pieszy", wert: "po 24 godzinach" },
+    ],
+    besonderheiten: [
+      "Gotowa do użycia, 1-składnikowa",
+      "Szerokość fugi od 5 mm, głębokość fugi od 30 mm",
+      "Tylko strefy piesze (lekkie obciążenie)",
+    ],
+  },
+  "neodur-pfm-ze": {
+    kurzbeschreibung: "Zaprawa do fugowania kostki brukowej na bazie cementu do nawierzchni brukowych i płytowych w konstrukcji sztywnej",
+    beschreibung: "NEODUR PFM-ZE i PFM-ZE Flex to fabrycznie produkowane zaprawy suche na bazie cementu i piasku naturalnego (0–2 mm) do nowego fugowania kostki kamiennej i betonowej lub płyt betonowych w konstrukcji sztywnej, klasa budowlana IV do VI. Szerokość fugi powinna wynosić co najmniej 8 mm.",
+    technischeDaten: [
+      { label: "Baza", wert: "baza cementowo-piaskowa (piasek naturalny), uziarnienie 0–2 mm" },
+      { label: "Czas obróbki", wert: "ok. 40 minut" },
+      { label: "Temperatura obróbki", wert: "+5 °C do +25 °C" },
+      { label: "Obciążalność", wert: "samochodami osobowymi po 7 dniach" },
+      { label: "Forma dostawy", wert: "specjalne opakowanie papierowe 25 kg" },
+    ],
+    besonderheiten: [
+      "Konstrukcja sztywna, klasa budowlana IV do VI",
+      "Pielęgnacja: 7 dni przykrycia folią",
+    ],
+    varianten: [
+      { name: "NEODUR PFM-ZE", hinweis: "Nawierzchnie brukowe · szary/jasnoszary · wytrzymałość na ściskanie ≥ 50 N/mm²" },
+      { name: "NEODUR PFM-ZE Flex", hinweis: "Nawierzchnie płytowe · szary · wytrzymałość na ściskanie ≥ 40 N/mm²" },
+    ],
+  },
 };
