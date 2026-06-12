@@ -125,14 +125,31 @@ const MANUAL_MAP = {
   "NEODUR_AM_Super_AM_Plus_de.pdf": ["neodur-am-super", "neodur-am-plus"],
   "KORODUR_KOROTAN_de.pdf": ["korotan", "system-korodur-korotan"],
 
-  // --- SDS: Gruppen-Datenblätter (zentral bis Frank-Sign-off), klare Familien direkt ---
-  "KORODUR_Hartstoffe_SDB_de.pdf": "zentral",
-  "KORODUR_Industrieboden_Trockenmoertel_SDB_de.pdf": "zentral",
-  "KORODUR_Designboeden_SDB_de.pdf": "zentral",
-  "KORODUR_MICROTOP_SDB_de.pdf": "zentral",
-  "KORODUR_Rapid_Set_SDB_de.pdf": "zentral",
-  "KORODUR_NEODUR_Vergussmoertel_SDB_de.pdf": "zentral",
-  "KORODUR_NEODUR_Pflasterfugenmoertel_SDB_de.pdf": "zentral",
+  // --- SDS über Produktfamilien (Klärung Steffi 2026-06-12: das sind die
+  // Produkt-Datenblätter inkl. Varianten, keine "Gruppen"-Blätter) ---
+  // Zugeordnet zu den Produkten der Familie, die kein spezifischeres SDS
+  // haben. Konservativ geschnitten — fachliche Gegenprüfung im PR vermerkt.
+  "KORODUR_Hartstoffe_SDB_de.pdf": [
+    "korodur-vs-0-5", "korodur-wh-spezial", "korodur-wh-metallisch",
+    "korodur-diamantbeton", "korodur-robust",
+  ],
+  "KORODUR_Industrieboden_Trockenmoertel_SDB_de.pdf": [
+    "neodur-he-2", "neodur-he-40", "korodur-fscem", "korodur-fscem-screed",
+  ],
+  "KORODUR_Designboeden_SDB_de.pdf": ["granidur", "granidur-bianco-nero", "kcf"],
+  "KORODUR_MICROTOP_SDB_de.pdf": [
+    "microtop-tw-3", "microtop-tw-5", "microtop-tw-8", "microtop-tw-nsm",
+    "microtop-tw-02", "microtop-tw-vsm", "microtop-tw-nsd",
+  ],
+  "KORODUR_Rapid_Set_SDB_de.pdf": [
+    "rapid-set-cement-all", "rapid-set-mortar-mix", "rapid-set-mortar-mix-dur",
+    "rapid-set-concrete-mix", "rapid-set-schnellbeton",
+  ],
+  "KORODUR_NEODUR_Vergussmoertel_SDB_de.pdf": [
+    "neodur-vm-1", "neodur-vm-3", "neodur-vb-8", "neodur-vm-basic", "neodur-svm-03",
+  ],
+  "KORODUR_NEODUR_Pflasterfugenmoertel_SDB_de.pdf": ["neodur-pfm-ze", "neodur-pfm-1k-easyfix"],
+  // Harz-/Härterkomponente: kein eindeutiges App-Produkt (2K-System) — zentral
   "KORODUR_Pflasterfugenmoertel_Haerterkomponente_SDB_de.pdf": "zentral",
   "KORODUR_Pflasterfugenmoertel_Harzkomponente_SDB_de.pdf": "zentral",
   "KORODUR_LevelFlor_TRU_SDB_de.pdf": ["rapid-set-levelflor", ...TRU_FAMILIE],
