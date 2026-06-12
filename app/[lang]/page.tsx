@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ReferenceCard from "../../components/ReferenceCard";
 import { getReferenzBySlug } from "../../data/referenzen";
+import { localizeReferenzen } from "../../data/i18n/getLocalized";
 import { FEATURED_SLUGS } from "../../data/featured";
 import { bereiche } from "../../data/bereiche";
 import { getDictionary, hasLocale } from "./dictionaries";
@@ -16,7 +17,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
   return {
-    title: dict.home.hero_title,
+    // Absolut statt Template: Die Startseite braucht den Markennamen vorne
+    // in der SERP, nicht als "%s | KORODUR"-Anhang am Hero-Satz.
+    title: { absolute: dict.home.meta_title },
     description: dict.home.hero_subtitle,
   };
 }
@@ -30,10 +33,13 @@ export default async function Home({
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
 
-  // Featured references
-  const featuredRefs = FEATURED_SLUGS
-    .map((slug) => getReferenzBySlug(slug))
-    .filter((r): r is NonNullable<typeof r> => r !== undefined);
+  // Featured references (lokalisiert — sonst zeigen EN/FR/PL deutsche Titel)
+  const featuredRefs = await localizeReferenzen(
+    FEATURED_SLUGS
+      .map((slug) => getReferenzBySlug(slug))
+      .filter((r): r is NonNullable<typeof r> => r !== undefined),
+    lang
+  );
 
   // Bereichs-Labels (lokalisiert, Keys: `<slug>_name` / `<slug>_teaser`)
   const bereichTexte = dict.bereiche as Record<string, string>;

@@ -6,7 +6,6 @@
     "anwendungsmatrix": "Anwendungsmatrix",
     "produkte": "Produkte",
     "sanierung": "Sanierung",
-    "anwendungen": "Anwendungen",
     "unternehmen": "Unternehmen",
     "kontakt": "Kontakt"
   },
@@ -30,7 +29,8 @@
     "hero_kicker": "KORODUR. Seit 1936.",
     "hero_cta_secondary": "Produkte entdecken",
     "bereiche_title": "Unsere Bereiche",
-    "bereiche_subtitle": "Von Industrieböden bis Spezialbaustoffe: alle KORODUR Produktwelten im Überblick."
+    "bereiche_subtitle": "Von Industrieböden bis Spezialbaustoffe: alle KORODUR Produktwelten im Überblick.",
+    "meta_title": "KORODUR | Industrieböden, Sichtestriche und Spezialbaustoffe"
   },
   "referenzen": {
     "breadcrumb": "Referenzen",
@@ -53,10 +53,13 @@
     "products_subtitle": "Technische Daten und Normen der verwendeten KORODUR-Produkte",
     "technical_data": "Technische Daten",
     "norms": "Normen & Zulassungen",
-    "view_on_website": "Auf korodur.de ansehen",
     "related": "Weitere Referenzen",
     "all_category_refs": "Alle {category}-Referenzen",
-    "gallery": "Bildergalerie"
+    "gallery": "Bildergalerie",
+    "cta_title": "Ähnliches Projekt?",
+    "cta_text": "Unsere technischen Berater helfen Ihnen, die optimale Sanierungslösung zu finden.",
+    "cta_button": "Berater kontaktieren",
+    "cta_alle_referenzen": "Alle Referenzen ansehen"
   },
   "common": {
     "reference_singular": "Referenz",
@@ -79,7 +82,6 @@
     "features": "Besonderheiten",
     "used_in_references": "Eingesetzt in Referenzprojekten",
     "view_reference": "Referenz ansehen",
-    "view_on_website": "Auf korodur.de ansehen",
     "all_products": "Alle Produkte",
     "verarbeitung_title": "Verarbeitung",
     "untergrundvorbereitung": "Untergrundvorbereitung",
@@ -92,7 +94,8 @@
     "referenzen_title": "Dieses Produkt im Einsatz",
     "referenzen_alle": "Alle Referenzen mit diesem Produkt",
     "cta_verarbeitung": "Fragen zur Verarbeitung? Unsere technischen Berater helfen weiter.",
-    "varianten_title": "Lieferbare Qualitäten"
+    "varianten_title": "Lieferbare Qualitäten",
+    "cta_kontakt_button": "Berater kontaktieren"
   },
   "sanierung": {
     "title": "Produktfinder",

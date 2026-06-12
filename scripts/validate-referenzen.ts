@@ -95,6 +95,27 @@ for (const r of referenzen) {
       issues.push({ slug: r.slug, level: "warn", msg: `Produkt '${p}' nicht in data/produkte.ts` });
     }
   }
+
+  // Redaktionsmarker dürfen nie live gehen (Launch-Plan M1, 2026-06-12:
+  // "OFFEN — Alexander zu fragen" stand öffentlich auf einer Referenzseite).
+  const MARKER = /\bOFFEN\b|\bTODO\b|\bFIXME\b|zu klären|zu fragen|\bTBD\b/i;
+  const contentFelder: Array<[string, string | string[] | undefined]> = [
+    ["titel", r.titel],
+    ["untertitel", r.untertitel],
+    ["flaeche", r.flaeche],
+    ["loesung", r.loesung],
+    ["herausforderungen", r.herausforderungen],
+    ["vorteile", r.vorteile],
+    ["bildAlt", r.bildAlt],
+  ];
+  for (const [feld, wert] of contentFelder) {
+    const texte = Array.isArray(wert) ? wert : wert ? [wert] : [];
+    for (const text of texte) {
+      if (MARKER.test(text)) {
+        issues.push({ slug: r.slug, level: "error", msg: `Redaktionsmarker in '${feld}': "${text.slice(0, 60)}…"` });
+      }
+    }
+  }
 }
 
 // === Sanierungs-Produktmatrix V5: Pflichtfeld-Check ===

@@ -30,7 +30,8 @@ export interface UsecaseRow {
   marks: Mark[]; // Reihenfolge = anwendungMatrixProducts
 }
 
-export const RAPID_SET_URL = "https://www.korodur.de/bereiche/rapid-set/";
+// Interne App-Route (lang-neutral, wird beim Rendern um /{lang} ergänzt).
+export const RAPID_SET_URL = "/bereiche/rapid-set/";
 
 export const anwendungMatrixProducts: MatrixProduct[] = [
   {

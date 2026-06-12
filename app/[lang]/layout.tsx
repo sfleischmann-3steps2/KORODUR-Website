@@ -52,8 +52,8 @@ export default async function LangLayout({
   return (
     <html lang={lang} className={`${gabarito.variable} antialiased`}>
       <head>
+        {/* Manifest-Link kommt aus app/manifest.ts (basePath-fähig, Launch-Plan M1) */}
         <meta name="theme-color" content="#002d59" />
-        <link rel="manifest" href={withBasePath("/manifest.json")} />
         <link rel="icon" href={withBasePath("/icons/icon-192.svg")} type="image/svg+xml" />
         <link rel="apple-touch-icon" href={withBasePath("/icons/icon-192.svg")} />
       </head>

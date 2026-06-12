@@ -6,7 +6,6 @@
     "anwendungsmatrix": "Matrice d'application",
     "produkte": "Produits",
     "sanierung": "Rénovation",
-    "anwendungen": "Applications",
     "unternehmen": "Entreprise",
     "kontakt": "Contact"
   },
@@ -30,7 +29,8 @@
     "hero_kicker": "KORODUR. Depuis 1936.",
     "hero_cta_secondary": "Découvrir les produits",
     "bereiche_title": "Nos domaines",
-    "bereiche_subtitle": "Des sols industriels aux matériaux spéciaux : tous les univers de produits KORODUR en un coup d'œil."
+    "bereiche_subtitle": "Des sols industriels aux matériaux spéciaux : tous les univers de produits KORODUR en un coup d'œil.",
+    "meta_title": "KORODUR | Sols industriels, chapes décoratives et matériaux spéciaux"
   },
   "referenzen": {
     "breadcrumb": "Références",
@@ -53,10 +53,13 @@
     "products_subtitle": "Données techniques et normes des produits KORODUR utilisés",
     "technical_data": "Données techniques",
     "norms": "Normes & Certifications",
-    "view_on_website": "Voir sur korodur.de",
     "related": "Autres références",
     "all_category_refs": "Toutes les références {category}",
-    "gallery": "Galerie photos"
+    "gallery": "Galerie photos",
+    "cta_title": "Un projet similaire ?",
+    "cta_text": "Nos conseillers techniques vous aident à trouver la solution de rénovation optimale.",
+    "cta_button": "Contacter un conseiller",
+    "cta_alle_referenzen": "Voir toutes les références"
   },
   "common": {
     "reference_singular": "Référence",
@@ -79,7 +82,6 @@
     "features": "Caractéristiques",
     "used_in_references": "Utilisé dans des projets de référence",
     "view_reference": "Voir la référence",
-    "view_on_website": "Voir sur korodur.de",
     "all_products": "Tous les produits",
     "verarbeitung_title": "Mise en oeuvre",
     "untergrundvorbereitung": "Préparation du support",
@@ -92,7 +94,8 @@
     "referenzen_title": "Ce produit en action",
     "referenzen_alle": "Toutes les références avec ce produit",
     "cta_verarbeitung": "Des questions sur la mise en oeuvre ? Nos conseillers techniques sont à votre disposition.",
-    "varianten_title": "Qualités disponibles"
+    "varianten_title": "Qualités disponibles",
+    "cta_kontakt_button": "Contacter un conseiller"
   },
   "sanierung": {
     "title": "Trouveur de produits",

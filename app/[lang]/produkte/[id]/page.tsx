@@ -11,8 +11,9 @@ import { LOCALES } from "../../../../lib/i18n";
 import { notFound } from "next/navigation";
 import { localizeProdukt, localizeReferenzen } from "../../../../data/i18n/getLocalized";
 import { withBasePath } from "../../../../lib/basePath";
+import { kontaktPath } from "../../../../lib/kontakt";
 import { AppIcon } from "@/components/ui/icon";
-import { CircleCheck, ExternalLink } from "lucide-react";
+import { CircleCheck } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; id: string }> }): Promise<Metadata> {
   const { lang, id } = await params;
@@ -151,6 +152,7 @@ export default async function ProduktDetailPage({
                 alt={produkt.name}
                 width={180}
                 height={240}
+                priority
                 className="object-contain drop-shadow-lg"
               />
             </div>
@@ -258,39 +260,27 @@ export default async function ProduktDetailPage({
                   </div>
                 ))}
             </div>
-            {produkt.tdsUrl && (
-              <a
-                href={produkt.tdsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-6 text-cyan no-underline hover:underline"
-                style={{ fontWeight: 700 }}
-              >
-                {dict.produkte.tds_download} →
-              </a>
-            )}
           </div>
         </section>
       )}
 
-      {/* External link */}
-      <section className="bg-navy" style={{ padding: "40px 32px" }}>
-        <div className="mx-auto flex flex-col sm:flex-row items-center justify-between gap-4" style={{ maxWidth: 1320 }}>
-          <p className="text-white opacity-70 text-[16px] m-0">
-            {dict.produkte.view_on_website}
-          </p>
-          <a
-            href={produkt.websiteUrl ?? `https://korodur.de/?s=${encodeURIComponent(produkt.name)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white no-underline rounded-[8px] bg-cyan hover:bg-cyan-hover transition-colors duration-200 shrink-0"
-            style={{ padding: "12px 24px", fontWeight: 800, fontSize: 14 }}
-          >
-            korodur.de
-            <AppIcon icon={ExternalLink} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
-          </a>
-        </div>
-      </section>
+      {/* TDS-Download — unabhängig vom Verarbeitungs-Block, sonst fehlt der
+          Link bei Produkten ohne verarbeitung-Feld (Launch-Plan M1) */}
+      {produkt.tdsUrl && (
+        <section style={{ padding: produkt.verarbeitung ? "0 32px 56px" : "48px 32px 56px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <a
+              href={produkt.tdsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-cyan no-underline hover:underline"
+              style={{ fontWeight: 700 }}
+            >
+              {dict.produkte.tds_download} →
+            </a>
+          </div>
+        </section>
+      )}
 
       {/* Related References */}
       {relatedRefs.length > 0 && (
@@ -328,15 +318,13 @@ export default async function ProduktDetailPage({
           <p className="text-lg text-white mb-4" style={{ fontWeight: 700 }}>
             {dict.produkte.cta_verarbeitung}
           </p>
-          <a
-            href="https://www.korodur.de/kontakt/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={kontaktPath(lang)}
             className="inline-block border-2 border-white text-white hover:bg-white hover:text-navy no-underline rounded-[6px] transition-colors"
             style={{ padding: "14px 28px", fontWeight: 800, fontSize: 15 }}
           >
-            Berater kontaktieren
-          </a>
+            {dict.produkte.cta_kontakt_button}
+          </Link>
         </div>
       </section>
     </>

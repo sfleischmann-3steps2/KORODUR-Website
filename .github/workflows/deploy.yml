@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/presentation-web-app-4DU36]
+    branches: [main]
 
 permissions:
   contents: read
@@ -26,7 +26,19 @@ jobs:
 
       - run: npm ci
 
+      # Gate: Keine Alt-Domain-Links in App-Code (Launch-Plan M1/B1).
+      # data/produkte.ts (tdsUrl/websiteUrl) und lib/kontaktDaten.ts
+      # (Impressum/Datenschutz) folgen in M2/M3 und sind bewusst ausgenommen.
+      - name: Check alt-domain links
+        run: bash scripts/check-alt-domain.sh
+
+      - run: npx tsx scripts/validate-referenzen.ts
+
+      - run: npx tsx scripts/test-loesungsfinder.ts
+
       - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /KORODUR-Sanierung_app
 
       - uses: actions/upload-pages-artifact@v3
         with:

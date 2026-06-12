@@ -24,11 +24,12 @@ import { REFERENZ_FILTER_V25 } from "./referenzenV25";
 import { kuratierteEmpfehlung } from "./produktEmpfehlungKuratiert";
 
 // Produkt-Empfehlungsmodus (Steffi 2026-06-09):
-//  - "tags"      = A1, automatische Tag-Schnittmenge (aktuell live).
+//  - "tags"      = A1, automatische Tag-Schnittmenge.
 //  - "kuratiert" = A2, strategische Tabelle (data/produktEmpfehlungKuratiert.ts).
-// Umschalten auf "kuratiert" erst nach Frank-Sign-off der Tabelle. Die
-// Referenz-Logik ist davon unabhängig und bleibt in beiden Modi gleich.
-export const EMPFEHLUNGS_MODUS: "tags" | "kuratiert" = "tags";
+// A2 live seit 2026-06-12: Frank-Sign-off laut Notion-To-do erteilt
+// (Launch-Plan M1). Die Referenz-Logik ist davon unabhängig und bleibt in
+// beiden Modi gleich.
+export const EMPFEHLUNGS_MODUS: "tags" | "kuratiert" = "kuratiert";
 
 export type V25Produkt = Produkt & ProduktFilterV25;
 export type V25Referenz = Referenz & ReferenzFilterV25;
