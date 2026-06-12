@@ -13,6 +13,9 @@
 import { referenzen } from "../data/referenzen";
 import { produkte } from "../data/produkte";
 import { REFERENZ_FILTER_V25 } from "../data/referenzenV25";
+import { referenzenEN } from "../data/i18n/referenzen.en";
+import { referenzenFR } from "../data/i18n/referenzen.fr";
+import { referenzenPL } from "../data/i18n/referenzen.pl";
 import type {
   Sanierungsart,
   EinsatzbereichKategorie,
@@ -98,21 +101,32 @@ for (const r of referenzen) {
 
   // Redaktionsmarker dürfen nie live gehen (Launch-Plan M1, 2026-06-12:
   // "OFFEN — Alexander zu fragen" stand öffentlich auf einer Referenzseite).
-  const MARKER = /\bOFFEN\b|\bTODO\b|\bFIXME\b|zu klären|zu fragen|\bTBD\b/i;
-  const contentFelder: Array<[string, string | string[] | undefined]> = [
-    ["titel", r.titel],
-    ["untertitel", r.untertitel],
-    ["flaeche", r.flaeche],
-    ["loesung", r.loesung],
-    ["herausforderungen", r.herausforderungen],
-    ["vorteile", r.vorteile],
-    ["bildAlt", r.bildAlt],
+  // Prüft auch die i18n-Overrides — die EN-Fassung desselben Markers ("OPEN:
+  // to be clarified") stand bis M3b live (Fund Sprachpass-Workflow).
+  const MARKER = /\bOFFEN\b|\bOPEN:\s|\bTODO\b|\bFIXME\b|zu klären|zu fragen|to be clarified|\bTBD\b/i;
+  const sprachVarianten: Array<[string, Partial<typeof r> | undefined]> = [
+    ["de", r],
+    ["en", (referenzenEN as Record<string, Partial<typeof r>>)[r.id]],
+    ["fr", (referenzenFR as Record<string, Partial<typeof r>>)[r.id]],
+    ["pl", (referenzenPL as Record<string, Partial<typeof r>>)[r.id]],
   ];
-  for (const [feld, wert] of contentFelder) {
-    const texte = Array.isArray(wert) ? wert : wert ? [wert] : [];
-    for (const text of texte) {
-      if (MARKER.test(text)) {
-        issues.push({ slug: r.slug, level: "error", msg: `Redaktionsmarker in '${feld}': "${text.slice(0, 60)}…"` });
+  for (const [sprache, variante] of sprachVarianten) {
+    if (!variante) continue;
+    const contentFelder: Array<[string, string | string[] | undefined]> = [
+      ["titel", variante.titel],
+      ["untertitel", variante.untertitel],
+      ["flaeche", variante.flaeche],
+      ["loesung", variante.loesung],
+      ["herausforderungen", variante.herausforderungen],
+      ["vorteile", variante.vorteile],
+      ["bildAlt", variante.bildAlt],
+    ];
+    for (const [feld, wert] of contentFelder) {
+      const texte = Array.isArray(wert) ? wert : wert ? [wert] : [];
+      for (const text of texte) {
+        if (MARKER.test(text)) {
+          issues.push({ slug: r.slug, level: "error", msg: `Redaktionsmarker in '${feld}' (${sprache}): "${text.slice(0, 60)}…"` });
+        }
       }
     }
   }

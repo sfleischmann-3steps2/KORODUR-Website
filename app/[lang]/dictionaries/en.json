@@ -59,7 +59,31 @@
     "cta_title": "Planning a similar project?",
     "cta_text": "Our technical advisors will help you find the ideal renovation solution.",
     "cta_button": "Contact an advisor",
-    "cta_alle_referenzen": "View all references"
+    "cta_alle_referenzen": "View all references",
+    "projekttyp_sanierung": "Renovation",
+    "projekttyp_neubau": "New construction",
+    "projekttyp_instandsetzung": "Repair",
+    "projekttyp_modernisierung": "Modernisation",
+    "anonymisiert": "Anonymised reference",
+    "vorher": "Before",
+    "nachher": "After",
+    "einbau": "Installation",
+    "ergebnis": "Result",
+    "fakt_ort": "Location",
+    "fakt_baujahr": "Year",
+    "fakt_flaeche": "Area",
+    "fakt_menge": "Quantity",
+    "fakt_projekttyp": "Project type",
+    "fakt_produkte": "Products",
+    "eingebaute_menge": "Installed quantity",
+    "situation_title": "Initial situation and challenge",
+    "umsetzung_title": "Execution and key figures",
+    "ergebnis_title": "Result and impact",
+    "nachhaltigkeit_title": "Sustainability",
+    "beteiligte_title": "Project partners",
+    "produktdetails_ansehen": "View product details for {produkt}",
+    "einbau_alt": "Installation of the KORODUR solution",
+    "langzeit_label": "Long-term observation:"
   },
   "common": {
     "reference_singular": "Reference",
@@ -431,7 +455,9 @@
     "form_hinweis": "Sending opens your email client with the prepared message to info@korodur.de.",
     "fachberater_title": "Technical Consulting",
     "fachberater_intro": "Our technical consultants help with product questions, quantity calculations and application advice, free of charge and without obligation.",
-    "fachberater_plz": "Postcode areas"
+    "fachberater_plz": "Postcode areas",
+    "international_title": "International Advisors",
+    "international_text": "KORODUR has an international sales network and works with local representatives, distribution partners and applicators. All products are supplied from our plants in Germany. Please contact our export department for advice and further information."
   },
   "rechtliches": {
     "sprachhinweis": "This legal information is provided in German; the German version is legally binding."

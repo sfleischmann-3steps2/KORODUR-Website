@@ -126,6 +126,8 @@ M1–M3 sind parallelisierbar (disjunkte Dateigruppen), M4 strikt zuletzt. Summe
 2. **Produktdetailseite ist der primäre Ort aller Dokumente** (TDS, SDS, DoP, Anwendungs-/Pflegeempfehlungen). Download-Center ist sekundär und liegt im Footer. Umgesetzt in M3 (data/produktDokumente.ts, generiert aus dem Alt-Site-Archiv).
 3. GA4-Historie: Es gab nie Analytics auf der Alt-Site (Installation erst 2026-06-11) — alle Schnitt-Entscheidungen sind endgültig plausibilitätsbasiert; Review nach 4–6 Wochen neuer Daten.
 4. GSC: IT-Termin Montag (2026-06-15) — Property prüfen/anlegen, dazu Hosting-Entscheidung, Cloudflare-Zugriff, GitHub-Account "korodur".
+5. **SDS-Klärung (Steffi, 2026-06-12):** Die familienweiten SDS (Hartstoffe, Trockenmörtel, MICROTOP, Rapid Set, Vergussmörtel, Designböden, PFM) sind die Produkt-Datenblätter inkl. Varianten — den Produkten zugeordnet (konservativer Schnitt, fachliche Gegenprüfung erwünscht). Datenblattstruktur bleibt; eine PDP je Produkt deckt die Varianten ab (bestehendes Modell bestätigt).
+6. **Referenz-Detailseite (Steffi, 2026-06-12):** Header-Bild bzw. Vorher/Nachher prominent fehlt — auf die Liste; Mockup vor Umsetzung (Basis: docs/mockups/Referenz-Detail-Mockup-v3.html). Referenz-PDFs kommen künftig aus dem One-Pager-Skill (extern in Arbeit, dann Batch über alle Referenzen) — bestehende PDF-Downloads bleiben bis dahin unverändert, KEINE Optimierung.
 
 ---
 
