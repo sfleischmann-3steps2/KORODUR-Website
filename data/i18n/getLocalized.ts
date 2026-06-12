@@ -19,9 +19,13 @@ const translations = {
     produkte: () => import("./produkte.pl").then((m) => m.produktePL),
     referenzen: () => import("./referenzen.pl").then((m) => m.referenzenPL),
   },
+  es: {
+    produkte: () => import("./produkte.es").then((m) => m.produkteES),
+    referenzen: () => import("./referenzen.es").then((m) => m.referenzenES),
+  },
 };
 
-type Lang = "de" | "en" | "fr" | "pl";
+type Lang = "de" | "en" | "fr" | "pl" | "es";
 
 const cache: Record<string, unknown> = {};
 
@@ -36,7 +40,7 @@ async function getTranslation<T>(lang: Lang, key: string, loader: () => Promise<
 
 export async function localizeReferenz(ref: Referenz, lang: Lang): Promise<Referenz> {
   if (lang === "de") return ref;
-  const t = translations[lang as "en" | "fr" | "pl"];
+  const t = translations[lang as Exclude<Lang, "de">];
   if (!t) return ref;
   const data = await getTranslation(lang, "referenzen", t.referenzen);
   if (!data) return ref;
@@ -52,7 +56,7 @@ export async function localizeReferenzen(refs: Referenz[], lang: Lang): Promise<
 
 export async function localizeProdukt(produkt: Produkt, lang: Lang): Promise<Produkt> {
   if (lang === "de") return produkt;
-  const t = translations[lang as "en" | "fr" | "pl"];
+  const t = translations[lang as Exclude<Lang, "de">];
   if (!t) return produkt;
   const data = await getTranslation(lang, "produkte", t.produkte);
   if (!data) return produkt;

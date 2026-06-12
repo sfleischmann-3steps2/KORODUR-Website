@@ -24,7 +24,7 @@ import { LOCALES } from "../../../../lib/i18n";
 import { notFound } from "next/navigation";
 import { localizeReferenz, localizeReferenzen, localizeProdukte } from "../../../../data/i18n/getLocalized";
 
-type Lang = "de" | "en" | "fr" | "pl";
+type Lang = "de" | "en" | "fr" | "pl" | "es";
 
 const CONTAINER = "mx-auto max-w-[1080px]";
 const SECTION = "px-4 pb-4 sm:px-6";

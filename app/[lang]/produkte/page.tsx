@@ -29,7 +29,7 @@ export default async function ProduktePage({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const localizedProdukte = await localizeProdukte(produkte, lang as "de" | "en" | "fr");
+  const localizedProdukte = await localizeProdukte(produkte, lang);
   const bereichTexte = dict.bereiche as Record<string, string>;
 
   // Gruppierung nach korodur.de-Bereich (Website-Integration Stufe 1).
