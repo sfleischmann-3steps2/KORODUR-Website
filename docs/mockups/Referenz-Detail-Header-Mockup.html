@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Referenz-Detail — Header-Varianten (Mockup, 2026-06-12)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #002d59; --cyan: #009ee3; --cyan-text: #0077ab;
+    --icon-bg: #f5f5f6; --bullet-bg: #e8edf5; --mid-gray: #d9dada;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Gabarito, system-ui, sans-serif; color: var(--navy); background: #fff; }
+  .mockup-label {
+    background: #ffd84d; color: var(--navy); font-weight: 900; font-size: 14px;
+    padding: 10px 24px; position: sticky; top: 0; z-index: 50;
+  }
+  .variant-divider {
+    background: var(--navy); color: #fff; padding: 28px 24px; margin-top: 80px;
+  }
+  .variant-divider h2 { margin: 0 0 6px; font-size: 24px; font-weight: 900; color: #fff; }
+  .variant-divider p { margin: 0; opacity: .75; font-size: 14px; max-width: 720px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .chip { display: inline-flex; align-items: center; font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .08em; padding: 4px 10px; border-radius: 4px; }
+  .chip-light { background: rgba(255,255,255,.16); color: #fff; }
+  .chip-cyan { background: var(--cyan); color: #fff; }
+  .facts { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--bullet-bg);
+    border-radius: 12px; overflow: hidden; background: #fff; }
+  .facts > div { flex: 1 1 140px; padding: 14px 18px; border-right: 1px solid var(--bullet-bg); }
+  .facts > div:last-child { border-right: none; }
+  .facts .k { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #6b7a8f; }
+  .facts .v { font-size: 15px; font-weight: 800; margin-top: 2px; }
+  .body-teaser { padding: 28px 0 60px; color: #43597000; }
+  .body-teaser .card { background: var(--icon-bg); border-radius: 12px; padding: 22px;
+    color: #5a6b80; font-size: 14px; }
+  .note { font-size: 12.5px; color: #5a6b80; background: #eef9ff; border-left: 3px solid var(--cyan);
+    padding: 10px 14px; margin: 14px 24px; max-width: 900px; }
+  img { display: block; }
+
+  /* ===== Variante A: Vorher/Nachher-Hero ===== */
+  .va-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; position: relative; }
+  .va-hero .half { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+  .va-hero img { width: 100%; height: 100%; object-fit: cover; }
+  .va-hero .tag { position: absolute; top: 14px; left: 14px; }
+  .va-hero .tag-nachher { background: #009a44; color: #fff; }
+  .va-hero .tag-vorher { background: rgba(0,45,89,.82); color: #fff; }
+  .va-titlebar { background: var(--navy); color: #fff; padding: 26px 0 30px; }
+  .va-titlebar h1 { margin: 8px 0 6px; font-size: clamp(26px, 4vw, 40px); font-weight: 900; color: #fff; line-height: 1.12; }
+  .va-titlebar .sub { color: var(--cyan); font-weight: 800; font-size: 16px; margin: 0; }
+  .va-facts { margin-top: -26px; }
+
+  /* ===== Variante B: Bild-Hero mit Overlay ===== */
+  .vb-hero { position: relative; min-height: 440px; display: flex; align-items: flex-end; overflow: hidden; }
+  .vb-hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .vb-hero .shade { position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,45,89,.92) 0%, rgba(0,45,89,.55) 38%, rgba(0,45,89,.12) 70%, rgba(0,45,89,0) 100%); }
+  .vb-hero .inner { position: relative; width: 100%; padding: 36px 0; color: #fff; }
+  .vb-hero h1 { margin: 10px 0 6px; font-size: clamp(26px, 4vw, 42px); font-weight: 900; color: #fff; line-height: 1.1; max-width: 18em; }
+  .vb-hero .sub { margin: 0; font-weight: 700; font-size: 16px; opacity: .9; }
+  .vb-facts { margin-top: -26px; }
+
+  /* ===== Variante C: Split-Header ===== */
+  .vc-wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 0; min-height: 380px; }
+  .vc-left { background: var(--navy); color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 40px 44px; }
+  .vc-left h1 { margin: 10px 0 8px; font-size: clamp(24px, 3.2vw, 36px); font-weight: 900; color: #fff; line-height: 1.12; }
+  .vc-left .sub { color: var(--cyan); font-weight: 800; margin: 0 0 18px; }
+  .vc-left .mini-facts { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; }
+  .vc-left .mini-facts b { display: block; font-size: 15px; }
+  .vc-left .mini-facts span { opacity: .65; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+  .vc-right { position: relative; }
+  .vc-right img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  @media (max-width: 760px) {
+    .vc-wrap { grid-template-columns: 1fr; }
+    .vc-right { aspect-ratio: 16/10; position: relative; }
+  }
+
+  .footer-notes { background: var(--icon-bg); padding: 36px 24px 60px; margin-top: 80px; }
+  .footer-notes h2 { font-size: 20px; font-weight: 900; }
+  .footer-notes ol { max-width: 860px; line-height: 1.7; font-size: 14.5px; color: #34495e; }
+</style>
+</head>
+<body>
+
+<div class="mockup-label">MOCKUP · Referenz-Detail: Header-Varianten · 2026-06-12 · zur Besprechung (nicht im Build)</div>
+
+<!-- ================= VARIANTE A ================= -->
+<div class="variant-divider">
+  <h2>Variante A — Vorher/Nachher-Hero</h2>
+  <p>Für Sanierungsreferenzen mit Vorher/Nachher-Bildern (aktuell 1, wächst mit dem One-Pager-Prozess).
+     Der Sanierungseffekt IST das Argument — er steht ganz oben, noch vor dem Titel.
+     Referenzen ohne Bildpaar fallen automatisch auf Variante B zurück.</p>
+</div>
+
+<div class="va-hero">
+  <div class="half">
+    <img src="../../public/images/referenzen/neodur-level-norderstedt/vorher.jpg" alt="Vorher" />
+    <span class="chip tag tag-vorher">Vorher</span>
+  </div>
+  <div class="half">
+    <img src="../../public/images/referenzen/neodur-level-norderstedt/nachher.jpg" alt="Nachher" />
+    <span class="chip tag tag-nachher">Nachher</span>
+  </div>
+</div>
+<div class="va-titlebar">
+  <div class="container">
+    <span class="chip chip-light">Lager &amp; Logistik</span>
+    <span class="chip chip-cyan" style="margin-left:8px">Sanierung</span>
+    <h1>Bodensanierung Logistikfläche Norderstedt</h1>
+    <p class="sub">Schnelle Wiederinbetriebnahme mit NEODUR Level — ohne Betriebsunterbrechung</p>
+  </div>
+</div>
+<div class="container va-facts">
+  <div class="facts">
+    <div><div class="k">Ort</div><div class="v">Norderstedt</div></div>
+    <div><div class="k">Baujahr</div><div class="v">2026</div></div>
+    <div><div class="k">Fläche</div><div class="v">850 m²</div></div>
+    <div><div class="k">Produkt</div><div class="v">NEODUR Level</div></div>
+    <div><div class="k">Belastbar nach</div><div class="v">24 h</div></div>
+  </div>
+</div>
+<div class="container body-teaser">
+  <div class="card">… danach folgt die bestehende Detailseite unverändert (Ausgangssituation, Unsere Lösung, Galerie, Dokumente, Eingesetzte Produkte, CTA) …</div>
+</div>
+
+<!-- ================= VARIANTE B ================= -->
+<div class="variant-divider">
+  <h2>Variante B — Bild-Hero mit Overlay</h2>
+  <p>Standard für alle Referenzen mit Bild (27 mit eigenem Bildsatz): erstes Galeriebild bzw. Hauptbild
+     als Full-Width-Hero, Navy-Verlauf von unten, Titel + Chips im Bild. Gleiche Bildsprache wie der Homepage-Hero.
+     Referenzen mit Platzhalter-Bild (aktuell 25) behalten den heutigen Card-Kopf ohne Hero.</p>
+</div>
+
+<div class="vb-hero">
+  <img class="bg" src="../../public/images/referenzen/catania.jpg" alt="" />
+  <div class="shade"></div>
+  <div class="inner">
+    <div class="container">
+      <span class="chip chip-light">Infrastruktur &amp; Zufahrten</span>
+      <span class="chip chip-cyan" style="margin-left:8px">Sanierung</span>
+      <h1>Hafenterminal Catania — Sanierung der Verladeflächen</h1>
+      <p class="sub">Hochbelastbare Flächen für den Fährbetrieb, Einbau im laufenden Hafenbetrieb</p>
+    </div>
+  </div>
+</div>
+<div class="container vb-facts">
+  <div class="facts">
+    <div><div class="k">Ort</div><div class="v">Catania, Italien</div></div>
+    <div><div class="k">Fläche</div><div class="v">3.000 m²</div></div>
+    <div><div class="k">Produkt</div><div class="v">NEODUR HE 65</div></div>
+    <div><div class="k">Projekttyp</div><div class="v">Sanierung</div></div>
+  </div>
+</div>
+<div class="container body-teaser">
+  <div class="card">… danach folgt die bestehende Detailseite unverändert …</div>
+</div>
+
+<!-- ================= VARIANTE C ================= -->
+<div class="variant-divider">
+  <h2>Variante C — Split-Header (Navy + Bild)</h2>
+  <p>Kompromiss ohne Overlay-Typografie: links Navy-Block mit Titel und Kurz-Fakten, rechts das Bild in voller Höhe.
+     Ruhiger und sehr gut lesbar, aber das Bild wirkt kleiner — der „Wow"-Moment ist schwächer als bei A/B.</p>
+</div>
+
+<div class="vc-wrap">
+  <div class="vc-left">
+    <div>
+      <span class="chip chip-light">Lager &amp; Logistik</span>
+      <span class="chip chip-cyan" style="margin-left:8px">Sanierung</span>
+    </div>
+    <h1>Bodensanierung Logistikfläche Norderstedt</h1>
+    <p class="sub">Schnelle Wiederinbetriebnahme mit NEODUR Level</p>
+    <div class="mini-facts">
+      <div><span>Ort</span><b>Norderstedt</b></div>
+      <div><span>Fläche</span><b>850 m²</b></div>
+      <div><span>Produkt</span><b>NEODUR Level</b></div>
+      <div><span>Belastbar nach</span><b>24 h</b></div>
+    </div>
+  </div>
+  <div class="vc-right">
+    <img src="../../public/images/referenzen/neodur-level-norderstedt/nachher.jpg" alt="" />
+  </div>
+</div>
+<div class="container body-teaser" style="padding-top:36px">
+  <div class="card">… danach folgt die bestehende Detailseite unverändert …</div>
+</div>
+
+<!-- ================= DISKUSSION ================= -->
+<div class="footer-notes">
+  <div class="container">
+    <h2>Diskussionspunkte</h2>
+    <ol>
+      <li><strong>Varianten-Logik:</strong> Vorschlag — A für Sanierungsreferenzen mit Vorher/Nachher-Paar, B als Standard für alle mit echtem Bild, heutiger Kopf für Platzhalter-Referenzen. Eine Logik, drei Zustände, kein Pflegeaufwand.</li>
+      <li><strong>Fakten-Leiste:</strong> Die überlappende Leiste (A/B) ersetzt die heutige Fakten-Card weiter unten — oder zusätzlich behalten? Vorschlag: ersetzt sie, weniger Dopplung.</li>
+      <li><strong>Bildqualität:</strong> Variante B steht und fällt mit dem ersten Galeriebild. Bei den 27 Referenzen mit eigenem Bildsatz passt das; Kontrolle über die Reihenfolge der Galeriebilder haben wir in den Daten.</li>
+      <li><strong>Vorher/Nachher interaktiv?</strong> Ein Schieberegler (Slider über dem Bildpaar) wäre ein Hingucker, kostet aber JS und funktioniert nur bei deckungsgleichen Motiven. Vorschlag: V2, erst mehr Bildpaare sammeln.</li>
+      <li><strong>Titel-Position bei B:</strong> Im Bild (wie gezeigt) oder unter dem Bild? Im Bild = mehr Magazin-Charakter, unter dem Bild = bessere Lesbarkeit bei unruhigen Motiven. Der Navy-Verlauf entschärft das weitgehend.</li>
+    </ol>
+  </div>
+</div>
+
+</body>
+</html>

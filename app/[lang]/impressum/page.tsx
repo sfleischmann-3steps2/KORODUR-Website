@@ -71,11 +71,11 @@ export default async function ImpressumPage({ params }: { params: Params }) {
           <div>
             <h2 className="m-0 mb-2 text-[18px]" style={{ fontWeight: 900 }}>Kontakt</h2>
             <p className="m-0">
-              Telefon: <a href={KORODUR_ZENTRALE.telefonHref} className="text-cyan">{KORODUR_ZENTRALE.telefon}</a>
+              Telefon: <a href={KORODUR_ZENTRALE.telefonHref} className="text-cyan-text">{KORODUR_ZENTRALE.telefon}</a>
               <br />
               Telefax: {KORODUR_ZENTRALE.fax}
               <br />
-              E-Mail: <a href={`mailto:${KORODUR_ZENTRALE.email}`} className="text-cyan">{KORODUR_ZENTRALE.email}</a>
+              E-Mail: <a href={`mailto:${KORODUR_ZENTRALE.email}`} className="text-cyan-text">{KORODUR_ZENTRALE.email}</a>
             </p>
           </div>
 
@@ -114,7 +114,7 @@ export default async function ImpressumPage({ params }: { params: Params }) {
                 href="https://www.verbraucher-schlichter.de"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cyan"
+                className="text-cyan-text"
               >
                 https://www.verbraucher-schlichter.de
               </a>

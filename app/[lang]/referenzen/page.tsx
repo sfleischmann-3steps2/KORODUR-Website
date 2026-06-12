@@ -200,7 +200,7 @@ export default function ReferenzenPage() {
             {hasActiveFilters && (
               <button
                 onClick={resetFilters}
-                className="text-[14px] text-cyan bg-transparent border-none cursor-pointer underline"
+                className="text-[14px] text-cyan-text bg-transparent border-none cursor-pointer underline"
                 style={{ fontWeight: 700, fontFamily: "inherit" }}
               >
                 {dict.referenzen.filter_reset}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import ReferenceCard from "../../components/ReferenceCard";
 import { getReferenzBySlug } from "../../data/referenzen";
 import { localizeReferenzen } from "../../data/i18n/getLocalized";
@@ -61,14 +60,22 @@ export default async function Home({
           Original: docs/reference/brand/KeyVisual_1920x1080_original.jpg).
           Navy-Gradient links für Text-Lesbarkeit, Amboss-Motiv bleibt rechts sichtbar. */}
       <section className="relative text-white overflow-hidden" style={{ minHeight: 560 }}>
-        <Image
-          src={withBasePath("/images/brand/hero-keyvisual.jpg")}
-          alt=""
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        {/* Manuelles <picture> statt next/image: Bei images.unoptimized gibt es
+            kein automatisches Resizing — Mobilgeräte bekamen das volle
+            1920px-JPEG (Lighthouse: mobile LCP 4,2s). Die 828px-WebP-Ableitung
+            (39 KB) wird über die Media Query ausgeliefert. */}
+        <picture>
+          <source
+            media="(max-width: 828px)"
+            srcSet={withBasePath("/images/brand/hero-keyvisual-mobile.webp")}
+          />
+          <img
+            src={withBasePath("/images/brand/hero-keyvisual.jpg")}
+            alt=""
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </picture>
         <div
           className="absolute inset-0"
           style={{
@@ -191,7 +198,7 @@ export default async function Home({
             <div className="text-center mt-10">
               <Link
                 href={`/${lang}/referenzen/`}
-                className="inline-flex items-center gap-2 text-cyan text-[15px] no-underline hover:underline"
+                className="inline-flex items-center gap-2 text-cyan-text text-[15px] no-underline hover:underline"
                 style={{ fontWeight: 700 }}
               >
                 {dict.home.featured_link}

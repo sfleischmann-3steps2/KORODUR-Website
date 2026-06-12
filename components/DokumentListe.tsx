@@ -42,7 +42,7 @@ export default function DokumentListe({
           className="flex items-center gap-4 px-6 py-3.5 no-underline hover:bg-icon-bg transition-colors"
           style={i < sortiert.length - 1 ? { borderBottom: "1px solid var(--icon-bg)" } : {}}
         >
-          <AppIcon icon={FileText} width={18} height={18} strokeWidth={2} className="text-cyan shrink-0" aria-hidden="true" />
+          <AppIcon icon={FileText} width={18} height={18} strokeWidth={2} className="text-cyan-text shrink-0" aria-hidden="true" />
           <span className="flex-1 min-w-0">
             <span className="block text-navy text-[14px]" style={{ fontWeight: 700 }}>
               {labels[TYP_KEY[d.typ]] ?? d.typ}

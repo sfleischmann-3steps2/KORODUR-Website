@@ -119,7 +119,7 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
         {ergebnis.refsGesamt > 6 && (
           <Link
             href={`/${lang}/referenzen/`}
-            className="inline-flex min-h-11 items-center gap-1 text-xs text-cyan no-underline"
+            className="inline-flex min-h-11 items-center gap-1 text-xs text-cyan-text no-underline"
           >
             {t.refs_alle}
             <IconArrowRight width={12} height={12} aria-hidden="true" />

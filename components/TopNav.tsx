@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { withBasePath } from "../lib/basePath";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, Phone, Search, X } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sheet";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SearchOverlay from "./SearchOverlay";
+import { KORODUR_ZENTRALE } from "../lib/kontaktDaten";
 import type { Locale } from "../lib/i18n";
 import type { Dictionary } from "../app/[lang]/dictionaries";
 
@@ -109,7 +110,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                 href={link.href}
                 className={`px-4 py-2 rounded-lg text-[14px] no-underline transition-colors duration-150 ${
                   isActive(link.href)
-                    ? "text-cyan"
+                    ? "text-cyan-text"
                     : "text-navy hover:bg-icon-bg"
                 }`}
                 style={{ fontWeight: 700 }}
@@ -146,6 +147,16 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             </button>
 
             <LanguageSwitcher lang={lang} />
+
+            {/* Telefon-Direktwahl (B2B: Anrufe zählen — Launch-Audit) */}
+            <a
+              href={KORODUR_ZENTRALE.telefonHref}
+              className="hidden xl:flex items-center gap-2 text-navy text-[14px] no-underline hover:text-cyan-text transition-colors duration-150"
+              style={{ fontWeight: 700 }}
+            >
+              <AppIcon icon={Phone} width={16} height={16} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
+              {KORODUR_ZENTRALE.telefon}
+            </a>
 
             {/* Desktop Lösungsfinder-CTA */}
             <Button asChild size="lg" className="hidden lg:inline-flex">
@@ -206,7 +217,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                       key={link.href}
                       href={link.href}
                       className={`block rounded-lg no-underline text-[15px] ${
-                        isActive(link.href) ? "text-cyan" : "text-navy"
+                        isActive(link.href) ? "text-cyan-text" : "text-navy"
                       }`}
                       style={{ padding: "12px 16px", fontWeight: 700 }}
                       onClick={() => setMobileOpen(false)}

@@ -54,9 +54,20 @@ export function baueSuchindex(lang: string, dict: Dictionary): SuchEintrag[] {
 }
 
 /**
+ * Trennzeichen-insensitive Normalisierung: "HE3", "he-3" und "HE 3" sollen
+ * dasselbe finden (Kunden-Feedback Steffi, 2026-06-12 — viele suchen
+ * Produktnamen ohne Leerzeichen). Entfernt Leerraum, Binde-/Schrägstriche
+ * und Punkte/Kommas.
+ */
+function normalisiere(s: string): string {
+  return s.toLowerCase().replace(/[\s\-/.,]+/g, "");
+}
+
+/**
  * Filtert den Suchindex per Substring-Match auf Titel/Untertitel
- * (case-insensitive) und begrenzt auf `limit` Treffer.
- * Ranking-Verhalten identisch zur bisherigen Inline-Logik im SearchOverlay.
+ * (case-insensitive), zusätzlich trennzeichen-insensitiv ("HE3" → "HE 3"),
+ * und begrenzt auf `limit` Treffer. Exakte Substring-Treffer ranken vor
+ * rein normalisierten Treffern.
  */
 export function filtereSuchindex(
   items: SuchEintrag[],
@@ -65,11 +76,23 @@ export function filtereSuchindex(
 ): SuchEintrag[] {
   if (!query.trim()) return [];
   const q = query.toLowerCase();
-  return items
-    .filter(
-      (item) =>
-        item.title.toLowerCase().includes(q) ||
-        item.subtitle.toLowerCase().includes(q)
-    )
-    .slice(0, limit);
+  const qNorm = normalisiere(query);
+
+  const exakt: SuchEintrag[] = [];
+  const normalisiert: SuchEintrag[] = [];
+  for (const item of items) {
+    if (
+      item.title.toLowerCase().includes(q) ||
+      item.subtitle.toLowerCase().includes(q)
+    ) {
+      exakt.push(item);
+    } else if (
+      qNorm.length > 0 &&
+      (normalisiere(item.title).includes(qNorm) ||
+        normalisiere(item.subtitle).includes(qNorm))
+    ) {
+      normalisiert.push(item);
+    }
+  }
+  return [...exakt, ...normalisiert].slice(0, limit);
 }

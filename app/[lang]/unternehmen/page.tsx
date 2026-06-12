@@ -75,11 +75,11 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
                 <br />
                 {KORODUR_ZENTRALE.plzOrt}
                 <br />
-                <a href={KORODUR_ZENTRALE.telefonHref} className="text-cyan no-underline hover:underline">
+                <a href={KORODUR_ZENTRALE.telefonHref} className="text-cyan-text no-underline hover:underline">
                   {KORODUR_ZENTRALE.telefon}
                 </a>
                 <br />
-                <a href={`mailto:${KORODUR_ZENTRALE.email}`} className="text-cyan no-underline hover:underline">
+                <a href={`mailto:${KORODUR_ZENTRALE.email}`} className="text-cyan-text no-underline hover:underline">
                   {KORODUR_ZENTRALE.email}
                 </a>
               </p>
@@ -104,11 +104,11 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
                 <br />
                 {KORODUR_WERK_BOCHUM.plzOrt}
                 <br />
-                <a href={KORODUR_WERK_BOCHUM.telefonHref} className="text-cyan no-underline hover:underline">
+                <a href={KORODUR_WERK_BOCHUM.telefonHref} className="text-cyan-text no-underline hover:underline">
                   {KORODUR_WERK_BOCHUM.telefon}
                 </a>
                 <br />
-                <a href={`mailto:${KORODUR_WERK_BOCHUM.email}`} className="text-cyan no-underline hover:underline">
+                <a href={`mailto:${KORODUR_WERK_BOCHUM.email}`} className="text-cyan-text no-underline hover:underline">
                   {KORODUR_WERK_BOCHUM.email}
                 </a>
               </p>
@@ -136,7 +136,7 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
                   className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-cyan"
                   aria-hidden="true"
                 />
-                <span className="block text-cyan text-[14px]" style={{ fontWeight: 800 }}>
+                <span className="block text-cyan-text text-[14px]" style={{ fontWeight: 800 }}>
                   {m.jahr}
                 </span>
                 <span className="text-navy/80 text-[15px] leading-[1.6]">{m.text}</span>

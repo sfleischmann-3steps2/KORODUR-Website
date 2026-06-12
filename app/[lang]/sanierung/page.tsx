@@ -51,7 +51,7 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
         <div className="mx-auto text-center" style={{ maxWidth: 800 }}>
           {/* Slogan hier statt im Footer (Steffi, 2026-06-11) */}
           <p
-            className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-4"
+            className="text-cyan-text text-[13px] uppercase tracking-[0.2em] mb-4"
             style={{ fontWeight: 700 }}
           >
             {dict.sanierungHub.slogan}
@@ -78,13 +78,13 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
                   style={{ borderRadius: 14 }}
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-icon-bg">
-                    <AppIcon icon={card.icon} width={24} height={24} strokeWidth={2} className="text-cyan" aria-hidden="true" />
+                    <AppIcon icon={card.icon} width={24} height={24} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
                   </div>
                   <h2 className="text-navy text-[19px] m-0" style={{ fontWeight: 900 }}>
                     {card.title}
                   </h2>
                   <p className="text-navy/60 text-[14px] m-0 leading-[1.6]">{card.text}</p>
-                  <span className="inline-flex items-center gap-1.5 text-cyan text-[14px] mt-auto" style={{ fontWeight: 700 }}>
+                  <span className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] mt-auto" style={{ fontWeight: 700 }}>
                     {dict.sanierungHub.cta}
                     <AppIcon icon={ArrowRight} width={15} height={15} strokeWidth={2.5} aria-hidden="true" />
                   </span>
