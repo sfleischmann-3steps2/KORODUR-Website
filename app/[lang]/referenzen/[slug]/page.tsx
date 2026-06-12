@@ -39,6 +39,9 @@ const chipVariants = cva(
         navy: "bg-bullet-bg text-navy",
         cyan: "bg-cyan/10 text-cyan-text",
         neutral: "bg-icon-bg text-muted-foreground",
+        /* Chips auf Navy/Bild (Hero-Header, Mockup-Review 2026-06-12) */
+        hellAufNavy: "bg-white/15 text-white",
+        cyanAufNavy: "bg-cyan text-white",
       },
     },
     defaultVariants: { tone: "navy" },
@@ -219,12 +222,24 @@ export default async function ReferenzDetailPage({
   const related = await localizeReferenzen(baseRelated, lang as Lang);
   const isAnonymized = referenz.releaseStatus === "oeffentlich-anonymisiert";
 
-  const imagePair =
+  // Header-Logik (Mockup-Review Steffi, 2026-06-12):
+  //  A) Sanierungsreferenz mit Vorher/Nachher-Paar → Bildpaar-Hero + Navy-Titelbalken
+  //  B) echtes Hauptbild vorhanden → Bild-Hero mit Navy-Overlay
+  //  C) Platzhalter-Bild → bisheriger Card-Kopf
+  const heroPaar =
     referenz.projekttyp === "sanierung" && referenz.bilder?.vorher && referenz.bilder?.nachher
-      ? { left: referenz.bilder.vorher, leftLabel: detail.vorher, right: referenz.bilder.nachher, rightLabel: detail.nachher }
-      : referenz.bilder?.einbau && referenz.bilder?.ergebnis
-        ? { left: referenz.bilder.einbau, leftLabel: detail.einbau, right: referenz.bilder.ergebnis, rightLabel: detail.ergebnis }
-        : null;
+      ? { vorher: referenz.bilder.vorher, nachher: referenz.bilder.nachher }
+      : null;
+  const heroBild =
+    !heroPaar && !referenz.bild.includes("_placeholder") ? referenz.bild : null;
+  const hatHero = Boolean(heroPaar || heroBild);
+
+  // Einbau/Ergebnis-Paar bleibt als eigene Sektion unterhalb des Headers
+  // (das Vorher/Nachher-Paar wandert in Variante A in den Hero).
+  const imagePair =
+    !heroPaar && referenz.bilder?.einbau && referenz.bilder?.ergebnis
+      ? { left: referenz.bilder.einbau, leftLabel: detail.einbau, right: referenz.bilder.ergebnis, rightLabel: detail.ergebnis }
+      : null;
 
   const facts = [
     { label: detail.fakt_ort, value: `${referenz.ort}${referenz.land ? `, ${referenz.land}` : ""}` },
@@ -262,30 +277,132 @@ export default async function ReferenzDetailPage({
         </div>
       </section>
 
-      <section className={SECTION}>
-        <div className={CONTAINER}>
-          <Card className="gap-0 rounded-lg py-0 shadow-none">
-            <CardContent className="p-5 sm:p-6 md:p-7">
-              <div className="mb-4 flex flex-wrap items-center gap-2">
-                {kategorieLabel && <Chip>{kategorieLabel}</Chip>}
-                {projectLabel && <Chip tone="cyan">{projectLabel}</Chip>}
-                {isAnonymized && <Chip tone="neutral">{detail.anonymisiert}</Chip>}
+      {heroPaar ? (
+        /* Variante A: Vorher/Nachher-Hero + Navy-Titelbalken (Mockup-Review 2026-06-12) */
+        <>
+          <section className="px-0">
+            <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
+              {[
+                { bild: heroPaar.vorher, label: detail.vorher, tagClass: "bg-navy/80 text-white" },
+                { bild: heroPaar.nachher, label: detail.nachher, tagClass: "bg-[#009a44] text-white" },
+              ].map(({ bild, label, tagClass }) => (
+                <div key={label} className="relative aspect-[16/10] overflow-hidden bg-icon-bg">
+                  <Image
+                    src={withBasePath(bild.src)}
+                    alt={bild.alt ?? bild.caption ?? label}
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <span
+                    className={`absolute left-3.5 top-3.5 rounded-[4px] px-3 py-1 text-xs font-extrabold uppercase tracking-wide ${tagClass}`}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+          <section className="bg-navy px-4 pb-12 pt-7 sm:px-6">
+            <div className={CONTAINER}>
+              <div className="mb-3 flex flex-wrap items-center gap-2">
+                {kategorieLabel && <Chip tone="hellAufNavy">{kategorieLabel}</Chip>}
+                {projectLabel && <Chip tone="cyanAufNavy">{projectLabel}</Chip>}
+                {isAnonymized && <Chip tone="hellAufNavy">{detail.anonymisiert}</Chip>}
               </div>
-              <h1 className="m-0 mb-2 text-[clamp(30px,5vw,44px)] font-black leading-tight text-navy">
+              <h1 className="m-0 mb-2 text-[clamp(28px,4.5vw,42px)] font-black leading-tight text-white">
                 {referenz.titel}
               </h1>
-              <p className="m-0 mb-3 text-base font-extrabold text-cyan-text sm:text-lg">
+              <p className="m-0 text-base font-extrabold text-cyan sm:text-lg">
                 {referenz.untertitel}
               </p>
-              {referenz.ausgangssituation && (
-                <p className="m-0 max-w-[68ch] text-[15px] leading-[1.7] text-navy">
-                  {referenz.ausgangssituation}
+            </div>
+          </section>
+        </>
+      ) : heroBild ? (
+        /* Variante B: Bild-Hero mit Navy-Overlay */
+        <section className="relative flex min-h-[400px] items-end overflow-hidden sm:min-h-[440px]">
+          <Image
+            src={withBasePath(heroBild)}
+            alt={referenz.bildAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to top, rgba(0,45,89,.92) 0%, rgba(0,45,89,.55) 38%, rgba(0,45,89,.12) 70%, rgba(0,45,89,0) 100%)",
+            }}
+          />
+          <div className="relative w-full px-4 pb-12 pt-20 sm:px-6">
+            <div className={CONTAINER}>
+              <div className="mb-3 flex flex-wrap items-center gap-2">
+                {kategorieLabel && <Chip tone="hellAufNavy">{kategorieLabel}</Chip>}
+                {projectLabel && <Chip tone="cyanAufNavy">{projectLabel}</Chip>}
+                {isAnonymized && <Chip tone="hellAufNavy">{detail.anonymisiert}</Chip>}
+              </div>
+              <h1 className="m-0 mb-2 max-w-[24em] text-[clamp(28px,4.5vw,42px)] font-black leading-tight text-white">
+                {referenz.titel}
+              </h1>
+              <p className="m-0 text-base font-bold text-white/90 sm:text-lg">
+                {referenz.untertitel}
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : (
+        /* Variante C/Fallback: bisheriger Card-Kopf (Platzhalter-Referenzen) */
+        <section className={SECTION}>
+          <div className={CONTAINER}>
+            <Card className="gap-0 rounded-lg py-0 shadow-none">
+              <CardContent className="p-5 sm:p-6 md:p-7">
+                <div className="mb-4 flex flex-wrap items-center gap-2">
+                  {kategorieLabel && <Chip>{kategorieLabel}</Chip>}
+                  {projectLabel && <Chip tone="cyan">{projectLabel}</Chip>}
+                  {isAnonymized && <Chip tone="neutral">{detail.anonymisiert}</Chip>}
+                </div>
+                <h1 className="m-0 mb-2 text-[clamp(30px,5vw,44px)] font-black leading-tight text-navy">
+                  {referenz.titel}
+                </h1>
+                <p className="m-0 mb-3 text-base font-extrabold text-cyan-text sm:text-lg">
+                  {referenz.untertitel}
                 </p>
-              )}
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+                {referenz.ausgangssituation && (
+                  <p className="m-0 max-w-[68ch] text-[15px] leading-[1.7] text-navy">
+                    {referenz.ausgangssituation}
+                  </p>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      )}
+
+      {hatHero && facts.length > 0 && (
+        /* Überlappende Fakten-Leiste (ersetzt bei Hero-Varianten die
+           Fakten-Zeilen in der Karte darunter — Mockup-Diskussionspunkt 2) */
+        <section className="relative z-10 -mt-7 px-4 sm:px-6">
+          <div className={CONTAINER}>
+            <div className="flex flex-wrap overflow-hidden rounded-xl border border-bullet-bg bg-white shadow-[0_8px_30px_rgba(0,45,89,0.10)]">
+              {facts.map((row) => (
+                <div
+                  key={row.label}
+                  className="min-w-[130px] flex-1 border-r border-bullet-bg px-4 py-3 last:border-r-0"
+                >
+                  <div className="text-[11px] font-extrabold uppercase tracking-wide text-muted-foreground">
+                    {row.label}
+                  </div>
+                  <div className="mt-0.5 text-[15px] font-extrabold text-navy">{row.value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {imagePair && (
         <section className={SECTION}>
@@ -300,19 +417,22 @@ export default async function ReferenzDetailPage({
         <div className={`${CONTAINER} grid grid-cols-1 gap-4 md:grid-cols-[1.25fr_1fr]`}>
           <Card className="gap-0 rounded-lg py-0 shadow-none">
             <CardContent className="flex flex-col p-5">
-              {facts.map((row) => (
-                <div
-                  key={row.label}
-                  className="flex items-baseline justify-between gap-4 border-b border-border py-2 last:border-b-0"
-                >
-                  <span className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">
-                    {row.label}
-                  </span>
-                  <span className="text-right text-sm font-extrabold text-navy">
-                    {row.value}
-                  </span>
-                </div>
-              ))}
+              {/* Bei Hero-Varianten stehen die Fakten in der Leiste oben —
+                  hier bleiben nur Produkte + PDF (Mockup-Diskussionspunkt 2) */}
+              {!hatHero &&
+                facts.map((row) => (
+                  <div
+                    key={row.label}
+                    className="flex items-baseline justify-between gap-4 border-b border-border py-2 last:border-b-0"
+                  >
+                    <span className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">
+                      {row.label}
+                    </span>
+                    <span className="text-right text-sm font-extrabold text-navy">
+                      {row.value}
+                    </span>
+                  </div>
+                ))}
               <div className="flex items-start justify-between gap-4 border-b border-border py-2">
                 <span className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">
                   {detail.fakt_produkte}
