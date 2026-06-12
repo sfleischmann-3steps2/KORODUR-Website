@@ -353,7 +353,39 @@
     "nachhaltigkeit_title": "Zrównoważony rozwój",
     "nachhaltigkeit_text": "Posadzki przemysłowe z kruszywem twardym są wyjątkowo trwałe i obniżają koszty cyklu życia budynku. Dzięki rozwojowi produktów, takich jak NEODUR HE 3 green, ograniczamy emisję CO₂ w produkcji nawet o 30%. Posiadamy certyfikat DIN EN ISO 9001:2015 i jesteśmy członkiem DGNB.",
     "cta_title": "Chcą Państwo dowiedzieć się o nas więcej?",
-    "cta_button": "Skontaktuj się"
+    "cta_button": "Skontaktuj się",
+    "geschichte_title": "Historia",
+    "geschichte_intro": "Kowadło w logo firmy od założenia w 1936 roku symbolizuje właściwości posadzek KORODUR.",
+    "meilensteine": [
+      {
+        "jahr": "1936",
+        "text": "Założenie KORODUR Westphal Hartbeton GmbH & Co. KG w Berlinie przez Wernera Westphala"
+      },
+      {
+        "jahr": "1969",
+        "text": "Grupa KORODUR przechodzi w ręce rodziny Heckmann"
+      },
+      {
+        "jahr": "1976",
+        "text": "Założenie KORODUR International GmbH w celu budowy międzynarodowej sieci dystrybucji"
+      },
+      {
+        "jahr": "1978",
+        "text": "Przeniesienie siedziby z Berlina do Ambergu w Bawarii"
+      },
+      {
+        "jahr": "1992",
+        "text": "Utworzenie obszaru działalności higienicznego żwirku bentonitowego"
+      },
+      {
+        "jahr": "1995",
+        "text": "Założenie KORODUR ENGINEERING (SINGAPORE) PTE LTD do projektów specjalnych w Azji Południowo-Wschodniej"
+      },
+      {
+        "jahr": "2026",
+        "text": "90 lat KORODUR"
+      }
+    ]
   },
   "kontakt": {
     "title": "Kontakt",

@@ -353,7 +353,39 @@
     "nachhaltigkeit_title": "Sustainability",
     "nachhaltigkeit_text": "Hard aggregate industrial floors are extremely durable and reduce the life cycle costs of a building. With product developments such as NEODUR HE 3 green, we reduce CO₂ emissions in production by up to 30%. We are certified to DIN EN ISO 9001:2015 and a member of the DGNB.",
     "cta_title": "Would you like to learn more about us?",
-    "cta_button": "Get in touch"
+    "cta_button": "Get in touch",
+    "geschichte_title": "History",
+    "geschichte_intro": "The anvil in our company logo has symbolised the properties of KORODUR floors since the company was founded in 1936.",
+    "meilensteine": [
+      {
+        "jahr": "1936",
+        "text": "KORODUR Westphal Hartbeton GmbH & Co. KG founded in Berlin by Werner Westphal"
+      },
+      {
+        "jahr": "1969",
+        "text": "The KORODUR group passes to the Heckmann family"
+      },
+      {
+        "jahr": "1976",
+        "text": "KORODUR International GmbH founded to build an international distribution network"
+      },
+      {
+        "jahr": "1978",
+        "text": "Headquarters relocated from Berlin to Amberg, Bavaria"
+      },
+      {
+        "jahr": "1992",
+        "text": "Bentonite hygiene litter business unit established"
+      },
+      {
+        "jahr": "1995",
+        "text": "KORODUR ENGINEERING (SINGAPORE) PTE LTD founded for special projects in Southeast Asia"
+      },
+      {
+        "jahr": "2026",
+        "text": "90 years of KORODUR"
+      }
+    ]
   },
   "kontakt": {
     "title": "Contact",

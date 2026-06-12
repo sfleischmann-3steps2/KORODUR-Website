@@ -41,7 +41,7 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 | schnellbetonsysteme | n/a | — | — | — | — | — | PR 8 geplant |
 | 3d-concrete-printing | n/a | — | — | — | — | — | PR 8 geplant |
 | katzenstreu | ✓ DE (3 goodcat-Produkte, 2026-06-12) | ✓ Variante B neutral-reduziert (freigegeben; Grün-Highlights später, Richtung Heidelberg-Materials-Grün) | — | — | — | — | PR 9: umgesetzt |
-| Unternehmensseiten | — | — | — | — | — | — | PR 10 geplant |
+| Unternehmensseiten | ✓ DE+EN+FR+PL (Über uns, 2 Standorte, Geschichte/Meilensteine, Nachhaltigkeit, Kontakt; 2026-06-12) | n/a | ✓ | ✓ | ✓ | — | PR 10: umgesetzt |
 
 ## Offene Punkte (laufend pflegen)
 
