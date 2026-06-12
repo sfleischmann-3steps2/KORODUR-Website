@@ -39,10 +39,10 @@ Kein Beleg für einen DUROP-Ankermörtel: Die DUROP-Einzelseite im Spezialbausto
 
 - **NEODUR PFM 1K EasyFix, PFM ZE** (Reparaturharze): Seiten leer, nur Namensnennungen — TDS/Frank nötig
 - **"NEODUR Vergussmörtel Beton"**: vermutlich Sammelseite der VM/VB-Familie, kein eigenes Produkt
-- **MORTAR-MIX-Schichtdicke**: Quelle widersprüchlich (10–150 vs. 15–150 mm) — Bestand unangetastet, TDS prüfen
+- ~~MORTAR-MIX-Schichtdicke~~ GEKLÄRT (Steffi, 2026-06-12): 10–150 mm, Bestand war korrekt
 
 ## Sign-off
 
 - [ ] Gruppen-Schnitt Spezialbaustoffe (4) + Rapid Set (3) OK
 - [x] Klassen: Excel gilt (Steffi, 2026-06-12); Detail-Review der Kollegen über die Live-Site
-- [ ] DUROP-Restfrage (Ankermörtel ja/nein) bestätigt
+- [x] DUROP-Restfrage: KEIN Ankermörtel (Steffi, 2026-06-12)
