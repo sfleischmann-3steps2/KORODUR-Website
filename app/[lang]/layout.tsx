@@ -19,15 +19,16 @@ import { withBasePath } from "../../lib/basePath";
 import ServiceWorkerRegistrar from "../../components/ServiceWorkerRegistrar";
 
 export const metadata: Metadata = {
+  // Website-Integration: App ist die neue korodur.de, nicht mehr nur Sanierung
   title: {
-    template: "%s | KORODUR Sanierung",
-    default: "Sanieren mit KORODUR",
+    template: "%s | KORODUR",
+    default: "KORODUR | Industrieböden und Spezialbaustoffe",
   },
   description:
-    "KORODUR bietet professionelle Sanierungslösungen für Industrieboden, Industriebau und Infrastruktur. Schnelle Reparaturen, dauerhafte Ergebnisse.",
+    "KORODUR entwickelt und produziert mineralische Hartstoffe, Industrieböden, Sichtestriche und Spezialbaustoffe. Seit 1936, weltweit bewährt.",
   openGraph: {
     type: "website",
-    siteName: "KORODUR Sanierung",
+    siteName: "KORODUR",
   },
 };
 

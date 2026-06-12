@@ -19,9 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (!hasLocale(lang)) return {};
   const produkt = getProduktById(id);
   if (!produkt) return {};
+  // Meta-Description lokalisieren (sonst stünde auf EN/FR/PL-Seiten die DE-Kurzbeschreibung)
+  const localized = await localizeProdukt(produkt, lang);
   return {
     title: produkt.name,
-    description: produkt.kurzbeschreibung,
+    description: localized.kurzbeschreibung,
   };
 }
 
