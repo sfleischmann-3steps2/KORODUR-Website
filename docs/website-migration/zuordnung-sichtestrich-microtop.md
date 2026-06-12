@@ -22,7 +22,7 @@
 ## Entscheidungen und Konflikte
 
 1. **TW 2 vs. TW 02:** ✅ BESTÄTIGT (Steffi, 2026-06-12): TW 02 = TW 2. Migriert als **MICROTOP TW 02**.
-2. **TW VSM:** Produktübersicht sagt "Vorspritz", die Excel "Vorspritzmörtel" (C12/15, W 347), der Quellen-Teaser beschreibt aber Innenauskleidung/Instandsetzung. Kennwerte aus Excel übernommen, Beschreibung aus Quelle. ⚠️ Produktart klären.
+2. **TW VSM:** ✅ GEKLÄRT (2026-06-12, Quelle: LP lp-live.korodur.de/microtop-tw): **Vorspritzmörtel (Haftgrund)**, 15–20 mm, Spritzen/Hand, **OHNE DVGW-Zulassung** (Excel-Zeile W 347 war falsch zugeordnet, entfernt). C12/15 aus Excel bleibt.
 3. **TW NSD** (Produktübersicht) kommt in der Quelle nicht vor — nicht migriert.
 4. **TW NSM, TW 02:** nur Teaser-Daten, keine Kennwerte (Detailseiten leer) — TDS-Vervollständigung offen.
 5. **TW Mineral ohne DVGW-Angabe** in der Quelle (auffällig für ein Trinkwasserprodukt) — nicht ergänzt, TDS klären.
@@ -32,4 +32,15 @@
 
 - [ ] Gruppen-Schnitt Sichtestrich (3) + Microtop (3) OK
 - [x] TW 02 = TW 2 bestätigt (Steffi, 2026-06-12)
-- [ ] TW VSM Produktart geklärt (Vorspritz vs. Innenauskleidung)
+- [x] TW VSM Produktart geklärt: Vorspritzmörtel/Haftgrund, ohne DVGW (LP-Quelle, 2026-06-12)
+
+## Nachtrag 2026-06-12: Landing-Page-Anreicherung (Quelle: lp-live.korodur.de/microtop-tw + /arm)
+
+Die von Steffi kuratierten LPs gelten bei Konflikten vor dem Alt-Site-Scrape (Sicherung: `quellen-lp/`).
+
+- **DVGW-Zulassungen präzisiert:** TW 3/5/8/NSM/BM/02 = Typ Klasse 1, W 300 + W 347 · **TW Mineral = W 347** (Lücke geschlossen) · **TW VSM = ohne Zulassung** · NEODUR VM basic = W 347
+- **Kennwerte ergänzt:** TW NSM (ca. 20 mm, Nassspritzen, Variante **NSM blau**), TW 02 (5–8 mm Auskleidung / 2–5 mm Korrosionsschutz), TW BM (Varianten **weiß/blau**, Schichtdicken), TW 3 (Körnung 0–3 mm), **TW 5: Schichtdicke 14–30 mm** (LP) statt 10–30 (Alt-Bereichsseite)
+- **NEODUR VM basic** voll angereichert (Quellvergussbeton, Körnung 0–5, 25-kg-Gebinde, Rohrverguss Trinkwasser)
+- **ASPHALT REPAIR MIX** voll angereichert (Biegezug, E-Modul, Verbrauch, Wasserzugabe, Verarbeitungstemperatur, CO₂-Bilanz, Baustoffhandel-Vertrieb); kuratierte Matrix-Felder unangetastet
+- **Referenz-Kandidaten für Stufe 3** (auf den LPs dokumentiert): Microtop: Haidberg 75.000 m³ (EWAG, 2005) · Krottenbach 60.000 m³ (2009) · Räcknitz Dresden (2019) · Bad Nauheim (2011) · Puchheim (2010) · Budapest (2012) + 12 weitere · ARM: Dieckmann Versmold (2021) · Linnenbecker Bad Oeynhausen (2022) · Wüseke Sassenberg (2022) · Lackiererei Schmidt Versmold (2022)
+- **Nicht übernommen (für später):** Systemvergleichs-Tabellen (mineralisch vs. Epoxid vs. Edelstahl; ARM vs. Kaltmischgut vs. Heißasphalt), FAQ-Blöcke, Zielgruppen-Nutzenargumente, regionale Fachberater-Kontakte → Rohstoff für Anwendungsseiten/Planerbereich (Nice-to-have-Liste) bzw. Kontakt-Konzept

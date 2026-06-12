@@ -150,12 +150,22 @@ export const produkteFR: Record<string, {
   },
   "asphalt-repair-mix": {
     kurzbeschreibung: "Matériau de réparation rapide pour surfaces en asphalte",
-    besonderheiten: ["Adapté aux surfaces en asphalte", "Sans pont d'adhérence", "Application facile", "Ouverture au trafic après 30 minutes"],
+    beschreibung: "Rapid Set ASPHALT REPAIR MIX est un matériau de réparation à base de ciment, modifié polymère : haute résistance, faibles contraintes et durcissement rapide. Il allie la rapidité de l'enrobé à froid à la durabilité de l'asphalte à chaud : ouvrir le sac, ajouter de l'eau, mélanger, mettre en œuvre. Sans fraiseuse, sans rouleau, sans pont d'adhérence ; chargeable après env. 30 minutes, en pleine charge après env. 1 heure, même sous trafic lourd.",
+    besonderheiten: ["Adapté aux surfaces en asphalte", "Sans pont d'adhérence", "Application facile", "Ouverture au trafic après 30 minutes", "Résistant au gel, aux sels de déverglaçage et aux sulfates", "Pompable, utilisable à l'horizontale et à la verticale", "Env. 30 % de CO₂ en moins que le ciment Portland traditionnel", "Disponible auprès du négoce de matériaux"],
     technischeDaten: [
-      { label: "Résistance à la compression", wert: "env. 22 N/mm²" },
+      { label: "Résistance à la compression (30 min)", wert: "env. 15 N/mm²" },
+      { label: "Résistance à la compression (1 h)", wert: "env. 22 N/mm²" },
+      { label: "Résistance à la compression (28 j)", wert: "env. 38 N/mm²" },
       { label: "Épaisseur de couche", wert: "30–600 mm" },
       { label: "Ouverture au trafic après", wert: "env. 30 min" },
       { label: "Pont d'adhérence", wert: "Non requis" },
+      { label: "Résistance à la flexion (28 j)", wert: "env. 6,4 N/mm²" },
+      { label: "Module d'élasticité", wert: "env. 22.000 N/mm²" },
+      { label: "Granulométrie", wert: "0–8 mm" },
+      { label: "Couleur", wert: "noir" },
+      { label: "Ajout d'eau", wert: "env. 3,80 l par sac de 25 kg" },
+      { label: "Consommation de matériau", wert: "env. 20 kg/m² par cm d'épaisseur" },
+      { label: "Température de mise en œuvre", wert: "+5 °C à +30 °C" },
     ],
   },
   "dot-europe-concrete-mix": {
@@ -561,6 +571,7 @@ export const produkteFR: Record<string, {
     beschreibung: "MICROTOP TW 3 s'applique par projection par voie sèche et sert au reprofilage et au revêtement de surfaces, à l'augmentation de l'enrobage du béton et à la finition dans le domaine de l'eau potable. Les matériaux s'appliquent en une seule couche et peuvent être talochés et lissés sans difficulté ; les petits travaux sont possibles à la main.",
     besonderheiten: ["Purement minéral, amélioré aux microsilices", "Faible porosité, imperméable à l'eau", "Talochable et lissable", "Déclaration environnementale produit (EPD de groupe) disponible"],
     technischeDaten: [
+      { label: "Granulométrie", wert: "0–3 mm" },
       { label: "Résistance à la compression (28 j)", wert: "≥ 45 N/mm²" },
       { label: "Porosité totale (90 j)", wert: "≤ 10 % vol." },
     ],
@@ -591,16 +602,32 @@ export const produkteFR: Record<string, {
     kurzbeschreibung: "Mortier projeté par voie humide pour le reprofilage et le revêtement dans le domaine de l'eau potable",
     beschreibung: "MICROTOP TW NSM s'applique par projection par voie humide et sert au reprofilage et au revêtement de surfaces, à l'augmentation de l'enrobage du béton et à la finition dans le domaine de l'eau potable. Les matériaux peuvent être talochés et lissés sans difficulté ; les petits travaux sont possibles à la main en liaison avec un pont d'adhérence.",
     besonderheiten: ["Talochable et lissable", "Petits travaux possibles à la main avec pont d'adhérence"],
+    technischeDaten: [
+      { label: "Épaisseur de couche", wert: "env. 20 mm en une seule opération" },
+      { label: "Procédé", wert: "Projection par voie humide (transport à flux dense, faible dégagement de poussière)" },
+    ],
+    varianten: [
+      { name: "MICROTOP TW NSM blau" },
+    ],
   },
   "microtop-tw-02": {
     kurzbeschreibung: "Mortier projeté par voie humide à flux dense avec un volume de pores extrêmement faible",
     beschreibung: "MICROTOP TW 02 s'applique par projection par voie humide à flux dense et sert au revêtement de surfaces, à l'augmentation de l'enrobage du béton et à la finition dans le domaine de l'eau potable. Le produit présente un volume de pores extrêmement faible et peut également être utilisé comme protection anticorrosion et pont d'adhérence.",
     besonderheiten: ["Volume de pores extrêmement faible", "Utilisable aussi comme protection anticorrosion et pont d'adhérence"],
+    technischeDaten: [
+      { label: "Épaisseur de couche (revêtement conduites/réservoirs)", wert: "5–8 mm" },
+      { label: "Épaisseur de couche (protection anticorrosion/pont d'adhérence)", wert: "2–5 mm" },
+      { label: "Procédé", wert: "Centrifugation, projection, spatulage, application à la main" },
+    ],
   },
   "microtop-tw-vsm": {
-    kurzbeschreibung: "Mortier projeté pour le revêtement intérieur et la remise en état de réservoirs d'eau potable et de maçonnerie",
+    kurzbeschreibung: "Mortier de projection préalable (couche d'accrochage) pour le revêtement intérieur et la remise en état de réservoirs d'eau potable et de maçonnerie",
     beschreibung: "MICROTOP TW VSM sert au revêtement intérieur et à la remise en état de réservoirs d'eau potable neufs comme anciens ainsi que de maçonnerie. Grâce à sa composition spéciale, il présente d'excellentes propriétés de mise en œuvre et d'usage et peut être taloché et lissé sans difficulté.",
     besonderheiten: ["Convient également à la maçonnerie", "Talochable et lissable"],
+    technischeDaten: [
+      { label: "Épaisseur de couche", wert: "15–20 mm" },
+      { label: "Procédé", wert: "Projection, application à la main" },
+    ],
   },
   "microtop-tw-bm": {
     kurzbeschreibung: "Mortier spécial pour le revêtement intérieur de conduites et réservoirs d'eau potable, aussi comme pont d'adhérence",
@@ -611,6 +638,12 @@ export const produkteFR: Record<string, {
       { label: "Résistance à la compression", wert: "35 N/mm²" },
       { label: "Résistance à la flexion", wert: "6,3 N/mm²" },
       { label: "Couleurs", wert: "nature, blanc" },
+      { label: "Épaisseur de couche (revêtement conduites/réservoirs)", wert: "5–8 mm" },
+      { label: "Épaisseur de couche (protection anticorrosion/pont d'adhérence)", wert: "2–5 mm" },
+    ],
+    varianten: [
+      { name: "MICROTOP TW BM weiß" },
+      { name: "MICROTOP TW BM blau" },
     ],
   },
   "microtop-tw-mineral": {
@@ -657,8 +690,14 @@ export const produkteFR: Record<string, {
     ],
   },
   "neodur-vm-basic": {
-    kurzbeschreibung: "Béton de scellement selon DIN EN 1504-3 (R4) et directive DAfStb (SKVB II)",
-    besonderheiten: ["Directive DAfStb (SKVB II)", "Aptitude DVGW selon le tableau des normes"],
+    kurzbeschreibung: "Béton de scellement expansif minéral à haute fluidité, contrôlé DVGW pour les domaines de l'eau potable",
+    beschreibung: "NEODUR VM basic est un béton de scellement expansif minéral à haute fluidité pour les travaux de scellement à liaison solide et les montages de tous types, p. ex. le scellement de conduites dans les installations d'eau potable. Contrôlé selon la fiche de travail DVGW W 347 pour les exigences hygiéniques dans les domaines de l'eau potable.",
+    besonderheiten: ["Faible retrait, à prise normale", "Résistant au gel et aux sels de déverglaçage", "Imperméable à l'eau, sans chlorures", "Directive DAfStb (SKVB II)"],
+    technischeDaten: [
+      { label: "Granulométrie", wert: "0–5 mm" },
+      { label: "Mise en œuvre", wert: "Malaxage + pompage / coulage" },
+      { label: "Conditionnement", wert: "sacs de 25 kg" },
+    ],
   },
   "neodur-svm-03": {
     kurzbeschreibung: "Mortier de scellement rapide pour sections de scellement de 5 à 20 mm",
