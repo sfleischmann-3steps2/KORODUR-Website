@@ -71,10 +71,10 @@ export default async function KontaktPage({ params }: { params: Params }) {
             <div className="flex flex-col gap-3 mb-8">
               <a
                 href={KORODUR_ZENTRALE.telefonHref}
-                className="inline-flex items-center gap-3 text-navy no-underline hover:text-cyan transition-colors"
+                className="inline-flex items-center gap-3 text-navy no-underline hover:text-cyan-text transition-colors"
                 style={{ fontWeight: 700, fontSize: 16, minHeight: 44 }}
               >
-                <AppIcon icon={Phone} width={18} height={18} strokeWidth={2} className="text-cyan" aria-hidden="true" />
+                <AppIcon icon={Phone} width={18} height={18} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
                 <span>
                   <span className="text-navy/50 text-[13px] block" style={{ fontWeight: 600 }}>
                     {dict.kontakt.tel_label}
@@ -84,10 +84,10 @@ export default async function KontaktPage({ params }: { params: Params }) {
               </a>
               <a
                 href={`mailto:${KORODUR_ZENTRALE.email}`}
-                className="inline-flex items-center gap-3 text-navy no-underline hover:text-cyan transition-colors"
+                className="inline-flex items-center gap-3 text-navy no-underline hover:text-cyan-text transition-colors"
                 style={{ fontWeight: 700, fontSize: 16, minHeight: 44 }}
               >
-                <AppIcon icon={Mail} width={18} height={18} strokeWidth={2} className="text-cyan" aria-hidden="true" />
+                <AppIcon icon={Mail} width={18} height={18} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
                 <span>
                   <span className="text-navy/50 text-[13px] block" style={{ fontWeight: 600 }}>
                     {dict.kontakt.email_label}
@@ -96,7 +96,7 @@ export default async function KontaktPage({ params }: { params: Params }) {
                 </span>
               </a>
               <p className="m-0 flex items-center gap-3 text-navy" style={{ fontWeight: 700, fontSize: 16, minHeight: 44 }}>
-                <AppIcon icon={Printer} width={18} height={18} strokeWidth={2} className="text-cyan" aria-hidden="true" />
+                <AppIcon icon={Printer} width={18} height={18} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
                 <span>
                   <span className="text-navy/50 text-[13px] block" style={{ fontWeight: 600 }}>
                     {dict.kontakt.fax_label}
@@ -138,9 +138,9 @@ export default async function KontaktPage({ params }: { params: Params }) {
                       </p>
                     )}
                     <p className="m-0 text-[14px] leading-[1.8]">
-                      <a href={b.telefonHref} className="text-cyan no-underline hover:underline" style={{ fontWeight: 700 }}>{b.telefon}</a>
+                      <a href={b.telefonHref} className="text-cyan-text no-underline hover:underline" style={{ fontWeight: 700 }}>{b.telefon}</a>
                       <br />
-                      <a href={`mailto:${b.email}`} className="text-cyan no-underline hover:underline" style={{ fontWeight: 700 }}>{b.email}</a>
+                      <a href={`mailto:${b.email}`} className="text-cyan-text no-underline hover:underline" style={{ fontWeight: 700 }}>{b.email}</a>
                     </p>
                   </div>
                 ))}
@@ -163,9 +163,9 @@ export default async function KontaktPage({ params }: { params: Params }) {
                 <p className="text-navy text-[16px] m-0" style={{ fontWeight: 900 }}>{b.name}</p>
                 <p className="text-navy/60 text-[13px] mt-1 mb-2 leading-[1.5]">{b.rolle}</p>
                 <p className="m-0 text-[14px] leading-[1.8]">
-                  <a href={b.telefonHref} className="text-cyan no-underline hover:underline" style={{ fontWeight: 700 }}>{b.telefon}</a>
+                  <a href={b.telefonHref} className="text-cyan-text no-underline hover:underline" style={{ fontWeight: 700 }}>{b.telefon}</a>
                   <br />
-                  <a href={`mailto:${b.email}`} className="text-cyan no-underline hover:underline" style={{ fontWeight: 700 }}>{b.email}</a>
+                  <a href={`mailto:${b.email}`} className="text-cyan-text no-underline hover:underline" style={{ fontWeight: 700 }}>{b.email}</a>
                 </p>
               </div>
             ))}
@@ -182,7 +182,7 @@ export default async function KontaktPage({ params }: { params: Params }) {
                   href={site.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-cyan text-[15px] no-underline hover:underline"
+                  className="inline-flex items-center gap-2 text-cyan-text text-[15px] no-underline hover:underline"
                   style={{ fontWeight: 700, minHeight: 44 }}
                 >
                   {site.label}

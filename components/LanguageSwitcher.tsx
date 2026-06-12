@@ -80,7 +80,7 @@ export default function LanguageSwitcher({ lang }: { lang: Locale }) {
             asChild
             className={`rounded-none cursor-pointer ${
               l === lang
-                ? "bg-cyan/10 text-cyan focus:bg-cyan/10 focus:text-cyan"
+                ? "bg-cyan/10 text-cyan-text focus:bg-cyan/10 focus:text-cyan-text"
                 : "text-navy focus:bg-icon-bg focus:text-navy"
             }`}
           >

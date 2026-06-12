@@ -42,7 +42,7 @@ export default async function DownloadsPage({ params }: { params: Params }) {
         </h1>
         <p className="text-navy/70 mb-10" style={{ fontSize: 16, lineHeight: 1.7 }}>
           {dict.downloads.intro}{" "}
-          <Link href={`/${lang}/produkte/`} className="text-cyan" style={{ fontWeight: 700 }}>
+          <Link href={`/${lang}/produkte/`} className="text-cyan-text" style={{ fontWeight: 700 }}>
             → {dict.nav.produkte}
           </Link>
         </p>

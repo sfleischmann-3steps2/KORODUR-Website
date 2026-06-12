@@ -37,7 +37,7 @@ const chipVariants = cva(
     variants: {
       tone: {
         navy: "bg-bullet-bg text-navy",
-        cyan: "bg-cyan/10 text-cyan",
+        cyan: "bg-cyan/10 text-cyan-text",
         neutral: "bg-icon-bg text-muted-foreground",
       },
     },
@@ -145,7 +145,7 @@ function CheckList({ items }: { items: string[] }) {
             width={18}
             height={18}
             strokeWidth={2.5}
-            className="mt-0.5 shrink-0 text-cyan"
+            className="mt-0.5 shrink-0 text-cyan-text"
             aria-hidden="true"
           />
           <span>{item}</span>
@@ -274,7 +274,7 @@ export default async function ReferenzDetailPage({
               <h1 className="m-0 mb-2 text-[clamp(30px,5vw,44px)] font-black leading-tight text-navy">
                 {referenz.titel}
               </h1>
-              <p className="m-0 mb-3 text-base font-extrabold text-cyan sm:text-lg">
+              <p className="m-0 mb-3 text-base font-extrabold text-cyan-text sm:text-lg">
                 {referenz.untertitel}
               </p>
               {referenz.ausgangssituation && (
@@ -374,7 +374,7 @@ export default async function ReferenzDetailPage({
             {produktDetails[0] && (
               <Link
                 href={`/${lang}/produkte/${produktDetails[0].id}/`}
-                className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan no-underline hover:underline"
+                className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
               >
                 {detail.produktdetails_ansehen.replace("{produkt}", produktDetails[0].name)}
               </Link>
@@ -477,7 +477,7 @@ export default async function ReferenzDetailPage({
                 )}
                 <Link
                   href={`/${lang}/produkte/${produkt.id}/`}
-                  className="mt-4 inline-flex min-h-11 items-center text-sm font-extrabold text-cyan no-underline hover:underline"
+                  className="mt-4 inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
                 >
                   {dict.sanierung.view_product}
                 </Link>

@@ -59,13 +59,13 @@ export default function SearchOverlay({
   };
 
   const typeBadgeClasses: Record<string, string> = {
-    referenz: "bg-cyan/10 text-cyan",
+    referenz: "bg-cyan/10 text-cyan-text",
     kategorie: "bg-navy/10 text-navy",
     produkt: "bg-cyan-hover/10 text-cyan-hover",
   };
 
   const placeholder =
-    lang === "de" ? "Suchen..." : lang === "fr" ? "Rechercher..." : lang === "pl" ? "Szukaj..." : "Search...";
+    lang === "de" ? "Suchen..." : lang === "fr" ? "Rechercher..." : lang === "pl" ? "Szukaj..." : lang === "es" ? "Buscar..." : "Search...";
   const hint =
     lang === "de"
       ? "Referenzen, Kategorien und Produkte durchsuchen"
@@ -73,9 +73,11 @@ export default function SearchOverlay({
       ? "Rechercher dans les références, catégories et produits"
       : lang === "pl"
       ? "Szukaj referencji, kategorii i produktów"
+      : lang === "es"
+      ? "Buscar en referencias, categorías y productos"
       : "Search references, categories and products";
   const emptyText =
-    lang === "de" ? "Keine Ergebnisse" : lang === "fr" ? "Aucun résultat" : lang === "pl" ? "Brak wyników" : "No results";
+    lang === "de" ? "Keine Ergebnisse" : lang === "fr" ? "Aucun résultat" : lang === "pl" ? "Brak wyników" : lang === "es" ? "Sin resultados" : "No results";
 
   return (
     <CommandDialog
@@ -87,7 +89,7 @@ export default function SearchOverlay({
       description={hint}
       shouldFilter={false}
       showCloseButton={false}
-      className="top-[min(20vh,160px)] translate-y-0 sm:max-w-[600px] rounded-2xl border-none shadow-2xl [&_[data-slot=command-input-wrapper]]:border-bullet-bg [&_[data-slot=command-input-wrapper]]:px-5 [&_[data-slot=command-input-wrapper]>svg]:text-cyan [&_[data-slot=command-input-wrapper]>svg]:opacity-100"
+      className="top-[min(20vh,160px)] translate-y-0 sm:max-w-[600px] rounded-2xl border-none shadow-2xl [&_[data-slot=command-input-wrapper]]:border-bullet-bg [&_[data-slot=command-input-wrapper]]:px-5 [&_[data-slot=command-input-wrapper]>svg]:text-cyan-text [&_[data-slot=command-input-wrapper]>svg]:opacity-100"
     >
       <div className="relative">
         <CommandInput

@@ -115,7 +115,7 @@ export default async function ProduktDetailPage({
               </p>
             )}
             {produkt.schichtdicke && (
-              <p className="text-cyan mt-3 mb-0" style={{ fontSize: 16, fontWeight: 700 }}>
+              <p className="text-cyan-text mt-3 mb-0" style={{ fontSize: 16, fontWeight: 700 }}>
                 {dict.produkte.layer_thickness}: {produkt.schichtdicke}
               </p>
             )}
@@ -229,7 +229,7 @@ export default async function ProduktDetailPage({
               <div className="flex flex-col gap-3">
                 {produkt.besonderheiten.map((b, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 text-cyan mt-0.5">
+                    <span className="flex-shrink-0 text-cyan-text mt-0.5">
                       <AppIcon icon={CircleCheck} width={18} height={18} strokeWidth={2.5} aria-hidden="true" />
                     </span>
                     <span className="text-navy text-[15px] leading-[1.55]">{b}</span>
@@ -310,7 +310,7 @@ export default async function ProduktDetailPage({
               <div className="mt-8 text-center">
                 <Link
                   href={`/${lang}/referenzen/?produkt=${encodeURIComponent(produkt.name)}`}
-                  className="text-cyan no-underline hover:underline"
+                  className="text-cyan-text no-underline hover:underline"
                   style={{ fontWeight: 700 }}
                 >
                   {dict.produkte.referenzen_alle} →

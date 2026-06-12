@@ -29,7 +29,7 @@ const labelVariants = cva(
   {
     variants: {
       variant: {
-        top: "text-cyan",
+        top: "text-cyan-text",
         alternative: "text-muted-foreground",
       },
     },
@@ -74,7 +74,7 @@ export default function ProduktBanner({
             {beschreibung}
           </div>
         </div>
-        <div className="inline-flex shrink-0 items-center gap-1 text-[13px] text-cyan">
+        <div className="inline-flex shrink-0 items-center gap-1 text-[13px] text-cyan-text">
           <span className="hidden sm:inline">{detailsLabel}</span>
           <IconArrowRight width={13} height={13} aria-hidden="true" />
         </div>

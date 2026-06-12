@@ -5,6 +5,10 @@
   /* KORODUR Brand Colors */
   --navy: #002d59;
   --cyan: #009ee3;
+  /* Textlink-Variante auf hellem Grund: erreicht WCAG AA 4,5:1 auf Weiß
+     (#009ee3 liegt bei ~3,0:1). Flächen/Buttons/dunkle Hintergründe behalten
+     --cyan. Launch-Audit a11y-Entscheidung (a), 2026-06-12. */
+  --cyan-text: #0077ab;
   --cyan-hover: #0090d0;
   --white: #ffffff;
   --icon-bg: #f5f5f6;
@@ -48,6 +52,7 @@
 @theme inline {
   --color-navy: var(--navy);
   --color-cyan: var(--cyan);
+  --color-cyan-text: var(--cyan-text);
   --color-cyan-hover: var(--cyan-hover);
   --color-icon-bg: var(--icon-bg);
   --color-bullet-bg: var(--bullet-bg);

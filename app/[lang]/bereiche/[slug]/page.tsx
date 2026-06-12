@@ -152,7 +152,7 @@ export default async function BereichPage({ params }: { params: Params }) {
                 width={20}
                 height={20}
                 strokeWidth={2}
-                className="text-cyan shrink-0 mt-0.5"
+                className="text-cyan-text shrink-0 mt-0.5"
                 aria-hidden="true"
               />
               <p className="text-navy text-[14px] m-0 leading-[1.6]">
@@ -167,7 +167,7 @@ export default async function BereichPage({ params }: { params: Params }) {
                 href={bereich.externeWebsite}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-cyan text-[15px] no-underline hover:underline"
+                className="inline-flex items-center gap-2 text-cyan-text text-[15px] no-underline hover:underline"
                 style={{ fontWeight: 700, minHeight: 44 }}
               >
                 {tb("externe_website")}
@@ -197,7 +197,7 @@ export default async function BereichPage({ params }: { params: Params }) {
                     <a
                       key={g.key}
                       href={`#${g.key}`}
-                      className="inline-flex items-center rounded-full border border-mid-gray bg-white text-navy text-[14px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan"
+                      className="inline-flex items-center rounded-full border border-mid-gray bg-white text-navy text-[14px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan-text"
                       style={{ padding: "10px 18px", fontWeight: 700, minHeight: 44 }}
                     >
                       {g.label}

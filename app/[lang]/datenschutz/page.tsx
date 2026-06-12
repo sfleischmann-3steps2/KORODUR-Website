@@ -165,7 +165,7 @@ export default async function DatenschutzPage({ params }: { params: Params }) {
             href="https://www.cloudflare.com/privacypolicy/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan"
+            className="text-cyan-text"
           >
             https://www.cloudflare.com/privacypolicy/
           </a>
@@ -208,7 +208,7 @@ export default async function DatenschutzPage({ params }: { params: Params }) {
         <P>
           Telefon: {KORODUR_ZENTRALE.telefon}
           <br />
-          E-Mail: <a href={`mailto:${KORODUR_ZENTRALE.email}`} className="text-cyan">{KORODUR_ZENTRALE.email}</a>
+          E-Mail: <a href={`mailto:${KORODUR_ZENTRALE.email}`} className="text-cyan-text">{KORODUR_ZENTRALE.email}</a>
         </P>
         <P>
           Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder
@@ -240,7 +240,7 @@ export default async function DatenschutzPage({ params }: { params: Params }) {
           Deutschland
           <br />
           E-Mail:{" "}
-          <a href="mailto:datenschutz@dataguard.de" className="text-cyan">
+          <a href="mailto:datenschutz@dataguard.de" className="text-cyan-text">
             datenschutz@dataguard.de
           </a>
         </P>

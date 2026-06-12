@@ -25,7 +25,7 @@ export default function Breadcrumb({
     <BreadcrumbRoot aria-label="Breadcrumb" className="py-4">
       <BreadcrumbList className="gap-1 sm:gap-1 text-[14px]">
         <BreadcrumbListItem>
-          <BreadcrumbLink asChild className="text-cyan no-underline hover:text-cyan hover:underline">
+          <BreadcrumbLink asChild className="text-cyan-text no-underline hover:text-cyan-text hover:underline">
             <Link href={`/${lang}`}>Home</Link>
           </BreadcrumbLink>
         </BreadcrumbListItem>
@@ -34,7 +34,7 @@ export default function Breadcrumb({
             <BreadcrumbSeparator className="text-navy/40 mx-1">/</BreadcrumbSeparator>
             <BreadcrumbListItem>
               {item.href ? (
-                <BreadcrumbLink asChild className="text-cyan no-underline hover:text-cyan hover:underline">
+                <BreadcrumbLink asChild className="text-cyan-text no-underline hover:text-cyan-text hover:underline">
                   <Link href={item.href}>{item.label}</Link>
                 </BreadcrumbLink>
               ) : (

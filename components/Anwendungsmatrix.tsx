@@ -215,7 +215,7 @@ export default function Anwendungsmatrix({
                       dict={dict}
                       style={{
                         marginTop: "auto",
-                        color: CYAN,
+                        color: "var(--cyan-text)",
                         fontSize: 11,
                         fontWeight: 800,
                         textDecoration: "none",
@@ -345,13 +345,14 @@ export default function Anwendungsmatrix({
 }
 
 function MobileAnwendungen({ dict, lang }: { dict: Dict | undefined; lang: Locale }) {
+  // Kein defaultValue: ein initial offenes Item verursachte nach der Hydration
+  // CLS 0,236 (Radix misst die Content-Höhe neu) — Lighthouse-Befund
+  // Launch-Audit. Alle Items starten zu. Die sr-only-h2 repariert die
+  // Heading-Hierarchie (Radix-Trigger rendern als h3 ohne vorangehende h2).
   return (
-    <Accordion
-      type="single"
-      collapsible
-      defaultValue={anwendungUsecases[0].key}
-      className="lg:hidden"
-    >
+    <div className="lg:hidden">
+      <h2 className="sr-only">{t(dict, "divider_anwendungen", "Anwendungen")}</h2>
+      <Accordion type="single" collapsible>
       {anwendungUsecases.map((row) => {
         const n = row.marks.filter((m) => m !== "none").length;
         // PL braucht ab 5 die zweite Pluralform (produkty/produktów);
@@ -397,7 +398,8 @@ function MobileAnwendungen({ dict, lang }: { dict: Dict | undefined; lang: Local
           </AccordionItem>
         );
       })}
-    </Accordion>
+      </Accordion>
+    </div>
   );
 }
 
@@ -443,7 +445,7 @@ function MarkGruppe({
             link={p.link}
             lang={lang}
             dict={dict}
-            className="flex min-h-11 shrink-0 items-center gap-1 text-xs font-extrabold text-cyan no-underline"
+            className="flex min-h-11 shrink-0 items-center gap-1 text-xs font-extrabold text-cyan-text no-underline"
           />
         </div>
       ))}

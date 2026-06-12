@@ -21,7 +21,16 @@ export default function ProgressHeader({ currentStep, totalSteps, onCancel }: Pr
   return (
     <div className="flex items-center justify-between gap-2 mb-6">
       <div className="flex items-center gap-3">
-        <div className="flex gap-1" role="progressbar" aria-valuemin={1} aria-valuemax={totalSteps} aria-valuenow={currentStep}>
+        <div
+          className="flex gap-1"
+          role="progressbar"
+          aria-valuemin={1}
+          aria-valuemax={totalSteps}
+          aria-valuenow={currentStep}
+          aria-label={t.progress_step
+            .replace("{current}", String(currentStep))
+            .replace("{total}", String(totalSteps))}
+        >
           {Array.from({ length: totalSteps }).map((_, i) => (
             <span
               key={i}

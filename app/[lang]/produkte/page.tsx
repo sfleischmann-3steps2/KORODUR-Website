@@ -69,7 +69,7 @@ export default async function ProduktePage({
               <a
                 key={group.slug}
                 href={`#${group.slug}`}
-                className="inline-flex items-center rounded-full border border-bullet-bg bg-white text-navy text-[14px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan"
+                className="inline-flex items-center rounded-full border border-bullet-bg bg-white text-navy text-[14px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan-text"
                 style={{ padding: "10px 18px", fontWeight: 700, minHeight: 44 }}
               >
                 {group.label}
@@ -125,7 +125,7 @@ export default async function ProduktePage({
                         {produkt.kurzbeschreibung}
                       </p>
                       {produkt.schichtdicke && (
-                        <p className="text-cyan text-[12px] m-0" style={{ fontWeight: 700 }}>
+                        <p className="text-cyan-text text-[12px] m-0" style={{ fontWeight: 700 }}>
                           {dict.produkte.layer_thickness}: {produkt.schichtdicke}
                         </p>
                       )}
