@@ -95,7 +95,14 @@
     "referenzen_alle": "Wszystkie referencje z tym produktem",
     "cta_verarbeitung": "Pytania dotyczące zastosowania? Nasi doradcy techniczni chętnie pomogą.",
     "varianten_title": "Dostępne jakości",
-    "cta_kontakt_button": "Skontaktuj się z doradcą"
+    "cta_kontakt_button": "Skontaktuj się z doradcą",
+    "downloads_title": "Pliki do pobrania i dokumenty",
+    "dok_tds": "Karta techniczna",
+    "dok_sds": "Karta charakterystyki",
+    "dok_dop": "Deklaracja właściwości użytkowych (DoP)",
+    "dok_anwendung": "Zalecenia dotyczące stosowania",
+    "dok_reinigung": "Czyszczenie i pielęgnacja",
+    "dok_service": "Dokument serwisowy"
   },
   "sanierung": {
     "title": "Wyszukiwarka produktów",
@@ -270,7 +277,10 @@
     "datenschutz": "Ochrona danych",
     "col_social": "Media społecznościowe",
     "ausschreibungen": "Teksty przetargowe",
-    "jahre_badge": "90 lat"
+    "jahre_badge": "90 lat",
+    "downloads": "Pliki do pobrania",
+    "agb": "Ogólne warunki",
+    "hinweisgeber": "System sygnalistów"
   },
   "bereiche": {
     "breadcrumb_home": "Start",
@@ -425,5 +435,10 @@
   },
   "rechtliches": {
     "sprachhinweis": "Informacje prawne są dostępne w języku niemieckim; wiążąca jest wersja niemiecka."
+  },
+  "downloads": {
+    "title": "Pliki do pobrania",
+    "intro": "Dokumenty produktowe (karty techniczne, karty charakterystyki, deklaracje właściwości użytkowych) znajdują się na stronie danego produktu. Tutaj dostępne są dokumenty ogólne.",
+    "zentrale": "Dokumenty ogólne"
   }
 }

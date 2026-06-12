@@ -95,7 +95,14 @@
     "referenzen_alle": "Toutes les références avec ce produit",
     "cta_verarbeitung": "Des questions sur la mise en oeuvre ? Nos conseillers techniques sont à votre disposition.",
     "varianten_title": "Qualités disponibles",
-    "cta_kontakt_button": "Contacter un conseiller"
+    "cta_kontakt_button": "Contacter un conseiller",
+    "downloads_title": "Téléchargements et documents",
+    "dok_tds": "Fiche technique",
+    "dok_sds": "Fiche de données de sécurité",
+    "dok_dop": "Déclaration des performances (DoP)",
+    "dok_anwendung": "Recommandation de mise en œuvre",
+    "dok_reinigung": "Nettoyage et entretien",
+    "dok_service": "Document de service"
   },
   "sanierung": {
     "title": "Trouveur de produits",
@@ -270,7 +277,10 @@
     "datenschutz": "Protection des données",
     "col_social": "Réseaux sociaux",
     "ausschreibungen": "Textes d'appel d'offres",
-    "jahre_badge": "90 ans"
+    "jahre_badge": "90 ans",
+    "downloads": "Téléchargements",
+    "agb": "Conditions générales",
+    "hinweisgeber": "Système d'alerte"
   },
   "bereiche": {
     "breadcrumb_home": "Accueil",
@@ -425,5 +435,10 @@
   },
   "rechtliches": {
     "sprachhinweis": "Les mentions légales sont fournies en allemand ; la version allemande fait foi."
+  },
+  "downloads": {
+    "title": "Téléchargements",
+    "intro": "Les documents liés aux produits (fiches techniques, fiches de données de sécurité, déclarations des performances) sont disponibles sur la page du produit concerné. Les documents généraux sont disponibles ici.",
+    "zentrale": "Documents généraux"
   }
 }

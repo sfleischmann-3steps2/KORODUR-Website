@@ -95,7 +95,14 @@
     "referenzen_alle": "All references with this product",
     "cta_verarbeitung": "Questions about application? Our technical advisors are here to help.",
     "varianten_title": "Available grades",
-    "cta_kontakt_button": "Contact an advisor"
+    "cta_kontakt_button": "Contact an advisor",
+    "downloads_title": "Downloads & Documents",
+    "dok_tds": "Technical Data Sheet",
+    "dok_sds": "Safety Data Sheet",
+    "dok_dop": "Declaration of Performance (DoP)",
+    "dok_anwendung": "Application Recommendation",
+    "dok_reinigung": "Cleaning & Care",
+    "dok_service": "Service Document"
   },
   "sanierung": {
     "title": "Product Finder",
@@ -270,7 +277,10 @@
     "datenschutz": "Privacy Policy",
     "col_social": "Social Media",
     "ausschreibungen": "Tender specifications",
-    "jahre_badge": "90 years"
+    "jahre_badge": "90 years",
+    "downloads": "Downloads",
+    "agb": "Terms and Conditions",
+    "hinweisgeber": "Whistleblower System"
   },
   "bereiche": {
     "breadcrumb_home": "Home",
@@ -425,5 +435,10 @@
   },
   "rechtliches": {
     "sprachhinweis": "This legal information is provided in German; the German version is legally binding."
+  },
+  "downloads": {
+    "title": "Downloads",
+    "intro": "Product-specific documents such as data sheets, safety data sheets and declarations of performance are available on the respective product page. General documents are provided here.",
+    "zentrale": "General Documents"
   }
 }

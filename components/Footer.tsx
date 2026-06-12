@@ -170,6 +170,12 @@ export default function Footer({
           </div>
           <div className="flex items-center gap-6 text-[14px]">
             <Link
+              href={`/${lang}/downloads/`}
+              className="text-white/70 hover:text-white no-underline transition-colors duration-150 py-2"
+            >
+              {dict.footer.downloads}
+            </Link>
+            <Link
               href={`/${lang}/impressum/`}
               className="text-white/70 hover:text-white no-underline transition-colors duration-150 py-2"
             >
@@ -180,6 +186,18 @@ export default function Footer({
               className="text-white/70 hover:text-white no-underline transition-colors duration-150 py-2"
             >
               {dict.footer.datenschutz}
+            </Link>
+            <Link
+              href={`/${lang}/agb/`}
+              className="text-white/70 hover:text-white no-underline transition-colors duration-150 py-2"
+            >
+              {dict.footer.agb}
+            </Link>
+            <Link
+              href={`/${lang}/hinweisgebersystem/`}
+              className="text-white/70 hover:text-white no-underline transition-colors duration-150 py-2"
+            >
+              {dict.footer.hinweisgeber}
             </Link>
           </div>
           <div className="text-[13px] text-white/40 text-center md:text-right">

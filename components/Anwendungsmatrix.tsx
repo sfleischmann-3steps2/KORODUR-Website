@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import { withBasePath } from "@/lib/basePath";
 import type { Locale } from "@/lib/i18n";
 import {
   anwendungMatrixProducts,
@@ -85,14 +86,16 @@ function MarkCell({ mark, dict }: { mark: Mark; dict: Dict | undefined }) {
   );
 }
 
-/** TDS-Links sind externe PDFs; "website"-Links sind interne App-Routen (lang-neutral gespeichert). */
+/** TDS-Links sind PDFs (seit M3 self-hosted unter /downloads/, mit basePath);
+ *  "website"-Links sind interne App-Routen (lang-neutral gespeichert). */
 function resolveLink(
   link: ProductLink,
   lang: Locale
 ): { href: string; external: boolean } | undefined {
   if (link.kind === "tds") {
     const url = produktTdsUrls.get(link.productId);
-    return url ? { href: url, external: true } : undefined;
+    if (!url) return undefined;
+    return { href: url.startsWith("/") ? withBasePath(url) : url, external: true };
   }
   return { href: `/${lang}${link.url}`, external: false };
 }
