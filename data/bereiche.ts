@@ -57,7 +57,14 @@ export const bereiche: Bereich[] = [
     slug: "microtop",
     produktgruppen: ["trockenspritz", "nassspritz", "beschichtung-schutz"],
   },
-  { slug: "katzenstreu", abgegrenzt: true, externeWebsite: "https://www.goodcat.de" },
+  {
+    slug: "katzenstreu",
+    abgegrenzt: true,
+    externeWebsite: "https://www.goodcat.de",
+    // Variante B "neutral-reduziert" (Steffi, 2026-06-12). Highlights in
+    // sattem Grün (Richtung Heidelberg-Materials-Grün) später nach Abklärung.
+    produktgruppen: ["premium", "standard"],
+  },
 ];
 
 export function getBereichBySlug(slug: string): Bereich | undefined {

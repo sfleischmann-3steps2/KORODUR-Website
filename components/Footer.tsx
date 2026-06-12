@@ -55,12 +55,15 @@ export default function Footer({
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_bereiche}
             </h3>
-            <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-4">
+            {/* min-w-0 + break-words: lange Namen (Schnellbetonsysteme) dürfen
+                umbrechen statt in die Nachbarspalte zu laufen */}
+            <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-5">
               {bereiche.map((b) => (
-                <li key={b.slug}>
+                <li key={b.slug} className="min-w-0">
                   <Link
                     href={`/${lang}/bereiche/${b.slug}/`}
-                    className={linkClass}
+                    className={`${linkClass} break-words hyphens-auto`}
+                    lang={lang}
                   >
                     {bereichLabels[`${b.slug}_name`]}
                   </Link>

@@ -21,7 +21,7 @@
 
 ## Entscheidungen und Konflikte
 
-1. **TW 2 vs. TW 02:** Die Alt-Produktübersicht nennt "TW 2 (Dünnschicht)", die Quelle kennt in allen Navigationen nur **TW 02** (die TW-2-Seite ist leer), die Excel führt "TW 02 Nassspritzmörtel". Migriert als **MICROTOP TW 02**; TW 2 nicht migriert (vermutlich identisch). ⚠️ Bitte bestätigen.
+1. **TW 2 vs. TW 02:** ✅ BESTÄTIGT (Steffi, 2026-06-12): TW 02 = TW 2. Migriert als **MICROTOP TW 02**.
 2. **TW VSM:** Produktübersicht sagt "Vorspritz", die Excel "Vorspritzmörtel" (C12/15, W 347), der Quellen-Teaser beschreibt aber Innenauskleidung/Instandsetzung. Kennwerte aus Excel übernommen, Beschreibung aus Quelle. ⚠️ Produktart klären.
 3. **TW NSD** (Produktübersicht) kommt in der Quelle nicht vor — nicht migriert.
 4. **TW NSM, TW 02:** nur Teaser-Daten, keine Kennwerte (Detailseiten leer) — TDS-Vervollständigung offen.
@@ -31,5 +31,5 @@
 ## Sign-off
 
 - [ ] Gruppen-Schnitt Sichtestrich (3) + Microtop (3) OK
-- [ ] TW 02 = TW 2 bestätigt
+- [x] TW 02 = TW 2 bestätigt (Steffi, 2026-06-12)
 - [ ] TW VSM Produktart geklärt (Vorspritz vs. Innenauskleidung)

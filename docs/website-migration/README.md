@@ -40,7 +40,7 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 | rapid-set | ✓ DE (2 neue + Bestand angereichert, 2026-06-12) | ✓ (3 Gruppen) | teilweise | teilweise | teilweise | teilweise | PR 8: umgesetzt |
 | schnellbetonsysteme | n/a | — | — | — | — | — | PR 8 geplant |
 | 3d-concrete-printing | n/a | — | — | — | — | — | PR 8 geplant |
-| katzenstreu | — (0/3) | — | — | — | — | — | PR 9 geplant (Mockup zuerst) |
+| katzenstreu | ✓ DE (3 goodcat-Produkte, 2026-06-12) | ✓ Variante B neutral-reduziert (freigegeben; Grün-Highlights später, Richtung Heidelberg-Materials-Grün) | — | — | — | — | PR 9: umgesetzt |
 | Unternehmensseiten | — | — | — | — | — | — | PR 10 geplant |
 
 ## Offene Punkte (laufend pflegen)
