@@ -59,7 +59,31 @@
     "cta_title": "Un projet similaire ?",
     "cta_text": "Nos conseillers techniques vous aident à trouver la solution de rénovation optimale.",
     "cta_button": "Contacter un conseiller",
-    "cta_alle_referenzen": "Voir toutes les références"
+    "cta_alle_referenzen": "Voir toutes les références",
+    "projekttyp_sanierung": "Rénovation",
+    "projekttyp_neubau": "Construction neuve",
+    "projekttyp_instandsetzung": "Remise en état",
+    "projekttyp_modernisierung": "Modernisation",
+    "anonymisiert": "Référence anonymisée",
+    "vorher": "Avant",
+    "nachher": "Après",
+    "einbau": "Mise en œuvre",
+    "ergebnis": "Résultat",
+    "fakt_ort": "Lieu",
+    "fakt_baujahr": "Année",
+    "fakt_flaeche": "Surface",
+    "fakt_menge": "Quantité",
+    "fakt_projekttyp": "Type de projet",
+    "fakt_produkte": "Produits",
+    "eingebaute_menge": "Quantité mise en œuvre",
+    "situation_title": "Situation initiale et défi",
+    "umsetzung_title": "Mise en œuvre et chiffres clés",
+    "ergebnis_title": "Résultat et impact",
+    "nachhaltigkeit_title": "Durabilité",
+    "beteiligte_title": "Intervenants",
+    "produktdetails_ansehen": "Voir les détails du produit {produkt}",
+    "einbau_alt": "Mise en œuvre de la solution KORODUR",
+    "langzeit_label": "Observation à long terme :"
   },
   "common": {
     "reference_singular": "Référence",
@@ -95,7 +119,14 @@
     "referenzen_alle": "Toutes les références avec ce produit",
     "cta_verarbeitung": "Des questions sur la mise en oeuvre ? Nos conseillers techniques sont à votre disposition.",
     "varianten_title": "Qualités disponibles",
-    "cta_kontakt_button": "Contacter un conseiller"
+    "cta_kontakt_button": "Contacter un conseiller",
+    "downloads_title": "Téléchargements et documents",
+    "dok_tds": "Fiche technique",
+    "dok_sds": "Fiche de données de sécurité",
+    "dok_dop": "Déclaration des performances (DoP)",
+    "dok_anwendung": "Recommandation de mise en œuvre",
+    "dok_reinigung": "Nettoyage et entretien",
+    "dok_service": "Document de service"
   },
   "sanierung": {
     "title": "Trouveur de produits",
@@ -270,7 +301,10 @@
     "datenschutz": "Protection des données",
     "col_social": "Réseaux sociaux",
     "ausschreibungen": "Textes d'appel d'offres",
-    "jahre_badge": "90 ans"
+    "jahre_badge": "90 ans",
+    "downloads": "Téléchargements",
+    "agb": "Conditions générales",
+    "hinweisgeber": "Système d'alerte"
   },
   "bereiche": {
     "breadcrumb_home": "Accueil",
@@ -421,9 +455,16 @@
     "form_hinweis": "L'envoi ouvre votre messagerie avec le message préparé à info@korodur.de.",
     "fachberater_title": "Conseil technique",
     "fachberater_intro": "Nos conseillers techniques vous aident pour les questions produits, les calculs de quantités et les recommandations de mise en œuvre, gratuitement et sans engagement.",
-    "fachberater_plz": "Zones postales"
+    "fachberater_plz": "Zones postales",
+    "international_title": "Conseillers internationaux",
+    "international_text": "KORODUR dispose d'un réseau de vente international et travaille avec des représentants locaux, des partenaires de distribution et des applicateurs. Tous les produits sont livrés depuis nos usines en Allemagne. Contactez notre service export pour tout conseil et information complémentaire."
   },
   "rechtliches": {
     "sprachhinweis": "Les mentions légales sont fournies en allemand ; la version allemande fait foi."
+  },
+  "downloads": {
+    "title": "Téléchargements",
+    "intro": "Les documents liés aux produits (fiches techniques, fiches de données de sécurité, déclarations des performances) sont disponibles sur la page du produit concerné. Les documents généraux sont disponibles ici.",
+    "zentrale": "Documents généraux"
   }
 }

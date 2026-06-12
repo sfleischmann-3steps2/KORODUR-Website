@@ -59,7 +59,31 @@
     "cta_title": "Podobny projekt?",
     "cta_text": "Nasi doradcy techniczni pomogą Państwu znaleźć optymalne rozwiązanie renowacyjne.",
     "cta_button": "Skontaktuj się z doradcą",
-    "cta_alle_referenzen": "Zobacz wszystkie referencje"
+    "cta_alle_referenzen": "Zobacz wszystkie referencje",
+    "projekttyp_sanierung": "Renowacja",
+    "projekttyp_neubau": "Nowe budownictwo",
+    "projekttyp_instandsetzung": "Naprawa",
+    "projekttyp_modernisierung": "Modernizacja",
+    "anonymisiert": "Referencja anonimowa",
+    "vorher": "Przed",
+    "nachher": "Po",
+    "einbau": "Montaż",
+    "ergebnis": "Rezultat",
+    "fakt_ort": "Lokalizacja",
+    "fakt_baujahr": "Rok",
+    "fakt_flaeche": "Powierzchnia",
+    "fakt_menge": "Ilość",
+    "fakt_projekttyp": "Typ projektu",
+    "fakt_produkte": "Produkty",
+    "eingebaute_menge": "Wbudowana ilość",
+    "situation_title": "Sytuacja wyjściowa i wyzwanie",
+    "umsetzung_title": "Realizacja i parametry",
+    "ergebnis_title": "Rezultat i efekt",
+    "nachhaltigkeit_title": "Zrównoważony rozwój",
+    "beteiligte_title": "Uczestnicy projektu",
+    "produktdetails_ansehen": "Zobacz szczegóły produktu {produkt}",
+    "einbau_alt": "Montaż rozwiązania KORODUR",
+    "langzeit_label": "Obserwacja długoterminowa:"
   },
   "common": {
     "reference_singular": "Referencja",
@@ -95,7 +119,14 @@
     "referenzen_alle": "Wszystkie referencje z tym produktem",
     "cta_verarbeitung": "Pytania dotyczące zastosowania? Nasi doradcy techniczni chętnie pomogą.",
     "varianten_title": "Dostępne jakości",
-    "cta_kontakt_button": "Skontaktuj się z doradcą"
+    "cta_kontakt_button": "Skontaktuj się z doradcą",
+    "downloads_title": "Pliki do pobrania i dokumenty",
+    "dok_tds": "Karta techniczna",
+    "dok_sds": "Karta charakterystyki",
+    "dok_dop": "Deklaracja właściwości użytkowych (DoP)",
+    "dok_anwendung": "Zalecenia dotyczące stosowania",
+    "dok_reinigung": "Czyszczenie i pielęgnacja",
+    "dok_service": "Dokument serwisowy"
   },
   "sanierung": {
     "title": "Wyszukiwarka produktów",
@@ -270,7 +301,10 @@
     "datenschutz": "Ochrona danych",
     "col_social": "Media społecznościowe",
     "ausschreibungen": "Teksty przetargowe",
-    "jahre_badge": "90 lat"
+    "jahre_badge": "90 lat",
+    "downloads": "Pliki do pobrania",
+    "agb": "Ogólne warunki",
+    "hinweisgeber": "System sygnalistów"
   },
   "bereiche": {
     "breadcrumb_home": "Start",
@@ -421,9 +455,16 @@
     "form_hinweis": "Wysłanie otworzy Twój program pocztowy z przygotowaną wiadomością do info@korodur.de.",
     "fachberater_title": "Doradztwo techniczne",
     "fachberater_intro": "Nasi doradcy techniczni pomagają w pytaniach o produkty, obliczeniach ilości i zaleceniach wykonawczych, bezpłatnie i niezobowiązująco.",
-    "fachberater_plz": "Obszary kodów pocztowych"
+    "fachberater_plz": "Obszary kodów pocztowych",
+    "international_title": "Doradcy międzynarodowi",
+    "international_text": "KORODUR posiada międzynarodową sieć sprzedaży i współpracuje z lokalnymi przedstawicielami, partnerami handlowymi i wykonawcami. Wszystkie produkty dostarczane są z naszych zakładów w Niemczech. W sprawie doradztwa i dalszych informacji prosimy o kontakt z naszym działem eksportu."
   },
   "rechtliches": {
     "sprachhinweis": "Informacje prawne są dostępne w języku niemieckim; wiążąca jest wersja niemiecka."
+  },
+  "downloads": {
+    "title": "Pliki do pobrania",
+    "intro": "Dokumenty produktowe (karty techniczne, karty charakterystyki, deklaracje właściwości użytkowych) znajdują się na stronie danego produktu. Tutaj dostępne są dokumenty ogólne.",
+    "zentrale": "Dokumenty ogólne"
   }
 }

@@ -1,8 +1,8 @@
 // Technische Fachberater (Quelle: Landing Pages lp-live.korodur.de/arm + /microtop-tw,
 // dort öffentlich publiziert; Übernahme freigegeben von Steffi, 2026-06-12).
-// Die vollständigen Ansprechpartner-Seiten der Alt-Site (kontakt/deutschland +
-// kontakt/international, inkl. Fotos) sind weder live abrufbar (Bot-Schutz)
-// noch archiviert — Zulieferung Steffi, siehe Notion-To-do-Liste.
+// Internationale Fachberater: korodur.de/kontakt/international via Wayback
+// 2026-01-03 (E-Mails aus data-cfemail dekodiert), Launch-Plan M3b.
+// Fotos der DE-Fachberater: Zulieferung Steffi (DSC-Zuordnung offen).
 
 export interface Fachberater {
   name: string;
@@ -39,4 +39,13 @@ export const FACHBERATER: { gruppe: "microtop" | "rapid-set"; berater: Fachberat
       { name: "Francesco Palese", rolle: "Technische Vertriebsberatung Rapid Set", gebiet: "PLZ 90–93, 95–97", telefon: "+49 (0) 172 1480128", telefonHref: "tel:+491721480128", email: "f.palese@korodur.de" },
     ],
   },
+];
+
+/** Internationale Fachberater (korodur.de/kontakt/international, Wayback 2026-01-03).
+ *  Rollenbezeichnungen sind dort englisch publiziert und bleiben sprachinvariant. */
+export const FACHBERATER_INTERNATIONAL: Fachberater[] = [
+  { name: "Alexander Pröls", rolle: "Director of Export", telefon: "+49 (0) 172 1480124", telefonHref: "tel:+491721480124", email: "export@korodur.de" },
+  { name: "Mirko Schlicht", rolle: "Key Account Manager International", telefon: "+49 (0) 170 3733981", telefonHref: "tel:+491703733981", email: "export@korodur.de" },
+  { name: "Daniel May", rolle: "Regional Sales Manager Poland", telefon: "+49 (0) 172 1480125", telefonHref: "tel:+491721480125", email: "d.may@korodur.de" },
+  { name: "Francesco Palese", rolle: "Regional Sales Manager Italy", telefon: "+49 (0) 172 1480128", telefonHref: "tel:+491721480128", email: "f.palese@korodur.de" },
 ];

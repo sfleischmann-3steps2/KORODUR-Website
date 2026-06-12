@@ -548,7 +548,7 @@ export const referenzenEN: Record<string, {
     herausforderungen: [
       "Renovation of a heavily frequented truck access road with minimal interruption to use; installation during very hot summer temperatures on 25 June 2025 (challenging for the application window and curing); technical problems with the spraying equipment for the curing compound required manual application of the paraffin-based curing compound as well as additional measures (water spraying, covering with plastic sheeting) due to high slab temperatures. The second concrete pour took place the following week in the evening hours.",
     ],
-    loesung: "OPEN: to be clarified with Alexander. Assumption: rapid return to traffic due to high truck frequency and warranty deadline pressure from the general contractor. However, the actual decision criteria have not been verified.",
+    loesung: "Localised repair of the truck access road with Rapid Set cement while operations continued. Installation in high summer temperatures with adapted curing (manual application of the curing compound, water spraying, covering with plastic sheeting); the second concrete pour took place in the evening hours of the following week.",
     bildAlt: "Renovation of the truck access road at the Spedition Brummer logistics centre, Sankt Marienkirchen (Austria) (image to follow)",
   },
 

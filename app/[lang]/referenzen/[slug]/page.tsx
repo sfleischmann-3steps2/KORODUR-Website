@@ -80,15 +80,12 @@ export function generateStaticParams() {
     .flatMap((r) => LOCALES.map((lang) => ({ lang, slug: r.slug })));
 }
 
-function projectTypeLabel(type: Referenz["projekttyp"]): string | null {
+function projectTypeLabel(
+  type: Referenz["projekttyp"],
+  detail: Record<string, string>
+): string | null {
   if (!type) return null;
-  const labels: Record<NonNullable<Referenz["projekttyp"]>, string> = {
-    sanierung: "Sanierung",
-    neubau: "Neubau",
-    instandsetzung: "Instandsetzung",
-    modernisierung: "Modernisierung",
-  };
-  return labels[type];
+  return detail[`projekttyp_${type}`] ?? type;
 }
 
 function DetailSection({
@@ -212,9 +209,10 @@ export default async function ReferenzDetailPage({
   }
 
   const referenz = await localizeReferenz(baseReferenz, lang as Lang);
+  const detail = dict.detail as Record<string, string>;
   const primaryEinsatzbereich = referenz.einsatzbereiche?.[0];
   const kategorieLabel = primaryEinsatzbereich ? bereichLabel(primaryEinsatzbereich, lang) : "";
-  const projectLabel = projectTypeLabel(referenz.projekttyp);
+  const projectLabel = projectTypeLabel(referenz.projekttyp, detail);
   const baseProduktDetails = getProdukteByNames(referenz.produkte);
   const produktDetails = await localizeProdukte(baseProduktDetails, lang as Lang);
   const baseRelated = selectRelatedReferences(referenz, referenzen);
@@ -223,23 +221,25 @@ export default async function ReferenzDetailPage({
 
   const imagePair =
     referenz.projekttyp === "sanierung" && referenz.bilder?.vorher && referenz.bilder?.nachher
-      ? { left: referenz.bilder.vorher, leftLabel: "Vorher", right: referenz.bilder.nachher, rightLabel: "Nachher" }
+      ? { left: referenz.bilder.vorher, leftLabel: detail.vorher, right: referenz.bilder.nachher, rightLabel: detail.nachher }
       : referenz.bilder?.einbau && referenz.bilder?.ergebnis
-        ? { left: referenz.bilder.einbau, leftLabel: "Einbau", right: referenz.bilder.ergebnis, rightLabel: "Ergebnis" }
+        ? { left: referenz.bilder.einbau, leftLabel: detail.einbau, right: referenz.bilder.ergebnis, rightLabel: detail.ergebnis }
         : null;
 
   const facts = [
-    { label: "Ort", value: `${referenz.ort}${referenz.land ? `, ${referenz.land}` : ""}` },
-    { label: "Baujahr", value: referenz.jahr?.toString() },
-    { label: "Fläche", value: referenz.flaeche },
-    { label: "Menge", value: referenz.menge },
-    { label: "Projekttyp", value: projectLabel },
+    { label: detail.fakt_ort, value: `${referenz.ort}${referenz.land ? `, ${referenz.land}` : ""}` },
+    { label: detail.fakt_baujahr, value: referenz.jahr?.toString() },
+    { label: detail.fakt_flaeche, value: referenz.flaeche },
+    { label: detail.fakt_menge, value: referenz.menge },
+    { label: detail.fakt_projekttyp, value: projectLabel },
   ].filter((row): row is { label: string; value: string } => Boolean(row.value));
 
   const installationRows = [
     ...(referenz.umsetzung ?? []),
+    // Der Vergleich läuft gegen das deutsche Daten-Label aus referenz.umsetzung,
+    // das Anzeige-Label kommt lokalisiert aus dem Dictionary.
     ...(referenz.menge && !referenz.umsetzung?.some((row) => row.label === "Eingebaute Menge")
-      ? [{ label: "Eingebaute Menge", value: referenz.menge }]
+      ? [{ label: detail.eingebaute_menge, value: referenz.menge }]
       : []),
   ].filter((row): row is { label: string; value: string } => Boolean(row.value));
 
@@ -269,7 +269,7 @@ export default async function ReferenzDetailPage({
               <div className="mb-4 flex flex-wrap items-center gap-2">
                 {kategorieLabel && <Chip>{kategorieLabel}</Chip>}
                 {projectLabel && <Chip tone="cyan">{projectLabel}</Chip>}
-                {isAnonymized && <Chip tone="neutral">Anonymisierte Referenz</Chip>}
+                {isAnonymized && <Chip tone="neutral">{detail.anonymisiert}</Chip>}
               </div>
               <h1 className="m-0 mb-2 text-[clamp(30px,5vw,44px)] font-black leading-tight text-navy">
                 {referenz.titel}
@@ -315,7 +315,7 @@ export default async function ReferenzDetailPage({
               ))}
               <div className="flex items-start justify-between gap-4 border-b border-border py-2">
                 <span className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">
-                  Produkte
+                  {detail.fakt_produkte}
                 </span>
                 <div className="flex flex-wrap justify-end gap-2">
                   {produktDetails.map((product) => (
@@ -353,13 +353,13 @@ export default async function ReferenzDetailPage({
       </section>
 
       {referenz.galerieBilder && referenz.galerieBilder.length > 0 && (
-        <DetailSection title="Bildergalerie">
+        <DetailSection title={detail.gallery}>
           <ImageGallery images={referenz.galerieBilder} alt={referenz.titel} />
         </DetailSection>
       )}
 
       {showSituation && (
-        <DetailSection title="Ausgangssituation und Herausforderung">
+        <DetailSection title={detail.situation_title}>
           {referenz.ausgangssituation && (
             <p className="mb-5 mt-0 text-[15px] leading-[1.7] text-navy">{referenz.ausgangssituation}</p>
           )}
@@ -367,7 +367,7 @@ export default async function ReferenzDetailPage({
         </DetailSection>
       )}
 
-      <DetailSection title="Unsere Lösung">
+      <DetailSection title={detail.solution}>
         <div className={solutionImage ? "grid grid-cols-1 items-start gap-5 md:grid-cols-2" : ""}>
           <div>
             <p className="mb-4 mt-0 text-[15px] leading-[1.7] text-navy">{referenz.loesung}</p>
@@ -376,7 +376,7 @@ export default async function ReferenzDetailPage({
                 href={`/${lang}/produkte/${produktDetails[0].id}/`}
                 className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan no-underline hover:underline"
               >
-                Produktdetails {produktDetails[0].name} ansehen
+                {detail.produktdetails_ansehen.replace("{produkt}", produktDetails[0].name)}
               </Link>
             )}
           </div>
@@ -384,7 +384,7 @@ export default async function ReferenzDetailPage({
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-icon-bg">
               <DetailImage
                 src={solutionImage.src}
-                alt={solutionImage.alt ?? solutionImage.caption ?? "Einbau der KORODUR-Lösung"}
+                alt={solutionImage.alt ?? solutionImage.caption ?? detail.einbau_alt}
                 sizes="(max-width: 820px) 100vw, 50vw"
               />
             </div>
@@ -393,7 +393,7 @@ export default async function ReferenzDetailPage({
       </DetailSection>
 
       {installationRows.length > 0 && (
-        <DetailSection title="Umsetzung und Kennwerte">
+        <DetailSection title={detail.umsetzung_title}>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {installationRows.map((row) => (
               <div key={`${row.label}-${row.value}`} className="rounded-lg bg-icon-bg px-4 py-3">
@@ -408,18 +408,18 @@ export default async function ReferenzDetailPage({
       )}
 
       {showResult && (
-        <DetailSection title="Ergebnis und Wirkung">
+        <DetailSection title={detail.ergebnis_title}>
           {renderResult(referenz)}
           {referenz.langzeit && (
             <p className="mb-0 mt-5 text-[15px] leading-[1.7] text-navy">
-              <strong>Langzeit-Beobachtung:</strong> {referenz.langzeit}
+              <strong>{detail.langzeit_label}</strong> {referenz.langzeit}
             </p>
           )}
         </DetailSection>
       )}
 
       {referenz.nachhaltigkeit && (
-        <DetailSection title="Nachhaltigkeit">
+        <DetailSection title={detail.nachhaltigkeit_title}>
           <p className="mt-0 text-[15px] leading-[1.7] text-navy">{referenz.nachhaltigkeit.text}</p>
           {referenz.nachhaltigkeit.facts && (
             <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -436,7 +436,7 @@ export default async function ReferenzDetailPage({
         </DetailSection>
       )}
 
-      <DetailSection title="Eingesetzte Produkte">
+      <DetailSection title={detail.products_used}>
         <div className="flex flex-col gap-4">
           {produktDetails.map((produkt) => (
             <div
@@ -472,7 +472,7 @@ export default async function ReferenzDetailPage({
                 </div>
                 {produkt.normen.length > 0 && (
                   <p className="mb-0 mt-4 text-[13px] text-muted-foreground">
-                    <strong className="text-navy">Normen und Zulassungen:</strong> {produkt.normen.join(" · ")}
+                    <strong className="text-navy">{detail.norms}:</strong> {produkt.normen.join(" · ")}
                   </p>
                 )}
                 <Link
@@ -495,7 +495,7 @@ export default async function ReferenzDetailPage({
       </DetailSection>
 
       {parties.length > 0 && (
-        <DetailSection title="Beteiligte">
+        <DetailSection title={detail.beteiligte_title}>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {parties.map((party) => (
               <div

@@ -59,7 +59,31 @@
     "cta_title": "Ähnliches Projekt?",
     "cta_text": "Unsere technischen Berater helfen Ihnen, die optimale Sanierungslösung zu finden.",
     "cta_button": "Berater kontaktieren",
-    "cta_alle_referenzen": "Alle Referenzen ansehen"
+    "cta_alle_referenzen": "Alle Referenzen ansehen",
+    "projekttyp_sanierung": "Sanierung",
+    "projekttyp_neubau": "Neubau",
+    "projekttyp_instandsetzung": "Instandsetzung",
+    "projekttyp_modernisierung": "Modernisierung",
+    "anonymisiert": "Anonymisierte Referenz",
+    "vorher": "Vorher",
+    "nachher": "Nachher",
+    "einbau": "Einbau",
+    "ergebnis": "Ergebnis",
+    "fakt_ort": "Ort",
+    "fakt_baujahr": "Baujahr",
+    "fakt_flaeche": "Fläche",
+    "fakt_menge": "Menge",
+    "fakt_projekttyp": "Projekttyp",
+    "fakt_produkte": "Produkte",
+    "eingebaute_menge": "Eingebaute Menge",
+    "situation_title": "Ausgangssituation und Herausforderung",
+    "umsetzung_title": "Umsetzung und Kennwerte",
+    "ergebnis_title": "Ergebnis und Wirkung",
+    "nachhaltigkeit_title": "Nachhaltigkeit",
+    "beteiligte_title": "Beteiligte",
+    "produktdetails_ansehen": "Produktdetails {produkt} ansehen",
+    "einbau_alt": "Einbau der KORODUR-Lösung",
+    "langzeit_label": "Langzeit-Beobachtung:"
   },
   "common": {
     "reference_singular": "Referenz",
@@ -95,7 +119,14 @@
     "referenzen_alle": "Alle Referenzen mit diesem Produkt",
     "cta_verarbeitung": "Fragen zur Verarbeitung? Unsere technischen Berater helfen weiter.",
     "varianten_title": "Lieferbare Qualitäten",
-    "cta_kontakt_button": "Berater kontaktieren"
+    "cta_kontakt_button": "Berater kontaktieren",
+    "downloads_title": "Downloads & Dokumente",
+    "dok_tds": "Technisches Datenblatt",
+    "dok_sds": "Sicherheitsdatenblatt",
+    "dok_dop": "Leistungserklärung (DoP)",
+    "dok_anwendung": "Anwendungsempfehlung",
+    "dok_reinigung": "Reinigung & Pflege",
+    "dok_service": "Service-Dokument"
   },
   "sanierung": {
     "title": "Produktfinder",
@@ -270,7 +301,10 @@
     "datenschutz": "Datenschutz",
     "col_social": "Social Media",
     "ausschreibungen": "Ausschreibungstexte",
-    "jahre_badge": "90 Jahre"
+    "jahre_badge": "90 Jahre",
+    "downloads": "Downloads",
+    "agb": "AGB",
+    "hinweisgeber": "Hinweisgebersystem"
   },
   "bereiche": {
     "breadcrumb_home": "Start",
@@ -421,9 +455,16 @@
     "form_hinweis": "Beim Senden öffnet sich Ihr E-Mail-Programm mit der vorbereiteten Nachricht an info@korodur.de.",
     "fachberater_title": "Technische Fachberatung",
     "fachberater_intro": "Unsere Fachberater helfen bei Produktfragen, Mengenberechnung und Verarbeitungsempfehlungen, kostenlos und unverbindlich.",
-    "fachberater_plz": "PLZ-Gebiete"
+    "fachberater_plz": "PLZ-Gebiete",
+    "international_title": "Internationale Fachberater",
+    "international_text": "KORODUR verfügt über ein internationales Vertriebsnetz und arbeitet mit lokalen Repräsentanten, Vertriebspartnern und Verarbeitern zusammen. Geliefert wird grundsätzlich aus den Werken in Deutschland. Kontaktieren Sie unsere Abteilung Export für Beratung und weitere Informationen."
   },
   "rechtliches": {
     "sprachhinweis": "Rechtlich maßgeblich ist die deutsche Fassung."
+  },
+  "downloads": {
+    "title": "Downloads",
+    "intro": "Produktbezogene Dokumente wie Datenblätter, Sicherheitsdatenblätter und Leistungserklärungen finden Sie direkt auf der jeweiligen Produktseite. Hier stehen übergreifende Dokumente bereit.",
+    "zentrale": "Übergreifende Dokumente"
   }
 }
