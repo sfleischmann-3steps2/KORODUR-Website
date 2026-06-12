@@ -395,6 +395,27 @@
     "email_label": "Email",
     "websites_title": "Related websites",
     "cta_mail": "Send an email",
-    "fax_label": "Fax"
+    "fax_label": "Fax",
+    "form_title": "Contact form",
+    "form_intro": "Write to us: we will get back to you as soon as possible.",
+    "feld_name": "Name",
+    "feld_firma": "Company",
+    "feld_email": "Email",
+    "feld_telefon": "Phone",
+    "feld_land": "Country",
+    "feld_bereich": "Product area",
+    "feld_funktion": "Your role",
+    "feld_nachricht": "Message",
+    "funktion_verarbeiter": "Contractor",
+    "funktion_planer": "Architect/Planner",
+    "funktion_bauherr": "Building owner",
+    "funktion_haendler": "Merchant",
+    "funktion_sonstiges": "Other",
+    "bereich_sonstiges": "Other",
+    "form_submit": "Send message",
+    "form_hinweis": "Sending opens your email client with the prepared message to info@korodur.de.",
+    "fachberater_title": "Technical Consulting",
+    "fachberater_intro": "Our technical consultants help with product questions, quantity calculations and application advice, free of charge and without obligation.",
+    "fachberater_plz": "Postcode areas"
   }
 }

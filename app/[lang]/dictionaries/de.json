@@ -395,6 +395,27 @@
     "email_label": "E-Mail",
     "websites_title": "Verbundene Websites",
     "cta_mail": "E-Mail schreiben",
-    "fax_label": "Telefax"
+    "fax_label": "Telefax",
+    "form_title": "Kontaktformular",
+    "form_intro": "Schreiben Sie uns: Wir melden uns schnellstmöglich zurück.",
+    "feld_name": "Name",
+    "feld_firma": "Firma",
+    "feld_email": "E-Mail",
+    "feld_telefon": "Telefon",
+    "feld_land": "Land",
+    "feld_bereich": "Produktbereich",
+    "feld_funktion": "Ihre Funktion",
+    "feld_nachricht": "Nachricht",
+    "funktion_verarbeiter": "Verarbeiter",
+    "funktion_planer": "Architekt/Planer",
+    "funktion_bauherr": "Bauherr",
+    "funktion_haendler": "Händler",
+    "funktion_sonstiges": "Sonstiges",
+    "bereich_sonstiges": "Sonstiges",
+    "form_submit": "Nachricht senden",
+    "form_hinweis": "Beim Senden öffnet sich Ihr E-Mail-Programm mit der vorbereiteten Nachricht an info@korodur.de.",
+    "fachberater_title": "Technische Fachberatung",
+    "fachberater_intro": "Unsere Fachberater helfen bei Produktfragen, Mengenberechnung und Verarbeitungsempfehlungen, kostenlos und unverbindlich.",
+    "fachberater_plz": "PLZ-Gebiete"
   }
 }
