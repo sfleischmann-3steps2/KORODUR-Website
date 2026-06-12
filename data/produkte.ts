@@ -1209,6 +1209,7 @@ export const produkte: Produkt[] = [
     technischeDaten: [
       { label: "Form", wert: "flüssig" },
       { label: "Farbe", wert: "bläulich" },
+      { label: "Materialverbrauch", wert: "ca. 150 g/m²" },
     ],
     besonderheiten: [
       "Lösemittelfrei und gebrauchsfertig",
@@ -1230,6 +1231,7 @@ export const produkte: Produkt[] = [
       { label: "Form", wert: "flüssig" },
       { label: "Farbe", wert: "milchig trüb" },
       { label: "pH-Wert", wert: "5" },
+      { label: "Materialverbrauch", wert: "ca. 100 g/m²" },
     ],
     besonderheiten: [
       "Nano-Silica-Technologie",
@@ -1292,7 +1294,8 @@ export const produkte: Produkt[] = [
     technischeDaten: [
       { label: "Farbe", wert: "transparent" },
       { label: "Dichte", wert: "ca. 1,12 g/cm³" },
-      { label: "pH-Wert", wert: "ca. 11" },
+      { label: "pH-Wert", wert: "ca. 11,3" },
+      { label: "Verarbeitungstemperatur", wert: "+5 °C bis +35 °C" },
       { label: "Verbrauch", wert: "ca. 100–200 g/m² (je nach Saugfähigkeit)" },
     ],
     besonderheiten: [
@@ -1592,7 +1595,10 @@ export const produkte: Produkt[] = [
     schichtdicke: "ca. 20 mm",
     normen: ["DVGW W 300", "DVGW W 347"],
     technischeDaten: [
-      { label: "Schichtdicke", wert: "ca. 20 mm in einem Arbeitsgang" },
+      { label: "Körnung", wert: "0–3 mm" },
+      { label: "Schichtstärke", wert: "ca. 20 mm, einlagig" },
+      { label: "Wasserzugabe", wert: "ca. 3,6 l je 25-kg-Gebinde" },
+      { label: "Farben", wert: "natur, weiß, blau" },
       { label: "Verfahren", wert: "Nassspritzen (Dichtstromförderung, geringe Staubentwicklung)" },
     ],
     varianten: [{ name: "MICROTOP TW NSM blau" }],
@@ -1607,10 +1613,13 @@ export const produkte: Produkt[] = [
     produktgruppe: "nassspritz",
     kurzbeschreibung: "Spritzmörtel im Nassspritzdichtstromverfahren mit äußerst geringem Porenvolumen",
     beschreibung: "MICROTOP TW 02 wird im Nassspritzdichtstromverfahren verarbeitet und dient der Beschichtung von Flächen sowie der Erhöhung der Betondeckung und dem Finish im Trinkwasserbereich. Das Produkt hat ein äußerst geringes Porenvolumen und kann auch als Korrosionsschutz und Haftbrücke eingesetzt werden.",
+    schichtdicke: "ca. 2–5 mm",
+    qualitaetsklasse: "C30/37",
     normen: ["DVGW W 300", "DVGW W 347"],
     technischeDaten: [
-      { label: "Schichtdicke (Auskleidung Rohre/Behälter)", wert: "5–8 mm" },
-      { label: "Schichtdicke (Korrosionsschutz/Haftbrücke)", wert: "2–5 mm" },
+      { label: "Körnung", wert: "0–0,2 mm" },
+      { label: "Schichtstärke", wert: "ca. 2–5 mm" },
+      { label: "Wasserzugabe", wert: "ca. 5–6,25 l je 25-kg-Gebinde" },
       { label: "Verfahren", wert: "Schleudern, Spritzen, Spachteln, Handauftrag" },
     ],
     besonderheiten: [
@@ -1629,9 +1638,12 @@ export const produkte: Produkt[] = [
     beschreibung: "MICROTOP TW VSM dient der Innenauskleidung und Instandsetzung von neuen wie auch alten Trinkwasserbehältern sowie Mauerwerk. Durch seine spezielle Zusammensetzung hat er hervorragende Verarbeitungs- und Gebrauchseigenschaften und kann problemlos gerieben und geglättet werden.",
     schichtdicke: "15–20 mm",
     qualitaetsklasse: "C12/15",
-    normen: [],
+    normen: ["DVGW W 347"],
     technischeDaten: [
-      { label: "Schichtdicke", wert: "15–20 mm" },
+      { label: "Körnung", wert: "0–2 mm" },
+      { label: "Schichtstärke", wert: "ca. 15–20 mm" },
+      { label: "Wasserzugabe", wert: "ca. 3,75 l je 25-kg-Gebinde" },
+      { label: "Ergiebigkeit", wert: "ca. 14 l je 25-kg-Gebinde" },
       { label: "Verfahren", wert: "Spritzen, Handauftrag" },
     ],
     besonderheiten: ["Auch für Mauerwerk geeignet", "Reib- und glättbar"],
@@ -1941,6 +1953,27 @@ export const produkte: Produkt[] = [
     normen: [],
     technischeDaten: [{ label: "Gebinde", wert: "7 Liter" }],
     besonderheiten: ["100 % reines Naturprodukt", "Staubarm und unbehandelt", "Extrastarke Klumpenbildung"],
+    zeitKategorie: "normal",
+  },
+
+  {
+    id: "microtop-tw-nsd",
+    name: "MICROTOP TW NSD",
+    kategorie: "sonstige",
+    bereich: "microtop",
+    produktgruppe: "nassspritz",
+    kurzbeschreibung: "Microsilica-vergüteter Zementspritzmörtel (C30/37) im Nassspritzverfahren für den Trinkwasserbereich",
+    beschreibung: "MICROTOP TW NSD ist ein mineralischer, hydraulisch abbindender, microsilica-vergüteter Zementspritzmörtel der Betonfestigkeitsklasse C30/37 für den Trinkwasserbereich. Die Applikation erfolgt mittels Nassspritz-Dünnstrom- oder Dichtstromförderung; Untergrund sind tragfähige Betone und festhaftende Altputze mit einer Haftzugfestigkeit von mind. 1,5 N/mm². Entspricht den Anforderungen der DVGW Arbeitsblätter W 300 und W 347.",
+    qualitaetsklasse: "C30/37",
+    normen: ["DVGW W 300", "DVGW W 347"],
+    technischeDaten: [
+      { label: "Körnung", wert: "0–3 mm" },
+      { label: "Lieferform", wert: "25-kg-Papierspezialverpackung" },
+    ],
+    besonderheiten: [
+      "Rein mineralisch, microsilica-vergütet",
+      "Nassspritz-Dünnstrom- oder Dichtstromförderung",
+    ],
     zeitKategorie: "normal",
   },
 ];

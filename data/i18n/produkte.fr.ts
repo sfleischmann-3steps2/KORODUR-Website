@@ -429,6 +429,7 @@ export const produkteFR: Record<string, {
     technischeDaten: [
       { label: "Forme", wert: "liquide" },
       { label: "Couleur", wert: "bleuté" },
+      { label: "Consommation de matériau", wert: "env. 150 g/m²" },
     ],
   },
   "korodur-nanofinish": {
@@ -439,6 +440,7 @@ export const produkteFR: Record<string, {
       { label: "Forme", wert: "liquide" },
       { label: "Couleur", wert: "laiteux trouble" },
       { label: "Valeur pH", wert: "5" },
+      { label: "Consommation de matériau", wert: "env. 100 g/m²" },
     ],
   },
   "korodur-uniprimer": {
@@ -469,7 +471,8 @@ export const produkteFR: Record<string, {
     technischeDaten: [
       { label: "Couleur", wert: "transparent" },
       { label: "Densité", wert: "env. 1,12 g/cm³" },
-      { label: "Valeur pH", wert: "env. 11" },
+      { label: "Valeur pH", wert: "env. 11,3" },
+      { label: "Température de mise en œuvre", wert: "+5 °C à +35 °C" },
       { label: "Consommation", wert: "env. 100–200 g/m² (selon l'absorption)" },
     ],
   },
@@ -603,7 +606,10 @@ export const produkteFR: Record<string, {
     beschreibung: "MICROTOP TW NSM s'applique par projection par voie humide et sert au reprofilage et au revêtement de surfaces, à l'augmentation de l'enrobage du béton et à la finition dans le domaine de l'eau potable. Les matériaux peuvent être talochés et lissés sans difficulté ; les petits travaux sont possibles à la main en liaison avec un pont d'adhérence.",
     besonderheiten: ["Talochable et lissable", "Petits travaux possibles à la main avec pont d'adhérence"],
     technischeDaten: [
-      { label: "Épaisseur de couche", wert: "env. 20 mm en une seule opération" },
+      { label: "Granulométrie", wert: "0–3 mm" },
+      { label: "Épaisseur de couche", wert: "env. 20 mm, en une seule couche" },
+      { label: "Ajout d'eau", wert: "env. 3,6 l par conditionnement de 25 kg" },
+      { label: "Couleurs", wert: "nature, blanc, bleu" },
       { label: "Procédé", wert: "Projection par voie humide (transport à flux dense, faible dégagement de poussière)" },
     ],
     varianten: [
@@ -615,8 +621,9 @@ export const produkteFR: Record<string, {
     beschreibung: "MICROTOP TW 02 s'applique par projection par voie humide à flux dense et sert au revêtement de surfaces, à l'augmentation de l'enrobage du béton et à la finition dans le domaine de l'eau potable. Le produit présente un volume de pores extrêmement faible et peut également être utilisé comme protection anticorrosion et pont d'adhérence.",
     besonderheiten: ["Volume de pores extrêmement faible", "Utilisable aussi comme protection anticorrosion et pont d'adhérence"],
     technischeDaten: [
-      { label: "Épaisseur de couche (revêtement conduites/réservoirs)", wert: "5–8 mm" },
-      { label: "Épaisseur de couche (protection anticorrosion/pont d'adhérence)", wert: "2–5 mm" },
+      { label: "Granulométrie", wert: "0–0,2 mm" },
+      { label: "Épaisseur de couche", wert: "env. 2–5 mm" },
+      { label: "Ajout d'eau", wert: "env. 5–6,25 l par conditionnement de 25 kg" },
       { label: "Procédé", wert: "Centrifugation, projection, spatulage, application à la main" },
     ],
   },
@@ -625,7 +632,10 @@ export const produkteFR: Record<string, {
     beschreibung: "MICROTOP TW VSM sert au revêtement intérieur et à la remise en état de réservoirs d'eau potable neufs comme anciens ainsi que de maçonnerie. Grâce à sa composition spéciale, il présente d'excellentes propriétés de mise en œuvre et d'usage et peut être taloché et lissé sans difficulté.",
     besonderheiten: ["Convient également à la maçonnerie", "Talochable et lissable"],
     technischeDaten: [
-      { label: "Épaisseur de couche", wert: "15–20 mm" },
+      { label: "Granulométrie", wert: "0–2 mm" },
+      { label: "Épaisseur de couche", wert: "env. 15–20 mm" },
+      { label: "Ajout d'eau", wert: "env. 3,75 l par conditionnement de 25 kg" },
+      { label: "Rendement", wert: "env. 14 l par conditionnement de 25 kg" },
       { label: "Procédé", wert: "Projection, application à la main" },
     ],
   },
@@ -655,6 +665,15 @@ export const produkteFR: Record<string, {
       { label: "Couleur", wert: "transparent" },
       { label: "Densité", wert: "env. 1,14 g/cm³" },
       { label: "Valeur pH", wert: "env. 11,3" },
+    ],
+  },
+  "microtop-tw-nsd": {
+    kurzbeschreibung: "Mortier projeté à base de ciment amélioré aux microsilices (C30/37), par voie humide, pour le domaine de l'eau potable",
+    beschreibung: "MICROTOP TW NSD est un mortier projeté à base de ciment, minéral, à prise hydraulique, amélioré aux microsilices, de classe de résistance du béton C30/37, pour le domaine de l'eau potable. L'application s'effectue par projection par voie humide à flux dilué ou à flux dense ; les supports sont des bétons porteurs et des enduits anciens bien adhérents avec une adhérence d'au moins 1,5 N/mm². Conforme aux fiches de travail DVGW W 300 et W 347.",
+    besonderheiten: ["Purement minéral, amélioré aux microsilices", "Projection par voie humide à flux dilué ou à flux dense"],
+    technischeDaten: [
+      { label: "Granulométrie", wert: "0–3 mm" },
+      { label: "Conditionnement", wert: "emballage spécial papier de 25 kg" },
     ],
   },
   "neodur-vm-1": {

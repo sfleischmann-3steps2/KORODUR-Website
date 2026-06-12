@@ -44,3 +44,14 @@ Die von Steffi kuratierten LPs gelten bei Konflikten vor dem Alt-Site-Scrape (Si
 - **ASPHALT REPAIR MIX** voll angereichert (Biegezug, E-Modul, Verbrauch, Wasserzugabe, Verarbeitungstemperatur, CO₂-Bilanz, Baustoffhandel-Vertrieb); kuratierte Matrix-Felder unangetastet
 - **Referenz-Kandidaten für Stufe 3** (auf den LPs dokumentiert): Microtop: Haidberg 75.000 m³ (EWAG, 2005) · Krottenbach 60.000 m³ (2009) · Räcknitz Dresden (2019) · Bad Nauheim (2011) · Puchheim (2010) · Budapest (2012) + 12 weitere · ARM: Dieckmann Versmold (2021) · Linnenbecker Bad Oeynhausen (2022) · Wüseke Sassenberg (2022) · Lackiererei Schmidt Versmold (2022)
 - **Nicht übernommen (für später):** Systemvergleichs-Tabellen (mineralisch vs. Epoxid vs. Edelstahl; ARM vs. Kaltmischgut vs. Heißasphalt), FAQ-Blöcke, Zielgruppen-Nutzenargumente, regionale Fachberater-Kontakte → Rohstoff für Anwendungsseiten/Planerbereich (Nice-to-have-Liste) bzw. Kontakt-Konzept
+
+## Nachtrag 2026-06-12 (2): Offizielle TDS eingearbeitet (`docs/tds-quellen/`)
+
+Steffi hat 8 TDS geliefert (Microtop-Serie + easyFinish/nanoFinish/KOROMINERAL). **Quellen-Hierarchie ab jetzt: TDS > Excel/LP > Alt-Site.**
+
+- **TW VSM: DVGW Typ Klasse 1, W 347 lt. TDS** — die LP-Angabe "ohne Zulassung" war falsch, die Excel hatte recht. Wieder eingepflegt. Plus Kennwerte (Körnung 0–2, ca. 15–20 mm, Wasserzugabe, Ergiebigkeit)
+- **TW 02: C30/37, Körnung 0–0,2 mm, ca. 2–5 mm** (TDS ersetzt die LP-Schichtdicken 5–8 mm)
+- **TW NSM: Körnung 0–3 mm, ca. 20 mm einlagig, Farben natur/weiß/blau**
+- **TW NSD: existiert (eigenes TDS!) und ist jetzt migriert** (C30/37, Nassspritz-Dünn-/Dichtstrom, W 300 + W 347)
+- easyFinish/nanoFinish: Materialverbrauch ergänzt (150/100 g/m²); **die defekten Dichte-Einheiten stehen AUCH im offiziellen TDS** ("1,0 kg/m³", "1,035 cm³") → TDS-Korrektur an Frank melden, Dichte bleibt im Web ausgelassen
+- KOROMINERAL: pH ca. 11,3 (statt ca. 11), Verarbeitungstemperatur ergänzt

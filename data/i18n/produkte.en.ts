@@ -438,6 +438,7 @@ export const produkteEN: Record<string, {
     technischeDaten: [
       { label: "Form", wert: "liquid" },
       { label: "Colour", wert: "bluish" },
+      { label: "Material consumption", wert: "approx. 150 g/m²" },
     ],
   },
   "korodur-nanofinish": {
@@ -448,6 +449,7 @@ export const produkteEN: Record<string, {
       { label: "Form", wert: "liquid" },
       { label: "Colour", wert: "milky cloudy" },
       { label: "pH value", wert: "5" },
+      { label: "Material consumption", wert: "approx. 100 g/m²" },
     ],
   },
   "korodur-uniprimer": {
@@ -478,7 +480,8 @@ export const produkteEN: Record<string, {
     technischeDaten: [
       { label: "Colour", wert: "transparent" },
       { label: "Density", wert: "approx. 1.12 g/cm³" },
-      { label: "pH value", wert: "approx. 11" },
+      { label: "pH value", wert: "approx. 11.3" },
+      { label: "Application temperature", wert: "+5 °C to +35 °C" },
       { label: "Consumption", wert: "approx. 100–200 g/m² (depending on absorbency)" },
     ],
   },
@@ -612,7 +615,10 @@ export const produkteEN: Record<string, {
     beschreibung: "MICROTOP TW NSM is applied by the wet spray process and is used for reprofiling and coating surfaces as well as for increasing concrete cover and finishing in the drinking water sector. The materials can easily be floated and trowelled; small jobs can be carried out by hand in conjunction with a bonding agent.",
     besonderheiten: ["Can be floated and trowelled", "Hand application of small jobs possible with bonding agent"],
     technischeDaten: [
-      { label: "Layer thickness", wert: "approx. 20 mm in one pass" },
+      { label: "Grain size", wert: "0–3 mm" },
+      { label: "Layer thickness", wert: "approx. 20 mm, single layer" },
+      { label: "Water addition", wert: "approx. 3.6 l per 25 kg unit" },
+      { label: "Colours", wert: "natural, white, blue" },
       { label: "Process", wert: "Wet spraying (dense-stream conveying, low dust generation)" },
     ],
     varianten: [
@@ -624,8 +630,9 @@ export const produkteEN: Record<string, {
     beschreibung: "MICROTOP TW 02 is applied by the wet spray dense-stream process and is used for coating surfaces as well as for increasing concrete cover and finishing in the drinking water sector. The product has an extremely low pore volume and can also be used as corrosion protection and bonding agent.",
     besonderheiten: ["Extremely low pore volume", "Can also be used as corrosion protection and bonding agent"],
     technischeDaten: [
-      { label: "Layer thickness (lining of pipes/reservoirs)", wert: "5–8 mm" },
-      { label: "Layer thickness (corrosion protection/bonding agent)", wert: "2–5 mm" },
+      { label: "Grain size", wert: "0–0.2 mm" },
+      { label: "Layer thickness", wert: "approx. 2–5 mm" },
+      { label: "Water addition", wert: "approx. 5–6.25 l per 25 kg unit" },
       { label: "Process", wert: "Spinning, spraying, trowel application, hand application" },
     ],
   },
@@ -634,7 +641,10 @@ export const produkteEN: Record<string, {
     beschreibung: "MICROTOP TW VSM is used for the interior lining and repair of new as well as old drinking water reservoirs and masonry. Thanks to its special composition it has excellent working and performance properties and can easily be floated and trowelled.",
     besonderheiten: ["Also suitable for masonry", "Can be floated and trowelled"],
     technischeDaten: [
-      { label: "Layer thickness", wert: "15–20 mm" },
+      { label: "Grain size", wert: "0–2 mm" },
+      { label: "Layer thickness", wert: "approx. 15–20 mm" },
+      { label: "Water addition", wert: "approx. 3.75 l per 25 kg unit" },
+      { label: "Yield", wert: "approx. 14 l per 25 kg unit" },
       { label: "Process", wert: "Spraying, hand application" },
     ],
   },
@@ -664,6 +674,15 @@ export const produkteEN: Record<string, {
       { label: "Colour", wert: "transparent" },
       { label: "Density", wert: "approx. 1.14 g/cm³" },
       { label: "pH value", wert: "approx. 11.3" },
+    ],
+  },
+  "microtop-tw-nsd": {
+    kurzbeschreibung: "Microsilica-enhanced cement spray mortar (C30/37) applied by the wet spray process for the drinking water sector",
+    beschreibung: "MICROTOP TW NSD is a mineral, hydraulically setting, microsilica-enhanced cement spray mortar of concrete strength class C30/37 for the drinking water sector. It is applied by wet spray thin-stream or dense-stream conveying; suitable substrates are sound concrete and firmly adhering old render with a bond strength of at least 1.5 N/mm². Complies with DVGW worksheets W 300 and W 347.",
+    besonderheiten: ["Purely mineral, microsilica-enhanced", "Wet spray thin-stream or dense-stream conveying"],
+    technischeDaten: [
+      { label: "Grain size", wert: "0–3 mm" },
+      { label: "Delivery form", wert: "25 kg special paper packaging" },
     ],
   },
   "neodur-vm-1": {

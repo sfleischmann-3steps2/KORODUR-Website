@@ -36,7 +36,7 @@ Die alte `/produkt-kategorie/`-Doppelstruktur (WooCommerce) wird NICHT übernomm
 | industrieboden (Teil 1: NEODUR + Hartstoffe) | ✓ DE (17 neue Produkte + Bestand mit Varianten, 2026-06-11; AM Super + SVM 03 mangels Quelldaten offen) | ✓ Gruppen-Gliederung mit Anker-Chips | teilweise | teilweise | teilweise | — (neue Produkte ohne Bilder) | PR 5: umgesetzt, Sign-off Zuordnung offen |
 | industrieboden (Teil 2: Bauchemie) | ✓ DE (9 neue Produkte + Bestand angereichert, 2026-06-12; KOROMINERAL Lasur ohne Quelldaten offen) | ✓ (Gruppen Imprägnierung + Additive ergänzt) | teilweise | teilweise | teilweise | — | PR 6: umgesetzt |
 | sichtestrich | ✓ DE (5 neue Produkte + TRU SL angereichert, 2026-06-12) | ✓ (3 Gruppen) | — | — | — | — | PR 7: umgesetzt |
-| microtop | ✓ DE (8 neue Produkte, 2026-06-12; TW NSD nicht in Quelle) | ✓ (3 Gruppen) | — | — | — | — | PR 7: umgesetzt |
+| microtop | ✓ DE (9 Produkte inkl. TW NSD aus TDS, Stand 2026-06-12) | ✓ (3 Gruppen) | — | — | — | — | PR 7: umgesetzt |
 | spezialbaustoffe | ✓ DE (11 neue Produkte, 2026-06-12; PFM 1K/PFM ZE ohne Quelldaten offen) | ✓ (4 Gruppen) | — | — | — | — | PR 8: umgesetzt |
 | rapid-set | ✓ DE (2 neue + Bestand angereichert, 2026-06-12) | ✓ (3 Gruppen) | teilweise | teilweise | teilweise | teilweise | PR 8: umgesetzt |
 | schnellbetonsysteme | n/a | — | — | — | — | — | PR 8 geplant |
