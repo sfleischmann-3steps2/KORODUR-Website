@@ -49,68 +49,64 @@ export default async function Home({
 
   return (
     <>
-      {/* Section 1: Split-Hero — Navy-Fläche mit Text links, Key Visual rechts.
-          Das Key Visual (docs/reference/brand/key-visual-original.png) hat
-          547×568px und wird deshalb gerahmt in nativer Größe gezeigt statt
-          full-bleed hochskaliert; Text liegt auf Navy, kein Gradient nötig. */}
-      <section className="bg-navy text-white overflow-hidden">
-        <div className="mx-auto grid max-w-[1320px] items-center gap-10 px-4 pt-14 pb-16 sm:px-8 md:grid-cols-[1fr_auto] md:py-20">
-          <div className="flex flex-col justify-center">
-            <p
-              className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-5"
-              style={{ fontWeight: 700 }}
+      {/* Section 1: Full-Bleed-Hero mit Key Visual 1920x1080 (Steffi, 2026-06-12;
+          Original: docs/reference/brand/KeyVisual_1920x1080_original.jpg).
+          Navy-Gradient links für Text-Lesbarkeit, Amboss-Motiv bleibt rechts sichtbar. */}
+      <section className="relative text-white overflow-hidden" style={{ minHeight: 560 }}>
+        <Image
+          src={withBasePath("/images/brand/hero-keyvisual.jpg")}
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(0,45,89,0.93) 0%, rgba(0,45,89,0.88) 30%, rgba(0,45,89,0.55) 45%, rgba(0,45,89,0.15) 60%, rgba(0,45,89,0) 70%)",
+          }}
+        />
+        <div className="relative mx-auto flex max-w-[1320px] flex-col justify-center px-4 pt-16 pb-20 sm:px-8 md:pt-[110px] md:pb-[130px] md:min-h-[560px]">
+          <p
+            className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-5"
+            style={{ fontWeight: 700 }}
+          >
+            {dict.home.hero_kicker}
+          </p>
+          <h1
+            className="leading-[1.08] mb-6"
+            style={{
+              fontSize: "clamp(32px, 5vw, 52px)",
+              fontWeight: 900,
+              maxWidth: 640,
+              color: "var(--white)",
+            }}
+          >
+            {dict.home.hero_title}
+          </h1>
+          <p
+            className="text-white/85 mb-10 leading-[1.7]"
+            style={{ fontSize: 18, maxWidth: 520 }}
+          >
+            {dict.home.hero_subtitle}
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href={`/${lang}/loesungsfinder/`}
+              className="inline-block text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
+              style={{ padding: "18px 36px", fontWeight: 800, fontSize: 16 }}
             >
-              {dict.home.hero_kicker}
-            </p>
-            <h1
-              className="leading-[1.08] mb-6"
-              style={{
-                fontSize: "clamp(32px, 5vw, 52px)",
-                fontWeight: 900,
-                maxWidth: 640,
-                color: "var(--white)",
-              }}
+              {dict.home.hero_cta}
+            </Link>
+            <Link
+              href={`/${lang}/produkte/`}
+              className="inline-block text-white no-underline rounded-[6px] border-2 border-white/50 hover:bg-white/10 transition-colors duration-200"
+              style={{ padding: "16px 34px", fontWeight: 800, fontSize: 16 }}
             >
-              {dict.home.hero_title}
-            </h1>
-            <p
-              className="text-white/80 mb-10 leading-[1.7]"
-              style={{ fontSize: 18, maxWidth: 520 }}
-            >
-              {dict.home.hero_subtitle}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href={`/${lang}/loesungsfinder/`}
-                className="inline-block text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
-                style={{ padding: "18px 36px", fontWeight: 800, fontSize: 16 }}
-              >
-                {dict.home.hero_cta}
-              </Link>
-              <Link
-                href={`/${lang}/produkte/`}
-                className="inline-block text-white no-underline rounded-[6px] border-2 border-white/50 hover:bg-white/10 transition-colors duration-200"
-                style={{ padding: "16px 34px", fontWeight: 800, fontSize: 16 }}
-              >
-                {dict.home.hero_cta_secondary}
-              </Link>
-            </div>
-          </div>
-
-          {/* Key Visual: gerahmt, leichter Cyan-Schein als Verankerung im CD */}
-          <div className="hidden md:block relative">
-            <div
-              className="absolute -inset-3 rounded-3xl bg-cyan/15 blur-2xl"
-              aria-hidden="true"
-            />
-            <Image
-              src={withBasePath("/images/brand/key-visual.jpg")}
-              alt=""
-              width={460}
-              height={478}
-              priority
-              className="relative rounded-2xl object-cover shadow-2xl"
-            />
+              {dict.home.hero_cta_secondary}
+            </Link>
           </div>
         </div>
       </section>
