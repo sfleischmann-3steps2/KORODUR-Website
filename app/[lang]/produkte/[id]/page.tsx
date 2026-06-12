@@ -5,6 +5,8 @@ import Breadcrumb from "../../../../components/Breadcrumb";
 import ReferenceCard from "../../../../components/ReferenceCard";
 import TileGrid from "../../../../components/TileGrid";
 import { produkte, getProduktById } from "../../../../data/produkte";
+import { PRODUKT_DOKUMENTE } from "../../../../data/produktDokumente";
+import DokumentListe from "../../../../components/DokumentListe";
 import { referenzen } from "../../../../data/referenzen";
 import { getDictionary, hasLocale } from "../../dictionaries";
 import { LOCALES } from "../../../../lib/i18n";
@@ -62,6 +64,7 @@ export default async function ProduktDetailPage({
     )
   );
   const relatedRefs = await localizeReferenzen(baseRelatedRefs, lang as "de" | "en" | "fr");
+  const dokumente = PRODUKT_DOKUMENTE[produkt.id] ?? [];
 
   return (
     <>
@@ -266,20 +269,24 @@ export default async function ProduktDetailPage({
         </section>
       )}
 
-      {/* TDS-Download — unabhängig vom Verarbeitungs-Block, sonst fehlt der
-          Link bei Produkten ohne verarbeitung-Feld (Launch-Plan M1) */}
-      {produkt.tdsUrl && (
-        <section style={{ padding: produkt.verarbeitung ? "0 32px 56px" : "48px 32px 56px" }}>
+      {/* Downloads & Dokumente: TDS/SDS/DoP/Anwendung/Pflege je Produkt
+          (Launch-Plan M3 — "alle wichtigen Dokumente auf der Produktseite") */}
+      {dokumente.length > 0 && (
+        <section style={{ padding: "56px 32px 64px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <a
-              href={produkt.tdsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-cyan no-underline hover:underline"
-              style={{ fontWeight: 700 }}
+            <h2
+              className="mb-6"
+              style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
             >
-              {dict.produkte.tds_download} →
-            </a>
+              {dict.produkte.downloads_title}
+            </h2>
+            <div style={{ maxWidth: 760 }}>
+              <DokumentListe
+                dokumente={dokumente}
+                lang={lang}
+                labels={dict.produkte as Record<string, string>}
+              />
+            </div>
           </div>
         </section>
       )}

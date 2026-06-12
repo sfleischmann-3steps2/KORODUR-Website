@@ -95,7 +95,14 @@
     "referenzen_alle": "Alle Referenzen mit diesem Produkt",
     "cta_verarbeitung": "Fragen zur Verarbeitung? Unsere technischen Berater helfen weiter.",
     "varianten_title": "Lieferbare Qualitäten",
-    "cta_kontakt_button": "Berater kontaktieren"
+    "cta_kontakt_button": "Berater kontaktieren",
+    "downloads_title": "Downloads & Dokumente",
+    "dok_tds": "Technisches Datenblatt",
+    "dok_sds": "Sicherheitsdatenblatt",
+    "dok_dop": "Leistungserklärung (DoP)",
+    "dok_anwendung": "Anwendungsempfehlung",
+    "dok_reinigung": "Reinigung & Pflege",
+    "dok_service": "Service-Dokument"
   },
   "sanierung": {
     "title": "Produktfinder",
@@ -270,7 +277,10 @@
     "datenschutz": "Datenschutz",
     "col_social": "Social Media",
     "ausschreibungen": "Ausschreibungstexte",
-    "jahre_badge": "90 Jahre"
+    "jahre_badge": "90 Jahre",
+    "downloads": "Downloads",
+    "agb": "AGB",
+    "hinweisgeber": "Hinweisgebersystem"
   },
   "bereiche": {
     "breadcrumb_home": "Start",
@@ -425,5 +435,10 @@
   },
   "rechtliches": {
     "sprachhinweis": "Rechtlich maßgeblich ist die deutsche Fassung."
+  },
+  "downloads": {
+    "title": "Downloads",
+    "intro": "Produktbezogene Dokumente wie Datenblätter, Sicherheitsdatenblätter und Leistungserklärungen finden Sie direkt auf der jeweiligen Produktseite. Hier stehen übergreifende Dokumente bereit.",
+    "zentrale": "Übergreifende Dokumente"
   }
 }
