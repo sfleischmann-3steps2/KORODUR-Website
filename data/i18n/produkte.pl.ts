@@ -150,12 +150,31 @@ export const produktePL: Record<string, {
   },
   "asphalt-repair-mix": {
     kurzbeschreibung: "Szybki materiał naprawczy do nawierzchni asfaltowych",
-    besonderheiten: ["Do nawierzchni asfaltowych", "Bez mostka sczepnego", "Łatwa aplikacja", "Dopuszczenie do ruchu po 30 minutach"],
+    beschreibung: "Rapid Set ASPHALT REPAIR MIX to cementowy, modyfikowany polimerami materiał naprawczy: wysokowytrzymały, o niskich naprężeniach i szybkotwardniejący. Łączy szybkość mieszanki na zimno z trwałością asfaltu na gorąco: otworzyć worek, dodać wodę, wymieszać, wbudować. Bez frezarki, bez walca, bez mostka sczepnego; po ok. 30 minutach nośny, po ok. 1 godzinie w pełni nośny, również pod ruchem ciężkim.",
+    besonderheiten: [
+      "Do nawierzchni asfaltowych",
+      "Bez mostka sczepnego",
+      "Łatwa aplikacja",
+      "Dopuszczenie do ruchu po 30 minutach",
+      "Mrozoodporny, odporny na sole odladzające i siarczany",
+      "Pompowalny, do stosowania poziomo i pionowo",
+      "Ok. 30 % mniej CO₂ niż konwencjonalny cement portlandzki",
+      "Dostępny w handlu materiałami budowlanymi",
+    ],
     technischeDaten: [
-      { label: "Wytrzymałość na ściskanie", wert: "ok. 22 N/mm²" },
+      { label: "Wytrzymałość na ściskanie (30 min)", wert: "ok. 15 N/mm²" },
+      { label: "Wytrzymałość na ściskanie (1 h)", wert: "ok. 22 N/mm²" },
+      { label: "Wytrzymałość na ściskanie (28 d)", wert: "ok. 38 N/mm²" },
       { label: "Grubość warstwy", wert: "30–600 mm" },
       { label: "Dopuszczenie do ruchu po", wert: "ok. 30 min" },
       { label: "Mostek sczepny", wert: "Nie wymagany" },
+      { label: "Wytrzymałość na zginanie (28 d)", wert: "ok. 6,4 N/mm²" },
+      { label: "Moduł sprężystości", wert: "ok. 22 000 N/mm²" },
+      { label: "Uziarnienie", wert: "0–8 mm" },
+      { label: "Kolor", wert: "czarny" },
+      { label: "Dodatek wody", wert: "ok. 3,80 l na worek 25 kg" },
+      { label: "Zużycie materiału", wert: "ok. 20 kg/m² na cm grubości warstwy" },
+      { label: "Temperatura obróbki", wert: "+5 °C do +30 °C" },
     ],
   },
   "dot-europe-concrete-mix": {
@@ -661,6 +680,7 @@ export const produktePL: Record<string, {
     kurzbeschreibung: "Cementowa zaprawa natryskowa w metodzie natrysku suchego do reprofilacji i powlekania w obszarze wody pitnej",
     beschreibung: "MICROTOP TW 3 jest nakładany metodą natrysku suchego i służy do reprofilacji i powlekania powierzchni oraz do zwiększania otuliny betonowej i wykończenia w obszarze wody pitnej. Materiały nakłada się jednowarstwowo, można je bez problemu zacierać packą i wygładzać; małe prace możliwe są ręcznie.",
     technischeDaten: [
+      { label: "Uziarnienie", wert: "0–3 mm" },
       { label: "Wytrzymałość na ściskanie (28 d)", wert: "≥ 45 N/mm²" },
       { label: "Porowatość całkowita (90 d)", wert: "≤ 10 % obj." },
     ],
@@ -704,22 +724,38 @@ export const produktePL: Record<string, {
   "microtop-tw-nsm": {
     kurzbeschreibung: "Zaprawa natryskowa w metodzie natrysku mokrego do reprofilacji i powlekania w obszarze wody pitnej",
     beschreibung: "MICROTOP TW NSM jest nakładany metodą natrysku mokrego i służy do reprofilacji i powlekania powierzchni oraz do zwiększania otuliny betonowej i wykończenia w obszarze wody pitnej. Materiały można bez problemu zacierać packą i wygładzać; małe prace możliwe są ręcznie w połączeniu z warstwą sczepną.",
+    technischeDaten: [
+      { label: "Grubość warstwy", wert: "ok. 20 mm w jednym cyklu roboczym" },
+      { label: "Metoda", wert: "natrysk mokry (transport gęstostrumieniowy, niewielkie pylenie)" },
+    ],
     besonderheiten: [
       "Możliwość zacierania i wygładzania",
       "Ręczne wykonanie małych prac możliwe z warstwą sczepną",
+    ],
+    varianten: [
+      { name: "MICROTOP TW NSM blau" },
     ],
   },
   "microtop-tw-02": {
     kurzbeschreibung: "Zaprawa natryskowa w metodzie natrysku mokrego gęstostrumieniowego o wyjątkowo niskiej zawartości porów",
     beschreibung: "MICROTOP TW 02 jest nakładany metodą natrysku mokrego gęstostrumieniowego i służy do powlekania powierzchni oraz do zwiększania otuliny betonowej i wykończenia w obszarze wody pitnej. Produkt ma wyjątkowo niską zawartość porów i może być stosowany również jako ochrona antykorozyjna i warstwa sczepna.",
+    technischeDaten: [
+      { label: "Grubość warstwy (wykładanie rur/zbiorników)", wert: "5–8 mm" },
+      { label: "Grubość warstwy (ochrona antykorozyjna/warstwa sczepna)", wert: "2–5 mm" },
+      { label: "Metoda", wert: "nakładanie odśrodkowe, natrysk, szpachlowanie, nakładanie ręczne" },
+    ],
     besonderheiten: [
       "Wyjątkowo niska zawartość porów",
       "Do zastosowania również jako ochrona antykorozyjna i warstwa sczepna",
     ],
   },
   "microtop-tw-vsm": {
-    kurzbeschreibung: "Zaprawa natryskowa do wykładania od wewnątrz i napraw zbiorników wody pitnej oraz muru",
+    kurzbeschreibung: "Zaprawa natrysku wstępnego (warstwa sczepna) do wykładania od wewnątrz i napraw zbiorników wody pitnej oraz muru",
     beschreibung: "MICROTOP TW VSM służy do wykładania od wewnątrz i napraw nowych oraz starych zbiorników wody pitnej, a także muru. Dzięki specjalnemu składowi ma znakomite właściwości robocze i użytkowe; można go bez problemu zacierać packą i wygładzać.",
+    technischeDaten: [
+      { label: "Grubość warstwy", wert: "15–20 mm" },
+      { label: "Metoda", wert: "natrysk, nakładanie ręczne" },
+    ],
     besonderheiten: [
       "Odpowiedni również do muru",
       "Możliwość zacierania i wygładzania",
@@ -733,11 +769,17 @@ export const produktePL: Record<string, {
       { label: "Wytrzymałość na ściskanie", wert: "35 N/mm²" },
       { label: "Wytrzymałość na zginanie", wert: "6,3 N/mm²" },
       { label: "Kolory", wert: "naturalny, biały" },
+      { label: "Grubość warstwy (wykładanie rur/zbiorników)", wert: "5–8 mm" },
+      { label: "Grubość warstwy (ochrona antykorozyjna/warstwa sczepna)", wert: "2–5 mm" },
     ],
     besonderheiten: [
       "Nakładanie odśrodkowe, natryskowe i ręczne",
       "Do zastosowania również jako warstwa sczepna i ochrona antykorozyjna",
       "Dostępna w kolorze naturalnym i białym",
+    ],
+    varianten: [
+      { name: "MICROTOP TW BM weiß" },
+      { name: "MICROTOP TW BM blau" },
     ],
   },
   "microtop-tw-mineral": {
@@ -798,10 +840,18 @@ export const produktePL: Record<string, {
     ],
   },
   "neodur-vm-basic": {
-    kurzbeschreibung: "Beton do podlewek wg DIN EN 1504-3 (R4) i wytycznej DAfStb (SKVB II)",
+    kurzbeschreibung: "Mineralny, wysokopłynny ekspansywny beton do podlewek, badany przez DVGW do obszarów wody pitnej",
+    beschreibung: "NEODUR VM basic to mineralny, wysokopłynny ekspansywny beton do podlewek, przeznaczony do przenoszących siły prac podlewkowych i montaży wszelkiego rodzaju, np. podlewania rur w instalacjach wody pitnej. Badany zgodnie z arkuszem roboczym DVGW W 347 pod kątem wymagań higienicznych w obszarach wody pitnej.",
+    technischeDaten: [
+      { label: "Uziarnienie", wert: "0–5 mm" },
+      { label: "Obróbka", wert: "mieszanie + pompowanie / zalewanie" },
+      { label: "Forma dostawy", wert: "opakowania 25 kg" },
+    ],
     besonderheiten: [
+      "Niski skurcz, normalnie wiążący",
+      "Mrozoodporny i odporny na sole odladzające",
+      "Wodonieprzepuszczalny, bez chlorków",
       "Wytyczna DAfStb (SKVB II)",
-      "Przydatność DVGW wg zestawienia norm",
     ],
   },
   "neodur-svm-03": {

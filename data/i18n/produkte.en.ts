@@ -150,12 +150,31 @@ export const produkteEN: Record<string, {
   },
   "asphalt-repair-mix": {
     kurzbeschreibung: "Rapid repair material for asphalt surfaces",
-    besonderheiten: ["Suitable for asphalt surfaces", "No bonding agent required", "Easy application", "30-minute traffic release"],
+    beschreibung: "Rapid Set ASPHALT REPAIR MIX is a cement-based, polymer-modified repair material: high-strength, low-stress and rapid-hardening. It combines the speed of cold mix with the durability of hot asphalt: open the bag, add water, mix, install. No milling machine, no roller, no bonding agent; load-bearing after approx. 30 minutes, fully load-bearing after approx. 1 hour, even under heavy traffic.",
+    besonderheiten: [
+      "Suitable for asphalt surfaces",
+      "No bonding agent required",
+      "Easy application",
+      "30-minute traffic release",
+      "Freeze-thaw salt and sulfate resistant",
+      "Pumpable, can be used horizontally and vertically",
+      "Approx. 30 % less CO₂ than conventional Portland cement",
+      "Available through builders' merchants",
+    ],
     technischeDaten: [
-      { label: "Compressive strength", wert: "approx. 22 N/mm²" },
+      { label: "Compressive strength (30 min)", wert: "approx. 15 N/mm²" },
+      { label: "Compressive strength (1 h)", wert: "approx. 22 N/mm²" },
+      { label: "Compressive strength (28 d)", wert: "approx. 38 N/mm²" },
       { label: "Layer thickness", wert: "30–600 mm" },
       { label: "Traffic release after", wert: "approx. 30 min" },
       { label: "Bonding agent", wert: "Not required" },
+      { label: "Flexural strength (28 d)", wert: "approx. 6.4 N/mm²" },
+      { label: "Modulus of elasticity", wert: "approx. 22,000 N/mm²" },
+      { label: "Grain size", wert: "0–8 mm" },
+      { label: "Colour", wert: "black" },
+      { label: "Water addition", wert: "approx. 3.80 l per 25 kg bag" },
+      { label: "Material consumption", wert: "approx. 20 kg/m² per cm of layer thickness" },
+      { label: "Application temperature", wert: "+5 °C to +30 °C" },
     ],
   },
   "dot-europe-concrete-mix": {
@@ -561,6 +580,7 @@ export const produkteEN: Record<string, {
     beschreibung: "MICROTOP TW 3 is applied by the dry spray process and is used for reprofiling and coating surfaces as well as for increasing concrete cover and finishing in the drinking water sector. The materials are applied in a single layer and can easily be floated and trowelled; small jobs can be carried out by hand.",
     besonderheiten: ["Purely mineral, microsilica-enhanced", "Low porosity, impermeable to water", "Can be floated and trowelled", "Environmental Product Declaration (group EPD) available"],
     technischeDaten: [
+      { label: "Grain size", wert: "0–3 mm" },
       { label: "Compressive strength (28 d)", wert: "≥ 45 N/mm²" },
       { label: "Total porosity (90 d)", wert: "≤ 10 vol.%" },
     ],
@@ -591,16 +611,32 @@ export const produkteEN: Record<string, {
     kurzbeschreibung: "Spray mortar applied by the wet spray process for reprofiling and coating in the drinking water sector",
     beschreibung: "MICROTOP TW NSM is applied by the wet spray process and is used for reprofiling and coating surfaces as well as for increasing concrete cover and finishing in the drinking water sector. The materials can easily be floated and trowelled; small jobs can be carried out by hand in conjunction with a bonding agent.",
     besonderheiten: ["Can be floated and trowelled", "Hand application of small jobs possible with bonding agent"],
+    technischeDaten: [
+      { label: "Layer thickness", wert: "approx. 20 mm in one pass" },
+      { label: "Process", wert: "Wet spraying (dense-stream conveying, low dust generation)" },
+    ],
+    varianten: [
+      { name: "MICROTOP TW NSM blau" },
+    ],
   },
   "microtop-tw-02": {
     kurzbeschreibung: "Spray mortar applied by the wet spray dense-stream process with extremely low pore volume",
     beschreibung: "MICROTOP TW 02 is applied by the wet spray dense-stream process and is used for coating surfaces as well as for increasing concrete cover and finishing in the drinking water sector. The product has an extremely low pore volume and can also be used as corrosion protection and bonding agent.",
     besonderheiten: ["Extremely low pore volume", "Can also be used as corrosion protection and bonding agent"],
+    technischeDaten: [
+      { label: "Layer thickness (lining of pipes/reservoirs)", wert: "5–8 mm" },
+      { label: "Layer thickness (corrosion protection/bonding agent)", wert: "2–5 mm" },
+      { label: "Process", wert: "Spinning, spraying, trowel application, hand application" },
+    ],
   },
   "microtop-tw-vsm": {
-    kurzbeschreibung: "Spray mortar for the interior lining and repair of drinking water reservoirs and masonry",
+    kurzbeschreibung: "Pre-spray mortar (bonding layer) for the interior lining and repair of drinking water reservoirs and masonry",
     beschreibung: "MICROTOP TW VSM is used for the interior lining and repair of new as well as old drinking water reservoirs and masonry. Thanks to its special composition it has excellent working and performance properties and can easily be floated and trowelled.",
     besonderheiten: ["Also suitable for masonry", "Can be floated and trowelled"],
+    technischeDaten: [
+      { label: "Layer thickness", wert: "15–20 mm" },
+      { label: "Process", wert: "Spraying, hand application" },
+    ],
   },
   "microtop-tw-bm": {
     kurzbeschreibung: "Special mortar for the interior coating of drinking water pipes and reservoirs, also as bonding agent",
@@ -611,6 +647,12 @@ export const produkteEN: Record<string, {
       { label: "Compressive strength", wert: "35 N/mm²" },
       { label: "Flexural strength", wert: "6.3 N/mm²" },
       { label: "Colours", wert: "natural, white" },
+      { label: "Layer thickness (lining of pipes/reservoirs)", wert: "5–8 mm" },
+      { label: "Layer thickness (corrosion protection/bonding agent)", wert: "2–5 mm" },
+    ],
+    varianten: [
+      { name: "MICROTOP TW BM weiß" },
+      { name: "MICROTOP TW BM blau" },
     ],
   },
   "microtop-tw-mineral": {
@@ -657,8 +699,19 @@ export const produkteEN: Record<string, {
     ],
   },
   "neodur-vm-basic": {
-    kurzbeschreibung: "Grouting concrete in accordance with DIN EN 1504-3 (R4) and DAfStb-Richtlinie (SKVB II)",
-    besonderheiten: ["DAfStb-Richtlinie (SKVB II)", "DVGW suitability according to standards overview"],
+    kurzbeschreibung: "Mineral, highly flowable expansive grouting concrete, DVGW-tested for the drinking water sector",
+    beschreibung: "NEODUR VM basic is a mineral, highly flowable expansive grouting concrete for force-fitting grouting work and assemblies of all kinds, e.g. pipe grouting in drinking water installations. Tested in accordance with DVGW worksheet W 347 for hygienic requirements in the drinking water sector.",
+    besonderheiten: [
+      "Low shrinkage, normal setting",
+      "Freeze-thaw salt resistant",
+      "Impermeable to water, chloride-free",
+      "DAfStb-Richtlinie (SKVB II)",
+    ],
+    technischeDaten: [
+      { label: "Grain size", wert: "0–5 mm" },
+      { label: "Application", wert: "Mixing + pumping / pouring" },
+      { label: "Delivery form", wert: "25 kg packs" },
+    ],
   },
   "neodur-svm-03": {
     kurzbeschreibung: "Rapid grouting mortar for grouting cross-sections of 5 to 20 mm",

@@ -8,6 +8,7 @@
 - **Content-Scrape:** `01_analyse/scraped_content/` — Wayback-Stand 2026-04-13, nur DE, ~95 % Abdeckung, 75 Produkte. `produktuebersicht.md` ist die verbindliche Bereichs-Zuordnung.
 - **Konzept:** `03_konzept/ia_new.md` (IA), `03_konzept/page_templates.md` (Seitentypen), `03_konzept/zielgruppen.md` (Personas)
 - **Nicht im Scrape:** Referenzen (~130), Service-Seiten (LV/DoP/SDS), EN/FR-Versionen, Bilder. TDS-Links im Scrape sind tot — TDS-URLs kommen aus der Notion-Produktdatenbank.
+- **Landing Pages (Steffi, kuratiert — bei Konflikten VOR dem Scrape):** `quellen-lp/lp-microtop-tw.md` + `quellen-lp/lp-arm.md` (gesichert 2026-06-12, eingearbeitet in PR Microtop/ARM-Anreicherung). Enthalten zusätzlich Referenz-Kandidaten für Stufe 3 und Rohstoff für Anwendungsseiten.
 
 **Regel:** Quelldaten vollständig lesen, fehlende Werte leer lassen und hier als offenen Punkt eintragen. Niemals Werte erfinden.
 
