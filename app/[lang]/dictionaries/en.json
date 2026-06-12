@@ -323,7 +323,13 @@
     "gruppe_anker-injektion": "Anchoring & Injection System",
     "gruppe_betoninstandsetzung": "Concrete Repair",
     "gruppe_schnellbeton": "Rapid Concrete Systems",
-    "gruppe_reparaturmoertel": "Rapid Repair Mortars"
+    "gruppe_reparaturmoertel": "Rapid Repair Mortars",
+    "gruppe_premium": "Premium Grades",
+    "gruppe_standard": "Standard Grades",
+    "katzenstreu_trust": "Produced to ISO 9001:2015, ISO 14001:2015 and BRC Global Standard. All products are pure natural products, untreated and guaranteed asbestos-free.",
+    "katzenstreu_privatelabel_title": "Private Label",
+    "katzenstreu_privatelabel_text": "We also produce bentonite cat litter as private label for retail brands: premium grades in 5, 6 and 8 l, standard grades in 5, 10 and 20 kg, special sizes on request, optionally with fresh scent. Delivered in environmentally friendly paper packaging (FSC MIX).",
+    "katzenstreu_privatelabel_cta": "Send private label enquiry"
   },
   "sanierungHub": {
     "title": "Renovating with KORODUR",

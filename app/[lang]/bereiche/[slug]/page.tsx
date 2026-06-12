@@ -15,9 +15,12 @@ type Params = Promise<{ lang: string; slug: string }>;
 function ProduktGrid({
   produkte: items,
   lang,
+  neutral = false,
 }: {
   produkte: { id: string; name: string; kurzbeschreibung: string; qualitaetsklasse?: string }[];
   lang: string;
+  /** Variante B "neutral-reduziert" (Katzenstreu): Rahmen statt Schatten. */
+  neutral?: boolean;
 }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -28,8 +31,16 @@ function ProduktGrid({
           className="no-underline group block"
         >
           <div
-            className="bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg"
-            style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}
+            className={`bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 ${
+              neutral
+                ? "border border-mid-gray group-hover:border-navy"
+                : "group-hover:shadow-lg"
+            }`}
+            style={
+              neutral
+                ? { borderRadius: 14 }
+                : { borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }
+            }
           >
             <div className="flex items-start justify-between gap-3">
               <h4 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
@@ -163,7 +174,7 @@ export default async function BereichPage({ params }: { params: Params }) {
       </section>
 
       {/* Produkte des Bereichs */}
-      <section className="bg-icon-bg" style={{ padding: "56px 32px 64px" }}>
+      <section className={bereich.abgegrenzt ? "bg-white" : "bg-icon-bg"} style={{ padding: "56px 32px 64px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h2
             className="mb-6"
@@ -201,13 +212,13 @@ export default async function BereichPage({ params }: { params: Params }) {
                   >
                     {g.label}
                   </h3>
-                  <ProduktGrid produkte={g.items} lang={lang} />
+                  <ProduktGrid produkte={g.items} lang={lang} neutral={bereich.abgegrenzt} />
                 </div>
               ))}
 
               {ohneGruppe.length > 0 && (
                 <div className={gruppen.length > 0 ? "mt-10" : undefined}>
-                  <ProduktGrid produkte={ohneGruppe} lang={lang} />
+                  <ProduktGrid produkte={ohneGruppe} lang={lang} neutral={bereich.abgegrenzt} />
                 </div>
               )}
             </>
@@ -230,6 +241,38 @@ export default async function BereichPage({ params }: { params: Params }) {
           )}
         </div>
       </section>
+
+      {/* Variante B (abgegrenzte Bereiche): Vertrauenszeile + Private Label */}
+      {bereich.abgegrenzt && (
+        <section style={{ padding: "0 32px 56px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <p
+              className="border-y border-bullet-bg text-navy/60 text-[14px] text-center leading-[1.7]"
+              style={{ padding: "18px 8px", margin: 0 }}
+            >
+              {tb("katzenstreu_trust")}
+            </p>
+            <div
+              className="border border-mid-gray mt-8"
+              style={{ borderRadius: 14, padding: "32px 32px" }}
+            >
+              <h2 className="text-navy mt-0 mb-3" style={{ fontSize: 22, fontWeight: 900 }}>
+                {tb("katzenstreu_privatelabel_title")}
+              </h2>
+              <p className="text-navy/70 text-[15px] mt-0 mb-6 leading-[1.7]" style={{ maxWidth: 760 }}>
+                {tb("katzenstreu_privatelabel_text")}
+              </p>
+              <a
+                href="mailto:info@korodur.de"
+                className="inline-flex items-center justify-center text-white no-underline rounded-[6px] bg-navy hover:bg-navy/90 transition-colors duration-200"
+                style={{ padding: "13px 28px", fontWeight: 800, fontSize: 15, minHeight: 44 }}
+              >
+                {tb("katzenstreu_privatelabel_cta")}
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA-Band */}
       <section className="bg-navy text-white text-center" style={{ padding: "64px 32px" }}>

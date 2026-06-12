@@ -323,7 +323,13 @@
     "gruppe_anker-injektion": "System kotwienia i iniekcji",
     "gruppe_betoninstandsetzung": "Naprawa betonu",
     "gruppe_schnellbeton": "Systemy szybkiego betonu",
-    "gruppe_reparaturmoertel": "Zaprawy do szybkich napraw"
+    "gruppe_reparaturmoertel": "Zaprawy do szybkich napraw",
+    "gruppe_premium": "Jakości premium",
+    "gruppe_standard": "Jakości standard",
+    "katzenstreu_trust": "Produkcja zgodna z ISO 9001:2015, ISO 14001:2015 i BRC Global Standard. Wszystkie produkty są czysto naturalne, niepoddane obróbce i gwarantowanie wolne od azbestu.",
+    "katzenstreu_privatelabel_title": "Marka własna",
+    "katzenstreu_privatelabel_text": "Produkujemy żwirek bentonitowy także jako markę własną dla sieci handlowych: jakości premium w opakowaniach 5, 6 i 8 l, jakości standard w 5, 10 i 20 kg, rozmiary specjalne na zapytanie, opcjonalnie ze świeżym zapachem. Dostawa w ekologicznych opakowaniach papierowych (FSC MIX).",
+    "katzenstreu_privatelabel_cta": "Wyślij zapytanie o markę własną"
   },
   "sanierungHub": {
     "title": "Renowacja z KORODUR",

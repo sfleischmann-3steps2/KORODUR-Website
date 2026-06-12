@@ -29,7 +29,7 @@
 | NEODUR SVM 03 | C45/55 | **C50/60** |
 | NEODUR MSM 3 | C30/37 | **C35/45** |
 
-⚠️ Systematische Abweichung — bitte einmal mit Frank/TDS gegenprüfen, welche Generation stimmt.
+✅ ENTSCHIEDEN (Steffi, 2026-06-12): Wir arbeiten mit den Excel-Werten. Die Kollegen prüfen nach Go-Live alles über die funktionierende Seite durch.
 
 ## DUROP-Befund (Frage aus Teil 1 geklärt, soweit Quelle reicht)
 
@@ -44,5 +44,5 @@ Kein Beleg für einen DUROP-Ankermörtel: Die DUROP-Einzelseite im Spezialbausto
 ## Sign-off
 
 - [ ] Gruppen-Schnitt Spezialbaustoffe (4) + Rapid Set (3) OK
-- [ ] Klassen-Konflikte mit TDS gegengeprüft
+- [x] Klassen: Excel gilt (Steffi, 2026-06-12); Detail-Review der Kollegen über die Live-Site
 - [ ] DUROP-Restfrage (Ankermörtel ja/nein) bestätigt
