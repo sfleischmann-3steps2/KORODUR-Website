@@ -73,7 +73,7 @@ export default async function LangLayout({
       </head>
       <body className="min-h-screen font-sans">
         <a href="#main-content" className="skip-to-content">
-          {lang === "de" ? "Zum Inhalt springen" : lang === "fr" ? "Aller au contenu" : lang === "pl" ? "Przejdź do treści" : "Skip to content"}
+          {lang === "de" ? "Zum Inhalt springen" : lang === "fr" ? "Aller au contenu" : lang === "pl" ? "Przejdź do treści" : lang === "es" ? "Ir al contenido" : "Skip to content"}
         </a>
         <LocaleProvider lang={lang as Locale} dict={dict}>
           <AppShell lang={lang as Locale} dict={dict}>

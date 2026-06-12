@@ -51,7 +51,7 @@ export default async function ProduktDetailPage({
 
   if (!baseProdukt) notFound();
 
-  const produkt = await localizeProdukt(baseProdukt, lang as "de" | "en" | "fr");
+  const produkt = await localizeProdukt(baseProdukt, lang);
 
   const categoryLabel =
     (dict.produkte as Record<string, string>)[`category_${produkt.kategorie}`] ||
@@ -63,7 +63,7 @@ export default async function ProduktDetailPage({
       (p) => p.toLowerCase() === produkt.name.toLowerCase()
     )
   );
-  const relatedRefs = await localizeReferenzen(baseRelatedRefs, lang as "de" | "en" | "fr");
+  const relatedRefs = await localizeReferenzen(baseRelatedRefs, lang);
   const dokumente = PRODUKT_DOKUMENTE[produkt.id] ?? [];
 
   return (

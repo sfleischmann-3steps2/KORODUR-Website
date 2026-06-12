@@ -16,6 +16,7 @@ import { REFERENZ_FILTER_V25 } from "../data/referenzenV25";
 import { referenzenEN } from "../data/i18n/referenzen.en";
 import { referenzenFR } from "../data/i18n/referenzen.fr";
 import { referenzenPL } from "../data/i18n/referenzen.pl";
+import { referenzenES } from "../data/i18n/referenzen.es";
 import type {
   Sanierungsart,
   EinsatzbereichKategorie,
@@ -103,12 +104,17 @@ for (const r of referenzen) {
   // "OFFEN — Alexander zu fragen" stand öffentlich auf einer Referenzseite).
   // Prüft auch die i18n-Overrides — die EN-Fassung desselben Markers ("OPEN:
   // to be clarified") stand bis M3b live (Fund Sprachpass-Workflow).
-  const MARKER = /\bOFFEN\b|\bOPEN:\s|\bTODO\b|\bFIXME\b|zu klären|zu fragen|to be clarified|\bTBD\b/i;
+  // Akronyme case-SENSITIV: /todo/i würde das spanische "todo" verbieten
+  // (Fund Sprachausbau ES, 2026-06-12).
+  const MARKER_AKRONYME = /\bOFFEN\b|\bOPEN:\s|\bTODO\b|\bFIXME\b|\bTBD\b/;
+  const MARKER_PHRASEN = /zu klären|zu fragen|to be clarified/i;
+  const MARKER = { test: (s: string) => MARKER_AKRONYME.test(s) || MARKER_PHRASEN.test(s) };
   const sprachVarianten: Array<[string, Partial<typeof r> | undefined]> = [
     ["de", r],
     ["en", (referenzenEN as Record<string, Partial<typeof r>>)[r.id]],
     ["fr", (referenzenFR as Record<string, Partial<typeof r>>)[r.id]],
     ["pl", (referenzenPL as Record<string, Partial<typeof r>>)[r.id]],
+    ["es", (referenzenES as Record<string, Partial<typeof r>>)[r.id]],
   ];
   for (const [sprache, variante] of sprachVarianten) {
     if (!variante) continue;

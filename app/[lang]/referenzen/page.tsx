@@ -13,12 +13,14 @@ import { useLocale } from "../../../lib/LocaleContext";
 import { referenzenEN } from "../../../data/i18n/referenzen.en";
 import { referenzenFR } from "../../../data/i18n/referenzen.fr";
 import { referenzenPL } from "../../../data/i18n/referenzen.pl";
+import { referenzenES } from "../../../data/i18n/referenzen.es";
 import type { Referenz, EinsatzbereichKategorie } from "../../../data/types";
 
 const translationMap: Record<string, Record<string, Partial<Referenz>>> = {
   en: referenzenEN as Record<string, Partial<Referenz>>,
   fr: referenzenFR as Record<string, Partial<Referenz>>,
   pl: referenzenPL as Record<string, Partial<Referenz>>,
+  es: referenzenES as Record<string, Partial<Referenz>>,
 };
 
 function localizeRef(ref: Referenz, lang: string): Referenz {

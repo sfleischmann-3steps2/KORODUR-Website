@@ -19,6 +19,7 @@ const FLAG: Record<Locale, string> = {
   en: "🇬🇧",
   fr: "🇫🇷",
   pl: "🇵🇱",
+  es: "🇪🇸",
 };
 
 const LABEL: Record<Locale, string> = {
@@ -26,6 +27,7 @@ const LABEL: Record<Locale, string> = {
   en: "English",
   fr: "Français",
   pl: "Polski",
+  es: "Español",
 };
 
 const ARIA_LABEL: Record<Locale, string> = {
@@ -33,6 +35,7 @@ const ARIA_LABEL: Record<Locale, string> = {
   en: "Language",
   fr: "Langue",
   pl: "Język",
+  es: "Idioma",
 };
 
 export default function LanguageSwitcher({ lang }: { lang: Locale }) {
@@ -40,7 +43,7 @@ export default function LanguageSwitcher({ lang }: { lang: Locale }) {
   const [open, setOpen] = useState(false);
 
   const getLocalePath = (targetLocale: string) => {
-    const rest = pathname.replace(/^\/(de|en|fr|pl)/, "");
+    const rest = pathname.replace(/^\/(de|en|fr|pl|es)/, "");
     return `/${targetLocale}${rest}`;
   };
 
