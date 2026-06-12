@@ -17,6 +17,7 @@ import { bereichLabel } from "../../../../data/einsatzbereichMapping";
 import { isPublicReference, selectRelatedReferences } from "../../../../data/referenceDetail";
 import type { Referenz } from "../../../../data/types";
 import { withBasePath } from "../../../../lib/basePath";
+import { alternatesFor } from "../../../../lib/seo";
 import { kontaktPath } from "../../../../lib/kontakt";
 import { getDictionary, hasLocale } from "../../dictionaries";
 import { LOCALES } from "../../../../lib/i18n";
@@ -64,6 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: `${ref.titel} - ${ref.ort}`,
     description: ref.untertitel,
+    alternates: alternatesFor(lang, `/referenzen/${slug}/`),
     openGraph: {
       title: ref.titel,
       description: ref.untertitel,

@@ -7,6 +7,7 @@ import { getDictionary, hasLocale } from "../../dictionaries";
 import { LOCALES } from "../../../../lib/i18n";
 import { notFound } from "next/navigation";
 import { localizeProdukte } from "../../../../data/i18n/getLocalized";
+import { alternatesFor } from "../../../../lib/seo";
 import { AppIcon } from "@/components/ui/icon";
 import { ExternalLink, Info } from "lucide-react";
 
@@ -74,7 +75,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!hasLocale(lang) || !getBereichBySlug(slug)) return {};
   const dict = await getDictionary(lang);
   const tb = (k: string) => (dict.bereiche as Record<string, string>)[k] ?? k;
-  return { title: tb(`${slug}_name`), description: tb(`${slug}_teaser`) };
+  return {
+    title: tb(`${slug}_name`),
+    description: tb(`${slug}_teaser`),
+    alternates: alternatesFor(lang, `/bereiche/${slug}/`),
+  };
 }
 
 export default async function BereichPage({ params }: { params: Params }) {

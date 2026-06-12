@@ -39,6 +39,13 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /KORODUR-Sanierung_app
+          # Canonical/hreflang/Sitemap zeigen auf die aktuelle Pages-Origin;
+          # der Cutover-Build setzt stattdessen https://www.korodur.de.
+          NEXT_PUBLIC_SITE_URL: https://sfleischmann-3steps2.github.io
+          # Cloudflare Web Analytics (cookieless). Leer = deaktiviert.
+          # Aktivierung: Repo-Variable CF_BEACON_TOKEN setzen (Token aus dem
+          # Cloudflare-Dashboard, Web Analytics > Site hinzufügen).
+          NEXT_PUBLIC_CF_BEACON_TOKEN: ${{ vars.CF_BEACON_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

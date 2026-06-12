@@ -3,7 +3,6 @@
 # Jede Journey muss intern enden — www.korodur.de wird abgeschaltet.
 # Ausnahmen (bewusst, mit eigenem Launch-Meilenstein):
 #   - data/produkte.ts: tdsUrl/websiteUrl bis TDS-Selfhosting (M3/B4)
-#   - lib/kontaktDaten.ts: Impressum/Datenschutz bis eigene Rechtsseiten (M2/B3)
 #   - lib/pdf.ts: Adresszeile im PDF-Footer (Text, kein Link; Domain bleibt unsere)
 # E-Mail-Adressen (@korodur.de) sind erlaubt.
 set -euo pipefail
@@ -12,7 +11,6 @@ cd "$(dirname "$0")/.."
 hits=$(grep -rn "www\.korodur\.de\|//korodur\.de" app components lib data \
   --include="*.ts" --include="*.tsx" \
   | grep -v "data/produkte.ts" \
-  | grep -v "lib/kontaktDaten.ts" \
   | grep -v "lib/pdf.ts" \
   | grep -v "^\s*//" \
   | grep -v ":\s*//" || true)

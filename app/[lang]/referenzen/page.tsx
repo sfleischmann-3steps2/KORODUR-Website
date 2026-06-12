@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useMemo, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState, useMemo, useEffect } from "react";
 import ReferenceCard from "../../../components/ReferenceCard";
 import Breadcrumb from "../../../components/Breadcrumb";
 import { referenzen as alleReferenzen } from "../../../data/referenzen";
@@ -44,22 +43,20 @@ type FilterState = {
 };
 
 export default function ReferenzenPage() {
-  return (
-    <Suspense>
-      <ReferenzenContent />
-    </Suspense>
-  );
-}
-
-function ReferenzenContent() {
   const { lang, dict } = useLocale();
-  const searchParams = useSearchParams();
-  const initialProdukt = searchParams.get("produkt") ?? "";
 
   const [filters, setFilters] = useState<FilterState>({
     bereich: "",
-    produkt: initialProdukt,
+    produkt: "",
   });
+
+  // Deep-Link ?produkt=… erst nach Mount anwenden (statt useSearchParams):
+  // useSearchParams würde beim Static Export die ganze Seite aus dem Prerender
+  // kippen — dann stünden 0 Referenz-Cards im crawlbaren HTML (Launch-Plan M2).
+  useEffect(() => {
+    const produkt = new URLSearchParams(window.location.search).get("produkt");
+    if (produkt) setFilters((prev) => ({ ...prev, produkt }));
+  }, []);
 
   const referenzen = useMemo(
     () => alleReferenzen.map((r) => localizeRef(r, lang)),

@@ -8,12 +8,17 @@ import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { localizeProdukte } from "../../../data/i18n/getLocalized";
 import { withBasePath } from "../../../lib/basePath";
+import { alternatesFor } from "../../../lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
-  return { title: dict.produkte.title, description: dict.produkte.subtitle };
+  return {
+    title: dict.produkte.title,
+    description: dict.produkte.subtitle,
+    alternates: alternatesFor(lang, "/produkte/"),
+  };
 }
 
 export default async function ProduktePage({

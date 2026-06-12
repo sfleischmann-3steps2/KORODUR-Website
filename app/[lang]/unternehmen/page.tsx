@@ -7,6 +7,7 @@ import {
   KORODUR_ZENTRALE,
   KORODUR_WERK_BOCHUM,
 } from "../../../lib/kontaktDaten";
+import { alternatesFor } from "../../../lib/seo";
 
 type Params = Promise<{ lang: string }>;
 
@@ -14,7 +15,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
-  return { title: dict.unternehmen.title, description: dict.unternehmen.intro1 };
+  return {
+    title: dict.unternehmen.title,
+    description: dict.unternehmen.intro1,
+    alternates: alternatesFor(lang, "/unternehmen/"),
+  };
 }
 
 export default async function UnternehmenPage({ params }: { params: Params }) {

@@ -255,7 +255,8 @@
     "cta_loesungsfinder": "Lösungsfinder starten",
     "cta_kontakt": "Kontakt zu unseren Beratern",
     "count_produkte": "{n} Produkte",
-    "count_produkte_5plus": "{n} Produkte"
+    "count_produkte_5plus": "{n} Produkte",
+    "meta_description": "Anwendungsmatrix für KORODUR-Sanierungsprodukte: Einsatzfälle wie Industrieboden, Parkdeck, Verkehr, WHG, Sichtboden und Reparatur, mit technischen Daten und Datenblättern."
   },
   "footer": {
     "tagline": "Qualität für Generationen. Seit 1936.",
@@ -421,5 +422,8 @@
     "fachberater_title": "Technische Fachberatung",
     "fachberater_intro": "Unsere Fachberater helfen bei Produktfragen, Mengenberechnung und Verarbeitungsempfehlungen, kostenlos und unverbindlich.",
     "fachberater_plz": "PLZ-Gebiete"
+  },
+  "rechtliches": {
+    "sprachhinweis": "Rechtlich maßgeblich ist die deutsche Fassung."
   }
 }

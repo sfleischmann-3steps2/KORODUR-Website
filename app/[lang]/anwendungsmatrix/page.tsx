@@ -4,15 +4,30 @@ import type { Metadata } from "next";
 import { getDictionary, hasLocale } from "../dictionaries";
 import Anwendungsmatrix from "../../../components/Anwendungsmatrix";
 import type { Locale } from "../../../lib/i18n";
+import { alternatesFor } from "../../../lib/seo";
 
 type Dict = Record<string, string>;
 const t = (dict: Dict | undefined, key: string, fallback: string) => dict?.[key] ?? fallback;
 
-export const metadata: Metadata = {
-  title: "Anwendungsmatrix Sanierung",
-  description:
-    "Alternative Bedarfsmatrix für KORODUR-Sanierungsprodukte nach Einsatzfällen wie Industrieboden, Parken, Verkehr, WHG, Sichtboden und Reparatur.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  const m = (dict as unknown as { anwendungsmatrix?: Dict }).anwendungsmatrix;
+  return {
+    title: dict.nav.anwendungsmatrix,
+    description: t(
+      m,
+      "meta_description",
+      "Anwendungsmatrix für KORODUR-Sanierungsprodukte: Einsatzfälle wie Industrieboden, Parkdeck, Verkehr, WHG, Sichtboden und Reparatur, mit technischen Daten und Datenblättern."
+    ),
+    alternates: alternatesFor(lang, "/anwendungsmatrix/"),
+  };
+}
 
 const NAVY = "var(--navy)";
 const NAVY_72 = "rgba(0, 45, 89, 0.72)";
