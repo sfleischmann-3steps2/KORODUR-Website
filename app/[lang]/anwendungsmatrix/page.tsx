@@ -105,10 +105,8 @@ export default async function AnwendungsmatrixPage({
             >
               {t(dict, "cta_loesungsfinder", "Lösungsfinder starten")}
             </Link>
-            <a
-              href="https://www.korodur.de/kontakt.html"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={`/${lang}/kontakt/`}
               style={{
                 display: "inline-block",
                 padding: "12px 28px",
@@ -122,7 +120,7 @@ export default async function AnwendungsmatrixPage({
               }}
             >
               {t(dict, "cta_kontakt", "Kontakt zu unseren Beratern")}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

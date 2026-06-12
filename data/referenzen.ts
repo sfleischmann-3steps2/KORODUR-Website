@@ -810,12 +810,13 @@ export const referenzen: Referenz[] = [
     untertitel: "Punktuelle Sanierung der stark frequentierten LKW-Zufahrt eines 2021 errichteten Logistikzentrums an der A8 bei Schärdin",
     ort: "Sankt Marienkirchen bei Schärding",
     land: "Österreich",
-    flaeche: "500 m² (Kategorie aus Alt-Formular; punktuelle Reparatur der Zufahrt, exakte Fläche mit Alexander zu klären — ggf. irrelevant)",
+    flaeche: "ca. 500 m²",
     produkte: ["Rapid Set Zement"],
     herausforderungen: [
       "Sanierung einer hoch frequentierten LKW-Zufahrt mit minimaler Nutzungsunterbrechung; Einbau bei sehr heißen Sommertemperaturen am 25.06.2025 (Herausforderung für Verarbeitungsfenster und Nachbehandlung); technische Probleme mit der Sprühtechnik für das Nachbehandlungsmittel erforderten manuellen Auftrag des Paraffin-basierten NBM sowie zusätzliche Maßnahmen (Wassersprühen, Folienabdeckung) aufgrund hoher Plattentemperaturen. Zweite Betonage in der Folgewoche in den Abendstunden.",
     ],
-    loesung: "OFFEN — Alexander zu fragen. Vermutung: schnelle Wiederbefahrbarkeit wegen hoher LKW-Frequenz und Garantie-Fristdruck des GU. Tatsächliche Entscheidungsgründe aber nicht belegt.",
+    loesung:
+      "Punktuelle Sanierung der LKW-Zufahrt mit Rapid Set Zement im laufenden Betrieb. Einbau bei hochsommerlichen Temperaturen mit angepasster Nachbehandlung (manueller Auftrag des Nachbehandlungsmittels, Wassersprühen, Folienabdeckung); die zweite Betonage erfolgte in den Abendstunden der Folgewoche.",
     vorteile: [],
     bild: "/images/referenzen/_placeholder.jpg",
     bildAlt: "Sanierung LKW-Zufahrt Logistikzentrum Spedition Brummer, Sankt Marienkirchen (Österreich) (Bild folgt)",

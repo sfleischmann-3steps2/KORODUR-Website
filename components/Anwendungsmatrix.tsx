@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import {
   anwendungMatrixProducts,
@@ -84,8 +85,43 @@ function MarkCell({ mark, dict }: { mark: Mark; dict: Dict | undefined }) {
   );
 }
 
-function resolveLink(link: ProductLink): string | undefined {
-  return link.kind === "tds" ? produktTdsUrls.get(link.productId) : link.url;
+/** TDS-Links sind externe PDFs; "website"-Links sind interne App-Routen (lang-neutral gespeichert). */
+function resolveLink(
+  link: ProductLink,
+  lang: Locale
+): { href: string; external: boolean } | undefined {
+  if (link.kind === "tds") {
+    const url = produktTdsUrls.get(link.productId);
+    return url ? { href: url, external: true } : undefined;
+  }
+  return { href: `/${lang}${link.url}`, external: false };
+}
+
+function MehrInfosLink({
+  link,
+  lang,
+  dict,
+  className,
+  style,
+}: {
+  link: ProductLink;
+  lang: Locale;
+  dict: Dict | undefined;
+  className?: string;
+  style?: CSSProperties;
+}) {
+  const resolved = resolveLink(link, lang);
+  if (!resolved) return null;
+  const label = t(dict, "link_more", "Mehr Infos");
+  return resolved.external ? (
+    <a href={resolved.href} target="_blank" rel="noopener noreferrer" className={className} style={style}>
+      {label} ↗
+    </a>
+  ) : (
+    <Link href={resolved.href} className={className} style={style}>
+      {label} →
+    </Link>
+  );
 }
 
 const td: CSSProperties = {
@@ -107,13 +143,12 @@ export default function Anwendungsmatrix({
   lang: Locale;
   dict?: Dict;
 }) {
-  void lang;
   return (
     <div>
       {/* Mobil (<lg): Anwendungs-Accordion (Variante C, Mockup 2026-06-11).
           Die Anwendungen sind die Liste, Produkte klappen direkt darunter auf —
           ersetzt den 980px-Zwangs-Scroll der Tabelle. */}
-      <MobileAnwendungen dict={dict} />
+      <MobileAnwendungen dict={dict} lang={lang} />
 
       <div className="hidden lg:block">
       <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", borderRadius: 12 }}>
@@ -148,51 +183,44 @@ export default function Anwendungsmatrix({
               >
                 {t(dict, "corner_produkt", "Produkt")}
               </th>
-              {anwendungMatrixProducts.map((p) => {
-                const href = resolveLink(p.link);
-                return (
-                  <th
-                    key={p.id}
+              {anwendungMatrixProducts.map((p) => (
+                <th
+                  key={p.id}
+                  style={{
+                    ...td,
+                    background: HEAD_BG,
+                    borderBottom: `2px solid ${CYAN}`,
+                    padding: "8px 7px 9px",
+                    verticalAlign: "top",
+                    height: 0, // erlaubt height:100% des Inhalts → Link bündig unten
+                  }}
+                >
+                  <span
                     style={{
-                      ...td,
-                      background: HEAD_BG,
-                      borderBottom: `2px solid ${CYAN}`,
-                      padding: "8px 7px 9px",
-                      verticalAlign: "top",
-                      height: 0, // erlaubt height:100% des Inhalts → Link bündig unten
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "100%",
+                      gap: 5,
                     }}
                   >
-                    <span
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        height: "100%",
-                        gap: 5,
-                      }}
-                    >
-                      <span style={{ fontSize: 15, fontWeight: 900, lineHeight: 1.15 }}>
-                        {p.name}
-                      </span>
-                      {href && (
-                        <a
-                          href={href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            marginTop: "auto",
-                            color: CYAN,
-                            fontSize: 11,
-                            fontWeight: 800,
-                            textDecoration: "none",
-                          }}
-                        >
-                          {t(dict, "link_more", "Mehr Infos")} ↗
-                        </a>
-                      )}
+                    <span style={{ fontSize: 15, fontWeight: 900, lineHeight: 1.15 }}>
+                      {p.name}
                     </span>
-                  </th>
-                );
-              })}
+                    <MehrInfosLink
+                      link={p.link}
+                      lang={lang}
+                      dict={dict}
+                      style={{
+                        marginTop: "auto",
+                        color: CYAN,
+                        fontSize: 11,
+                        fontWeight: 800,
+                        textDecoration: "none",
+                      }}
+                    />
+                  </span>
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -313,7 +341,7 @@ export default function Anwendungsmatrix({
   );
 }
 
-function MobileAnwendungen({ dict }: { dict: Dict | undefined }) {
+function MobileAnwendungen({ dict, lang }: { dict: Dict | undefined; lang: Locale }) {
   return (
     <Accordion
       type="single"
@@ -353,12 +381,14 @@ function MobileAnwendungen({ dict }: { dict: Dict | undefined }) {
                 label={`✓✓ ${t(dict, "legend_best", "Kernanwendung")}`}
                 best
                 dict={dict}
+                lang={lang}
               />
               <MarkGruppe
                 row={row}
                 mark="yes"
                 label={`✓ ${t(dict, "legend_yes", "geeignet")}`}
                 dict={dict}
+                lang={lang}
               />
             </AccordionContent>
           </AccordionItem>
@@ -374,12 +404,14 @@ function MarkGruppe({
   label,
   best,
   dict,
+  lang,
 }: {
   row: (typeof anwendungUsecases)[number];
   mark: Mark;
   label: string;
   best?: boolean;
   dict: Dict | undefined;
+  lang: Locale;
 }) {
   const items = anwendungMatrixProducts.filter((_, i) => row.marks[i] === mark);
   if (!items.length) return null;
@@ -391,34 +423,27 @@ function MarkGruppe({
       >
         {label}
       </p>
-      {items.map((p) => {
-        const href = resolveLink(p.link);
-        return (
-          <div
-            key={p.id}
-            className="mb-2 flex items-center justify-between gap-3 rounded-lg bg-icon-bg p-3 last:mb-0"
-          >
-            <div className="min-w-0">
-              <p className="text-sm font-black text-navy">{p.name}</p>
-              <p className="mt-0.5 text-xs text-muted-foreground">
-                {t(dict, p.vorteil.key, p.vorteil.de)} ·{" "}
-                {t(dict, "row_belastbar", "belastbar nach")}{" "}
-                {cell(dict, p.belastbarNach)} · {cell(dict, p.schichtdicke)}
-              </p>
-            </div>
-            {href && (
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-11 shrink-0 items-center gap-1 text-xs font-extrabold text-cyan no-underline"
-              >
-                {t(dict, "link_more", "Mehr Infos")} ↗
-              </a>
-            )}
+      {items.map((p) => (
+        <div
+          key={p.id}
+          className="mb-2 flex items-center justify-between gap-3 rounded-lg bg-icon-bg p-3 last:mb-0"
+        >
+          <div className="min-w-0">
+            <p className="text-sm font-black text-navy">{p.name}</p>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              {t(dict, p.vorteil.key, p.vorteil.de)} ·{" "}
+              {t(dict, "row_belastbar", "belastbar nach")}{" "}
+              {cell(dict, p.belastbarNach)} · {cell(dict, p.schichtdicke)}
+            </p>
           </div>
-        );
-      })}
+          <MehrInfosLink
+            link={p.link}
+            lang={lang}
+            dict={dict}
+            className="flex min-h-11 shrink-0 items-center gap-1 text-xs font-extrabold text-cyan no-underline"
+          />
+        </div>
+      ))}
     </div>
   );
 }

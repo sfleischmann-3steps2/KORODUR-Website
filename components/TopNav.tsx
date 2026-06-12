@@ -68,7 +68,9 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   const navLinks = [
     { href: `/${lang}/produkte/`, label: dict.nav.produkte },
     { href: `/${lang}/sanierung/`, label: dict.nav.sanierung },
-    { href: `/${lang}/anwendungsmatrix/`, label: dict.nav.anwendungen },
+    // Label "Anwendungsmatrix" statt "Anwendungen": Die Seite ist eine reine
+    // Sanierungs-Matrix; echte Anwendungs-Einstiege über alle Bereiche sind V2.
+    { href: `/${lang}/anwendungsmatrix/`, label: dict.nav.anwendungsmatrix },
     { href: `/${lang}/referenzen/`, label: dict.nav.referenzen },
     { href: `/${lang}/unternehmen/`, label: dict.nav.unternehmen },
     { href: `/${lang}/kontakt/`, label: dict.nav.kontakt },

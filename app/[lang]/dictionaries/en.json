@@ -6,7 +6,6 @@
     "anwendungsmatrix": "Application Matrix",
     "produkte": "Products",
     "sanierung": "Renovation",
-    "anwendungen": "Applications",
     "unternehmen": "Company",
     "kontakt": "Contact"
   },
@@ -30,7 +29,8 @@
     "hero_kicker": "KORODUR. Since 1936.",
     "hero_cta_secondary": "Explore products",
     "bereiche_title": "Our Business Areas",
-    "bereiche_subtitle": "From industrial flooring to special construction materials: all KORODUR product worlds at a glance."
+    "bereiche_subtitle": "From industrial flooring to special construction materials: all KORODUR product worlds at a glance.",
+    "meta_title": "KORODUR | Industrial Floors, Decorative Screeds and Special Construction Materials"
   },
   "referenzen": {
     "breadcrumb": "References",
@@ -53,10 +53,13 @@
     "products_subtitle": "Technical data and standards of the KORODUR products used",
     "technical_data": "Technical Data",
     "norms": "Standards & Certifications",
-    "view_on_website": "View on korodur.de",
     "related": "More References",
     "all_category_refs": "All {category} References",
-    "gallery": "Image Gallery"
+    "gallery": "Image Gallery",
+    "cta_title": "Planning a similar project?",
+    "cta_text": "Our technical advisors will help you find the ideal renovation solution.",
+    "cta_button": "Contact an advisor",
+    "cta_alle_referenzen": "View all references"
   },
   "common": {
     "reference_singular": "Reference",
@@ -79,7 +82,6 @@
     "features": "Key Features",
     "used_in_references": "Used in Reference Projects",
     "view_reference": "View Reference",
-    "view_on_website": "View on korodur.de",
     "all_products": "All Products",
     "verarbeitung_title": "Application",
     "untergrundvorbereitung": "Substrate Preparation",
@@ -92,7 +94,8 @@
     "referenzen_title": "This Product in Action",
     "referenzen_alle": "All references with this product",
     "cta_verarbeitung": "Questions about application? Our technical advisors are here to help.",
-    "varianten_title": "Available grades"
+    "varianten_title": "Available grades",
+    "cta_kontakt_button": "Contact an advisor"
   },
   "sanierung": {
     "title": "Product Finder",

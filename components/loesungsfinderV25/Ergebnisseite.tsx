@@ -19,7 +19,7 @@ import { useLocale } from "@/lib/LocaleContext";
 import type { LoesungsfinderState } from "@/data/types";
 import { einsatzbereichLabel } from "@/data/einsatzbereichMapping";
 import { withBasePath } from "@/lib/basePath";
-import { KONTAKT_URLS } from "@/lib/kontakt";
+import { kontaktPath } from "@/lib/kontakt";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -180,10 +180,10 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
           <div className="text-[12.5px] text-white/80">{t.cta_text}</div>
         </div>
         <Button asChild className="min-h-11 w-full shrink-0 sm:w-auto">
-          <a href={KONTAKT_URLS[lang] ?? KONTAKT_URLS.de} target="_blank" rel="noopener noreferrer">
+          <Link href={kontaktPath(lang)}>
             <IconPhone width={15} height={15} aria-hidden="true" />
             {t.cta_button}
-          </a>
+          </Link>
         </Button>
       </div>
 

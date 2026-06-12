@@ -17,6 +17,7 @@ import { bereichLabel } from "../../../../data/einsatzbereichMapping";
 import { isPublicReference, selectRelatedReferences } from "../../../../data/referenceDetail";
 import type { Referenz } from "../../../../data/types";
 import { withBasePath } from "../../../../lib/basePath";
+import { kontaktPath } from "../../../../lib/kontakt";
 import { getDictionary, hasLocale } from "../../dictionaries";
 import { LOCALES } from "../../../../lib/i18n";
 import { notFound } from "next/navigation";
@@ -521,15 +522,11 @@ export default async function ReferenzDetailPage({
 
       <section className="px-4 pb-10 pt-4 sm:px-6">
         <div className={`${CONTAINER} rounded-lg bg-navy p-6 text-center sm:p-7`}>
-          <h2 className="m-0 mb-2 text-[22px] font-black text-white">Ähnliches Projekt?</h2>
-          <p className="mb-5 mt-0 text-[15px] text-white/80">
-            Unsere technischen Berater helfen Ihnen, die optimale Sanierungslösung zu finden.
-          </p>
+          <h2 className="m-0 mb-2 text-[22px] font-black text-white">{dict.detail.cta_title}</h2>
+          <p className="mb-5 mt-0 text-[15px] text-white/80">{dict.detail.cta_text}</p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button asChild size="lg" className="h-11 px-6 font-black">
-              <a href="https://www.korodur.de/kontakt/" target="_blank" rel="noopener noreferrer">
-                Berater kontaktieren
-              </a>
+              <Link href={kontaktPath(lang)}>{dict.detail.cta_button}</Link>
             </Button>
             <Button
               asChild
@@ -537,7 +534,7 @@ export default async function ReferenzDetailPage({
               size="lg"
               className="h-11 border-white px-6 font-black text-white hover:bg-white hover:text-navy"
             >
-              <Link href={`/${lang}/referenzen/`}>Alle Referenzen ansehen</Link>
+              <Link href={`/${lang}/referenzen/`}>{dict.detail.cta_alle_referenzen}</Link>
             </Button>
           </div>
         </div>

@@ -6,7 +6,6 @@
     "anwendungsmatrix": "Matryca zastosowań",
     "produkte": "Produkty",
     "sanierung": "Renowacja",
-    "anwendungen": "Zastosowania",
     "unternehmen": "Firma",
     "kontakt": "Kontakt"
   },
@@ -30,7 +29,8 @@
     "hero_kicker": "KORODUR. Od 1936 roku.",
     "hero_cta_secondary": "Poznaj produkty",
     "bereiche_title": "Nasze obszary działalności",
-    "bereiche_subtitle": "Od posadzek przemysłowych po specjalistyczne materiały budowlane: wszystkie światy produktów KORODUR w skrócie."
+    "bereiche_subtitle": "Od posadzek przemysłowych po specjalistyczne materiały budowlane: wszystkie światy produktów KORODUR w skrócie.",
+    "meta_title": "KORODUR | Posadzki przemysłowe, jastrychy dekoracyjne i specjalistyczne materiały budowlane"
   },
   "referenzen": {
     "breadcrumb": "Referencje",
@@ -53,10 +53,13 @@
     "products_subtitle": "Dane techniczne i normy zastosowanych produktów KORODUR",
     "technical_data": "Dane techniczne",
     "norms": "Normy i certyfikaty",
-    "view_on_website": "Zobacz na korodur.de",
     "related": "Więcej referencji",
     "all_category_refs": "Wszystkie referencje {category}",
-    "gallery": "Galeria zdjęć"
+    "gallery": "Galeria zdjęć",
+    "cta_title": "Podobny projekt?",
+    "cta_text": "Nasi doradcy techniczni pomogą Państwu znaleźć optymalne rozwiązanie renowacyjne.",
+    "cta_button": "Skontaktuj się z doradcą",
+    "cta_alle_referenzen": "Zobacz wszystkie referencje"
   },
   "common": {
     "reference_singular": "Referencja",
@@ -79,7 +82,6 @@
     "features": "Właściwości szczególne",
     "used_in_references": "Zastosowany w projektach referencyjnych",
     "view_reference": "Zobacz referencję",
-    "view_on_website": "Zobacz na korodur.de",
     "all_products": "Wszystkie produkty",
     "verarbeitung_title": "Zastosowanie",
     "untergrundvorbereitung": "Przygotowanie podłoża",
@@ -92,7 +94,8 @@
     "referenzen_title": "Ten produkt w akcji",
     "referenzen_alle": "Wszystkie referencje z tym produktem",
     "cta_verarbeitung": "Pytania dotyczące zastosowania? Nasi doradcy techniczni chętnie pomogą.",
-    "varianten_title": "Dostępne jakości"
+    "varianten_title": "Dostępne jakości",
+    "cta_kontakt_button": "Skontaktuj się z doradcą"
   },
   "sanierung": {
     "title": "Wyszukiwarka produktów",
