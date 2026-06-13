@@ -59,9 +59,9 @@ export default async function ProduktePage({
           >
             {dict.produkte.title}
           </h1>
-          <p className="text-navy opacity-60 mb-0" style={{ fontSize: 18, maxWidth: 700 }}>
-            {dict.produkte.subtitle}
-          </p>
+
+          {/* Subline bewusst entfernt (Steffi 2026-06-13, #95): nicht mehr nur
+              Sanierungsprodukte. Der Text lebt weiter als Meta-Description. */}
 
           {/* Bereichs-Anker-Chips (springen zu den Gruppen, kein Filter-State) */}
           <div className="flex flex-wrap gap-2 mt-6">
