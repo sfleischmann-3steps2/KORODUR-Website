@@ -394,4 +394,25 @@ export const REFERENZ_FILTER_V25: Record<string, ReferenzFilterV25> = {
     zeitfenster: "kurz",
     schadenstypen: [],
   },
+  "verwaltungsgebaeude-laehitapiola-espoo": {
+    flaecheKategorie: "gross",
+    innenAussen: "innen",
+    einsatzbereich: "innen-sicht-design",
+    zeitfenster: "planbar",
+    schadenstypen: [],
+  },
+  "kaiserhof-koeln": {
+    flaecheKategorie: "mittel",
+    innenAussen: "innen",
+    einsatzbereich: "innen-sicht-design",
+    zeitfenster: "planbar",
+    schadenstypen: [],
+  },
+  "baeckerei-konditorei-schmidtmeier-bochum": {
+    flaecheKategorie: "mittel",
+    innenAussen: "innen",
+    einsatzbereich: "innen-nass-hygiene-chemie",
+    zeitfenster: "planbar",
+    schadenstypen: [],
+  },
 };
