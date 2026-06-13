@@ -233,3 +233,34 @@ export function produktFamilieLabel(kategorie: string, lang: string): string {
     kategorie
   );
 }
+
+// === Projektart-Facette (Neubau / Sanierung) ================================
+// Referenzen tragen `projekttyp` (sanierung|neubau|instandsetzung|modernisierung).
+// Für Filter und Karten-Chip rollen wir auf zwei Buckets hoch: Neubau vs.
+// Sanierung (inkl. Instandsetzung/Modernisierung). Die Detailseite zeigt
+// weiterhin den genauen projekttyp.
+export type Projektart = "sanierung" | "neubau";
+
+/** Rollt den genauen projekttyp auf die zwei Filter-Buckets hoch.
+ *  Fehlender Wert → "sanierung" (Sanierungs-App ist der Default-Kontext). */
+export function projektartBucket(
+  projekttyp?: "sanierung" | "neubau" | "instandsetzung" | "modernisierung"
+): Projektart {
+  return projekttyp === "neubau" ? "neubau" : "sanierung";
+}
+
+// Bucket-Labels, deckungsgleich mit den projekttyp_*-Strings der Dictionaries
+// (DE/EN/FR/PL/ES). Bewusst hier als Funktion, damit ReferenceCard ohne
+// dict-Zugriff lokalisieren kann (wie bereichLabel).
+export const PROJEKTART_LABELS_I18N: Record<string, Record<Projektart, string>> = {
+  de: { sanierung: "Sanierung", neubau: "Neubau" },
+  en: { sanierung: "Renovation", neubau: "New construction" },
+  fr: { sanierung: "Rénovation", neubau: "Construction neuve" },
+  pl: { sanierung: "Renowacja", neubau: "Nowe budownictwo" },
+  es: { sanierung: "Rehabilitación", neubau: "Obra nueva" },
+};
+
+/** Projektart-Label (Bucket) in der gewünschten Sprache, mit DE-Fallback. */
+export function projektartLabel(art: Projektart, lang: string): string {
+  return PROJEKTART_LABELS_I18N[lang]?.[art] ?? PROJEKTART_LABELS_I18N.de[art];
+}

@@ -36,6 +36,8 @@
     "breadcrumb": "References",
     "title": "All References",
     "description_prefix": "Projects in industrial flooring, structural renovation, and infrastructure – filter by area, application, or product.",
+    "filter_projektart": "Project type",
+    "filter_all": "All",
     "filter_all_areas": "All Areas",
     "filter_all_applications": "All Applications",
     "filter_all_products": "All Products",

@@ -36,6 +36,8 @@
     "breadcrumb": "Referencias",
     "title": "Todas las referencias",
     "description_prefix": "Proyectos de pavimentos industriales, construcción industrial e infraestructuras: filtre por área, aplicación o producto.",
+    "filter_projektart": "Tipo de proyecto",
+    "filter_all": "Todas",
     "filter_all_areas": "Todas las áreas",
     "filter_all_applications": "Todas las aplicaciones",
     "filter_all_products": "Todos los productos",

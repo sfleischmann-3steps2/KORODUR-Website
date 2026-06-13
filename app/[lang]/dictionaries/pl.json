@@ -36,6 +36,8 @@
     "breadcrumb": "Referencje",
     "title": "Wszystkie referencje",
     "description_prefix": "Projekty z zakresu posadzek przemysłowych, budownictwa przemysłowego i infrastruktury – filtruj według obszaru, zastosowania lub produktu.",
+    "filter_projektart": "Typ projektu",
+    "filter_all": "Wszystkie",
     "filter_all_areas": "Wszystkie obszary",
     "filter_all_applications": "Wszystkie zastosowania",
     "filter_all_products": "Wszystkie produkty",

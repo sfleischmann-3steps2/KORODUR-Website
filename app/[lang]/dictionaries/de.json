@@ -36,6 +36,8 @@
     "breadcrumb": "Referenzen",
     "title": "Alle Referenzen",
     "description_prefix": "Projekte aus Industrieboden, Industriebau und Infrastruktur – filtern Sie nach Bereich, Anwendung oder Produkt.",
+    "filter_projektart": "Projektart",
+    "filter_all": "Alle",
     "filter_all_areas": "Alle Bereiche",
     "filter_all_applications": "Alle Anwendungen",
     "filter_all_products": "Alle Produkte",

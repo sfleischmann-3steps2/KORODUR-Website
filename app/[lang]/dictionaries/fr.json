@@ -36,6 +36,8 @@
     "breadcrumb": "Références",
     "title": "Toutes les références",
     "description_prefix": "Projets dans le domaine des sols industriels, de la rénovation structurelle et de l'infrastructure – filtrez par domaine, application ou produit.",
+    "filter_projektart": "Type de projet",
+    "filter_all": "Toutes",
     "filter_all_areas": "Tous les domaines",
     "filter_all_applications": "Toutes les applications",
     "filter_all_products": "Tous les produits",
