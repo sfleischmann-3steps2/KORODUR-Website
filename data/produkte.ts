@@ -1636,6 +1636,7 @@ export const produkte: Produkt[] = [
     id: "microtop-tw-5",
     tdsUrl: "/downloads/tds/MICROTOP_TW_3_5_8_de.pdf",
     name: "MICROTOP TW 5",
+    qualitaetsklasse: "C30/37",
     kategorie: "sonstige",
     bereich: "microtop",
     produktgruppe: "trockenspritz",
@@ -1840,7 +1841,7 @@ export const produkte: Produkt[] = [
     produktgruppe: "verguss",
     kurzbeschreibung: "Vergussmörtel für Vergussquerschnitte von 10 bis 50 mm",
     beschreibung: "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen. NEODUR VM 3 ist für Vergussquerschnitte von 10 bis 50 mm ausgelegt.",
-    qualitaetsklasse: "C60/75",
+    qualitaetsklasse: "C55/67",
     normen: [
       "DIN EN 13395-2",
       "DIN EN 445",
@@ -2011,7 +2012,7 @@ export const produkte: Produkt[] = [
     produktgruppe: "betoninstandsetzung",
     kurzbeschreibung: "Spritzmörtel für die Betoninstandsetzung, Körnung 0 bis 5 mm",
     beschreibung: "Die Betoninstandsetzung umfasst Technologien zur Wiederherstellung von Bauteilen aus Beton. NEODUR MSM 5 ist ein mineralischer Spritzmörtel mit Körnung 0 bis 5 mm.",
-    qualitaetsklasse: "C30/37",
+    qualitaetsklasse: "C35/45",
     normen: [
       "DIN 18551",
       "DIN EN 14487",
@@ -2031,7 +2032,7 @@ export const produkte: Produkt[] = [
     produktgruppe: "betoninstandsetzung",
     kurzbeschreibung: "Spritzbeton für die Betoninstandsetzung, Körnung 0 bis 8 mm",
     beschreibung: "Die Betoninstandsetzung umfasst Technologien zur Wiederherstellung von Bauteilen aus Beton. NEODUR MSB 8 ist ein mineralischer Spritzbeton mit Körnung 0 bis 8 mm.",
-    qualitaetsklasse: "C30/37",
+    qualitaetsklasse: "C35/45",
     normen: [
       "DIN 18551",
       "DIN EN 14487",
