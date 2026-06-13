@@ -12,10 +12,23 @@ import ReferenceCard from "../../../../components/ReferenceCard";
 import { fachberaterFuerBereich } from "../../../../data/fachberater";
 import BeraterCard from "../../../../components/BeraterCard";
 import { alternatesFor } from "../../../../lib/seo";
+import { projektartLabel, type Projektart } from "../../../../data/einsatzbereichMapping";
 import { AppIcon } from "@/components/ui/icon";
-import { ExternalLink, Info } from "lucide-react";
+import { ChevronRight, ExternalLink, Info } from "lucide-react";
 
 type Params = Promise<{ lang: string; slug: string }>;
+
+// Projekttyp-Einordnung je Bereich (Steffi 2026-06-13, #87): macht auf der
+// Bereich-Detailseite sichtbar, ob der Bereich für Neubau und/oder Sanierung
+// relevant ist, und routet in den passenden Kontext. Katzenstreu + reine
+// Taxonomie-Bereiche (schnellbetonsysteme, 3d-concrete-printing) bleiben ohne.
+const BEREICH_PROJEKTARTEN: Record<string, Projektart[]> = {
+  industrieboden: ["neubau", "sanierung"],
+  sichtestrich: ["neubau"],
+  spezialbaustoffe: ["neubau", "sanierung"],
+  microtop: ["sanierung"],
+  "rapid-set": ["sanierung"],
+};
 
 function ProduktGrid({
   produkte: items,
@@ -193,6 +206,55 @@ export default async function BereichPage({ params }: { params: Params }) {
           )}
         </div>
       </section>
+
+      {/* Projekttyp-Framing: Neubau und/oder Sanierung (#87) */}
+      {(BEREICH_PROJEKTARTEN[slug] ?? []).length > 0 && (
+        <section style={{ padding: "0 32px 8px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-5" style={{ fontSize: "clamp(18px, 2.5vw, 24px)", fontWeight: 800 }}>
+              {tb("kontext_title")}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ maxWidth: 900 }}>
+              {(BEREICH_PROJEKTARTEN[slug] ?? []).map((art) => {
+                const isNeubau = art === "neubau";
+                return (
+                  <div
+                    key={art}
+                    className={`rounded-xl border p-5 ${isNeubau ? "bg-navy border-navy" : "bg-icon-bg border-bullet-bg"}`}
+                  >
+                    <span
+                      className={`text-[12px] uppercase tracking-wide ${isNeubau ? "text-cyan" : "text-cyan-text"}`}
+                      style={{ fontWeight: 800 }}
+                    >
+                      {projektartLabel(art, lang)}
+                    </span>
+                    <p className={`mt-1 mb-4 text-[14px] leading-[1.6] ${isNeubau ? "text-white/85" : "text-navy/70"}`}>
+                      {tb(isNeubau ? "kontext_neubau_text" : "kontext_sanierung_text")}
+                    </p>
+                    <div className="flex flex-wrap gap-x-5 gap-y-2">
+                      <Link
+                        href={`/${lang}/${isNeubau ? "neubau" : "sanierung"}/`}
+                        className={`inline-flex items-center gap-1.5 text-[14px] no-underline hover:underline ${isNeubau ? "text-white" : "text-cyan-text"}`}
+                        style={{ fontWeight: 700, minHeight: 44 }}
+                      >
+                        {isNeubau ? dict.nav.neubau : dict.nav.sanierung}
+                        <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
+                      </Link>
+                      <Link
+                        href={`/${lang}/referenzen/?projektart=${art}`}
+                        className={`inline-flex items-center gap-1.5 text-[14px] no-underline hover:underline ${isNeubau ? "text-white/80" : "text-cyan-text"}`}
+                        style={{ fontWeight: 700, minHeight: 44 }}
+                      >
+                        {dict.nav.referenzen}
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Produkte des Bereichs */}
       <section className={bereich.abgegrenzt ? "bg-white" : "bg-icon-bg"} style={{ padding: "56px 32px 64px" }}>
