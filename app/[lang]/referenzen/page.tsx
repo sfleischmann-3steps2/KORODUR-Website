@@ -60,8 +60,16 @@ export default function ReferenzenPage() {
   // useSearchParams würde beim Static Export die ganze Seite aus dem Prerender
   // kippen — dann stünden 0 Referenz-Cards im crawlbaren HTML (Launch-Plan M2).
   useEffect(() => {
-    const produkt = new URLSearchParams(window.location.search).get("produkt");
-    if (produkt) setFilters((prev) => ({ ...prev, produkt }));
+    const params = new URLSearchParams(window.location.search);
+    const produkt = params.get("produkt");
+    // Kontext-Vorbelegung: aus Neubau/Sanierung kommend ist der Projektart-Filter
+    // schon gesetzt (Deep-Link aus der jeweiligen Strecke).
+    const projektart = params.get("projektart");
+    setFilters((prev) => ({
+      ...prev,
+      ...(produkt ? { produkt } : {}),
+      ...(projektart === "neubau" || projektart === "sanierung" ? { projektart } : {}),
+    }));
   }, []);
 
   const referenzen = useMemo(
