@@ -24,7 +24,7 @@
     "finder_step4": "Requirements",
     "finder_step5": "Results",
     "cta_title": "Do you have a specific project?",
-    "cta_description": "Our technical consultants will help you find the optimal renovation solution.",
+    "cta_description": "Our technical advisors will help you find the ideal solution for your project.",
     "cta_button": "Contact a consultant",
     "hero_kicker": "KORODUR. Since 1936.",
     "hero_cta_secondary": "Explore products",
@@ -424,7 +424,10 @@
         "jahr": "2026",
         "text": "90 years of KORODUR"
       }
-    ]
+    ],
+    "karriere_title": "Jobs & Careers",
+    "karriere_text": "We are growing and regularly looking for new colleagues in engineering, sales and production. We welcome your speculative application.",
+    "karriere_cta": "Send speculative application"
   },
   "kontakt": {
     "title": "Contact",

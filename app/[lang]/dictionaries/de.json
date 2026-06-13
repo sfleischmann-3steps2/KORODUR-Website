@@ -24,7 +24,7 @@
     "finder_step4": "Anforderungen",
     "finder_step5": "Ergebnisse",
     "cta_title": "Sie haben ein konkretes Projekt?",
-    "cta_description": "Unsere technischen Berater helfen Ihnen, die optimale Sanierungslösung zu finden.",
+    "cta_description": "Unsere technischen Berater helfen Ihnen, die optimale Lösung für Ihr Projekt zu finden.",
     "cta_button": "Berater kontaktieren",
     "hero_kicker": "KORODUR. Seit 1936.",
     "hero_cta_secondary": "Produkte entdecken",
@@ -424,7 +424,10 @@
         "jahr": "2026",
         "text": "90 Jahre KORODUR"
       }
-    ]
+    ],
+    "karriere_title": "Jobs & Karriere",
+    "karriere_text": "Wir wachsen und suchen regelmäßig Verstärkung in Technik, Vertrieb und Produktion. Senden Sie uns gerne Ihre Initiativbewerbung.",
+    "karriere_cta": "Initiativbewerbung senden"
   },
   "kontakt": {
     "title": "Kontakt",

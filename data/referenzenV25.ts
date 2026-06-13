@@ -373,4 +373,25 @@ export const REFERENZ_FILTER_V25: Record<string, ReferenzFilterV25> = {
     zeitfenster: "planbar",
     schadenstypen: ["frueher-sanierung"],
   },
+  "trinkwasserbehaelter-haidberg": {
+    flaecheKategorie: "gross",
+    innenAussen: "innen",
+    einsatzbereich: "innen-nass-hygiene-chemie",
+    zeitfenster: "planbar",
+    schadenstypen: [],
+  },
+  "trinkwasserbehaelter-bad-nauheim": {
+    flaecheKategorie: "mittel",
+    innenAussen: "innen",
+    einsatzbereich: "innen-nass-hygiene-chemie",
+    zeitfenster: "kurz",
+    schadenstypen: ["frueher-sanierung"],
+  },
+  "trinkwasserturm-budapest": {
+    flaecheKategorie: "gross",
+    innenAussen: "innen",
+    einsatzbereich: "innen-nass-hygiene-chemie",
+    zeitfenster: "kurz",
+    schadenstypen: [],
+  },
 };

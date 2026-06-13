@@ -6,7 +6,11 @@ import { produkte } from "../../../../data/produkte";
 import { getDictionary, hasLocale } from "../../dictionaries";
 import { LOCALES } from "../../../../lib/i18n";
 import { notFound } from "next/navigation";
-import { localizeProdukte } from "../../../../data/i18n/getLocalized";
+import { localizeProdukte, localizeReferenzen } from "../../../../data/i18n/getLocalized";
+import { referenzen } from "../../../../data/referenzen";
+import ReferenceCard from "../../../../components/ReferenceCard";
+import { fachberaterFuerBereich } from "../../../../data/fachberater";
+import BeraterCard from "../../../../components/BeraterCard";
 import { alternatesFor } from "../../../../lib/seo";
 import { AppIcon } from "@/components/ui/icon";
 import { ExternalLink, Info } from "lucide-react";
@@ -92,6 +96,18 @@ export default async function BereichPage({ params }: { params: Params }) {
   const tb = (k: string) => (dict.bereiche as Record<string, string>)[k] ?? k;
   const localizedProdukte = await localizeProdukte(
     produkte.filter((p) => p.bereich === bereich.slug),
+    lang
+  );
+
+  // Referenz-Teaser (Korb 2): Referenzen, die Produkte dieses Bereichs
+  // einsetzen — schließt die Schleife Bereich→Produkt→Referenz→Kontakt.
+  const bereichsProduktNamen = new Set(
+    produkte.filter((p) => p.bereich === bereich.slug).map((p) => p.name.toLowerCase())
+  );
+  const bereichsReferenzen = await localizeReferenzen(
+    referenzen
+      .filter((r) => r.produkte.some((name) => bereichsProduktNamen.has(name.toLowerCase())))
+      .slice(0, 3),
     lang
   );
 
@@ -274,6 +290,50 @@ export default async function BereichPage({ params }: { params: Params }) {
               >
                 {tb("katzenstreu_privatelabel_cta")}
               </a>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Referenz-Teaser des Bereichs (Korb 2) */}
+      {bereichsReferenzen.length > 0 && (
+        <section className="bg-white" style={{ padding: "56px 32px 64px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-6" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>
+              {dict.nav.referenzen}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {bereichsReferenzen.map((r) => (
+                <ReferenceCard key={r.id} referenz={r} lang={lang} />
+              ))}
+            </div>
+            <div className="mt-8">
+              <Link
+                href={`/${lang}/referenzen/`}
+                className="inline-flex items-center gap-2 text-cyan-text text-[15px] no-underline hover:underline"
+                style={{ fontWeight: 700 }}
+              >
+                {dict.home.featured_link} →
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Fachberater des Bereichs (Funnel-Karten, Launch-Audit/Korb 2) */}
+      {fachberaterFuerBereich(bereich.slug).length > 0 && (
+        <section style={{ padding: "56px 32px 64px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-2" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>
+              {dict.kontakt.fachberater_title}
+            </h2>
+            <p className="text-navy/70 text-[15px] mt-0 mb-6 leading-[1.6]" style={{ maxWidth: 640 }}>
+              {dict.kontakt.fachberater_intro}
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {fachberaterFuerBereich(bereich.slug).map((b) => (
+                <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
+              ))}
             </div>
           </div>
         </section>

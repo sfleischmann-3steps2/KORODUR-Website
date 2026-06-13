@@ -2198,6 +2198,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
   ],
   "koromineral-lasur": [
     {
+      "typ": "tds",
+      "titel": "KOROMINERAL Lasur de",
+      "url": "/downloads/tds/KOROMINERAL_Lasur_de_.pdf",
+      "sprache": "de"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR KOROMINERAL Lasur Komponente A",
       "url": "/downloads/sds/KORODUR_KOROMINERAL_Lasur_Komponente_A_SDB_de.pdf",

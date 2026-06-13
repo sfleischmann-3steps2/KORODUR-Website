@@ -3,7 +3,8 @@ import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { KORODUR_FIRMA, KORODUR_ZENTRALE } from "../../../lib/kontaktDaten";
 import { alternatesFor } from "../../../lib/seo";
-import { FACHBERATER, FACHBERATER_INTERNATIONAL } from "../../../data/fachberater";
+import { FACHBERATER_DE, FACHBERATER_INTERNATIONAL } from "../../../data/fachberater";
+import BeraterCard from "../../../components/BeraterCard";
 import KontaktFormular from "../../../components/KontaktFormular";
 import { AppIcon } from "@/components/ui/icon";
 import { ExternalLink, Mail, Phone, Printer } from "lucide-react";
@@ -115,38 +116,19 @@ export default async function KontaktPage({ params }: { params: Params }) {
             </a>
           </div>
 
-          {/* Technische Fachberatung (Quelle: LPs; vollständige Ansprechpartner-Seiten folgen) */}
+          {/* Technische Fachberatung — kompletter Alt-Site-Personenkreis mit
+              Porträts (Korb 2, Steffi 2026-06-12) */}
           <h2 className="text-navy mt-12 mb-2" style={{ fontSize: 20, fontWeight: 900 }}>
             {dict.kontakt.fachberater_title}
           </h2>
           <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
             {dict.kontakt.fachberater_intro}
           </p>
-          {FACHBERATER.map((g) => (
-            <div key={g.gruppe} className="mb-6 last:mb-0">
-              <h3 className="text-navy/60 text-[13px] uppercase tracking-wider mt-0 mb-3" style={{ fontWeight: 800 }}>
-                {(dict.bereiche as Record<string, string>)[`${g.gruppe}_name`]}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {g.berater.map((b) => (
-                  <div key={b.email} className="border border-bullet-bg rounded-xl" style={{ padding: "18px 20px" }}>
-                    <p className="text-navy text-[16px] m-0" style={{ fontWeight: 900 }}>{b.name}</p>
-                    <p className="text-navy/60 text-[13px] mt-1 mb-1 leading-[1.5]">{b.rolle}</p>
-                    {b.gebiet && (
-                      <p className="text-navy/60 text-[13px] mt-0 mb-2">
-                        {dict.kontakt.fachberater_plz}: {b.gebiet}
-                      </p>
-                    )}
-                    <p className="m-0 text-[14px] leading-[1.8]">
-                      <a href={b.telefonHref} className="text-cyan-text no-underline hover:underline" style={{ fontWeight: 700 }}>{b.telefon}</a>
-                      <br />
-                      <a href={`mailto:${b.email}`} className="text-cyan-text no-underline hover:underline" style={{ fontWeight: 700 }}>{b.email}</a>
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {FACHBERATER_DE.map((b) => (
+              <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
+            ))}
+          </div>
 
           {/* Internationale Fachberater (Alt-Site kontakt/international, M3b).
               Zahlt auf Z3 ein: EN/FR/PL-Besucher bekommen Export-Kontakte
@@ -159,15 +141,7 @@ export default async function KontaktPage({ params }: { params: Params }) {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {FACHBERATER_INTERNATIONAL.map((b) => (
-              <div key={`${b.name}-${b.email}`} className="border border-bullet-bg rounded-xl" style={{ padding: "18px 20px" }}>
-                <p className="text-navy text-[16px] m-0" style={{ fontWeight: 900 }}>{b.name}</p>
-                <p className="text-navy/60 text-[13px] mt-1 mb-2 leading-[1.5]">{b.rolle}</p>
-                <p className="m-0 text-[14px] leading-[1.8]">
-                  <a href={b.telefonHref} className="text-cyan-text no-underline hover:underline" style={{ fontWeight: 700 }}>{b.telefon}</a>
-                  <br />
-                  <a href={`mailto:${b.email}`} className="text-cyan-text no-underline hover:underline" style={{ fontWeight: 700 }}>{b.email}</a>
-                </p>
-              </div>
+              <BeraterCard key={`${b.name}-${b.rolle}`} berater={b} />
             ))}
           </div>
 

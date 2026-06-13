@@ -543,7 +543,7 @@ export const referenzenEN: Record<string, {
 
   "sanierung-lkw-zufahrt-logistikzentrum-sankt": {
     titel: "Renovation of the Truck Access Road at the Spedition Brummer Logistics Centre, Sankt Marienkirchen (Austria)",
-    untertitel: "Localised renovation of the heavily frequented truck access road of a logistics centre built in 2021 on the A8 near Schärding",
+    untertitel: "Localised renovation of the heavily frequented truck access road of an international logistics centre on the A8. With over 100 trucks per day, only a time window of a few hours was available for removal and installation – impossible with conventional concrete. 9 m³ of concrete based on Rapid Set cement were used, delivering an early strength of 32 N/mm² after 2 hours. After nine months of intensive truck traffic: a technically excellent result, also confirmed by the general contractor.",
     land: "Austria",
     herausforderungen: [
       "Renovation of a heavily frequented truck access road with minimal interruption to use; installation during very hot summer temperatures on 25 June 2025 (challenging for the application window and curing); technical problems with the spraying equipment for the curing compound required manual application of the paraffin-based curing compound as well as additional measures (water spraying, covering with plastic sheeting) due to high slab temperatures. The second concrete pour took place the following week in the evening hours.",
@@ -554,7 +554,7 @@ export const referenzenEN: Record<string, {
 
   "texaco-tankflache-arnheim": {
     titel: "TEXACO Refuelling Area, Arnhem (2018)",
-    untertitel: "Liquid-tight concrete renovation of a filling station in accordance with CUR Recommendation 63 for LAU facilities.",
+    untertitel: "Liquid-tight concrete renovation of a filling station in accordance with CUR Recommendation 63 for LAU facilities. Repair work on the A50 motorway.",
     land: "Netherlands",
     herausforderungen: [
       "The concrete used must provide a high level of liquid-tightness to meet the requirements for LAU facilities and guarantee resistance in accordance with CUR Recommendation 63.",
@@ -565,7 +565,7 @@ export const referenzenEN: Record<string, {
 
   "naturex-burgdorf": {
     titel: "Naturex, Burgdorf (2013)",
-    untertitel: "Complete renovation of a spray cooling tower in just three weeks.",
+    untertitel: "Complete renovation of a spray cooling tower in just three weeks. Foodstuff-resistant coating for the beverage industry.",
     land: "Switzerland",
     herausforderungen: [
       "The complete renovation had to be completed within just three weeks. The tower floor of approx. 200 m² was to be chiselled out and relaid within one week, with a foodstuff-resistant PU coating required.",
@@ -576,7 +576,7 @@ export const referenzenEN: Record<string, {
 
   "torschwelle-lagerhalle": {
     titel: "Warehouse Gate Threshold (unknown location) (2017)",
-    untertitel: "Renovation of a heavily worn threshold area with exposed reinforcement.",
+    untertitel: "Renovation of a heavily worn threshold area with exposed reinforcement. Fast repair without disrupting warehouse traffic.",
     land: "Germany",
     herausforderungen: [
       "Fast and durable repair of the damaged concrete layer without disrupting traffic to the warehouse.",
@@ -587,7 +587,7 @@ export const referenzenEN: Record<string, {
 
   "wellpappenfabrik-gross-versmold": {
     titel: "Wellpappenfabrik Gross, Versmold (2013)",
-    untertitel: "Repair of sunken asphalt and concrete surfaces at the transition to the production hall.",
+    untertitel: "Repair of sunken asphalt and concrete surfaces at the transition to the production hall. Undulations were jeopardising the transport safety of the packaging.",
     land: "Germany",
     herausforderungen: [
       "The area was subjected to heavy forklift traffic, causing undulations that compromised the transport safety of the packaging.",
@@ -598,7 +598,7 @@ export const referenzenEN: Record<string, {
 
   "korodur-demo-bochum": {
     titel: "KORODUR Demo, Bochum-Wattenscheid (2012)",
-    untertitel: "Rapid repair of damaged Stelcon slabs under daily truck and forklift traffic.",
+    untertitel: "Rapid repair of damaged Stelcon slabs under daily truck and forklift traffic. Extreme loads on the company's own factory premises.",
     land: "Germany",
     herausforderungen: [
       "Damage to the concrete slabs from truck and forklift traffic requires rapid replacement, as procuring and installing a new slab takes several days.",
@@ -609,7 +609,7 @@ export const referenzenEN: Record<string, {
 
   "kreisverkehr-goppingen": {
     titel: "Roundabout, Göppingen (2021)",
-    untertitel: "Redesign of a two-lane roundabout to improve traffic safety.",
+    untertitel: "Redesign of a two-lane roundabout to improve traffic safety. The large-format paving was not recognised as a traffic lane.",
     land: "Germany",
     herausforderungen: [
       "The paving heightened the perception of the traffic lane and led to cramped and hazardous traffic situations, particularly at the entries and exits.",
@@ -620,7 +620,7 @@ export const referenzenEN: Record<string, {
 
   "barmenia-parkhaus-wuppertal": {
     titel: "Barmenia Car Park, Wuppertal (2015)",
-    untertitel: "Prompt repair of damaged in-situ concrete and precast elements with partially exposed reinforcement.",
+    untertitel: "Prompt repair of damaged in-situ concrete and precast elements with partially exposed reinforcement. Restoring structural stability in the insurance company's multi-storey car park.",
     land: "Germany",
     herausforderungen: [
       "Damaged areas in in-situ concrete and precast elements, some with exposed reinforcement, requiring prompt repair.",
@@ -631,7 +631,7 @@ export const referenzenEN: Record<string, {
 
   "john-lewis-lager-stevenage": {
     titel: "John Lewis Warehouse, Stevenage (2013)",
-    untertitel: "Repair of deep ruts after more than 20 years of forklift traffic in a high-bay warehouse.",
+    untertitel: "Repair of deep ruts after more than 20 years of forklift traffic in a high-bay warehouse. Restoring traffic safety in the department store's warehouse.",
     land: "United Kingdom",
     herausforderungen: [
       "The forklift trucks in the high-bay warehouse had followed the same route for over 20 years, leading to the formation of a deep rut that impeded traffic.",
@@ -642,7 +642,7 @@ export const referenzenEN: Record<string, {
 
   "fraport-frankfurt": {
     titel: "Fraport, Frankfurt/Main (2012)",
-    untertitel: "Rapid renovation of a damaged container storage area at the airport with WHG coating.",
+    untertitel: "Rapid renovation of a damaged container storage area at the airport with WHG coating. Fastest possible restoration for airport operations.",
     land: "Germany",
     herausforderungen: [
       "The renovation had to be carried out within a very short time, including the required WHG coating.",
@@ -653,7 +653,7 @@ export const referenzenEN: Record<string, {
 
   "sncf-bordeaux": {
     titel: "SNCF, Bordeaux (2016)",
-    untertitel: "Elimination of hazardous uneven areas in metro access routes during night-time works.",
+    untertitel: "Elimination of hazardous uneven areas in metro access routes during night-time works. Preparation for the new Tours-Bordeaux high-speed line.",
     land: "France",
     herausforderungen: [
       "During construction works, subsidence occurred in the walkways to the metro stations, causing numerous uneven spots and a risk of injury for passengers. The repairs had to be carried out during night hours (00:00 to 05:00).",
@@ -664,7 +664,7 @@ export const referenzenEN: Record<string, {
 
   "parkhaus-freiburger-munster-freiburg": {
     titel: "Freiburg Minster Car Park, Freiburg",
-    untertitel: "Renovation of the Karlsbau Freiburg underground car park (670 parking spaces, 3 levels) with Triflex ProPark and DUROP coating",
+    untertitel: "Renovation of the Karlsbau Freiburg underground car park (670 parking spaces, 3 levels) with Triflex ProPark and DUROP coating (grain size 1–2 mm). Fast execution, lasting wear resistance, bright appearance.",
     land: "Germany",
     herausforderungen: [
       "Heavy traffic caused massive damage to the mastic asphalt surface and the reinforced concrete structure. Aggressive media (oil, chlorides) and mechanical stress made urgent renovation of the approx. 5,000 m² traffic surface necessary.",
@@ -675,7 +675,7 @@ export const referenzenEN: Record<string, {
 
   "olympiastadion-berlin": {
     titel: "Olympiastadion Berlin (2023)",
-    untertitel: "Renovation under heritage protection requirements while preserving the historic appearance.",
+    untertitel: "Renovation under heritage protection requirements while preserving the historic appearance. High load-bearing capacity for sporting and major events.",
     land: "Germany",
     herausforderungen: [
       "Preservation of the historic appearance under heritage protection requirements, high mechanical stress from sporting and major events, integration of modern technical requirements into a building ensemble of historic character.",
@@ -686,7 +686,7 @@ export const referenzenEN: Record<string, {
 
   "wirtgen-produktionshallen-weltweit": {
     titel: "WIRTGEN Production Halls, Worldwide",
-    untertitel: "Over 150,000 m² of hard aggregate industrial floors in production facilities worldwide for road construction machinery weighing up to 500 tonnes.",
+    untertitel: "Over 150,000 m² of hard aggregate industrial floors in production facilities worldwide for road construction machinery weighing up to 500 tonnes. Proven for decades.",
     land: "Andorra",
     herausforderungen: [
       "Extreme mechanical stress from machines with crawler track drives weighing up to 500 tonnes. Maximum wear resistance combined with high flexural strength. Long-term use under continuous stress.",
@@ -697,7 +697,7 @@ export const referenzenEN: Record<string, {
 
   "fh-lichtschacht-nurnberg": {
     titel: "FH Light Well, Nürnberg (2012)",
-    untertitel: "Renovation of a heavily stressed concrete surround on the last day of the university term before the summer break.",
+    untertitel: "Renovation of a heavily stressed concrete surround on the last day of the university term before the summer break. Fast repair under weathering and heavy traffic loads.",
     land: "Germany",
     herausforderungen: [
       "High mechanical stress from heavy-duty traffic, exposure to weathering and pollutants, and tight scheduling requirements for the renovation on the last day of the university term before the summer break.",
@@ -708,7 +708,7 @@ export const referenzenEN: Record<string, {
 
   "klaranlage-nako": {
     titel: "Sewage Treatment Plant, Nakło (2014)",
-    untertitel: "Renovation of a basin crown destroyed by acids (approx. 180 m²) using rapid-setting cement. Repair completed in just a few hours.",
+    untertitel: "Renovation of a basin crown destroyed by acids (approx. 180 m²) using rapid-setting cement. Repair completed in just a few hours, immediate return to service.",
     land: "Poland",
     herausforderungen: [
       "Permanent exposure to aggressive raw sewage. Aeration system no longer functional. Fast repair required to avoid downtime.",
@@ -719,7 +719,7 @@ export const referenzenEN: Record<string, {
 
   "bruckensanierung-amberg": {
     titel: "Bridge Renovation, Amberg (2012)",
-    untertitel: "Bridge renovation with levelling of gradient differences of up to 100 mm on the footpaths.",
+    untertitel: "Bridge renovation with levelling of gradient differences of up to 100 mm on the footpaths. Completion within nine months, in time for the Christmas holidays.",
     land: "Germany",
     herausforderungen: [
       "Meeting a tight nine-month schedule, levelling of gradient differences from 0 to 100 mm on the footpaths, precise shaping of the plinth profiles along the bridge railing under demanding structural conditions.",
@@ -730,7 +730,7 @@ export const referenzenEN: Record<string, {
 
   "parkplatzsanierung-metzingen": {
     titel: "Car Park Renovation, Metzingen (2017)",
-    untertitel: "Renovation of a heavily worn car park with surface cracks and spalling.",
+    untertitel: "Renovation of a heavily worn car park with surface cracks and spalling. Fast repair for uniform load distribution.",
     land: "Germany",
     herausforderungen: [
       "High mechanical loads from daily car and delivery traffic, need for a rapid renovation, evening out surface cracks and unevenness to ensure uniform load distribution.",
@@ -741,7 +741,7 @@ export const referenzenEN: Record<string, {
 
   "schachtregulierung-fahrbahn-nittenau": {
     titel: "Roadway Manhole Adjustment, Nittenau (2019)",
-    untertitel: "Adjustment of 28 sewer manholes to the new road surface level during a road renovation.",
+    untertitel: "Adjustment of 28 sewer manholes to the new road surface level during a road renovation. Rapid-hardening repair mortar for swift asphalt installation.",
     land: "Germany",
     herausforderungen: [
       "Adjustment of 28 sewer manholes to a higher road surface level, need for a rapid-hardening, volume-stable repair mortar, time pressure for rapid installation of the new asphalt.",
@@ -752,7 +752,7 @@ export const referenzenEN: Record<string, {
 
   "treppensanierung-gehweg-esslingen": {
     titel: "Staircase Renovation on a Walkway, Esslingen (2015)",
-    untertitel: "Renovation of individual staircase steps with frost and de-icing salt damage on a public walkway.",
+    untertitel: "Renovation of individual staircase steps with frost and de-icing salt damage on a public walkway. Rapid restoration of walkway use.",
     land: "Germany",
     herausforderungen: [
       "High exposure to frost and de-icing salt, renovation of individual steps in a public facility, and execution of the work under time pressure to quickly restore use of the walkway.",
@@ -763,7 +763,7 @@ export const referenzenEN: Record<string, {
 
   "burger-king-munster": {
     titel: "Burger King, Münster-Hiltrup (2021)",
-    untertitel: "Renovation of the heavily stressed pick-up counter area during ongoing restaurant operations. Repair of asphalt damage.",
+    untertitel: "Renovation of the heavily stressed pick-up counter area during ongoing restaurant operations. Repair of asphalt damage beneath steel plates.",
     land: "Germany",
     herausforderungen: [
       "High mechanical loads from vehicles, work had to be carried out during ongoing operations, special treatment of the asphalt required.",
@@ -774,7 +774,7 @@ export const referenzenEN: Record<string, {
 
   "kraftwerk-bergamo": {
     titel: "Power Plant, Bergamo (2011)",
-    untertitel: "Heritage-compliant renovation restoring the historic small-format tile look of the 1960s to 1980s.",
+    untertitel: "Heritage-compliant renovation restoring the historic small-format tile look of the 1960s to 1980s. Modernisation while preserving the original character.",
     land: "Italy",
     herausforderungen: [
       "Preserving the historic appearance while modernising the floor technology; restoring the small-format tile look (30 cm x 30 cm); ensuring high wear resistance in industrial operation.",
@@ -785,7 +785,7 @@ export const referenzenEN: Record<string, {
 
   "fahrbahnsanierung-wien": {
     titel: "Roadway Renovation, Vienna (2020)",
-    untertitel: "Partial roadway renovation of Donaukanalstraße in Vienna with DOT Europe CONCRETE MIX. 15 patch repairs overnight at a layer thickness of 5–10 cm.",
+    untertitel: "Partial roadway renovation of Donaukanalstraße in Vienna with DOT Europe CONCRETE MIX. 15 patch repairs filled overnight at a layer thickness of 5–10 cm and reopened to traffic within hours. Successful trial area damage-free since 2019.",
     land: "Austria",
     herausforderungen: [
       "Renovation of a four-lane main road under ongoing traffic. Repairs had to be carried out overnight, with the road reopened to traffic within a few hours. 15 damaged areas over a length of 500–700 m in a single night.",
@@ -807,7 +807,7 @@ export const referenzenEN: Record<string, {
 
   "decathlon-dortmund": {
     titel: "Decathlon, Dortmund-Aplerbeck (2023)",
-    untertitel: "Installation of hard aggregate screed via silo technology for an interim sales area during the retail store conversion.",
+    untertitel: "Installation of hard aggregate screed via silo technology for an interim sales area during the retail store conversion. Economical solution for temporary operation.",
     land: "Germany",
     herausforderungen: [
       "Tight deadlines for completion. Load-bearing industrial floor required for temporary sales operation on an area already in use.",
@@ -834,6 +834,69 @@ export const referenzenEN: Record<string, {
       "Partial areas fully usable again, hall operation maintained",
     ],
     bildAlt: "Freshly levelled NEODUR Level surface on a renovated existing floor in Norderstedt",
+  },
+
+  "trinkwasserbehaelter-haidberg": {
+    titel: "Haidberg Drinking Water Reservoir",
+    untertitel: "Safety through coating",
+    land: "Germany",
+    herausforderungen: [
+      "Heterogeneous substrate with corrosion damage",
+      "Safeguarding drinking water quality",
+      "Large component geometries",
+      "Reservoir was to be recommissioned after just one year",
+    ],
+    loesung:
+      "Restoration with the MICROTOP TW complete system: six coordinated products for the functional zones – levelling, reprofiling, bonding agent and surface consolidation.",
+    vorteile: [
+      "Holistic system approach for all components",
+      "Protection against renewed corrosion and hydrolytic destruction",
+      "Recommissioning within planned timeframe (1 year)",
+      "Compliance with drinking water requirements",
+    ],
+    bildAlt: "Haidberg drinking water reservoir during renovation",
+  },
+
+  "trinkwasserbehaelter-bad-nauheim": {
+    titel: "Bad Nauheim Drinking Water Tank",
+    untertitel: "Safe standards for floor, wall, ceiling",
+    land: "Germany",
+    herausforderungen: [
+      "Removal of old tiles and existing coatings",
+      "Ensuring hygienic materials",
+      "Different components with specific load requirements",
+      "Construction within tight time constraints",
+    ],
+    loesung:
+      "MICROTOP TW NSM system – applied for the first time in Bad Nauheim using wet spray method, as purely mineral, microsilica-enhanced spray mortar without polymer additives. Colour concept: blue walls, white ceiling, grey floor.",
+    vorteile: [
+      "Hygienically tested material per DVGW requirements",
+      "Seamless surface without joints",
+      "Mineral, long-lasting lining without polymer additives",
+      "Visual upgrade through colour concept & modern coating",
+    ],
+    bildAlt: "Renovated drinking water tank in Bad Nauheim",
+  },
+
+  "trinkwasserturm-budapest": {
+    titel: "Budapest Drinking Water Tower",
+    untertitel: "30 years of legacy – newly protected with mineral coating",
+    land: "Hungary",
+    herausforderungen: [
+      "Long-term stressed substrate after three decades",
+      "Economical solution with high durability",
+      "Complex geometry with uniform coating",
+      "Time window of approximately six months",
+    ],
+    loesung:
+      "The mineral MICROTOP system was used, specifically the products MICROTOP TW BM and MICROTOP TW 02, over an approximately six-month renovation phase.",
+    vorteile: [
+      "Long-term protection without polymer content – permanently mineral",
+      "Cost-effective renovation through system solution approach",
+      "Even, homogeneous coating over complex components",
+      "Completion within planned schedule",
+    ],
+    bildAlt: "Drinking water tower on the outskirts of Budapest during renovation",
   },
 
 };

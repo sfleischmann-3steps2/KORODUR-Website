@@ -1,5 +1,5 @@
 // Anwendungsmatrix — Web-Projektion des Messeposters "Poster 3:1".
-// Quelle der Wahrheit: public/mockups/anwendungsmatrix-poster-mockups.html (Poster 3:1).
+// Quelle der Wahrheit: docs/mockups/anwendungsmatrix-poster-mockups.html (Poster 3:1).
 // 6 kuratierte Produkte als Spalten, Tech-Werte + Vorteil-Zeile + Anwendungs-Zeilen (✓✓ / ✓ / leer).
 // Einziges Web-Plus gegenüber dem Poster: "Mehr Infos"-Link je Produkt.
 

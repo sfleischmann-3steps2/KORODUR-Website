@@ -161,6 +161,26 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* Jobs & Karriere (Korb 2: Bewerber googeln "korodur karriere" —
+          schlanker Block mit Initiativbewerbung, Vollausbau später) */}
+      <section className="bg-icon-bg" style={{ padding: "56px 32px 64px" }}>
+        <div className="mx-auto" style={{ maxWidth: 900 }}>
+          <h2 className="mb-3" style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 900 }}>
+            {dict.unternehmen.karriere_title}
+          </h2>
+          <p className="text-navy/80 mb-6" style={{ fontSize: 17, lineHeight: 1.75, maxWidth: 640 }}>
+            {dict.unternehmen.karriere_text}
+          </p>
+          <a
+            href={`mailto:${KORODUR_ZENTRALE.email}?subject=${encodeURIComponent("Initiativbewerbung")}`}
+            className="inline-flex items-center justify-center text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
+            style={{ padding: "14px 30px", fontWeight: 800, fontSize: 15, minHeight: 44 }}
+          >
+            {dict.unternehmen.karriere_cta}
+          </a>
+        </div>
+      </section>
+
       {/* CTA-Band */}
       <section className="bg-navy text-white text-center" style={{ padding: "64px 32px" }}>
         <div className="mx-auto" style={{ maxWidth: 700 }}>

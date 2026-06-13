@@ -24,7 +24,7 @@
     "finder_step4": "Requisitos",
     "finder_step5": "Resultados",
     "cta_title": "¿Tiene un proyecto concreto?",
-    "cta_description": "Nuestros asesores técnicos le ayudan a encontrar la solución de rehabilitación óptima.",
+    "cta_description": "Nuestros asesores técnicos le ayudarán a encontrar la solución óptima para su proyecto.",
     "cta_button": "Contactar con un asesor",
     "hero_kicker": "KORODUR. Desde 1936.",
     "hero_cta_secondary": "Descubrir los productos",
@@ -424,7 +424,10 @@
         "jahr": "2026",
         "text": "90 años de KORODUR"
       }
-    ]
+    ],
+    "karriere_title": "Empleo y carrera",
+    "karriere_text": "Estamos creciendo y buscamos regularmente refuerzos en los departamentos técnico, de ventas y de producción. Envíenos su candidatura espontánea.",
+    "karriere_cta": "Enviar candidatura espontánea"
   },
   "kontakt": {
     "title": "Contacto",
