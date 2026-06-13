@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Website-Struktur Relaunch — Neubau + Sanierung (Mockup, 2026-06-13)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet" />
+<style>
+  :root{ --navy:#002d59; --cyan:#009ee3; --cyan-text:#0077ab; --neubau:#009a44;
+    --icon-bg:#f5f5f6; --bullet-bg:#e8edf5; --mid-gray:#d9dada; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:Gabarito, system-ui, sans-serif; color:var(--navy); background:#fff; }
+  .label{ background:#ffd84d; color:var(--navy); font-weight:900; font-size:14px; padding:10px 24px; position:sticky; top:0; z-index:50; }
+  .divider{ background:var(--navy); color:#fff; padding:26px 32px; margin-top:56px; }
+  .divider h2{ margin:0 0 6px; font-size:23px; font-weight:900; color:#fff; }
+  .divider p{ margin:0; opacity:.82; font-size:14px; max-width:880px; line-height:1.55; }
+  .divider .tag{ display:inline-block; background:var(--cyan); color:#fff; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.08em; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  .intro{ padding:22px 0 4px; }
+  .intro p{ font-size:14.5px; line-height:1.6; color:#42566f; max-width:900px; }
+
+  /* Weiche */
+  .weiche{ display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:30px 0 8px; }
+  @media(max-width:760px){ .weiche{ grid-template-columns:1fr; } .steps{ grid-template-columns:1fr !important; } }
+  .choice{ border:2px solid var(--bullet-bg); border-radius:16px; padding:30px; text-align:center; background:#fff; transition:.15s; }
+  .choice .ic{ width:64px; height:64px; border-radius:16px; margin:0 auto 16px; display:flex; align-items:center; justify-content:center; font-size:30px; color:#fff; }
+  .choice.neu .ic{ background:var(--neubau); }
+  .choice.san .ic{ background:var(--navy); }
+  .choice h3{ margin:0 0 6px; font-size:22px; font-weight:900; }
+  .choice p{ margin:0; font-size:14px; color:#5a6b80; }
+  .choice .tagx{ display:inline-block; margin-top:14px; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; padding:4px 10px; border-radius:5px; color:#fff; }
+  .choice.neu .tagx{ background:var(--neubau); }
+  .choice.san .tagx{ background:var(--navy); }
+
+  /* Step-Reihen */
+  .pathbox{ border:1px solid var(--bullet-bg); border-radius:14px; overflow:hidden; margin:18px 0; }
+  .pathhead{ padding:14px 20px; color:#fff; font-weight:900; font-size:15px; display:flex; align-items:center; gap:10px; }
+  .pathhead.neu{ background:var(--neubau); }
+  .pathhead.san{ background:var(--navy); }
+  .pathhead .badge{ background:rgba(255,255,255,.2); font-size:11px; padding:3px 9px; border-radius:5px; text-transform:uppercase; letter-spacing:.05em; }
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+  .steps.three{ grid-template-columns:repeat(3,1fr); }
+  .step{ padding:16px 18px; border-right:1px solid var(--bullet-bg); }
+  .step:last-child{ border-right:none; }
+  .step .n{ font-size:11px; font-weight:900; color:var(--cyan-text); text-transform:uppercase; letter-spacing:.06em; }
+  .step .t{ font-size:15px; font-weight:900; margin:3px 0 8px; }
+  .step ul{ margin:0; padding-left:15px; }
+  .step li{ font-size:12.5px; color:#5a6b80; line-height:1.55; }
+  .arrow{ text-align:center; color:var(--cyan); font-weight:900; font-size:14px; padding:6px; }
+  .result{ background:var(--icon-bg); padding:16px 20px; font-size:13.5px; color:#42566f; border-top:1px solid var(--bullet-bg); }
+  .result strong{ color:var(--navy); }
+
+  /* Hero-Vorschlag */
+  .hero{ background:linear-gradient(120deg,#002d59,#0a4a7e); color:#fff; border-radius:16px; padding:42px; margin:24px 0; }
+  .hero .kick{ font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:.1em; color:#7fd0f5; }
+  .hero h1{ margin:10px 0 10px; font-size:clamp(26px,3.6vw,40px); font-weight:900; color:#fff; line-height:1.12; max-width:16em; }
+  .hero p{ margin:0 0 22px; font-size:16px; opacity:.85; max-width:34em; }
+  .hero .ctas{ display:flex; flex-wrap:wrap; gap:12px; }
+  .btn{ font-weight:800; font-size:15px; padding:13px 24px; border-radius:8px; border:none; cursor:pointer; }
+  .btn.primary{ background:var(--cyan); color:#fff; }
+  .btn.ghost{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.3); }
+
+  /* Nav-Schema */
+  .navbar{ border:1px solid var(--bullet-bg); border-radius:12px; padding:12px 18px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin:10px 0 4px; font-size:13.5px; font-weight:700; }
+  .navbar .logo{ font-weight:900; background:var(--navy); color:#fff; padding:6px 10px; border-radius:6px; font-size:13px; }
+  .navbar .item{ color:var(--navy); }
+  .navbar .item.new{ color:var(--neubau); }
+  .navbar .cta{ margin-left:auto; background:var(--cyan); color:#fff; padding:7px 14px; border-radius:7px; }
+
+  /* Status */
+  .status{ display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:20px 0 8px; }
+  @media(max-width:760px){ .status{ grid-template-columns:1fr; } }
+  .stcol h4{ margin:0 0 8px; font-size:14px; font-weight:900; }
+  .stcol ul{ margin:0; padding-left:4px; list-style:none; }
+  .stcol li{ font-size:13px; line-height:1.7; color:#42566f; padding-left:24px; position:relative; }
+  .stcol li::before{ position:absolute; left:0; font-weight:900; }
+  .done li::before{ content:"✓"; color:var(--neubau); }
+  .open li::before{ content:"→"; color:var(--cyan-text); }
+  .note{ font-size:12.5px; color:#5a6b80; background:#eef9ff; border-left:3px solid var(--cyan); padding:10px 14px; margin:14px 0; border-radius:0 8px 8px 0; }
+  code{ background:var(--bullet-bg); padding:1px 5px; border-radius:4px; font-size:.92em; }
+</style>
+</head>
+<body>
+<div class="label">MOCKUP · Website-Struktur Relaunch: Neubau + Sanierung unter einem Dach · 2026-06-13 · Fokus: Aufbau &amp; Struktur (Inhalte folgen)</div>
+
+<div class="wrap intro">
+  <p><strong>Was dieses Mockup zeigt:</strong> die Struktur-Entscheidungen für den Übergang von der Sanierungs-App zur vollen korodur.de — (1) der Lösungsfinder bekommt eine <strong>Eingangsweiche Neubau/Sanierung</strong> (Option C), (2) Neubau wird gleichwertige Tool-Strecke unter dem Dach „Industrieboden = Neubau + Sanierung", (3) Status der Analyse-Quick-Wins. Nicht final: Texte, Bilder, exakte Produktlogik im Neubau-Pfad (mit Frank zu schärfen). Logo/Header/Footer sind bereits vereinheitlicht — Ausnahme Katzenstreu (nur KORODUR-Schrift, CD-Vorgabe).</p>
+</div>
+
+<!-- ====== 1. EINGANGSWEICHE ====== -->
+<div class="divider">
+  <span class="tag">Kern — Option C</span>
+  <h2>1 · Lösungsfinder: Eingangsweiche Neubau / Sanierung</h2>
+  <p>Neuer erster Schritt vor dem Funnel: „Was möchten Sie umsetzen?". Danach zwei getrennte Pfade mit eigener, passender Logik. Ein Tool, zwei Welten — konsistent mit der Projektart-Facette, die bei den Referenzen schon live ist.</p>
+</div>
+<div class="wrap">
+  <div class="weiche">
+    <div class="choice neu">
+      <div class="ic">▦</div>
+      <h3>Neubau</h3>
+      <p>Neuer Industrieboden, Estrich oder Hartstoffeinstreuung — von der Halle bis zum Sichtboden.</p>
+      <span class="tagx">Kerngeschäft</span>
+    </div>
+    <div class="choice san">
+      <div class="ic">⟳</div>
+      <h3>Sanierung</h3>
+      <p>Bestehenden Boden reparieren, ertüchtigen oder optisch aufwerten.</p>
+      <span class="tagx">bestehende Strecke</span>
+    </div>
+  </div>
+  <div class="note">Die Weiche ersetzt die heutige uneinheitliche Schrittzahl (Homepage „5 Schritte" vs. Finder „4" vs. Produkte „3"). Künftig kommuniziert jeder Pfad seine eigene, konsistente Schrittzahl.</div>
+</div>
+
+<!-- ====== 2. DIE ZWEI PFADE ====== -->
+<div class="divider">
+  <span class="tag">Struktur</span>
+  <h2>2 · Die zwei Funnel im Vergleich</h2>
+  <p>Sanierung bleibt unverändert (Blaupause). Neubau bekommt einen eigenen, gleich aufgebauten Funnel mit Neubau-typischen Fragen (Nutzung → Beanspruchung → Anforderung) statt Schadens-Logik.</p>
+</div>
+<div class="wrap">
+  <div class="pathbox">
+    <div class="pathhead san"><span>⟳ Sanierungs-Pfad</span><span class="badge">unverändert · 4 Schritte</span></div>
+    <div class="steps">
+      <div class="step"><div class="n">Schritt 1</div><div class="t">Fläche</div><ul><li>punktuell</li><li>mittel</li><li>groß</li></ul></div>
+      <div class="step"><div class="n">Schritt 2</div><div class="t">Innen / Außen</div><ul><li>innen</li><li>außen (Frost/Tausalz)</li></ul></div>
+      <div class="step"><div class="n">Schritt 3</div><div class="t">Einsatzbereich</div><ul><li>Industrie &amp; Halle</li><li>Nass / Hygiene</li><li>Sicht &amp; Design …</li></ul></div>
+      <div class="step"><div class="n">Schritt 4</div><div class="t">Zeitfenster</div><ul><li>über Nacht</li><li>1–2 Wochen</li><li>planbar</li></ul></div>
+    </div>
+    <div class="result">→ <strong>Empfehlung:</strong> kuratierte Zwei-Produkt-Empfehlung (A2) + passende Sanierungs-Referenzen.</div>
+  </div>
+
+  <div class="pathbox">
+    <div class="pathhead neu"><span>▦ Neubau-Pfad (neu)</span><span class="badge">Vorschlag · 3 Schritte · mit Frank schärfen</span></div>
+    <div class="steps three">
+      <div class="step"><div class="n">Schritt 1</div><div class="t">Nutzung / Branche</div><ul><li>Industrie- &amp; Produktionshalle</li><li>Lager &amp; Logistik</li><li>Verkaufsraum / Showroom</li><li>Lebensmittel / Nass</li><li>Parkdeck / Außen</li></ul></div>
+      <div class="step"><div class="n">Schritt 2</div><div class="t">Beanspruchung</div><ul><li>Stapler- / Schwerlastverkehr</li><li>Verschleiß / Abrieb</li><li>chemisch</li><li>Frost / Tausalz (außen)</li></ul></div>
+      <div class="step"><div class="n">Schritt 3</div><div class="t">Anforderung / Optik</div><ul><li>Sicht- / Designoptik</li><li>Hygiene / leicht zu reinigen</li><li>schnelle Nutzbarkeit</li><li>hell / reflektierend</li></ul></div>
+    </div>
+    <div class="result">→ <strong>Empfehlung:</strong> Estrich- + Hartstoff-System, z. B. <strong>NEODUR HE 3 / HE 3 green</strong> (CO₂-reduziert) + Hartstoffeinstreuung + Nachbehandlung. Plus Neubau-Referenzen (54 im Verzeichnis: Amazon, Lidl, BMW, Mercedes, Porsche, NIKE …).</div>
+  </div>
+  <div class="note">Die Neubau-Produkte sind im Katalog bereits vollständig (37 Industrieboden-Produkte inkl. HE 3/green). Es fehlt nur die Auswahl-Logik (Tag-Mapping mit Frank) und die Neubau-Referenzen (Import-Track).</div>
+</div>
+
+<!-- ====== 3. POSITIONIERUNG / IA ====== -->
+<div class="divider">
+  <span class="tag">Positionierung</span>
+  <h2>3 · Dachstruktur &amp; Startseite: Industrieboden = Neubau + Sanierung</h2>
+  <p>Heute verengt die Startseite die Wahrnehmung auf Sanierung. Vorschlag: Der Hero und die Einstiege machen beide Welten gleich sichtbar. Navigation/Logo/Footer sind bereits vereinheitlicht.</p>
+</div>
+<div class="wrap">
+  <div class="navbar">
+    <span class="logo">KORODUR</span>
+    <span class="item">Produkte</span>
+    <span class="item new">Neubau ▾</span>
+    <span class="item">Sanierung ▾</span>
+    <span class="item">Anwendungen</span>
+    <span class="item">Referenzen</span>
+    <span class="item">Unternehmen</span>
+    <span class="cta">Lösungsfinder</span>
+  </div>
+  <div class="note">Heute: <code>Produkte · Sanierung · Anwendungsmatrix · Referenzen · Unternehmen · Kontakt</code>. Vorschlag: <strong>Neubau</strong> als gleichwertigen Einstieg neben Sanierung aufnehmen (beide führen in ihre Funnel-Strecke + Produktwelt). Zu entscheiden: ersetzt „Neubau/Sanierung" das Menü-Item, oder bleibt der Lösungsfinder-CTA der Haupteinstieg?</div>
+
+  <div class="hero">
+    <div class="kick">Industrieböden seit 1936</div>
+    <h1>Der richtige Boden — ob Neubau oder Sanierung.</h1>
+    <p>Mineralische Hartstoffeinstreuungen, Estriche und Reparatursysteme. Geführte Auswahl in wenigen Schritten, weltweit bewährt.</p>
+    <div class="ctas">
+      <button class="btn primary">Lösungsfinder starten</button>
+      <button class="btn ghost">Referenzen ansehen</button>
+    </div>
+  </div>
+  <div class="note">Der Hero führt in die Eingangsweiche. Die acht Bereichs-Kacheln (Industrieboden, Sichtestrich, Microtop, Schnellbeton, Spezialbaustoffe, 3D, Katzenstreu …) bleiben darunter — Vielfalt sichtbar, Kern (Industrieboden) klar dominant.</div>
+</div>
+
+<!-- ====== 4. QUICK-WIN-STATUS ====== -->
+<div class="divider">
+  <span class="tag">Reality-Check</span>
+  <h2>4 · Analyse-Quick-Wins: was schon erledigt ist</h2>
+  <p>Die UI/UX-Analyse lief gegen einen älteren Live-Stand. Im aktuellen Code ist das meiste bereits gelöst — der Tag gehört der Neubau-Strecke, nicht dem Nachbau erledigter Punkte.</p>
+</div>
+<div class="wrap">
+  <div class="status">
+    <div class="stcol done">
+      <h4>Bereits erledigt</h4>
+      <ul>
+        <li>Eine Shell: ein Logo, eine Nav, ein Footer (global)</li>
+        <li>Eine Matrix (Produktmatrix ist raus, nur Anwendungsmatrix)</li>
+        <li>Globale Suche (⌘K) auf allen Seiten</li>
+        <li>Referenzen rendern als SSG (kein leerer No-JS-Zustand)</li>
+        <li>Kontakt-CTAs intern (kein Bruch auf alte korodur.de)</li>
+        <li>Projektart-Filter Neubau/Sanierung bei Referenzen (heute)</li>
+      </ul>
+    </div>
+    <div class="stcol open">
+      <h4>Heute / offen</h4>
+      <ul>
+        <li>Eingangsweiche + Neubau-Funnel bauen (dieses Mockup)</li>
+        <li>Schrittzahl vereinheitlichen (über die Weiche gelöst)</li>
+        <li>Positionierung Hero auf Neubau + Sanierung</li>
+        <li>Neubau-Referenzen importieren (Bilder/Tags — dein Track)</li>
+        <li>Produktbilder ergänzen (Content — dein Track)</li>
+        <li>CTA-Hierarchie primär/sekundär schärfen</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" style="padding:40px 32px 70px;">
+  <div class="note" style="background:#fff8e1; border-left-color:#ffd84d;">
+    <strong>Für morgen (Kollegen-Test):</strong> Ziel ist ein klickbarer Zwischenstand mit der neuen Struktur — Eingangsweiche, beide Funnel-Einstiege, Neubau als sichtbare Strecke. Fehlende Inhalte (Neubau-Referenzbilder, Produktbilder, finale Texte) sind als Platzhalter ok; getestet werden soll Aufbau, Navigation und Flow.
+  </div>
+</div>
+
+</body>
+</html>
