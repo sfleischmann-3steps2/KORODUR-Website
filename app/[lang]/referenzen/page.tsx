@@ -8,6 +8,8 @@ import {
   bereichLabel,
   produktFamilie,
   produktFamilieLabel,
+  projektartBucket,
+  projektartLabel,
 } from "../../../data/einsatzbereichMapping";
 import { useLocale } from "../../../lib/LocaleContext";
 import { referenzenEN } from "../../../data/i18n/referenzen.en";
@@ -40,6 +42,7 @@ const FAMILIE_ORDER = ["estrich", "schnellzement", "grundierung", "nachbehandlun
 const PRODUKT_FILTER_SCHWELLE = 6;
 
 type FilterState = {
+  projektart: "" | "sanierung" | "neubau";
   bereich: string;
   produkt: string;
 };
@@ -48,6 +51,7 @@ export default function ReferenzenPage() {
   const { lang, dict } = useLocale();
 
   const [filters, setFilters] = useState<FilterState>({
+    projektart: "",
     bereich: "",
     produkt: "",
   });
@@ -56,8 +60,16 @@ export default function ReferenzenPage() {
   // useSearchParams würde beim Static Export die ganze Seite aus dem Prerender
   // kippen — dann stünden 0 Referenz-Cards im crawlbaren HTML (Launch-Plan M2).
   useEffect(() => {
-    const produkt = new URLSearchParams(window.location.search).get("produkt");
-    if (produkt) setFilters((prev) => ({ ...prev, produkt }));
+    const params = new URLSearchParams(window.location.search);
+    const produkt = params.get("produkt");
+    // Kontext-Vorbelegung: aus Neubau/Sanierung kommend ist der Projektart-Filter
+    // schon gesetzt (Deep-Link aus der jeweiligen Strecke).
+    const projektart = params.get("projektart");
+    setFilters((prev) => ({
+      ...prev,
+      ...(produkt ? { produkt } : {}),
+      ...(projektart === "neubau" || projektart === "sanierung" ? { projektart } : {}),
+    }));
   }, []);
 
   const referenzen = useMemo(
@@ -65,26 +77,42 @@ export default function ReferenzenPage() {
     [lang]
   );
 
-  // Bereiche mit Trefferzahl, absteigend sortiert (leere Bereiche entfallen).
+  // Absolute Projektart-Verteilung (Zähler an der Umschaltung, unabhängig von
+  // Bereich/Produkt). Bucket rollt projekttyp auf Neubau vs. Sanierung hoch.
+  const projektartCounts = useMemo(() => {
+    let neubau = 0;
+    for (const r of referenzen) if (projektartBucket(r.projekttyp) === "neubau") neubau++;
+    return { all: referenzen.length, neubau, sanierung: referenzen.length - neubau };
+  }, [referenzen]);
+
+  // Führende Facette: erst nach Projektart (Neubau/Sanierung) filtern …
+  const ergebnisNachProjektart = useMemo(() => {
+    return referenzen.filter(
+      (r) => !filters.projektart || projektartBucket(r.projekttyp) === filters.projektart
+    );
+  }, [referenzen, filters.projektart]);
+
+  // Bereiche mit Trefferzahl (aus dem projektart-gefilterten Set), absteigend
+  // sortiert, leere Bereiche entfallen.
   const bereicheSortiert = useMemo(() => {
     const counts: Record<string, number> = {};
-    for (const r of referenzen) {
+    for (const r of ergebnisNachProjektart) {
       // Defensiv: künftige/importierte Referenzen könnten das Feld (noch) nicht haben.
       for (const b of r.einsatzbereiche ?? []) counts[b] = (counts[b] ?? 0) + 1;
     }
     return (Object.keys(counts) as EinsatzbereichKategorie[]).sort(
       (a, b) => counts[b] - counts[a]
     ).map((b) => ({ id: b, count: counts[b] }));
-  }, [referenzen]);
+  }, [ergebnisNachProjektart]);
 
-  // Erst nach Bereich filtern (Basis für Produkt-Optionen + Einblend-Logik) …
+  // … dann nach Bereich (Basis für Produkt-Optionen + Einblend-Logik) …
   const ergebnisNachBereich = useMemo(() => {
-    return referenzen.filter(
+    return ergebnisNachProjektart.filter(
       (r) =>
         !filters.bereich ||
         r.einsatzbereiche?.includes(filters.bereich as EinsatzbereichKategorie)
     );
-  }, [referenzen, filters.bereich]);
+  }, [ergebnisNachProjektart, filters.bereich]);
 
   // … dann zusätzlich nach Produkt.
   const gefilterteReferenzen = useMemo(() => {
@@ -113,9 +141,14 @@ export default function ReferenzenPage() {
     }));
   }, [ergebnisNachBereich]);
 
+  const setProjektart = (value: FilterState["projektart"]) => {
+    // Projektart führt: Wechsel setzt Bereich + Produkt zurück (beide hängen daran).
+    setFilters({ projektart: value, bereich: "", produkt: "" });
+  };
+
   const setBereich = (value: string) => {
     // Bereichswechsel setzt das Produkt zurück (Produkte sind bereichsabhängig).
-    setFilters({ bereich: value, produkt: "" });
+    setFilters((prev) => ({ ...prev, bereich: value, produkt: "" }));
   };
 
   const setProdukt = (value: string) => {
@@ -123,10 +156,10 @@ export default function ReferenzenPage() {
   };
 
   const resetFilters = () => {
-    setFilters({ bereich: "", produkt: "" });
+    setFilters({ projektart: "", bereich: "", produkt: "" });
   };
 
-  const hasActiveFilters = filters.bereich || filters.produkt;
+  const hasActiveFilters = filters.projektart || filters.bereich || filters.produkt;
 
   return (
     <>
@@ -162,7 +195,43 @@ export default function ReferenzenPage() {
         style={{ padding: "16px 16px", borderBottom: "1px solid var(--bullet-bg)" }}
       >
         <div className="mx-auto sm:px-4" style={{ maxWidth: 1320 }}>
-          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2 sm:gap-3">
+          <div className="flex flex-col gap-3">
+            {/* Projektart-Umschaltung — führende Facette (Mockup Variante A) */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <span className="text-[12px] font-extrabold uppercase tracking-wider text-navy opacity-40">
+                {dict.referenzen.filter_projektart}
+              </span>
+              <div className="inline-flex flex-wrap gap-0.5 rounded-[10px] border border-mid-gray bg-white p-1">
+                {[
+                  { key: "" as const, label: dict.referenzen.filter_all, count: projektartCounts.all },
+                  { key: "sanierung" as const, label: projektartLabel("sanierung", lang), count: projektartCounts.sanierung },
+                  { key: "neubau" as const, label: projektartLabel("neubau", lang), count: projektartCounts.neubau },
+                ].map((opt) => {
+                  const active = filters.projektart === opt.key;
+                  return (
+                    <button
+                      key={opt.key || "all"}
+                      onClick={() => setProjektart(opt.key)}
+                      className="inline-flex items-center gap-1.5 rounded-[7px] border-none px-4 py-2 text-[14px] cursor-pointer transition-colors"
+                      style={{
+                        fontFamily: "inherit",
+                        fontWeight: 800,
+                        background: active ? (opt.key === "sanierung" ? "#009ee3" : "#002d59") : "transparent",
+                        color: active ? "#fff" : "#002d59",
+                      }}
+                    >
+                      {opt.label}
+                      <span className="text-[12px]" style={{ fontWeight: 700, opacity: 0.55 }}>
+                        {opt.count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Bereich + Produkt + Reset + Trefferzahl */}
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2 sm:gap-3">
             <select
               value={filters.bereich}
               onChange={(e) => setBereich(e.target.value)}
@@ -210,6 +279,7 @@ export default function ReferenzenPage() {
             <span className="text-[13px] text-navy opacity-40 ml-auto" style={{ fontWeight: 700 }}>
               {gefilterteReferenzen.length} {dict.referenzen.of} {referenzen.length} {dict.referenzen.references}
             </span>
+            </div>
           </div>
         </div>
       </section>

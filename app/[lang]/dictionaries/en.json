@@ -1,5 +1,6 @@
 {
   "nav": {
+    "neubau": "New construction",
     "home": "Home",
     "loesungsfinder": "Solution Finder",
     "referenzen": "References",
@@ -36,6 +37,8 @@
     "breadcrumb": "References",
     "title": "All References",
     "description_prefix": "Projects in industrial flooring, structural renovation, and infrastructure – filter by area, application, or product.",
+    "filter_projektart": "Project type",
+    "filter_all": "All",
     "filter_all_areas": "All Areas",
     "filter_all_applications": "All Applications",
     "filter_all_products": "All Products",
@@ -167,6 +170,12 @@
     "start_over": "Start Over"
   },
   "loesungsfinder": {
+    "weiche_question": "What are you planning?",
+    "weiche_subline": "Choose your project — we'll guide you to the right solution.",
+    "weiche_neubau_titel": "New construction",
+    "weiche_neubau_text": "A new industrial floor, screed or dry-shake hardener.",
+    "weiche_sanierung_titel": "Renovation",
+    "weiche_sanierung_text": "Repair, upgrade or refresh an existing floor.",
     "page_title": "Solution Finder",
     "page_subtitle": "Describe your situation and we will show you matching products and reference projects.",
     "meta_description": "Find the right renovation solution for your industrial floor in 4 steps.",
@@ -369,6 +378,12 @@
     "katzenstreu_privatelabel_text": "We also produce bentonite cat litter as private label for retail brands: premium grades in 5, 6 and 8 l, standard grades in 5, 10 and 20 kg, special sizes on request, optionally with fresh scent. Delivered in environmentally friendly paper packaging (FSC MIX).",
     "katzenstreu_privatelabel_cta": "Send private label enquiry",
     "gruppe_pflasterfugen": "Paving Joint Mortars"
+  },
+  "neubauHub": {
+    "title": "New construction with KORODUR",
+    "intro": "The right industrial floor for your project — from heavy-duty halls to architectural surfaces. Three product worlds, one guided selection.",
+    "slogan": "Building with system.",
+    "cta": "Get started"
   },
   "sanierungHub": {
     "title": "Renovating with KORODUR",

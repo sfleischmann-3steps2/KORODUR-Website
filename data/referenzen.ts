@@ -12,6 +12,7 @@ export const referenzen: Referenz[] = [
   {
     id: "antolin-wochenend-sanierung",
     slug: "antolin-wochenend-sanierung",
+    projekttyp: "sanierung",
     titel: "Sanierung übers Wochenende",
     untertitel: "Produktion ohne Pause",
     ort: "Ebergassing",
@@ -43,6 +44,7 @@ export const referenzen: Referenz[] = [
   {
     id: "kleemann-produktionshalle",
     slug: "kleemann-produktionshalle",
+    projekttyp: "sanierung",
     titel: "Produktionshalle Kleemann",
     untertitel: "Schwerlast – schnell realisiert",
     ort: "Göppingen",
@@ -73,6 +75,7 @@ export const referenzen: Referenz[] = [
   {
     id: "monheim-produktionsflaeche",
     slug: "monheim-produktionsflaeche",
+    projekttyp: "sanierung",
     titel: "Produktionsfläche Monheim",
     untertitel: "Sanierung zwischen den Feiertagen",
     ort: "Monheim",
@@ -104,6 +107,7 @@ export const referenzen: Referenz[] = [
   {
     id: "weag-entsorgungsbetrieb",
     slug: "weag-entsorgungsbetrieb",
+    projekttyp: "sanierung",
     titel: "WEAG Entsorgungsbetrieb",
     untertitel: "Schnell, Robust, Dauerhaft – in 24 h",
     ort: "Deutschland",
@@ -136,6 +140,7 @@ export const referenzen: Referenz[] = [
   {
     id: "wochenend-sanierung-werkstatt",
     slug: "wochenend-sanierung-werkstatt",
+    projekttyp: "sanierung",
     titel: "Wochenend-Sanierung Werkstatt",
     untertitel: "Industrietauglich in Rekordzeit",
     ort: "Neutraubling",
@@ -167,6 +172,7 @@ export const referenzen: Referenz[] = [
   {
     id: "strandkorbhalle-sylt",
     slug: "strandkorbhalle-sylt",
+    projekttyp: "sanierung",
     titel: "Strandkorbhalle Sylt",
     untertitel: "2.200 m² schnell & wirtschaftlich",
     ort: "Sylt",
@@ -198,6 +204,7 @@ export const referenzen: Referenz[] = [
   {
     id: "loosen-werkzeug-klausen",
     slug: "loosen-werkzeug-klausen",
+    projekttyp: "sanierung",
     titel: "Sanierung im laufenden Betrieb – Loosen",
     untertitel: "Schnell. Stabil. Zuverlässig.",
     ort: "Klausen (Moselregion)",
@@ -229,6 +236,7 @@ export const referenzen: Referenz[] = [
   {
     id: "guben-produktionshalle",
     slug: "guben-produktionshalle",
+    projekttyp: "sanierung",
     titel: "Produktionshalle Guben",
     untertitel: "Sanierung im laufenden Betrieb",
     ort: "Guben",
@@ -260,6 +268,7 @@ export const referenzen: Referenz[] = [
   {
     id: "nike-store-polen",
     slug: "nike-store-polen",
+    projekttyp: "sanierung",
     titel: "Nike Store Polen",
     untertitel: "Design und Funktion",
     ort: "Szczecin",
@@ -290,6 +299,7 @@ export const referenzen: Referenz[] = [
   {
     id: "obstplantage-ibbenbueren",
     slug: "obstplantage-ibbenbueren",
+    projekttyp: "sanierung",
     titel: "Obstplantage Ibbenbüren",
     untertitel: "Boden mit Charakter – ohne Stillstand",
     ort: "Ibbenbüren",
@@ -320,6 +330,7 @@ export const referenzen: Referenz[] = [
   {
     id: "sanierung-einer-sanierung",
     slug: "sanierung-einer-sanierung",
+    projekttyp: "sanierung",
     titel: "Sanierung einer Sanierung",
     untertitel: "Eben. Schnell. Sicher.",
     ort: "Deutschland",
@@ -350,6 +361,7 @@ export const referenzen: Referenz[] = [
   {
     id: "dhl-ueberadebruecken",
     slug: "dhl-ueberadebruecken",
+    projekttyp: "sanierung",
     titel: "DHL Überladebrücken",
     untertitel: "Schnell. Sicher. Stark.",
     ort: "Ottendorf-Okrilla",
@@ -378,6 +390,7 @@ export const referenzen: Referenz[] = [
   {
     id: "lkw-waschstrasse",
     slug: "lkw-waschstrasse",
+    projekttyp: "sanierung",
     titel: "LKW Waschstraße",
     untertitel: "Chemikalien. Wasser. Dauerbetrieb.",
     ort: "Deutschland",
@@ -409,6 +422,7 @@ export const referenzen: Referenz[] = [
   {
     id: "helipad-sanierung-polen",
     slug: "helipad-sanierung-polen",
+    projekttyp: "sanierung",
     titel: "Helipad Sanierung Polen",
     untertitel: "Stark gegen Frost & Last",
     ort: "Płock",
@@ -441,6 +455,7 @@ export const referenzen: Referenz[] = [
   {
     id: "fugensanierung-lyreco",
     slug: "fugensanierung-lyreco",
+    projekttyp: "sanierung",
     titel: "Fugensanierung Lyreco",
     untertitel: "Weniger Schritte – Mehr Leistung",
     ort: "Schweiz",
@@ -472,6 +487,7 @@ export const referenzen: Referenz[] = [
   {
     id: "treppenstufen-sanierung",
     slug: "treppenstufen-sanierung",
+    projekttyp: "sanierung",
     titel: "Treppenstufen Sanierung",
     untertitel: "Schnell. Sauber. Trittsicher.",
     ort: "Deutschland",
@@ -501,6 +517,7 @@ export const referenzen: Referenz[] = [
   {
     id: "sinusfugen-sanierung",
     slug: "sinusfugen-sanierung",
+    projekttyp: "sanierung",
     titel: "Sinusfugen Sanierung",
     untertitel: "Schnell. Präzise. Dauerhaft.",
     ort: "Deutschland",
@@ -529,6 +546,7 @@ export const referenzen: Referenz[] = [
   {
     id: "trennfugen-bohnenkamp",
     slug: "trennfugen-bohnenkamp",
+    projekttyp: "sanierung",
     titel: "Trennfugen Sanierung Bohnenkamp",
     untertitel: "Profile passgenau setzen",
     ort: "Deutschland",
@@ -559,6 +577,7 @@ export const referenzen: Referenz[] = [
   {
     id: "absenksteine-tankstelle",
     slug: "absenksteine-tankstelle",
+    projekttyp: "sanierung",
     titel: "Absenksteine schnell verlegt",
     untertitel: "LKW trifft auf lockere Steine",
     ort: "Spreewald",
@@ -588,6 +607,7 @@ export const referenzen: Referenz[] = [
   {
     id: "lkw-einstellplatz-berlin",
     slug: "lkw-einstellplatz-berlin",
+    projekttyp: "sanierung",
     titel: "LKW Einstellplatz Berlin",
     untertitel: "Ebenheit für präzise Kalibrierung",
     ort: "Berlin",
@@ -619,6 +639,7 @@ export const referenzen: Referenz[] = [
   {
     id: "hafen-catania",
     slug: "hafen-catania",
+    projekttyp: "sanierung",
     titel: "Hafen Catania",
     untertitel: "Schwerlast im Küstenbereich",
     ort: "Catania, Sizilien",
@@ -650,6 +671,7 @@ export const referenzen: Referenz[] = [
   {
     id: "parkhaus-flughafen-zuerich",
     slug: "parkhaus-flughafen-zuerich",
+    projekttyp: "sanierung",
     titel: "Parkhaus Flughafen Zürich",
     untertitel: "20.000 m² Sanierung mit Langzeitschutz",
     ort: "Zürich",
@@ -682,6 +704,7 @@ export const referenzen: Referenz[] = [
   {
     id: "theodor-heuss-bruecke",
     slug: "theodor-heuss-bruecke",
+    projekttyp: "sanierung",
     titel: "Theodor-Heuss-Brücke",
     untertitel: "Technik trifft Denkmal",
     ort: "Mainz / Wiesbaden",
@@ -712,6 +735,7 @@ export const referenzen: Referenz[] = [
   {
     id: "autohaus-versmold",
     slug: "autohaus-versmold",
+    projekttyp: "sanierung",
     titel: "Autohaus Versmold",
     untertitel: "Kleine Fläche – großer Schaden",
     ort: "Versmold",
@@ -742,6 +766,7 @@ export const referenzen: Referenz[] = [
   {
     id: "hubschrauber-landeplatz-finnland",
     slug: "hubschrauber-landeplatz-finnland",
+    projekttyp: "sanierung",
     titel: "Hubschrauber-Landeplatz Finnland",
     untertitel: "Sicher landen bei extremen Bedingungen",
     ort: "Mikkeli",
@@ -770,6 +795,7 @@ export const referenzen: Referenz[] = [
   {
     id: "lkw-umfahrt-darmstadt",
     slug: "lkw-umfahrt-darmstadt",
+    projekttyp: "sanierung",
     titel: "LKW-Umfahrt Darmstadt",
     untertitel: "Stark befahren – rund um die Uhr",
     ort: "Darmstadt",
@@ -806,6 +832,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/34a670e19e1a810d8eb9f2e07a01e391
     id: "sanierung-lkw-zufahrt-logistikzentrum-sankt",
     slug: "sanierung-lkw-zufahrt-logistikzentrum-sankt",
+    projekttyp: "sanierung",
     titel: "Sanierung LKW-Zufahrt Logistikzentrum Spedition Brummer, Sankt Marienkirchen (Österreich)",
     untertitel: "Punktuelle Sanierung der stark frequentierten LKW-Zufahrt eines internationalen Logistikzentrums an der A8. Über 100 LKW täglich erforderten ein Zeitfenster von wenigen Stunden für Rückbau und Einbau – unlösbar mit konventionellem Beton. Eingesetzt wurden 9 m³ Beton auf Basis von Rapid Set Zement, der eine Frühfestigkeit von 32 N/mm² nach 2 Stunden lieferte. Nach neun Monaten intensiver LKW-Nutzung: technisch sehr gutes Ergebnis, auch vom Generalunternehmer bestätigt.",
     ort: "Sankt Marienkirchen bei Schärding",
@@ -829,6 +856,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a81a18e0effd937d2d879
     id: "texaco-tankflache-arnheim",
     slug: "texaco-tankflache-arnheim",
+    projekttyp: "sanierung",
     titel: "TEXACO Tankfläche, Arnheim (2018)",
     untertitel: "Flüssigkeitsdichte Betonsanierung einer Tankstelle nach CUR-63-Empfehlung für LAU-Anlagen. Instandsetzung an der Autobahn A50.",
     ort: "Arnheim",
@@ -850,6 +878,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a8131b141f84d83456258
     id: "naturex-burgdorf",
     slug: "naturex-burgdorf",
+    projekttyp: "sanierung",
     titel: "Naturex, Burgdorf (2013)",
     untertitel: "Komplettsanierung eines Kühlsprühturms innerhalb von nur drei Wochen. Lebensmittelresistente Beschichtung für die Getränkeindustrie.",
     ort: "Burgdorf",
@@ -872,6 +901,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a81259c78d8d7cf5818f3
     id: "torschwelle-lagerhalle",
     slug: "torschwelle-lagerhalle",
+    projekttyp: "sanierung",
     titel: "Torschwelle Lagerhalle (unbekannter Ort) (2017)",
     untertitel: "Sanierung eines stark abgenutzten Schwellenbereichs mit offenliegender Armierung. Schnelle Reparatur ohne Beeinträchtigung des Lagerverkehrs.",
     ort: "",
@@ -893,6 +923,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a8166ba97c81eb08e5b39
     id: "wellpappenfabrik-gross-versmold",
     slug: "wellpappenfabrik-gross-versmold",
+    projekttyp: "sanierung",
     titel: "Wellpappenfabrik Gross, Versmold (2013)",
     untertitel: "Reparatur abgesackter Asphalt- und Betonflächen im Übergang zur Produktionshalle. Wellenbewegungen gefährdeten transportsichere Verpackungen.",
     ort: "Versmold",
@@ -914,6 +945,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a8180812bd193e55102c8
     id: "korodur-demo-bochum",
     slug: "korodur-demo-bochum",
+    projekttyp: "sanierung",
     titel: "KORODUR Demo, Bochum-Wattenscheid (2012)",
     untertitel: "Schnelle Reparatur beschädigter Stelconplatten unter täglichem LKW- und Staplerverkehr. Extreme Belastungen im eigenen Werksgelände.",
     ort: "Bochum-Wattenscheid",
@@ -935,6 +967,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a8110a72fe9a31fb80151
     id: "kreisverkehr-goppingen",
     slug: "kreisverkehr-goppingen",
+    projekttyp: "sanierung",
     titel: "Kreisverkehr, Göppingen (2021)",
     untertitel: "Umgestaltung eines zweispurigen Kreisverkehrs zur Verbesserung der Verkehrssicherheit. Großpflaster wurde als Fahrspur nicht erkannt.",
     ort: "Göppingen",
@@ -956,6 +989,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a81a593ecc8eb30ccf827
     id: "barmenia-parkhaus-wuppertal",
     slug: "barmenia-parkhaus-wuppertal",
+    projekttyp: "sanierung",
     titel: "Barmenia Parkhaus, Wuppertal (2015)",
     untertitel: "Zeitnahe Sanierung schadhafter Ortbeton- und Fertigteile mit teilweise offener Armierung. Wiederherstellung der Standsicherheit im Versicherungsparkhaus.",
     ort: "Wuppertal",
@@ -977,6 +1011,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a813c927cd09d15918039
     id: "john-lewis-lager-stevenage",
     slug: "john-lewis-lager-stevenage",
+    projekttyp: "sanierung",
     titel: "John Lewis Lager, Stevenage (2013)",
     untertitel: "Sanierung tiefer Fahrrinnen nach über 20 Jahren Staplernutzung in einem Hochregallager. Wiederherstellung der Verkehrssicherheit in der Kaufhaus-Lagerhalle.",
     ort: "Stevenage",
@@ -999,6 +1034,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a81af9ce3d9f5b97662bf
     id: "fraport-frankfurt",
     slug: "fraport-frankfurt",
+    projekttyp: "sanierung",
     titel: "Fraport, Frankfurt/Main (2012)",
     untertitel: "Blitzsanierung eines beschädigten Containerstellplatzes am Flughafen mit WHG-Beschichtung. Schnellste Wiederherstellung für den Flughafenbetrieb.",
     ort: "Frankfurt/Main",
@@ -1021,6 +1057,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a816ba98fe5dd42fd8c25
     id: "sncf-bordeaux",
     slug: "sncf-bordeaux",
+    projekttyp: "sanierung",
     titel: "SNCF, Bordeaux (2016)",
     untertitel: "Beseitigung gefährlicher Unebenheiten in U-Bahn-Zugängen während nächtlicher Arbeiten. Vorbereitung auf die neue Hochgeschwindigkeitsstrecke Tours-Bordeaux.",
     ort: "Bordeaux",
@@ -1042,6 +1079,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e9670e19e1a81d49377cd41cb2324ef
     id: "parkhaus-freiburger-munster-freiburg",
     slug: "parkhaus-freiburger-munster-freiburg",
+    projekttyp: "sanierung",
     titel: "Parkhaus Freiburger Münster, Freiburg",
     untertitel: "Sanierung der Tiefgarage Karlsbau Freiburg (670 Stellplätze, 3 Ebenen) mit Triflex ProPark und DUROP-Beschichtung (Körnung 1–2 mm). Schnelle Ausführung, dauerhafte Verschleißbeständigkeit, helle Optik.",
     ort: "Freiburg",
@@ -1064,6 +1102,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a8107894ed05098f58578
     id: "olympiastadion-berlin",
     slug: "olympiastadion-berlin",
+    projekttyp: "sanierung",
     titel: "Olympiastadion Berlin (2023)",
     untertitel: "Sanierung unter denkmalpflegerischen Auflagen bei Erhalt des historischen Erscheinungsbilds. Hohe Belastbarkeit für Sport- und Großveranstaltungen.",
     ort: "Berlin",
@@ -1086,6 +1125,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a811589bcf83314237222
     id: "wirtgen-produktionshallen-weltweit",
     slug: "wirtgen-produktionshallen-weltweit",
+    projekttyp: "sanierung",
     titel: "WIRTGEN Produktionshallen, weltweit",
     untertitel: "Über 150.000 m² Hartstoff-Industrieböden in weltweiten Produktionsstätten für Straßenbaumaschinen bis 500 Tonnen. Seit Jahrzehnten bewährt.",
     ort: "weltweit (Deutschland, Europa, Naher Osten, China, Asien, Australien)",
@@ -1108,6 +1148,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a81768522e12227517411
     id: "fh-lichtschacht-nurnberg",
     slug: "fh-lichtschacht-nurnberg",
+    projekttyp: "sanierung",
     titel: "FH Lichtschacht, Nürnberg (2012)",
     untertitel: "Sanierung einer stark belasteten Betoneinfassung am letzten Uni-Tag vor den Sommerferien. Schnelle Reparatur unter Witterungs- und Schwerverkehrsbelastung.",
     ort: "Nürnberg",
@@ -1129,6 +1170,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a81cf9ab2ea684bc90b4c
     id: "klaranlage-nako",
     slug: "klaranlage-nako",
+    projekttyp: "sanierung",
     titel: "Kläranlage, Nakło (2014)",
     untertitel: "Sanierung einer durch Säuren zerstörten Beckenkrone (ca. 180 m²) mit Schnellzement. Reparatur in wenigen Stunden, sofortige Wiederinbetriebnahme.",
     ort: "Nakło",
@@ -1151,6 +1193,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a8140a6cee026aaf876ff
     id: "bruckensanierung-amberg",
     slug: "bruckensanierung-amberg",
+    projekttyp: "sanierung",
     titel: "Brückensanierung, Amberg (2012)",
     untertitel: "Brückensanierung mit Ausgleich von Gefälleunterschieden bis 100 mm auf den Fußwegen. Fertigstellung innerhalb von neun Monaten vor den Weihnachtsfeiertagen.",
     ort: "Amberg",
@@ -1172,6 +1215,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a817ba2fadc78e865ab24
     id: "parkplatzsanierung-metzingen",
     slug: "parkplatzsanierung-metzingen",
+    projekttyp: "sanierung",
     titel: "Parkplatzsanierung, Metzingen (2017)",
     untertitel: "Sanierung eines stark abgenutzten Parkplatzes mit Oberflächenrissen und Ausbrüchen. Schnelle Instandsetzung für gleichmäßige Lastverteilung.",
     ort: "Metzingen",
@@ -1193,6 +1237,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a816aaeb0e9b81f27d87f
     id: "schachtregulierung-fahrbahn-nittenau",
     slug: "schachtregulierung-fahrbahn-nittenau",
+    projekttyp: "sanierung",
     titel: "Schachtregulierung Fahrbahn, Nittenau (2019)",
     untertitel: "Anpassung von 28 Kanalschächten an das neue Fahrbahnniveau bei einer Straßensanierung. Schnellhärtender Reparaturmörtel für zügigen Asphalteinbau.",
     ort: "Nittenau",
@@ -1214,6 +1259,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a81a8a68ae079fb0b6103
     id: "treppensanierung-gehweg-esslingen",
     slug: "treppensanierung-gehweg-esslingen",
+    projekttyp: "sanierung",
     titel: "Treppensanierung Gehweg, Esslingen (2015)",
     untertitel: "Sanierung einzelner Treppenstufen mit Frost- und Tausalzschäden im öffentlichen Gehweg. Schnelle Wiederherstellung der Gehwegnutzung.",
     ort: "Esslingen",
@@ -1235,6 +1281,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a815aa2a5e1893c5fb99b
     id: "burger-king-munster",
     slug: "burger-king-munster",
+    projekttyp: "sanierung",
     titel: "Burger King, Münster-Hiltrup (2021)",
     untertitel: "Sanierung des stark beanspruchten Abholschalter-Bereichs im laufenden Restaurantbetrieb. Behebung von Asphaltschäden unter Stahlplatten.",
     ort: "Münster-Hiltrup",
@@ -1256,6 +1303,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a81618631db99661ecf9b
     id: "kraftwerk-bergamo",
     slug: "kraftwerk-bergamo",
+    projekttyp: "sanierung",
     titel: "Kraftwerk, Bergamo (2011)",
     untertitel: "Denkmalgerechte Sanierung mit Wiederherstellung der historischen Kleinflächenplatten-Optik aus den 60er-80er Jahren. Modernisierung bei Erhalt des Originalcharakters.",
     ort: "Bergamo",
@@ -1278,6 +1326,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a8198a3c7e38a9af81bcb
     id: "fahrbahnsanierung-wien",
     slug: "fahrbahnsanierung-wien",
+    projekttyp: "sanierung",
     titel: "Fahrbahnsanierung, Wien (2020)",
     untertitel: "Partielle Fahrbahnsanierung der Donaukanalstraße Wien mit DOT Europe CONCRETE MIX. 15 Plomben über Nacht in 5–10 cm Schichtstärke verfüllt und in Stunden wieder zum Verkehr freigegeben. Erfolgreiche Musterfläche seit 2019 schadensfrei.",
     ort: "Wien",
@@ -1300,6 +1349,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a811da7ddf459b49a543e
     id: "oelie-saur-saint",
     slug: "oelie-saur-saint",
+    projekttyp: "sanierung",
     titel: "Oélie/Saur, Saint-Étienne (2024)",
     untertitel: "Städtische Gehwegsanierung mit Schnellreparaturmörtel. Rutschfeste, optisch angepasste Oberfläche – nach 30 Minuten wieder begehbar.",
     ort: "Saint-Étienne",
@@ -1321,6 +1371,7 @@ export const referenzen: Referenz[] = [
     // notion: https://www.notion.so/2e8670e19e1a8130a61afc2d883ff34c
     id: "decathlon-dortmund",
     slug: "decathlon-dortmund",
+    projekttyp: "sanierung",
     titel: "Decathlon, Dortmund-Aplerbeck (2023)",
     untertitel: "Verlegung von Hartstoffestrich per Silotechnik für eine Interimsverkaufsfläche während des Fachmarkt-Umbaus. Wirtschaftliche Lösung für temporären Betrieb.",
     ort: "Dortmund-Aplerbeck",
@@ -1342,6 +1393,7 @@ export const referenzen: Referenz[] = [
   {
     id: "neodur-level-norderstedt",
     slug: "neodur-level-norderstedt",
+    projekttyp: "sanierung",
     titel: "Wenn die erste Sanierung versagt",
     untertitel: "Teilflächensanierung mit NEODUR Level nach mangelhaftem Hartstoffestrich",
     ort: "Norderstedt",
@@ -1350,7 +1402,6 @@ export const referenzen: Referenz[] = [
     flaeche: "20 m²",
     menge: "500 kg",
     produkte: ["NEODUR Level", "KORODUR PC"],
-    projekttyp: "sanierung",
     ausgangssituation:
       "In mehreren Produktionshallen bestand Sanierungsbedarf. In einer Halle war ein Hartstoffestrich mangelhaft eingebaut worden, es kam zu Abplatzungen und beschädigten Teilbereichen.",
     herausforderungen: [
@@ -1398,6 +1449,7 @@ export const referenzen: Referenz[] = [
   {
     id: "trinkwasserbehaelter-haidberg",
     slug: "trinkwasserbehaelter-haidberg",
+    projekttyp: "sanierung",
     titel: "Trinkwasser-Hochbehälter Haidberg",
     untertitel: "Sicherheit durch Beschichtung",
     ort: "Haidberg",
@@ -1405,7 +1457,6 @@ export const referenzen: Referenz[] = [
     jahr: 2005,
     flaeche: "75.000 m³ Volumen",
     produkte: [],
-    projekttyp: "sanierung",
     ausgangssituation:
       "Mit 75.000 m³ Volumen ist der Hochbehälter Haidberg der größte Trinkwasserbehälter Nordbayerns. Bauherr der Komplettsanierung war die EWAG Nürnberg; die Fertigstellung gelang in nur einem Jahr.",
     herausforderungen: [
@@ -1433,13 +1484,13 @@ export const referenzen: Referenz[] = [
   {
     id: "trinkwasserbehaelter-bad-nauheim",
     slug: "trinkwasserbehaelter-bad-nauheim",
+    projekttyp: "sanierung",
     titel: "Trinkwasserbehälter Bad Nauheim",
     untertitel: "Sichere Standards für Boden, Wand, Decke",
     ort: "Bad Nauheim",
     land: "Deutschland",
     jahr: 2011,
     produkte: ["MICROTOP TW NSM"],
-    projekttyp: "sanierung",
     ausgangssituation:
       "Premiere für MICROTOP TW NSM im Nassspritzverfahren: Die Stadtwerke Bad Nauheim ließen ihren Trinkwasserbehälter sanieren. Die Farbgestaltung überzeugte den Bauherrn – die zweite Kammer wurde sofort beauftragt.",
     herausforderungen: [
@@ -1467,6 +1518,7 @@ export const referenzen: Referenz[] = [
   {
     id: "trinkwasserturm-budapest",
     slug: "trinkwasserturm-budapest",
+    projekttyp: "sanierung",
     titel: "Trinkwasserturm Budapest",
     untertitel: "30 Jahre Altlast neu mineralisch geschützt",
     ort: "Budapest",
@@ -1474,7 +1526,6 @@ export const referenzen: Referenz[] = [
     jahr: 2012,
     flaeche: "3.000 m³ Volumen",
     produkte: ["MICROTOP TW BM", "MICROTOP TW 02"],
-    projekttyp: "sanierung",
     ausgangssituation:
       "Ein Trinkwasserbehälter mit ca. 3.000 m³ am Stadtrand von Budapest wurde nach mehr als 30 Jahren Nutzung saniert. Die Stadtwerke Budapest suchten eine dauerhafte und wirtschaftliche Lösung; die Bauzeit betrug rund sechs Monate.",
     herausforderungen: [

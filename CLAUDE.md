@@ -2,13 +2,14 @@
 
 # KORODUR Sanierungs-App
 
-Interaktive Web-App (Next.js 16 Static Export, GitHub Pages) für den Sanierungsbereich von KORODUR. Self-Service-Tool mit **Lösungsfinder** (geführter Wizard), **Referenzdatenbank** (aktuell 52), **18 Produkten**, **Anwendungsmatrix** (Poster 1:1, 6 kuratierte Produkte, TDS-Links) und **PDF-Download** je Referenz. Vier Sprachen: DE/EN/FR/PL.
+Interaktive Web-App (Next.js 16 Static Export, GitHub Pages) für KORODUR, im Ausbau zur neuen korodur.de (8 Produktbereiche + Unternehmens-/Kontaktseiten). Kern bleibt das Sanierungs-Sales-Tool mit **Lösungsfinder** (geführter Wizard), **Referenzdatenbank** (55, Ausbau auf Neubau + Sanierung), **77 Produkten**, **Anwendungsmatrix** (Poster 1:1, 6 kuratierte Produkte, TDS-Links) und **PDF-Download** je Referenz. Fünf Sprachen: DE/EN/FR/PL/ES.
 
 **Live:** https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/
 **Zielseite Notion (Single Source of Truth für das Projekt):** [Sanieren mit KORODUR ist als überzeugende Sales-App live](https://www.notion.so/336670e19e1a80f887dad468b1676e57)
 
 ## Aktueller Stand & nächste Iteration
 
+- **In Arbeit (2026-06-13) — Referenzen Neubau + Sanierung + Housekeeping:** Strategische Richtung (Steffi): Referenzen sind zentral, die Datenbank soll **Neubau- UND Sanierungsreferenzen** zeigen und perspektivisch **alle verfügbaren** Referenzen führen. Umsetzung: `projekttyp`-Feld (existiert bereits im Typ, in allen 5 Sprachen übersetzt) wird auf der Referenz-Übersichtsseite als führender Filter ergänzt und auf allen Refs befüllt; Import weiterer Verzeichnis-Referenzen aus Notion (Quick-Win = freigabereif + getaggt zuerst; Mass-Import erst nach Freigabe-/Vertraulichkeits-Gate). **Mockup vor UI-Bau** (Filter-Erweiterung). Housekeeping erledigt: WP-content-Cutover-Archiv gesichert (Metadaten `inventar.csv`+`provenienz/` getrackt im `KORODUR-website`-Repo, 1-GB-`mirror/` gitignored, Offsite-Upload offen bei Steffi); CLAUDE.md-Kopf-Fakten nachgezogen (77 Produkte, 55 Refs, 5 Sprachen DE/EN/FR/PL/ES, 6 V25-Cluster). Verifiziert beim Stand-Review: A2 ist live (`EMPFEHLUNGS_MODUS = "kuratiert"`), Build grün (828 Seiten), alle Validierungen 0 Fehler.
 - **V3.4 — LP-/TDS-Einarbeitung + Referenz-Abgleich (deployed 2026-06-12, PRs #55–#60):** **77 Produkte, 637 Seiten** — alle bekannten Produkte migriert. LP-Inhalte (lp-live.korodur.de microtop-tw + arm) eingearbeitet, danach 11 offizielle TDS von Steffi (Quellen-Hierarchie: **TDS > Excel „Normen produkte.xlsx" > LPs > Alt-Site**, Quellen unter `docs/tds-quellen/`): neue Produkte TW NSD, KOROMINERAL Lasur, NEODUR PFM 1K Easyfix, PFM-ZE(/Flex, neue Gruppe `pflasterfugen`); HE 65/HE 40 belastbarNach 7 d (**validate-referenzen erstmals 0 Fehler**). Zentrales Kontaktformular auf /kontakt (mailto-V1, Submit-Tausch bei Cutover) + 6 LP-Fachberater; Full-Bleed-Hero mit 1920×1080-Key-Visual; ausschreiben.de/catalog/korodur im Footer. **Notion-Arbeitsseiten** unter der Zielseite: To-do-Liste Steffi (Zulieferungen), „Referenz-Abdeckung" (Gewichtung) und „Referenz-Abgleich Sanierung" (App↔Verzeichnis je Produkt + **Lösungsfinder-Cluster-Tabelle**: Industrie&Halle 25, dünn: Sicht&Design 3, Umwelt&WHG 3, Nass/Hygiene 4, Parkdeck 4). Offen: Fachberater-Porträts (Fotos da, Zuordnung DSC-Name→Person fehlt), Ansprechpartner-Seiten Alt-Site, Silosystem-Tagesleistung, Grünwert Katzenstreu, TDS-Dichtefehler easyFinish/nanoFinish an Frank. Nächste Session: Stand-Review + nächste Entwicklungsschritte (Kandidaten: Referenz-Import nach Team-Priorisierung, Fachberater-Bilder, Stufe 4 Notion-CMS-Prozess).
 - **V3.3 — Website-Integration Stufe 2 KOMPLETT (deployed 2026-06-12, PRs #51–#53):** Katzenstreu live (Variante B neutral-reduziert, 3 goodcat-Produkte, Private-Label-Block; Grün-Highlights Richtung Heidelberg-Materials-Grün später), **Sprachpässe EN/FR/PL für alle 55 neuen Produkte** (`data/i18n/produkte.*.ts`, inkl. neuer Felder beschreibung/varianten), Unternehmensseite mit Meilenstein-Timeline (1936–2026, „90 Jahre"), Title-Template „| KORODUR" statt „| KORODUR Sanierung", Meta-Descriptions lokalisiert, Footer-Spaltenumbruch gefixt. **73 Produkte, 621 Seiten, 4 Sprachen — alle 8 Bereiche migriert.** Entschieden (Steffi 2026-06-12): Excel-Klassen gelten (Kollegen-Review nach Go-Live über Live-Site), TW 02 = TW 2. Beschaffungsliste bei Steffi: TDS (HE 65/HE 40 belastbarNach, Dichte-Einheiten Bauchemie, PFM/Lasur/TW-NSD-Daten), ausschreiben.de-Deeplink, Key Visual hochauflösend, Katzenstreu-Grünwert, Produktbilder. Nächste Stufen: 3 (Referenzen-Abgleich Notion) und 4 (Notion-CMS-Prozess).
 - **V3.2 — Website-Integration Stufe 2, Produktbereiche komplett DE (deployed 2026-06-12, PRs #44–#49):** Alle Material-Bereiche migriert: Industrieboden (Teil 1+2 inkl. Bauchemie), Sichtestrich, Microtop, Spezialbaustoffe, Rapid Set — **70 Produkte** (von 18), 609 Seiten. Varianten-Modell (SVS/Körnungen als `varianten[]` am Stammprodukt), kuratierte `produktgruppe` je Bereich mit Anker-Chips auf Bereichsseiten, `beschreibung`-Feld auf Detailseiten (SEO-HTML). Dazu Brand-Feedback-Runde: Original-Logo im Header, Split-Hero mit Key Visual, kompakter Footer (Social statt Sprachpills, 90-Jahre-Badge, Tagline „Qualität für Generationen"), Produkte-Übersicht nach Bereichen mit Anker-Chips, 2 Standorte bestätigt (Amberg/Bochum). Quellen + Extraktionen + **Sign-off-Dokumente** (Gruppen, Klassen-Konflikte Excel vs. Alt-Site, TW-02/TW-VSM-Fragen) unter `docs/website-migration/`. Katzenstreu-Mockup mit 2 Abgrenzungs-Varianten wartet auf Review (`docs/mockups/Katzenstreu-Bereich-Mockup.html`). Offen: Sprachpässe EN/FR/PL für neue Inhalte (PR 11/12), Unternehmensseiten-Ausbau (PR 10), ausschreiben.de-Deeplink + hochauflösendes Key Visual (Steffi), Lösungsfinder unverändert 8/8.
@@ -26,7 +27,7 @@ Interaktive Web-App (Next.js 16 Static Export, GitHub Pages) für den Sanierungs
 - **Next.js 16** (App Router, **Static Export** via `output: "export"` in `next.config.ts`)
 - **React 19.2** · **TypeScript 5** · **Tailwind CSS 4**
 - **GitHub Pages** Deployment via `.github/workflows/deploy.yml` (Push auf `main` → Auto-Build)
-- **i18n:** Eigene Implementierung über `[lang]`-Segment + `dictionaries/{de,en,fr,pl}.json` + `lib/LocaleContext.tsx`
+- **i18n:** Eigene Implementierung über `[lang]`-Segment + `dictionaries/{de,en,fr,pl,es}.json` + `lib/LocaleContext.tsx`
 - **Test:** Kein Test-Runner. Smoke-Tests via `npx tsx scripts/test-loesungsfinder.ts` und `scripts/validate-referenzen.ts`
 
 ## Architektur
@@ -42,10 +43,10 @@ app/[lang]/              Locale-prefixed Routes (Static-Export-fähig)
 components/              UI-Komponenten (AppShell, TopNav, ReferenceCard, ImageGallery, SearchOverlay, …)
 data/
   types.ts               Typ-Definitionen (Referenz, Produkt, Sanierungsart, Einsatzbereich, …)
-  referenzen.ts          52 Refs als TS-Objekte (DE-Basis)
-  produkte.ts            18 Produkte
+  referenzen.ts          55 Refs als TS-Objekte (DE-Basis)
+  produkte.ts            77 Produkte
   loesungsfinder.ts      Step-Definitionen + Filter-Logik
-  i18n/                  Inhalts-Übersetzungen (EN/FR/PL)
+  i18n/                  Inhalts-Übersetzungen (EN/FR/PL/ES)
 lib/                     i18n-Helper, LocaleContext, basePath-Helper für GitHub Pages
 scripts/                 CLI-Skripte (Build, Validierung, Notion-Sync — siehe Workflows)
 docs/                    Projektdoku (siehe Ablage-Regeln unten)
@@ -126,7 +127,7 @@ Diese Session nutzt **auto-memory** unter `~/.claude/projects/-Users-sfleischman
 2. **Markdown-Links/`<page>`-Tags via Text-Match nicht reparierbar:** Notion speichert sie als Link-Blocks. Wenn URL-Korrekturen nötig: Plan-B = lokale Markdown-Datei + manueller Paste.
 3. **Bilder-Migration ausstehend:** 25 importierte Refs zeigen `_placeholder.jpg` bis SharePoint→Notion `TOP 3 Bilder` einmalig synchronisiert wurde.
 4. **Next.js 16 Breaking Changes:** Siehe `AGENTS.md` oben — vor Code-Änderungen `node_modules/next/dist/docs/` konsultieren.
-5. **Filter-Kategorien:** Aktuell 8 Einsatzbereiche, **geplant 4** (im Rahmen 3-Step-Rewrite). Bei Code-Änderungen prüfen, ob 8er oder 4er Schema gilt — siehe Plan.
+5. **Filter-Kategorien (Lösungsfinder):** Live ist das **V2.5-Schema mit 6 Clustern** (`EinsatzbereichV25`: 3 innen + 3 außen, `data/types.ts`). Das alte 8er-Schema (`EinsatzbereichKategorie`) ist `@deprecated`, lebt aber noch in `data/referenzen.ts` (Feld `einsatzbereiche`) und der Referenz-Galerie. Bei Code-Änderungen prüfen, welches Schema die Stelle nutzt.
 
 ## Externe Quellen
 

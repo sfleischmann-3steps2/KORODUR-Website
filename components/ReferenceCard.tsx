@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { Referenz } from "../data/types";
-import { bereichLabel } from "../data/einsatzbereichMapping";
+import { bereichLabel, projektartBucket, projektartLabel } from "../data/einsatzbereichMapping";
 import { withBasePath } from "../lib/basePath";
 import { thumbSrc } from "../lib/images";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,6 +19,8 @@ export default function ReferenceCard({
   // Badge = primäre Branche der Referenz (gleiche Facette wie der Galerie-Filter).
   const primary = referenz.einsatzbereiche?.[0];
   const label = primary ? bereichLabel(primary, lang) : "";
+  // Projektart-Chip (Neubau/Sanierung) — gleiche Facette wie der Übersichtsfilter.
+  const art = projektartBucket(referenz.projekttyp);
 
   return (
     <Link href={`/${lang}/referenzen/${referenz.slug}`} className="no-underline group block">
@@ -33,6 +35,12 @@ export default function ReferenceCard({
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
+          <span
+            className="absolute left-3 top-3 z-10 rounded-[5px] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white"
+            style={{ background: art === "neubau" ? "rgba(0,45,89,0.92)" : "#009ee3" }}
+          >
+            {projektartLabel(art, lang)}
+          </span>
         </div>
         <CardContent className="p-6 flex flex-col gap-3">
           {label && (

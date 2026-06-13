@@ -23,6 +23,9 @@ import Step2InnenAussen from "./Step2InnenAussen";
 import Step3Einsatzbereich from "./Step3Einsatzbereich";
 import Step4Zeitfenster from "./Step4Zeitfenster";
 import Ergebnisseite from "./Ergebnisseite";
+import Step0Projektart from "./Step0Projektart";
+import NeubauFunnel from "./NeubauFunnel";
+import { NEUBAU_STRECKE_AKTIV } from "@/data/loesungsfinderV25";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
@@ -44,6 +47,11 @@ export default function Wizard({ lang }: WizardProps) {
   const [state, setState] = useState<LoesungsfinderState>(INITIAL_STATE);
   const [currentStep, setCurrentStep] = useState<1 | 2 | 3 | 4>(1);
   const [showResults, setShowResults] = useState(false);
+  // Eingangsweiche (Option C): null = noch nicht gewählt → zeigt die Weiche.
+  // Flag aus → direkt "sanierung", Weiche wird übersprungen (V1-Verhalten).
+  const [projektart, setProjektart] = useState<"neubau" | "sanierung" | null>(
+    NEUBAU_STRECKE_AKTIV ? null : "sanierung"
+  );
 
   // Adaptive Funnel-Länge: Punktuell überspringt Step 4.
   const totalSteps = state.flaeche === "punktuell" ? 3 : 4;
@@ -85,6 +93,8 @@ export default function Wizard({ lang }: WizardProps) {
   const goBack = useCallback(() => {
     if (currentStep > 1) {
       setCurrentStep((s) => (Math.max(s - 1, 1) as 1 | 2 | 3 | 4));
+    } else if (NEUBAU_STRECKE_AKTIV) {
+      setProjektart(null); // von Schritt 1 zurück zur Eingangsweiche
     }
   }, [currentStep]);
 
@@ -92,6 +102,7 @@ export default function Wizard({ lang }: WizardProps) {
     setState(INITIAL_STATE);
     setCurrentStep(1);
     setShowResults(false);
+    if (NEUBAU_STRECKE_AKTIV) setProjektart(null); // zurück zur Eingangsweiche
   }, []);
 
   // Zurück aus dem Ergebnis: zur letzten Frage, Auswahl bleibt erhalten.
@@ -120,6 +131,15 @@ export default function Wizard({ lang }: WizardProps) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [currentStep, showResults]);
+
+  // Eingangsweiche (Option C): zuerst Neubau / Sanierung wählen.
+  if (projektart === null) {
+    return <Step0Projektart onSelect={setProjektart} />;
+  }
+  // Neubau-Pfad: eigener Funnel (Sanierungs-Funnel bleibt unberührt).
+  if (projektart === "neubau") {
+    return <NeubauFunnel onZurueck={() => setProjektart(null)} />;
+  }
 
   if (showResults) {
     return (
@@ -162,7 +182,7 @@ export default function Wizard({ lang }: WizardProps) {
           sonst unter dem Fold), ab md regulär im Fluss. Negative Margins gleichen
           das Container-Padding aus, damit die Leiste mobil volle Breite hat. */}
       <div className="sticky bottom-0 z-10 -mx-4 mt-8 flex items-center justify-between gap-3 border-t border-mid-gray bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 md:static md:z-auto md:mx-0 md:border-t-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
-        {currentStep > 1 ? (
+        {currentStep > 1 || NEUBAU_STRECKE_AKTIV ? (
           <Button type="button" variant="outline" onClick={goBack} className="h-11 md:h-9">
             <AppIcon icon={ArrowLeft} className="size-3.5" aria-hidden="true" />
             {t.back}

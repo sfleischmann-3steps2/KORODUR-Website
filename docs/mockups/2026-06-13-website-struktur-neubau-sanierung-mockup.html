@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Website-Struktur Relaunch — Neubau + Sanierung (Mockup v2, 2026-06-13)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet" />
+<style>
+  :root{ --navy:#002d59; --cyan:#009ee3; --cyan-text:#0077ab;
+    --icon-bg:#f5f5f6; --bullet-bg:#e8edf5; --mid-gray:#d9dada;
+    /* Farbcode (Steffi 2026-06-13): Neubau = Navy (Kerngeschäft, dominant),
+       Sanierung = Cyan/hell (dezent) */
+    --neubau:#002d59; --sanierung:#009ee3; --sanierung-soft:#e6f6fd; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:Gabarito, system-ui, sans-serif; color:var(--navy); background:#fff; }
+  .label{ background:#ffd84d; color:var(--navy); font-weight:900; font-size:14px; padding:10px 24px; position:sticky; top:0; z-index:50; }
+  .divider{ background:var(--navy); color:#fff; padding:26px 32px; margin-top:56px; }
+  .divider h2{ margin:0 0 6px; font-size:23px; font-weight:900; color:#fff; }
+  .divider p{ margin:0; opacity:.82; font-size:14px; max-width:880px; line-height:1.55; }
+  .divider .tag{ display:inline-block; background:var(--cyan); color:#fff; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.08em; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  .intro{ padding:22px 0 4px; }
+  .intro p{ font-size:14.5px; line-height:1.6; color:#42566f; max-width:920px; }
+
+  /* Weiche */
+  .weiche{ display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:30px 0 8px; }
+  @media(max-width:760px){ .weiche{ grid-template-columns:1fr; } .steps{ grid-template-columns:1fr !important; } .iarow{ grid-template-columns:1fr !important; } }
+  .choice{ border-radius:16px; padding:30px; text-align:center; }
+  .choice.neu{ background:var(--navy); color:#fff; }
+  .choice.san{ background:#fff; color:var(--navy); border:2px solid var(--cyan); }
+  .choice .ic{ width:64px; height:64px; border-radius:16px; margin:0 auto 16px; display:flex; align-items:center; justify-content:center; font-size:30px; }
+  .choice.neu .ic{ background:rgba(255,255,255,.15); color:#fff; }
+  .choice.san .ic{ background:var(--sanierung-soft); color:var(--cyan-text); }
+  .choice h3{ margin:0 0 6px; font-size:22px; font-weight:900; }
+  .choice.neu h3{ color:#fff; }
+  .choice p{ margin:0; font-size:14px; opacity:.8; }
+  .choice .tagx{ display:inline-block; margin-top:14px; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; padding:4px 10px; border-radius:5px; }
+  .choice.neu .tagx{ background:var(--cyan); color:#fff; }
+  .choice.san .tagx{ background:var(--sanierung-soft); color:var(--cyan-text); }
+
+  /* Step-Reihen */
+  .pathbox{ border:1px solid var(--bullet-bg); border-radius:14px; overflow:hidden; margin:18px 0; }
+  .pathhead{ padding:14px 20px; font-weight:900; font-size:15px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .pathhead.neu{ background:var(--navy); color:#fff; }
+  .pathhead.san{ background:var(--sanierung-soft); color:var(--cyan-text); border-bottom:1px solid #cfeefb; }
+  .pathhead .badge{ font-size:11px; padding:3px 9px; border-radius:5px; text-transform:uppercase; letter-spacing:.05em; }
+  .pathhead.neu .badge{ background:rgba(255,255,255,.2); }
+  .pathhead.san .badge{ background:#fff; }
+  .pathhead .flag{ background:#ffd84d; color:var(--navy); }
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+  .step{ padding:16px 18px; border-right:1px solid var(--bullet-bg); }
+  .step:last-child{ border-right:none; }
+  .step .n{ font-size:11px; font-weight:900; color:var(--cyan-text); text-transform:uppercase; letter-spacing:.06em; }
+  .step .t{ font-size:15px; font-weight:900; margin:3px 0 8px; }
+  .step ul{ margin:0; padding-left:15px; }
+  .step li{ font-size:12.5px; color:#5a6b80; line-height:1.55; }
+  .step .adapt{ font-size:11px; color:var(--cyan-text); font-weight:800; margin-top:6px; }
+  .result{ background:var(--icon-bg); padding:16px 20px; font-size:13.5px; color:#42566f; border-top:1px solid var(--bullet-bg); }
+  .result strong{ color:var(--navy); }
+
+  /* IA-Schema */
+  .ia{ padding:24px 0 8px; }
+  .iarow{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .iacard{ border:1px solid var(--bullet-bg); border-radius:14px; overflow:hidden; }
+  .iacard h4{ margin:0; padding:13px 18px; font-size:14px; font-weight:900; color:#fff; }
+  .iacard.neu h4{ background:var(--navy); }
+  .iacard.san h4{ background:var(--cyan); }
+  .iabody{ padding:14px 18px; }
+  .iabody p{ margin:0 0 10px; font-size:13px; color:#5a6b80; }
+  .pill{ display:inline-block; font-size:12px; font-weight:800; padding:5px 11px; border-radius:7px; margin:3px 5px 3px 0; }
+  .pill.core{ background:var(--bullet-bg); color:var(--navy); }
+  .pill.soon{ background:#fff4d6; color:#8a6d00; border:1px dashed #e0b500; }
+  .pill.cross{ background:var(--sanierung-soft); color:var(--cyan-text); border:1px solid #bfe9fa; }
+  .flowline{ text-align:center; font-size:13px; color:#5a6b80; padding:14px 0 2px; }
+  .flowline b{ color:var(--navy); }
+
+  /* Nav-Schema + Hero */
+  .navbar{ border:1px solid var(--bullet-bg); border-radius:12px; padding:12px 18px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin:10px 0 4px; font-size:13.5px; font-weight:700; }
+  .navbar .logo{ font-weight:900; background:var(--navy); color:#fff; padding:6px 10px; border-radius:6px; font-size:13px; }
+  .navbar .item{ color:var(--navy); }
+  .navbar .item.new{ color:var(--cyan-text); position:relative; }
+  .navbar .item.new::after{ content:"neu"; font-size:9px; background:var(--cyan); color:#fff; padding:1px 5px; border-radius:4px; margin-left:5px; vertical-align:middle; }
+  .navbar .item.removed{ color:#c0392b; text-decoration:line-through; opacity:.6; }
+  .navbar .cta{ margin-left:auto; background:var(--cyan); color:#fff; padding:7px 14px; border-radius:7px; }
+  .hero{ background:linear-gradient(120deg,#002d59,#0a4a7e); color:#fff; border-radius:16px; padding:42px; margin:18px 0; }
+  .hero .kick{ font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:.1em; color:#7fd0f5; }
+  .hero h1{ margin:10px 0 10px; font-size:clamp(26px,3.6vw,40px); font-weight:900; color:#fff; line-height:1.12; max-width:16em; }
+  .hero p{ margin:0 0 22px; font-size:16px; opacity:.85; max-width:34em; }
+  .hero .ctas{ display:flex; flex-wrap:wrap; gap:12px; }
+  .btn{ font-weight:800; font-size:15px; padding:13px 24px; border-radius:8px; border:none; cursor:pointer; }
+  .btn.primary{ background:var(--cyan); color:#fff; }
+  .btn.ghost{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.3); }
+
+  /* Status */
+  .status{ display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:20px 0 8px; }
+  @media(max-width:760px){ .status{ grid-template-columns:1fr; } }
+  .stcol h4{ margin:0 0 8px; font-size:14px; font-weight:900; }
+  .stcol ul{ margin:0; padding-left:4px; list-style:none; }
+  .stcol li{ font-size:13px; line-height:1.7; color:#42566f; padding-left:24px; position:relative; }
+  .stcol li::before{ position:absolute; left:0; font-weight:900; }
+  .done li::before{ content:"✓"; color:var(--cyan); }
+  .open li::before{ content:"→"; color:var(--cyan-text); }
+  .note{ font-size:12.5px; color:#5a6b80; background:var(--sanierung-soft); border-left:3px solid var(--cyan); padding:10px 14px; margin:14px 0; border-radius:0 8px 8px 0; }
+  code{ background:var(--bullet-bg); padding:1px 5px; border-radius:4px; font-size:.92em; }
+</style>
+</head>
+<body>
+<div class="label">MOCKUP v2 · Website-Struktur Relaunch: Neubau + Sanierung · 2026-06-13 · überarbeitet nach Feedback (Farben, 4. Schritt, Nav, IA)</div>
+
+<div class="wrap intro">
+  <p><strong>Farbcode (neu):</strong> <span style="color:var(--navy);font-weight:900;">Neubau = Navy</span> (Kerngeschäft, dominant), <span style="color:var(--cyan-text);font-weight:900;">Sanierung = Cyan/hell</span> (dezent eingesetzt — als Akzent &amp; helle Flächen, nicht flächig dominant). Logo/Header/Footer sind bereits vereinheitlicht; Ausnahme Katzenstreu (nur KORODUR-Schrift, CD-Vorgabe).</p>
+</div>
+
+<!-- ====== 1. EINGANGSWEICHE ====== -->
+<div class="divider">
+  <span class="tag">Kern — Option C</span>
+  <h2>1 · Eingangsweiche: Neubau (links) / Sanierung (rechts)</h2>
+  <p>Erster Schritt vor dem Funnel — erscheint auf der Startseite UND beim direkten Einstieg über Bereiche → Industrieboden (siehe IA unten). Neubau dominant in Navy, Sanierung als heller Cyan-Akzent.</p>
+</div>
+<div class="wrap">
+  <div class="weiche">
+    <div class="choice neu">
+      <div class="ic">▦</div>
+      <h3>Neubau</h3>
+      <p>Neuer Industrieboden, Estrich oder Hartstoffeinstreuung — von der Halle bis zum Sichtboden.</p>
+      <span class="tagx">Kerngeschäft</span>
+    </div>
+    <div class="choice san">
+      <div class="ic">⟳</div>
+      <h3>Sanierung</h3>
+      <p>Bestehenden Boden reparieren, ertüchtigen oder optisch aufwerten.</p>
+      <span class="tagx">bestehende Strecke</span>
+    </div>
+  </div>
+</div>
+
+<!-- ====== 2. DIE ZWEI PFADE ====== -->
+<div class="divider">
+  <span class="tag">Struktur</span>
+  <h2>2 · Beide Funnel — je 4 Schritte</h2>
+  <p>Sanierung bleibt unverändert (durchdacht, passt). Neubau gleich aufgebaut, mit Neubau-typischen Fragen + identischem 4. Schritt Zeitfenster. Neubau-Pfad wird jetzt gebaut, ist aber per Feature-Flag für V1 ausblendbar.</p>
+</div>
+<div class="wrap">
+  <div class="pathbox">
+    <div class="pathhead san"><span>⟳ Sanierungs-Pfad</span><span class="badge">unverändert · 4 Schritte</span></div>
+    <div class="steps">
+      <div class="step"><div class="n">Schritt 1</div><div class="t">Fläche</div><ul><li>punktuell</li><li>mittel</li><li>groß</li></ul></div>
+      <div class="step"><div class="n">Schritt 2</div><div class="t">Innen / Außen</div><ul><li>innen</li><li>außen (Frost/Tausalz)</li></ul></div>
+      <div class="step"><div class="n">Schritt 3</div><div class="t">Einsatzbereich</div><ul><li>Industrie &amp; Halle</li><li>Nass / Hygiene</li><li>Sicht &amp; Design …</li></ul></div>
+      <div class="step"><div class="n">Schritt 4</div><div class="t">Zeitfenster</div><ul><li>über Nacht</li><li>1–2 Wochen</li><li>planbar</li></ul></div>
+    </div>
+    <div class="result">→ <strong>Empfehlung:</strong> kuratierte Zwei-Produkt-Empfehlung (A2) + passende Sanierungs-Referenzen.</div>
+  </div>
+
+  <div class="pathbox">
+    <div class="pathhead neu"><span>▦ Neubau-Pfad</span><span class="badge">neu · 4 Schritte</span><span class="badge flag">V1: per Flag ausblendbar</span><span class="badge flag">Funnel-Logik mit Kollegen/Frank</span></div>
+    <div class="steps">
+      <div class="step"><div class="n">Schritt 1</div><div class="t">Nutzung / Branche</div><ul><li>Industrie- &amp; Produktionshalle</li><li>Lager &amp; Logistik</li><li>Verkaufsraum / Showroom</li><li>Lebensmittel / Nass</li><li>Parkdeck / Außen</li></ul></div>
+      <div class="step"><div class="n">Schritt 2</div><div class="t">Beanspruchung</div><ul><li>Stapler- / Schwerlast</li><li>Verschleiß / Abrieb</li><li>chemisch</li><li>Frost / Tausalz (außen)</li></ul></div>
+      <div class="step"><div class="n">Schritt 3</div><div class="t">Anforderung / Optik</div><ul><li>Sicht- / Designoptik</li><li>Hygiene</li><li>leitfähig (ESD)</li><li>hell / reflektierend</li></ul><div class="adapt">↳ Optionen je nach Branche (adaptiv)</div></div>
+      <div class="step"><div class="n">Schritt 4</div><div class="t">Zeitfenster</div><ul><li>über Nacht</li><li>1–2 Wochen</li><li>planbar</li></ul></div>
+    </div>
+    <div class="result">→ <strong>Empfehlung:</strong> Estrich- + Hartstoff-System, z. B. <strong>NEODUR HE 3 / HE 3 green</strong> + Hartstoffeinstreuung + Nachbehandlung. Plus Neubau-Referenzen (54 im Verzeichnis).</div>
+  </div>
+  <div class="note">Neubau-Produkte sind im Katalog schon vollständig (37 Industrieboden inkl. HE 3/green). Offen: Auswahl-Logik (Tag-Mapping mit Frank/Kollegen) + Neubau-Referenzen (Import-Track).</div>
+</div>
+
+<!-- ====== 3. IA / JOURNEY ====== -->
+<div class="divider">
+  <span class="tag">IA — von Beginn an mitdenken</span>
+  <h2>3 · Zwei Einstiege, eine Weiche — und „Sanierung" ist breiter als Industrieboden</h2>
+  <p>Wichtig für die ganze Journey: Das gesamte Baustoff-Portfolio wird abgedeckt, nicht nur Industrieboden. Die Eingangsweiche erscheint an zwei Stellen, und hinter „Sanierung" liegen drei Schwerpunkte.</p>
+</div>
+<div class="wrap ia">
+  <div class="flowline">
+    <b>Einstieg A:</b> Startseite → Kacheln <b>Neubau</b> / <b>Sanierung</b> &nbsp;&nbsp;|&nbsp;&nbsp;
+    <b>Einstieg B:</b> Bereiche → <b>Industrieboden</b> → <i>gleiche</i> Eingangsweiche (Mischinhalt Neubau + Sanierung)
+  </div>
+  <div class="iarow">
+    <div class="iacard neu">
+      <h4>▦ Neubau — 3 Produktwelten</h4>
+      <div class="iabody">
+        <p>Kerngeschäft, breit aufgestellt — nicht nur Industrieboden:</p>
+        <span class="pill core">Industrieboden</span>
+        <span class="pill core">Sichtestrich</span>
+        <span class="pill core">3D-Druck</span>
+      </div>
+    </div>
+    <div class="iacard san">
+      <h4>⟳ Sanierung — 3 Schwerpunkte</h4>
+      <div class="iabody">
+        <p>Über Home → Sanierung zeigen wir alle drei:</p>
+        <span class="pill core">Industrieboden­sanierung</span>
+        <span class="pill soon">Infrastruktur (Bereich kommt)</span>
+        <span class="pill core">Trinkwasser &amp; Spezial</span>
+        <p style="margin-top:10px;"><b>Microtop</b> (Trinkwasser) und <b>Rapidset</b> sind <b>reine Sanierungsprodukte</b>. <span style="color:var(--cyan-text);font-weight:800;">Rapidset läuft quer durch die drei Sanierungs-Schwerpunkte</span> (nicht Neubau).</p>
+      </div>
+    </div>
+  </div>
+  <div class="note">Konsequenz für den Bau: Der Sanierungs-Einstieg darf nicht nur Industrieboden-Produkte zeigen, sondern auch Außenbereich/Infrastruktur, Microtop (Trinkwasser) und Rapidset. Der Bereich <strong>Infrastruktur</strong> existiert noch nicht — Vorschlag: als sichtbarer „kommt bald"-Platzhalter anlegen, damit die Struktur vollständig wirkt.</div>
+  <div class="flowline" style="margin-top:8px;">
+    <b>Referenzen zentral:</b> aus Neubau-Kontext → Filter ist auf <b>Neubau</b> vorbelegt; aus Sanierung → auf <b>Sanierung</b>. (Deep-Link <code>?projektart=…</code>)
+  </div>
+</div>
+
+<!-- ====== 4. NAV + HERO ====== -->
+<div class="divider">
+  <span class="tag">Navigation V1</span>
+  <h2>4 · Home-Navigation &amp; Startseite</h2>
+  <p>„Anwendungen" raus aus der Home-Nav (wandert als CTA in den Sanierungsbereich). „Kontakt" bleibt zentral auf allen Seiten. Neubau &amp; Sanierung als Einstiege.</p>
+</div>
+<div class="wrap">
+  <div class="navbar">
+    <span class="logo">KORODUR</span>
+    <span class="item">Produkte</span>
+    <span class="item new">Neubau</span>
+    <span class="item">Sanierung</span>
+    <span class="item removed">Anwendungen</span>
+    <span class="item">Referenzen</span>
+    <span class="item">Unternehmen</span>
+    <span class="item">Kontakt</span>
+    <span class="cta">Lösungsfinder</span>
+  </div>
+  <div class="note">Anwendungsmatrix bleibt erhalten, aber als CTA <em>innerhalb</em> des Sanierungsbereichs (sie ist sanierungsspezifisch), nicht als Home-Menüpunkt.</div>
+
+  <div class="hero">
+    <div class="kick">Industrieböden seit 1936</div>
+    <h1>Der richtige Boden — ob Neubau oder Sanierung.</h1>
+    <p>Mineralische Hartstoffeinstreuungen, Estriche und Reparatursysteme. Geführte Auswahl in wenigen Schritten, weltweit bewährt.</p>
+    <div class="ctas">
+      <button class="btn primary">Lösungsfinder starten</button>
+      <button class="btn ghost">Referenzen ansehen</button>
+    </div>
+  </div>
+  <div class="note">Hero führt in die Eingangsweiche; darunter die Bereichs-Kacheln. Offen für dich: Soll das Kerngeschäft Neubau im Hero noch deutlicher vorn stehen?</div>
+</div>
+
+<!-- ====== 5. STATUS ====== -->
+<div class="divider">
+  <span class="tag">Reality-Check</span>
+  <h2>5 · Analyse-Quick-Wins: Status</h2>
+  <p>Die UI/UX-Analyse lief gegen einen älteren Live-Stand — das meiste ist im aktuellen Code schon gelöst.</p>
+</div>
+<div class="wrap">
+  <div class="status">
+    <div class="stcol done">
+      <h4>Bereits erledigt</h4>
+      <ul>
+        <li>Eine Shell: ein Logo, eine Nav, ein Footer (global)</li>
+        <li>Eine Matrix (Produktmatrix raus)</li>
+        <li>Globale Suche (⌘K) überall</li>
+        <li>Referenzen als SSG (kein leerer No-JS-Zustand)</li>
+        <li>Kontakt-CTAs intern</li>
+        <li>Projektart-Filter Neubau/Sanierung bei Referenzen</li>
+      </ul>
+    </div>
+    <div class="stcol open">
+      <h4>Heute / offen</h4>
+      <ul>
+        <li>Eingangsweiche + Neubau-Funnel (4 Schritte, Flag-bar)</li>
+        <li>Farbcode umstellen: Neubau=Navy, Sanierung=Cyan</li>
+        <li>Nav: „Anwendungen" raus, Kontakt rein/zentral, Neubau-Einstieg</li>
+        <li>Referenzen-Filter per <code>?projektart=</code> vorbelegen</li>
+        <li>Sanierung breiter: Infrastruktur (neu) + Microtop + Rapidset</li>
+        <li>Inhalte (Neubau-Referenzbilder, Produktbilder) — dein Track</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note" style="background:#fff8e1; border-left-color:#ffd84d;">
+    <strong>Für morgen (Kollegen-Test):</strong> klickbarer Zwischenstand mit der neuen Struktur — Eingangsweiche, beide Funnel-Einstiege, Neubau als sichtbare Strecke, die drei Sanierungs-Schwerpunkte. Fehlende Inhalte als Platzhalter ok; getestet werden Aufbau, Navigation, Flow.
+  </div>
+</div>
+
+</body>
+</html>

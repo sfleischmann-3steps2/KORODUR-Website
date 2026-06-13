@@ -1,5 +1,6 @@
 {
   "nav": {
+    "neubau": "Nowe budownictwo",
     "home": "Start",
     "loesungsfinder": "Znajdź rozwiązanie",
     "referenzen": "Referencje",
@@ -36,6 +37,8 @@
     "breadcrumb": "Referencje",
     "title": "Wszystkie referencje",
     "description_prefix": "Projekty z zakresu posadzek przemysłowych, budownictwa przemysłowego i infrastruktury – filtruj według obszaru, zastosowania lub produktu.",
+    "filter_projektart": "Typ projektu",
+    "filter_all": "Wszystkie",
     "filter_all_areas": "Wszystkie obszary",
     "filter_all_applications": "Wszystkie zastosowania",
     "filter_all_products": "Wszystkie produkty",
@@ -167,6 +170,12 @@
     "start_over": "Zacznij od nowa"
   },
   "loesungsfinder": {
+    "weiche_question": "Co planujesz zrealizować?",
+    "weiche_subline": "Wybierz swój projekt — wskażemy odpowiednie rozwiązanie.",
+    "weiche_neubau_titel": "Nowe budownictwo",
+    "weiche_neubau_text": "Nowa posadzka przemysłowa, jastrych lub posypka utwardzająca.",
+    "weiche_sanierung_titel": "Renowacja",
+    "weiche_sanierung_text": "Naprawa, wzmocnienie lub odświeżenie istniejącej posadzki.",
     "page_title": "Znajdź rozwiązanie",
     "page_subtitle": "Opisz swoją sytuację, a pokażemy Ci odpowiednie produkty i projekty referencyjne.",
     "meta_description": "Znajdź w 4 krokach odpowiednie rozwiązanie renowacyjne dla swojej posadzki przemysłowej.",
@@ -369,6 +378,12 @@
     "katzenstreu_privatelabel_text": "Produkujemy żwirek bentonitowy także jako markę własną dla sieci handlowych: jakości premium w opakowaniach 5, 6 i 8 l, jakości standard w 5, 10 i 20 kg, rozmiary specjalne na zapytanie, opcjonalnie ze świeżym zapachem. Dostawa w ekologicznych opakowaniach papierowych (FSC MIX).",
     "katzenstreu_privatelabel_cta": "Wyślij zapytanie o markę własną",
     "gruppe_pflasterfugen": "Zaprawy do fugowania kostki brukowej"
+  },
+  "neubauHub": {
+    "title": "Nowe budownictwo z KORODUR",
+    "intro": "Odpowiednia posadzka przemysłowa dla Twojego projektu — od hal o dużym obciążeniu po posadzki dekoracyjne. Trzy światy produktów, jeden prowadzony dobór.",
+    "slogan": "Budowanie z systemem.",
+    "cta": "Rozpocznij"
   },
   "sanierungHub": {
     "title": "Renowacja z KORODUR",

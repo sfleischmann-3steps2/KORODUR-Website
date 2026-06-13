@@ -1,5 +1,6 @@
 {
   "nav": {
+    "neubau": "Obra nueva",
     "home": "Inicio",
     "loesungsfinder": "Buscador de soluciones",
     "referenzen": "Referencias",
@@ -36,6 +37,8 @@
     "breadcrumb": "Referencias",
     "title": "Todas las referencias",
     "description_prefix": "Proyectos de pavimentos industriales, construcción industrial e infraestructuras: filtre por área, aplicación o producto.",
+    "filter_projektart": "Tipo de proyecto",
+    "filter_all": "Todas",
     "filter_all_areas": "Todas las áreas",
     "filter_all_applications": "Todas las aplicaciones",
     "filter_all_products": "Todos los productos",
@@ -167,6 +170,12 @@
     "start_over": "Empezar de nuevo"
   },
   "loesungsfinder": {
+    "weiche_question": "¿Qué desea realizar?",
+    "weiche_subline": "Elija su proyecto: le guiamos hacia la solución adecuada.",
+    "weiche_neubau_titel": "Obra nueva",
+    "weiche_neubau_text": "Un nuevo pavimento industrial, solera o capa de rodadura.",
+    "weiche_sanierung_titel": "Rehabilitación",
+    "weiche_sanierung_text": "Reparar, reforzar o renovar un pavimento existente.",
     "page_title": "Buscador de soluciones",
     "page_subtitle": "Describa su situación y le mostraremos los productos y proyectos de referencia adecuados.",
     "meta_description": "Encuentre en 4 pasos la solución de rehabilitación adecuada para su pavimento industrial.",
@@ -369,6 +378,12 @@
     "katzenstreu_privatelabel_text": "También producimos arena de bentonita para gatos como marca de distribuidor para marcas comerciales: calidades premium en 5, 6 y 8 l, calidades estándar en 5, 10 y 20 kg, formatos especiales bajo pedido y, si se desea, con aroma fresco. Se entrega en envases de papel respetuosos con el medio ambiente (FSC-MIX).",
     "katzenstreu_privatelabel_cta": "Enviar una solicitud de marca de distribuidor",
     "gruppe_pflasterfugen": "Morteros para juntas de adoquines"
+  },
+  "neubauHub": {
+    "title": "Obra nueva con KORODUR",
+    "intro": "El pavimento industrial adecuado para su proyecto: desde naves de alta exigencia hasta superficies arquitectónicas. Tres mundos de producto, una selección guiada.",
+    "slogan": "Construir con sistema.",
+    "cta": "Empezar"
   },
   "sanierungHub": {
     "title": "Rehabilitar con KORODUR",

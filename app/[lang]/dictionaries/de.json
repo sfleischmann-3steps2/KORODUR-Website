@@ -1,5 +1,6 @@
 {
   "nav": {
+    "neubau": "Neubau",
     "home": "Start",
     "loesungsfinder": "Lösungsfinder",
     "referenzen": "Referenzen",
@@ -36,6 +37,8 @@
     "breadcrumb": "Referenzen",
     "title": "Alle Referenzen",
     "description_prefix": "Projekte aus Industrieboden, Industriebau und Infrastruktur – filtern Sie nach Bereich, Anwendung oder Produkt.",
+    "filter_projektart": "Projektart",
+    "filter_all": "Alle",
     "filter_all_areas": "Alle Bereiche",
     "filter_all_applications": "Alle Anwendungen",
     "filter_all_products": "Alle Produkte",
@@ -167,6 +170,12 @@
     "start_over": "Neu starten"
   },
   "loesungsfinder": {
+    "weiche_question": "Was möchten Sie umsetzen?",
+    "weiche_subline": "Wählen Sie Ihr Vorhaben — wir führen Sie zur passenden Lösung.",
+    "weiche_neubau_titel": "Neubau",
+    "weiche_neubau_text": "Neuer Industrieboden, Estrich oder Hartstoffeinstreuung.",
+    "weiche_sanierung_titel": "Sanierung",
+    "weiche_sanierung_text": "Bestehenden Boden reparieren, ertüchtigen oder aufwerten.",
     "page_title": "Lösungsfinder",
     "page_subtitle": "Beschreiben Sie Ihre Situation, und wir zeigen Ihnen passende Produkte und Referenzprojekte.",
     "meta_description": "Finden Sie in 4 Schritten die passende Sanierungslösung für Ihren Industrieboden.",
@@ -369,6 +378,12 @@
     "katzenstreu_privatelabel_text": "Wir produzieren Bentonit-Katzenstreu auch als Private Label für Handelsmarken: Premium-Qualitäten in 5, 6 und 8 l, Standard-Qualitäten in 5, 10 und 20 kg, Sondergrößen auf Anfrage, auf Wunsch mit frischem Duft. Ausgeliefert in umweltfreundlichen Papierverpackungen (FSC-MIX).",
     "katzenstreu_privatelabel_cta": "Private-Label-Anfrage senden",
     "gruppe_pflasterfugen": "Pflasterfugenmörtel"
+  },
+  "neubauHub": {
+    "title": "Neubau mit KORODUR",
+    "intro": "Der richtige Industrieboden für Ihr Bauvorhaben — von der Hochleistungshalle bis zum Sichtboden. Drei Produktwelten, eine geführte Auswahl.",
+    "slogan": "Bauen mit System.",
+    "cta": "Jetzt starten"
   },
   "sanierungHub": {
     "title": "Sanieren mit KORODUR",
