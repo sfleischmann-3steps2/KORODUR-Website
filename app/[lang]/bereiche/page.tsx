@@ -5,6 +5,7 @@ import { getDictionary, hasLocale } from "../dictionaries";
 import { alternatesFor } from "../../../lib/seo";
 import { AppIcon } from "@/components/ui/icon";
 import { ChevronRight, LayoutGrid } from "lucide-react";
+import { bereichIcon } from "../../../components/bereichIcons";
 
 export async function generateMetadata({
   params,
@@ -77,6 +78,18 @@ export default async function BereicheOverview({
 
             const inner = (
               <>
+                <span
+                  className={`flex items-center justify-center w-11 h-11 rounded-xl mb-1 ${isInfra ? "bg-icon-bg" : "bg-navy"}`}
+                  aria-hidden="true"
+                >
+                  <AppIcon
+                    icon={bereichIcon(slug)}
+                    width={22}
+                    height={22}
+                    strokeWidth={2}
+                    className={isInfra ? "text-mid-gray" : "text-white"}
+                  />
+                </span>
                 {isInfra && (
                   <span
                     className="self-start bg-icon-bg text-navy text-xs rounded-full px-2 py-1"

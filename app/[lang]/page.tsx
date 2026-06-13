@@ -11,6 +11,7 @@ import { withBasePath } from "../../lib/basePath";
 import { alternatesFor } from "../../lib/seo";
 import { AppIcon } from "@/components/ui/icon";
 import { ChevronRight } from "lucide-react";
+import { bereichIcon } from "../../components/bereichIcons";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -152,6 +153,18 @@ export default async function Home({
                     : "border border-bullet-bg"
                 }`}
               >
+                <span
+                  className={`flex items-center justify-center w-11 h-11 rounded-xl mb-1 ${bereich.abgegrenzt ? "bg-icon-bg" : "bg-navy"}`}
+                  aria-hidden="true"
+                >
+                  <AppIcon
+                    icon={bereichIcon(bereich.slug)}
+                    width={22}
+                    height={22}
+                    strokeWidth={2}
+                    className={bereich.abgegrenzt ? "text-mid-gray" : "text-white"}
+                  />
+                </span>
                 {bereich.abgegrenzt && (
                   <span
                     className="self-start bg-icon-bg text-navy text-xs rounded-full px-2 py-1"
