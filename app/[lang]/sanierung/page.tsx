@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { AppIcon } from "@/components/ui/icon";
-import { ArrowRight, Building2, Compass, Grid3x3 } from "lucide-react";
+import { ArrowRight, Building2, Compass, Grid3x3, Layers, Route, Droplets } from "lucide-react";
 import { alternatesFor } from "../../../lib/seo";
 
 type Params = Promise<{ lang: string }>;
@@ -45,6 +45,21 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
     },
   ];
 
+  // Sanierungs-Schwerpunkte (Steffi 2026-06-13): Sanierung ist breiter als
+  // Industrieboden — Infrastruktur (Bereich kommt noch → Platzhalter) und
+  // Trinkwasser & Spezial (MICROTOP für Trinkwasser, Rapid Set für Schnellreparatur).
+  const schwerpunkte: Array<{
+    href: string | null;
+    icon: typeof Layers;
+    title: string;
+    text: string;
+    badge: string | null;
+  }> = [
+    { href: `/${lang}/bereiche/industrieboden/`, icon: Layers, title: dict.sanierungHub.sp_industrieboden_title, text: dict.sanierungHub.sp_industrieboden_text, badge: null },
+    { href: null, icon: Route, title: dict.sanierungHub.sp_infrastruktur_title, text: dict.sanierungHub.sp_infrastruktur_text, badge: dict.sanierungHub.sp_infrastruktur_badge },
+    { href: `/${lang}/bereiche/microtop/`, icon: Droplets, title: dict.sanierungHub.sp_trinkwasser_title, text: dict.sanierungHub.sp_trinkwasser_text, badge: null },
+  ];
+
   return (
     <>
       <section style={{ padding: "48px 32px 40px" }}>
@@ -65,6 +80,56 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
           <p className="text-navy/70 m-0" style={{ fontSize: 18, lineHeight: 1.7 }}>
             {dict.sanierungHub.intro}
           </p>
+        </div>
+      </section>
+
+      {/* Sanierungs-Schwerpunkte: macht sichtbar, dass Sanierung breiter ist als
+          Industrieboden (Infrastruktur, Trinkwasser/Spezial mit MICROTOP + Rapidset). */}
+      <section style={{ padding: "8px 32px 8px" }}>
+        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <h2 className="text-navy text-center mb-8" style={{ fontSize: "clamp(22px, 3.5vw, 30px)", fontWeight: 900 }}>
+            {dict.sanierungHub.schwerpunkte_title}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {schwerpunkte.map((sp) => {
+              const inner = (
+                <div
+                  className={`bg-white border p-7 flex flex-col gap-4 h-full transition-all duration-200 ${
+                    sp.href
+                      ? "border-bullet-bg group-hover:border-cyan group-hover:-translate-y-1 group-hover:shadow-lg"
+                      : "border-dashed border-mid-gray opacity-80"
+                  }`}
+                  style={{ borderRadius: 14 }}
+                >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-icon-bg">
+                    <AppIcon icon={sp.icon} width={24} height={24} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
+                  </div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-navy text-[19px] m-0" style={{ fontWeight: 900 }}>{sp.title}</h3>
+                    {sp.badge && (
+                      <span className="text-[11px] uppercase tracking-wide rounded px-2 py-0.5 bg-icon-bg text-navy/50" style={{ fontWeight: 800 }}>
+                        {sp.badge}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-navy/60 text-[14px] m-0 leading-[1.6]">{sp.text}</p>
+                  {sp.href && (
+                    <span className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] mt-auto" style={{ fontWeight: 700 }}>
+                      {dict.sanierungHub.cta}
+                      <AppIcon icon={ArrowRight} width={15} height={15} strokeWidth={2.5} aria-hidden="true" />
+                    </span>
+                  )}
+                </div>
+              );
+              return sp.href ? (
+                <Link key={sp.title} href={sp.href} className="no-underline group block">
+                  {inner}
+                </Link>
+              ) : (
+                <div key={sp.title} className="block">{inner}</div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

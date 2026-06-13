@@ -11,12 +11,12 @@
     "kontakt": "Contacto"
   },
   "home": {
-    "hero_title": "Pavimentos industriales, soleras decorativas y materiales especiales. Probados en todo el mundo.",
+    "hero_title": "Pavimentos industriales para obra nueva y rehabilitación. Probados en todo el mundo.",
     "hero_subtitle": "Desarrollamos y producimos áridos duros minerales y sistemas cementosos desde 1936. Más de 750 millones de m² de pavimentos industriales instalados en todo el mundo son nuestra mejor referencia.",
     "hero_cta": "Iniciar el buscador de soluciones",
     "featured_title": "Soluciones probadas en la práctica",
     "featured_link": "Ver todas las referencias",
-    "finder_teaser_title": "La solución adecuada en 5 pasos",
+    "finder_teaser_title": "La solución adecuada en pocos pasos",
     "finder_teaser_description": "Describa su situación y le mostraremos los productos y proyectos de referencia adecuados.",
     "finder_teaser_cta": "Empezar ahora",
     "finder_step1": "Situación",
@@ -386,6 +386,14 @@
     "cta": "Empezar"
   },
   "sanierungHub": {
+    "schwerpunkte_title": "Lo que rehabilitamos",
+    "sp_industrieboden_title": "Pavimento industrial",
+    "sp_industrieboden_text": "Rehabilitar suelos de naves, soleras y endurecedores — sin largas paradas.",
+    "sp_infrastruktur_title": "Infraestructura",
+    "sp_infrastruktur_text": "Reparar puentes, accesos y superficies de tráfico de forma rápida y duradera.",
+    "sp_infrastruktur_badge": "Próximamente",
+    "sp_trinkwasser_title": "Agua potable y especial",
+    "sp_trinkwasser_text": "Depósitos de agua potable con MICROTOP, reparaciones rápidas con Rapid Set.",
     "title": "Rehabilitar con KORODUR",
     "intro": "Rehabilitar un pavimento industrial sin paralizar la actividad: con nuestras herramientas encontrará en pocos minutos la solución adecuada para su caso.",
     "card_loesungsfinder_title": "Buscador de soluciones",
