@@ -6,6 +6,7 @@
     "referenzen": "Referenzen",
     "anwendungsmatrix": "Anwendungsmatrix",
     "produkte": "Produkte",
+    "bereiche": "Bereiche",
     "sanierung": "Sanierung",
     "unternehmen": "Unternehmen",
     "kontakt": "Kontakt"
@@ -318,6 +319,8 @@
   "bereiche": {
     "breadcrumb_home": "Start",
     "produkte_title": "Produkte in diesem Bereich",
+    "alle_produkte_name": "Alle Produkte",
+    "alle_produkte_teaser": "Das komplette Portfolio im Überblick",
     "keine_produkte": "Die Produktdaten für diesen Bereich werden derzeit für die neue Website aufbereitet. Sprechen Sie uns gerne direkt an.",
     "cta_title": "Fragen zu diesem Bereich?",
     "cta_text": "Unsere technischen Berater unterstützen Sie bei Produktauswahl und Planung.",

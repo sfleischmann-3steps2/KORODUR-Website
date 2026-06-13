@@ -6,6 +6,7 @@
     "referenzen": "Références",
     "anwendungsmatrix": "Matrice d'application",
     "produkte": "Produits",
+    "bereiche": "Domaines",
     "sanierung": "Rénovation",
     "unternehmen": "Entreprise",
     "kontakt": "Contact"
@@ -318,6 +319,8 @@
   "bereiche": {
     "breadcrumb_home": "Accueil",
     "produkte_title": "Produits de ce domaine",
+    "alle_produkte_name": "Tous les produits",
+    "alle_produkte_teaser": "L’ensemble du portefeuille en un coup d’œil",
     "keine_produkte": "Les données produits de ce domaine sont en cours de préparation pour le nouveau site. N'hésitez pas à nous contacter directement.",
     "cta_title": "Des questions sur ce domaine ?",
     "cta_text": "Nos conseillers techniques vous accompagnent dans le choix des produits et la planification.",

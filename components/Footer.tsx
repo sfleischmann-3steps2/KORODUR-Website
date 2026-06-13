@@ -8,7 +8,7 @@ import {
   AUSSCHREIBEN_URL,
 } from "../lib/kontaktDaten";
 import { AppIcon } from "@/components/ui/icon";
-import { ExternalLink } from "lucide-react";
+import { ChevronRight, ExternalLink } from "lucide-react";
 
 // Brand-Icons als Inline-SVG (lucide führt keine Marken-Icons mehr).
 const SOCIAL_ICON_PATHS: Record<string, string> = {
@@ -53,6 +53,16 @@ export default function Footer({
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_bereiche}
             </h3>
+            {/* Gesamtkatalog prominent: "Produkte" ist aus der Top-Nav in den
+                Footer gewandert (Nav-Umbau #72/#81). */}
+            <Link
+              href={`/${lang}/produkte/`}
+              className="inline-flex items-center gap-1.5 text-white hover:text-cyan no-underline text-[14px] mb-2"
+              style={{ fontWeight: 700 }}
+            >
+              {dict.bereiche.alle_produkte_name}
+              <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
+            </Link>
             {/* min-w-0 + break-words: lange Namen (Schnellbetonsysteme) dürfen
                 umbrechen statt in die Nachbarspalte zu laufen */}
             <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-5">
