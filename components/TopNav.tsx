@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { withBasePath } from "../lib/basePath";
 import { ChevronDown, Menu, Phone, Search, X } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
+import { bereichIcon } from "./bereichIcons";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -161,9 +162,15 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       >
         <div className={`grid ${lo.cols} gap-2`}>
           {m.items.map((it) => {
+            // Icon aus der /bereiche/<slug>/-href ableiten (zentrale Ikonografie #104)
+            const slugMatch = it.href?.match(/\/bereiche\/([^/]+)\//);
+            const ItemIcon = slugMatch ? bereichIcon(slugMatch[1]) : null;
             const inner = (
               <>
                 <span className="flex items-center gap-2 text-navy text-[14px]" style={{ fontWeight: 700 }}>
+                  {ItemIcon && (
+                    <AppIcon icon={ItemIcon} width={16} height={16} strokeWidth={2} className="text-cyan-text shrink-0" aria-hidden="true" />
+                  )}
                   {it.label}
                   {it.badge && (
                     <span className="text-[10px] rounded-full px-2 py-0.5 bg-white text-navy border border-bullet-bg" style={{ fontWeight: 700 }}>

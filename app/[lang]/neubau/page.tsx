@@ -3,11 +3,12 @@ import Link from "next/link";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { AppIcon } from "@/components/ui/icon";
-import { ArrowRight, Building2, Sparkles, Package } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { alternatesFor } from "../../../lib/seo";
 import { referenzen } from "../../../data/referenzen";
 import { localizeReferenzen } from "../../../data/i18n/getLocalized";
 import ReferenceCard from "../../../components/ReferenceCard";
+import { bereichIcon } from "../../../components/bereichIcons";
 
 type Params = Promise<{ lang: string }>;
 
@@ -41,9 +42,9 @@ export default async function NeubauHubPage({ params }: { params: Params }) {
   );
 
   const cards = [
-    { slug: "industrieboden", icon: Building2 },
-    { slug: "sichtestrich", icon: Sparkles },
-    { slug: "spezialbaustoffe", icon: Package },
+    { slug: "industrieboden" },
+    { slug: "sichtestrich" },
+    { slug: "spezialbaustoffe" },
   ] as const;
 
   return (
@@ -78,7 +79,7 @@ export default async function NeubauHubPage({ params }: { params: Params }) {
                   style={{ borderRadius: 14 }}
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-navy">
-                    <AppIcon icon={card.icon} width={24} height={24} strokeWidth={2} className="text-white" aria-hidden="true" />
+                    <AppIcon icon={bereichIcon(card.slug)} width={24} height={24} strokeWidth={2} className="text-white" aria-hidden="true" />
                   </div>
                   <h2 className="text-navy text-[19px] m-0" style={{ fontWeight: 900 }}>
                     {dict.bereiche[`${card.slug}_name`]}
