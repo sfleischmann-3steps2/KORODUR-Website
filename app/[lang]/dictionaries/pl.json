@@ -6,6 +6,7 @@
     "referenzen": "Referencje",
     "anwendungsmatrix": "Matryca zastosowań",
     "produkte": "Produkty",
+    "bereiche": "Obszary",
     "sanierung": "Renowacja",
     "unternehmen": "Firma",
     "kontakt": "Kontakt"
@@ -318,6 +319,8 @@
   "bereiche": {
     "breadcrumb_home": "Start",
     "produkte_title": "Produkty w tym obszarze",
+    "alle_produkte_name": "Wszystkie produkty",
+    "alle_produkte_teaser": "Kompletne portfolio w jednym miejscu",
     "keine_produkte": "Dane produktów z tego obszaru są obecnie przygotowywane na potrzeby nowej strony. Zapraszamy do bezpośredniego kontaktu.",
     "cta_title": "Pytania dotyczące tego obszaru?",
     "cta_text": "Nasi doradcy techniczni wspierają Państwa w doborze produktów i planowaniu.",

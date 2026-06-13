@@ -6,6 +6,7 @@
     "referenzen": "Referencias",
     "anwendungsmatrix": "Matriz de aplicaciones",
     "produkte": "Productos",
+    "bereiche": "Áreas",
     "sanierung": "Rehabilitación",
     "unternehmen": "Empresa",
     "kontakt": "Contacto"
@@ -318,6 +319,8 @@
   "bereiche": {
     "breadcrumb_home": "Inicio",
     "produkte_title": "Productos de esta área",
+    "alle_produkte_name": "Todos los productos",
+    "alle_produkte_teaser": "Todo el porfolio de un vistazo",
     "keine_produkte": "Los datos de producto de esta área se están preparando para el nuevo sitio web. No dude en contactarnos directamente.",
     "cta_title": "¿Preguntas sobre esta área?",
     "cta_text": "Nuestros asesores técnicos le apoyan en la selección de productos y la planificación.",

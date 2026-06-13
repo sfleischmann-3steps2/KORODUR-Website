@@ -67,7 +67,10 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   };
 
   const navLinks = [
-    { href: `/${lang}/produkte/`, label: dict.nav.produkte },
+    // "Bereiche" ist der Schnelleinstieg in die Produktwelt; der flache
+    // Gesamtkatalog ("Produkte") liegt jetzt prominent im Footer (Steffi,
+    // 2026-06-13, Nav-Umbau #72/#81).
+    { href: `/${lang}/bereiche/`, label: dict.nav.bereiche },
     // Neubau + Sanierung als gleichwertige Einstiege (Steffi 2026-06-13).
     // Die Anwendungsmatrix ist sanierungsspezifisch → liegt als Karte im
     // Sanierungs-Hub (/sanierung), nicht mehr in der Hauptnavigation.

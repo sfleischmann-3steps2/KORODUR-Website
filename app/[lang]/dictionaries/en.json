@@ -6,6 +6,7 @@
     "referenzen": "References",
     "anwendungsmatrix": "Application Matrix",
     "produkte": "Products",
+    "bereiche": "Areas",
     "sanierung": "Renovation",
     "unternehmen": "Company",
     "kontakt": "Contact"
@@ -318,6 +319,8 @@
   "bereiche": {
     "breadcrumb_home": "Home",
     "produkte_title": "Products in this area",
+    "alle_produkte_name": "All products",
+    "alle_produkte_teaser": "The complete portfolio at a glance",
     "keine_produkte": "The product data for this area is currently being prepared for the new website. Please feel free to contact us directly.",
     "cta_title": "Questions about this area?",
     "cta_text": "Our technical consultants support you with product selection and planning.",
