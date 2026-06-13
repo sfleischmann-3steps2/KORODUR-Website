@@ -20,8 +20,11 @@ export default function Step0Projektart({ onSelect }: Step0Props) {
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.weiche_subline}</p>
       </header>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {/* Neubau — Navy, Kerngeschäft (links) */}
+      {/* Konstante Mindesthöhe wie die Funnels -> kein Höhensprung beim
+          Weiche->Funnel-Wechsel (Steffi, #102); Auswahl vertikal zentriert. */}
+      <div className="md:flex md:min-h-[500px] md:flex-col md:justify-center">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {/* Neubau — Navy, Kerngeschäft (links) */}
         <button
           type="button"
           onClick={() => onSelect("neubau")}
@@ -46,6 +49,7 @@ export default function Step0Projektart({ onSelect }: Step0Props) {
           <span className="text-xl font-bold">{t.weiche_sanierung_titel}</span>
           <span className="text-sm text-muted-foreground">{t.weiche_sanierung_text}</span>
         </button>
+        </div>
       </div>
     </div>
   );
