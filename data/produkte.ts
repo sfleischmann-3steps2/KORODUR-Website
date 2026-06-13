@@ -178,6 +178,7 @@ export const produkte: Produkt[] = [
     normen: [
       "DIN EN 13813",
       "DIN 18560-7",
+      "DIN 1100",
     ],
     technischeDaten: [
       { label: "Druckfestigkeit", wert: "≥ 70 N/mm²" },
@@ -307,6 +308,7 @@ export const produkte: Produkt[] = [
       "DIN EN 13813",
       "DIN 18560",
       "DIN 18202 Zeile 3 (erhöhte Ebenheit)",
+      "DIN EN 12706",
     ],
     technischeDaten: [
       { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
@@ -391,6 +393,7 @@ export const produkte: Produkt[] = [
   // === GRUNDIERUNGEN / HAFTBRÜCKEN (nicht in Sanierungs-Matrix) ===
   {
     id: "korodur-hb-5-rapid",
+    tdsUrl: "/downloads/tds/KORODUR_HB_5_rapid_de.pdf",
     bereich: "industrieboden",
     produktgruppe: "untergrund-haftbruecken",
     name: "KORODUR HB 5 rapid",
@@ -415,6 +418,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-pc",
+    tdsUrl: "/downloads/tds/KORODUR_PC_de.pdf",
     bereich: "industrieboden",
     produktgruppe: "untergrund-haftbruecken",
     name: "KORODUR PC",
@@ -750,15 +754,14 @@ export const produkte: Produkt[] = [
   // === NACHBEHANDLUNG (nicht in Sanierungs-Matrix) ===
   {
     id: "korocure",
+    tdsUrl: "/downloads/tds/KOROCURE_de.pdf",
     bereich: "industrieboden",
     produktgruppe: "nachbehandlung",
     beschreibung: "Zum Schutz des jungen Betons sind gem. DIN EN 13670 in Verbindung mit DIN 1045-3 Zwischen-Nachbehandlungsmaßnahmen erforderlich: Die Zwischen-Nachbehandlung schützt das im Beton enthaltene Wasser vor Verdunstung, damit der Zement vollständig hydratisieren kann. Beim Einsatz als Grundierung für nachfolgende Hartstoffbeschichtungen wird KOROCURE unmittelbar nach Begehbarkeit des Betons aufgetragen.",
     name: "KOROCURE",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Curing-Compound zur kontrollierten Nachbehandlung von Estrichflächen",
-    normen: [
-      "DIN EN 13813",
-    ],
+    normen: [],
     technischeDaten: [
       { label: "Wirkung", wert: "Feuchtigkeitsretention / Curing" },
       { label: "Anwendung", wert: "Sprüh- oder Rollauftrag" },
@@ -773,14 +776,13 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koromineral-cure",
+    tdsUrl: "/downloads/tds/KOROMINERAL_CURE_de.pdf",
     bereich: "industrieboden",
     produktgruppe: "nachbehandlung",
     name: "KOROMINERAL CURE",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Oberflächenschutz mittels Silikatisierung",
-    normen: [
-      "DIN EN 13813",
-    ],
+    normen: [],
     technischeDaten: [
       { label: "Wirkung", wert: "Silikatisierung / Imprägnierung" },
       { label: "Anwendung", wert: "Auf frischen Estrich" },
@@ -795,15 +797,14 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korotex",
+    tdsUrl: "/downloads/tds/KOROTEX_de.pdf",
     bereich: "industrieboden",
     produktgruppe: "nachbehandlung",
     beschreibung: "Gemäß DIN 18353 (Estricharbeiten) und DIN 18560 (Estriche im Bauwesen) müssen Estriche vor ungleichmäßigem und zu raschem Austrocknen geschützt werden. KOROTEX Nachbehandlung ist besonders wichtig bei erhöhten Temperaturen, niedriger Luftfeuchtigkeit und starker Zugluft; das Aufsprühen ist die rationellste Methode bei frisch verlegten Estrichflächen.",
     name: "KOROTEX",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Curing-Mittel zur kontrollierten Aushärtung",
-    normen: [
-      "DIN EN 13813",
-    ],
+    normen: [],
     technischeDaten: [
       { label: "Wirkung", wert: "Feuchtigkeitsretention / Curing" },
       { label: "Anwendung", wert: "Sprühauftrag" },
@@ -824,6 +825,7 @@ export const produkte: Produkt[] = [
   // Fehlende Werte bewusst leer (nie erfinden); TDS-Vervollstaendigung folgt.
   {
     id: "neodur-he-3",
+    tdsUrl: "/downloads/tds/NEODUR_HE_3_de.pdf",
     name: "NEODUR HE 3",
     kategorie: "estrich",
     bereich: "industrieboden",
@@ -851,6 +853,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-3-green",
+    tdsUrl: "/downloads/tds/NEODUR_HE_3_green_de.pdf",
     name: "NEODUR HE 3 green",
     kategorie: "estrich",
     bereich: "industrieboden",
@@ -858,7 +861,10 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Ressourcenschonende Variante von NEODUR HE 3 mit bis zu 30 % reduziertem CO₂-Ausstoß",
     beschreibung: "Mit der ressourcenschonenden Variante NEODUR HE 3 green kann der CO₂-Ausstoß in der Herstellung um bis zu 30 Prozent reduziert werden. Für Bauherren, Architekten, Planer und Bauunternehmen stehen entsprechende Umweltproduktdeklarationen (EPD) bereit.",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: ["DIN 1100"],
+    normen: [
+      "DIN 1100",
+      "DIN EN 13813",
+    ],
     technischeDaten: [
       { label: "Hartstoffgruppe (DIN 1100)", wert: "A" },
       { label: "Schleifverschleiß", wert: "≤ 5 cm³/50 cm²" },
@@ -873,6 +879,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-2",
+    tdsUrl: "/downloads/tds/NEODUR_HE_2_de.pdf",
     name: "NEODUR HE 2",
     kategorie: "estrich",
     bereich: "industrieboden",
@@ -892,6 +899,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-0-4",
+    tdsUrl: "/downloads/tds/KORODUR_04_de.pdf",
     name: "KORODUR 0/4",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -909,6 +917,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-vs-0-5",
+    tdsUrl: "/downloads/tds/KORODUR_VS_05_de.pdf",
     name: "KORODUR VS 0/5",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -926,6 +935,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-wh-spezial",
+    tdsUrl: "/downloads/tds/KORODUR_WH_Spezial_de.pdf",
     name: "KORODUR WH-Spezial",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -943,6 +953,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-wh-metallisch",
+    tdsUrl: "/downloads/tds/KORODUR_WH_metallisch_de.pdf",
     name: "KORODUR WH-metallisch",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -960,6 +971,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-diamantbeton",
+    tdsUrl: "/downloads/tds/KORODUR_Diamantbeton_de.pdf",
     name: "KORODUR Diamantbeton",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -977,6 +989,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-fscem",
+    tdsUrl: "/downloads/tds/KORODUR_FSCem_de.pdf",
     name: "KORODUR FSCem",
     kategorie: "estrich",
     bereich: "industrieboden",
@@ -1000,6 +1013,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-fscem-screed",
+    tdsUrl: "/downloads/tds/KORODUR_FSCem_Screed_de.pdf",
     name: "KORODUR FSCem Screed",
     kategorie: "estrich",
     bereich: "industrieboden",
@@ -1026,6 +1040,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-level-au",
+    tdsUrl: "/downloads/tds/NEODUR_Level_AU_de.pdf",
     name: "NEODUR Level AU",
     kategorie: "estrich",
     bereich: "industrieboden",
@@ -1047,6 +1062,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-levelflor",
+    tdsUrl: "/downloads/tds/Levelflor_de.pdf",
     name: "Rapid Set LevelFlor",
     kategorie: "estrich",
     bereich: "industrieboden",
@@ -1073,6 +1089,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-hb-5",
+    tdsUrl: "/downloads/tds/KORODUR_HB_5_de.pdf",
     name: "KORODUR HB 5",
     kategorie: "grundierung",
     bereich: "industrieboden",
@@ -1089,6 +1106,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-txpk",
+    tdsUrl: "/downloads/tds/KORODUR_TXPK_de.pdf",
     name: "KORODUR TXPK",
     kategorie: "grundierung",
     bereich: "industrieboden",
@@ -1104,6 +1122,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-durop",
+    tdsUrl: "/downloads/tds/DUROP_de.pdf",
     name: "KORODUR DUROP",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -1123,6 +1142,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-robust",
+    tdsUrl: "/downloads/tds/KORODUR_Robust_03.pdf",
     name: "KORODUR Robust",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -1139,6 +1159,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-silosystem",
+    tdsUrl: "/downloads/tds/KORODUR_Silosystem_de.pdf",
     name: "KORODUR Silosystem",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -1165,6 +1186,7 @@ export const produkte: Produkt[] = [
   // bewusst NICHT uebernommen — TDS-Klaerung offen (zuordnung-industrieboden.md).
   {
     id: "korotan",
+    tdsUrl: "/downloads/tds/KORODUR_KOROTAN_de.pdf",
     name: "KOROTAN",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -1187,6 +1209,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-easyfinish",
+    tdsUrl: "/downloads/tds/KORODUR_easyFinish_de.pdf",
     name: "KORODUR easyFinish",
     kategorie: "nachbehandlung",
     bereich: "industrieboden",
@@ -1208,6 +1231,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-nanofinish",
+    tdsUrl: "/downloads/tds/KORODUR_nanoFinish_de.pdf",
     name: "KORODUR nanoFinish",
     kategorie: "nachbehandlung",
     bereich: "industrieboden",
@@ -1230,6 +1254,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-uniprimer",
+    tdsUrl: "/downloads/tds/KORODUR_uniPrimer_de.pdf",
     name: "KORODUR uniPrimer",
     kategorie: "grundierung",
     bereich: "industrieboden",
@@ -1251,6 +1276,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koropox",
+    tdsUrl: "/downloads/tds/KOROPOX_de_2023.pdf",
     name: "KOROPOX",
     kategorie: "beschichtung",
     bereich: "industrieboden",
@@ -1272,6 +1298,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koromineral",
+    tdsUrl: "/downloads/tds/KOROMINERAL_de.pdf",
     name: "KOROMINERAL",
     kategorie: "beschichtung",
     bereich: "industrieboden",
@@ -1294,6 +1321,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koromineral-li",
+    tdsUrl: "/downloads/tds/KOROMINERAL_Li_de.pdf",
     name: "KOROMINERAL Li+",
     kategorie: "beschichtung",
     bereich: "industrieboden",
@@ -1311,6 +1339,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koroclean",
+    tdsUrl: "/downloads/tds/KOROCLEAN_de.pdf",
     name: "KOROCLEAN",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -1330,6 +1359,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "system-korodur-korotan",
+    tdsUrl: "/downloads/tds/KORODUR_KOROTAN_de.pdf",
     name: "System KORODUR-KOROTAN",
     kategorie: "sonstige",
     bereich: "industrieboden",
@@ -1356,6 +1386,7 @@ export const produkte: Produkt[] = [
   // Zuordnung: docs/website-migration/zuordnung-sichtestrich-microtop.md
   {
     id: "granidur",
+    tdsUrl: "/downloads/tds/GRANIDUR_05_08_de.pdf",
     name: "GRANIDUR",
     kategorie: "estrich",
     bereich: "sichtestrich",
@@ -1386,6 +1417,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "granidur-bianco-nero",
+    tdsUrl: "/downloads/tds/Granidur_Bianco_Nero_de.pdf",
     name: "GRANIDUR BIANCO/NERO",
     kategorie: "estrich",
     bereich: "sichtestrich",
@@ -1414,6 +1446,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "kcf",
+    tdsUrl: "/downloads/tds/KCF_05_08_de.pdf",
     name: "KORODUR COPETTI FLOOR KCF",
     kategorie: "estrich",
     bereich: "sichtestrich",
@@ -1446,6 +1479,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "tru-pc",
+    tdsUrl: "/downloads/tds/TRU_PC_de.pdf",
     name: "TRU PC",
     kategorie: "estrich",
     bereich: "sichtestrich",
@@ -1473,6 +1507,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "tru-sp",
+    tdsUrl: "/downloads/tds/TRU_SP_de.pdf",
     name: "TRU SP",
     kategorie: "estrich",
     bereich: "sichtestrich",
@@ -1500,6 +1535,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-3",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_3_5_8_de.pdf",
     name: "MICROTOP TW 3",
     kategorie: "sonstige",
     bereich: "microtop",
@@ -1525,6 +1561,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-5",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_3_5_8_de.pdf",
     name: "MICROTOP TW 5",
     kategorie: "sonstige",
     bereich: "microtop",
@@ -1549,6 +1586,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-8",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_3_5_8_de.pdf",
     name: "MICROTOP TW 8",
     kategorie: "sonstige",
     bereich: "microtop",
@@ -1574,6 +1612,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-nsm",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_NSM_de.pdf",
     name: "MICROTOP TW NSM",
     kategorie: "sonstige",
     bereich: "microtop",
@@ -1595,6 +1634,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-02",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_02_de.pdf",
     name: "MICROTOP TW 02",
     kategorie: "sonstige",
     bereich: "microtop",
@@ -1618,6 +1658,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-vsm",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_VSM_de.pdf",
     name: "MICROTOP TW VSM",
     kategorie: "sonstige",
     bereich: "microtop",
@@ -1639,6 +1680,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-bm",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_BM_de.pdf",
     name: "MICROTOP TW BM",
     kategorie: "beschichtung",
     bereich: "microtop",
@@ -1664,6 +1706,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-mineral",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_Mineral_de.pdf",
     name: "MICROTOP TW Mineral",
     kategorie: "beschichtung",
     bereich: "microtop",
@@ -1691,6 +1734,7 @@ export const produkte: Produkt[] = [
   // zuordnung-spezialbaustoffe-rapidset.md).
   {
     id: "neodur-vm-1",
+    tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
     name: "NEODUR VM 1",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1705,6 +1749,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-vm-3",
+    tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
     name: "NEODUR VM 3",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1719,6 +1764,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-vm-5",
+    tdsUrl: "/downloads/tds/NEODUR_VM_5_de.pdf",
     name: "NEODUR VM 5",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1747,6 +1793,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-vm-basic",
+    tdsUrl: "/downloads/tds/NEODUR_VM_basic_de.pdf",
     name: "NEODUR VM basic",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1783,6 +1830,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-am-super",
+    tdsUrl: "/downloads/tds/NEODUR_AM_Super_AM_Plus_de.pdf",
     name: "NEODUR AM Super",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1797,6 +1845,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-am-plus",
+    tdsUrl: "/downloads/tds/NEODUR_AM_Super_AM_Plus_de.pdf",
     name: "NEODUR AM Plus",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1811,6 +1860,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-msm-3",
+    tdsUrl: "/downloads/tds/NEODUR_MSM_3_5_MSB_8_de.pdf",
     name: "NEODUR MSM 3",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1825,6 +1875,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-msm-5",
+    tdsUrl: "/downloads/tds/NEODUR_MSM_3_5_MSB_8_de.pdf",
     name: "NEODUR MSM 5",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1839,6 +1890,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-msb-8",
+    tdsUrl: "/downloads/tds/NEODUR_MSM_3_5_MSB_8_de.pdf",
     name: "NEODUR MSB 8",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -1853,6 +1905,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-concrete-mix",
+    tdsUrl: "/downloads/tds/Concrete_Mix_de.pdf",
     name: "Rapid Set CONCRETE MIX",
     kategorie: "schnellzement",
     bereich: "rapid-set",
@@ -1882,6 +1935,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-concrete-pharmacy",
+    tdsUrl: "/downloads/tds/Concrete_Pharmacy_de.pdf",
     name: "Rapid Set CONCRETE PHARMACY",
     kategorie: "sonstige",
     bereich: "rapid-set",
@@ -1947,6 +2001,7 @@ export const produkte: Produkt[] = [
 
   {
     id: "microtop-tw-nsd",
+    tdsUrl: "/downloads/tds/MICROTOP_TW_NSD_de.pdf",
     name: "MICROTOP TW NSD",
     kategorie: "sonstige",
     bereich: "microtop",
@@ -1969,6 +2024,7 @@ export const produkte: Produkt[] = [
   // === TDS-NACHLIEFERUNG STEFFI 2026-06-12 (docs/tds-quellen/) ===
   {
     id: "koromineral-lasur",
+    tdsUrl: "/downloads/tds/KOROMINERAL_Lasur_de_.pdf",
     name: "KOROMINERAL Lasur",
     kategorie: "beschichtung",
     bereich: "industrieboden",
@@ -1990,6 +2046,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-pfm-1k-easyfix",
+    tdsUrl: "/downloads/tds/NEODUR_PFM_1K_Easyfix_de.pdf",
     name: "NEODUR PFM 1K Easyfix",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
@@ -2015,6 +2072,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-pfm-ze",
+    tdsUrl: "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_de.pdf",
     name: "NEODUR PFM-ZE",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
