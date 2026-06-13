@@ -218,7 +218,8 @@ export default function NeubauFunnel({ onZurueck }: NeubauFunnelProps) {
         </div>
       </div>
 
-      <div className="sticky bottom-0 z-10 -mx-4 mt-8 flex items-center justify-between gap-3 border-t border-mid-gray bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 md:static md:z-auto md:mx-0 md:border-t-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
+      {/* Footer auf allen Viewports sticky -> Weiter-Button nie unter dem Fold (#101). */}
+      <div className="sticky bottom-0 z-10 -mx-4 mt-8 flex items-center justify-between gap-3 border-t border-mid-gray bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 md:-mx-8 md:px-8">
         <Button type="button" variant="outline" onClick={goBack} className="h-11 md:h-9">
           <AppIcon icon={ArrowLeft} className="size-3.5" aria-hidden="true" />
           {t.back}

@@ -178,10 +178,11 @@ export default function Wizard({ lang }: WizardProps) {
         )}
       </div>
 
-      {/* Footer-Navigation: mobil sticky am Viewport-Boden (Step-3-Weiter-Button
-          sonst unter dem Fold), ab md regulär im Fluss. Negative Margins gleichen
-          das Container-Padding aus, damit die Leiste mobil volle Breite hat. */}
-      <div className="sticky bottom-0 z-10 -mx-4 mt-8 flex items-center justify-between gap-3 border-t border-mid-gray bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 md:static md:z-auto md:mx-0 md:border-t-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
+      {/* Footer-Navigation: auf ALLEN Viewports sticky am Viewport-Boden, damit
+          der Weiter-/Lösung-anzeigen-Button nie unter dem Fold liegt — auf Desktop
+          drückten lange Optionslisten ihn sonst unter die Falz (Steffi, #101).
+          Negative Margins gleichen das Container-Padding aus -> volle Leistenbreite. */}
+      <div className="sticky bottom-0 z-10 -mx-4 mt-8 flex items-center justify-between gap-3 border-t border-mid-gray bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 md:-mx-8 md:px-8">
         {currentStep > 1 || NEUBAU_STRECKE_AKTIV ? (
           <Button type="button" variant="outline" onClick={goBack} className="h-11 md:h-9">
             <AppIcon icon={ArrowLeft} className="size-3.5" aria-hidden="true" />
