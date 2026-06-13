@@ -20,7 +20,7 @@
     "hero_cta": "Iniciar el buscador de soluciones",
     "featured_title": "Soluciones probadas en la práctica",
     "featured_link": "Ver todas las referencias",
-    "finder_teaser_title": "La solución adecuada en pocos pasos",
+    "finder_teaser_title": "En cuatro pasos hacia la solución adecuada",
     "finder_teaser_description": "Describa su situación y le mostraremos los productos y proyectos de referencia adecuados.",
     "finder_teaser_cta": "Empezar ahora",
     "finder_step1": "Situación",
@@ -101,8 +101,8 @@
   },
   "produkte": {
     "breadcrumb": "Productos",
-    "title": "Todos los productos",
-    "subtitle": "Datos técnicos, normas y campos de aplicación de todos los productos de rehabilitación KORODUR.",
+    "title": "Nuestra gama de productos",
+    "subtitle": "Datos técnicos, normas y campos de aplicación de toda la gama KORODUR.",
     "category_estrich": "Soleras",
     "category_grundierung": "Imprimaciones y puentes de adherencia",
     "category_schnellzement": "Cementos rápidos y morteros",
@@ -324,6 +324,9 @@
     "produkte_title": "Productos de esta área",
     "alle_produkte_name": "Todos los productos",
     "alle_produkte_teaser": "Todo el porfolio de un vistazo",
+    "kontext_title": "¿Obra nueva o rehabilitación?",
+    "kontext_neubau_text": "Soluciones para obra nueva – del diseño a la instalación.",
+    "kontext_sanierung_text": "Reparar y rehabilitar de forma duradera lo existente.",
     "keine_produkte": "Los datos de producto de esta área se están preparando para el nuevo sitio web. No dude en contactarnos directamente.",
     "cta_title": "¿Preguntas sobre esta área?",
     "cta_text": "Nuestros asesores técnicos le apoyan en la selección de productos y la planificación.",
@@ -390,7 +393,8 @@
     "title": "Obra nueva con KORODUR",
     "intro": "El pavimento industrial adecuado para su proyecto: desde naves de alta exigencia hasta superficies arquitectónicas. Tres mundos de producto, una selección guiada.",
     "slogan": "Construir con sistema.",
-    "cta": "Empezar"
+    "cta": "Empezar",
+    "referenzen_title": "Referencias de obra nueva"
   },
   "sanierungHub": {
     "schwerpunkte_title": "Lo que rehabilitamos",

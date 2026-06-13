@@ -20,7 +20,7 @@
     "hero_cta": "Start Solution Finder",
     "featured_title": "Proven solutions from practice",
     "featured_link": "View all references",
-    "finder_teaser_title": "Find the right solution in just a few steps",
+    "finder_teaser_title": "In four steps to the right solution",
     "finder_teaser_description": "Describe your situation and we will show you suitable products and reference projects.",
     "finder_teaser_cta": "Start now",
     "finder_step1": "Situation",
@@ -101,8 +101,8 @@
   },
   "produkte": {
     "breadcrumb": "Products",
-    "title": "All Products",
-    "subtitle": "Technical data, standards, and applications of all KORODUR renovation products.",
+    "title": "Our product portfolio",
+    "subtitle": "Technical data, standards and applications across the entire KORODUR range.",
     "category_estrich": "Screeds",
     "category_grundierung": "Primers & Bonding Agents",
     "category_schnellzement": "Rapid Cements & Mortars",
@@ -324,6 +324,9 @@
     "produkte_title": "Products in this area",
     "alle_produkte_name": "All products",
     "alle_produkte_teaser": "The complete portfolio at a glance",
+    "kontext_title": "New construction or renovation?",
+    "kontext_neubau_text": "Solutions for new construction – from design to installation.",
+    "kontext_sanierung_text": "Repair and durably renovate existing structures.",
     "keine_produkte": "The product data for this area is currently being prepared for the new website. Please feel free to contact us directly.",
     "cta_title": "Questions about this area?",
     "cta_text": "Our technical consultants support you with product selection and planning.",
@@ -390,7 +393,8 @@
     "title": "New construction with KORODUR",
     "intro": "The right industrial floor for your project — from heavy-duty halls to architectural surfaces. Three product worlds, one guided selection.",
     "slogan": "Building with system.",
-    "cta": "Get started"
+    "cta": "Get started",
+    "referenzen_title": "New-build references"
   },
   "sanierungHub": {
     "schwerpunkte_title": "What we renovate",

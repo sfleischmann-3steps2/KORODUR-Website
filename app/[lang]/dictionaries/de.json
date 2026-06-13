@@ -20,7 +20,7 @@
     "hero_cta": "Lösungsfinder starten",
     "featured_title": "Bewährte Lösungen aus der Praxis",
     "featured_link": "Alle Referenzen ansehen",
-    "finder_teaser_title": "In wenigen Schritten zur passenden Lösung",
+    "finder_teaser_title": "In vier Schritten zur passenden Lösung",
     "finder_teaser_description": "Beschreiben Sie Ihre Situation, und wir zeigen Ihnen passende Produkte und Referenzprojekte.",
     "finder_teaser_cta": "Jetzt starten",
     "finder_step1": "Situation",
@@ -101,8 +101,8 @@
   },
   "produkte": {
     "breadcrumb": "Produkte",
-    "title": "Alle Produkte",
-    "subtitle": "Technische Daten, Normen und Einsatzgebiete aller KORODUR-Sanierungsprodukte.",
+    "title": "Unser Produktportfolio",
+    "subtitle": "Technische Daten, Normen und Einsatzgebiete aller KORODUR-Produkte.",
     "category_estrich": "Estriche",
     "category_grundierung": "Grundierungen & Haftbrücken",
     "category_schnellzement": "Schnellzemente & Mörtel",
@@ -324,6 +324,9 @@
     "produkte_title": "Produkte in diesem Bereich",
     "alle_produkte_name": "Alle Produkte",
     "alle_produkte_teaser": "Das komplette Portfolio im Überblick",
+    "kontext_title": "Neubau oder Sanierung?",
+    "kontext_neubau_text": "Lösungen für den Neubau – von der Planung bis zum Einbau.",
+    "kontext_sanierung_text": "Bestand instand setzen und dauerhaft sanieren.",
     "keine_produkte": "Die Produktdaten für diesen Bereich werden derzeit für die neue Website aufbereitet. Sprechen Sie uns gerne direkt an.",
     "cta_title": "Fragen zu diesem Bereich?",
     "cta_text": "Unsere technischen Berater unterstützen Sie bei Produktauswahl und Planung.",
@@ -390,7 +393,8 @@
     "title": "Neubau mit KORODUR",
     "intro": "Der richtige Industrieboden für Ihr Bauvorhaben — von der Hochleistungshalle bis zum Sichtboden. Drei Produktwelten, eine geführte Auswahl.",
     "slogan": "Bauen mit System.",
-    "cta": "Jetzt starten"
+    "cta": "Jetzt starten",
+    "referenzen_title": "Neubau-Referenzen"
   },
   "sanierungHub": {
     "schwerpunkte_title": "Was wir sanieren",

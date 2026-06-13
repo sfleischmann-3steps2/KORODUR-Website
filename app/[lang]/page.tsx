@@ -47,12 +47,12 @@ export default async function Home({
   const bereichTexte = dict.bereiche as Record<string, string>;
 
   // Finder steps
+  // 4 Schritte (Steffi 2026-06-13, #89): "Ergebnisse" ist kein Schritt.
   const finderSteps = [
     dict.home.finder_step1,
     dict.home.finder_step2,
     dict.home.finder_step3,
     dict.home.finder_step4,
-    dict.home.finder_step5,
   ];
 
   return (
@@ -231,39 +231,39 @@ export default async function Home({
           >
             {dict.home.finder_teaser_title}
           </h2>
-          <p
-            className="text-navy opacity-60 mb-12 mx-auto"
-            style={{ maxWidth: 600, fontSize: 18 }}
-          >
-            {dict.home.finder_teaser_description}
-          </p>
-
-          {/* Step indicators */}
-          <div className="flex flex-wrap justify-center gap-8 mb-12">
+          {/* Step indicators: 1·2·3·4 mit Verbindungslinie */}
+          <div className="flex items-start justify-center mb-10 mt-2">
             {finderSteps.map((label, i) => (
-              <div key={i} className="flex flex-col items-center gap-3">
-                <div
-                  className="w-[52px] h-[52px] flex items-center justify-center text-white text-[18px] rounded-full"
-                  style={{ backgroundColor: "var(--cyan)", fontWeight: 900 }}
-                >
-                  {i + 1}
+              <div key={i} className="flex items-start">
+                <div className="flex flex-col items-center gap-3" style={{ width: 96 }}>
+                  <div
+                    className="w-[52px] h-[52px] flex items-center justify-center text-white text-[19px] rounded-full"
+                    style={{ backgroundColor: "var(--cyan)", fontWeight: 900, boxShadow: "0 6px 16px rgba(0,158,227,0.35)" }}
+                  >
+                    {i + 1}
+                  </div>
+                  <span className="text-navy text-[13px] text-center leading-tight" style={{ fontWeight: 700 }}>
+                    {label}
+                  </span>
                 </div>
-                <span
-                  className="text-navy text-[14px]"
-                  style={{ fontWeight: 700 }}
-                >
-                  {label}
-                </span>
+                {i < finderSteps.length - 1 && (
+                  <div
+                    className="hidden sm:block"
+                    style={{ width: 32, height: 2, marginTop: 25, backgroundColor: "var(--cyan)", opacity: 0.3 }}
+                    aria-hidden="true"
+                  />
+                )}
               </div>
             ))}
           </div>
 
           <Link
             href={`/${lang}/loesungsfinder/`}
-            className="inline-block text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
-            style={{ padding: "16px 30px", fontWeight: 800, fontSize: 15 }}
+            className="inline-flex items-center gap-2 text-white no-underline rounded-lg bg-cyan hover:bg-cyan-hover transition-colors duration-200"
+            style={{ padding: "18px 36px", fontWeight: 800, fontSize: 17, boxShadow: "0 10px 24px rgba(0,158,227,0.30)" }}
           >
             {dict.home.finder_teaser_cta}
+            <AppIcon icon={ChevronRight} width={18} height={18} strokeWidth={2.5} aria-hidden="true" />
           </Link>
         </div>
       </section>
