@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { withBasePath } from "../lib/basePath";
-import { Menu, Phone, Search, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, Search, X } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,9 +15,16 @@ import {
   SheetContent,
   SheetTitle,
 } from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SearchOverlay from "./SearchOverlay";
 import { KORODUR_ZENTRALE } from "../lib/kontaktDaten";
+import { projektartLabel } from "../data/einsatzbereichMapping";
 import type { Locale } from "../lib/i18n";
 import type { Dictionary } from "../app/[lang]/dictionaries";
 
@@ -26,14 +33,15 @@ interface TopNavProps {
   dict: Dictionary;
 }
 
+type MegaItem = { label: string; href?: string; sub?: string; badge?: string; highlight?: boolean };
+type MegaMenu = { items: MegaItem[]; footer?: { label: string; href: string }[] };
+
 export default function TopNav({ lang, dict }: TopNavProps) {
   const pathname = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  // Initial-Wert "⌘K" wird auf Server UND beim ersten Client-Render gerendert.
-  // useEffect korrigiert nach Hydration auf "Ctrl+K", falls kein Mac.
-  // So gibt es keinen Hydration-Mismatch durch Browser-API-Aufrufe im
-  // Initial-State (siehe https://nextjs.org/docs/messages/react-hydration-error).
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [shortcutLabel, setShortcutLabel] = useState<string>("⌘K");
 
   useEffect(() => {
@@ -49,37 +57,90 @@ export default function TopNav({ lang, dict }: TopNavProps) {
         e.preventDefault();
         setSearchOpen((prev) => !prev);
       }
+      if (e.key === "Escape") setOpenMenu(null);
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
-  // Close mobile menu on route change
+  // Close menus on route change
   useEffect(() => {
     setMobileOpen(false);
+    setOpenMenu(null);
   }, [pathname]);
 
   const isActive = (href: string) => {
-    // Home: exact match only
     if (href === `/${lang}/`) return pathname === href || pathname === `/${lang}`;
-    // Others: prefix match
     return pathname === href || pathname.startsWith(href);
   };
 
-  const navLinks = [
-    // "Bereiche" ist der Schnelleinstieg in die Produktwelt; der flache
-    // Gesamtkatalog ("Produkte") liegt jetzt prominent im Footer (Steffi,
-    // 2026-06-13, Nav-Umbau #72/#81).
-    { href: `/${lang}/bereiche/`, label: dict.nav.bereiche },
-    // Neubau + Sanierung als gleichwertige Einstiege (Steffi 2026-06-13).
-    // Die Anwendungsmatrix ist sanierungsspezifisch → liegt als Karte im
-    // Sanierungs-Hub (/sanierung), nicht mehr in der Hauptnavigation.
-    { href: `/${lang}/neubau/`, label: dict.nav.neubau },
-    { href: `/${lang}/sanierung/`, label: dict.nav.sanierung },
-    { href: `/${lang}/referenzen/`, label: dict.nav.referenzen },
-    { href: `/${lang}/unternehmen/`, label: dict.nav.unternehmen },
-    { href: `/${lang}/kontakt/`, label: dict.nav.kontakt },
+  const openNow = (key: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenMenu(key);
+  };
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 120);
+  };
+
+  const bt = dict.bereiche as Record<string, string>;
+
+  // Mega-Menü-Inhalte (Steffi 2026-06-13, #82). Bereiche-Reihenfolge wie /bereiche.
+  const menus: Record<string, MegaMenu> = {
+    bereiche: {
+      items: [
+        { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/`, sub: bt.industrieboden_teaser },
+        { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
+        { label: dict.sanierungHub.sp_infrastruktur_title, sub: dict.sanierungHub.sp_infrastruktur_text, badge: dict.sanierungHub.sp_infrastruktur_badge },
+        { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/`, sub: bt.sichtestrich_teaser },
+        { label: bt.microtop_name, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
+        { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
+        { label: bt.katzenstreu_name, href: `/${lang}/bereiche/katzenstreu/`, sub: bt.katzenstreu_teaser },
+        { label: dict.bereiche.alle_produkte_name, href: `/${lang}/produkte/`, sub: dict.bereiche.alle_produkte_teaser, highlight: true },
+      ],
+      footer: [{ label: dict.nav.mm_alle_bereiche, href: `/${lang}/bereiche/` }],
+    },
+    neubau: {
+      items: [
+        { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/`, sub: bt.industrieboden_teaser },
+        { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/`, sub: bt.sichtestrich_teaser },
+        { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
+      ],
+      footer: [
+        { label: `${dict.nav.referenzen} · ${projektartLabel("neubau", lang)}`, href: `/${lang}/referenzen/?projektart=neubau` },
+        { label: dict.nav.loesungsfinder, href: `/${lang}/loesungsfinder/` },
+      ],
+    },
+    sanierung: {
+      items: [
+        { label: dict.sanierungHub.sp_industrieboden_title, href: `/${lang}/bereiche/industrieboden/`, sub: dict.sanierungHub.sp_industrieboden_text },
+        { label: dict.sanierungHub.sp_infrastruktur_title, sub: dict.sanierungHub.sp_infrastruktur_text, badge: dict.sanierungHub.sp_infrastruktur_badge },
+        { label: dict.sanierungHub.sp_trinkwasser_title, href: `/${lang}/bereiche/microtop/`, sub: dict.sanierungHub.sp_trinkwasser_text },
+      ],
+      footer: [
+        { label: `${dict.nav.referenzen} · ${projektartLabel("sanierung", lang)}`, href: `/${lang}/referenzen/?projektart=sanierung` },
+        { label: dict.nav.loesungsfinder, href: `/${lang}/loesungsfinder/` },
+        { label: dict.nav.anwendungsmatrix, href: `/${lang}/anwendungsmatrix/` },
+      ],
+    },
+    kontakt: {
+      items: [
+        { label: dict.nav.mm_fachberater, href: `/${lang}/kontakt/`, sub: KORODUR_ZENTRALE.telefon },
+        { label: dict.nav.mm_formular, href: `/${lang}/kontakt/` },
+      ],
+    },
+  };
+
+  const navItems: { key: string; href: string; label: string; menu: boolean }[] = [
+    { key: "bereiche", href: `/${lang}/bereiche/`, label: dict.nav.bereiche, menu: true },
+    { key: "neubau", href: `/${lang}/neubau/`, label: dict.nav.neubau, menu: true },
+    { key: "sanierung", href: `/${lang}/sanierung/`, label: dict.nav.sanierung, menu: true },
+    { key: "referenzen", href: `/${lang}/referenzen/`, label: dict.nav.referenzen, menu: false },
+    { key: "unternehmen", href: `/${lang}/unternehmen/`, label: dict.nav.unternehmen, menu: false },
+    { key: "kontakt", href: `/${lang}/kontakt/`, label: dict.nav.kontakt, menu: true },
   ];
+
+  const active = openMenu ? menus[openMenu] : null;
 
   return (
     <>
@@ -91,42 +152,50 @@ export default function TopNav({ lang, dict }: TopNavProps) {
           className="mx-auto flex items-center justify-between"
           style={{ maxWidth: 1320, height: 64, padding: "0 24px" }}
         >
-          {/* Logo (Original, Quelle docs/reference/brand/) */}
-          <Link
-            href={`/${lang}`}
-            className="flex items-center no-underline shrink-0"
-            aria-label="KORODUR"
-          >
-            <Image
-              src={withBasePath("/images/brand/logo-korodur.png")}
-              alt="KORODUR"
-              width={71}
-              height={48}
-              priority
-            />
+          {/* Logo */}
+          <Link href={`/${lang}`} className="flex items-center no-underline shrink-0" aria-label="KORODUR">
+            <Image src={withBasePath("/images/brand/logo-korodur.png")} alt="KORODUR" width={71} height={48} priority />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-4 py-2 rounded-lg text-[14px] no-underline transition-colors duration-150 ${
-                  isActive(link.href)
-                    ? "text-cyan-text"
-                    : "text-navy hover:bg-icon-bg"
-                }`}
-                style={{ fontWeight: 700 }}
+          <nav
+            className="hidden lg:flex items-center gap-1"
+            role="navigation"
+            aria-label="Main navigation"
+            onMouseLeave={scheduleClose}
+          >
+            {navItems.map((item) => (
+              <div
+                key={item.key}
+                className="relative"
+                onMouseEnter={() => (item.menu ? openNow(item.key) : scheduleClose())}
               >
-                {link.label}
-              </Link>
+                <Link
+                  href={item.href}
+                  aria-expanded={item.menu ? openMenu === item.key : undefined}
+                  className={`flex items-center gap-1 px-3.5 py-2 rounded-lg text-[14px] no-underline transition-colors duration-150 ${
+                    isActive(item.href) || openMenu === item.key ? "text-cyan-text" : "text-navy hover:bg-icon-bg"
+                  }`}
+                  style={{ fontWeight: 700 }}
+                >
+                  {item.label}
+                  {item.menu && (
+                    <AppIcon
+                      icon={ChevronDown}
+                      width={14}
+                      height={14}
+                      strokeWidth={2.5}
+                      className={`transition-transform duration-150 ${openMenu === item.key ? "rotate-180" : ""}`}
+                      aria-hidden="true"
+                    />
+                  )}
+                </Link>
+              </div>
             ))}
           </nav>
 
           {/* Right side */}
           <div className="flex items-center gap-3">
-            {/* Desktop search */}
             <button
               onClick={() => setSearchOpen(true)}
               className="hidden lg:flex items-center gap-2 bg-icon-bg hover:bg-bullet-bg border-none rounded-lg cursor-pointer transition-colors duration-150"
@@ -141,7 +210,6 @@ export default function TopNav({ lang, dict }: TopNavProps) {
               )}
             </button>
 
-            {/* Mobile search */}
             <button
               onClick={() => setSearchOpen(true)}
               className="lg:hidden p-2 bg-transparent border-none cursor-pointer"
@@ -152,7 +220,6 @@ export default function TopNav({ lang, dict }: TopNavProps) {
 
             <LanguageSwitcher lang={lang} />
 
-            {/* Telefon-Direktwahl (B2B: Anrufe zählen — Launch-Audit) */}
             <a
               href={KORODUR_ZENTRALE.telefonHref}
               className="hidden xl:flex items-center gap-2 text-navy text-[14px] no-underline hover:text-cyan-text transition-colors duration-150"
@@ -162,14 +229,11 @@ export default function TopNav({ lang, dict }: TopNavProps) {
               {KORODUR_ZENTRALE.telefon}
             </a>
 
-            {/* Desktop Lösungsfinder-CTA */}
             <Button asChild size="lg" className="hidden lg:inline-flex">
-              <Link href={`/${lang}/loesungsfinder/`}>
-                {dict.nav.loesungsfinder}
-              </Link>
+              <Link href={`/${lang}/loesungsfinder/`}>{dict.nav.loesungsfinder}</Link>
             </Button>
 
-            {/* Mobile drawer (Sheet) */}
+            {/* Mobile drawer */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
                 <button
@@ -190,20 +254,9 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                   {lang === "de" ? "Navigationsmenü" : lang === "fr" ? "Menu de navigation" : lang === "pl" ? "Menu nawigacji" : "Navigation menu"}
                 </SheetTitle>
 
-                {/* Logo + close */}
                 <div className="flex items-center justify-between p-4 border-b border-bullet-bg">
-                  <Link
-                    href={`/${lang}`}
-                    className="flex items-center no-underline"
-                    onClick={() => setMobileOpen(false)}
-                    aria-label="KORODUR"
-                  >
-                    <Image
-                      src={withBasePath("/images/brand/logo-korodur.png")}
-                      alt="KORODUR"
-                      width={62}
-                      height={42}
-                    />
+                  <Link href={`/${lang}`} className="flex items-center no-underline" onClick={() => setMobileOpen(false)} aria-label="KORODUR">
+                    <Image src={withBasePath("/images/brand/logo-korodur.png")} alt="KORODUR" width={62} height={42} />
                   </Link>
                   <SheetClose asChild>
                     <button
@@ -215,29 +268,79 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                   </SheetClose>
                 </div>
 
-                <nav className="p-4 flex flex-col gap-1">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`block rounded-lg no-underline text-[15px] ${
-                        isActive(link.href) ? "text-cyan-text" : "text-navy"
-                      }`}
-                      style={{ padding: "12px 16px", fontWeight: 700 }}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                {/* Mobile: Punkte mit Untermenü als Accordion, sonst direkter Link */}
+                <nav className="p-2">
+                  <Accordion type="multiple" className="w-full">
+                    {navItems.map((item) => {
+                      const m = item.menu ? menus[item.key] : null;
+                      if (!m) {
+                        return (
+                          <Link
+                            key={item.key}
+                            href={item.href}
+                            className={`block rounded-lg no-underline text-[15px] ${isActive(item.href) ? "text-cyan-text" : "text-navy"}`}
+                            style={{ padding: "14px 14px", fontWeight: 700 }}
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        );
+                      }
+                      return (
+                        <AccordionItem key={item.key} value={item.key} className="border-b-0">
+                          <AccordionTrigger className="px-3.5 py-3.5 text-[15px] text-navy hover:no-underline" style={{ fontWeight: 700 }}>
+                            {item.label}
+                          </AccordionTrigger>
+                          <AccordionContent className="pb-2">
+                            <div className="flex flex-col">
+                              <Link
+                                href={item.href}
+                                className="block rounded-lg no-underline text-[14px] text-cyan-text px-6 py-2.5"
+                                style={{ fontWeight: 700 }}
+                                onClick={() => setMobileOpen(false)}
+                              >
+                                {lang === "de" ? "Übersicht" : lang === "fr" ? "Aperçu" : lang === "pl" ? "Przegląd" : lang === "es" ? "Resumen" : "Overview"} →
+                              </Link>
+                              {m.items.map((it) =>
+                                it.href ? (
+                                  <Link
+                                    key={it.label}
+                                    href={it.href}
+                                    className="block rounded-lg no-underline text-[14px] text-navy px-6 py-2.5"
+                                    onClick={() => setMobileOpen(false)}
+                                  >
+                                    {it.label}
+                                    {it.badge && <span className="ml-2 text-[11px] text-mid-gray">({it.badge})</span>}
+                                  </Link>
+                                ) : (
+                                  <span key={it.label} className="block text-[14px] text-mid-gray px-6 py-2.5">
+                                    {it.label}
+                                    {it.badge && <span className="ml-2 text-[11px]">({it.badge})</span>}
+                                  </span>
+                                )
+                              )}
+                              {m.footer?.map((f) => (
+                                <Link
+                                  key={f.href + f.label}
+                                  href={f.href}
+                                  className="block rounded-lg no-underline text-[14px] text-cyan-text px-6 py-2.5"
+                                  style={{ fontWeight: 700 }}
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {f.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      );
+                    })}
+                  </Accordion>
                 </nav>
 
-                {/* Mobile Lösungsfinder-CTA */}
-                <div className="px-4 pb-4">
+                <div className="px-4 pb-4 pt-2">
                   <Button asChild size="lg" className="w-full h-11 text-[15px]">
-                    <Link
-                      href={`/${lang}/loesungsfinder/`}
-                      onClick={() => setMobileOpen(false)}
-                    >
+                    <Link href={`/${lang}/loesungsfinder/`} onClick={() => setMobileOpen(false)}>
                       {dict.nav.loesungsfinder}
                     </Link>
                   </Button>
@@ -246,14 +349,67 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             </Sheet>
           </div>
         </div>
+
+        {/* Desktop Mega-Menü-Panel (Hover) */}
+        {active && (
+          <div
+            className="hidden lg:block absolute left-0 right-0 top-16 bg-white border-b border-bullet-bg shadow-[0_14px_30px_rgba(0,0,0,0.08)]"
+            onMouseEnter={() => openNow(openMenu!)}
+            onMouseLeave={scheduleClose}
+          >
+            <div className="mx-auto" style={{ maxWidth: 1320, padding: "22px 24px 24px" }}>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                {active.items.map((it) => {
+                  const inner = (
+                    <>
+                      <span className="flex items-center gap-2 text-navy text-[14px]" style={{ fontWeight: 700 }}>
+                        {it.label}
+                        {it.badge && (
+                          <span className="text-[10px] rounded-full px-2 py-0.5 bg-icon-bg text-navy" style={{ fontWeight: 700 }}>
+                            {it.badge}
+                          </span>
+                        )}
+                      </span>
+                      {it.sub && <span className="block text-[12px] text-navy opacity-55 mt-0.5 leading-snug">{it.sub}</span>}
+                    </>
+                  );
+                  const cls = `block rounded-lg p-3 no-underline border transition-colors duration-150 ${
+                    it.highlight
+                      ? "bg-navy border-navy [&_*]:text-white hover:opacity-95"
+                      : "bg-white border-bullet-bg hover:border-cyan"
+                  }`;
+                  return it.href ? (
+                    <Link key={it.label} href={it.href} className={cls} onClick={() => setOpenMenu(null)}>
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div key={it.label} className={`${cls} border-dashed cursor-default`}>
+                      {inner}
+                    </div>
+                  );
+                })}
+              </div>
+              {active.footer && (
+                <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 pt-3 border-t border-bullet-bg">
+                  {active.footer.map((f) => (
+                    <Link
+                      key={f.href + f.label}
+                      href={f.href}
+                      className="inline-flex items-center gap-1.5 text-cyan-text text-[13px] no-underline hover:underline"
+                      style={{ fontWeight: 700 }}
+                      onClick={() => setOpenMenu(null)}
+                    >
+                      {f.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </header>
 
-      <SearchOverlay
-        lang={lang}
-        dict={dict}
-        open={searchOpen}
-        onClose={() => setSearchOpen(false)}
-      />
+      <SearchOverlay lang={lang} dict={dict} open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }

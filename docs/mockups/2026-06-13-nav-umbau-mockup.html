@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KORODUR — Nav-Umbau Mockup (Epic #72)</title>
+<style>
+  :root{
+    --navy:#002d59; --cyan:#009ee3; --cyan-text:#0077ab;
+    --ink:#1a1a1a; --mid:#5b6470; --line:#e3e7ec; --bg:#f4f6f8; --card:#fff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .note{background:#fff8e1;border:1px solid #f0d98a;border-radius:8px;padding:10px 14px;margin:14px 0;font-size:13px;color:#6b5800}
+  h1{font-size:20px;margin:24px 0 4px} .sub{color:var(--mid);font-size:14px;margin:0 0 18px}
+  h2{font-size:15px;color:var(--navy);margin:30px 0 10px;border-bottom:2px solid var(--line);padding-bottom:6px}
+
+  /* Header */
+  header{background:#fff;border-bottom:1px solid var(--line);position:relative;z-index:5}
+  .bar{display:flex;align-items:center;gap:28px;height:64px}
+  .logo{font-weight:800;color:var(--navy);font-size:22px;letter-spacing:.5px}
+  nav.main{display:flex;gap:22px;margin-left:8px}
+  nav.main a{position:relative;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;padding:21px 0;display:inline-block}
+  nav.main a:hover{color:var(--cyan-text)}
+  nav.main a.active{color:var(--cyan-text)}
+  nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--cyan)}
+  .spacer{flex:1}
+  .cta{background:var(--cyan);color:#fff;border:none;border-radius:8px;padding:10px 16px;font-weight:700;font-size:14px;cursor:pointer}
+  .search{width:34px;height:34px;border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;color:var(--mid)}
+
+  /* Mega menu */
+  .mega{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(0,0,0,.08)}
+  .mega .wrap{padding:22px 24px 26px}
+  .mega .lead{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);margin:0 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .mi{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:13px 14px;background:#fff;transition:.12s}
+  .mi:hover{border-color:var(--cyan);box-shadow:0 4px 14px rgba(0,158,227,.12)}
+  .mi .ic{width:30px;height:30px;border-radius:7px;display:grid;place-items:center;font-size:15px;margin-bottom:8px}
+  .mi b{display:block;font-size:14px} .mi span{display:block;color:var(--mid);font-size:12px;margin-top:2px}
+  .pill{display:inline-block;font-size:10px;font-weight:700;border-radius:999px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+  .pNeu{background:rgba(0,45,89,.1);color:var(--navy)} .pSan{background:rgba(0,158,227,.14);color:var(--cyan-text)}
+  .icNavy{background:rgba(0,45,89,.1);color:var(--navy)} .icCyan{background:rgba(0,158,227,.14);color:var(--cyan-text)}
+
+  /* sample mega blocks side by side for review */
+  .review{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .panel .ph{background:var(--navy);color:#fff;padding:8px 14px;font-size:13px;font-weight:700}
+  .panel .pb{padding:14px}
+  .small{font-size:12px;color:var(--mid)}
+
+  /* Footer */
+  footer{background:var(--navy);color:#cdd6e0;margin-top:34px}
+  footer .wrap{padding:30px 24px}
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+  footer h4{color:#fff;font-size:13px;margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em}
+  footer a{color:#cdd6e0;text-decoration:none;font-size:13px;display:block;margin:6px 0}
+  footer a:hover{color:#fff}
+  .prodcat{border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:14px;background:rgba(255,255,255,.04)}
+  .prodcat .t{color:#fff;font-weight:700;font-size:14px;margin-bottom:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .chips a{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:4px 10px;margin:0;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Nav-Umbau — Mockup (Epic #72)</h1>
+  <p class="sub">Bereiche in die Top-Nav · Produkte-Gesamtkatalog in den Footer · Hover-Mega-Menüs · Farbcode Neubau=Navy / Sanierung=Cyan.</p>
+  <div class="note"><b>Zur Abstimmung:</b> (1) Reihenfolge der Top-Nav ok? (2) Mega-Menü-Inhalte je Punkt korrekt? (3) „Bereiche" braucht ein Klick-Ziel — Vorschlag: eigene Übersichtsseite <code>/bereiche</code> (existiert noch nicht). (4) Produkte-Katalog-Platzierung im Footer ok?</div>
+</div>
+
+<!-- HEADER mit aktivem Mega-Menü „Bereiche" -->
+<header>
+  <div class="wrap bar">
+    <div class="logo">KORODUR</div>
+    <nav class="main">
+      <a class="active" href="#">Bereiche ▾</a>
+      <a href="#">Neubau ▾</a>
+      <a href="#">Sanierung ▾</a>
+      <a href="#">Referenzen</a>
+      <a href="#">Unternehmen</a>
+      <a href="#">Kontakt ▾</a>
+    </nav>
+    <div class="spacer"></div>
+    <div class="search">⌕</div>
+    <button class="cta">Lösungsfinder</button>
+  </div>
+</header>
+
+<!-- Mega: Bereiche (offen) -->
+<div class="mega">
+  <div class="wrap">
+    <p class="lead">Bereiche — Schnelleinstieg in die Produktwelt</p>
+    <div class="grid">
+      <a class="mi" href="#"><span class="ic icNavy">▦</span><b>Industrieboden <span class="pill pNeu">Neubau</span><span class="pill pSan">Sanierung</span></b><span>Hartstoffestriche, Einstreuungen, Finish</span></a>
+      <a class="mi" href="#"><span class="ic icNavy">◧</span><b>Sichtestrich <span class="pill pNeu">Neubau</span></b><span>GRANIDUR, KCF, TRUAZZO</span></a>
+      <a class="mi" href="#"><span class="ic icCyan">◑</span><b>Microtop <span class="pill pSan">Sanierung</span></b><span>Trinkwasser-Spritzmörtel</span></a>
+      <a class="mi" href="#"><span class="ic icCyan">⟳</span><b>Rapid Set <span class="pill pSan">Sanierung</span></b><span>Schnelle Instandsetzung</span></a>
+      <a class="mi" href="#"><span class="ic icNavy">◆</span><b>Spezialbaustoffe</b><span>Verguss, Spritzmörtel, Pflasterfugen, 3D-Druck</span></a>
+      <a class="mi" href="#"><span class="ic icCyan">≈</span><b>Infrastruktur <span class="pill pSan">Sanierung</span></b><span>Bald verfügbar</span></a>
+      <a class="mi" href="#" style="border-style:dashed"><span class="ic" style="background:#eef1f4">🐾</span><b>Katzenstreu</b><span>goodcat (eigene Markenwelt)</span></a>
+      <a class="mi" href="#" style="background:var(--navy);color:#fff;border-color:var(--navy)"><span class="ic" style="background:rgba(255,255,255,.15);color:#fff">⊞</span><b style="color:#fff">Alle Produkte →</b><span style="color:#b9c6d6">Gesamtkatalog (77 Produkte)</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <h2>Weitere Mega-Menüs (Inhalt zur Abstimmung)</h2>
+  <div class="review">
+    <div class="panel">
+      <div class="ph" style="background:var(--navy)">Neubau ▾ &nbsp;<span style="font-weight:400;opacity:.8">Kerngeschäft</span></div>
+      <div class="pb">
+        <div class="grid" style="grid-template-columns:1fr">
+          <a class="mi" href="#"><b>Industrieboden</b><span>Hochbelastbare Estriche & Einstreuungen</span></a>
+          <a class="mi" href="#"><b>Sichtestrich</b><span>Designflächen, Verkaufsraum/Showroom</span></a>
+          <a class="mi" href="#"><b>Spezialbaustoffe</b><span>Verguss, Spritzmörtel, 3D-Druck</span></a>
+        </div>
+        <p class="small" style="margin-top:10px">+ darunter: „Referenzen Neubau" + CTA Lösungsfinder (direkt Neubau-Funnel)</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="ph" style="background:var(--cyan)">Sanierung ▾</div>
+      <div class="pb">
+        <div class="grid" style="grid-template-columns:1fr">
+          <a class="mi" href="#"><b>Industrieboden</b><span>Instandsetzung bestehender Böden</span></a>
+          <a class="mi" href="#"><b>Infrastruktur</b><span>Bald verfügbar</span></a>
+          <a class="mi" href="#"><b>Trinkwasser &amp; Spezial</b><span>MICROTOP · Rapid Set</span></a>
+        </div>
+        <p class="small" style="margin-top:10px">+ Tools: Lösungsfinder · Anwendungsmatrix</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="ph">Kontakt ▾</div>
+      <div class="pb">
+        <a class="mi" href="#"><b>Fachberater finden</b><span>Nach Bereich + PLZ-Region</span></a>
+        <a class="mi" href="#" style="margin-top:10px"><b>Kontaktformular</b><span>Direkt anfragen</span></a>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="ph">Referenzen</div>
+      <div class="pb">
+        <p class="small">Step 1 ohne Hover (direkter Link). Optional später Filter-Shortcuts: Neubau · Sanierung · nach Bereich.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER mit Produkte-Katalog prominent -->
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="prodcat">
+        <div class="t">⊞ Alle Produkte — Gesamtkatalog</div>
+        <div class="small" style="color:#b9c6d6">Das komplette Portfolio (77 Produkte), bereichsübergreifend durchsuchbar.</div>
+        <div class="chips">
+          <a href="#">Industrieboden</a><a href="#">Sichtestrich</a><a href="#">Rapid Set</a>
+          <a href="#">Microtop</a><a href="#">Spezialbaustoffe</a><a href="#">Katzenstreu</a>
+        </div>
+      </div>
+      <div>
+        <h4>Bereiche</h4>
+        <a href="#">Neubau</a><a href="#">Sanierung</a><a href="#">Referenzen</a><a href="#">Lösungsfinder</a>
+      </div>
+      <div>
+        <h4>Unternehmen</h4>
+        <a href="#">Über uns</a><a href="#">90 Jahre KORODUR</a><a href="#">Kontakt</a><a href="#">Fachberater</a>
+      </div>
+      <div>
+        <h4>Service</h4>
+        <a href="#">Datenblätter (TDS)</a><a href="#">Anwendungsmatrix</a><a href="#">ausschreiben.de</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="wrap">
+  <h2>Offene Designfragen</h2>
+  <ul class="small">
+    <li><b>„Bereiche"-Klickziel:</b> neue Übersichtsseite <code>/bereiche</code> bauen (empfohlen) oder auf Home-Grid ankern?</li>
+    <li><b>Projekttyp-Pills</b> im Bereiche-Menü (Neubau/Sanierung) — hilfreich oder zu viel? Aktuell als kleine Chips gezeigt.</li>
+    <li><b>Mobile:</b> Mega-Menüs werden zu aufklappbaren Accordion-Gruppen im Sheet (Touch ≥44px).</li>
+    <li><b>Katzenstreu</b> im Bereiche-Menü gestrichelt abgesetzt (eigene Markenwelt) — ok?</li>
+  </ul>
+</div>
+</body>
+</html>
