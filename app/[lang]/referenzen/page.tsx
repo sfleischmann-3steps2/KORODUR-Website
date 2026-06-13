@@ -208,7 +208,7 @@ export default function ReferenzenPage() {
                       style={{
                         fontFamily: "inherit",
                         fontWeight: 800,
-                        background: active ? (opt.key === "neubau" ? "#009a44" : "#002d59") : "transparent",
+                        background: active ? (opt.key === "sanierung" ? "#009ee3" : "#002d59") : "transparent",
                         color: active ? "#fff" : "#002d59",
                       }}
                     >

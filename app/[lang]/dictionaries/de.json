@@ -169,6 +169,12 @@
     "start_over": "Neu starten"
   },
   "loesungsfinder": {
+    "weiche_question": "Was möchten Sie umsetzen?",
+    "weiche_subline": "Wählen Sie Ihr Vorhaben — wir führen Sie zur passenden Lösung.",
+    "weiche_neubau_titel": "Neubau",
+    "weiche_neubau_text": "Neuer Industrieboden, Estrich oder Hartstoffeinstreuung.",
+    "weiche_sanierung_titel": "Sanierung",
+    "weiche_sanierung_text": "Bestehenden Boden reparieren, ertüchtigen oder aufwerten.",
     "page_title": "Lösungsfinder",
     "page_subtitle": "Beschreiben Sie Ihre Situation, und wir zeigen Ihnen passende Produkte und Referenzprojekte.",
     "meta_description": "Finden Sie in 4 Schritten die passende Sanierungslösung für Ihren Industrieboden.",

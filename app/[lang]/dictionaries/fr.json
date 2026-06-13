@@ -169,6 +169,12 @@
     "start_over": "Recommencer"
   },
   "loesungsfinder": {
+    "weiche_question": "Quel est votre projet ?",
+    "weiche_subline": "Choisissez votre projet — nous vous guidons vers la bonne solution.",
+    "weiche_neubau_titel": "Construction neuve",
+    "weiche_neubau_text": "Un nouveau sol industriel, une chape ou un durcisseur.",
+    "weiche_sanierung_titel": "Rénovation",
+    "weiche_sanierung_text": "Réparer, renforcer ou rénover un sol existant.",
     "page_title": "Trouveur de solutions",
     "page_subtitle": "Décrivez votre situation et nous vous montrerons les produits et projets de référence adaptés.",
     "meta_description": "Trouvez en 4 étapes la solution de rénovation adaptée à votre sol industriel.",

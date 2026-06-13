@@ -37,7 +37,7 @@ export default function ReferenceCard({
           />
           <span
             className="absolute left-3 top-3 z-10 rounded-[5px] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white"
-            style={{ background: art === "neubau" ? "#009a44" : "rgba(0,45,89,0.9)" }}
+            style={{ background: art === "neubau" ? "rgba(0,45,89,0.92)" : "#009ee3" }}
           >
             {projektartLabel(art, lang)}
           </span>

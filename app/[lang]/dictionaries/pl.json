@@ -169,6 +169,12 @@
     "start_over": "Zacznij od nowa"
   },
   "loesungsfinder": {
+    "weiche_question": "Co planujesz zrealizować?",
+    "weiche_subline": "Wybierz swój projekt — wskażemy odpowiednie rozwiązanie.",
+    "weiche_neubau_titel": "Nowe budownictwo",
+    "weiche_neubau_text": "Nowa posadzka przemysłowa, jastrych lub posypka utwardzająca.",
+    "weiche_sanierung_titel": "Renowacja",
+    "weiche_sanierung_text": "Naprawa, wzmocnienie lub odświeżenie istniejącej posadzki.",
     "page_title": "Znajdź rozwiązanie",
     "page_subtitle": "Opisz swoją sytuację, a pokażemy Ci odpowiednie produkty i projekty referencyjne.",
     "meta_description": "Znajdź w 4 krokach odpowiednie rozwiązanie renowacyjne dla swojej posadzki przemysłowej.",

@@ -169,6 +169,12 @@
     "start_over": "Empezar de nuevo"
   },
   "loesungsfinder": {
+    "weiche_question": "¿Qué desea realizar?",
+    "weiche_subline": "Elija su proyecto: le guiamos hacia la solución adecuada.",
+    "weiche_neubau_titel": "Obra nueva",
+    "weiche_neubau_text": "Un nuevo pavimento industrial, solera o capa de rodadura.",
+    "weiche_sanierung_titel": "Rehabilitación",
+    "weiche_sanierung_text": "Reparar, reforzar o renovar un pavimento existente.",
     "page_title": "Buscador de soluciones",
     "page_subtitle": "Describa su situación y le mostraremos los productos y proyectos de referencia adecuados.",
     "meta_description": "Encuentre en 4 pasos la solución de rehabilitación adecuada para su pavimento industrial.",

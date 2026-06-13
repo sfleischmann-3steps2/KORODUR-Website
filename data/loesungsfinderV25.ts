@@ -31,6 +31,13 @@ import { kuratierteEmpfehlung } from "./produktEmpfehlungKuratiert";
 // beiden Modi gleich.
 export const EMPFEHLUNGS_MODUS: "tags" | "kuratiert" = "kuratiert";
 
+// Neubau-Strecke (Eingangsweiche Neubau/Sanierung + Neubau-Funnel, Option C).
+//  true  → Lösungsfinder startet mit der Eingangsweiche, Neubau-Pfad sichtbar.
+//  false → V1-Verhalten: direkt in den Sanierungs-Funnel, kein Neubau.
+// Die Neubau-Funnel-Logik (Produkt-Mapping, Labels) ist provisorisch —
+// Abstimmung mit Produktmanagement (Frank) + i18n stehen aus.
+export const NEUBAU_STRECKE_AKTIV = true;
+
 export type V25Produkt = Produkt & ProduktFilterV25;
 export type V25Referenz = Referenz & ReferenzFilterV25;
 
