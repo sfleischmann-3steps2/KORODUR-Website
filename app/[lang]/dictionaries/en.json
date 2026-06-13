@@ -1,5 +1,6 @@
 {
   "nav": {
+    "neubau": "New construction",
     "home": "Home",
     "loesungsfinder": "Solution Finder",
     "referenzen": "References",
@@ -377,6 +378,12 @@
     "katzenstreu_privatelabel_text": "We also produce bentonite cat litter as private label for retail brands: premium grades in 5, 6 and 8 l, standard grades in 5, 10 and 20 kg, special sizes on request, optionally with fresh scent. Delivered in environmentally friendly paper packaging (FSC MIX).",
     "katzenstreu_privatelabel_cta": "Send private label enquiry",
     "gruppe_pflasterfugen": "Paving Joint Mortars"
+  },
+  "neubauHub": {
+    "title": "New construction with KORODUR",
+    "intro": "The right industrial floor for your project — from heavy-duty halls to architectural surfaces. Three product worlds, one guided selection.",
+    "slogan": "Building with system.",
+    "cta": "Get started"
   },
   "sanierungHub": {
     "title": "Renovating with KORODUR",

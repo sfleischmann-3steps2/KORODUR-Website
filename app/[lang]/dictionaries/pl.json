@@ -1,5 +1,6 @@
 {
   "nav": {
+    "neubau": "Nowe budownictwo",
     "home": "Start",
     "loesungsfinder": "Znajdź rozwiązanie",
     "referenzen": "Referencje",
@@ -377,6 +378,12 @@
     "katzenstreu_privatelabel_text": "Produkujemy żwirek bentonitowy także jako markę własną dla sieci handlowych: jakości premium w opakowaniach 5, 6 i 8 l, jakości standard w 5, 10 i 20 kg, rozmiary specjalne na zapytanie, opcjonalnie ze świeżym zapachem. Dostawa w ekologicznych opakowaniach papierowych (FSC MIX).",
     "katzenstreu_privatelabel_cta": "Wyślij zapytanie o markę własną",
     "gruppe_pflasterfugen": "Zaprawy do fugowania kostki brukowej"
+  },
+  "neubauHub": {
+    "title": "Nowe budownictwo z KORODUR",
+    "intro": "Odpowiednia posadzka przemysłowa dla Twojego projektu — od hal o dużym obciążeniu po posadzki dekoracyjne. Trzy światy produktów, jeden prowadzony dobór.",
+    "slogan": "Budowanie z systemem.",
+    "cta": "Rozpocznij"
   },
   "sanierungHub": {
     "title": "Renowacja z KORODUR",

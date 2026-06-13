@@ -20,7 +20,6 @@ import {
   IconWarehouse,
   IconShoppingCart,
   IconChefHat,
-  IconParking,
   IconForklift,
   IconRefresh,
   IconFlame,
@@ -60,7 +59,6 @@ const STEPS: StepDef[] = [
       { id: "lager-logistik", Icon: IconWarehouse, titel: "Lager & Logistik", beschreibung: "Hochregal, Staplerverkehr, große Flächen." },
       { id: "verkaufsraum", Icon: IconShoppingCart, titel: "Verkaufsraum / Showroom", beschreibung: "Sichtbarer Boden, Publikumsverkehr." },
       { id: "lebensmittel-nass", Icon: IconChefHat, titel: "Lebensmittel / Nassbereich", beschreibung: "Hygiene, Feuchtigkeit, Reinigung." },
-      { id: "parkdeck-aussen", Icon: IconParking, titel: "Parkdeck / Außen", beschreibung: "Witterung, Frost, Tausalz." },
     ],
   },
   {

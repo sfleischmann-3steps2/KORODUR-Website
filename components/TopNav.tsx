@@ -68,10 +68,11 @@ export default function TopNav({ lang, dict }: TopNavProps) {
 
   const navLinks = [
     { href: `/${lang}/produkte/`, label: dict.nav.produkte },
+    // Neubau + Sanierung als gleichwertige Einstiege (Steffi 2026-06-13).
+    // Die Anwendungsmatrix ist sanierungsspezifisch → liegt als Karte im
+    // Sanierungs-Hub (/sanierung), nicht mehr in der Hauptnavigation.
+    { href: `/${lang}/neubau/`, label: dict.nav.neubau },
     { href: `/${lang}/sanierung/`, label: dict.nav.sanierung },
-    // Label "Anwendungsmatrix" statt "Anwendungen": Die Seite ist eine reine
-    // Sanierungs-Matrix; echte Anwendungs-Einstiege über alle Bereiche sind V2.
-    { href: `/${lang}/anwendungsmatrix/`, label: dict.nav.anwendungsmatrix },
     { href: `/${lang}/referenzen/`, label: dict.nav.referenzen },
     { href: `/${lang}/unternehmen/`, label: dict.nav.unternehmen },
     { href: `/${lang}/kontakt/`, label: dict.nav.kontakt },
