@@ -11,12 +11,12 @@
     "kontakt": "Contact"
   },
   "home": {
-    "hero_title": "Industrial floors, decorative screeds and special construction materials. Proven worldwide.",
+    "hero_title": "Industrial floors for new construction and renovation. Proven worldwide.",
     "hero_subtitle": "We have been developing and producing mineral hard aggregates and cementitious systems since 1936. More than 750 million m² of industrial floors installed worldwide are our best reference.",
     "hero_cta": "Start Solution Finder",
     "featured_title": "Proven solutions from practice",
     "featured_link": "View all references",
-    "finder_teaser_title": "Find the right solution in 5 steps",
+    "finder_teaser_title": "Find the right solution in just a few steps",
     "finder_teaser_description": "Describe your situation and we will show you suitable products and reference projects.",
     "finder_teaser_cta": "Start now",
     "finder_step1": "Situation",
@@ -386,6 +386,14 @@
     "cta": "Get started"
   },
   "sanierungHub": {
+    "schwerpunkte_title": "What we renovate",
+    "sp_industrieboden_title": "Industrial flooring",
+    "sp_industrieboden_text": "Restore hall floors, screeds and hardeners — without long downtime.",
+    "sp_infrastruktur_title": "Infrastructure",
+    "sp_infrastruktur_text": "Repair bridges, access roads and traffic areas quickly and durably.",
+    "sp_infrastruktur_badge": "Coming soon",
+    "sp_trinkwasser_title": "Drinking water & special",
+    "sp_trinkwasser_text": "Drinking-water tanks with MICROTOP, rapid repairs with Rapid Set.",
     "title": "Renovating with KORODUR",
     "intro": "Renovate industrial floors without shutting down operations: our tools help you find the right solution for your case in just a few minutes.",
     "card_loesungsfinder_title": "Solution Finder",

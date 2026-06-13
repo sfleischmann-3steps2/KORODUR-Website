@@ -11,12 +11,12 @@
     "kontakt": "Kontakt"
   },
   "home": {
-    "hero_title": "Industrieböden, Sichtestriche und Spezialbaustoffe. Weltweit bewährt.",
+    "hero_title": "Industrieböden für Neubau und Sanierung. Weltweit bewährt.",
     "hero_subtitle": "Wir entwickeln und produzieren mineralische Hartstoffe und zementäre Systeme seit 1936. Über 750 Mio. m² verlegte Industrieböden weltweit sind unsere beste Referenz.",
     "hero_cta": "Lösungsfinder starten",
     "featured_title": "Bewährte Lösungen aus der Praxis",
     "featured_link": "Alle Referenzen ansehen",
-    "finder_teaser_title": "In 5 Schritten zur passenden Lösung",
+    "finder_teaser_title": "In wenigen Schritten zur passenden Lösung",
     "finder_teaser_description": "Beschreiben Sie Ihre Situation, und wir zeigen Ihnen passende Produkte und Referenzprojekte.",
     "finder_teaser_cta": "Jetzt starten",
     "finder_step1": "Situation",
@@ -386,6 +386,14 @@
     "cta": "Jetzt starten"
   },
   "sanierungHub": {
+    "schwerpunkte_title": "Was wir sanieren",
+    "sp_industrieboden_title": "Industrieboden",
+    "sp_industrieboden_text": "Hallenböden, Estriche und Hartstoffe instand setzen — ohne langen Betriebsausfall.",
+    "sp_infrastruktur_title": "Infrastruktur",
+    "sp_infrastruktur_text": "Brücken, Zufahrten und Verkehrsflächen schnell und dauerhaft reparieren.",
+    "sp_infrastruktur_badge": "Bald verfügbar",
+    "sp_trinkwasser_title": "Trinkwasser & Spezial",
+    "sp_trinkwasser_text": "Trinkwasserbehälter mit MICROTOP, Schnellreparaturen mit Rapid Set.",
     "title": "Sanieren mit KORODUR",
     "intro": "Industrieboden sanieren, ohne den Betrieb lahmzulegen: Mit unseren Werkzeugen finden Sie in wenigen Minuten die passende Lösung für Ihren Fall.",
     "card_loesungsfinder_title": "Lösungsfinder",
