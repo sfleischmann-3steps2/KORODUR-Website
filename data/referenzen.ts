@@ -1551,6 +1551,118 @@ export const referenzen: Referenz[] = [
     zusatzfunktionen: ["chemikalienbestaendigkeit"],
   },
 
+  {
+    id: "verwaltungsgebaeude-laehitapiola-espoo",
+    slug: "verwaltungsgebaeude-laehitapiola-espoo",
+    projekttyp: "neubau",
+    releaseStatus: "oeffentlich",
+    titel: "Verwaltungsgebäude LÄHITAPIOLA, Espoo",
+    untertitel: "Designboden GRANIDUR BIANCO im Neubau eines finnischen Versicherungskonzerns",
+    ort: "Espoo nähe Helsinki",
+    land: "Finnland",
+    jahr: 2009,
+    flaeche: "1500 m²",
+    produkte: [
+      "GRANIDUR BIANCO/NERO",
+    ],
+    ausgangssituation: "Für den neu errichteten Verwaltungssitz des LÄHITAPIOLA Versicherungskonzerns, einem der größten Finanz- und Versicherungsunternehmen Finnlands, war ein repräsentativer Bodenbelag gefragt, der dem Anspruch des Hauses gerecht wird.",
+    herausforderungen: [
+      "Repräsentativer Anspruch eines neu errichteten Verwaltungsgebäudes",
+      "Großflächige Verlegung von 1.500 m²",
+    ],
+    loesung: "Wir haben Ende 2009 unseren Designboden GRANIDUR BIANCO im Neubau verlegt. Die Ausführung übernahm der Verarbeiter Neliskulma Oy, die architektonische Planung lag bei SARC Architects.",
+    ergebnis: "Auf 1.500 m² entstand ein hochwertiger weißer Designboden, der das repräsentative Verwaltungsgebäude in Espoo prägt.",
+    vorteile: [
+      "Hochwertige weiße Designboden-Optik für repräsentative Flächen",
+    ],
+    beteiligte: [
+      { role: "Betreiber", name: "LÄHITAPIOLA Versicherungskonzern" },
+      { role: "Verarbeiter", name: "Neliskulma Oy, Finnland" },
+      { role: "Architekt", name: "SARC Architects" },
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Designboden GRANIDUR BIANCO im Neubau eines finnischen Versicherungskonzerns",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: [
+      "verkaufsraeume",
+    ],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "kaiserhof-koeln",
+    slug: "kaiserhof-koeln",
+    projekttyp: "neubau",
+    releaseStatus: "oeffentlich",
+    titel: "Kaiserhof, Köln",
+    untertitel: "Weißer Terrazzo-Sichtestrich GRANIDUR BIANCO in einem exklusiven Kölner Bürogebäude",
+    ort: "Köln",
+    land: "Deutschland",
+    jahr: 2019,
+    flaeche: "700 m²",
+    produkte: [
+      "GRANIDUR BIANCO/NERO",
+    ],
+    ausgangssituation: "Mit dem „Kaiserhof\" entstand in Köln ein neues, exklusives Bürogebäude und ein weiteres architektonisches Highlight in der Domstadt. Für die Bodenflächen war ein hochwertiger, repräsentativer Belag gefragt.",
+    herausforderungen: [
+      "Repräsentativer Bodenbelag für ein exklusives Bürogebäude",
+      "Optischer Anspruch passend zum architektonischen Highlight",
+    ],
+    loesung: "Wir haben im Kaiserhof den weißen Terrazzo-Sichtestrich GRANIDUR BIANCO verlegt. Verarbeitet wurde die Fläche von der Günter Schlag GmbH aus Föhren.",
+    ergebnis: "Auf rund 700 m² entstand mit GRANIDUR BIANCO ein exklusiver weißer Sichtestrich, der dem architektonischen Anspruch des Gebäudes gerecht wird.",
+    vorteile: [
+      "Hochwertige, weiße Terrazzo-Optik",
+      "Repräsentativer Sichtestrich für exklusive Bürobereiche",
+    ],
+    beteiligte: [
+      { role: "Verarbeiter", name: "Günter Schlag GmbH, Föhren" },
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Weißer Terrazzo-Sichtestrich GRANIDUR BIANCO in einem exklusiven Kölner Bürogebäude",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: [
+      "verkaufsraeume",
+    ],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "baeckerei-konditorei-schmidtmeier-bochum",
+    slug: "baeckerei-konditorei-schmidtmeier-bochum",
+    projekttyp: "neubau",
+    releaseStatus: "oeffentlich",
+    titel: "Bäckerei & Konditorei Schmidtmeier, Bochum",
+    untertitel: "Fugenloser Terrazzo-Sichtestrich TRU PC für die Filiale in der Bochumer Fußgängerzone.",
+    ort: "Bochum",
+    land: "Deutschland",
+    jahr: 2019,
+    produkte: [
+      "TRU PC",
+    ],
+    ausgangssituation: "Die Bäckerei & Konditorei Schmidtmeier aus Bochum suchte für ihre Filiale in der Bochumer Fußgängerzone einen Designestrich, der außergewöhnliche Farbeffekte mit hoher technischer Qualität verbindet.",
+    herausforderungen: [
+      "Gewünscht war eine fugenlose, geschliffene Fläche",
+      "Die Fläche sollte zugleich dekorativ und widerstandsfähig sein",
+      "Hohe technische Qualität bei außergewöhnlichen Farbeffekten",
+    ],
+    loesung: "Wir setzten den hochwertigen Terrazzo-Sichtestrich TRU PC ein. Er erfüllt den Wunsch nach einer fugenlosen, geschliffenen Fläche und verbindet dekorative Farbeffekte mit hoher technischer Qualität.",
+    ergebnis: "Die Filiale erhielt eine fugenlose, geschliffene Sichtestrich-Fläche, die dekorativ wirkt und zugleich widerstandsfähig ist.",
+    vorteile: [
+      "Fugenlose, geschliffene Oberfläche",
+      "Dekorative Farbeffekte",
+      "Hohe technische Qualität und Widerstandsfähigkeit",
+    ],
+    beteiligte: [],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Fugenloser Terrazzo-Sichtestrich TRU PC für die Filiale in der Bochumer Fußgängerzone.",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: [
+      "lebensmittel",
+    ],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+
 ];
 
 export function getReferenzBySlug(slug: string): Referenz | undefined {
