@@ -140,7 +140,75 @@ export default function TopNav({ lang, dict }: TopNavProps) {
     { key: "kontakt", href: `/${lang}/kontakt/`, label: dict.nav.kontakt, menu: true },
   ];
 
-  const active = openMenu ? menus[openMenu] : null;
+  // Panel-Layout: unter dem Trigger verankert, Kontakt (rechts außen)
+  // rechtsbündig → kurze Mauswege (Steffi, 2026-06-13).
+  const layout: Record<string, { w: string; cols: string; align: "left" | "right" }> = {
+    bereiche: { w: "w-[min(760px,calc(100vw-32px))]", cols: "grid-cols-2 lg:grid-cols-4", align: "left" },
+    neubau: { w: "w-[340px]", cols: "grid-cols-1", align: "left" },
+    sanierung: { w: "w-[360px]", cols: "grid-cols-1", align: "left" },
+    kontakt: { w: "w-[300px]", cols: "grid-cols-1", align: "right" },
+  };
+
+  const renderPanel = (key: string) => {
+    const m = menus[key];
+    const lo = layout[key];
+    return (
+      <div
+        className={`absolute top-full ${lo.align === "right" ? "right-0" : "left-0"} z-50 ${lo.w} bg-white border border-bullet-bg rounded-b-xl shadow-[0_16px_34px_rgba(0,45,89,0.16)] p-3`}
+        onMouseEnter={() => openNow(key)}
+        onMouseLeave={scheduleClose}
+        role="menu"
+      >
+        <div className={`grid ${lo.cols} gap-2`}>
+          {m.items.map((it) => {
+            const inner = (
+              <>
+                <span className="flex items-center gap-2 text-navy text-[14px]" style={{ fontWeight: 700 }}>
+                  {it.label}
+                  {it.badge && (
+                    <span className="text-[10px] rounded-full px-2 py-0.5 bg-white text-navy border border-bullet-bg" style={{ fontWeight: 700 }}>
+                      {it.badge}
+                    </span>
+                  )}
+                </span>
+                {it.sub && <span className="block text-[12px] text-navy opacity-55 mt-0.5 leading-snug">{it.sub}</span>}
+              </>
+            );
+            const cls = `block rounded-lg p-3 no-underline border transition-colors duration-150 ${
+              it.highlight
+                ? "bg-navy border-navy [&_*]:!text-white hover:bg-[#013a72]"
+                : "bg-icon-bg border-bullet-bg hover:bg-white hover:border-cyan"
+            }`;
+            return it.href ? (
+              <Link key={it.label} href={it.href} className={cls} role="menuitem" onClick={() => setOpenMenu(null)}>
+                {inner}
+              </Link>
+            ) : (
+              <div key={it.label} className={`${cls} border-dashed cursor-default`}>
+                {inner}
+              </div>
+            );
+          })}
+        </div>
+        {m.footer && (
+          <div className="flex flex-wrap gap-x-5 gap-y-2 mt-3 pt-3 border-t border-bullet-bg px-1">
+            {m.footer.map((f) => (
+              <Link
+                key={f.href + f.label}
+                href={f.href}
+                className="inline-flex items-center gap-1.5 text-cyan-text text-[13px] no-underline hover:underline"
+                style={{ fontWeight: 700 }}
+                role="menuitem"
+                onClick={() => setOpenMenu(null)}
+              >
+                {f.label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <>
@@ -167,7 +235,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             {navItems.map((item) => (
               <div
                 key={item.key}
-                className="relative"
+                className="relative h-16 flex items-center"
                 onMouseEnter={() => (item.menu ? openNow(item.key) : scheduleClose())}
               >
                 <Link
@@ -190,6 +258,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                     />
                   )}
                 </Link>
+                {item.menu && openMenu === item.key && renderPanel(item.key)}
               </div>
             ))}
           </nav>
@@ -349,64 +418,6 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             </Sheet>
           </div>
         </div>
-
-        {/* Desktop Mega-Menü-Panel (Hover) */}
-        {active && (
-          <div
-            className="hidden lg:block absolute left-0 right-0 top-16 bg-white border-b border-bullet-bg shadow-[0_14px_30px_rgba(0,0,0,0.08)]"
-            onMouseEnter={() => openNow(openMenu!)}
-            onMouseLeave={scheduleClose}
-          >
-            <div className="mx-auto" style={{ maxWidth: 1320, padding: "22px 24px 24px" }}>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                {active.items.map((it) => {
-                  const inner = (
-                    <>
-                      <span className="flex items-center gap-2 text-navy text-[14px]" style={{ fontWeight: 700 }}>
-                        {it.label}
-                        {it.badge && (
-                          <span className="text-[10px] rounded-full px-2 py-0.5 bg-icon-bg text-navy" style={{ fontWeight: 700 }}>
-                            {it.badge}
-                          </span>
-                        )}
-                      </span>
-                      {it.sub && <span className="block text-[12px] text-navy opacity-55 mt-0.5 leading-snug">{it.sub}</span>}
-                    </>
-                  );
-                  const cls = `block rounded-lg p-3 no-underline border transition-colors duration-150 ${
-                    it.highlight
-                      ? "bg-navy border-navy [&_*]:text-white hover:opacity-95"
-                      : "bg-white border-bullet-bg hover:border-cyan"
-                  }`;
-                  return it.href ? (
-                    <Link key={it.label} href={it.href} className={cls} onClick={() => setOpenMenu(null)}>
-                      {inner}
-                    </Link>
-                  ) : (
-                    <div key={it.label} className={`${cls} border-dashed cursor-default`}>
-                      {inner}
-                    </div>
-                  );
-                })}
-              </div>
-              {active.footer && (
-                <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 pt-3 border-t border-bullet-bg">
-                  {active.footer.map((f) => (
-                    <Link
-                      key={f.href + f.label}
-                      href={f.href}
-                      className="inline-flex items-center gap-1.5 text-cyan-text text-[13px] no-underline hover:underline"
-                      style={{ fontWeight: 700 }}
-                      onClick={() => setOpenMenu(null)}
-                    >
-                      {f.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
       </header>
 
       <SearchOverlay lang={lang} dict={dict} open={searchOpen} onClose={() => setSearchOpen(false)} />
