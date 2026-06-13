@@ -3,6 +3,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { Referenz } from "../data/types";
 import { bereichLabel, projektartBucket, projektartLabel } from "../data/einsatzbereichMapping";
+import { referenzProduktbereich, produktbereichLabel } from "../data/referenzProduktbereich";
 import { withBasePath } from "../lib/basePath";
 import { thumbSrc } from "../lib/images";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,6 +22,9 @@ export default function ReferenceCard({
   const label = primary ? bereichLabel(primary, lang) : "";
   // Projektart-Chip (Neubau/Sanierung) — gleiche Facette wie der Übersichtsfilter.
   const art = projektartBucket(referenz.projekttyp);
+  // Produktbereich für das "Projektart · Bereich"-Tag (Steffi, #99).
+  const pBereich = referenzProduktbereich(referenz);
+  const pBereichLabel = pBereich ? produktbereichLabel(pBereich, lang) : "";
 
   return (
     <Link href={`/${lang}/referenzen/${referenz.slug}`} className="no-underline group block">
@@ -40,6 +44,7 @@ export default function ReferenceCard({
             style={{ background: art === "neubau" ? "rgba(0,45,89,0.92)" : "#009ee3" }}
           >
             {projektartLabel(art, lang)}
+            {pBereichLabel ? ` · ${pBereichLabel}` : ""}
           </span>
         </div>
         <CardContent className="p-6 flex flex-col gap-3">
