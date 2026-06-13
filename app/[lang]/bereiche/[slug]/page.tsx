@@ -14,7 +14,8 @@ import BeraterCard from "../../../../components/BeraterCard";
 import { alternatesFor } from "../../../../lib/seo";
 import { projektartLabel, type Projektart } from "../../../../data/einsatzbereichMapping";
 import { AppIcon } from "@/components/ui/icon";
-import { ChevronRight, ExternalLink, Info } from "lucide-react";
+import { ArrowRight, ChevronRight, ExternalLink, Info } from "lucide-react";
+import { bereichIcon } from "../../../../components/bereichIcons";
 
 type Params = Promise<{ lang: string; slug: string }>;
 
@@ -28,6 +29,14 @@ const BEREICH_PROJEKTARTEN: Record<string, Projektart[]> = {
   spezialbaustoffe: ["neubau", "sanierung"],
   microtop: ["sanierung"],
   "rapid-set": ["sanierung"],
+};
+
+// Cross-Selling (Steffi 2026-06-13, #84): kontextuell verwandter Bereich.
+// Industrieboden -> Rapid Set (schnelle Instandsetzung) ist ihr Leitbeispiel.
+const CROSSSELL: Record<string, string> = {
+  industrieboden: "rapid-set",
+  spezialbaustoffe: "rapid-set",
+  "rapid-set": "industrieboden",
 };
 
 function ProduktGrid({
@@ -397,6 +406,35 @@ export default async function BereichPage({ params }: { params: Params }) {
                 <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Cross-Selling: kontextuell verwandter Bereich (#84) */}
+      {CROSSSELL[slug] && (
+        <section style={{ padding: "0 32px 64px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-5" style={{ fontSize: "clamp(18px, 2.5vw, 24px)", fontWeight: 800 }}>
+              {tb("crosssell_title")}
+            </h2>
+            <Link
+              href={`/${lang}/bereiche/${CROSSSELL[slug]}/`}
+              className="flex items-center gap-4 rounded-xl border border-bullet-bg bg-white p-5 no-underline transition-all duration-200 hover:border-cyan hover:shadow-lg"
+              style={{ maxWidth: 560 }}
+            >
+              <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-navy shrink-0" aria-hidden="true">
+                <AppIcon icon={bereichIcon(CROSSSELL[slug])} width={24} height={24} strokeWidth={2} className="text-white" />
+              </span>
+              <span className="flex-1 min-w-0">
+                <span className="block text-navy text-[16px]" style={{ fontWeight: 800 }}>
+                  {tb(`${CROSSSELL[slug]}_name`)}
+                </span>
+                <span className="block text-navy/60 text-[13px] leading-snug mt-0.5">
+                  {tb(`${CROSSSELL[slug]}_teaser`)}
+                </span>
+              </span>
+              <AppIcon icon={ArrowRight} width={18} height={18} strokeWidth={2.5} className="text-cyan shrink-0" aria-hidden="true" />
+            </Link>
           </div>
         </section>
       )}
