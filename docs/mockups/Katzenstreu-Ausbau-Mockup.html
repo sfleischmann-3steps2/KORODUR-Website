@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Katzenstreu-Bereich — Ausbau-Mockup (2026-06-13)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* KORODUR */
+    --navy: #002d59; --cyan: #009ee3; --icon-bg: #f5f5f6; --bullet-bg: #e8edf5;
+    /* Katzenstreu-CD (CD Rules.docx): eigene Farbe, kein KORODUR-Logo */
+    --katze: #1E3A5F;
+    /* goodcat-Markenwelt */
+    --brombeere: #5b1232; --gc-pink: #e85d8a; --gc-rosa: #fdeef3;
+    /* Benticat-Markenwelt */
+    --benti-braun: #5d4426; --benti-gruen: #3d8b37; --benti-beige: #f4efe7;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Gabarito, system-ui, sans-serif; color: var(--katze); background: #fff; }
+  .mockup-label { background: #ffd84d; color: #002d59; font-weight: 900; font-size: 14px;
+    padding: 10px 24px; position: sticky; top: 0; z-index: 50; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .chip { display: inline-flex; font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .08em; padding: 4px 10px; border-radius: 999px; }
+  h2 { font-weight: 900; font-size: clamp(22px, 3vw, 30px); margin: 0 0 10px; }
+  .platzhalter { outline: 2px dashed #e8a000; outline-offset: 3px; position: relative; }
+  .platzhalter::after { content: "PLATZHALTER — Zulieferung"; position: absolute; top: -10px; right: 8px;
+    background: #e8a000; color: #fff; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 3px; }
+
+  /* Hero im Katzenstreu-CD */
+  .hero { background: var(--katze); color: #fff; padding: 64px 24px 56px; }
+  .hero .chip { background: rgba(255,255,255,.15); color: #fff; margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 900; margin: 0 0 8px; line-height: 1.1; }
+  .hero .claim { color: #9fd6ff; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+    font-size: clamp(14px, 2vw, 18px); margin: 0 0 18px; }
+  .hero p.intro { max-width: 680px; opacity: .9; line-height: 1.7; font-size: 16.5px; margin: 0; }
+
+  /* Trust */
+  .trust { background: var(--icon-bg); padding: 22px 24px; }
+  .trust .row { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+  .trust img { height: 64px; width: auto; }
+  .trust p { margin: 0; font-size: 14px; color: #3c5570; max-width: 760px; line-height: 1.6; }
+
+  /* Markenwelt */
+  .marken { padding: 64px 24px; }
+  .marken-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 860px) { .marken-grid { grid-template-columns: 1fr; } }
+  .marke { border-radius: 16px; overflow: hidden; border: 1px solid var(--bullet-bg); display: flex; flex-direction: column; }
+  .marke .kopf { padding: 30px 26px; display: flex; align-items: center; justify-content: center; min-height: 150px; }
+  .marke.gc .kopf { background: var(--brombeere); }
+  .marke.bc .kopf { background: var(--benti-beige); }
+  .marke .kopf img { max-width: 75%; max-height: 110px; object-fit: contain; }
+  .marke .body { padding: 24px 26px 28px; flex: 1; display: flex; flex-direction: column; }
+  .marke h3 { margin: 0 0 4px; font-size: 21px; font-weight: 900; }
+  .marke .slogan { font-weight: 800; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 12px; }
+  .marke.gc .slogan { color: var(--gc-pink); }
+  .marke.bc .slogan { color: var(--benti-gruen); }
+  .marke p.text { font-size: 14.5px; line-height: 1.65; color: #3c5570; margin: 0 0 16px; }
+  .produkt-row { display: flex; gap: 14px; align-items: flex-end; margin-bottom: 16px; flex-wrap: wrap; }
+  .produkt-row img { height: 130px; width: auto; }
+  .produkt-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .produkt-links span { background: var(--icon-bg); border-radius: 6px; padding: 7px 12px; font-size: 12.5px; font-weight: 700; }
+  .marke .cta { margin-top: auto; }
+  .marke .cta a { display: inline-block; padding: 11px 20px; border-radius: 6px; font-weight: 800;
+    font-size: 13.5px; text-decoration: none; }
+  .marke.gc .cta a { background: var(--brombeere); color: #fff; }
+  .marke.bc .cta a { background: var(--benti-gruen); color: #fff; }
+
+  /* Bentonit */
+  .bentonit { background: var(--icon-bg); padding: 64px 24px; }
+  .bentonit .grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
+  @media (max-width: 860px) { .bentonit .grid { grid-template-columns: 1fr; } }
+  .bentonit img { width: 100%; border-radius: 14px; }
+  .bentonit p { line-height: 1.7; color: #3c5570; font-size: 15px; }
+
+  /* Private Label */
+  .pl { padding: 64px 24px; }
+  .pl .box { background: var(--katze); color: #fff; border-radius: 16px; padding: 40px 36px;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; }
+  @media (max-width: 860px) { .pl .box { grid-template-columns: 1fr; } }
+  .pl h2 { color: #fff; }
+  .pl p { opacity: .85; line-height: 1.7; font-size: 15px; }
+  .pl a.btn { display: inline-block; background: #fff; color: var(--katze); font-weight: 800;
+    padding: 13px 24px; border-radius: 6px; text-decoration: none; font-size: 14px; }
+  .pl img { width: 100%; border-radius: 10px; }
+
+  /* Messe */
+  .messe { padding: 0 24px 72px; }
+  .messe .grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: center; }
+  @media (max-width: 860px) { .messe .grid { grid-template-columns: 1fr; } }
+  .messe img { width: 100%; border-radius: 14px; }
+  .messe p { line-height: 1.7; color: #3c5570; font-size: 15px; }
+
+  .footer-notes { background: #f0f3f8; padding: 36px 24px 60px; }
+  .footer-notes h2 { font-size: 20px; }
+  .footer-notes ol { max-width: 880px; line-height: 1.7; font-size: 14.5px; color: #34495e; }
+</style>
+</head>
+<body>
+
+<div class="mockup-label">MOCKUP · Katzenstreu-Bereich: Ausbau mit Markenwelt goodcat + Benticat · 2026-06-13 · zur Besprechung</div>
+
+<!-- 1. Hero im Katzenstreu-CD (#1E3A5F, Claim aus CD Rules) -->
+<section class="hero">
+  <div class="container">
+    <span class="chip">Eigener Geschäftsbereich</span>
+    <p class="claim">Happy Pets – Happy People</p>
+    <h1>Katzenstreu von KORODUR</h1>
+    <p class="intro">Seit 1992 produzieren und vertreiben wir Bentonit-Katzenstreu für europäische Abnehmer:
+      Lebensmitteleinzelhandel, Fachhandel und Private-Label-Partner. Zwei eigene Marken, eine Produktion,
+      ein Qualitätsanspruch.</p>
+  </div>
+</section>
+
+<!-- 2. Trust-Leiste -->
+<section class="trust">
+  <div class="container row">
+    <img src="assets/katze/siegel-dorfner.jpg" alt="Kontrolliert & zertifiziert — Analysezentrum Dorfner" />
+    <p>Produziert nach <strong>ISO 9001:2015, ISO 14001:2015</strong> und <strong>BRC Global Standard</strong>.
+       Unabhängige Qualitätskontrolle nach DIN EN ISO/IEC 17025 (Analysezentrum Dorfner).
+       Alle Produkte sind reine Naturprodukte.</p>
+  </div>
+</section>
+
+<!-- 3. Markenwelt -->
+<section class="marken">
+  <div class="container">
+    <h2>Unsere Marken</h2>
+    <p style="color:#3c5570; margin:0 0 26px; max-width:680px; line-height:1.65">Zwei Marken, zwei Positionierungen:
+       goodcat für den klassischen Handel, Benticat als Naturmarke. Beide aus eigener Produktion in Deutschland.</p>
+    <div class="marken-grid">
+
+      <div class="marke gc">
+        <div class="kopf"><img src="assets/katze/goodcat-logo.jpg" alt="goodcat — Aus Liebe zur Katze." style="max-width:88%; border-radius:10px" /></div>
+        <div class="body">
+          <h3>goodcat</h3>
+          <p class="slogan">Aus Liebe zur Katze.</p>
+          <p class="text">Klumpende Bentonit-Hygienestreu in Premium- und Standard-Qualitäten:
+             staubarm, klumpend, geruchsbindend. Im Handel und auf goodcat.de.</p>
+          <div class="produkt-row">
+            <img src="assets/katze/goodcat-silver-7l.png" alt="goodcat silver classic 7l" />
+            <img src="assets/katze/goodcat-15l.png" alt="goodcat 15 l" />
+          </div>
+          <div class="produkt-links">
+            <span>golden nature</span><span>organic love</span><span>silver classic</span>
+          </div>
+          <div class="cta"><a href="#">→ Zu den goodcat-Produkten</a></div>
+        </div>
+      </div>
+
+      <div class="marke bc">
+        <div class="kopf"><img src="assets/katze/benticat-logo-gross.png" alt="Benticat — pure nature" /></div>
+        <div class="body">
+          <h3>Benticat</h3>
+          <p class="slogan">Pure Nature</p>
+          <p class="text platzhalter" style="padding:10px 12px">Positionierungstext Benticat: Sortiment, Qualitäten,
+             Gebindegrößen und USPs — Zulieferung Produktdaten ausstehend.</p>
+          <div class="produkt-row">
+            <img src="assets/katze/benticat-produkt.jpg" alt="Benticat Produkt" style="border-radius:8px" />
+          </div>
+          <div class="produkt-links">
+            <span class="platzhalter" style="outline-offset:1px">Sorten folgen</span>
+          </div>
+          <div class="cta"><a href="#">→ Benticat anfragen</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. Was ist Bentonit? -->
+<section class="bentonit">
+  <div class="container grid">
+    <img src="assets/katze/bentonit-abbau.jpg" alt="Bentonit-Abbau" />
+    <div>
+      <h2>Was ist Bentonit?</h2>
+      <p>Bentonit ist eine natürliche Tonerde mit außergewöhnlicher Saugkraft — die Basis
+         klumpender Katzenstreu. <span class="platzhalter" style="padding:6px 10px; display:inline-block">Ausführlicher
+         Text von der Alt-Site-Seite „Was ist Bentonit?" übernehmen (im Scrape vorhanden) — Herkunft,
+         Abbau, Eigenschaften, Nachhaltigkeit.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Private Label -->
+<section class="pl">
+  <div class="container">
+    <div class="box">
+      <div>
+        <h2>Private Label</h2>
+        <p>Wir produzieren Bentonit-Katzenstreu auch als Private Label für Handelsmarken:
+           Premium-Qualitäten in flexiblen Gebindegrößen, eigene Rezepturen, kurze Wege ab Werk.
+           Sprechen Sie uns an.</p>
+        <a class="btn" href="#">Private-Label-Anfrage senden</a>
+      </div>
+      <img src="assets/katze/goodcat-emotional.jpg" alt="" />
+    </div>
+  </div>
+</section>
+
+<!-- 6. Messe-Präsenz -->
+<section class="messe">
+  <div class="container grid">
+    <div>
+      <h2>Treffen Sie uns</h2>
+      <p>KORODUR Katzenstreu auf den führenden Branchenmessen: <strong>Interzoo Nürnberg</strong> und
+         <strong>PLMA Amsterdam</strong>. <span class="platzhalter" style="padding:6px 10px; display:inline-block">Kommende
+         Termine bzw. Rückblick-Formulierung — siehe Diskussionspunkt 4.</span></p>
+    </div>
+    <img src="assets/katze/interzoo-messewand.jpg" alt="goodcat-Messestand Interzoo" />
+  </div>
+</section>
+
+<!-- Diskussion -->
+<div class="footer-notes">
+  <div class="container">
+    <h2>Diskussionspunkte</h2>
+    <ol>
+      <li><strong>Farbwelt:</strong> Das Mockup nutzt die Katzenstreu-CD-Farbe <code>#1E3A5F</code> (CD Rules) für Hero/Private-Label statt KORODUR-Navy — die Abgrenzung zum Rest der Site wird damit sichtbar, bleibt aber seriös. Die früher angedachten „Grün-Highlights Richtung Heidelberg-Materials-Grün" wären eine dritte Richtung — Entscheidung nötig: #1E3A5F (CD Rules), Grün, oder neutral wie bisher?</li>
+      <li><strong>Claim-Platzierung:</strong> „HAPPY PETS – HAPPY PEOPLE" prominent im Hero — passt das, oder eher dezenter (z. B. nur im Markenblock)?</li>
+      <li><strong>Benticat-Inhalte:</strong> Für den Markenblock fehlen Sortiment, Qualitäten, Gebinde, USPs und bessere Produktfotos (aktuell nur ein Amazon-Bild). Zulieferung nötig — bis dahin Marken-Teaser mit Anfrage-CTA. Gibt es eine benticat.de/Domain?</li>
+      <li><strong>Messe-Block:</strong> Interzoo 2026 war im Mai (Fotos liegen vor). Rückblick zeigen, kommende Termine pflegen (PLMA?) — oder Block weglassen, bis ein Termin ansteht?</li>
+      <li><strong>Struktur:</strong> Eine ausgebaute Bereichsseite (wie hier) oder eigene Unterseiten je Marke (/katzenstreu/goodcat, /katzenstreu/benticat)? Empfehlung: eine Seite, solange Benticat-Inhalte schlank sind.</li>
+      <li><strong>Icons:</strong> Messe/Icons-Katze.pdf enthält USP-Icons (staubarm, klumpend, geruchsbindend …) — für die Produktkarten nutzbar, wenn als SVG/PNG exportierbar.</li>
+      <li><strong>Kein KORODUR-Logo</strong> im Bereich (CD Rules) — aktuell zeigt die Site Header/Footer global. Vorschlag: Header bleibt (Navigation), aber der Bereich verzichtet auf zusätzliche KORODUR-Markierung im Inhalt.</li>
+    </ol>
+  </div>
+</div>
+
+</body>
+</html>
