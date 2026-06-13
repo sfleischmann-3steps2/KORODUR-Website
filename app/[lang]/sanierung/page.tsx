@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { AppIcon } from "@/components/ui/icon";
 import { ArrowRight, Building2, Compass, Grid3x3, Layers, Route, Droplets } from "lucide-react";
 import { alternatesFor } from "../../../lib/seo";
+import { referenzen } from "../../../data/referenzen";
+import { localizeReferenzen } from "../../../data/i18n/getLocalized";
+import ReferenceCard from "../../../components/ReferenceCard";
 
 type Params = Promise<{ lang: string }>;
 
@@ -23,6 +26,12 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
+
+  // Sanierungs-Referenzen (analog Neubau-Seite, #86).
+  const sanierungRefs = await localizeReferenzen(
+    referenzen.filter((r) => r.projekttyp !== "neubau").slice(0, 6),
+    lang
+  );
 
   const cards = [
     {
@@ -167,6 +176,50 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
               {dict.sanierungHub.cta}
             </Link>
           </div>
+        </div>
+      </section>
+
+      {sanierungRefs.length > 0 && (
+        <section className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="text-center mb-10" style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 900 }}>
+              {dict.sanierungHub.referenzen_title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {sanierungRefs.map((ref) => (
+                <ReferenceCard key={ref.id} referenz={ref} lang={lang} />
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link
+                href={`/${lang}/referenzen/?projektart=sanierung`}
+                className="inline-flex items-center gap-2 text-cyan-text text-[15px] no-underline hover:underline"
+                style={{ fontWeight: 700 }}
+              >
+                {dict.home.featured_link}
+                <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Kontakt-CTA — Sanierungs-Beratung (#86) */}
+      <section className="bg-navy text-white text-center" style={{ padding: "64px 32px" }}>
+        <div className="mx-auto" style={{ maxWidth: 700 }}>
+          <h2 className="text-white mb-4" style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 900 }}>
+            {dict.home.cta_title}
+          </h2>
+          <p className="text-white/70 mb-8" style={{ fontSize: 18, lineHeight: 1.65 }}>
+            {dict.home.cta_description}
+          </p>
+          <Link
+            href={`/${lang}/kontakt/`}
+            className="inline-block text-white no-underline rounded-[6px] border-2 border-white/40 hover:bg-white/10 transition-colors duration-200"
+            style={{ padding: "16px 34px", fontWeight: 800, fontSize: 16, minHeight: 44 }}
+          >
+            {dict.nav.kontakt}
+          </Link>
         </div>
       </section>
     </>
