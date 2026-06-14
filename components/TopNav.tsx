@@ -132,6 +132,17 @@ export default function TopNav({ lang, dict }: TopNavProps) {
     },
   };
 
+  // Sanierungs-Content (Fachartikel #130) in die Nav heben — nur DE, da die
+  // Artikel aktuell nur auf Deutsch existieren (sonst 404).
+  if (lang === "de") {
+    menus.sanierung.items.push({
+      label: "Schadensbilder & Ratgeber",
+      href: `/${lang}/schadensbilder/`,
+      sub: "Schaden erkennen, Sperrzeit, Wirtschaftlichkeit, FAQ",
+    });
+    menus.sanierung.footer = [{ label: "Alle Schadensbilder", href: `/${lang}/schadensbilder/` }];
+  }
+
   const navItems: { key: string; href: string; label: string; menu: boolean }[] = [
     { key: "bereiche", href: `/${lang}/bereiche/`, label: dict.nav.bereiche, menu: true },
     { key: "neubau", href: `/${lang}/neubau/`, label: dict.nav.neubau, menu: true },
