@@ -1,5 +1,6 @@
 // GENERIERT von scripts/generate-produkt-dokumente.mjs — NICHT von Hand editieren.
-// Quelle: KORODUR-website/05_wp-content-archiv (Service-Seiten-Stand Okt/Nov 2025).
+// Quellen: KORODUR-website/05_wp-content-archiv (Service-Seiten-Stand Okt/Nov 2025)
+//   + data/dokument-funde-2026-06.json (verifizierte Funde WP-Export 2026-06-11, #121).
 // Regenerieren: node scripts/generate-produkt-dokumente.mjs
 
 export type DokumentTyp = "tds" | "sds" | "dop" | "anwendung" | "reinigung" | "service";
@@ -8,7 +9,7 @@ export interface ProduktDokument {
   typ: DokumentTyp;
   titel: string;
   url: string; // relativ unter public/, ohne basePath
-  sprache: "de" | "en" | "fr";
+  sprache: "de" | "en" | "fr" | "pl";
 }
 
 export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
@@ -30,6 +31,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "GRANIDUR 05 08",
       "url": "/downloads/tds/GRANIDUR_05_08_en.pdf",
       "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "Granidur",
+      "url": "/downloads/tds/Granidur_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "Granidur rapid",
+      "url": "/downloads/tds/Granidur_rapid_pl.pdf",
+      "sprache": "pl"
     },
     {
       "typ": "sds",
@@ -54,6 +67,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "GRANIDUR 08",
       "url": "/downloads/dop/13813_5.5_GRANIDUR_08_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "GRANIDUR 03",
+      "url": "/downloads/dop/13813_5.3_GRANIDUR_03_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "GRANIDUR 03",
+      "url": "/downloads/dop/13813_5.3_GRANIDUR_03_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -94,6 +119,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "Granidur Bianco Nero",
+      "url": "/downloads/tds/Granidur_Bianco_Nero_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Designboeden",
       "url": "/downloads/sds/KORODUR_Designboeden_SDB_de.pdf",
@@ -110,6 +141,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "GRANIDUR NERO",
       "url": "/downloads/dop/13813_5.7_GRANIDUR_NERO_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "GRANIDUR NERO",
+      "url": "/downloads/dop/13813_5.7_GRANIDUR_NERO_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "GRANIDUR NERO",
+      "url": "/downloads/dop/13813_5.7_GRANIDUR_NERO_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -138,6 +181,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "tds",
+      "titel": "KORODUR COPETTI FLOOR KCF",
+      "url": "/downloads/tds/KORODUR_COPETTI_FLOOR_KCF_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "KORODUR COPETTI FLOOR KCF",
+      "url": "/downloads/tds/KORODUR_COPETTI_FLOOR_KCF_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Designboeden",
       "url": "/downloads/sds/KORODUR_Designboeden_SDB_de.pdf",
@@ -154,6 +209,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Copetti Floor KCF 08",
       "url": "/downloads/dop/13813_5.2_Copetti_Floor_KCF_08_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "Copetti Floor KCF 05",
+      "url": "/downloads/dop/13813_5.1_Copetti_Floor_KCF_05_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "Copetti Floor KCF 05",
+      "url": "/downloads/dop/13813_5.1_Copetti_Floor_KCF_05_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -194,10 +261,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "TRU Self Leveling",
+      "url": "/downloads/tds/TRU-Self-Leveling_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "TRU Self Leveling",
+      "url": "/downloads/tds/TRU_Self_Leveling_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR LevelFlor TRU",
       "url": "/downloads/sds/KORODUR_LevelFlor_TRU_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "TRU Self Leveling",
+      "url": "/downloads/sds/TRU_Self-Leveling_SDB_en.pdf",
+      "sprache": "en"
     },
     {
       "typ": "anwendung",
@@ -248,6 +333,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR TRU PC",
       "url": "/downloads/sds/KORODUR_TRU_PC_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "TRU PC",
+      "url": "/downloads/sds/TRU_PC_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "TRU PC",
+      "url": "/downloads/sds/TRU_PC_SDB_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -326,10 +423,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "Asphalt Repair Mix",
+      "url": "/downloads/tds/Asphalt_Repair_Mix_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Asphalt Repair Mix",
       "url": "/downloads/sds/KORODUR_Asphalt_Repair_Mix_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR Asphalt Repair Mix",
+      "url": "/downloads/sds/KORODUR_Asphalt_Repair_Mix_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "DOP Asphalt Repair Mix",
+      "url": "/downloads/dop/DOP_Asphalt_Repair_Mix_en.pdf",
+      "sprache": "en"
     }
   ],
   "rapid-set-cement-all": [
@@ -364,6 +479,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "Cement All",
+      "url": "/downloads/tds/Cement_All_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Cement All plus",
       "url": "/downloads/sds/KORODUR_Cement_All_plus_SDB_de.pdf",
@@ -376,6 +497,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "dop",
       "titel": "Rapid Set CEMENT ALL",
       "url": "/downloads/dop/1001_1_998-1_Rapid_Set_CEMENT_ALL_de.pdf",
@@ -386,6 +519,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set CEMENT ALL",
       "url": "/downloads/dop/1001_1_13813_Rapid_Set_CEMENT_ALL_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "Rapid Set CEMENT ALL",
+      "url": "/downloads/dop/1001_1_998-1_Rapid_Set_CEMENT_ALL_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "Rapid Set CEMENT ALL",
+      "url": "/downloads/dop/1001_1_998-1_Rapid_Set_CEMENT_ALL_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -420,16 +565,46 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "Concrete Mix",
+      "url": "/downloads/tds/Concrete_Mix_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Rapid Set",
       "url": "/downloads/sds/KORODUR_Rapid_Set_SDB_de.pdf",
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "dop",
       "titel": "Rapid Set CONCRETE MIX",
       "url": "/downloads/dop/1001_3_13813_Rapid_Set_CONCRETE_MIX_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "DOP DOT Concrete Mix en",
+      "url": "/downloads/dop/DOP-DOT-Concrete-Mix-en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "Rapid Set CONCRETE MIX",
+      "url": "/downloads/dop/1001_3_13813_Rapid_Set_CONCRETE_MIX_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -462,6 +637,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Concrete Pharmacy fr 1",
       "url": "/downloads/tds/Concrete_Pharmacy_fr-1.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "Concrete Pharmacy",
+      "url": "/downloads/tds/Concrete_Pharmacy_pl.pdf",
+      "sprache": "pl"
     },
     {
       "typ": "sds",
@@ -538,6 +719,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Durop",
       "url": "/downloads/sds/KORODUR_Durop_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "DUROP",
+      "url": "/downloads/sds/DUROP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR Durop",
+      "url": "/downloads/sds/KORODUR_Durop_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "koroclean": [
@@ -578,6 +771,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KOROCRETE Schnellbeton",
       "url": "/downloads/tds/KOROCRETE_Schnellbeton_en.pdf",
       "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "System KOROCRETE Schnellbeton",
+      "url": "/downloads/tds/System_KOROCRETE_Schnellbeton_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "KOROCRETE Schnellbeton",
+      "url": "/downloads/tds/KOROCRETE_Schnellbeton_pl.pdf",
+      "sprache": "pl"
     }
   ],
   "korocure": [
@@ -600,10 +805,22 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "KOROCURE",
+      "url": "/downloads/tds/KOROCURE_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Korocure",
       "url": "/downloads/sds/KORODUR_Korocure_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROCURE",
+      "url": "/downloads/sds/KOROCURE_SDB_en.pdf",
+      "sprache": "en"
     }
   ],
   "korodur-0-4": [
@@ -756,10 +973,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "KORODUR HB 5",
+      "url": "/downloads/tds/KORODUR_HB_5_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR HB 5",
       "url": "/downloads/sds/KORODUR_HB_5_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR HB 5",
+      "url": "/downloads/sds/KORODUR_HB_5_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR HB 5",
+      "url": "/downloads/sds/KORODUR_HB_5_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-hb-5-rapid": [
@@ -828,10 +1063,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "KORODUR PC",
+      "url": "/downloads/tds/KORODUR_PC_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR PC",
       "url": "/downloads/sds/KORODUR_PC_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR PC",
+      "url": "/downloads/sds/KORODUR_PC_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR PC",
+      "url": "/downloads/sds/KORODUR_PC_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-robust": [
@@ -876,6 +1129,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "KORODUR TXPK",
+      "url": "/downloads/tds/KORODUR_TXPK_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR TXPK Komponente A",
       "url": "/downloads/sds/KORODUR_TXPK_Komponente_A_SDB_de.pdf",
@@ -886,6 +1145,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR TXPK Komponente B",
       "url": "/downloads/sds/KORODUR_TXPK_Komponente_B_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR TXPK component B",
+      "url": "/downloads/sds/KORODUR_TXPK_component_B_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR TXPK comp B",
+      "url": "/downloads/sds/KORODUR_TXPK_comp_B_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-uniprimer": [
@@ -922,6 +1193,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "KORODUR VS 05",
+      "url": "/downloads/tds/KORODUR_VS_05_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Hartstoffe",
       "url": "/downloads/sds/KORODUR_Hartstoffe_SDB_de.pdf",
@@ -946,6 +1223,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR WH metallisch",
       "url": "/downloads/tds/KORODUR_WH_metallisch_fr.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "KORODUR WH metallisch",
+      "url": "/downloads/tds/KORODUR_WH_metallisch_pl.pdf",
+      "sprache": "pl"
     },
     {
       "typ": "sds",
@@ -998,6 +1281,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KOROMINERAL CURE fr 1",
       "url": "/downloads/tds/KOROMINERAL_CURE_fr-1.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROMINERAL Cure",
+      "url": "/downloads/sds/KOROMINERAL_Cure_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROMINERAL Cure",
+      "url": "/downloads/sds/KOROMINERAL_Cure_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "koromineral": [
@@ -1020,10 +1315,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "KOROMINERAL",
+      "url": "/downloads/tds/KOROMINERAL_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR KOROMINERAL",
       "url": "/downloads/sds/KORODUR_KOROMINERAL_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROMINERAL",
+      "url": "/downloads/sds/KOROMINERAL_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROMINERAL",
+      "url": "/downloads/sds/KOROMINERAL_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "koromineral-li": [
@@ -1046,10 +1359,22 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "KOROMINERAL Li",
+      "url": "/downloads/tds/KOROMINERAL_Li_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR KOROMINERAL Li",
       "url": "/downloads/sds/KORODUR_KOROMINERAL_Li_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROMINERAL Li",
+      "url": "/downloads/sds/KOROMINERAL_Li_SDB_en.pdf",
+      "sprache": "en"
     }
   ],
   "koropox": [
@@ -1066,6 +1391,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "tds",
+      "titel": "KOROPOX",
+      "url": "/downloads/tds/KOROPOX_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR KOROPOX Komponente A",
       "url": "/downloads/sds/KORODUR_KOROPOX_Komponente_A_SDB_de.pdf",
@@ -1076,6 +1407,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR KOROPOX Komponente B",
       "url": "/downloads/sds/KORODUR_KOROPOX_Komponente_B_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Koropox component B",
+      "url": "/downloads/sds/Koropox_component_B_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Koropox comp B",
+      "url": "/downloads/sds/Koropox_comp_B_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korotan": [
@@ -1084,6 +1427,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR KOROTAN",
       "url": "/downloads/tds/KORODUR_KOROTAN_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "KOROTAN",
+      "url": "/downloads/tds/KOROTAN_en.pdf",
+      "sprache": "en"
     },
     {
       "typ": "tds",
@@ -1096,6 +1445,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Korotan",
       "url": "/downloads/sds/KORODUR_Korotan_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROTAN",
+      "url": "/downloads/sds/KOROTAN_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROTAN",
+      "url": "/downloads/sds/KOROTAN_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "system-korodur-korotan": [
@@ -1136,6 +1497,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR KOROTEX",
       "url": "/downloads/sds/KORODUR_KOROTEX_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROTEX",
+      "url": "/downloads/sds/KOROTEX_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROTEX",
+      "url": "/downloads/sds/KOROTEX_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "rapid-set-levelflor": [
@@ -1152,10 +1525,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "tds",
+      "titel": "LevelFlor",
+      "url": "/downloads/tds/LevelFlor_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR LevelFlor TRU",
       "url": "/downloads/sds/KORODUR_LevelFlor_TRU_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Levelflor",
+      "url": "/downloads/sds/Levelflor_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "TRU LevelFlor",
+      "url": "/downloads/sds/TRU_LevelFlor_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-02": [
@@ -1178,10 +1569,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW 02",
+      "url": "/downloads/tds/MICROTOP_TW_02_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP",
       "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-3": [
@@ -1198,10 +1607,34 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW 3",
+      "url": "/downloads/tds/MICROTOP_TW_3_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "MICROTOP TW 3",
+      "url": "/downloads/tds/MICROTOP_TW_3_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP",
       "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-5": [
@@ -1218,10 +1651,34 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW 5",
+      "url": "/downloads/tds/MICROTOP_TW_5_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "MICROTOP TW 5",
+      "url": "/downloads/tds/MICROTOP_TW_5_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP",
       "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-8": [
@@ -1238,10 +1695,34 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW 8",
+      "url": "/downloads/tds/MICROTOP_TW_8_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "MICROTOP TW 8",
+      "url": "/downloads/tds/MICROTOP_TW_8_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP",
       "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-bm": [
@@ -1264,10 +1745,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW BM",
+      "url": "/downloads/tds/MICROTOP_TW_BM_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP TW BM",
       "url": "/downloads/sds/KORODUR_MICROTOP_TW_BM_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-mineral": [
@@ -1290,10 +1789,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW Mineral",
+      "url": "/downloads/tds/MICROTOP_TW_Mineral_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP TW Mineral",
       "url": "/downloads/sds/KORODUR_MICROTOP_TW_Mineral_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-nsd": [
@@ -1304,10 +1821,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW NSD",
+      "url": "/downloads/tds/MICROTOP_TW_NSD_en.pdf",
+      "sprache": "en"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP",
       "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-nsm": [
@@ -1330,10 +1865,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW NSM",
+      "url": "/downloads/tds/MICROTOP_TW_NSM_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP",
       "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "microtop-tw-vsm": [
@@ -1350,10 +1903,28 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "tds",
+      "titel": "MICROTOP TW VSM",
+      "url": "/downloads/tds/MICROTOP_TW_VSM_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR MICROTOP",
       "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "rapid-set-mortar-mix": [
@@ -1382,6 +1953,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "dop",
       "titel": "Rapid Set MORTAR MIX",
       "url": "/downloads/dop/1001_2_998-1_Rapid_Set_MORTAR_MIX_de.pdf",
@@ -1392,6 +1975,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set MORTAR MIX",
       "url": "/downloads/dop/1001_2_13813_Rapid_Set_MORTAR_MIX_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "DOP Mortar Mix SVS 5",
+      "url": "/downloads/dop/DOP_Mortar_Mix_SVS_5_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "Rapid Set MORTAR MIX",
+      "url": "/downloads/dop/1001_2_998-1_Rapid_Set_MORTAR_MIX_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -1438,6 +2033,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "anwendung",
       "titel": "Rapid Set Reparaturmoertel",
       "url": "/downloads/anwendung/8.-Rapid-Set-Reparaturmoertel.pdf",
@@ -1464,6 +2071,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "NEODUR AM Super AM Plus",
       "url": "/downloads/tds/NEODUR_AM_Super_AM_Plus_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR AM Super AM Plus",
+      "url": "/downloads/tds/NEODUR_AM_Super_AM_Plus_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR AM super AM Plus",
+      "url": "/downloads/tds/NEODUR_AM_super_AM_Plus_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "neodur-he-2": [
@@ -1486,10 +2105,22 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "NEODUR HE 2",
+      "url": "/downloads/tds/NEODUR_HE_2_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Industrieboden Trockenmoertel",
       "url": "/downloads/sds/KORODUR_Industrieboden_Trockenmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR Neodur HE 2",
+      "url": "/downloads/sds/KORODUR_Neodur_HE_2_SDB_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "dop",
@@ -1502,6 +2133,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "NEODUR HE 2 metallisch",
       "url": "/downloads/dop/13813_2.12_NEODUR_HE_2_metallisch_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 2",
+      "url": "/downloads/dop/13813_2.11_NEODUR_HE_2_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 2",
+      "url": "/downloads/dop/13813_2.11_NEODUR_HE_2_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -1560,10 +2203,22 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "NEODUR HE 3",
+      "url": "/downloads/tds/NEODUR_HE_3_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "NEODUR HE 3",
       "url": "/downloads/sds/NEODUR_HE_3_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR Neodur HE 3",
+      "url": "/downloads/sds/KORODUR_Neodur_HE_3_SDB_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "dop",
@@ -1594,6 +2249,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "NEODUR HE 3 SVS 3",
       "url": "/downloads/dop/13813_2.7_NEODUR_HE_3_SVS_3_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 3",
+      "url": "/downloads/dop/13813_2.6_NEODUR_HE_3_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 3",
+      "url": "/downloads/dop/13813_2.6_NEODUR_HE_3_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -1634,6 +2301,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "dop",
+      "titel": "DOP NEODUR HE 3 green en",
+      "url": "/downloads/dop/2.3-DOP-NEODUR-HE-3-green-en.pdf",
+      "sprache": "en"
+    },
+    {
       "typ": "anwendung",
       "titel": "Hartstoffeinstreuung 1",
       "url": "/downloads/anwendung/3.-Hartstoffeinstreuung-1.pdf",
@@ -1666,6 +2339,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "NEODUR HE 40",
+      "url": "/downloads/tds/NEODUR_HE_40_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR Industrieboden Trockenmoertel",
       "url": "/downloads/sds/KORODUR_Industrieboden_Trockenmoertel_SDB_de.pdf",
@@ -1682,6 +2361,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "NEODUR HE 40 SVS 5",
       "url": "/downloads/dop/13813_2.15_NEODUR_HE_40_SVS_5_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 40 SVS 5",
+      "url": "/downloads/dop/13813_2.15_NEODUR_HE_40_SVS_5_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 40 SVS 5",
+      "url": "/downloads/dop/13813_2.15_NEODUR_HE_40_SVS_5_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -1758,6 +2449,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "dop",
+      "titel": "NEODUR HE 60 rapid SVS 5",
+      "url": "/downloads/dop/13813_3.1_NEODUR_HE_60_rapid_SVS_5_en.pdf",
+      "sprache": "en"
+    },
+    {
       "typ": "reinigung",
       "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke",
       "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf",
@@ -1802,6 +2499,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "NEODUR HE 65",
+      "url": "/downloads/tds/NEODUR_HE_65_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "NEODUR HE 65",
       "url": "/downloads/sds/NEODUR_HE_65_SDB_de.pdf",
@@ -1838,6 +2541,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "dop",
+      "titel": "NEODUR HE 65",
+      "url": "/downloads/dop/13813_2.1_NEODUR_HE_65_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 65",
+      "url": "/downloads/dop/13813_2.1_NEODUR_HE_65_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "anwendung",
       "titel": "HE 65 metallisch auf erhaerteten Tragbeton 1",
       "url": "/downloads/anwendung/6.-HE-65-metallisch-auf-erhaerteten-Tragbeton-1.pdf",
@@ -1868,6 +2583,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "NEODUR HE 65 Plus",
       "url": "/downloads/tds/NEODUR_HE_65_Plus_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 65 plus",
+      "url": "/downloads/tds/NEODUR_HE_65_plus_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 65 plus",
+      "url": "/downloads/tds/NEODUR_HE_65_plus_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "sds",
@@ -1914,6 +2641,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "NEODUR Level AU",
+      "url": "/downloads/tds/NEODUR_Level_AU_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR NEODUR Level AU",
       "url": "/downloads/sds/KORODUR_NEODUR_Level_AU_SDB_de.pdf",
@@ -1940,16 +2673,40 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     },
     {
+      "typ": "tds",
+      "titel": "NEODUR Level",
+      "url": "/downloads/tds/NEODUR_Level_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "NEODUR level",
       "url": "/downloads/sds/NEODUR_level_SDB_de.pdf",
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Neodur Level",
+      "url": "/downloads/sds/Neodur_Level_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
       "typ": "dop",
       "titel": "NEODUR Level",
       "url": "/downloads/dop/13813_4.1_NEODUR_Level_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR Level",
+      "url": "/downloads/dop/13813_4.1_NEODUR_Level_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR Level",
+      "url": "/downloads/dop/13813_4.1_NEODUR_Level_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "anwendung",
@@ -1976,6 +2733,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "NEODUR MSM 3 5 MSB 8",
       "url": "/downloads/tds/NEODUR_MSM_3_5_MSB_8_fr.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR MSM 3 5 MSB 8",
+      "url": "/downloads/tds/NEODUR_MSM_3_5_MSB_8_pl.pdf",
+      "sprache": "pl"
     }
   ],
   "neodur-msm-5": [
@@ -1996,6 +2759,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "NEODUR MSM 3 5 MSB 8",
       "url": "/downloads/tds/NEODUR_MSM_3_5_MSB_8_fr.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR MSM 3 5 MSB 8",
+      "url": "/downloads/tds/NEODUR_MSM_3_5_MSB_8_pl.pdf",
+      "sprache": "pl"
     }
   ],
   "neodur-msb-8": [
@@ -2016,6 +2785,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "NEODUR MSM 3 5 MSB 8",
       "url": "/downloads/tds/NEODUR_MSM_3_5_MSB_8_fr.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR MSM 3 5 MSB 8",
+      "url": "/downloads/tds/NEODUR_MSM_3_5_MSB_8_pl.pdf",
+      "sprache": "pl"
     }
   ],
   "neodur-pfm-1k-easyfix": [
@@ -2052,6 +2827,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "tds",
+      "titel": "NEODUR PFM ZE",
+      "url": "/downloads/tds/NEODUR_PFM-ZE_pl.pdf",
+      "sprache": "pl"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR NEODUR Pflasterfugenmoertel",
       "url": "/downloads/sds/KORODUR_NEODUR_Pflasterfugenmoertel_SDB_de.pdf",
@@ -2068,6 +2849,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     {
       "typ": "tds",
       "titel": "NEODUR VM 1 3 8",
+      "url": "/downloads/tds/NEODUR_VM_1-3-8_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR VM 1 3 8",
       "url": "/downloads/tds/NEODUR_VM_1_3_8_fr.pdf",
       "sprache": "fr"
     },
@@ -2076,6 +2863,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR NEODUR Vergussmoertel",
       "url": "/downloads/sds/KORODUR_NEODUR_Vergussmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "NEODUR Grouting mortar concrete",
+      "url": "/downloads/sds/NEODUR_Grouting_mortar_concrete_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "NEODUR mortier de scellement VM VB",
+      "url": "/downloads/sds/NEODUR_mortier_de_scellement_VM_VB_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "neodur-vm-3": [
@@ -2087,6 +2886,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "NEODUR VM 1 3 5",
+      "url": "/downloads/tds/NEODUR_VM_1_3_5_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
       "titel": "NEODUR VM 1 3 8",
       "url": "/downloads/tds/NEODUR_VM_1_3_8_fr.pdf",
       "sprache": "fr"
@@ -2096,6 +2901,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR NEODUR Vergussmoertel",
       "url": "/downloads/sds/KORODUR_NEODUR_Vergussmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "NEODUR Grouting mortar concrete",
+      "url": "/downloads/sds/NEODUR_Grouting_mortar_concrete_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "NEODUR mortier de scellement VM VB",
+      "url": "/downloads/sds/NEODUR_mortier_de_scellement_VM_VB_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "neodur-vb-8": [
@@ -2107,6 +2924,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "NEODUR VB 8",
+      "url": "/downloads/tds/NEODUR_VB_8_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
       "titel": "NEODUR VM 1 3 8",
       "url": "/downloads/tds/NEODUR_VM_1_3_8_fr.pdf",
       "sprache": "fr"
@@ -2116,6 +2939,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR NEODUR Vergussmoertel",
       "url": "/downloads/sds/KORODUR_NEODUR_Vergussmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "NEODUR Grouting mortar concrete",
+      "url": "/downloads/sds/NEODUR_Grouting_mortar_concrete_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "NEODUR mortier de scellement VM VB",
+      "url": "/downloads/sds/NEODUR_mortier_de_scellement_VM_VB_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "neodur-vm-5": [
@@ -2194,6 +3029,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Rapid Set",
       "url": "/downloads/sds/KORODUR_Rapid_Set_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set",
+      "url": "/downloads/sds/Rapid_Set_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "koromineral-lasur": [
@@ -2202,6 +3049,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KOROMINERAL Lasur de",
       "url": "/downloads/tds/KOROMINERAL_Lasur_de_.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "KOROMINERAL Lasure",
+      "url": "/downloads/tds/KOROMINERAL_Lasure_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "sds",
@@ -2218,10 +3071,36 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
   ],
   "neodur-svm-03": [
     {
+      "typ": "tds",
+      "titel": "NEODUR SVM 03 SVM 4",
+      "url": "/downloads/tds/NEODUR_SVM_03_SVM_4_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR SVM 03 SVM 4",
+      "url": "/downloads/tds/NEODUR_SVM_03_SVM_4_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "sds",
       "titel": "KORODUR NEODUR Vergussmoertel",
       "url": "/downloads/sds/KORODUR_NEODUR_Vergussmoertel_SDB_de.pdf",
       "sprache": "de"
+    }
+  ],
+  "neodur-svm-4": [
+    {
+      "typ": "tds",
+      "titel": "NEODUR SVM 03 SVM 4",
+      "url": "/downloads/tds/NEODUR_SVM_03_SVM_4_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR SVM 03 SVM 4",
+      "url": "/downloads/tds/NEODUR_SVM_03_SVM_4_fr.pdf",
+      "sprache": "fr"
     }
   ]
 };

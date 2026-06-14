@@ -19,6 +19,36 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import https from "node:https";
+
+const BROWSER_UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36";
+
+// Lädt ein PDF von korodur.de (braucht Browser-User-Agent, sonst 403) und
+// schreibt es nur, wenn der Body echte PDF-Magic-Bytes hat (kein Soft-404).
+function downloadPdf(url, zielAbs) {
+  return new Promise((resolve, reject) => {
+    fs.mkdirSync(path.dirname(zielAbs), { recursive: true });
+    https
+      .get(url, { headers: { "User-Agent": BROWSER_UA } }, (res) => {
+        if (res.statusCode !== 200) {
+          res.resume();
+          return reject(new Error(`HTTP ${res.statusCode} für ${url}`));
+        }
+        const chunks = [];
+        res.on("data", (c) => chunks.push(c));
+        res.on("end", () => {
+          const buf = Buffer.concat(chunks);
+          if (buf.subarray(0, 5).toString("latin1") !== "%PDF-") {
+            return reject(new Error(`Kein PDF (Soft-404?): ${url}`));
+          }
+          fs.writeFileSync(zielAbs, buf);
+          resolve(buf.length);
+        });
+      })
+      .on("error", reject);
+  });
+}
 
 const ARCHIV = "../KORODUR-website/05_wp-content-archiv";
 const SNAP = path.join(ARCHIV, "provenienz/service-seiten-snapshots");
@@ -308,18 +338,52 @@ for (const [datei, ziel] of Object.entries(ZUSATZ_TDS_QUELLEN)) {
   for (const id of ziel) (produktDokumente[id] ??= []).push(eintrag);
 }
 
+// ---- Overlay: verifizierte Funde aus dem WP-Export 2026-06-11 (#121) --------
+// Quelle: data/dokument-funde-2026-06.json (Notion „Dokument-Funde korodur.de").
+// Im App-Inventar fehlende, curl-verifizierte Produktdokumente (TDS in EN/FR/PL,
+// SDS, DoP). PDFs werden bei Bedarf von korodur.de nach public/downloads/<typ>/
+// geladen (idempotent: vorhandene Dateien werden nicht erneut geholt).
+{
+  const { dokumente: funde } = JSON.parse(
+    fs.readFileSync("data/dokument-funde-2026-06.json", "utf-8")
+  );
+  let geladen = 0;
+  let verknuepft = 0;
+  for (const f of funde) {
+    const datei = path.basename(new URL(f.url).pathname);
+    const zielRel = `/downloads/${f.typ}/${datei}`;
+    const zielAbs = path.join("public", zielRel);
+    if (!fs.existsSync(zielAbs)) {
+      await downloadPdf(f.url, zielAbs);
+      geladen++;
+    }
+    const eintrag = { typ: f.typ, titel: f.titel, url: zielRel, sprache: f.sprache };
+    for (const id of f.produkte) {
+      const liste = (produktDokumente[id] ??= []);
+      if (!liste.some((d) => d.url === zielRel)) {
+        liste.push(eintrag);
+        verknuepft++;
+      }
+    }
+  }
+  console.log(
+    `Overlay (#121): ${geladen} PDFs geladen, ${verknuepft} Verknüpfungen aus ${funde.length} Funden.`
+  );
+}
+
 // ---- Ausgabe -----------------------------------------------------------------
 for (const id of Object.keys(produktDokumente)) {
   // sortiert: tds, sds, dop, anwendung, reinigung; innerhalb: de, en, fr
   const ordnung = { tds: 0, sds: 1, dop: 2, anwendung: 3, reinigung: 4, service: 5 };
-  const sprachOrd = { de: 0, en: 1, fr: 2 };
+  const sprachOrd = { de: 0, en: 1, fr: 2, pl: 3 };
   produktDokumente[id].sort(
     (a, b) => ordnung[a.typ] - ordnung[b.typ] || sprachOrd[a.sprache] - sprachOrd[b.sprache] || a.titel.localeCompare(b.titel)
   );
 }
 
 const header = `// GENERIERT von scripts/generate-produkt-dokumente.mjs — NICHT von Hand editieren.
-// Quelle: KORODUR-website/05_wp-content-archiv (Service-Seiten-Stand Okt/Nov 2025).
+// Quellen: KORODUR-website/05_wp-content-archiv (Service-Seiten-Stand Okt/Nov 2025)
+//   + data/dokument-funde-2026-06.json (verifizierte Funde WP-Export 2026-06-11, #121).
 // Regenerieren: node scripts/generate-produkt-dokumente.mjs
 
 export type DokumentTyp = "tds" | "sds" | "dop" | "anwendung" | "reinigung" | "service";
@@ -328,7 +392,7 @@ export interface ProduktDokument {
   typ: DokumentTyp;
   titel: string;
   url: string; // relativ unter public/, ohne basePath
-  sprache: "de" | "en" | "fr";
+  sprache: "de" | "en" | "fr" | "pl";
 }
 `;
 
