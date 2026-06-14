@@ -1,0 +1,1250 @@
+{
+  "_meta": {
+    "quelle": "WordPress-Media-Export korodur.de 2026-06-11 (1.318 PDFs), gematcht + curl-verifiziert (echte PDF-Bytes).",
+    "notion": "https://www.notion.so/37f670e19e1a81bab357f348f3b9c751",
+    "report": "docs/reviews/2026-06-14-dokument-funde-korodur-de.md",
+    "issue": 121,
+    "stand": "2026-06-14",
+    "hinweis": "Verifizierte, im App-Inventar fehlende Produktdokumente. Familien-SDB (MICROTOP/Rapid Set/Vergussmoertel) sind konservativ den Produkten zugeordnet (Technik-Gegenpruefung Frank offen). VM5 bewusst NICHT in der Vergussmoertel-Familie."
+  },
+  "dokumente": [
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/03/DOP_Asphalt_Repair_Mix_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "DOP Asphalt Repair Mix",
+      "produkte": [
+        "asphalt-repair-mix"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_Asphalt_Repair_Mix_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KORODUR Asphalt Repair Mix",
+      "produkte": [
+        "asphalt-repair-mix"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/Asphalt_Repair_Mix_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "Asphalt Repair Mix",
+      "produkte": [
+        "asphalt-repair-mix"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_5.3_GRANIDUR_03_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "GRANIDUR 03",
+      "produkte": [
+        "granidur"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_5.3_GRANIDUR_03_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "GRANIDUR 03",
+      "produkte": [
+        "granidur"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/Granidur_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "Granidur",
+      "produkte": [
+        "granidur"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/Granidur_rapid_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "Granidur rapid",
+      "produkte": [
+        "granidur"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/13813_5.7_GRANIDUR_NERO_de.pdf",
+      "typ": "dop",
+      "sprache": "de",
+      "titel": "GRANIDUR NERO",
+      "produkte": [
+        "granidur-bianco-nero"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_5.7_GRANIDUR_NERO_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "GRANIDUR NERO",
+      "produkte": [
+        "granidur-bianco-nero"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_5.7_GRANIDUR_NERO_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "GRANIDUR NERO",
+      "produkte": [
+        "granidur-bianco-nero"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/Granidur_Bianco_Nero_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "Granidur Bianco Nero",
+      "produkte": [
+        "granidur-bianco-nero"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_5.1_Copetti_Floor_KCF_05_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "Copetti Floor KCF 05",
+      "produkte": [
+        "kcf"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_5.1_Copetti_Floor_KCF_05_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "Copetti Floor KCF 05",
+      "produkte": [
+        "kcf"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2025/07/KORODUR_COPETTI_FLOOR_KCF_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "KORODUR COPETTI FLOOR KCF",
+      "produkte": [
+        "kcf"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_COPETTI_FLOOR_KCF_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "KORODUR COPETTI FLOOR KCF",
+      "produkte": [
+        "kcf"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2025/07/System_KOROCRETE_Schnellbeton_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "System KOROCRETE Schnellbeton",
+      "produkte": [
+        "korocrete"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROCRETE_Schnellbeton_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KOROCRETE Schnellbeton",
+      "produkte": [
+        "korocrete"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROCURE_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KOROCURE",
+      "produkte": [
+        "korocure"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROCURE_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KOROCURE",
+      "produkte": [
+        "korocure"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2025/03/KORODUR_0_4_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "KORODUR 0 4",
+      "produkte": [
+        "korodur-0-4"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/DUROP_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "DUROP",
+      "produkte": [
+        "korodur-durop"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_Durop_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KORODUR Durop",
+      "produkte": [
+        "korodur-durop"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_HB_5_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "KORODUR HB 5",
+      "produkte": [
+        "korodur-hb-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_HB_5_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KORODUR HB 5",
+      "produkte": [
+        "korodur-hb-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_HB_5_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KORODUR HB 5",
+      "produkte": [
+        "korodur-hb-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_HB_5_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KORODUR HB 5",
+      "produkte": [
+        "korodur-hb-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_HB_5_60_rapid_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "KORODUR HB 5 60 rapid",
+      "produkte": [
+        "korodur-hb-5-rapid"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_PC_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KORODUR PC",
+      "produkte": [
+        "korodur-pc"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_PC_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KORODUR PC",
+      "produkte": [
+        "korodur-pc"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_PC_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KORODUR PC",
+      "produkte": [
+        "korodur-pc"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_TXPK_component_B_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KORODUR TXPK component B",
+      "produkte": [
+        "korodur-txpk"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_TXPK_comp_B_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KORODUR TXPK comp B",
+      "produkte": [
+        "korodur-txpk"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_TXPK_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KORODUR TXPK",
+      "produkte": [
+        "korodur-txpk"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_VS_05_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KORODUR VS 05",
+      "produkte": [
+        "korodur-vs-0-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_WH_metallisch_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KORODUR WH metallisch",
+      "produkte": [
+        "korodur-wh-metallisch"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROMINERAL_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KOROMINERAL",
+      "produkte": [
+        "koromineral"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROMINERAL_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KOROMINERAL",
+      "produkte": [
+        "koromineral"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROMINERAL_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KOROMINERAL",
+      "produkte": [
+        "koromineral"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROMINERAL_Cure_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KOROMINERAL Cure",
+      "produkte": [
+        "koromineral-cure"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROMINERAL_Cure_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KOROMINERAL Cure",
+      "produkte": [
+        "koromineral-cure"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROMINERAL_Lasure_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "KOROMINERAL Lasure",
+      "produkte": [
+        "koromineral-lasur"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROMINERAL_Li_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KOROMINERAL Li",
+      "produkte": [
+        "koromineral-li"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROMINERAL_Li_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "KOROMINERAL Li",
+      "produkte": [
+        "koromineral-li"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/Koropox_component_B_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "Koropox component B",
+      "produkte": [
+        "koropox"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/Koropox_comp_B_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "Koropox comp B",
+      "produkte": [
+        "koropox"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROPOX_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "KOROPOX",
+      "produkte": [
+        "koropox"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROTAN_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KOROTAN",
+      "produkte": [
+        "korotan"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROTAN_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KOROTAN",
+      "produkte": [
+        "korotan"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/KOROTAN_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "KOROTAN",
+      "produkte": [
+        "korotan"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/07/KOROTEX_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "KOROTEX",
+      "produkte": [
+        "korotex"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROTEX_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KOROTEX",
+      "produkte": [
+        "korotex"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_MICROTOP_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "KORODUR MICROTOP",
+      "produkte": [
+        "microtop-tw-02",
+        "microtop-tw-3",
+        "microtop-tw-5",
+        "microtop-tw-8",
+        "microtop-tw-nsd",
+        "microtop-tw-nsm",
+        "microtop-tw-vsm"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/MICROTOP_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "MICROTOP",
+      "produkte": [
+        "microtop-tw-02",
+        "microtop-tw-3",
+        "microtop-tw-5",
+        "microtop-tw-8",
+        "microtop-tw-bm",
+        "microtop-tw-mineral",
+        "microtop-tw-nsd",
+        "microtop-tw-nsm",
+        "microtop-tw-vsm"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/MICROTOP_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "MICROTOP",
+      "produkte": [
+        "microtop-tw-02",
+        "microtop-tw-3",
+        "microtop-tw-5",
+        "microtop-tw-8",
+        "microtop-tw-bm",
+        "microtop-tw-mineral",
+        "microtop-tw-nsd",
+        "microtop-tw-nsm",
+        "microtop-tw-vsm"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_02_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "MICROTOP TW 02",
+      "produkte": [
+        "microtop-tw-02"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_3_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "MICROTOP TW 3",
+      "produkte": [
+        "microtop-tw-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_3_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "MICROTOP TW 3",
+      "produkte": [
+        "microtop-tw-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_5_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "MICROTOP TW 5",
+      "produkte": [
+        "microtop-tw-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_5_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "MICROTOP TW 5",
+      "produkte": [
+        "microtop-tw-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_8_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "MICROTOP TW 8",
+      "produkte": [
+        "microtop-tw-8"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_8_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "MICROTOP TW 8",
+      "produkte": [
+        "microtop-tw-8"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_BM_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "MICROTOP TW BM",
+      "produkte": [
+        "microtop-tw-bm"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_Mineral_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "MICROTOP TW Mineral",
+      "produkte": [
+        "microtop-tw-mineral"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_NSD_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "MICROTOP TW NSD",
+      "produkte": [
+        "microtop-tw-nsd"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_NSM_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "MICROTOP TW NSM",
+      "produkte": [
+        "microtop-tw-nsm"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_TW_VSM_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "MICROTOP TW VSM",
+      "produkte": [
+        "microtop-tw-vsm"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_AM_Super_AM_Plus_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "NEODUR AM Super AM Plus",
+      "produkte": [
+        "neodur-am-plus"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/NEODUR_AM_super_AM_Plus_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "NEODUR AM super AM Plus",
+      "produkte": [
+        "neodur-am-plus"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/13813_2.11_NEODUR_HE_2_de.pdf",
+      "typ": "dop",
+      "sprache": "de",
+      "titel": "NEODUR HE 2",
+      "produkte": [
+        "neodur-he-2"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.11_NEODUR_HE_2_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "NEODUR HE 2",
+      "produkte": [
+        "neodur-he-2"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.11_NEODUR_HE_2_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "NEODUR HE 2",
+      "produkte": [
+        "neodur-he-2"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_Neodur_HE_2_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KORODUR Neodur HE 2",
+      "produkte": [
+        "neodur-he-2"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_2_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "NEODUR HE 2",
+      "produkte": [
+        "neodur-he-2"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/13813_2.6_NEODUR_HE_3_de.pdf",
+      "typ": "dop",
+      "sprache": "de",
+      "titel": "NEODUR HE 3",
+      "produkte": [
+        "neodur-he-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.6_NEODUR_HE_3_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "NEODUR HE 3",
+      "produkte": [
+        "neodur-he-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.6_NEODUR_HE_3_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "NEODUR HE 3",
+      "produkte": [
+        "neodur-he-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_HE_3_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "NEODUR HE 3",
+      "produkte": [
+        "neodur-he-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/08/KORODUR_Neodur_HE_3_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "KORODUR Neodur HE 3",
+      "produkte": [
+        "neodur-he-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_3_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "NEODUR HE 3",
+      "produkte": [
+        "neodur-he-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/07/2.3-DOP-NEODUR-HE-3-green-en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "DOP NEODUR HE 3 green en",
+      "produkte": [
+        "neodur-he-3-green"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_HE_3_green_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "NEODUR HE 3 green",
+      "produkte": [
+        "neodur-he-3-green"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/13813_2.15_NEODUR_HE_40_SVS_5_de.pdf",
+      "typ": "dop",
+      "sprache": "de",
+      "titel": "NEODUR HE 40 SVS 5",
+      "produkte": [
+        "neodur-he-40"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.15_NEODUR_HE_40_SVS_5_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "NEODUR HE 40 SVS 5",
+      "produkte": [
+        "neodur-he-40"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.15_NEODUR_HE_40_SVS_5_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "NEODUR HE 40 SVS 5",
+      "produkte": [
+        "neodur-he-40"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_40_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "NEODUR HE 40",
+      "produkte": [
+        "neodur-he-40"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/13813_3.1_NEODUR_HE_60_rapid_SVS_5_de.pdf",
+      "typ": "dop",
+      "sprache": "de",
+      "titel": "NEODUR HE 60 rapid SVS 5",
+      "produkte": [
+        "neodur-he-60-rapid"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_3.1_NEODUR_HE_60_rapid_SVS_5_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "NEODUR HE 60 rapid SVS 5",
+      "produkte": [
+        "neodur-he-60-rapid"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_HE_60_rapid_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "NEODUR HE 60 rapid",
+      "produkte": [
+        "neodur-he-60-rapid"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/13813_2.1_NEODUR_HE_65_de.pdf",
+      "typ": "dop",
+      "sprache": "de",
+      "titel": "NEODUR HE 65",
+      "produkte": [
+        "neodur-he-65"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.1_NEODUR_HE_65_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "NEODUR HE 65",
+      "produkte": [
+        "neodur-he-65"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.1_NEODUR_HE_65_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "NEODUR HE 65",
+      "produkte": [
+        "neodur-he-65"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_HE_65_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "NEODUR HE 65",
+      "produkte": [
+        "neodur-he-65"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_65_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "NEODUR HE 65",
+      "produkte": [
+        "neodur-he-65"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_HE_65_plus_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "NEODUR HE 65 plus",
+      "produkte": [
+        "neodur-he-65-plus"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_HE_65_plus_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "NEODUR HE 65 plus",
+      "produkte": [
+        "neodur-he-65-plus"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_65_plus_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "NEODUR HE 65 plus",
+      "produkte": [
+        "neodur-he-65-plus"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_4.1_NEODUR_Level_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "NEODUR Level",
+      "produkte": [
+        "neodur-level"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_4.1_NEODUR_Level_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "NEODUR Level",
+      "produkte": [
+        "neodur-level"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/Neodur_Level_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "Neodur Level",
+      "produkte": [
+        "neodur-level"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_Level_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "NEODUR Level",
+      "produkte": [
+        "neodur-level"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_Level_AU_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "NEODUR Level AU",
+      "produkte": [
+        "neodur-level-au"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_MSM_3_5_MSB_8_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "NEODUR MSM 3 5 MSB 8",
+      "produkte": [
+        "neodur-msb-8",
+        "neodur-msm-3",
+        "neodur-msm-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_PFM-ZE_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "NEODUR PFM ZE",
+      "produkte": [
+        "neodur-pfm-ze"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_SVM_03_SVM_4_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "NEODUR SVM 03 SVM 4",
+      "produkte": [
+        "neodur-svm-03",
+        "neodur-svm-4"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2025/07/NEODUR_SVM_03_SVM_4_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "NEODUR SVM 03 SVM 4",
+      "produkte": [
+        "neodur-svm-03",
+        "neodur-svm-4"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_NEODUR_Vergussmoertel_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "KORODUR NEODUR Vergussmoertel",
+      "produkte": [
+        "neodur-vb-8",
+        "neodur-vm-1",
+        "neodur-vm-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/NEODUR_Grouting_mortar_concrete_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "NEODUR Grouting mortar concrete",
+      "produkte": [
+        "neodur-vb-8",
+        "neodur-vm-1",
+        "neodur-vm-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/NEODUR_mortier_de_scellement_VM_VB_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "NEODUR mortier de scellement VM VB",
+      "produkte": [
+        "neodur-vb-8",
+        "neodur-vm-1",
+        "neodur-vm-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_VB_8_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "NEODUR VB 8",
+      "produkte": [
+        "neodur-vb-8"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/12/NEODUR_VM_1-3-8_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "NEODUR VM 1 3 8",
+      "produkte": [
+        "neodur-vm-1"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_VM_1_3_5_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "NEODUR VM 1 3 5",
+      "produkte": [
+        "neodur-vm-3"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/NEODUR_VM_5_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "NEODUR VM 5",
+      "produkte": [
+        "neodur-vm-5"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/1001_1_998-1_Rapid_Set_CEMENT_ALL_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "Rapid Set CEMENT ALL",
+      "produkte": [
+        "rapid-set-cement-all"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/1001_1_998-1_Rapid_Set_CEMENT_ALL_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "Rapid Set CEMENT ALL",
+      "produkte": [
+        "rapid-set-cement-all"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/Rapid_Set_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "Rapid Set",
+      "produkte": [
+        "rapid-set-cement-all",
+        "rapid-set-concrete-mix",
+        "rapid-set-mortar-mix",
+        "rapid-set-mortar-mix-dur",
+        "rapid-set-schnellbeton"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/Rapid_Set_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "Rapid Set",
+      "produkte": [
+        "rapid-set-cement-all",
+        "rapid-set-concrete-mix",
+        "rapid-set-mortar-mix",
+        "rapid-set-mortar-mix-dur",
+        "rapid-set-schnellbeton"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/Cement_All_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "Cement All",
+      "produkte": [
+        "rapid-set-cement-all"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/03/DOP-DOT-Concrete-Mix-en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "DOP DOT Concrete Mix en",
+      "produkte": [
+        "rapid-set-concrete-mix"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/1001_3_13813_Rapid_Set_CONCRETE_MIX_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "Rapid Set CONCRETE MIX",
+      "produkte": [
+        "rapid-set-concrete-mix"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/Concrete_Mix_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "Concrete Mix",
+      "produkte": [
+        "rapid-set-concrete-mix"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/Concrete_Pharmacy_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "Concrete Pharmacy",
+      "produkte": [
+        "rapid-set-concrete-pharmacy"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/Levelflor_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "Levelflor",
+      "produkte": [
+        "rapid-set-levelflor"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/TRU_LevelFlor_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "TRU LevelFlor",
+      "produkte": [
+        "rapid-set-levelflor"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/02/LevelFlor_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "LevelFlor",
+      "produkte": [
+        "rapid-set-levelflor"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/03/DOP_Mortar_Mix_SVS_5_en.pdf",
+      "typ": "dop",
+      "sprache": "en",
+      "titel": "DOP Mortar Mix SVS 5",
+      "produkte": [
+        "rapid-set-mortar-mix"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/04/1001_2_998-1_Rapid_Set_MORTAR_MIX_fr.pdf",
+      "typ": "dop",
+      "sprache": "fr",
+      "titel": "Rapid Set MORTAR MIX",
+      "produkte": [
+        "rapid-set-mortar-mix"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_Rapid_Set_SDB_de.pdf",
+      "typ": "sds",
+      "sprache": "de",
+      "titel": "KORODUR Rapid Set",
+      "produkte": [
+        "rapid-set-mortar-mix-dur",
+        "rapid-set-schnellbeton"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/TRU_PC_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "TRU PC",
+      "produkte": [
+        "tru-pc"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/TRU_PC_SDB_fr.pdf",
+      "typ": "sds",
+      "sprache": "fr",
+      "titel": "TRU PC",
+      "produkte": [
+        "tru-pc"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2024/06/TRU_Self-Leveling_SDB_en.pdf",
+      "typ": "sds",
+      "sprache": "en",
+      "titel": "TRU Self Leveling",
+      "produkte": [
+        "tru-self-leveling"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2025/07/TRU_Self_Leveling_en.pdf",
+      "typ": "tds",
+      "sprache": "en",
+      "titel": "TRU Self Leveling",
+      "produkte": [
+        "tru-self-leveling"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2025/07/TRU-Self-Leveling_fr.pdf",
+      "typ": "tds",
+      "sprache": "fr",
+      "titel": "TRU Self Leveling",
+      "produkte": [
+        "tru-self-leveling"
+      ]
+    },
+    {
+      "url": "https://www.korodur.de/wp-content/uploads/2023/03/TRU_Self_Leveling_pl.pdf",
+      "typ": "tds",
+      "sprache": "pl",
+      "titel": "TRU Self Leveling",
+      "produkte": [
+        "tru-self-leveling"
+      ]
+    }
+  ]
+}
