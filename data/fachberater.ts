@@ -34,16 +34,6 @@ export const FACHBERATER_DE: Fachberater[] = [
     bereiche: ["microtop"],
   },
   {
-    name: "Thomas Gerhard",
-    rolle: "Technische Vertriebsberatung Industrieboden & Rapid Set",
-    gebiet: "PLZ 01–19, 38–39, 98–99",
-    telefon: "+49 (0) 170 3733986",
-    telefonHref: "tel:+491703733986",
-    email: "t.gerhard@korodur.de",
-    bild: "/images/fachberater/thomas-gerhard.webp",
-    bereiche: ["industrieboden", "rapid-set"],
-  },
-  {
     name: "Andreas Mohr",
     rolle: "Technische Vertriebsberatung Industrieboden",
     gebiet: "PLZ 20–29, 30–33, 37, 48–49",
