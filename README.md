@@ -1,19 +1,19 @@
 # KORODUR Sanierung – Web App
 
-Interaktive Web-Applikation zur Präsentation des KORODUR-Sanierungsportfolios. Zielgruppe: Vertriebler, Bauherren, Architekten und Interessenten.
+Interaktive Web-Applikation für das KORODUR-Produktportfolio, im Ausbau zur neuen korodur.de (8 Produktbereiche, Unternehmens- und Kontaktseiten). Kern bleibt das Sanierungs-Sales-Tool mit Lösungsfinder. Zielgruppe: Vertriebler, Bauherren, Architekten und Interessenten.
 
 ## Live ansehen
 
 **[https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/)**
 
-Verfügbar in: [Deutsch](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/) · [English](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/en/) · [Français](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/fr/) · [Polski](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/pl/)
+Verfügbar in: [Deutsch](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/) · [English](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/en/) · [Français](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/fr/) · [Polski](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/pl/) · [Español](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/es/)
 
 ## Features
 
-- **4 Sprachen** – DE / EN / FR / PL, komplett übersetzt (UI + Inhalte), gegen KORODUR-Glossar geprüft
+- **5 Sprachen** – DE / EN / FR / PL / ES, komplett übersetzt (UI + Inhalte), gegen KORODUR-Glossar geprüft
 - **Lösungsfinder** – adaptiver Wizard: Fläche → Innen/Außen → Einsatzbereich (6 referenzgedeckte Cluster) → Zeitfenster → Top-Produkt + passende Referenzen
-- **51 Referenzprojekte** mit Herausforderungen, Lösung, Vorteilen, Produktdaten und **Bildergalerie** (3–8 Fotos pro Referenz, Lightbox mit Pfeiltasten)
-- **18 Produkte** mit technischen Daten, Normen, Qualitätsklassen und **Produkt-Mockups** (13 davon in der Sanierungs-Matrix)
+- **55 Referenzprojekte** (Neubau + Sanierung) mit Herausforderungen, Lösung, Vorteilen, Produktdaten und **Bildergalerie** (3–8 Fotos pro Referenz, Lightbox mit Pfeiltasten)
+- **78 Produkte** in 8 Bereichen mit technischen Daten, Normen, Qualitätsklassen, Varianten und **Produkt-Mockups** (13 davon in der Sanierungs-Matrix)
 - **Einsatzbereich-Filter** über alle Referenzen (8 Bereiche: Lager & Logistik, Industrie & Produktion, Lebensmittel, Flugzeug, Parkdeck, Infrastruktur & Zufahrten, Verkaufsräume, Schwerindustrie)
 - **Anwendungsmatrix** – Web-Projektion des Messeposters: 6 kuratierte Produkte als Spalten, technische Kernwerte (Klassifizierung, Schichtdicke, belastbar nach) + Vorteil-Zeile + 6 Anwendungs-Zeilen (✓✓ Kernanwendung / ✓ geeignet), „Mehr Infos"-Link je Produkt (TDS bzw. Produktseite)
 - **Volltextsuche** (Cmd/Ctrl+K) über Referenzen, Kategorien und Produkte
@@ -38,21 +38,25 @@ npm run dev
 
 ```
 /[lang]/
-├── Startseite (Hero, Referenz-Highlights, Lösungsfinder-Teaser, Außenflächen)
-├── loesungsfinder/ (4-Schritt-Wizard → Matching-Referenzen + aggregierte Produkte)
-├── referenzen/ (Filter: Sanierungsart · Einsatzbereich · Dringlichkeit · Produkt)
-└── produkte/ (Produktübersicht + Produktmatrix + Detail-Seiten)
+├── Startseite (dualer Hero Neubau + Sanierung, Bereichs-Grid, Referenz-Highlights, Lösungsfinder-Teaser)
+├── bereiche/[slug]/ (8 Produktbereiche: Intro, Referenzen, Produktgruppen, Kontakt-CTA)
+├── loesungsfinder/ (adaptiver Wizard → Matching-Referenzen + aggregierte Produkte)
+├── referenzen/ (Filter: Projektart · Sanierungsart · Einsatzbereich · Dringlichkeit · Produkt)
+├── produkte/ (Portfolio nach Bereichen + Anwendungsmatrix + Detail-Seiten)
+├── sanierung/ · neubau/ (Bereichseinstiege)
+├── unternehmen/ · kontakt/ (Fachberater-Finder nach Bereich + PLZ)
+└── agb · impressum · datenschutz · hinweisgebersystem (Rechtsseiten)
 ```
 
 ## Projektstruktur
 
 ```
-├── app/[lang]/              # Locale-prefixed Routes (de/en/fr/pl)
+├── app/[lang]/              # Locale-prefixed Routes (de/en/fr/pl/es)
 │   ├── page.tsx             # Startseite
 │   ├── loesungsfinder/      # 4-Schritt-Wizard
 │   ├── referenzen/          # Referenz-Übersicht + Detail
 │   ├── produkte/            # Produktübersicht + Detail
-│   └── dictionaries/        # UI-Strings (de/en/fr/pl.json)
+│   └── dictionaries/        # UI-Strings (de/en/fr/pl/es.json)
 ├── components/
 │   ├── AppShell.tsx         # Layout-Wrapper
 │   ├── TopNav.tsx           # Horizontale Navigation + Mobile Drawer
@@ -62,12 +66,12 @@ npm run dev
 │   ├── SearchOverlay.tsx    # Volltextsuche (Cmd+K)
 │   └── ...                  # LanguageSwitcher, TileGrid, etc.
 ├── data/
-│   ├── referenzen.ts        # 51 Referenzen (DE-Basis, 26 historisch + 25 aus Notion-Import)
-│   ├── produkte.ts          # 18 Produkte mit technischen Daten + Mockup-Bildern (13 in Sanierungs-Matrix)
+│   ├── referenzen.ts        # 55 Referenzen (DE-Basis, Neubau + Sanierung)
+│   ├── produkte.ts          # 78 Produkte mit technischen Daten + Mockup-Bildern (13 in Sanierungs-Matrix)
 │   ├── loesungsfinder.ts    # 4-Step-Definitionen + Scoring-Logik
 │   ├── types.ts             # Referenz-Interface: sanierungsart/einsatzbereiche/
 │   │                        #   zeitDringlichkeit/zusatzfunktionen
-│   └── i18n/                # Inhalts-Übersetzungen (EN/FR/PL)
+│   └── i18n/                # Inhalts-Übersetzungen (EN/FR/PL/ES)
 ├── scripts/
 │   ├── validate-referenzen.ts       # CI-Check: Enum-Werte, Pflichtfelder, Slugs
 │   ├── test-loesungsfinder.ts       # Scoring-Smoke-Test
@@ -87,7 +91,17 @@ npm run dev
 
 GitHub Pages via GitHub Actions – bei jedem Push auf `main` wird automatisch gebaut und deployt.
 
-## Status: V2 – Live
+## Status: V3 – Relaunch zu korodur.de
+
+> Detaillierte Stand-Historie V3.1–V3.5 (Website-Integration in Stufen) siehe `CLAUDE.md` → „Aktueller Stand & nächste Iteration".
+
+### V3.5 – Website-Relaunch-Walkthrough umgesetzt (Juni 2026)
+- [x] **Bereichs-zentrierte IA** (#72): Bereiche in der Top-Nav, Hover-Mega-Menüs + Mobile-Accordion, Produkt-Gesamtkatalog im Footer
+- [x] **Bereichsseiten Neubau + Sanierung** (#73): Einstiege, Referenz-Sektionen, wiederkehrende Kontakt-CTAs, Neubau/Sanierung-Framing nur bei Doppelnutzung
+- [x] **Fachberater-Finder** (#90/#91): Berater nach Bereich + PLZ-Region filterbar, Deep-Link `?bereich=`
+- [x] **Produkt-Dokumente** (#92/#96/#120): 59 TDS verlinkt, Norm-Korrekturen gegen Excel-SoT, Dokument-Inventar je Produkt
+- [x] **Spezialbaustoffe** (#94): NEODUR MSM/MSB als eigene Produktgruppe `spritzmoertel` (vorher fälschlich Betoninstandsetzung)
+- [ ] **Offen**: Normen-Glossar (#97), Lösungsfinder-i18n (#103), Bild-System (#105), Varianten-PDP (#110), Kontakt-i18n (#118), Bereichsseiten-Feinschliff (#119) + Epics #72–#80. Spec Produkt-Klassifizierung: `docs/specs/2026-06-14-produkt-klassifizierung-sot.md`
 
 ### Backlog Themen
 Commit: 0deae98c191a84ed9aded5fbff50f664f9336561 -> Sanierungssysteme (Systemdarstellung als Konzeptbasis)
