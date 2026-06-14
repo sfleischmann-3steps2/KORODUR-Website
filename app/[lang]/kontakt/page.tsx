@@ -44,33 +44,40 @@ export default async function KontaktPage({ params }: { params: Params }) {
       {/* Fachberater zuerst (Steffi #90): Bereich- + PLZ-Finder über dem Formular. */}
       <section style={{ padding: "8px 32px 16px" }}>
         <div className="mx-auto" style={{ maxWidth: 860 }}>
-          <h2 className="text-navy mt-0 mb-2" style={{ fontSize: 22, fontWeight: 900 }}>
-            {dict.kontakt.fachberater_title}
-          </h2>
-          <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
-            {dict.kontakt.fachberater_intro}
-          </p>
-          <FachberaterFinder
-            berater={FACHBERATER_DE}
-            lang={lang}
-            plzLabel={dict.kontakt.fachberater_plz}
-            bereichAll={dict.kontakt.finder_bereich_all}
-            plzPlaceholder={dict.kontakt.finder_plz_placeholder}
-            noResults={dict.kontakt.finder_no_results}
-          />
-
-          {/* Internationale Fachberater (Z3: Export-Kontakte für EN/FR/PL/ES). */}
-          <h2 className="text-navy mt-12 mb-2" style={{ fontSize: 20, fontWeight: 900 }}>
-            {dict.kontakt.international_title}
-          </h2>
-          <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
-            {dict.kontakt.international_text}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {FACHBERATER_INTERNATIONAL.map((b) => (
-              <BeraterCard key={`${b.name}-${b.rolle}`} berater={b} />
-            ))}
-          </div>
+          {lang === "de" ? (
+            <>
+              {/* DE: Fachberater-Finder mit Bereich- + PLZ-Filter (Steffi #118). */}
+              <h2 className="text-navy mt-0 mb-2" style={{ fontSize: 22, fontWeight: 900 }}>
+                {dict.kontakt.fachberater_title}
+              </h2>
+              <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
+                {dict.kontakt.fachberater_intro}
+              </p>
+              <FachberaterFinder
+                berater={FACHBERATER_DE}
+                lang={lang}
+                plzLabel={dict.kontakt.fachberater_plz}
+                bereichAll={dict.kontakt.finder_bereich_all}
+                plzPlaceholder={dict.kontakt.finder_plz_placeholder}
+                noResults={dict.kontakt.finder_no_results}
+              />
+            </>
+          ) : (
+            <>
+              {/* Andere Sprachen: internationale Ansprechpartner ohne PLZ-Filter (Steffi #118). */}
+              <h2 className="text-navy mt-0 mb-2" style={{ fontSize: 22, fontWeight: 900 }}>
+                {dict.kontakt.international_title}
+              </h2>
+              <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
+                {dict.kontakt.international_text}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {FACHBERATER_INTERNATIONAL.map((b) => (
+                  <BeraterCard key={`${b.name}-${b.rolle}`} berater={b} />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
 
