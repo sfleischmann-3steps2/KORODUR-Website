@@ -8,7 +8,7 @@ import { produkte, getProduktById } from "../../../../data/produkte";
 import { PRODUKT_DOKUMENTE } from "../../../../data/produktDokumente";
 import { fachberaterFuerBereich } from "../../../../data/fachberater";
 import BeraterCard from "../../../../components/BeraterCard";
-import DokumentListe from "../../../../components/DokumentListe";
+import DokumentListe, { dokumenteNachSprache } from "../../../../components/DokumentListe";
 import NormenChips from "../../../../components/NormenChips";
 import { referenzen } from "../../../../data/referenzen";
 import { getDictionary, hasLocale } from "../../dictionaries";
@@ -19,7 +19,7 @@ import { withBasePath } from "../../../../lib/basePath";
 import { alternatesFor } from "../../../../lib/seo";
 import { kontaktPath } from "../../../../lib/kontakt";
 import { AppIcon } from "@/components/ui/icon";
-import { CircleCheck, Info } from "lucide-react";
+import { CircleCheck, Info, MapPin } from "lucide-react";
 import { getBereichBySlug } from "../../../../data/bereiche";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; id: string }> }): Promise<Metadata> {
@@ -69,6 +69,18 @@ export default async function ProduktDetailPage({
   );
   const relatedRefs = await localizeReferenzen(baseRelatedRefs, lang);
   const dokumente = PRODUKT_DOKUMENTE[produkt.id] ?? [];
+  // Sprachgefiltert (aktuelle Sprache → EN → DE) — steuert auch die Section-Sichtbarkeit (#120).
+  const sichtbareDokumente = dokumenteNachSprache(dokumente, lang);
+
+  // Varianten-Vergleichstabelle (#110): Spalten nur zeigen, wenn befüllt.
+  const varianten = produkt.varianten ?? [];
+  const varHatKlasse = varianten.some((v) => v.qualitaetsklasse);
+  const varHatHinweis = varianten.some((v) => v.hinweis);
+  // Scannbarer Kopf nur rendern, wenn er Inhalt hat (#176).
+  const hatKopfInhalt =
+    produkt.besonderheiten.length > 0 ||
+    (produkt.einsatzbereiche?.length ?? 0) > 0 ||
+    varianten.length > 0;
 
   return (
     <>
@@ -141,36 +153,6 @@ export default async function ProduktDetailPage({
                 </p>
               </div>
             )}
-            {produkt.varianten && produkt.varianten.length > 0 && (
-              <div className="mt-6" style={{ maxWidth: 700 }}>
-                <h2 className="text-navy text-[15px] mb-3" style={{ fontWeight: 900 }}>
-                  {dict.produkte.varianten_title}
-                </h2>
-                <div
-                  className="bg-white border border-bullet-bg overflow-hidden"
-                  style={{ borderRadius: 12 }}
-                >
-                  {produkt.varianten.map((v, i) => (
-                    <div
-                      key={v.name}
-                      className="flex flex-wrap justify-between items-baseline gap-x-4 gap-y-1 px-5 py-3"
-                      style={
-                        i < (produkt.varianten?.length ?? 0) - 1
-                          ? { borderBottom: "1px solid var(--bullet-bg)" }
-                          : {}
-                      }
-                    >
-                      <span className="text-navy text-[14px]" style={{ fontWeight: 700 }}>
-                        {v.name}
-                      </span>
-                      <span className="text-navy/60 text-[13px]">
-                        {[v.qualitaetsklasse, v.hinweis].filter(Boolean).join(" · ")}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
           {produkt.bild && (
             <div className="shrink-0 flex justify-center">
@@ -187,10 +169,105 @@ export default async function ProduktDetailPage({
         </div>
       </section>
 
+      {/* Auf einen Blick: Vorteile + Einsatzbereiche + Varianten (scannbarer Kopf) */}
+      {hatKopfInhalt && (
+      <section style={{ padding: "0 32px 8px" }}>
+        <div className="mx-auto flex flex-col gap-12" style={{ maxWidth: 1320 }}>
+          {/* Vorteile / Auf einen Blick */}
+          {produkt.besonderheiten.length > 0 && (
+          <div>
+            <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {dict.produkte.highlights_title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+              {produkt.besonderheiten.map((b, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 text-cyan-text mt-0.5">
+                    <AppIcon icon={CircleCheck} width={18} height={18} strokeWidth={2.5} aria-hidden="true" />
+                  </span>
+                  <span className="text-navy text-[15px] leading-[1.55]">{b}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          )}
+
+          {/* Einsatzbereiche (optional, Content via KORODUR-Claude) */}
+          {produkt.einsatzbereiche && produkt.einsatzbereiche.length > 0 && (
+            <div>
+              <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+                {dict.produkte.einsatzbereiche_title}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+                {produkt.einsatzbereiche.map((e, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-cyan-text mt-0.5">
+                      <AppIcon icon={MapPin} width={18} height={18} strokeWidth={2.5} aria-hidden="true" />
+                    </span>
+                    <span className="text-navy text-[15px] leading-[1.55]">{e}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Varianten-Vergleichstabelle (#110) */}
+          {varianten.length > 0 && (
+            <div>
+              <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+                {dict.produkte.varianten_title}
+              </h2>
+              <div
+                className="overflow-x-auto bg-white"
+                style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.06)" }}
+                tabIndex={0}
+                role="region"
+                aria-label={dict.produkte.varianten_title}
+              >
+                <table className="w-full border-collapse" style={{ minWidth: 480 }}>
+                  <caption className="sr-only">{dict.produkte.varianten_title}</caption>
+                  <thead>
+                    <tr style={{ borderBottom: "2px solid var(--icon-bg)" }}>
+                      <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                        {dict.produkte.variante_col_name}
+                      </th>
+                      {varHatKlasse && (
+                        <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                          {dict.produkte.variante_col_klasse}
+                        </th>
+                      )}
+                      {varHatHinweis && (
+                        <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                          {dict.produkte.variante_col_hinweis}
+                        </th>
+                      )}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {varianten.map((v, i) => (
+                      <tr key={v.name} style={i < varianten.length - 1 ? { borderBottom: "1px solid var(--icon-bg)" } : {}}>
+                        <th scope="row" className="text-left text-navy text-[14px] px-6 py-3.5" style={{ fontWeight: 700 }}>{v.name}</th>
+                        {varHatKlasse && (
+                          <td className="text-navy/80 text-[14px] px-6 py-3.5">{v.qualitaetsklasse ?? "–"}</td>
+                        )}
+                        {varHatHinweis && (
+                          <td className="text-navy/80 text-[14px] px-6 py-3.5">{v.hinweis ?? "–"}</td>
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+      )}
+
       {/* Technical Data + Norms */}
       <section className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className={produkt.normen.length > 0 ? "grid grid-cols-1 lg:grid-cols-2 gap-12" : "grid grid-cols-1"}>
             {/* Technical Data */}
             <div>
               <h2
@@ -218,37 +295,18 @@ export default async function ProduktDetailPage({
               </div>
             </div>
 
-            {/* Norms + Features */}
-            <div>
-              {produkt.normen.length > 0 && (
-                <div className="mb-10">
-                  <h2
-                    className="mb-6"
-                    style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
-                  >
-                    {dict.detail.norms}
-                  </h2>
-                  <NormenChips normen={produkt.normen} />
-                </div>
-              )}
-
-              <h2
-                className="mb-6"
-                style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
-              >
-                {dict.produkte.features}
-              </h2>
-              <div className="flex flex-col gap-3">
-                {produkt.besonderheiten.map((b, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 text-cyan-text mt-0.5">
-                      <AppIcon icon={CircleCheck} width={18} height={18} strokeWidth={2.5} aria-hidden="true" />
-                    </span>
-                    <span className="text-navy text-[15px] leading-[1.55]">{b}</span>
-                  </div>
-                ))}
+            {/* Norms (Besonderheiten/Vorteile stehen jetzt im scannbaren Kopf "Auf einen Blick") */}
+            {produkt.normen.length > 0 && (
+              <div>
+                <h2
+                  className="mb-6"
+                  style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
+                >
+                  {dict.detail.norms}
+                </h2>
+                <NormenChips normen={produkt.normen} />
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -283,7 +341,7 @@ export default async function ProduktDetailPage({
 
       {/* Downloads & Dokumente: TDS/SDS/DoP/Anwendung/Pflege je Produkt
           (Launch-Plan M3 — "alle wichtigen Dokumente auf der Produktseite") */}
-      {dokumente.length > 0 && (
+      {sichtbareDokumente.length > 0 && (
         <section style={{ padding: "56px 32px 64px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <h2
@@ -297,6 +355,8 @@ export default async function ProduktDetailPage({
                 dokumente={dokumente}
                 lang={lang}
                 labels={dict.produkte as Record<string, string>}
+                sprachDedup
+                gruppieren
               />
             </div>
           </div>

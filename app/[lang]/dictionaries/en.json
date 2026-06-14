@@ -133,7 +133,14 @@
     "dok_dop": "Declaration of Performance (DoP)",
     "dok_anwendung": "Application Recommendation",
     "dok_reinigung": "Cleaning & Care",
-    "dok_service": "Service Document"
+    "dok_service": "Service Document",
+    "dok_gruppe_technik": "Technical documents & compliance",
+    "dok_gruppe_anwendung": "Application & care",
+    "highlights_title": "At a glance",
+    "einsatzbereiche_title": "Areas of application",
+    "variante_col_name": "Variant",
+    "variante_col_klasse": "Quality class",
+    "variante_col_hinweis": "Note"
   },
   "sanierung": {
     "title": "Product Finder",

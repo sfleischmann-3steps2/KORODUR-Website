@@ -133,7 +133,14 @@
     "dok_dop": "Deklaracja właściwości użytkowych (DoP)",
     "dok_anwendung": "Zalecenia dotyczące stosowania",
     "dok_reinigung": "Czyszczenie i pielęgnacja",
-    "dok_service": "Dokument serwisowy"
+    "dok_service": "Dokument serwisowy",
+    "dok_gruppe_technik": "Dokumenty techniczne i zgodność",
+    "dok_gruppe_anwendung": "Zastosowanie i pielęgnacja",
+    "highlights_title": "W skrócie",
+    "einsatzbereiche_title": "Obszary zastosowania",
+    "variante_col_name": "Wariant",
+    "variante_col_klasse": "Klasa jakości",
+    "variante_col_hinweis": "Uwaga"
   },
   "sanierung": {
     "title": "Wyszukiwarka produktów",

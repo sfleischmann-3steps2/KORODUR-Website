@@ -52,6 +52,11 @@ export interface Produkt {
   normen: string[];
   technischeDaten: { label: string; wert: string }[];
   besonderheiten: string[];
+  /** Einsatzbereiche/Anwendungen als Bullet-Liste für die PDP ("wo wird das
+   *  eingesetzt"). Kundentauglicher Klartext, NICHT die Lösungsfinder-Taxonomie.
+   *  Optional; rendert leer sauber. Content-Befüllung via Issue (KORODUR-Claude),
+   *  Frank-prüfbar auf der Live-Seite. */
+  einsatzbereiche?: string[];
   verarbeitung?: Verarbeitung;
   tdsUrl?: string;
 
