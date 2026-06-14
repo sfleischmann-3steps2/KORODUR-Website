@@ -17,6 +17,8 @@ import { projektartLabel, type Projektart } from "../../../../data/einsatzbereic
 import { AppIcon } from "@/components/ui/icon";
 import { ArrowRight, ChevronRight, Info } from "lucide-react";
 import { bereichIcon } from "../../../../components/bereichIcons";
+import Image from "next/image";
+import { withBasePath } from "../../../../lib/basePath";
 
 type Params = Promise<{ lang: string; slug: string }>;
 
@@ -153,17 +155,19 @@ export default async function BereichPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      {/* Kopf: Bereichs-Header als Icon-Band (Bereichsbild via #141, falls vorhanden) */}
-      <section className="bg-icon-bg" style={{ padding: "40px 32px 44px" }}>
-        <div className="mx-auto flex flex-col sm:flex-row sm:items-center gap-5" style={{ maxWidth: 1320 }}>
-          <span
-            className="flex items-center justify-center shrink-0 rounded-2xl bg-navy"
-            style={{ width: 72, height: 72 }}
-            aria-hidden="true"
-          >
-            <AppIcon icon={bereichIcon(slug)} width={36} height={36} strokeWidth={1.75} className="text-white" />
-          </span>
-          <div className="flex-1 min-w-0">
+      {/* Kopf: Bereichs-Header. Mit Bereichsbild (#141) als Hintergrund + dunklem Overlay, sonst Icon-Band. */}
+      {bereich.bild ? (
+        <section className="relative overflow-hidden" style={{ minHeight: 260 }}>
+          <Image
+            src={withBasePath(bereich.bild)}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-navy/70" aria-hidden="true" />
+          <div className="relative mx-auto" style={{ maxWidth: 1320, padding: "56px 32px 60px" }}>
             {bereich.abgegrenzt && (
               <span
                 className="inline-block bg-white text-navy text-[12px] rounded-full mb-3"
@@ -172,27 +176,57 @@ export default async function BereichPage({ params }: { params: Params }) {
                 {tb("katzenstreu_badge")}
               </span>
             )}
-            <h1 className="mb-3" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
+            <h1 className="text-white mb-3" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
               {tb(`${slug}_name`)}
             </h1>
-            <p className="text-navy/80 mb-0" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 760 }}>
+            <p className="text-white/90 mb-0" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 760 }}>
               {tb(`${slug}_intro`)}
             </p>
           </div>
-        </div>
+        </section>
+      ) : (
+        <section className="bg-icon-bg" style={{ padding: "40px 32px 44px" }}>
+          <div className="mx-auto flex flex-col sm:flex-row sm:items-center gap-5" style={{ maxWidth: 1320 }}>
+            <span
+              className="flex items-center justify-center shrink-0 rounded-2xl bg-navy"
+              style={{ width: 72, height: 72 }}
+              aria-hidden="true"
+            >
+              <AppIcon icon={bereichIcon(slug)} width={36} height={36} strokeWidth={1.75} className="text-white" />
+            </span>
+            <div className="flex-1 min-w-0">
+              {bereich.abgegrenzt && (
+                <span
+                  className="inline-block bg-white text-navy text-[12px] rounded-full mb-3"
+                  style={{ padding: "5px 14px", fontWeight: 700 }}
+                >
+                  {tb("katzenstreu_badge")}
+                </span>
+              )}
+              <h1 className="mb-3" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
+                {tb(`${slug}_name`)}
+              </h1>
+              <p className="text-navy/80 mb-0" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 760 }}>
+                {tb(`${slug}_intro`)}
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
-        {bereich.haendlerHinweis && (
+      {bereich.haendlerHinweis && (
+        <section style={{ padding: "16px 32px 0" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <div
-              className="flex items-start gap-3 bg-white rounded-xl mt-6"
+              className="flex items-start gap-3 bg-white rounded-xl border border-navy/10"
               style={{ padding: "16px 18px", maxWidth: 760 }}
             >
               <AppIcon icon={Info} width={20} height={20} strokeWidth={2} className="text-cyan-text shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-navy text-[14px] m-0 leading-[1.6]">{tb("haendler_hinweis")}</p>
             </div>
           </div>
-        )}
-      </section>
+        </section>
+      )}
 
       {/* CTA oben: Sprung-Anker zu Produkten + Fachberatern (Steffi #119) */}
       {(localizedProdukte.length > 0 || alleFachberater.length > 0) && (
