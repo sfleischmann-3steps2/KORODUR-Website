@@ -76,6 +76,11 @@ export default async function ProduktDetailPage({
   const varianten = produkt.varianten ?? [];
   const varHatKlasse = varianten.some((v) => v.qualitaetsklasse);
   const varHatHinweis = varianten.some((v) => v.hinweis);
+  // Scannbarer Kopf nur rendern, wenn er Inhalt hat (#176).
+  const hatKopfInhalt =
+    produkt.besonderheiten.length > 0 ||
+    (produkt.einsatzbereiche?.length ?? 0) > 0 ||
+    varianten.length > 0;
 
   return (
     <>
@@ -165,9 +170,11 @@ export default async function ProduktDetailPage({
       </section>
 
       {/* Auf einen Blick: Vorteile + Einsatzbereiche + Varianten (scannbarer Kopf) */}
+      {hatKopfInhalt && (
       <section style={{ padding: "0 32px 8px" }}>
         <div className="mx-auto flex flex-col gap-12" style={{ maxWidth: 1320 }}>
           {/* Vorteile / Auf einen Blick */}
+          {produkt.besonderheiten.length > 0 && (
           <div>
             <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
               {dict.produkte.highlights_title}
@@ -183,6 +190,7 @@ export default async function ProduktDetailPage({
               ))}
             </div>
           </div>
+          )}
 
           {/* Einsatzbereiche (optional, Content via KORODUR-Claude) */}
           {produkt.einsatzbereiche && produkt.einsatzbereiche.length > 0 && (
@@ -212,20 +220,24 @@ export default async function ProduktDetailPage({
               <div
                 className="overflow-x-auto bg-white"
                 style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.06)" }}
+                tabIndex={0}
+                role="region"
+                aria-label={dict.produkte.varianten_title}
               >
                 <table className="w-full border-collapse" style={{ minWidth: 480 }}>
+                  <caption className="sr-only">{dict.produkte.varianten_title}</caption>
                   <thead>
                     <tr style={{ borderBottom: "2px solid var(--icon-bg)" }}>
-                      <th className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                      <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
                         {dict.produkte.variante_col_name}
                       </th>
                       {varHatKlasse && (
-                        <th className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                        <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
                           {dict.produkte.variante_col_klasse}
                         </th>
                       )}
                       {varHatHinweis && (
-                        <th className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                        <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
                           {dict.produkte.variante_col_hinweis}
                         </th>
                       )}
@@ -234,7 +246,7 @@ export default async function ProduktDetailPage({
                   <tbody>
                     {varianten.map((v, i) => (
                       <tr key={v.name} style={i < varianten.length - 1 ? { borderBottom: "1px solid var(--icon-bg)" } : {}}>
-                        <td className="text-navy text-[14px] px-6 py-3.5" style={{ fontWeight: 700 }}>{v.name}</td>
+                        <th scope="row" className="text-left text-navy text-[14px] px-6 py-3.5" style={{ fontWeight: 700 }}>{v.name}</th>
                         {varHatKlasse && (
                           <td className="text-navy/80 text-[14px] px-6 py-3.5">{v.qualitaetsklasse ?? "–"}</td>
                         )}
@@ -250,11 +262,12 @@ export default async function ProduktDetailPage({
           )}
         </div>
       </section>
+      )}
 
       {/* Technical Data + Norms */}
       <section className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className={produkt.normen.length > 0 ? "grid grid-cols-1 lg:grid-cols-2 gap-12" : "grid grid-cols-1"}>
             {/* Technical Data */}
             <div>
               <h2
@@ -342,6 +355,8 @@ export default async function ProduktDetailPage({
                 dokumente={dokumente}
                 lang={lang}
                 labels={dict.produkte as Record<string, string>}
+                sprachDedup
+                gruppieren
               />
             </div>
           </div>
