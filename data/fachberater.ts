@@ -26,11 +26,22 @@ export interface Fachberater {
 
 export const FACHBERATER_DE: Fachberater[] = [
   {
+    name: "Jens Döring",
+    rolle: "Technische Vertriebsberatung Industrieboden & Rapid Set",
+    gebiet: "PLZ 01–19, 38–39, 98–99",
+    telefon: "+49 (0) 9621 4759-0",
+    telefonHref: "tel:+49962147590",
+    email: "j.doering@korodur.de",
+    // Nachfolger von Thomas Gerhard (Steffi 2026-06-14, Quelle korodur.de/fachberater).
+    // Porträt-Datei fehlt noch (Initialen-Fallback) — j-doering.webp nachliefern.
+    bereiche: ["industrieboden", "rapid-set"],
+  },
+  {
     name: "Benjamin Lorenz",
     rolle: "Technische Vertriebsberatung Trinkwasser / MICROTOP",
     telefon: "+49 (0) 170 3733988",
     telefonHref: "tel:+491703733988",
-    email: "blorenz@korodur.de",
+    email: "b.lorenz@korodur.de",
     bereiche: ["microtop"],
   },
   {
