@@ -204,6 +204,40 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
         </section>
       )}
 
+      {/* Ratgeber & Schadensbilder (#130) — Fachartikel aktuell nur auf Deutsch */}
+      {lang === "de" && (
+        <section style={{ padding: "8px 32px 56px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-2" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>
+              Ratgeber und Schadensbilder
+            </h2>
+            <p className="text-navy/70 text-[15px] mt-0 mb-6 leading-[1.6]" style={{ maxWidth: 720 }}>
+              Verstehen, was am Boden kaputt ist, wie lange die Sanierung dauert und welche Lösung passt.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { href: `/${lang}/schadensbilder`, t: "Schadensbild erkennen", d: "Fünf typische Schadensbilder und die passende Sanierung." },
+                { href: `/${lang}/ratgeber/sperrzeit-belastbarkeit`, t: "Sperrzeit und Wiederinbetriebnahme", d: "Wie lange Ihre Fläche steht, planbar gemacht." },
+                { href: `/${lang}/ratgeber/wirtschaftlichkeit-tco`, t: "Wirtschaftlichkeit", d: "Lebensdauer, Stillstandskosten, CO2." },
+                { href: `/${lang}/ratgeber/betreiber-faq`, t: "Häufige Fragen", d: "Antworten rund um die Industriebodensanierung." },
+                { href: `/${lang}/ratgeber/beratungstrigger`, t: "Wann Beratung sinnvoll ist", d: "Den richtigen Zeitpunkt fürs Fachgespräch erkennen." },
+                { href: `/${lang}/branchen/logistik`, t: "Lösungen nach Branche", d: "Logistik, Lebensmittel, Parkdeck, Verkehr." },
+              ].map((k) => (
+                <Link key={k.href} href={k.href} className="no-underline group block">
+                  <div
+                    className="bg-white border border-bullet-bg h-full transition-all duration-200 group-hover:border-cyan group-hover:shadow-lg"
+                    style={{ borderRadius: 14, padding: "20px 22px" }}
+                  >
+                    <span className="block text-navy text-[16px]" style={{ fontWeight: 800 }}>{k.t}</span>
+                    <span className="block text-navy/60 text-[13px] leading-snug mt-1">{k.d}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Kontakt-CTA — Sanierungs-Beratung (#86) */}
       <section className="bg-navy text-white text-center" style={{ padding: "64px 32px" }}>
         <div className="mx-auto" style={{ maxWidth: 700 }}>
