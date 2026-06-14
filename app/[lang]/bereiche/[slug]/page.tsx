@@ -217,7 +217,10 @@ export default async function BereichPage({ params }: { params: Params }) {
       </section>
 
       {/* Projekttyp-Framing: Neubau und/oder Sanierung (#87) */}
-      {(BEREICH_PROJEKTARTEN[slug] ?? []).length > 0 && (
+      {/* Framing nur bei Doppelnutzung (Steffi #119): reine-Sanierungs-Bereiche
+          (Microtop, Rapid Set) und reine-Neubau (Sichtestrich) brauchen keine
+          Neubau/Sanierung-Kachel. */}
+      {(BEREICH_PROJEKTARTEN[slug] ?? []).length > 1 && (
         <section style={{ padding: "0 32px 8px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <h2 className="mb-5" style={{ fontSize: "clamp(18px, 2.5vw, 24px)", fontWeight: 800 }}>
