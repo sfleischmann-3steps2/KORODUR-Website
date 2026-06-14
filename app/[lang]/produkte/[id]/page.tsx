@@ -8,7 +8,7 @@ import { produkte, getProduktById } from "../../../../data/produkte";
 import { PRODUKT_DOKUMENTE } from "../../../../data/produktDokumente";
 import { fachberaterFuerBereich } from "../../../../data/fachberater";
 import BeraterCard from "../../../../components/BeraterCard";
-import DokumentListe from "../../../../components/DokumentListe";
+import DokumentListe, { dokumenteNachSprache } from "../../../../components/DokumentListe";
 import NormenChips from "../../../../components/NormenChips";
 import { referenzen } from "../../../../data/referenzen";
 import { getDictionary, hasLocale } from "../../dictionaries";
@@ -69,6 +69,8 @@ export default async function ProduktDetailPage({
   );
   const relatedRefs = await localizeReferenzen(baseRelatedRefs, lang);
   const dokumente = PRODUKT_DOKUMENTE[produkt.id] ?? [];
+  // Sprachgefiltert (aktuelle Sprache → EN → DE) — steuert auch die Section-Sichtbarkeit (#120).
+  const sichtbareDokumente = dokumenteNachSprache(dokumente, lang);
 
   return (
     <>
@@ -283,7 +285,7 @@ export default async function ProduktDetailPage({
 
       {/* Downloads & Dokumente: TDS/SDS/DoP/Anwendung/Pflege je Produkt
           (Launch-Plan M3 — "alle wichtigen Dokumente auf der Produktseite") */}
-      {dokumente.length > 0 && (
+      {sichtbareDokumente.length > 0 && (
         <section style={{ padding: "56px 32px 64px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <h2

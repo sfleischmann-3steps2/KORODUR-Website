@@ -133,7 +133,9 @@
     "dok_dop": "Leistungserklärung (DoP)",
     "dok_anwendung": "Anwendungsempfehlung",
     "dok_reinigung": "Reinigung & Pflege",
-    "dok_service": "Service-Dokument"
+    "dok_service": "Service-Dokument",
+    "dok_gruppe_technik": "Technische Dokumente & Konformität",
+    "dok_gruppe_anwendung": "Anwendung & Pflege"
   },
   "sanierung": {
     "title": "Produktfinder",

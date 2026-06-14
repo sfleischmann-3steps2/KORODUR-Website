@@ -133,7 +133,9 @@
     "dok_dop": "Déclaration des performances (DoP)",
     "dok_anwendung": "Recommandation de mise en œuvre",
     "dok_reinigung": "Nettoyage et entretien",
-    "dok_service": "Document de service"
+    "dok_service": "Document de service",
+    "dok_gruppe_technik": "Documents techniques et conformité",
+    "dok_gruppe_anwendung": "Application et entretien"
   },
   "sanierung": {
     "title": "Trouveur de produits",

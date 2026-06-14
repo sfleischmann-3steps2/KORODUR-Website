@@ -133,7 +133,9 @@
     "dok_dop": "Declaración de prestaciones (DoP)",
     "dok_anwendung": "Recomendación de aplicación",
     "dok_reinigung": "Limpieza y mantenimiento",
-    "dok_service": "Documento de servicio"
+    "dok_service": "Documento de servicio",
+    "dok_gruppe_technik": "Documentos técnicos y conformidad",
+    "dok_gruppe_anwendung": "Aplicación y cuidado"
   },
   "sanierung": {
     "title": "Buscador de productos",
