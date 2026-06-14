@@ -45,7 +45,6 @@ export const bereiche: Bereich[] = [
   {
     slug: "rapid-set",
     haendlerHinweis: true,
-    externeWebsite: "https://www.korodur-rapidset.com",
     produktgruppen: ["reparaturmoertel", "schnellbeton", "additive"],
   },
   {
@@ -60,7 +59,6 @@ export const bereiche: Bereich[] = [
   {
     slug: "katzenstreu",
     abgegrenzt: true,
-    externeWebsite: "https://www.goodcat.de",
     // Variante B "neutral-reduziert" (Steffi, 2026-06-12). Highlights in
     // sattem Grün (Richtung Heidelberg-Materials-Grün) später nach Abklärung.
     produktgruppen: ["premium", "standard"],
