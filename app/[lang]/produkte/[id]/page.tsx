@@ -9,6 +9,7 @@ import { PRODUKT_DOKUMENTE } from "../../../../data/produktDokumente";
 import { fachberaterFuerBereich } from "../../../../data/fachberater";
 import BeraterCard from "../../../../components/BeraterCard";
 import DokumentListe from "../../../../components/DokumentListe";
+import NormenChips from "../../../../components/NormenChips";
 import { referenzen } from "../../../../data/referenzen";
 import { getDictionary, hasLocale } from "../../dictionaries";
 import { LOCALES } from "../../../../lib/i18n";
@@ -227,17 +228,7 @@ export default async function ProduktDetailPage({
                   >
                     {dict.detail.norms}
                   </h2>
-                  <div className="flex flex-wrap gap-2">
-                    {produkt.normen.map((norm) => (
-                      <span
-                        key={norm}
-                        className="text-[13px] text-navy px-4 py-2 rounded-[8px] bg-white"
-                        style={{ fontWeight: 600, boxShadow: "0 2px 8px rgba(0,45,89,0.06)" }}
-                      >
-                        {norm}
-                      </span>
-                    ))}
-                  </div>
+                  <NormenChips normen={produkt.normen} />
                 </div>
               )}
 
