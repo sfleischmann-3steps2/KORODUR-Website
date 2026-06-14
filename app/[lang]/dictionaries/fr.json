@@ -380,6 +380,8 @@
     "gruppe_anker-injektion": "Système d'ancrage et d'injection",
     "gruppe_betoninstandsetzung": "Réparation du béton",
     "gruppe_schnellbeton": "Systèmes de béton rapide",
+    "produkte_filter_hinweis": "Sélectionnez un groupe de produits pour afficher les produits correspondants.",
+    "produkte_filter_alle": "Tous les produits",
     "gruppe_reparaturmoertel": "Mortiers de réparation rapide",
     "gruppe_premium": "Qualités premium",
     "gruppe_standard": "Qualités standard",

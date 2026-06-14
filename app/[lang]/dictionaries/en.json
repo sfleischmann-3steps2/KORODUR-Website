@@ -380,6 +380,8 @@
     "gruppe_anker-injektion": "Anchoring & Injection System",
     "gruppe_betoninstandsetzung": "Concrete Repair",
     "gruppe_schnellbeton": "Rapid Concrete Systems",
+    "produkte_filter_hinweis": "Select a product group to show the matching products.",
+    "produkte_filter_alle": "All products",
     "gruppe_reparaturmoertel": "Rapid Repair Mortars",
     "gruppe_premium": "Premium Grades",
     "gruppe_standard": "Standard Grades",

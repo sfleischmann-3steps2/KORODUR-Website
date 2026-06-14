@@ -11,6 +11,7 @@ import { referenzen } from "../../../../data/referenzen";
 import ReferenceCard from "../../../../components/ReferenceCard";
 import { fachberaterFuerBereich } from "../../../../data/fachberater";
 import BeraterCard from "../../../../components/BeraterCard";
+import BereichProduktFilter from "../../../../components/BereichProduktFilter";
 import { alternatesFor } from "../../../../lib/seo";
 import { projektartLabel, type Projektart } from "../../../../data/einsatzbereichMapping";
 import { AppIcon } from "@/components/ui/icon";
@@ -142,11 +143,7 @@ export default async function BereichPage({ params }: { params: Params }) {
       items: localizedProdukte.filter((p) => p.produktgruppe === key),
     }))
     .filter((g) => g.items.length > 0);
-  const ohneGruppe = bereich.produktgruppen
-    ? localizedProdukte.filter(
-        (p) => !p.produktgruppe || !bereich.produktgruppen?.includes(p.produktgruppe)
-      )
-    : localizedProdukte;
+  const alleFachberater = fachberaterFuerBereich(bereich.slug);
 
   return (
     <>
@@ -216,6 +213,34 @@ export default async function BereichPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* CTA oben: Sprung-Anker zu Produkten + Fachberatern (Steffi #119) */}
+      {(localizedProdukte.length > 0 || alleFachberater.length > 0) && (
+        <section style={{ padding: "0 32px 8px" }}>
+          <div className="mx-auto flex flex-wrap gap-3" style={{ maxWidth: 1320 }}>
+            {localizedProdukte.length > 0 && (
+              <a
+                href="#produkte"
+                className="inline-flex items-center justify-center gap-2 rounded-[6px] bg-navy text-white no-underline hover:bg-navy/90 transition-colors duration-200"
+                style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15, minHeight: 44 }}
+              >
+                {dict.nav.produkte}
+                <AppIcon icon={ChevronRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+              </a>
+            )}
+            {alleFachberater.length > 0 && (
+              <a
+                href="#fachberater"
+                className="inline-flex items-center justify-center gap-2 rounded-[6px] border-2 border-navy text-navy no-underline hover:bg-navy hover:text-white transition-colors duration-200"
+                style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15, minHeight: 44 }}
+              >
+                {dict.kontakt.fachberater_title}
+                <AppIcon icon={ChevronRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+              </a>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* Projekttyp-Framing: Neubau und/oder Sanierung (#87) */}
       {/* Framing nur bei Doppelnutzung (Steffi #119): reine-Sanierungs-Bereiche
           (Microtop, Rapid Set) und reine-Neubau (Sichtestrich) brauchen keine
@@ -269,7 +294,7 @@ export default async function BereichPage({ params }: { params: Params }) {
       )}
 
       {/* Produkte des Bereichs */}
-      <section className={bereich.abgegrenzt ? "bg-white" : "bg-icon-bg"} style={{ padding: "56px 32px 64px" }}>
+      <section id="produkte" className={`${bereich.abgegrenzt ? "bg-white" : "bg-icon-bg"} scroll-mt-24`} style={{ padding: "56px 32px 64px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h2
             className="mb-6"
@@ -279,44 +304,18 @@ export default async function BereichPage({ params }: { params: Params }) {
           </h2>
 
           {localizedProdukte.length > 0 ? (
-            <>
-              {/* Gruppen-Anker-Chips (springen zu den Gruppen, kein Filter-State) */}
-              {gruppen.length > 1 && (
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {gruppen.map((g) => (
-                    <a
-                      key={g.key}
-                      href={`#${g.key}`}
-                      className="inline-flex items-center rounded-full border border-mid-gray bg-white text-navy text-[14px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan-text"
-                      style={{ padding: "10px 18px", fontWeight: 700, minHeight: 44 }}
-                    >
-                      {g.label}
-                      <span className="ml-2 text-navy/40 text-[12px]" style={{ fontWeight: 600 }}>
-                        {g.items.length}
-                      </span>
-                    </a>
-                  ))}
-                </div>
-              )}
-
-              {gruppen.map((g) => (
-                <div key={g.key} id={g.key} className="scroll-mt-20 mb-10 last:mb-0">
-                  <h3
-                    className="mb-5"
-                    style={{ fontSize: "clamp(17px, 2.4vw, 22px)", fontWeight: 900, lineHeight: 1.2 }}
-                  >
-                    {g.label}
-                  </h3>
-                  <ProduktGrid produkte={g.items} lang={lang} neutral={bereich.abgegrenzt} />
-                </div>
-              ))}
-
-              {ohneGruppe.length > 0 && (
-                <div className={gruppen.length > 0 ? "mt-10" : undefined}>
-                  <ProduktGrid produkte={ohneGruppe} lang={lang} neutral={bereich.abgegrenzt} />
-                </div>
-              )}
-            </>
+            gruppen.length > 1 ? (
+              <BereichProduktFilter
+                gruppen={gruppen}
+                lang={lang}
+                neutral={bereich.abgegrenzt}
+                defaultOpen={localizedProdukte.length <= 10}
+                hinweis={tb("produkte_filter_hinweis")}
+                alleLabel={tb("produkte_filter_alle")}
+              />
+            ) : (
+              <ProduktGrid produkte={localizedProdukte} lang={lang} neutral={bereich.abgegrenzt} />
+            )
           ) : (
             <div
               className="bg-white rounded-2xl text-center"
@@ -395,8 +394,8 @@ export default async function BereichPage({ params }: { params: Params }) {
       )}
 
       {/* Fachberater des Bereichs (Funnel-Karten, Launch-Audit/Korb 2) */}
-      {fachberaterFuerBereich(bereich.slug).length > 0 && (
-        <section style={{ padding: "56px 32px 64px" }}>
+      {alleFachberater.length > 0 && (
+        <section id="fachberater" className="scroll-mt-24" style={{ padding: "56px 32px 64px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <h2 className="mb-2" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>
               {dict.kontakt.fachberater_title}
@@ -405,7 +404,7 @@ export default async function BereichPage({ params }: { params: Params }) {
               {dict.kontakt.fachberater_intro}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {fachberaterFuerBereich(bereich.slug).map((b) => (
+              {alleFachberater.map((b) => (
                 <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
               ))}
             </div>
