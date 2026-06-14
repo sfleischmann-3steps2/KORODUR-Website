@@ -380,6 +380,8 @@
     "gruppe_anker-injektion": "System kotwienia i iniekcji",
     "gruppe_spritzmoertel": "Zaprawa i beton natryskowy",
     "gruppe_schnellbeton": "Systemy szybkiego betonu",
+    "produkte_filter_hinweis": "Wybierz grupę produktów, aby wyświetlić pasujące produkty.",
+    "produkte_filter_alle": "Wszystkie produkty",
     "gruppe_reparaturmoertel": "Zaprawy do szybkich napraw",
     "gruppe_premium": "Jakości premium",
     "gruppe_standard": "Jakości standard",

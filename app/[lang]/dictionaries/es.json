@@ -380,6 +380,8 @@
     "gruppe_anker-injektion": "Sistema de anclaje e inyección",
     "gruppe_spritzmoertel": "Mortero y hormigón proyectado",
     "gruppe_schnellbeton": "Sistemas de hormigón rápido",
+    "produkte_filter_hinweis": "Seleccione un grupo de productos para mostrar los productos correspondientes.",
+    "produkte_filter_alle": "Todos los productos",
     "gruppe_reparaturmoertel": "Morteros de reparación rápida",
     "gruppe_premium": "Calidades premium",
     "gruppe_standard": "Calidades estándar",
