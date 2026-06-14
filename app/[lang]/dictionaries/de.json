@@ -135,7 +135,12 @@
     "dok_reinigung": "Reinigung & Pflege",
     "dok_service": "Service-Dokument",
     "dok_gruppe_technik": "Technische Dokumente & Konformität",
-    "dok_gruppe_anwendung": "Anwendung & Pflege"
+    "dok_gruppe_anwendung": "Anwendung & Pflege",
+    "highlights_title": "Auf einen Blick",
+    "einsatzbereiche_title": "Einsatzbereiche",
+    "variante_col_name": "Variante",
+    "variante_col_klasse": "Qualitätsklasse",
+    "variante_col_hinweis": "Hinweis"
   },
   "sanierung": {
     "title": "Produktfinder",

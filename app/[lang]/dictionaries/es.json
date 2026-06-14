@@ -135,7 +135,12 @@
     "dok_reinigung": "Limpieza y mantenimiento",
     "dok_service": "Documento de servicio",
     "dok_gruppe_technik": "Documentos técnicos y conformidad",
-    "dok_gruppe_anwendung": "Aplicación y cuidado"
+    "dok_gruppe_anwendung": "Aplicación y cuidado",
+    "highlights_title": "De un vistazo",
+    "einsatzbereiche_title": "Campos de aplicación",
+    "variante_col_name": "Variante",
+    "variante_col_klasse": "Clase de calidad",
+    "variante_col_hinweis": "Nota"
   },
   "sanierung": {
     "title": "Buscador de productos",

@@ -19,7 +19,7 @@ import { withBasePath } from "../../../../lib/basePath";
 import { alternatesFor } from "../../../../lib/seo";
 import { kontaktPath } from "../../../../lib/kontakt";
 import { AppIcon } from "@/components/ui/icon";
-import { CircleCheck, Info } from "lucide-react";
+import { CircleCheck, Info, MapPin } from "lucide-react";
 import { getBereichBySlug } from "../../../../data/bereiche";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; id: string }> }): Promise<Metadata> {
@@ -71,6 +71,11 @@ export default async function ProduktDetailPage({
   const dokumente = PRODUKT_DOKUMENTE[produkt.id] ?? [];
   // Sprachgefiltert (aktuelle Sprache → EN → DE) — steuert auch die Section-Sichtbarkeit (#120).
   const sichtbareDokumente = dokumenteNachSprache(dokumente, lang);
+
+  // Varianten-Vergleichstabelle (#110): Spalten nur zeigen, wenn befüllt.
+  const varianten = produkt.varianten ?? [];
+  const varHatKlasse = varianten.some((v) => v.qualitaetsklasse);
+  const varHatHinweis = varianten.some((v) => v.hinweis);
 
   return (
     <>
@@ -143,36 +148,6 @@ export default async function ProduktDetailPage({
                 </p>
               </div>
             )}
-            {produkt.varianten && produkt.varianten.length > 0 && (
-              <div className="mt-6" style={{ maxWidth: 700 }}>
-                <h2 className="text-navy text-[15px] mb-3" style={{ fontWeight: 900 }}>
-                  {dict.produkte.varianten_title}
-                </h2>
-                <div
-                  className="bg-white border border-bullet-bg overflow-hidden"
-                  style={{ borderRadius: 12 }}
-                >
-                  {produkt.varianten.map((v, i) => (
-                    <div
-                      key={v.name}
-                      className="flex flex-wrap justify-between items-baseline gap-x-4 gap-y-1 px-5 py-3"
-                      style={
-                        i < (produkt.varianten?.length ?? 0) - 1
-                          ? { borderBottom: "1px solid var(--bullet-bg)" }
-                          : {}
-                      }
-                    >
-                      <span className="text-navy text-[14px]" style={{ fontWeight: 700 }}>
-                        {v.name}
-                      </span>
-                      <span className="text-navy/60 text-[13px]">
-                        {[v.qualitaetsklasse, v.hinweis].filter(Boolean).join(" · ")}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
           {produkt.bild && (
             <div className="shrink-0 flex justify-center">
@@ -184,6 +159,93 @@ export default async function ProduktDetailPage({
                 priority
                 className="object-contain drop-shadow-lg"
               />
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Auf einen Blick: Vorteile + Einsatzbereiche + Varianten (scannbarer Kopf) */}
+      <section style={{ padding: "0 32px 8px" }}>
+        <div className="mx-auto flex flex-col gap-12" style={{ maxWidth: 1320 }}>
+          {/* Vorteile / Auf einen Blick */}
+          <div>
+            <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {dict.produkte.highlights_title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+              {produkt.besonderheiten.map((b, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 text-cyan-text mt-0.5">
+                    <AppIcon icon={CircleCheck} width={18} height={18} strokeWidth={2.5} aria-hidden="true" />
+                  </span>
+                  <span className="text-navy text-[15px] leading-[1.55]">{b}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Einsatzbereiche (optional, Content via KORODUR-Claude) */}
+          {produkt.einsatzbereiche && produkt.einsatzbereiche.length > 0 && (
+            <div>
+              <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+                {dict.produkte.einsatzbereiche_title}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+                {produkt.einsatzbereiche.map((e, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-cyan-text mt-0.5">
+                      <AppIcon icon={MapPin} width={18} height={18} strokeWidth={2.5} aria-hidden="true" />
+                    </span>
+                    <span className="text-navy text-[15px] leading-[1.55]">{e}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Varianten-Vergleichstabelle (#110) */}
+          {varianten.length > 0 && (
+            <div>
+              <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+                {dict.produkte.varianten_title}
+              </h2>
+              <div
+                className="overflow-x-auto bg-white"
+                style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.06)" }}
+              >
+                <table className="w-full border-collapse" style={{ minWidth: 480 }}>
+                  <thead>
+                    <tr style={{ borderBottom: "2px solid var(--icon-bg)" }}>
+                      <th className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                        {dict.produkte.variante_col_name}
+                      </th>
+                      {varHatKlasse && (
+                        <th className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                          {dict.produkte.variante_col_klasse}
+                        </th>
+                      )}
+                      {varHatHinweis && (
+                        <th className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                          {dict.produkte.variante_col_hinweis}
+                        </th>
+                      )}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {varianten.map((v, i) => (
+                      <tr key={v.name} style={i < varianten.length - 1 ? { borderBottom: "1px solid var(--icon-bg)" } : {}}>
+                        <td className="text-navy text-[14px] px-6 py-3.5" style={{ fontWeight: 700 }}>{v.name}</td>
+                        {varHatKlasse && (
+                          <td className="text-navy/80 text-[14px] px-6 py-3.5">{v.qualitaetsklasse ?? "–"}</td>
+                        )}
+                        {varHatHinweis && (
+                          <td className="text-navy/80 text-[14px] px-6 py-3.5">{v.hinweis ?? "–"}</td>
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
         </div>
@@ -220,37 +282,18 @@ export default async function ProduktDetailPage({
               </div>
             </div>
 
-            {/* Norms + Features */}
-            <div>
-              {produkt.normen.length > 0 && (
-                <div className="mb-10">
-                  <h2
-                    className="mb-6"
-                    style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
-                  >
-                    {dict.detail.norms}
-                  </h2>
-                  <NormenChips normen={produkt.normen} />
-                </div>
-              )}
-
-              <h2
-                className="mb-6"
-                style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
-              >
-                {dict.produkte.features}
-              </h2>
-              <div className="flex flex-col gap-3">
-                {produkt.besonderheiten.map((b, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 text-cyan-text mt-0.5">
-                      <AppIcon icon={CircleCheck} width={18} height={18} strokeWidth={2.5} aria-hidden="true" />
-                    </span>
-                    <span className="text-navy text-[15px] leading-[1.55]">{b}</span>
-                  </div>
-                ))}
+            {/* Norms (Besonderheiten/Vorteile stehen jetzt im scannbaren Kopf "Auf einen Blick") */}
+            {produkt.normen.length > 0 && (
+              <div>
+                <h2
+                  className="mb-6"
+                  style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
+                >
+                  {dict.detail.norms}
+                </h2>
+                <NormenChips normen={produkt.normen} />
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

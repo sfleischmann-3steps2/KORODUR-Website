@@ -135,7 +135,12 @@
     "dok_reinigung": "Nettoyage et entretien",
     "dok_service": "Document de service",
     "dok_gruppe_technik": "Documents techniques et conformité",
-    "dok_gruppe_anwendung": "Application et entretien"
+    "dok_gruppe_anwendung": "Application et entretien",
+    "highlights_title": "En un coup d'œil",
+    "einsatzbereiche_title": "Domaines d'application",
+    "variante_col_name": "Variante",
+    "variante_col_klasse": "Classe de qualité",
+    "variante_col_hinweis": "Remarque"
   },
   "sanierung": {
     "title": "Trouveur de produits",
