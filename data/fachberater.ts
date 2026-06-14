@@ -3,9 +3,10 @@
 // E-Mails aus data-cfemail dekodiert) — Übernahme des kompletten Alt-Site-
 // Personenkreises freigegeben von Steffi, 2026-06-12. Porträts: benannte
 // Alt-Site-Dateien aus dem Archiv-Spiegel (public/images/fachberater/).
-// Benjamin Lorenz: Daten von den LPs (lp-live.korodur.de), dort kuratiert
-// (Quellen-Hierarchie LP > Alt-Site, daher blorenz@ statt b.lorenz@);
-// kein Porträt vorhanden (auch nicht auf der Alt-Site).
+// E-Mail-Format: [Initiale][Nachname]@korodur.de OHNE Punkt (bestätigt Steffi
+// 2026-06-14, gilt für ALLE Berater; die Alt-Site zeigt teils gepunktete
+// Anzeigeformen, die echten Aliase sind ohne Punkt).
+// Benjamin Lorenz: kein Porträt vorhanden (auch nicht auf der Alt-Site).
 
 import type { Produktbereich } from "./types";
 
@@ -31,7 +32,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     gebiet: "PLZ 01–19, 38–39, 98–99",
     telefon: "+49 (0) 9621 4759-0",
     telefonHref: "tel:+49962147590",
-    email: "j.doering@korodur.de",
+    email: "jdoering@korodur.de",
     bild: "/images/fachberater/j-doering.webp",
     // Nachfolger von Thomas Gerhard (Steffi 2026-06-14, Quelle korodur.de/fachberater).
     bereiche: ["industrieboden", "rapid-set"],
@@ -41,7 +42,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     rolle: "Technische Vertriebsberatung Trinkwasser / MICROTOP",
     telefon: "+49 (0) 170 3733988",
     telefonHref: "tel:+491703733988",
-    email: "b.lorenz@korodur.de",
+    email: "blorenz@korodur.de",
     bereiche: ["microtop"],
   },
   {
@@ -50,7 +51,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     gebiet: "PLZ 20–29, 30–33, 37, 48–49",
     telefon: "+49 (0) 172 1480115",
     telefonHref: "tel:+491721480115",
-    email: "a.mohr@korodur.de",
+    email: "amohr@korodur.de",
     bild: "/images/fachberater/andreas-mohr.webp",
     bereiche: ["industrieboden"],
   },
@@ -60,7 +61,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     gebiet: "PLZ 20–29",
     telefon: "+49 (0) 170 3733983",
     telefonHref: "tel:+491703733983",
-    email: "j.sackmann@korodur.de",
+    email: "jsackmann@korodur.de",
     bild: "/images/fachberater/jens-sackmann.webp",
     bereiche: ["rapid-set"],
   },
@@ -70,7 +71,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     gebiet: "PLZ 30–33, 37, 40–49, 50–53, 57–59",
     telefon: "+49 (0) 170 3733979",
     telefonHref: "tel:+491703733979",
-    email: "a.grahn@korodur.de",
+    email: "agrahn@korodur.de",
     bild: "/images/fachberater/andre-grahn.webp",
     bereiche: ["rapid-set"],
   },
@@ -80,7 +81,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     gebiet: "PLZ 34–36, 54–56, 60–69, 70–79",
     telefon: "+49 (0) 172 1480132",
     telefonHref: "tel:+491721480132",
-    email: "e.schumacher@korodur.de",
+    email: "eschumacher@korodur.de",
     bild: "/images/fachberater/erik-schumacher.webp",
     bereiche: ["industrieboden"],
   },
@@ -90,7 +91,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     gebiet: "PLZ 34–36, 54–56, 60–79, 86–89",
     telefon: "+49 (0) 170 3733985",
     telefonHref: "tel:+491703733985",
-    email: "j.lang@korodur.de",
+    email: "jlang@korodur.de",
     bild: "/images/fachberater/jens-lang.webp",
     bereiche: ["rapid-set"],
   },
@@ -100,7 +101,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     gebiet: "PLZ 80–89, 94",
     telefon: "+49 (0) 172 1480125",
     telefonHref: "tel:+491721480125",
-    email: "d.may@korodur.de",
+    email: "dmay@korodur.de",
     bild: "/images/fachberater/daniel-may.webp",
     bereiche: ["industrieboden", "rapid-set"],
   },
@@ -110,7 +111,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     gebiet: "PLZ 90–93, 95–97",
     telefon: "+49 (0) 172 1480128",
     telefonHref: "tel:+491721480128",
-    email: "f.palese@korodur.de",
+    email: "fpalese@korodur.de",
     bild: "/images/fachberater/francesco-palese.webp",
     bereiche: ["industrieboden", "rapid-set"],
   },
@@ -142,7 +143,7 @@ export const FACHBERATER_INTERNATIONAL: Fachberater[] = [
     rolle: "Regional Sales Manager Poland",
     telefon: "+49 (0) 172 1480125",
     telefonHref: "tel:+491721480125",
-    email: "d.may@korodur.de",
+    email: "dmay@korodur.de",
     bild: "/images/fachberater/daniel-may.webp",
     bereiche: [],
   },
@@ -151,7 +152,7 @@ export const FACHBERATER_INTERNATIONAL: Fachberater[] = [
     rolle: "Regional Sales Manager Italy",
     telefon: "+49 (0) 172 1480128",
     telefonHref: "tel:+491721480128",
-    email: "f.palese@korodur.de",
+    email: "fpalese@korodur.de",
     bild: "/images/fachberater/francesco-palese.webp",
     bereiche: [],
   },
