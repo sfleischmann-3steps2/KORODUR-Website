@@ -1,0 +1,146 @@
+---
+title: "Abrieb und Verschleiß: Spurrillen und abgetragene Oberflächen"
+slug: "abrieb-verschleiß"
+typ: "schadensbild"
+zielgruppe: "Bauherren/Betreiber"
+ebene: "Fach"
+stufe: "V1.5"
+status: "entwurf"
+reviewer: "Frank Sander"
+quellen: ["data/produkte.ts", "data/referenzen.ts", "data/einsatzbereichMapping.ts", "data/fachberater.ts"]
+bilder:
+  - pfad: "public/images/schadensbilder/abrieb-verschleiß.jpg"
+    brief: "Industriehallenboden mit deutlichen Spurrillen entlang einer Staplerfahrspur, abgetragene Zementhaut, freigelegtes Korn, mattgrau, technisch-dokumentarisch, kein Personal, Seitenlicht zur Betonung der Rillen-Topografie"
+    quelle: "hixfield-illustration"
+todo_frank:
+  - "Wiederbelastbarkeit NEODUR HE 65 / HE 65 Plus / HE 40 (belastbarNach='7 d', Steffi 2026-06-09) gegen aktuelles TDS bestätigen."
+  - "Böhme-Prüfung: Daten führen Schleifverschleiß in cm³/50 cm² + DIN 1100 Gruppen (A/M/KS). Soll 'Böhme-Scheibe (DIN 52108)' explizit genannt werden oder reicht DIN 1100 Hartstoffgruppe?"
+  - "Verschleißwiderstand Rapid Set MORTAR MIX DUR liegt als 'DIN 1100 A' vor, ohne cm³-Wert in produkte.ts. Falls konkreter Abriebwert kommuniziert werden soll: aus TDS ergänzen."
+  - "Beanspruchungs-Matrix (leicht/mittel/schwer -> Hartstoffgruppe, Stapler-Bereifung Vulkollan/Stahl) ist nicht in den Repo-Daten. Falls gewünscht: Werte ergänzen."
+  - "Bild-Brief Schadensbild ist Hixfield-Platzhalter. Echtes Schadensfoto (Spurrillen) aus Archiv verfügbar?"
+---
+
+import { Belastungstags } from "@/components/Belastungstags";
+import { ProduktKarte } from "@/components/ProduktKarte";
+import { ReferenzKarte } from "@/components/ReferenzKarte";
+import { CTA } from "@/components/CTA";
+
+<Belastungstags tags={["verschleiß", "staplerverkehr"]} />
+
+# Abrieb und Verschleiß: Spurrillen und abgetragene Oberflächen
+
+Wenn entlang der Fahrspuren Rillen entstehen, das Korn freiliegt und die Oberfläche staubt, ist die Verschleißschicht aufgebraucht. Das ist kein optisches Thema, sondern ein wirtschaftliches: ungleiche Flächen belasten Stapler und Ladung, der Abrieb beschleunigt sich selbst, und am Ende steht der Komplettausbau statt der Sanierung. Wir sanieren solche Flächen seit Jahrzehnten, oft übers Wochenende und im laufenden Betrieb.
+
+## Woran wir Abrieb erkennen
+
+- **Spurrillen** entlang der Hauptfahrwege, besonders in Kurven und an Andockpunkten
+- **Abgetragene Zementhaut**, freiliegendes Korn, rauer werdende Oberfläche
+- **Staubentwicklung** unter rollender Last, sandende Oberfläche
+- **Mulden und Senken** an Punkten mit stehender oder wendender Last
+
+Treiber ist fast immer rollender und wendender Verkehr: Stapler, Hubwagen, Routenzüge, dazu Eisenräder und scharfkantig abgesetzte Werkstücke. Je härter die Bereifung und je enger die Fahrkurven, desto schneller der Abrieb.
+
+## Wie Verschleißfestigkeit gemessen wird
+
+Den maßgeblichen Kennwert liefert der Schleifverschleiß nach DIN 1100, angegeben in cm³/50 cm² und über die Hartstoffgruppen klassifiziert. Je kleiner der Wert, desto höher der Abnutzungswiderstand:
+
+- **Gruppe A** (zementgebundene Hartstoffe): Schleifverschleiß ≤ 6 cm³/50 cm² bzw. ≤ 5 cm³/50 cm² je Produkt
+- **Gruppe M** (metallische Hartstoffe): für Eisenräderverkehr und Panzerestriche
+- **Gruppe KS** (höchster Abnutzungswiderstand): Schleifverschleiß ≤ 1,5 cm³/50 cm²
+
+Diese Werte sind in unseren technischen Datenblättern hinterlegt und damit ausschreibungs- und nachweisfähig.
+
+## Passende Produkte
+
+Für verschleißbeanspruchte Industrieböden setzen wir Hartstoffestriche und Hartstoffe mit dokumentiertem Verschleißwiderstand ein. Welches Produkt passt, hängt von Beanspruchung, Schichtdicke und gewünschter Wiederinbetriebnahme ab.
+
+<ProduktKarte
+  id="neodur-he-65"
+  name="NEODUR HE 65"
+  kennwerte={[
+    "Verschleißwiderstand A6 (≤ 6 cm³/50 cm²)",
+    "Druckfestigkeit ≥ 70 N/mm²",
+    "Höchste Verschleißfestigkeit, wirtschaftlich auf Großflächen (Silosystem)"
+  ]}
+/>
+
+<ProduktKarte
+  id="neodur-he-65-plus"
+  name="NEODUR HE 65 Plus"
+  kennwerte={[
+    "Verschleißwiderstand A6 (≤ 6 cm³/50 cm²)",
+    "Druckfestigkeit ≥ 70 N/mm²",
+    "Frost-/tausalzbeständig, WHG-tauglich, ohne Haftbrücke verarbeitbar"
+  ]}
+/>
+
+<ProduktKarte
+  id="neodur-he-60-rapid"
+  name="NEODUR HE 60 rapid"
+  kennwerte={[
+    "Verschleißwiderstand A6 (≤ 6 cm³/50 cm²)",
+    "Druckfestigkeit ≥ 60 N/mm², begehbar ca. 3 h",
+    "Voll belastbar nach ca. 24 h: ideal für Wochenend- und Engpass-Sanierungen"
+  ]}
+/>
+
+<ProduktKarte
+  id="neodur-he-40"
+  name="NEODUR HE 40"
+  kennwerte={[
+    "Verschleißwiderstand A6 (≤ 6 cm³/50 cm²)",
+    "Druckfestigkeit ≥ 40 N/mm²",
+    "Wirtschaftliche Hartstoff-Lösung, kraftschlüssiger Verbund nach DIN 18560-7"
+  ]}
+/>
+
+Für höchste Beanspruchung und Eisenräderverkehr stehen Hartstoffe der Gruppe KS und M bereit: **KORODUR Diamantbeton** (Gruppe KS, Schleifverschleiß ≤ 1,5 cm³/50 cm²) und **KORODUR WH-metallisch** (Gruppe M, ≤ 3 cm³/50 cm², für Panzerestriche). Im Einstreuverfahren auf frischem Beton liefert **NEODUR HE 3** (Gruppe A, ≤ 5 cm³/50 cm²) eine verschleißfeste Nutzschicht.
+
+Geht es um die punktuelle Reprofilierung ausgefahrener Spurrillen oder Fugenflanken bei kurzer Sperrzeit, ist **Rapid Set MORTAR MIX DUR** mit integriertem Verschleißträger DIN 1100 A die schnelle Lösung: voll belastbar nach ca. 1 Stunde. TODO(Frank): expliziter cm³-Abriebwert aus TDS ergänzen.
+
+Hartstoffestriche im Verbund setzen wir auf die schnellerhärtende Haftbrücke **KORODUR HB 5 rapid** für einen kraftschlüssigen Verbund zum Bestandsbeton.
+
+> Hinweis zur Wiederinbetriebnahme: NEODUR HE 65, HE 65 Plus und HE 40 sind in unseren Daten mit voll belastbar nach ca. 7 Tagen hinterlegt. NEODUR HE 60 rapid erreicht die volle Belastbarkeit bereits nach ca. 24 Stunden. TODO(Frank): Werte gegen aktuelles TDS bestätigen.
+
+## Das haben wir schon hundertfach gemacht
+
+<ReferenzKarte
+  id="kleemann-produktionshalle"
+  titel="Produktionshalle Kleemann, Göppingen"
+  fakten={[
+    "1.000 m², schwere Maschinen und Kettenfahrzeuge",
+    "NEODUR HE 60 rapid (15 mm), Verschleißfestigkeit ≤ 5,0 cm³/50 cm²",
+    "Voll belastbar nach 48 h"
+  ]}
+/>
+
+<ReferenzKarte
+  id="weag-entsorgungsbetrieb"
+  titel="WEAG Entsorgungsbetrieb"
+  fakten={[
+    "200 m², über 20 Jahre alter Betonboden im Dauerbetrieb",
+    "NEODUR HE 60 rapid auf Haftbrücke KORODUR HB 5 rapid",
+    "Wieder nutzbar nach 24 h"
+  ]}
+/>
+
+<ReferenzKarte
+  id="strandkorbhalle-sylt"
+  titel="Strandkorbhalle Sylt"
+  fakten={[
+    "2.200 m², hohe Verschleiß- und Witterungsbeanspruchung",
+    "NEODUR HE 65 auf KORODUR HB 5, eingebaut per Silosystem",
+    "Wirtschaftlicher Einbau auf Großfläche"
+  ]}
+/>
+
+Weitere verschleißbeanspruchte Flächen, die wir saniert haben: die Wochenend-Sanierung einer Werkstatt in Neutraubling (130 m²) und einer Produktionshalle bei Antolin in Ebergassing, die Verkaufshalle der Obstplantage Ibbenbüren bei täglichem Staplereinsatz sowie die Sinusfugen-Sanierung einer Logistikhalle mit Rapid Set MORTAR MIX DUR, voll belastbar nach ca. 2 Stunden.
+
+## Nächster Schritt
+
+Den passenden Hartstoffestrich für Ihre Beanspruchung und Ihr Zeitfenster finden Sie in wenigen Schritten über unseren Lösungsfinder. Für eine direkte fachliche Einschätzung Ihrer Fläche erreichen Sie unsere technische Vertriebsberatung Industrieboden.
+
+<CTA
+  primary={{ label: "Lösungsfinder starten", href: "/loesungsfinder" }}
+  secondary={{ label: "Fachberatung anfragen", href: "/kontakt/industrieboden" }}
+/>
