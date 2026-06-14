@@ -14,6 +14,9 @@ export interface Bereich {
   haendlerHinweis?: boolean;
   /** Katzenstreu: eigener Geschäftsbereich, optisch abgegrenzt (Review-Entscheidung). */
   abgegrenzt?: boolean;
+  /** Bereichsbild (public/images/bereiche/<slug>.*, ohne basePath). Optional;
+   *  wird per #141 (Hixfield) befüllt. Ohne Bild zeigt der Header das Icon-Band. */
+  bild?: string;
   /** Geordnete Produktgruppen-Keys für die Bereichsseiten-Gliederung.
    *  Labels in den Dictionaries unter `bereiche.gruppe_<key>`.
    *  Kuratiert mit Sign-off: docs/website-migration/zuordnung-<bereich>.md */
