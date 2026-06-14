@@ -50,7 +50,7 @@ export const bereiche: Bereich[] = [
   },
   {
     slug: "spezialbaustoffe",
-    produktgruppen: ["verguss", "anker-injektion", "betoninstandsetzung", "pflasterfugen", "schnellbeton"],
+    produktgruppen: ["verguss", "anker-injektion", "spritzmoertel", "pflasterfugen", "schnellbeton"],
   },
   { slug: "3d-concrete-printing", externeWebsite: "https://www.3d-concrete-printing.com" },
   {
