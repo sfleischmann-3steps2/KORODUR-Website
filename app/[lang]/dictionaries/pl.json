@@ -494,6 +494,9 @@
     "fachberater_title": "Doradztwo techniczne",
     "fachberater_intro": "Nasi doradcy techniczni pomagają w pytaniach o produkty, obliczeniach ilości i zaleceniach wykonawczych, bezpłatnie i niezobowiązująco.",
     "fachberater_plz": "Obszary kodów pocztowych",
+    "finder_bereich_all": "Wszystkie obszary",
+    "finder_plz_placeholder": "Wpisz kod",
+    "finder_no_results": "Brak pasującego doradcy. Skorzystaj z formularza poniżej.",
     "international_title": "Doradcy międzynarodowi",
     "international_text": "KORODUR posiada międzynarodową sieć sprzedaży i współpracuje z lokalnymi przedstawicielami, partnerami handlowymi i wykonawcami. Wszystkie produkty dostarczane są z naszych zakładów w Niemczech. W sprawie doradztwa i dalszych informacji prosimy o kontakt z naszym działem eksportu."
   },

@@ -494,6 +494,9 @@
     "fachberater_title": "Technical Consulting",
     "fachberater_intro": "Our technical consultants help with product questions, quantity calculations and application advice, free of charge and without obligation.",
     "fachberater_plz": "Postcode areas",
+    "finder_bereich_all": "All areas",
+    "finder_plz_placeholder": "Enter postcode",
+    "finder_no_results": "No matching advisor. Please use the contact form below.",
     "international_title": "International Advisors",
     "international_text": "KORODUR has an international sales network and works with local representatives, distribution partners and applicators. All products are supplied from our plants in Germany. Please contact our export department for advice and further information."
   },

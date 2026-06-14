@@ -494,6 +494,9 @@
     "fachberater_title": "Asesoramiento técnico especializado",
     "fachberater_intro": "Nuestros asesores técnicos le ayudan con preguntas sobre productos, cálculo de cantidades y recomendaciones de aplicación, de forma gratuita y sin compromiso.",
     "fachberater_plz": "Zonas de código postal",
+    "finder_bereich_all": "Todas las áreas",
+    "finder_plz_placeholder": "Código postal",
+    "finder_no_results": "Ningún asesor coincide. Utilice el formulario de abajo.",
     "international_title": "Asesores técnicos internacionales",
     "international_text": "KORODUR dispone de una red de ventas internacional y colabora con representantes locales, socios de distribución y aplicadores. El suministro se realiza siempre desde las plantas en Alemania. Contacte con nuestro departamento de exportación para asesoramiento e información adicional."
   },

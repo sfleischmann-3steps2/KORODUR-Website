@@ -5,17 +5,12 @@ import { KORODUR_FIRMA, KORODUR_ZENTRALE } from "../../../lib/kontaktDaten";
 import { alternatesFor } from "../../../lib/seo";
 import { FACHBERATER_DE, FACHBERATER_INTERNATIONAL } from "../../../data/fachberater";
 import BeraterCard from "../../../components/BeraterCard";
+import FachberaterFinder from "../../../components/FachberaterFinder";
 import KontaktFormular from "../../../components/KontaktFormular";
 import { AppIcon } from "@/components/ui/icon";
-import { ExternalLink, Mail, Phone, Printer } from "lucide-react";
+import { Mail, Phone, Printer } from "lucide-react";
 
 type Params = Promise<{ lang: string }>;
-
-const VERBUNDENE_WEBSITES = [
-  { label: "goodcat.de", href: "https://www.goodcat.de" },
-  { label: "korodur-rapidset.com", href: "https://www.korodur-rapidset.com" },
-  { label: "3d-concrete-printing.com", href: "https://www.3d-concrete-printing.com" },
-];
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { lang } = await params;
@@ -35,12 +30,9 @@ export default async function KontaktPage({ params }: { params: Params }) {
 
   return (
     <>
-      <section style={{ padding: "48px 32px 40px" }}>
+      <section style={{ padding: "48px 32px 32px" }}>
         <div className="mx-auto" style={{ maxWidth: 860 }}>
-          <h1
-            className="mb-4"
-            style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}
-          >
+          <h1 className="mb-4" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
             {dict.kontakt.title}
           </h1>
           <p className="text-navy/70 m-0" style={{ fontSize: 18, lineHeight: 1.7 }}>
@@ -49,14 +41,41 @@ export default async function KontaktPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      {/* Zentrales Kontaktformular (Feldstruktur der Alt-Site; V1 via mailto, Stufe 5 echter Versand) */}
-      <section style={{ padding: "8px 32px 40px" }}>
+      {/* Fachberater zuerst (Steffi #90): Bereich- + PLZ-Finder über dem Formular. */}
+      <section style={{ padding: "8px 32px 16px" }}>
         <div className="mx-auto" style={{ maxWidth: 860 }}>
-          <KontaktFormular dict={dict} />
+          <h2 className="text-navy mt-0 mb-2" style={{ fontSize: 22, fontWeight: 900 }}>
+            {dict.kontakt.fachberater_title}
+          </h2>
+          <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
+            {dict.kontakt.fachberater_intro}
+          </p>
+          <FachberaterFinder
+            berater={FACHBERATER_DE}
+            lang={lang}
+            plzLabel={dict.kontakt.fachberater_plz}
+            bereichAll={dict.kontakt.finder_bereich_all}
+            plzPlaceholder={dict.kontakt.finder_plz_placeholder}
+            noResults={dict.kontakt.finder_no_results}
+          />
+
+          {/* Internationale Fachberater (Z3: Export-Kontakte für EN/FR/PL/ES). */}
+          <h2 className="text-navy mt-12 mb-2" style={{ fontSize: 20, fontWeight: 900 }}>
+            {dict.kontakt.international_title}
+          </h2>
+          <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
+            {dict.kontakt.international_text}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {FACHBERATER_INTERNATIONAL.map((b) => (
+              <BeraterCard key={`${b.name}-${b.rolle}`} berater={b} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section style={{ padding: "0 32px 56px" }}>
+      {/* Zentrale */}
+      <section style={{ padding: "8px 32px 24px" }}>
         <div className="mx-auto" style={{ maxWidth: 860 }}>
           <div className="bg-light-gray rounded-2xl" style={{ padding: "40px 36px" }}>
             <h2 className="text-navy mt-0 mb-4" style={{ fontSize: 22, fontWeight: 900 }}>
@@ -115,56 +134,13 @@ export default async function KontaktPage({ params }: { params: Params }) {
               {dict.kontakt.cta_mail}
             </a>
           </div>
+        </div>
+      </section>
 
-          {/* Technische Fachberatung — kompletter Alt-Site-Personenkreis mit
-              Porträts (Korb 2, Steffi 2026-06-12) */}
-          <h2 className="text-navy mt-12 mb-2" style={{ fontSize: 20, fontWeight: 900 }}>
-            {dict.kontakt.fachberater_title}
-          </h2>
-          <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
-            {dict.kontakt.fachberater_intro}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {FACHBERATER_DE.map((b) => (
-              <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
-            ))}
-          </div>
-
-          {/* Internationale Fachberater (Alt-Site kontakt/international, M3b).
-              Zahlt auf Z3 ein: EN/FR/PL-Besucher bekommen Export-Kontakte
-              statt nur deutscher PLZ-Gebiete. */}
-          <h2 className="text-navy mt-12 mb-2" style={{ fontSize: 20, fontWeight: 900 }}>
-            {dict.kontakt.international_title}
-          </h2>
-          <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
-            {dict.kontakt.international_text}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {FACHBERATER_INTERNATIONAL.map((b) => (
-              <BeraterCard key={`${b.name}-${b.rolle}`} berater={b} />
-            ))}
-          </div>
-
-          {/* Verbundene Websites */}
-          <h2 className="text-navy mt-12 mb-4" style={{ fontSize: 20, fontWeight: 900 }}>
-            {dict.kontakt.websites_title}
-          </h2>
-          <ul className="list-none p-0 m-0 flex flex-col gap-1">
-            {VERBUNDENE_WEBSITES.map((site) => (
-              <li key={site.href}>
-                <a
-                  href={site.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-cyan-text text-[15px] no-underline hover:underline"
-                  style={{ fontWeight: 700, minHeight: 44 }}
-                >
-                  {site.label}
-                  <AppIcon icon={ExternalLink} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
-                </a>
-              </li>
-            ))}
-          </ul>
+      {/* Kontaktformular nach unten (Steffi #90) */}
+      <section style={{ padding: "8px 32px 56px" }}>
+        <div className="mx-auto" style={{ maxWidth: 860 }}>
+          <KontaktFormular dict={dict} />
         </div>
       </section>
     </>

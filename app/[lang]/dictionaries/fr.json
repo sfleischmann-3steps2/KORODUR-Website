@@ -494,6 +494,9 @@
     "fachberater_title": "Conseil technique",
     "fachberater_intro": "Nos conseillers techniques vous aident pour les questions produits, les calculs de quantités et les recommandations de mise en œuvre, gratuitement et sans engagement.",
     "fachberater_plz": "Zones postales",
+    "finder_bereich_all": "Tous les domaines",
+    "finder_plz_placeholder": "Code postal",
+    "finder_no_results": "Aucun conseiller correspondant. Utilisez le formulaire ci-dessous.",
     "international_title": "Conseillers internationaux",
     "international_text": "KORODUR dispose d'un réseau de vente international et travaille avec des représentants locaux, des partenaires de distribution et des applicateurs. Tous les produits sont livrés depuis nos usines en Allemagne. Contactez notre service export pour tout conseil et information complémentaire."
   },

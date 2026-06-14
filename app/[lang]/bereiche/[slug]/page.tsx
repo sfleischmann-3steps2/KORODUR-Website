@@ -323,7 +323,7 @@ export default async function BereichPage({ params }: { params: Params }) {
                 {tb("keine_produkte")}
               </p>
               <Link
-                href={`/${lang}/kontakt/`}
+                href={`/${lang}/kontakt/?bereich=${slug}`}
                 className="inline-flex items-center justify-center border-2 border-navy text-navy no-underline rounded-[6px] hover:bg-navy hover:text-white transition-colors duration-200"
                 style={{ padding: "12px 26px", fontWeight: 800, fontSize: 15, minHeight: 44 }}
               >
@@ -449,7 +449,7 @@ export default async function BereichPage({ params }: { params: Params }) {
             {tb("cta_text")}
           </p>
           <Link
-            href={`/${lang}/kontakt/`}
+            href={`/${lang}/kontakt/?bereich=${slug}`}
             className="inline-flex items-center justify-center text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
             style={{ padding: "14px 30px", fontWeight: 800, fontSize: 15, minHeight: 44 }}
           >
