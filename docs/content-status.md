@@ -1,6 +1,8 @@
 # Content-Status: Fachartikel-Entwuerfe V1
 
 Generiert 2026-06-14. Quelle: Entwurfs-Workflow (14 Artikel, je Entwurf + QA).
+
+**Korrekturlauf 2026-06-14 (Review Steffi/Claude):** Ex-Mitarbeiter Thomas Gerhard und alle personenbezogenen Fachberater-Kontakte (Name/Telefon/E-Mail) aus dem Fließtext entfernt und generisch auf den Fachberater-Finder ([Fachberatung anfragen](/kontakt)) geroutet. Em-Dashes entfernt. ASCII-Umlaut-Schlusskorrektur über alle Artikel (verifiziert: 0 Treffer). Offen bleibt: fachliche Freigabe je Artikel (TODO(Frank)) und finale CTA-/Detail-Routen scharfschalten.
 Status je Artikel steht im Frontmatter (`status: entwurf | in_review | freigegeben`, `reviewer:`).
 Diese Tabelle ist die Uebersicht fuer das Review. `QA-Risiko` = Risiko erfundener Werte laut QA-Agent; `QA` = Nacharbeitsempfehlung des QA-Agenten; `TODO(Frank)` = Anzahl offener Fachfragen im Artikel.
 
