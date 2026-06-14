@@ -32,8 +32,8 @@ export const FACHBERATER_DE: Fachberater[] = [
     telefon: "+49 (0) 9621 4759-0",
     telefonHref: "tel:+49962147590",
     email: "j.doering@korodur.de",
+    bild: "/images/fachberater/j-doering.webp",
     // Nachfolger von Thomas Gerhard (Steffi 2026-06-14, Quelle korodur.de/fachberater).
-    // Porträt-Datei fehlt noch (Initialen-Fallback) — j-doering.webp nachliefern.
     bereiche: ["industrieboden", "rapid-set"],
   },
   {
