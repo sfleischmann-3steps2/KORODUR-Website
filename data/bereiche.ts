@@ -26,6 +26,7 @@ export interface Bereich {
 export const bereiche: Bereich[] = [
   {
     slug: "industrieboden",
+    bild: "/images/bereiche/industrieboden.webp",
     produktgruppen: [
       "hartstoffestriche",
       "hartstoffeinstreuung",
@@ -42,25 +43,30 @@ export const bereiche: Bereich[] = [
   },
   {
     slug: "sichtestrich",
+    bild: "/images/bereiche/sichtestrich.webp",
     produktgruppen: ["geschliffen", "geglaettet", "truazzo"],
   },
-  { slug: "schnellbetonsysteme" },
+  { slug: "schnellbetonsysteme", bild: "/images/bereiche/schnellbetonsysteme.webp" },
   {
     slug: "rapid-set",
+    bild: "/images/bereiche/rapid-set.webp",
     haendlerHinweis: true,
     produktgruppen: ["reparaturmoertel", "schnellbeton", "additive"],
   },
   {
     slug: "spezialbaustoffe",
+    bild: "/images/bereiche/spezialbaustoffe.webp",
     produktgruppen: ["verguss", "anker-injektion", "spritzmoertel", "pflasterfugen", "schnellbeton"],
   },
-  { slug: "3d-concrete-printing" },
+  { slug: "3d-concrete-printing", bild: "/images/bereiche/3d-concrete-printing.webp" },
   {
     slug: "microtop",
+    bild: "/images/bereiche/microtop.webp",
     produktgruppen: ["trockenspritz", "nassspritz", "beschichtung-schutz"],
   },
   {
     slug: "katzenstreu",
+    bild: "/images/bereiche/katzenstreu.webp",
     abgegrenzt: true,
     // Variante B "neutral-reduziert" (Steffi, 2026-06-12). Highlights in
     // sattem Grün (Richtung Heidelberg-Materials-Grün) später nach Abklärung.
