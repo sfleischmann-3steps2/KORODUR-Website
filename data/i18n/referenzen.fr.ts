@@ -923,4 +923,104 @@ export const referenzenFR: Record<string, {
     ],
     bildAlt: "Réservoir d'eau potable Puchheim pendant la rénovation",
   },
+  "pflastersteinsanierung-amberg": {
+    titel: "Rénovation de pavés à Amberg",
+    untertitel: "Rénovation de pavés en circulation fluide grâce au mortier à prise rapide",
+    land: "Allemagne",
+    herausforderungen: [
+      "Rénovation des pavés en période de circulation fluide",
+      "Préservation du charme de l'ancien pavage",
+      "Passage piéton sans obstacle pour traverser la route",
+      "Réduction du bruit pour les riverains",
+    ],
+    loesung:
+      "Les pavés ont été rénovés avec le mortier polyvalent à prise rapide Rapid Set MORTAR MIX. Grâce à sa prise rapide, les travaux ont pu être réalisés en période de circulation fluide. Un passage pour piétons a en outre été créé.",
+    vorteile: [
+      "Travaux possibles en période de circulation fluide",
+      "Prise rapide du mortier Rapid Set",
+      "Préservation du charme historique du pavage",
+      "Plus de sécurité et de qualité de vie au centre-ville",
+    ],
+    bildAlt: "Pavage rénové dans la Franziskanergasse, Amberg",
+  },
+  "pflastersanierung-crailsheim": {
+    titel: "Égalisation de pavés sans barrières à Crailsheim",
+    untertitel: "Surfaces pavées fraisées et rendues accessibles en quelques heures – sans longue fermeture",
+    land: "Allemagne",
+    herausforderungen: [
+      "Égaliser un pavage irrégulier dans un espace de circulation public pour le rendre accessible",
+      "Jointoyer le pavage de sorte qu'il puisse être fraisé sans que les pavés ne se détachent ou ne se desserrent",
+      "Ne fermer que brièvement les zones concernées",
+      "Une mesure rapide, simple et réduisant le CO₂ pendant l'exploitation du centre-ville",
+    ],
+    loesung:
+      "Le système de joints de pavage KORODUR a été utilisé avec le mortier de réparation polyvalent Rapid Set MORTAR MIX. Après un nouveau jointoiement avec ce mortier spécial à prise rapide, à très faible retrait et très résistant, l'ensemble de la surface pavée a pu être fraisé et rendu accessible en quelques heures à l'aide d'un outillage adapté. L'adhérence entre MORTAR MIX et les flancs des pavés est si forte que les pavés ne se détachent pas lors du fraisage.",
+    vorteile: [
+      "À prise rapide – fraisage et remise en service après quelques heures",
+      "À très faible retrait et très résistant, avec une forte adhérence aux flancs des pavés",
+      "Les pavés ne se détachent pas et ne se desserrent pas lors du fraisage",
+      "Système innovant, durable et réduisant le CO₂, avec de courtes durées de fermeture",
+    ],
+    bildAlt: "Égalisation de pavés sans barrières à Crailsheim",
+  },
+  "flughafen-zagreb": {
+    titel: "Aéroport de Zagreb, Croatie",
+    untertitel: "Dalles de béton endommagées sur les pistes réparées en seulement 4 semaines",
+    land: "Croatie",
+    herausforderungen: [
+      "La piste devait être rouverte au trafic aérien régulier chaque matin à 6 heures",
+      "Travaux exclusivement de nuit, entre 23 heures et 6 heures du matin",
+      "Exigences élevées en matière de durabilité et de longévité des pistes",
+      "Réparation à grande échelle d'env. 1.000 m² de dalles de béton",
+    ],
+    loesung:
+      "Le béton à prise rapide Rapid Set a été utilisé avec des camions malaxeurs à système volumétrique. Ceux-ci stockent séparément tous les composants du béton ; le ciment Rapid Set est mélangé sur place avec les agrégats, l'eau et les additifs pour former le béton frais, immédiatement posé. Cette procédure permet une formulation optimale du béton, répondant aux propriétés exigées et aux conditions météorologiques, ainsi qu'une production de béton sur site sans retard. À chaque nuit, les dalles de béton endommagées étaient coupées, soulevées, enlevées et les surfaces de nouveau bétonnées par système volumétrique. Le bétonnage, le lissage et la finition au balai prenaient env. 20 minutes par dalle, suivis d'un traitement de finition.",
+    vorteile: [
+      "Résistance structurelle > 20 MPa déjà après env. 2 heures",
+      "Réouverture quotidienne de la piste au trafic aérien malgré les travaux en cours",
+      "Production de béton sur site sans retard et parfaitement adaptée grâce aux camions malaxeurs volumétriques",
+      "Durabilité et longévité pour des pistes fortement sollicitées",
+    ],
+    bildAlt: "Réparation des dalles de béton sur les pistes de l'aéroport de Zagreb",
+  },
+  "kopfsteinpflaster-lenningen": {
+    titel: "Pavés Lenningen",
+    untertitel: "Nivellement sans obstacle de pavés avec mortier de réparation à prise rapide",
+    land: "Allemagne",
+    herausforderungen: [
+      "Niveler les surfaces de pavés irrégulières sans obstacle",
+      "Enlever l'ancien mortier de joint sur plus de 30 mm de profondeur",
+      "Temps d'arrêt le plus court possible des surfaces publiques",
+      "Réaliser une technique de travail économiquement praticable",
+    ],
+    loesung:
+      "Le mortier de joint existant a été enlevé jusqu'à une profondeur de plus de 30 mm à l'aide d'un nettoyeur haute pression (>300 bar) et remplacé par le mortier de réparation polyvalent KORODUR Rapid Set MORTAR MIX. Après nettoyage, les surfaces ont été parfaitement nivelées sans obstacle dès le lendemain à l'aide d'une fraiseuse spéciale. Seuls les mortiers de réparation Rapid Set à prise rapide et résistance élevée permettent cette technique de travail pratique avec des temps d'arrêt très courts.",
+    vorteile: [
+      "Prise rapide : nivellement possible dès le lendemain",
+      "Résistance élevée et application polyvalente",
+      "Temps d'arrêt les plus courts – avantage économique",
+      "Surface plane et sans obstacle",
+    ],
+    bildAlt: "Pavés Lenningen",
+  },
+  "hauptbahnhofsvorplatz-landau": {
+    titel: "Place de la gare Landau",
+    untertitel: "Surface en dalles de beton durable et proprement jointoyee pour la place de la gare reamenagee",
+    land: "Allemagne",
+    herausforderungen: [
+      "Jointement des dalles de beton avec une largeur de joints de 8-10 mm et une profondeur de joints de 30 mm",
+      "Un mortier de pavage qualifie et facile a mettre en oeuvre etait requis",
+      "Joints durablement propres, sans fissures, eclatements ni contamination",
+      "Orientation esthetique de la place vers l'Ostbahnstrasse",
+    ],
+    loesung:
+      "L'entrepreneur Groetz a choisi le mortier de jointement KORODUR NEODUR PFM 1K Easyfix en couleur grise. NEODUR PFM 1K Easyfix est un mortier de pavage pret a l'emploi, emballe sous vide, utilise pour le jointement et la renovation de pavages. La surface de la pierre jointee reste pratiquement sans film de resine.",
+    vorteile: [
+      "Pret a l'emploi et emballe sous vide, facile a mettre en oeuvre",
+      "Surface de la pierre pratiquement sans film de resine",
+      "Aspect durablement propre, sans fissures ni eclatements",
+      "Adapte au jointement et a la renovation de pavages",
+    ],
+    bildAlt: "Place de la gare Landau avec dalles de beton anthracite",
+  },
 };

@@ -957,4 +957,124 @@ export const referenzenEN: Record<string, {
     ],
     bildAlt: "Krottenbach drinking water reservoir near Nuremberg coated with MICROTOP",
   },
+  "pflastersteinsanierung-amberg": {
+    titel: "Pavement Renovation Amberg",
+    untertitel: "Pavement renovation during flowing traffic thanks to fast-setting mortar",
+    land: "Germany",
+    herausforderungen: [
+      "Pavement renovation during flowing traffic",
+      "Preserving the charming flair of the old pavings",
+      "Barrier-free pedestrian crossing of the road",
+      "Noise reduction for residents",
+    ],
+    loesung:
+      "The pavings were repaired with the fast-setting, multipurpose mortar Rapid Set MORTAR MIX. Thanks to its quick setting time, the works could be carried out during flowing traffic. A pedestrian cross way for barrier-free crossing was added.",
+    vorteile: [
+      "Works possible during flowing traffic",
+      "Fast setting time of the Rapid Set mortar",
+      "Preservation of the historic pavement flair",
+      "More safety and quality of life in the city center",
+    ],
+    bildAlt: "Renovated pavement in Franziskanergasse, Amberg",
+  },
+  "pflastersanierung-crailsheim": {
+    titel: "Barrier-free pavement leveling Crailsheim",
+    untertitel: "Paving surfaces milled barrier-free within a few hours – without lengthy closures",
+    land: "Germany",
+    herausforderungen: [
+      "Level uneven large-format pavement in a public traffic area to make it barrier-free",
+      "Grout the pavement so it can be milled without stones breaking out or loosening",
+      "Keep the affected areas closed only briefly",
+      "A fast, easy and CO₂-reduced measure during ongoing city-center operation",
+    ],
+    loesung:
+      "The KORODUR paving joint system was used together with the multipurpose repair mortar Rapid Set MORTAR MIX. After newly grouting with this fast-setting, dimensionally stable, high-strength special mortar, the entire paving surface could be milled barrier-free with suitable equipment after just a few hours. The bond between MORTAR MIX and the paving stone flanks is so strong that the stones do not break out or loosen during milling.",
+    vorteile: [
+      "Fast-setting – milling and release after just a few hours",
+      "Dimensionally stable and high-strength, with a strong bond to the paving stone flanks",
+      "Stones do not break out or loosen during milling",
+      "Innovative, sustainable and CO₂-reduced system with short closure times",
+    ],
+    bildAlt: "Barrier-free pavement leveling in Crailsheim",
+  },
+  "flughafen-zagreb": {
+    titel: "Zagreb Airport, Croatia",
+    untertitel: "Damaged concrete slabs on runways and landing strips repaired in only 4 weeks",
+    land: "Croatia",
+    herausforderungen: [
+      "The runway had to be reopened for regular air traffic every morning at 6 a.m.",
+      "Work exclusively in night shifts between 11.00 pm and 6.00 am",
+      "High demands on durability and longevity of the flight operation areas",
+      "Large-scale repair of approx. 1,000 m² of concrete slabs",
+    ],
+    loesung:
+      "Rapid Set fast-setting concrete was used in combination with volumetric mixing trucks. These hold all concrete components separately; the Rapid Set cement is mixed on site with aggregates, water and additives to fresh concrete which is installed immediately. This allows an optimal concrete formulation tailored to the demanded properties and weather effects and a delay-free on-site concrete production. In each night shift the damaged concrete slabs were cut out, lifted, removed and the areas re-cast in the volumetric system. Concreting, smoothing and broom finish took about 20 minutes per slab, followed by after-treatment.",
+    vorteile: [
+      "Structural strength of > 20 MPa already after approx. 2 hours",
+      "Daily release of the runway for air traffic despite ongoing construction work",
+      "Delay-free, optimally on-site tailored concrete production thanks to volumetric mixing trucks",
+      "Durability and longevity for highly stressed flight operation areas",
+    ],
+    bildAlt: "Repair of concrete slabs on the runways at Zagreb Airport",
+  },
+  "strassensanierung-wien": {
+    titel: "Road Repair Vienna",
+    untertitel: "Partial repair of a concrete pavement within an intersection, reopened to traffic after 1 hour",
+    land: "Austria",
+    herausforderungen: [
+      "Static stress through the design in the corner area",
+      "Shear forces in the heavily trafficked intersection",
+      "Frost and deicer resistance",
+      "Fast reopening to traffic",
+    ],
+    loesung:
+      "The Vienna-based construction company Mörtinger & Co GmbH opted for a partial surface repair of the concrete pavement with DOT Europe CONCRETE MIX: a high-performance, polymer-modified, fast-setting and fiber-reinforced fast concrete for indoor and outdoor applications. The damaged area was chiseled out to a depth of 80 mm, the loose debris removed, the area including its flanks pre-wet and the material cast in a pasty consistency. The surface was then ground and given a broom finish.",
+    vorteile: [
+      "Reopened to traffic after just 1 hour",
+      "Easy processing of the pasty material",
+      "Frost- and deicer-resistant, durable solution",
+      "Fiber-reinforced fast concrete for indoor and outdoor use",
+    ],
+    bildAlt: "Repaired concrete pavement section in a Vienna intersection",
+  },
+  "kopfsteinpflaster-lenningen": {
+    titel: "Cobblestone Pavement Lenningen",
+    untertitel: "Barrier-free levelling of cobblestone pavement with fast-setting repair mortar",
+    land: "Germany",
+    herausforderungen: [
+      "Level uneven cobblestone surfaces barrier-free",
+      "Remove old joint mortar to a depth of more than 30 mm",
+      "Shortest possible shut-down time of public areas",
+      "Realize an economically practical working technique",
+    ],
+    loesung:
+      "The existing joint mortar was removed to a depth of more than 30 mm using a high-pressure cleaner (>300 bar) and replaced by the multipurpose KORODUR repair mortar Rapid Set MORTAR MIX. After cleaning, the surface was levelled barrier-free only one day later by means of a special, patented milling machine. Only the fast-setting, high-strength Rapid Set repair mortar makes this practical working technique with the shortest shut-down times possible.",
+    vorteile: [
+      "Fast-setting: levelling possible just one day later",
+      "High-strength and multipurpose application",
+      "Shortest shut-down times – economically attractive",
+      "Barrier-free, even surface",
+    ],
+    bildAlt: "Cobblestone pavement Lenningen",
+  },
+  "hauptbahnhofsvorplatz-landau": {
+    titel: "Station Plaza Landau",
+    untertitel: "Durable, cleanly grouted concrete slab surface for the redesigned station plaza",
+    land: "Germany",
+    herausforderungen: [
+      "Grouting of the concrete slabs with a joint width of 8-10 mm and a joint depth of 30 mm",
+      "A qualified and easy-to-process paving grout was required",
+      "Permanently clean joints free of cracks, breakouts and contamination",
+      "Design orientation of the plaza towards the Ostbahnstrasse",
+    ],
+    loesung:
+      "The assigned company Groetz opted for the KORODUR pavement grout NEODUR PFM 1K Easyfix in grey color. NEODUR PFM 1K Easyfix is a ready-mixed, vacuum-packed paving joint grout used for the repointing and restoration of paved areas. The grouted stone surface remains nearly resin film free.",
+    vorteile: [
+      "Ready-mixed and vacuum-packed, easy to process",
+      "Nearly resin film free stone surface",
+      "Permanently clean appearance without cracks and breakouts",
+      "Suitable for repointing and restoration of paved areas",
+    ],
+    bildAlt: "Station plaza Landau with anthracite concrete slabs",
+  },
 };
