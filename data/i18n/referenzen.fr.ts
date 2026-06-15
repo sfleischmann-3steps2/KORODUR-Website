@@ -1516,4 +1516,593 @@ export const referenzenFR: Record<string, {
     ],
     bildAlt: "Sol décoratif KORODUR KCF anthracite dans la cave à vin du Weingut am Nil à Kallstadt",
   },
+  "airbus-a-380-hamburg-finkenwerder": {
+    titel: "Hangar Airbus A 380 Hamburg-Finkenwerder",
+    untertitel: "20 000 m² de durcisseur KORODUR pour le hall de maintenance du plus grand avion civil du monde",
+    land: "Allemagne",
+    herausforderungen: [
+      "Une surface gigantesque de 20 000 m² à réaliser en seulement 2 ½ mois",
+      "Site sur une presqu'île : tous les matériaux ne pouvaient être livrés que par voie navale en remorqueur",
+      "Mesures contre le bruit avec des horaires de livraison très limités et réglementés",
+      "Exigence élevée de réalisation de plus de 2 000 m² par jour",
+    ],
+    loesung:
+      "Le très performant système de silo KORODUR a été mis en place en combinaison avec le durcisseur NEODUR HE 65. Pour réaliser plus de 2 000 m² par jour, deux silos avec pompe intégrée fonctionnaient en parallèle. Au total, environ 500 tonnes de NEODUR HE 65 ont été utilisées pour cet ouvrage.",
+    vorteile: [
+      "Plus de 2 000 m² par jour grâce à deux silos fonctionnant en parallèle",
+      "Approvisionnement fluide malgré le site sur presqu'île et les mesures anti-bruit",
+      "Durcisseur hautement résistant pour cette application exigeante en hangar",
+      "Système de silo éprouvé avec pompe intégrée pour les grandes surfaces",
+    ],
+    bildAlt: "Sol industriel KORODUR dans le hangar Airbus A 380 à Hamburg-Finkenwerder",
+  },
+  "amazon-logistikzentrum-bad-hersfeld": {
+    titel: "Centre logistique Amazon Bad Hersfeld",
+    untertitel: "Sol industriel à durcisseur avec peu de joints sur 100 000 m² pour une exploitation en continu",
+    land: "Allemagne",
+    herausforderungen: [
+      "Charges élevées en exploitation logistique continue",
+      "Sol avec le moins de joints possible, panneaux jusqu'à 36 x 36 m",
+      "Garantir une utilisation en continu sans accros",
+      "Cadence élevée d'environ 3 000 m² de sol industriel par jour",
+    ],
+    loesung:
+      "Un béton en fibres métalliques a été choisi comme base et traité avec un durcisseur NEODUR afin d'augmenter la résistance à l'abrasion du sol industriel. Environ 3 000 m² ont été posés par jour, soit 500 m³ de béton et environ 17,5 tonnes de fibres métalliques. La plus grande partie de la surface a été réalisée en NEODUR HE 3 gris naturel, certains secteurs comme la réception et l'envoi des marchandises en NEODUR HE 3 rouge.",
+    vorteile: [
+      "Haute résistance à l'abrasion et à l'usure de la surface",
+      "Exécution avec peu de joints, grands panneaux jusqu'à 36 x 36 m",
+      "Pose rapide d'environ 3 000 m² par jour",
+      "Repérage des zones par les teintes gris et rouge",
+    ],
+    bildAlt: "Sol industriel du centre logistique Amazon à Bad Hersfeld",
+  },
+  "amazon-logistikzentrum-wroclaw-polen": {
+    titel: "Centres Logistiques Amazon Wrocław",
+    untertitel: "Environ 260 000 m² de sol industriel KORODUR hautement résistant à l'usure pour deux centres de distribution Amazon",
+    land: "Pologne",
+    herausforderungen: [
+      "Résistance à l'usure maximale pour un trafic logistique et de chariots élévateurs intensif",
+      "Calendrier très serré du maître d'ouvrage jusqu'à la mise en service à l'été 2014",
+      "Mise en œuvre quasiment sans joints avec des champs de 1 200 m²",
+      "Surface totale gigantesque d'environ 260 000 m² répartie sur deux halles",
+    ],
+    loesung:
+      "Le sol industriel KORODUR NEODUR HE 3 gris ciment a été mis en œuvre par le spécialiste de pose et partenaire de longue date de KORODUR, PPP Posadzki Przemysłowe Polska de Węgrzce Wielkie. Pour respecter le calendrier serré, PPP a installé jusqu'à 6 000 m² de sol industriel par jour, quasiment sans joints, en champs de 1 200 m².",
+    vorteile: [
+      "Résistance à l'usure et à l'abrasion maximale pour le trafic lourd et de chariots élévateurs",
+      "Cadence d'installation élevée allant jusqu'à 6 000 m² par jour pour le calendrier serré",
+      "Mise en œuvre sans joints avec de grands champs de 1 200 m²",
+      "Solution la plus économique à long terme grâce à une durabilité durable",
+    ],
+    bildAlt: "Centre logistique Amazon à Wrocław avec sol industriel KORODUR NEODUR HE 3",
+  },
+  "bmw-logistikzentrum-wallersdorf": {
+    titel: "BMW Centre Logistique Wallersdorf",
+    untertitel: "Sol industriel à durcisseur minéral extrêmement résistant à l'usure pour l'un des plus grands centres logistiques du monde",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sol industriel exposé à un stress extrême 24h/24 par l'exploitation logistique",
+      "Manutention sûre de la logistique et de la distribution des pièces de rechange à assurer",
+      "Énorme superficie de plus de 50 terrains de football à réaliser de manière économique et rapide",
+      "Exigences élevées sur le durcissement de surface et la qualité de la performance d'installation",
+    ],
+    loesung:
+      "Le maître d'ouvrage et le concepteur ont décidé pour un sol industriel minéral KORODUR, extrêmement résistant à l'usure, selon la norme DIN 1100. L'installateur CBL Chemobau Industrieboden a réalisé le sol dans une performance d'installation impressionnante de jusqu'à 4.000 m² par jour. L'équipement de béton le plus moderne, le Laser Screed S22E, a été utilisé. Le durcisseur KORODUR a été fourni en emballage big bag et appliqué uniformément par l'épandeur, permettant une application économique et rapide de gros volumes.",
+    vorteile: [
+      "Sol à durcisseur minéral extrêmement résistant à l'usure selon DIN 1100",
+      "Performance d'installation impressionnante de jusqu'à 4.000 m² par jour",
+      "Application économique en big bag par épandeur avec Laser Screed S22E",
+      "Capacité de charge durable pour l'exploitation logistique 24h/24",
+    ],
+    bildAlt: "Sol industriel à durcisseur KORODUR au centre logistique BMW à Wallersdorf",
+  },
+  "bmw-austellungshalle-krefeld": {
+    titel: "Nouveau salon d'exposition BMW Krefeld",
+    untertitel: "Sol industriel KORODUR en agrégats durs résistant à l'usure pour les nombreux mouvements de véhicules du hall d'exposition",
+    land: "Allemagne",
+    herausforderungen: [
+      "Les nombreux mouvements de véhicules dans le hall d'exposition exigent un sol particulièrement résistant à l'usure",
+      "Atmosphère de bien-être claire et conviviale mettant en scène le client et les véhicules",
+      "Sol industriel fonctionnel alliant une grande qualité esthétique",
+    ],
+    loesung:
+      "Pour résister aux nombreux mouvements de véhicules, le maître d'ouvrage a opté pour un sol industriel KORODUR en agrégats durs en technique monolithique, mis en œuvre par Aslan Industrieboden GmbH de Bocholt. Le béton support a été mis en place et le durcisseur abrasif NEODUR HE 3 par-dessus, taloché et lissé à l'aide d'une lisseuse à disque et d'un hélicoptère.",
+    vorteile: [
+      "Haute résistance à l'usure pour les nombreux mouvements de véhicules",
+      "Mise en œuvre monolithique en une seule étape avec le béton support",
+      "Aspect représentatif de grande qualité pour le hall d'exposition",
+    ],
+    bildAlt: "Sol industriel KORODUR en agrégats durs dans le nouveau salon d'exposition BMW à Krefeld",
+  },
+  "betonwerk-lintel-rheda-wiedenbrueck": {
+    titel: "Betonwerk Lintel – Pavés DUROCON",
+    untertitel: "Pavés en béton hautement résistants à l'usure avec durcisseur KORODUR pour les sollicitations les plus sévères",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sollicitation à l'usure la plus élevée due aux lourds véhicules à chenilles",
+      "Les pavés conventionnels à forte résilience ne résistaient pas durablement aux charges",
+      "Exigence d'un aspect de haute qualité en forme, couleur et surface",
+    ],
+    loesung:
+      "Le système de revêtement intelligent et économique du profilé en H de Lintel a été combiné aux granulats durs KORODUR. Il en résulte le pavé en béton DUROCON® à surface hautement résistante à l'usure, fabriqué dans la centrale Betonwerk Lintel en tenant compte des dernières découvertes technologiques du béton.",
+    vorteile: [
+      "Surface hautement résistante à l'usure pour les sollicitations les plus sévères",
+      "Plus robuste que les pavés d'usage courant et à forte résilience conventionnels",
+      "Éprouvé sous de lourds véhicules à chenilles",
+      "Aspect de haute qualité en forme, couleur et surface",
+    ],
+    bildAlt: "Pavés en béton DUROCON avec durcisseur KORODUR au Betonwerk Lintel, Rheda-Wiedenbrück",
+  },
+  "bomag-shanghai-china": {
+    titel: "Site de production BOMAG, Chine",
+    untertitel: "10 000 m² de sol industriel KORODUR à fortes sollicitations pour le leader mondial de la technique de compactage",
+    land: "Chine",
+    herausforderungen: [
+      "Sol industriel résistant à de fortes sollicitations et à l'usure pour une production de machines exigeante",
+      "Logistique sur un trajet de transport de plus de 20 000 km par container maritime",
+      "Mise en œuvre dans les délais de grandes surfaces, très professionnellement, par une société spécialisée locale",
+    ],
+    loesung:
+      "En 2007, 10 000 m² de sols industriels KORODUR ont été mis en place avec précision dans le nouveau site de production, très professionnellement. Une société spécialisée locale a mis en œuvre le KORODUR VS 0/5 comme un durcisseur classique, sur une épaisseur de 10 mm. Grâce à une expérience de longue date dans l'exportation, les containers maritimes sont arrivés sans encombre sur le chantier.",
+    vorteile: [
+      "Sol en durcisseur résistant à de fortes sollicitations et extrêmement résistant à l'usure",
+      "Qualité et continuité KORODUR mondialement reconnues",
+      "Logistique parfaite malgré un trajet de plus de 20 000 km",
+      "Solution la plus économique à long terme",
+    ],
+    bildAlt: "Sol industriel KORODUR dans le site de production BOMAG à Fengxian, Shanghai, Chine",
+  },
+  "borbet-leichtmetallradproduktion-kodersdorf": {
+    titel: "Production de jantes en alliage BORBET, Kodersdorf",
+    untertitel: "25 000 m² de sol industriel à granulats durs pour la zone la plus sollicitée de la nouvelle usine",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sol industriel, partie la plus sollicitée de l'ouvrage",
+      "Mettre en œuvre une très grande surface de plus de 25 000 m² de manière économique",
+      "Assurer un démarrage ponctuel de la production au printemps 2016",
+    ],
+    loesung:
+      "D'octobre à décembre 2015, le produit NEODUR HE 3 a été mis en œuvre sur plus de 20 000 m². 5 000 m² supplémentaires ont été réalisés frais sur frais avec NEODUR HE 65, en épaisseur de 10 mm et livraison en silo. Le système de silo KORODUR permet une mise en œuvre économique grâce à une technologie de malaxage et de pompage adaptée, avec un transport sur des distances jusqu'à 80 m.",
+    vorteile: [
+      "Production journalière jusqu'à 2 000 m² avec le système de silo KORODUR",
+      "Mise en œuvre économique grâce à une technique de malaxage et de pompage rationnelle",
+      "Déroulement logistique simple et économies de temps de travail",
+      "Qualité KORODUR reconnue pour la zone la plus sollicitée",
+    ],
+    bildAlt: "Sol industriel à granulats durs KORODUR dans la nouvelle usine de jantes en alliage BORBET à Kodersdorf",
+  },
+  "caterpillar-abu-dhabi-dubai": {
+    titel: "Atelier Caterpillar Abu Dhabi",
+    untertitel: "Sol industriel haute résistance pour les engins Caterpillar les plus lourds",
+    land: "Émirats Arabes Unis",
+    herausforderungen: [
+      "Sollicitation permanente des sols par les engins Caterpillar lourds",
+      "Résistance à l'usure maximale pour l'exploitation de l'atelier",
+      "Qualité éprouvée dans la continuité des sols KORODUR posés depuis 1984",
+    ],
+    loesung:
+      "Sur environ 1 500 m², le produit prémélangé KORODUR NEODUR HE 65 métallique a été mis en œuvre. Ce sol à durcisseur métallique offre une résistance à l'usure maximale et résiste aux sollicitations les plus sévères.",
+    vorteile: [
+      "Résistance à l'usure maximale grâce à la couche d'usure métallique",
+      "Conçu pour les sollicitations les plus lourdes des engins Caterpillar",
+      "Qualité KORODUR éprouvée, en service dans la région du golfe depuis 1984",
+    ],
+    bildAlt: "Atelier Caterpillar à Abu Dhabi avec sol industriel KORODUR NEODUR HE 65 métallique",
+  },
+  "fertigstellen-eines-zementfussbodens-in-einem-bewohnten-appartment-gdynia-polen": {
+    titel: "Réalisation d'un sol cimentaire dans un appartement habité",
+    untertitel: "Sol industriel autonivelant à l'aspect béton, praticable après seulement 10 heures",
+    land: "Pologne",
+    herausforderungen: [
+      "Conserver le parquet en bois existant et l'associer harmonieusement aux nouvelles surfaces de chape",
+      "Teinte claire en accord avec le parquet en frêne et le cadre en acier du radiateur de chauffage au sol",
+      "Surface plane à l'aspect béton naturel",
+      "Travaux de sol sans interruption d'usage de l'appartement habité",
+    ],
+    loesung:
+      "Sous la direction de l'architecte, l'applicateur a réalisé différents échantillons de mortier pour l'adaptation de la teinte. Comme les travaux devaient être réalisés sans interruption d'usage, le choix s'est porté sur NEODUR Level – un sol industriel à liant cimentaire, autonivelant et à durcissement rapide, à l'aspect béton. Des zones supplémentaires ont même été créées pour NEODUR Level afin d'obtenir un aspect de sol harmonieux dans son ensemble.",
+    vorteile: [
+      "Autonivelant pour une surface plane à l'aspect béton naturel",
+      "Durcissement rapide, praticable après seulement 10 heures",
+      "Teinte adaptable au parquet et aux éléments intégrés",
+      "Pose possible sans interruption d'usage",
+    ],
+    bildAlt: "Sol cimentaire autonivelant NEODUR Level à l'aspect béton associé à un parquet en frêne dans un appartement habité à Gdynia, Pologne",
+  },
+  "hornbach-baumarkt-bruenn-cz": {
+    titel: "Magasin de bricolage Hornbach Brno",
+    untertitel: "Couche de durcisseur KORODUR pour un fort passage du public et des palettes dans un magasin de bricolage",
+    land: "République tchèque",
+    herausforderungen: [
+      "Passage incessant du public en exploitation continue",
+      "Sollicitations régulières dues aux palettes sur la surface",
+      "Exigence de la norme DIN 18560, partie 7, tableau 1, groupe de sollicitations moyens",
+      "Utilisation durable sur des décennies sans dégâts au sol",
+    ],
+    loesung:
+      "Sur le support béton encore frais, la chape à base de durcisseur KORODUR 0/4 a été mise en œuvre sur une épaisseur de 10 mm pour satisfaire aux exigences de la norme DIN 18560, partie 7, tableau 1, groupe de sollicitations moyens. Les travaux de pose sur une surface de 5 600 m² ont été réalisés par le spécialiste tchèque Largo Spol.",
+    vorteile: [
+      "Haute résistance à l'usure pour le passage du public et des palettes",
+      "Satisfait au groupe de sollicitations moyens DIN 18560 pour seulement 10 mm d'épaisseur",
+      "Mise en œuvre frais sur frais sur le béton encore frais",
+      "Utilisation parfaite et durable depuis près de 20 ans",
+    ],
+    bildAlt: "Sol industriel à base de durcisseur KORODUR au magasin de bricolage Hornbach à Brno, République tchèque",
+  },
+  "jura-werkstaetten-amberg": {
+    titel: "Nouveaux ateliers Jura-Werkstätten Amberg",
+    untertitel: "Sol en agrégats durs à haute résistance pour les ateliers et zones de stockage d'un atelier pour personnes handicapées",
+    land: "Allemagne",
+    herausforderungen: [
+      "Forte sollicitation à l'usure des ateliers et zones de stockage par l'exploitation quotidienne",
+      "Assurer une adhésion optimale entre le support béton et la couche en agrégats durs de 15 mm",
+      "Sol facile à entretenir et esthétique pour un usage quotidien",
+      "Créer des conditions de travail idéales pour 355 personnes handicapées",
+    ],
+    loesung:
+      "Sur environ 4 500 m² d'ateliers et de zones de stockage a été appliqué le sol industriel KORODUR en agrégats durs, hautement résistant à l'usure, NEODUR HE 65, d'une épaisseur de 15 mm. Le primaire d'accrochage minéral KORODUR HB 5 a assuré l'adhésion sur le support béton. Après application et cure, la surface a reçu un polissage mécanique léger, le procédé KOROCLEAN, suivi de l'application de KOROMINERAL, produit bouche-pores à base de silicates.",
+    vorteile: [
+      "Sol en agrégats durs à haute résistance pour une durabilité durable",
+      "Adhésion optimale grâce au primaire minéral KORODUR HB 5",
+      "Surface silicatée pour un entretien et une protection facilités",
+      "Surface de travail valorisée et durable",
+    ],
+    bildAlt: "Sol industriel NEODUR HE 65 haute résistance dans les ateliers et zones de stockage des nouveaux ateliers Jura-Werkstätten à Amberg",
+  },
+  "kunstdepot-muenchen": {
+    titel: "Dépôt d'art Munich",
+    untertitel: "Chape industrielle très résistante à l'usure pour un dépôt d'art sur trois niveaux",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sol durablement résistant à l'usure pour le composant de construction le plus fortement sollicité",
+      "Préparation minutieuse du support pour assurer une liaison permanente entre le support béton et la chape à agrégats durs",
+      "Conditions de stockage exigeantes pour des biens artistiques et culturels sensibles sur trois niveaux",
+      "Amélioration des propriétés de nettoyage et de la densité de la surface",
+    ],
+    loesung:
+      "En octobre 2017, le spécialiste en revêtements de sol CBL Chemobau a réalisé une chape industrielle KORODUR très résistante à l'usure avec le système KOROTAN : sur le primaire d'accrochage KORODUR HB 5 avec une couche d'usure NEODUR HE 65. Le mortier à agrégats durs a été mélangé et transporté avec la pompe de mélange inoComb Cabrio d'INOTEC et livré en big bag. Enfin, une imprégnation siliceuse KOROMINERAL a été appliquée comme finition de surface.",
+    vorteile: [
+      "Haute résistance à l'usure pour le composant de construction le plus fortement sollicité",
+      "Liaison permanente entre le support béton et la chape à agrégats durs dans le système KOROTAN",
+      "Amélioration des propriétés de nettoyage et de la densité grâce à la silicification de surface",
+      "Mise en œuvre efficace de la chape à agrégats durs par pompe de mélange et livraison en big bag",
+    ],
+    bildAlt: "Sol industriel KORODUR très résistant à l'usure dans le dépôt d'art IMMO à Munich",
+  },
+  "lidl-zentrallager-graben": {
+    titel: "Centre de stockage LIDL Graben",
+    untertitel: "Sol industriel a base de granulats durs pour le plus grand centre logistique LIDL d'Allemagne",
+    land: "Allemagne",
+    herausforderungen: [
+      "Realiser une surface d'environ 38 000 m² avec une haute qualite",
+      "Haute resistance a l'usure pour le trafic continu de chariots et les fortes charges",
+      "Capacite portante pour plus de 18 000 palettes europe",
+      "Calendrier de construction serre jusqu'a l'achevement fin juin 2011",
+    ],
+    loesung:
+      "Environ 38 000 m² de la surface de stockage ont ete realises en sol industriel KORODUR avec le mortier sec a granulats durs NEODUR HE 3. La chape a granulats durs appliquee de maniere monolithique offre la resistance a l'usure et la capacite portante requises pour l'exploitation logistique.",
+    vorteile: [
+      "Haute resistance a l'usure pour une exploitation continue",
+      "Portant pour plus de 18 000 palettes europe",
+      "Realisation economique de grandes surfaces",
+      "Achevement dans les delais malgre un calendrier serre",
+    ],
+    bildAlt: "Sol industriel KORODUR dans le centre de stockage LIDL a Graben pres d'Augsburg",
+  },
+  "logistikzentrum-daimler-guangzhou-china": {
+    titel: "Centre logistique Daimler Guangzhou",
+    untertitel: "Sol durci clair et hautement resistant pour l'entrepot de pieces detachees Mercedes-Benz en Chine",
+    land: "Chine",
+    herausforderungen: [
+      "Surface de 36 000 m² soumise a des charges lourdes et au trafic de chariots elevateurs en exploitation logistique permanente",
+      "Une ambiance interieure claire et conviviale etait souhaitee pour reduire les couts d'energie grace aux economies de lumiere",
+      "La qualite NEODUR constante du premier centre logistique Daimler a Kunshan devait etre reproduite",
+    ],
+    loesung:
+      "Comme pour le centre logistique de Kunshan pres de Shanghai realise en 2013, le sol de l'entrepot a ete execute avec le sol industriel durci NEODUR HE 65 dans la couleur gris clair. Le materiau clair cree une ambiance plus conviviale et plus lumineuse a l'interieur.",
+    vorteile: [
+      "Sol durci hautement resistant pour une exploitation logistique et de charges lourdes permanente",
+      "Couleur gris clair pour une ambiance de halle conviviale et bien eclairee",
+      "Couts d'energie reduits grace aux economies de consommation de lumiere",
+      "Qualite NEODUR eprouvee et reproductible comme dans le projet precedent a Kunshan",
+    ],
+    bildAlt: "Sol durci NEODUR HE 65 gris clair dans le centre logistique Daimler a Guangzhou, Chine",
+  },
+  "martensbro-schule-espoo-finnland-2": {
+    titel: "Mårtensbro Skola, Espoo",
+    untertitel: "Sol industriel à durcisseur minéral gris clair pour une réflexion maximale de la lumière durant l'hiver finlandais",
+    land: "Finlande",
+    herausforderungen: [
+      "Sollicitation quotidienne intense par des milliers de passages dans une école",
+      "Deux supports différents : pose frais sur frais et chape rapportée sur béton existant",
+      "Optimisation de la réflexion de la lumière durant les longs mois sombres de l'hiver",
+      "Surface durable et facile à nettoyer avec une esthétique attrayante",
+    ],
+    loesung:
+      "Une chape d'usure KORODUR a été réalisée selon les normes DIN 18560-7 et DIN 1100, durcisseur de groupe A, avec le produit NEODUR HE 65 gris clair en aspect marbré KCF. Une chape d'environ 600 m² a été réalisée frais sur frais en épaisseur de 10 mm. Une chape rapportée de 600 m² a été mise en place sur support béton existant : d'abord le primaire d'accrochage minéral KORODUR HB 5, puis une chape d'usure d'environ 15 mm. Une quantité d'environ 30 tonnes de durcisseur prémixé NEODUR HE 65 a été utilisée.",
+    vorteile: [
+      "Haute résistance à l'usure pour un usage scolaire durable",
+      "Le gris clair optimise la réflexion de la lumière durant les mois d'hiver sombres et réduit les coûts d'énergie",
+      "Surface facile à nettoyer et esthétiquement attrayante en aspect KCF",
+      "Solution durable, écologique et économiquement attractive",
+    ],
+    bildAlt: "Sol industriel à durcisseur minéral KORODUR gris clair à la Mårtensbro Skola à Espoo, Finlande",
+  },
+  "metro-grossmarkt-wien-oesterreich": {
+    titel: "Rénovation du marché de gros METRO",
+    untertitel: "Chape rapide claire et résistante à l'usure pour les magasins d'un marché de gros entièrement rénové",
+    land: "Autriche",
+    herausforderungen: [
+      "Sol à haute résistance à l'usure pour le marché de gros très fréquenté",
+      "Teinte claire pour un rendu esthétique dans les magasins",
+      "Prise rapide pour respecter le calendrier serré des travaux",
+      "Mise en œuvre en plusieurs étapes pendant les travaux de rénovation",
+    ],
+    loesung:
+      "Préalablement, de nombreux systèmes de sols ont été testés sur une période d'un an. En raison de ses excellentes propriétés, résistance élevée à l'usure, prise rapide et couleur claire, le client a choisi le système de chape rapide KORODUR. La mise en œuvre a été réalisée en plusieurs étapes. Pour protéger les sols contre les taches optiques pendant l'utilisation, les surfaces finies et nettoyées ont été traitées avec un produit de protection.",
+    vorteile: [
+      "Résistance élevée à l'usure pour l'exploitation intensive du marché de gros",
+      "Prise rapide assurant le respect du calendrier serré des travaux",
+      "Teinte claire pour un aspect esthétique",
+      "Mise en œuvre par étapes possible pendant les travaux en cours",
+    ],
+    bildAlt: "Sol de chape rapide KORODUR de teinte claire dans les magasins du marché de gros METRO près de Vienne",
+  },
+  "moxy-hotel": {
+    titel: "Hôtels Moxy",
+    untertitel: "Béton support à caractère de sol industriel pour le design industriel chic des halls d'hôtel",
+    land: "Allemagne",
+    herausforderungen: [
+      "Revêtement de sol au look industriel chic pour un design d'hôtel de charme cohérent",
+      "Surface résistante pour les halls très fréquentés",
+      "Aspect homogène sur quatre sites",
+      "Mise en œuvre en saupoudrage sur un béton support frais",
+    ],
+    loesung:
+      "Dans les halls d'Eschborn, Ludwigshafen, Francfort et Berlin, le produit NEODUR HE 3 a été mis en œuvre en saupoudrage sur un béton support frais. Les surfaces ont ensuite été traitées par une procédure spéciale de nettoyage et de polissage, puis finies avec un produit d'imprégnation spécial.",
+    vorteile: [
+      "Look industriel chic en accord avec le design de l'hôtel de charme",
+      "Caractère de sol industriel résistant pour des halls très fréquentés",
+      "Aspect homogène sur les quatre sites",
+      "Surface imprégnée et facile d'entretien",
+    ],
+    bildAlt: "Sol industriel NEODUR HE 3 dans le hall d'un hôtel Moxy",
+  },
+  "moebelhaus-hoeffner-hamburg": {
+    titel: "Magasin de meubles Höffner Hambourg",
+    untertitel: "40 000 m² de sol industriel dans la teinte personnalisée « gris Krieger » – maîtrisé logistiquement avec le système de silo KORODUR",
+    land: "Allemagne",
+    herausforderungen: [
+      "Coloration individuelle du durcisseur selon le souhait du client (« gris Krieger »)",
+      "Gestion logistique de la livraison de matériaux pour un grand chantier de 40 000 m²",
+      "Respect du temps d'installation limité",
+      "Garantir une qualité de matériau homogène sur toute la surface",
+    ],
+    loesung:
+      "Environ 350 tonnes du durcisseur KORODUR NEODUR HE 65 en « gris Krieger » ont été livrées en sacs big bag. La quantité bien plus importante d'environ 1 800 tonnes a été fournie avec le système de silo KORODUR, réputé pour les grands chantiers. Pour faire face au temps limité, parfois quatre unités de silo ont été utilisées simultanément.",
+    vorteile: [
+      "Performance quotidienne de 1 500 à 2 500 m² de sol industriel grâce au système de silo KORODUR",
+      "Suppression des stations de mélange et de l'élimination des emballages",
+      "Qualité homogène du mortier frais par rapport aux mélanges individuels",
+      "Teinte personnalisée « gris Krieger » réalisée",
+    ],
+    bildAlt: "Sol industriel dans la teinte personnalisée « gris Krieger » dans le magasin de meubles Höffner à Hambourg",
+  },
+  "obi-baumaerkte": {
+    titel: "OBI Magasins de bricolage",
+    untertitel: "Chape en agrégats durs dans la teinte spéciale OBI pour plus de 500 000 m² de surface de vente",
+    land: "Allemagne",
+    herausforderungen: [
+      "Résistance maximale à l'usure pour des surfaces de vente très fréquentées",
+      "Aspect uniforme dans une teinte OBI spécialement développée",
+      "Mise en œuvre à grande échelle et économique, en Allemagne et à l'international",
+      "Qualité constante sur des centaines de magasins",
+    ],
+    loesung:
+      "Les sols industriels KORODUR sont installés dans de nombreux magasins OBI. KORODUR a créé une teinte spéciale, c'est pourquoi dans de nombreux magasins OBI la chape en agrégats durs NEODUR HE 65, couleur spéciale OBI 2079, a été mise en œuvre. Souvent ce matériau spécialement teinté a été traité en utilisant le système KORODUR silo/pompage et malaxage, efficace et puissant.",
+    vorteile: [
+      "Dureté et résistance élevées pour des charges permanentes",
+      "Teinte spéciale OBI 2079 uniforme pour un aspect conforme à la marque",
+      "Mise en œuvre économique grâce au système silo KORODUR",
+      "Qualité éprouvée, déployable en Allemagne et à l'international",
+    ],
+    bildAlt: "Sol industriel KORODUR dans un magasin OBI dans la teinte spéciale OBI",
+  },
+  "ropa-montagezentrum-herrngiersdorf": {
+    titel: "Centre d'assemblage ROPA Herrngiersdorf",
+    untertitel: "Sol industriel en agrégats durs très résistant à l'usure pour la fabrication de précision de machines de récolte haut de gamme",
+    land: "Allemagne",
+    herausforderungen: [
+      "Revêtement de sol pour la production de précision techniquement avancée de machines lourdes haut de gamme",
+      "Assurer une production constante et efficace sur une surface très résistante à l'usure",
+      "Mettre en œuvre une grande surface d'environ 20 000 m² de manière économique et dans un délai court",
+    ],
+    loesung:
+      "ROPA a de nouveau opté pour un sol industriel KORODUR, minéral et très résistant à l'usure, d'une épaisseur moyenne de 10 mm, selon les normes DIN 1100 et DIN 18560-7. La chape en agrégats durs NEODUR HE 65 a été mise en œuvre à l'aide du système KORODUR silo/pompage et malaxage, efficace et reconnu.",
+    vorteile: [
+      "Surface minérale très résistante à l'usure pour charges lourdes",
+      "Conforme aux normes DIN 1100 et DIN 18560-7",
+      "Mise en œuvre économique avec le système KORODUR silo/pompage et malaxage",
+      "Rendement quotidien jusqu'à 2 000 m²",
+    ],
+    bildAlt: "Sol industriel en agrégats durs NEODUR HE 65 dans le centre d'assemblage ROPA à Herrngiersdorf",
+  },
+  "restaurant-haerg-tallinn-estland": {
+    titel: "Restaurant HÄRG, Tallinn",
+    untertitel: "Un sol industriel comme parti pris design : fissures voulues, surface rugueuse, couleurs mélangées",
+    land: "Estonie",
+    herausforderungen: [
+      "Obtenir un aspect de sol industriel caractéristique avec des fissures voulues et une surface rugueuse",
+      "Ne pas consolider délibérément les fissures du support pour qu'elles se prolongent dans la couche de finition",
+      "Créer une coloration unique en mélangeant deux teintes NEODUR directement sur le chantier",
+      "Offrir un sol résistant pour l'exploitation quotidienne du restaurant",
+    ],
+    loesung:
+      "Un sol industriel KORODUR de 15 mm d'épaisseur a été posé avec le système KOROTAN et son primaire d'accrochage KORODUR HB 5. La chape en agrégats durs NEODUR HE 65 a été fournie dans les tons vert et gris basalte, mélangés sur le chantier. Les fissures du support n'ont délibérément pas été consolidées afin qu'elles se prolongent dans la couche de finition.",
+    vorteile: [
+      "Aspect de sol industriel caractéristique avec fissures voulues et surface rugueuse",
+      "Coloration unique obtenue en mélangeant le vert et le gris basalte",
+      "Chape en agrégats durs résistante pour l'exploitation du restaurant",
+      "Système KOROTAN éprouvé avec primaire d'accrochage HB 5",
+    ],
+    bildAlt: "Sol industriel avec chape en agrégats durs NEODUR HE 65 en vert et gris basalte mélangés au Restaurant HÄRG à Tallinn",
+  },
+  "sic-processing-zhenjiang-china": {
+    titel: "SiC Processing Zhenjiang",
+    untertitel: "Sol industriel KORODUR pour des charges mécaniques très élevées dans le recyclage de slurry",
+    land: "Chine",
+    herausforderungen: [
+      "Charges mécaniques partiellement très élevées dans les différentes zones de production",
+      "Exigences de charge variables selon la zone de production",
+      "Fonctionnement durablement fluide pour le recyclage du slurry",
+      "Coordination et mise en œuvre via des partenaires locaux en Chine",
+    ],
+    loesung:
+      "Selon les charges mécaniques attendues, NEODUR HE 3 ou NEODUR HE 3 SVS 3 a été mis en œuvre, chacun en saupoudrage. La coordination a été assurée par Shanghai Golden Bridge, la mise en œuvre par l'entreprise locale Shanghai Xiao Jie.",
+    vorteile: [
+      "Sol industriel KORODUR éprouvé, sur lequel SiC Processing compte aussi pour ses investissements à l'étranger",
+      "Capacité de charge adaptée précisément à chaque zone de production",
+      "Saupoudrage pour une haute résistance à l'usure",
+      "Fonctionnement durablement fluide du recyclage assuré",
+    ],
+    bildAlt: "Sol industriel KORODUR dans les halls de production SiC Processing à Zhenjiang, Chine",
+  },
+  "wago-stanzerei-minden": {
+    titel: "Nouvel atelier d'estampage WAGO",
+    untertitel: "24 000 m² de sol industriel en agrégats durs très résistant à l'usure pour un flux de production durable",
+    land: "Allemagne",
+    herausforderungen: [
+      "Processus de production durable et efficace sur une grande surface de 24 000 m²",
+      "Atteindre des performances quotidiennes élevées de 800 à 1 400 m² en qualité optimale",
+      "Logistique efficace et besoin en matériau d'environ 500 tonnes de NEODUR HE 65",
+      "Sol conforme à la norme et très résistant à l'usure pour un atelier d'estampage industriel",
+    ],
+    loesung:
+      "Considérant ses sites déjà existants, WAGO s'est de nouveau décidé pour un sol industriel KORODUR minéral, très résistant à l'usure et conforme à la norme, confié au spécialiste Condulith. À l'aide de machines à la pointe de la technologie, le béton a été coulé avec double renforcement et des profils de joints HSD, puis le revêtement dur KORODUR a été appliqué « frais sur frais » sur 10 mm d'épaisseur. La chape en agrégats durs a été mise en œuvre avec le système silo/pompage KORODUR, avec une distance de transport jusqu'à 80 m.",
+    vorteile: [
+      "Sol industriel minéral en agrégats durs, très résistant à l'usure et conforme à la norme",
+      "Mise en œuvre rapide grâce au système silo KORODUR (distance de transport jusqu'à 80 m)",
+      "Économies de temps de travail et déroulement logistique amélioré",
+      "Pas besoin de station de mélange ni d'emplacement pour les emballages",
+    ],
+    bildAlt: "Sol industriel en agrégats durs KORODUR dans le nouvel atelier d'estampage WAGO à Minden",
+  },
+  "zalando-bygodszcz-polen": {
+    titel: "Centre logistique Zalando",
+    untertitel: "Sol industriel résistant à l'usure pour 130 000 m² de surface logistique",
+    land: "Pologne",
+    herausforderungen: [
+      "Sol industriel résistant à l'usure pour la manutention de millions d'articles",
+      "Immense surface continue d'environ 130 000 m²",
+      "Capacité portante durable dans une exploitation logistique intensive",
+    ],
+    loesung:
+      "NEODUR HE 3 de couleur gris ciment a été mis en œuvre sur environ 130 000 m². Le sol durci à forte sollicitation convient aux zones industrielles très sollicitées comme les entrepôts à rayonnages hauts et les halls de montage ; il a été posé par l'entreprise spécialisée PPP.",
+    vorteile: [
+      "Haute résistance à l'usure pour une exploitation continue",
+      "Adapté aux zones industrielles et de stockage à forte sollicitation",
+      "Efficacité énergétique et des ressources accrue, préservant les ressources naturelles",
+    ],
+    bildAlt: "Sol industriel NEODUR HE 3 au centre logistique Zalando à Bydgoszcz, Pologne",
+  },
+  "pflastersteinsanierung-amberg": {
+    titel: "Rénovation de pavés à Amberg",
+    untertitel: "Rénovation de pavés en circulation fluide grâce au mortier à prise rapide",
+    land: "Allemagne",
+    herausforderungen: [
+      "Rénovation des pavés en période de circulation fluide",
+      "Préservation du charme de l'ancien pavage",
+      "Passage piéton sans obstacle pour traverser la route",
+      "Réduction du bruit pour les riverains",
+    ],
+    loesung:
+      "Les pavés ont été rénovés avec le mortier polyvalent à prise rapide Rapid Set MORTAR MIX. Grâce à sa prise rapide, les travaux ont pu être réalisés en période de circulation fluide. Un passage pour piétons a en outre été créé.",
+    vorteile: [
+      "Travaux possibles en période de circulation fluide",
+      "Prise rapide du mortier Rapid Set",
+      "Préservation du charme historique du pavage",
+      "Plus de sécurité et de qualité de vie au centre-ville",
+    ],
+    bildAlt: "Pavage rénové dans la Franziskanergasse, Amberg",
+  },
+  "pflastersanierung-crailsheim": {
+    titel: "Égalisation de pavés sans barrières à Crailsheim",
+    untertitel: "Surfaces pavées fraisées et rendues accessibles en quelques heures – sans longue fermeture",
+    land: "Allemagne",
+    herausforderungen: [
+      "Égaliser un pavage irrégulier dans un espace de circulation public pour le rendre accessible",
+      "Jointoyer le pavage de sorte qu'il puisse être fraisé sans que les pavés ne se détachent ou ne se desserrent",
+      "Ne fermer que brièvement les zones concernées",
+      "Une mesure rapide, simple et réduisant le CO₂ pendant l'exploitation du centre-ville",
+    ],
+    loesung:
+      "Le système de joints de pavage KORODUR a été utilisé avec le mortier de réparation polyvalent Rapid Set MORTAR MIX. Après un nouveau jointoiement avec ce mortier spécial à prise rapide, à très faible retrait et très résistant, l'ensemble de la surface pavée a pu être fraisé et rendu accessible en quelques heures à l'aide d'un outillage adapté. L'adhérence entre MORTAR MIX et les flancs des pavés est si forte que les pavés ne se détachent pas lors du fraisage.",
+    vorteile: [
+      "À prise rapide – fraisage et remise en service après quelques heures",
+      "À très faible retrait et très résistant, avec une forte adhérence aux flancs des pavés",
+      "Les pavés ne se détachent pas et ne se desserrent pas lors du fraisage",
+      "Système innovant, durable et réduisant le CO₂, avec de courtes durées de fermeture",
+    ],
+    bildAlt: "Égalisation de pavés sans barrières à Crailsheim",
+  },
+  "flughafen-zagreb": {
+    titel: "Aéroport de Zagreb, Croatie",
+    untertitel: "Dalles de béton endommagées sur les pistes réparées en seulement 4 semaines",
+    land: "Croatie",
+    herausforderungen: [
+      "La piste devait être rouverte au trafic aérien régulier chaque matin à 6 heures",
+      "Travaux exclusivement de nuit, entre 23 heures et 6 heures du matin",
+      "Exigences élevées en matière de durabilité et de longévité des pistes",
+      "Réparation à grande échelle d'env. 1.000 m² de dalles de béton",
+    ],
+    loesung:
+      "Le béton à prise rapide Rapid Set a été utilisé avec des camions malaxeurs à système volumétrique. Ceux-ci stockent séparément tous les composants du béton ; le ciment Rapid Set est mélangé sur place avec les agrégats, l'eau et les additifs pour former le béton frais, immédiatement posé. Cette procédure permet une formulation optimale du béton, répondant aux propriétés exigées et aux conditions météorologiques, ainsi qu'une production de béton sur site sans retard. À chaque nuit, les dalles de béton endommagées étaient coupées, soulevées, enlevées et les surfaces de nouveau bétonnées par système volumétrique. Le bétonnage, le lissage et la finition au balai prenaient env. 20 minutes par dalle, suivis d'un traitement de finition.",
+    vorteile: [
+      "Résistance structurelle > 20 MPa déjà après env. 2 heures",
+      "Réouverture quotidienne de la piste au trafic aérien malgré les travaux en cours",
+      "Production de béton sur site sans retard et parfaitement adaptée grâce aux camions malaxeurs volumétriques",
+      "Durabilité et longévité pour des pistes fortement sollicitées",
+    ],
+    bildAlt: "Réparation des dalles de béton sur les pistes de l'aéroport de Zagreb",
+  },
+  "kopfsteinpflaster-lenningen": {
+    titel: "Pavés Lenningen",
+    untertitel: "Nivellement sans obstacle de pavés avec mortier de réparation à prise rapide",
+    land: "Allemagne",
+    herausforderungen: [
+      "Niveler les surfaces de pavés irrégulières sans obstacle",
+      "Enlever l'ancien mortier de joint sur plus de 30 mm de profondeur",
+      "Temps d'arrêt le plus court possible des surfaces publiques",
+      "Réaliser une technique de travail économiquement praticable",
+    ],
+    loesung:
+      "Le mortier de joint existant a été enlevé jusqu'à une profondeur de plus de 30 mm à l'aide d'un nettoyeur haute pression (>300 bar) et remplacé par le mortier de réparation polyvalent KORODUR Rapid Set MORTAR MIX. Après nettoyage, les surfaces ont été parfaitement nivelées sans obstacle dès le lendemain à l'aide d'une fraiseuse spéciale. Seuls les mortiers de réparation Rapid Set à prise rapide et résistance élevée permettent cette technique de travail pratique avec des temps d'arrêt très courts.",
+    vorteile: [
+      "Prise rapide : nivellement possible dès le lendemain",
+      "Résistance élevée et application polyvalente",
+      "Temps d'arrêt les plus courts – avantage économique",
+      "Surface plane et sans obstacle",
+    ],
+    bildAlt: "Pavés Lenningen",
+  },
+  "hauptbahnhofsvorplatz-landau": {
+    titel: "Place de la gare Landau",
+    untertitel: "Surface en dalles de beton durable et proprement jointoyee pour la place de la gare reamenagee",
+    land: "Allemagne",
+    herausforderungen: [
+      "Jointement des dalles de beton avec une largeur de joints de 8-10 mm et une profondeur de joints de 30 mm",
+      "Un mortier de pavage qualifie et facile a mettre en oeuvre etait requis",
+      "Joints durablement propres, sans fissures, eclatements ni contamination",
+      "Orientation esthetique de la place vers l'Ostbahnstrasse",
+    ],
+    loesung:
+      "L'entrepreneur Groetz a choisi le mortier de jointement KORODUR NEODUR PFM 1K Easyfix en couleur grise. NEODUR PFM 1K Easyfix est un mortier de pavage pret a l'emploi, emballe sous vide, utilise pour le jointement et la renovation de pavages. La surface de la pierre jointee reste pratiquement sans film de resine.",
+    vorteile: [
+      "Pret a l'emploi et emballe sous vide, facile a mettre en oeuvre",
+      "Surface de la pierre pratiquement sans film de resine",
+      "Aspect durablement propre, sans fissures ni eclatements",
+      "Adapte au jointement et a la renovation de pavages",
+    ],
+    bildAlt: "Place de la gare Landau avec dalles de beton anthracite",
+  },
 };
