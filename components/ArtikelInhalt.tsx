@@ -3,6 +3,7 @@
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
+import { withBasePath } from "@/lib/basePath";
 
 /** Rendert den Markdown-Body eines Fachartikels im KORODUR-Stil.
  *  Interne Links bekommen den lang-Präfix (z. B. /loesungsfinder -> /de/loesungsfinder),
@@ -34,6 +35,27 @@ export default function ArtikelInhalt({ lang, body }: { lang: string; body: stri
               >
                 {children}
               </a>
+            );
+          },
+          img: ({ src, alt }) => {
+            if (typeof src !== "string") return null;
+            const resolved = src.startsWith("/") ? withBasePath(src) : src;
+            return (
+              <figure className="my-8">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={resolved}
+                  alt={alt ?? ""}
+                  loading="lazy"
+                  className="w-full h-auto"
+                  style={{ borderRadius: 8, border: "1px solid var(--bullet-bg)" }}
+                />
+                {alt ? (
+                  <figcaption className="text-navy/60 mt-2" style={{ fontSize: 13, lineHeight: 1.5 }}>
+                    {alt}
+                  </figcaption>
+                ) : null}
+              </figure>
             );
           },
           h2: ({ children }) => (
