@@ -1663,6 +1663,116 @@ export const referenzen: Referenz[] = [
     zusatzfunktionen: [],
   },
 
+  // === Import 2026-06-15 (Notion-Verzeichnis, Öffentlich + Veröffentlichungsreif) ===
+  // Quelle: Notion-Referenzverzeichnis (Volltext aus dem <content>-Harvest der Seiten),
+  // keine erfundenen Werte. Bilder = Platzhalter, bis der Bildordner (Steffi) vorliegt.
+  {
+    id: "porsche-showroom-loerrach",
+    slug: "porsche-showroom-loerrach",
+    projekttyp: "neubau",
+    releaseStatus: "oeffentlich",
+    titel: "Porsche Showroom, Lörrach",
+    untertitel: "Geschliffener GRANIDUR Sichtestrich in lichtgrau und anthrazit für eine exklusive Präsentationsfläche",
+    ort: "Lörrach",
+    land: "Deutschland",
+    jahr: 1998,
+    flaeche: "600 m²",
+    produkte: ["GRANIDUR"],
+    ausgangssituation:
+      "Der Porsche-Repräsentant in Lörrach errichtete 1998 einen neuen Showroom zur Präsentation seiner exklusiven Sportwagen. Auf rund 600 m² sollte ein Boden entstehen, der dem Premiumanspruch der Marke gerecht wird.",
+    herausforderungen: [
+      "Hochwertige, dekorative Gestaltung zur wirkungsvollen Präsentation der Sportwagen",
+      "Ansprechende Optik in lichtgrau und anthrazit",
+      "Belastbare, wertstabile Präsentationsfläche",
+    ],
+    loesung:
+      "Wir lieferten einen KORODUR Designboden als geschliffenen GRANIDUR Sichtestrich in lichtgrau und anthrazit.",
+    ergebnis:
+      "Der geschliffene GRANIDUR Sichtestrich bildet eine dekorative, hochwertige Präsentationsfläche, die die exklusiven Sportwagen wirkungsvoll in Szene setzt: belastbar und wertstabil.",
+    vorteile: [
+      "Dekorative, hochwertige Sichtestrich-Optik",
+      "Belastbar und wertstabil",
+      "Unterstreicht den Premiumanspruch des Showrooms",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Geschliffener GRANIDUR Sichtestrich im Porsche Showroom in Lörrach",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: ["verkaufsraeume"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "fussgaengerbruecke-albbruck",
+    slug: "fussgaengerbruecke-albbruck",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "Sanierung Fußgängerbrücke, Albbruck",
+    untertitel: "Schnelle Instandsetzung einer tausalzgeschädigten Brückenoberfläche mit Rapid Set MORTAR MIX",
+    ort: "Albbruck",
+    land: "Deutschland",
+    jahr: 2019,
+    produkte: ["Rapid Set MORTAR MIX"],
+    ausgangssituation:
+      "Brücken unterliegen einer enormen Beanspruchung durch Witterungseinflüsse wie Wärme und Niederschlag. Tausalze zehren den Zementleim an der Oberfläche auf, was zu Stolperfallen im Gehwegbereich und im schlimmsten Fall zu einer starken Schädigung der Substanz führt.",
+    herausforderungen: [
+      "Tausalz- und witterungsbedingte Schädigung der Brückenoberfläche",
+      "Stolperfallen im Gehwegbereich beseitigen",
+      "Schnelle Wiederfreigabe der Fläche",
+    ],
+    loesung:
+      "Die Oberfläche wurde eingeschnitten und per Stemmhammer aufgeraut. Nach Entfernen der losen Bestandteile und ausreichendem Vornässen wurde mit Rapid Set MORTAR MIX in im Mittel 2 cm Stärke aufgefüllt. Die Oberflächengestaltung ist von Besenstrich bis geglättet frei variierbar.",
+    ergebnis: "Rund eine Stunde nach Einbau konnte die Fläche wieder freigegeben werden.",
+    vorteile: [
+      "Schnelle Wiederfreigabe (ca. 1 Stunde nach Einbau)",
+      "Frei wählbare Oberflächengestaltung von Besenstrich bis geglättet",
+      "Beständig gegen Witterung und Tausalz",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Sanierte Oberfläche der Fußgängerbrücke in Albbruck mit Rapid Set MORTAR MIX",
+    sanierungsart: "punktuell",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "schnell",
+    zusatzfunktionen: ["tausalzbestaendigkeit"],
+  },
+  {
+    id: "trinkwasserspeicher-raecknitz-dresden",
+    slug: "trinkwasserspeicher-raecknitz-dresden",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "Trinkwasserspeicher Räcknitz, Dresden",
+    untertitel: "Instandsetzung der Wasserkammern in Dresdens größtem Trinkwasserspeicher mit KORODUR MICROTOP",
+    ort: "Dresden (Räcknitz)",
+    land: "Deutschland",
+    jahr: 2019,
+    produkte: ["MICROTOP TW 3", "MICROTOP TW 5"],
+    ausgangssituation:
+      "Im Stadtteil Räcknitz befindet sich Dresdens größter Trinkwasserspeicher, der nach fast 100 Jahren saniert werden musste. 2019 begann die schrittweise Instandsetzung des Hochbehälters, vor allem der Deckenflächen und Stützenköpfe innerhalb der Wasserkammern.",
+    herausforderungen: [
+      "Instandsetzung im Trinkwasserkontakt (DVGW-konform)",
+      "Sanierung von Deckenflächen und Stützenköpfen in den Wasserkammern",
+      "Bewährte, zertifizierte Produktlösung gefordert",
+    ],
+    loesung:
+      "Nach eingehender Produktprüfung durch den Auftraggeber DREWAG Netze GmbH fiel die Wahl auf KORODUR MICROTOP TW 3 HOZ und TW 5 HOZ. Die microsilica-vergüteten, rein mineralischen Produkte (DVGW W300/W347, Typklasse 1) wurden im Trockenspritzverfahren von der Firma Fritz Wiedemann, Niederlassung Dresden, verarbeitet.",
+    ergebnis:
+      "Die Wasserkammern wurden mit einer DVGW-konformen, rein mineralischen Schutzschicht instand gesetzt.",
+    vorteile: [
+      "DVGW-konform (W300/W347, Typklasse 1)",
+      "Rein mineralisch ohne Additive",
+      "Bewährt in zahlreichen Trinkwasser-Großobjekten",
+    ],
+    beteiligte: [
+      { role: "Verarbeiter", name: "Fritz Wiedemann, Niederlassung Dresden" },
+      { role: "Betreiber", name: "DREWAG Netze GmbH" },
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Instandgesetzte Wasserkammer im Trinkwasserspeicher Räcknitz mit KORODUR MICROTOP",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+
 ];
 
 export function getReferenzBySlug(slug: string): Referenz | undefined {

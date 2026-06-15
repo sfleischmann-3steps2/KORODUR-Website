@@ -415,4 +415,27 @@ export const REFERENZ_FILTER_V25: Record<string, ReferenzFilterV25> = {
     zeitfenster: "planbar",
     schadenstypen: [],
   },
+
+  // Import 2026-06-15 (Notion-Verzeichnis)
+  "porsche-showroom-loerrach": {
+    flaecheKategorie: "mittel",
+    innenAussen: "innen",
+    einsatzbereich: "innen-sicht-design",
+    zeitfenster: "planbar",
+    schadenstypen: [],
+  },
+  "fussgaengerbruecke-albbruck": {
+    flaecheKategorie: "punktuell",
+    innenAussen: "aussen",
+    einsatzbereich: "aussen-verkehr-infrastruktur",
+    zeitfenster: "sehr-kurz",
+    schadenstypen: ["verschleissschaeden"],
+  },
+  "trinkwasserspeicher-raecknitz-dresden": {
+    flaecheKategorie: "gross",
+    innenAussen: "aussen",
+    einsatzbereich: "aussen-umwelt-whg",
+    zeitfenster: "planbar",
+    schadenstypen: [],
+  },
 };
