@@ -6,6 +6,8 @@ import ReferenceCard from "../../../../components/ReferenceCard";
 import TileGrid from "../../../../components/TileGrid";
 import { produkte, getProduktById } from "../../../../data/produkte";
 import { PRODUKT_DOKUMENTE } from "../../../../data/produktDokumente";
+import { PRODUKT_LV_LINKS } from "../../../../data/produktLvLinks";
+import { AUSSCHREIBEN_URL } from "../../../../lib/kontaktDaten";
 import { fachberaterFuerBereich } from "../../../../data/fachberater";
 import BeraterCard from "../../../../components/BeraterCard";
 import DokumentListe, { dokumenteNachSprache } from "../../../../components/DokumentListe";
@@ -19,7 +21,7 @@ import { withBasePath } from "../../../../lib/basePath";
 import { alternatesFor } from "../../../../lib/seo";
 import { kontaktPath } from "../../../../lib/kontakt";
 import { AppIcon } from "@/components/ui/icon";
-import { CircleCheck, Info, MapPin } from "lucide-react";
+import { CircleCheck, Info, MapPin, FileText } from "lucide-react";
 import { getBereichBySlug } from "../../../../data/bereiche";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; id: string }> }): Promise<Metadata> {
@@ -71,6 +73,9 @@ export default async function ProduktDetailPage({
   const dokumente = PRODUKT_DOKUMENTE[produkt.id] ?? [];
   // Sprachgefiltert (aktuelle Sprache → EN → DE) — steuert auch die Section-Sichtbarkeit (#120).
   const sichtbareDokumente = dokumenteNachSprache(dokumente, lang);
+  // LV-Deeplink (#136): produktspezifischer Ausschreibungstext oder generischer Katalog-Fallback.
+  const lvUrlSpezifisch = PRODUKT_LV_LINKS[produkt.id];
+  const lvUrl = lvUrlSpezifisch ?? AUSSCHREIBEN_URL;
 
   // Varianten-Vergleichstabelle (#110): Spalten nur zeigen, wenn befüllt.
   const varianten = produkt.varianten ?? [];
@@ -339,18 +344,18 @@ export default async function ProduktDetailPage({
         </section>
       )}
 
-      {/* Downloads & Dokumente: TDS/SDS/DoP/Anwendung/Pflege je Produkt
-          (Launch-Plan M3 — "alle wichtigen Dokumente auf der Produktseite") */}
-      {sichtbareDokumente.length > 0 && (
-        <section style={{ padding: "56px 32px 64px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <h2
-              className="mb-6"
-              style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
-            >
-              {dict.produkte.downloads_title}
-            </h2>
-            <div style={{ maxWidth: 760 }}>
+      {/* Downloads & Dokumente: TDS/SDS/DoP/Anwendung/Pflege je Produkt + Ausschreibungstext
+          (Launch-Plan M3 — "alle wichtigen Dokumente auf der Produktseite"; LV-Deeplink #136) */}
+      <section style={{ padding: "56px 32px 64px" }}>
+        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <h2
+            className="mb-6"
+            style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
+          >
+            {dict.produkte.downloads_title}
+          </h2>
+          <div style={{ maxWidth: 760 }}>
+            {sichtbareDokumente.length > 0 && (
               <DokumentListe
                 dokumente={dokumente}
                 lang={lang}
@@ -358,10 +363,27 @@ export default async function ProduktDetailPage({
                 sprachDedup
                 gruppieren
               />
-            </div>
+            )}
+            <a
+              href={lvUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 bg-white no-underline mt-4 group hover:shadow-md transition-shadow"
+              style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.06)", padding: "16px 20px" }}
+            >
+              <AppIcon icon={FileText} width={20} height={20} strokeWidth={2} className="text-cyan-text shrink-0" aria-hidden="true" />
+              <span className="flex flex-col">
+                <span className="text-navy text-[15px] group-hover:text-cyan-text transition-colors" style={{ fontWeight: 700 }}>
+                  {dict.produkte.lv_titel}
+                </span>
+                <span className="text-navy/60 text-[13px]">
+                  {lvUrlSpezifisch ? dict.produkte.lv_produkt : dict.produkte.lv_katalog}
+                </span>
+              </span>
+            </a>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Related References */}
       {relatedRefs.length > 0 && (
