@@ -1818,14 +1818,17 @@ export const produkte: Produkt[] = [
   // + Normen produkte.xlsx (bei Klassen-Konflikten autoritativ, dokumentiert in
   // zuordnung-spezialbaustoffe-rapidset.md).
   {
+    // #178: VM 1 / VM 3 / VB 8 auf einer PDP (gemeinsame TDS NEODUR_VM_1_3_8).
+    // Unterscheidung nur über den Vergussquerschnitt -> als Varianten geführt.
+    // VM 5 (C80/95, R4) und VM basic (Trinkwasser) bleiben eigene PDPs (eigene TDS).
     id: "neodur-vm-1",
     tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
-    name: "NEODUR VM 1",
+    name: "NEODUR VM 1 / VM 3 / VB 8",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
     produktgruppe: "verguss",
-    kurzbeschreibung: "Vergussmörtel für Vergussquerschnitte von 5 bis 20 mm",
-    beschreibung: "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen. NEODUR VM 1 ist für Vergussquerschnitte von 5 bis 20 mm ausgelegt.",
+    kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte von 5 bis über 50 mm (Varianten VM 1 / VM 3 / VB 8)",
+    beschreibung: "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen. Die Reihe deckt je nach Vergussquerschnitt drei Varianten ab: NEODUR VM 1 (5 bis 20 mm), NEODUR VM 3 (10 bis 50 mm) und NEODUR VB 8 (über 50 mm). Alle drei teilen ein gemeinsames technisches Datenblatt.",
     qualitaetsklasse: "C55/67",
     normen: [
       "DIN EN 13395-2",
@@ -1834,29 +1837,13 @@ export const produkte: Produkt[] = [
       "DIN 1045-3",
       "DIN EN 13892-2",
     ],
-    technischeDaten: [{ label: "Vergussquerschnitt", wert: "5–20 mm" }],
+    technischeDaten: [{ label: "Vergussquerschnitt", wert: "5 mm bis über 50 mm (je Variante)" }],
+    varianten: [
+      { name: "NEODUR VM 1", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 5–20 mm" },
+      { name: "NEODUR VM 3", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 10–50 mm" },
+      { name: "NEODUR VB 8", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt über 50 mm" },
+    ],
     besonderheiten: ["Kraftschlüssiger Verbund von Beton und Stahleinbauteilen", "Umweltproduktdeklaration (Gruppen-EPD) verfügbar"],
-    zeitKategorie: "normal",
-  },
-  {
-    id: "neodur-vm-3",
-    tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
-    name: "NEODUR VM 3",
-    kategorie: "sonstige",
-    bereich: "spezialbaustoffe",
-    produktgruppe: "verguss",
-    kurzbeschreibung: "Vergussmörtel für Vergussquerschnitte von 10 bis 50 mm",
-    beschreibung: "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen. NEODUR VM 3 ist für Vergussquerschnitte von 10 bis 50 mm ausgelegt.",
-    qualitaetsklasse: "C55/67",
-    normen: [
-      "DIN EN 13395-2",
-      "DIN EN 445",
-      "DIN EN 13670",
-      "DIN 1045-3",
-      "DIN EN 13892-2",
-    ],
-    technischeDaten: [{ label: "Vergussquerschnitt", wert: "10–50 mm" }],
-    besonderheiten: ["Kraftschlüssiger Verbund von Beton und Stahleinbauteilen"],
     zeitKategorie: "normal",
   },
   {
@@ -1872,21 +1859,6 @@ export const produkte: Produkt[] = [
     normen: ["DIN EN 1504-3 (R4)", "DAfStb-Richtlinie", "DIN EN 206-1", "DIN 1045-2"],
     technischeDaten: [{ label: "Vergussquerschnitt", wert: "bis 200 mm" }],
     besonderheiten: ["Für statisch relevante Anwendungen (R4)", "DAfStb-Richtlinie (SKVB I)"],
-    zeitKategorie: "normal",
-  },
-  {
-    id: "neodur-vb-8",
-    tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
-    name: "NEODUR VB 8",
-    kategorie: "sonstige",
-    bereich: "spezialbaustoffe",
-    produktgruppe: "verguss",
-    kurzbeschreibung: "Vergussbeton für Vergussquerschnitte über 50 mm",
-    beschreibung: "Montage- und Vergussbeton für Vergussquerschnitte über 50 mm. Verbindet Beton kraftschlüssig mit Stahleinbauteilen.",
-    qualitaetsklasse: "C55/67",
-    normen: ["DIN EN 12350-5", "DIN EN 445"],
-    technischeDaten: [{ label: "Vergussquerschnitt", wert: "über 50 mm" }],
-    besonderheiten: ["Kraftschlüssiger Verbund von Beton und Stahleinbauteilen"],
     zeitKategorie: "normal",
   },
   {
