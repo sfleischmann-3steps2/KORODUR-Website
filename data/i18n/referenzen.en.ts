@@ -957,4 +957,635 @@ export const referenzenEN: Record<string, {
     ],
     bildAlt: "Krottenbach drinking water reservoir near Nuremberg coated with MICROTOP",
   },
+  "artofchocolate-schwarzach-u-wertheim": {
+    titel: "ARTofCHOCOLATE Schwarzach and Wertheim",
+    untertitel: "Decorative KORODUR floor for a glass-clad chocolate manufacture",
+    land: "Germany",
+    herausforderungen: [
+      "Decorative, representative floor for a glass-clad manufacture with showroom and cafeteria",
+      "Visual integration into the colourful sales room",
+      "Floor on which fine pralinés are created and enjoyed daily",
+    ],
+    loesung:
+      "A KORODUR decorative floor was installed using KCF cement-grey (KORODUR COPETTI FLOOR KCF) combined with KOROCLEAN. After the first manufacture in Schwarzach/Main in 2008, a further, even bigger manufacture was built in the Outlet Village Wertheim in 2010 using the same floor system.",
+    vorteile: [
+      "Decorative floor finish matching the colourful sales room",
+      "Proven system used again for the 2010 expansion",
+      "Representative floor for the glass-clad chocolate manufacture",
+    ],
+    bildAlt: "KORODUR decorative floor in the glass-clad chocolate manufacture ARTofCHOCOLATE",
+  },
+  "aunn-cafe-shanghai-china": {
+    titel: "AUNN Café Shanghai",
+    untertitel: "Design floor for an industrial-style café in the heart of Shanghai",
+    land: "China",
+    herausforderungen: [
+      "Continuous design floor across all building levels",
+      "Sophisticated finish for a minimalist industrial design",
+      "Hard-wearing floor for a busy café and exhibition space",
+    ],
+    loesung:
+      "The innovative, cementitious KORODUR TRU Self-Leveling design floor was installed on a total of approx. 1,000 m² across all building levels, including a design store, an art centre and exhibition spaces. The floor was installed by Shanghai Hong Qiao Century Enterprise.",
+    vorteile: [
+      "Urban, design-oriented look as a handcrafted work of art",
+      "Continuous floor across all building levels",
+      "Innovative, cementitious design floor",
+    ],
+    bildAlt: "AUNN Café in Shanghai with KORODUR TRU Self-Leveling design floor",
+  },
+  "balenciaga-flagship-store-miami-usa": {
+    titel: "Balenciaga Flagship Store Miami",
+    untertitel: "Polishable decorative screed TRU Self-Leveling in the industrial-style luxury showroom",
+    land: "USA",
+    herausforderungen: [
+      "Floor to match the industrial-style showroom",
+      "High-quality, decorative finish for a luxury flagship store",
+      "Polishable, attractive surface across two floors",
+    ],
+    loesung:
+      "The floors were finished with the decorative screed TRU Self-Leveling, a mineral, fast-setting, decorative screed that is best for polishing.",
+    vorteile: [
+      "Self-leveling application",
+      "Grindable and polishable surface",
+      "Fast setting",
+      "Attractive, decorative design finish",
+    ],
+    bildAlt: "Decorative TRU Self-Leveling floor in the Balenciaga Flagship Store showroom in Miami",
+  },
+  "baeckerei-konditorei-schmidtmeier-bochum": {
+    titel: "Bakery & Pastry Shop Schmidtmeier, Bochum",
+    untertitel: "A jointless, polished terrazzo-look design floor for a high-traffic, easy-to-clean retail space",
+    land: "Germany",
+    herausforderungen: [
+      "A jointless, polished surface that is both decorative and wear resistant",
+      "Easy cleaning despite high customer frequency and typical dirt input",
+      "Resistance to flour, sugar and fats from bakery operations",
+      "A load-bearing, level sub-base with fast readiness for covering",
+    ],
+    loesung:
+      "First, a load-bearing and level sub-base was produced using KORODUR FSCem, a fast-setting screed binder on a ternary basis that is dimensionally stable and early ready for covering. On top, the self-leveling decorative screed TRU PC was applied in an average layer thickness of 10 mm. Already the next day, the surface could be polished into a slight terrazzo optic (TRUazzo). As a finish, a special impregnation was applied to prevent the penetration of watery liquids, fats, oils and other dirt.",
+    vorteile: [
+      "Jointless, polished terrazzo-look surface with extraordinary colour effects",
+      "Decorative and wear resistant for high-traffic retail",
+      "Easy to clean against flour, sugar, fats, oils and dirt",
+      "Fast process: surface ready for polishing the day after application",
+    ],
+    bildAlt: "Polished terrazzo-look design floor in the Bakery & Pastry Shop Schmidtmeier in Bochum",
+  },
+  "brauerei-bernard-humpolec-tschechien": {
+    titel: "Bernard Brewery, Humpolec",
+    untertitel: "TRUazzo decorative screed with terrazzo look for the new visitor centre",
+    land: "Czech Republic",
+    herausforderungen: [
+      "Attractive, unique terrazzo look for a representative visitor centre",
+      "Durable high load resistance for tens of thousands of visitors per year",
+      "Fast foot traffic and load readiness for swift construction progress",
+      "Resource-conserving, CO2-reduced construction",
+    ],
+    loesung:
+      "The Czech specialist company Provas installed the self-levelling, fast-setting TRU PC decorative screed (TRUazzo) in grey on an area of around 500 m² in a thickness of 12 mm. The terrazzo-like floor was then finished by polishing and a maintenance treatment.",
+    vorteile: [
+      "Attractive terrazzo look through polishing and maintenance treatment",
+      "Self-levelling and fast-setting",
+      "Ready for foot traffic after 2 to 3 hours, loadable after 24 hours",
+      "Resource-conserving: 30 % less CO2 than conventional Portland cement",
+    ],
+    bildAlt: "TRUazzo decorative screed in terrazzo look at the Bernard brewery visitor centre in Humpolec",
+  },
+  "escada-muenchen": {
+    titel: "ESCADA Headquarters, Munich",
+    untertitel: "Self-leveling design floor with decorative aggregates for the foyer of a luxury fashion house",
+    land: "Germany",
+    herausforderungen: [
+      "Create a glamorous yet subtle atmosphere for a luxury fashion house",
+      "Provide a high-quality stage for regular fashion shoots by renowned photographers",
+      "Combine uniqueness, elegance and a natural look in one floor",
+    ],
+    loesung:
+      "The board members of the ESCADA Group chose the KORODUR design floor in anthracite, a self-leveling, fast-setting thin screed with special decorative aggregates, polished in a fine terrazzo texture. The regular, parallel arrangement of stainless steel profiles completes the special character of the floor.",
+    vorteile: [
+      "Unique character through individual decorative aggregates",
+      "Elegant surface polished to a fine terrazzo texture",
+      "Natural, high-quality appearance",
+      "Stainless steel profiles as a design element",
+    ],
+    bildAlt: "Anthracite self-leveling design floor in the foyer of the ESCADA headquarters in Munich",
+  },
+  "fazer-besucherzentrum-vantaa-finnland": {
+    titel: "Fazer Visitor Centre",
+    untertitel: "Light, polished design floor in granite optics as a luxurious backdrop",
+    land: "Finland",
+    herausforderungen: [
+      "Representative design floor for a prime example of Finnish design and work",
+      "Light, luxurious optics as a backdrop for the product presentation",
+      "Natural, mineral and sustainable material in keeping with the architecture",
+    ],
+    loesung:
+      "The light, polished design floor GRANIDUR BIANCO in granite optics was installed, providing a magnificent background for Fazer's seductive dark chocolate products.",
+    vorteile: [
+      "Light granite optics with a luxurious look",
+      "Natural, mineral and sustainable",
+      "Harmonious integration into the architecture",
+    ],
+    bildAlt: "Light, polished GRANIDUR BIANCO design floor in granite optics at the Fazer Visitor Centre in Vantaa, Finland",
+  },
+  "gut-lippesee-paderborn": {
+    titel: "Gut Lippesee",
+    untertitel: "Robust design floor with a smoothed KCF appearance for a half-timbered hospitality ensemble",
+    land: "Germany",
+    herausforderungen: [
+      "Robust and wear-resistant floor for demanding restaurant operation",
+      "High optical demands with a vibrant, cloudy KCF look in anthracite",
+      "Natural blend into the historic half-timbered ambience",
+    ],
+    loesung:
+      "Gorlo Industrieboden GmbH & Co. KG of Bielefeld professionally installed an anthracite-colored NEODUR HE 65 hard aggregate screed using the fresh-in-fresh method, smoothed in KCF optics.",
+    vorteile: [
+      "Wear-resistant and robust for continuous restaurant use",
+      "Vibrant, cloudy KCF appearance in anthracite color",
+      "Economically installed using the fresh-in-fresh method",
+      "Blends naturally into the historic half-timbered ambience",
+    ],
+    bildAlt: "Anthracite NEODUR HE 65 hard aggregate screed in KCF optics in the half-timbered restaurant Gut Lippesee, Paderborn",
+  },
+  "heidelberger-cement-ag-heidelberg": {
+    titel: "HeidelbergCement AG Headquarters",
+    untertitel: "White GRANIDUR BIANCO terrazzo decorative screed in the representative entrance foyer",
+    land: "Germany",
+    herausforderungen: [
+      "Floor finish to match the building-wide exposed-concrete concept",
+      "White terrazzo look as a design highlight in the foyer",
+      "Quickly usable, heavy-duty heated screed as substrate",
+      "Force-fit bonding of the decorative screed in just 15 mm layer thickness",
+    ],
+    loesung:
+      "First, a fast-setting screed was laid as a heated screed using the KORODUR FSCem binder, a dimensionally stable fast-setting screed binder on a ternary basis. It was applied with a BREMAT mixing and pump truck. Then the factory-produced white dry mortar GRANIDUR BIANCO was applied as a bonded screed with the KORODUR bonding compound HB 5 white, in an average layer thickness of 15 mm. Finally, the decorative screed was polished in several steps until the desired individual terrazzo look was achieved.",
+    vorteile: [
+      "White decorative screed for a high-quality, individual terrazzo look",
+      "Quickly usable, heavy-duty heated screed thanks to ternary binder",
+      "Force-fit application in a low layer thickness of 15 mm",
+      "Coherent overall appearance within the continuous exposed-concrete concept",
+    ],
+    bildAlt: "White GRANIDUR BIANCO terrazzo floor in the entrance foyer of the HeidelbergCement AG headquarters",
+  },
+  "hora-zentrale-schloss-holte-stuckenbrock": {
+    titel: "HORA Headquarters",
+    untertitel: "Polished KORODUR hard aggregate screed in anthracite as a representative foyer floor",
+    land: "Germany",
+    herausforderungen: [
+      "High-quality, timelessly beautiful surface for the representative foyer area",
+      "Polished hard aggregate surface with terrazzo effect in anthracite color",
+      "Installation in the \"fresh-on-fresh\" method in 10 mm layer thickness",
+      "Demanding manual surface processing through grinding",
+    ],
+    loesung:
+      "In summer 2007, NEODUR HE 65 in anthracite color was cast as a 10 mm thick layer using the \"fresh-on-fresh\" installation method. Four weeks after installation, the grinding works were carried out to achieve the desired terrazzo effect in GRANIDUR optics.",
+    vorteile: [
+      "Timelessly beautiful, polished hard aggregate surface",
+      "Representative terrazzo effect in anthracite color",
+      "High installation quality through the \"fresh-on-fresh\" method",
+      "High-quality architectural design of the foyer",
+    ],
+    bildAlt: "Polished anthracite KORODUR hard aggregate floor in the representative foyer of the HORA headquarters in Schloss Holte-Stukenbrock",
+  },
+  "hotel-puro-krakow-polen": {
+    titel: "Hotel PURO Kraków Old Town",
+    untertitel: "Decorative polished seamless floor in a boutique hotel foyer",
+    land: "Poland",
+    herausforderungen: [
+      "Representative look for the hotel's centerpiece, the bar area in the foyer",
+      "Integration with the elaborate tiles in the central part of the foyer",
+      "High-quality, durable surface for a busy hotel area",
+    ],
+    loesung:
+      "The high-quality decorative KORODUR floor TRU SL natural was applied by professional installers from Concrete System. TRU SL is a specific mixture based on the special Rapid Set Cement from the USA and specially selected decorative aggregates. The floor was then carefully polished.",
+    vorteile: [
+      "Unique decorative look thanks to the polished surface",
+      "Fast application due to the Rapid Set base",
+      "Specially selected decorative aggregates for individual character",
+    ],
+    bildAlt: "Polished decorative KORODUR TRU SL floor in the foyer of Hotel PURO Kraków Old Town",
+  },
+  "kaiserhof-koeln": {
+    titel: "Kaiserhof, Cologne",
+    untertitel: "White terrazzo decorative screed GRANIDUR BIANCO on a fast-setting FSCem base screed",
+    land: "Germany",
+    herausforderungen: [
+      "Keeping an ambitious construction schedule on a high-profile office building",
+      "Providing a base screed with early readiness for covering and low shrinkage",
+      "Installing a high-grade decorative screed across nine levels",
+    ],
+    loesung:
+      "The contractor opted for the fast-setting screed KORODUR FSCem as the base screed for its fast setting and low shrinkage, then applied the high-grade white terrazzo decorative screed GRANIDUR BIANCO on nine levels, totalling 700 m².",
+    vorteile: [
+      "Fast-setting base screed kept the ambitious time schedule",
+      "Low shrinkage ensured a volume-stable base",
+      "Bright, polished floor blends seamlessly into the timeless architecture",
+    ],
+    bildAlt: "Polished white terrazzo decorative screed GRANIDUR BIANCO at the Kaiserhof office building in Cologne",
+  },
+  "kongresszentrum-dipoli-espoo-finnland": {
+    titel: "Dipoli Congress Centre",
+    untertitel: "Decorative polished terrazzo-finish floor for the main building of Aalto University",
+    land: "Finland",
+    herausforderungen: [
+      "Tribute to the original expressionist-modern design by architects Reima and Raili Pietilä",
+      "Geomorphological plan with curved, natural forms inspired by patterns in nature",
+      "Colors and aggregates had to be oriented to a cementitious terrazzo floor existing since the 1960s",
+      "Multifunctional use with meeting, event and catering spaces",
+    ],
+    loesung:
+      "GRANIDUR BIANCO decorative screed, a cement-based system with a grey pigment and a polished terrazzo finish, was the perfect match and was applied by KORODUR's long-standing Finnish partner.",
+    vorteile: [
+      "Cement-based system matching the existing 1960s terrazzo",
+      "Polished terrazzo finish with grey pigmentation",
+      "Decorative exposed floor for representative, multifunctional spaces",
+      "Executed by an experienced local KORODUR partner",
+    ],
+    bildAlt: "Polished GRANIDUR BIANCO terrazzo-finish floor at the Dipoli Congress Centre, Espoo, Finland",
+  },
+  "leica-firmenzentrale-wetzlar": {
+    titel: "Leica Headquarters Wetzlar",
+    untertitel: "Timelessly elegant, polished decorative floor for a state-of-the-art corporate complex",
+    land: "Germany",
+    herausforderungen: [
+      "A floor that reflects tradition and modernity, quality and perfection",
+      "Representative, attractive atmosphere inside the headquarters",
+      "High-quality surface produced in precise craftsmanship across 3,000 m²",
+    ],
+    loesung:
+      "In the basement of the corporate headquarters, the polished decorative floor GRANIDUR BIANCO was installed on an area of approx. 3,000 m² in an average layer thickness of 15 mm.",
+    vorteile: [
+      "Timelessly elegant, polished decorative surface",
+      "Produced in precise craftsmanship",
+      "Modern and attractive interior atmosphere",
+    ],
+    bildAlt: "Polished GRANIDUR BIANCO decorative floor at the Leica headquarters in Wetzlar",
+  },
+  "libeskind-villa-datteln": {
+    titel: "Libeskind Villa Datteln",
+    untertitel: "Mineral design floor for the reception building of an architectural icon",
+    land: "Germany",
+    herausforderungen: [
+      "A floor covering meeting the highest standards of design and uniqueness",
+      "Realizing individual design solutions with future-oriented materials",
+      "Combining discreet elegance with high resistance",
+    ],
+    loesung:
+      "On the ground floor an area of approx. 170 m² was carried out with the mineral design floor KORODUR COPETTI FLOOR KCF 05 (former definition SECUNDUR) in light-grey colour, in a layer thickness of in middle 15 mm, in smooth finish. This consciously involved a cooperation with an innovative German top-quality producer – the KORODUR group from Amberg.",
+    vorteile: [
+      "Discreet elegance through a smooth, light-grey finish",
+      "High resistance of the mineral design floor",
+      "Individual design solution for a demanding architectural concept",
+    ],
+    bildAlt: "Smooth light-grey mineral design floor KORODUR COPETTI FLOOR in the reception building of the Libeskind Villa in Datteln",
+  },
+  "martensbro-schule-espoo-finnland": {
+    titel: "Mårtensbro Skola, Espoo",
+    untertitel: "A light-grey hard aggregate floor for a bright, easy-to-maintain school through the Finnish winter",
+    land: "Finland",
+    herausforderungen: [
+      "Daily abrasion from thousands of foot kicks in school operation",
+      "Aesthetic yet easy-to-maintain floor required",
+      "Optimum light reflection during the long, dark winter months",
+      "Two different substrates: fresh-on-fresh and composite on existing concrete",
+    ],
+    loesung:
+      "A KORODUR hard aggregate layer was installed according to DIN 18560-7, coating group A according to DIN 1100, using NEODUR HE 65 in a light-grey colour, smoothed in KCF optics. Around 600 m² were laid in the fresh-on-fresh method with a layer thickness of approx. 10 mm. A further 600 m² were installed in composite on an existing concrete base: first the mineral KORODUR bonding agent HB 5, then a hard aggregate topping of approx. 15 mm. In total, around 30 tons of NEODUR HE 65 dry mortar were used.",
+    vorteile: [
+      "High load capacity for daily school operation",
+      "Light-grey for optimised light reflection and reduced energy costs",
+      "Easy to maintain and aesthetically appealing",
+      "Durable, ecologically and economically attractive solution",
+    ],
+    bildAlt: "Light-grey KORODUR hard aggregate floor in the Mårtensbro elementary school in Espoo, Finland",
+  },
+  "mensa-hochschule-weiden": {
+    titel: "Cafeteria University Weiden",
+    untertitel: "Smoothed decorative floor KCF 05 anthracite for the new campus cafeteria",
+    land: "Germany",
+    herausforderungen: [
+      "Representative decorative screed matching the modern concrete-and-wood architecture",
+      "Hard-wearing floor for a dining hall seating 180 students",
+      "Ground, decorative surface with an even appearance",
+      "Visually coordinated stair steps",
+    ],
+    loesung:
+      "On approx. 500 m² the KORODUR decorative floor KCF 05 in colour anthracite was installed in a layer thickness of around 15 mm on set cement screed. The smoothed decorative screed was given a finishing touch with a surface finish (special grinding) in the KOROCLEAN procedure. The stair steps were polished to a GRANIDUR texture.",
+    vorteile: [
+      "Decorative, smoothed decorative screed in anthracite",
+      "Architecturally coherent interplay of concrete and wood",
+      "Refined surface through the KOROCLEAN finishing grind",
+      "Hard-wearing for the high traffic of cafeteria operation",
+    ],
+    bildAlt: "Smoothed anthracite KCF 05 decorative floor in the new cafeteria of the University Amberg-Weiden",
+  },
+  "nationalarchiv-tartu-estland": {
+    titel: "National Archives Noora, Tartu",
+    untertitel: "Smoothed decorative screed in marble optics for the National Archives of Estonia",
+    land: "Estonia",
+    herausforderungen: [
+      "Flooring solution matching the state-of-the-art interior architecture and design-oriented facade of the archives",
+      "Representative, decorative finish for a socially and culturally significant building",
+      "Consistent appearance across around 1,000 m²",
+    ],
+    loesung:
+      "The decision fell on the KORODUR decorative screed KCF (KORODUR COPETTI FLOOR), a smoothed screed in marble optics, in a deep grey/anthracite shade. It perfectly complements the state-of-the-art interior architecture and the design-oriented facade of the building.",
+    vorteile: [
+      "Smoothed decorative screed in marble optics",
+      "Deep grey/anthracite shade for a modern appearance",
+      "Each floor unique in colour and structure",
+      "Perfect complement to the design-oriented interior and building architecture",
+    ],
+    bildAlt: "Smoothed KCF decorative screed in anthracite marble optics at the National Archives Noora in Tartu, Estonia",
+  },
+  "phoenix-media-mall-suzhou-china": {
+    titel: "Phoenix Media Mall",
+    untertitel: "Jointless TRU design floor in polished terrazzo optics for a five-storey shopping mall",
+    land: "China",
+    herausforderungen: [
+      "Five-storey shopping mall with 15,000 m² of floor area",
+      "High-quality decorative design floor as part of the interior concept",
+      "Nearly jointless optics across curved, intersecting fields",
+      "Fast construction schedule up to opening",
+    ],
+    loesung:
+      "Part of the design concept was the self-levelling design floor TRU Self-Leveling in polished terrazzo optics. It was installed in curved fields running into each other in the colours champagne, cappuccino and mocha, optically refined by adding white marble grain.",
+    vorteile: [
+      "Nearly jointless design floor in polished terrazzo optics",
+      "Individual colour design in champagne, cappuccino and mocha with white marble grain",
+      "Can be polished already 24 hours after installation",
+      "Opening possible just one week after installation",
+    ],
+    bildAlt: "Polished TRU Self-Leveling terrazzo design floor in the Phoenix Media Mall in Suzhou, China",
+  },
+  "porsche-showroom-loerrach": {
+    titel: "Porsche Showroom",
+    untertitel: "Polished GRANIDUR decorative screed for a high-class sports car presentation area",
+    land: "Germany",
+    herausforderungen: [
+      "Create a high-class presentation area worthy of exclusive sports cars",
+      "Deliver a decorative, design-oriented floor finish in light grey and anthracite",
+      "Combine an attractive look with the durability of an industrial floor",
+    ],
+    loesung:
+      "For the new showroom, the choice fell on a KORODUR design floor: a polished GRANIDUR decorative screed in light grey and anthracite, covering approximately 600 m². GRANIDUR is the outstanding and decorative design floor for the creation of high-class presentation areas.",
+    vorteile: [
+      "Decorative, high-class appearance in light grey and anthracite",
+      "Polished surface ideal for exclusive product presentation",
+      "Robust design floor suitable for daily showroom use",
+    ],
+    bildAlt: "Polished GRANIDUR decorative screed in light grey and anthracite at the Porsche showroom in Lörrach",
+  },
+  "restaurant-mueli-muelligen-schweiz": {
+    titel: "Restaurant Müli, Mülligen",
+    untertitel: "Decorative GRANIDUR NERO design floor for a historic gastronomy landmark",
+    land: "Switzerland",
+    herausforderungen: [
+      "Historic building with high design demands",
+      "Floor finish matching a culinary meeting point's reputation",
+      "Decorative appearance under gastronomic use",
+    ],
+    loesung:
+      "In spring 2011 the last constructional optimizations were finished and a GRANIDUR NERO design floor was installed.",
+    vorteile: [
+      "Decorative design floor appearance",
+      "Matching the gastronomic ambience",
+      "Durable floor for ongoing restaurant operation",
+    ],
+    bildAlt: "GRANIDUR NERO design floor at Restaurant Müli in Mülligen, Switzerland",
+  },
+  "showroom-bonsai-group-guernsey-uk": {
+    titel: "Showroom Bonsai Group, Guernsey",
+    untertitel: "Polished TRU Self-Leveling design floor for a high-end showroom",
+    land: "UK",
+    herausforderungen: [
+      "A flooring system to complement the high-end furniture on show",
+      "Decorative design floor with an individual colour and effect finish",
+      "Hard-wearing and practical surface for showroom use",
+      "Minimal maintenance for the future",
+    ],
+    loesung:
+      "TRU Self-Leveling was laid in its natural buff colour and stained with two shades of grey to create a mottled effect, then polished and sealed. The result is a seamless 180 m² floor at 12 mm thickness.",
+    vorteile: [
+      "Seamless 180 m² design floor at 12 mm thickness",
+      "Individual mottled finish from the speckled effect",
+      "High-shine surface through polishing and sealing",
+      "Minimal maintenance",
+    ],
+    bildAlt: "Polished TRU Self-Leveling design floor in the Bonsai Group showroom in Guernsey, UK",
+  },
+  "showroom-oldtimer-kalifornien-usa": {
+    titel: "Showroom Classic Cars",
+    untertitel: "Design floor with gallery aesthetics for presenting classic automobiles",
+    land: "USA",
+    herausforderungen: [
+      "Floor meeting the high requirements of use and vehicle presentation",
+      "Sophisticated, decorative aesthetics to stage the classic cars",
+      "Professional sub-base preparation and priming",
+      "Short construction time until use of the showroom",
+    ],
+    loesung:
+      "The decision fell on the innovative design floor TRU Self-Leveling. The sub-base was professionally prepared and primed. Around 18 hours later, the TRU Self-Leveling material was applied. Already after another 16 hours, the TRU floor could be polished.",
+    vorteile: [
+      "Decorative design floor for a high-quality presentation area",
+      "Self-leveling system for an even surface",
+      "Polishable just 16 hours after application",
+      "Short construction time until use",
+    ],
+    bildAlt: "Design floor TRU Self-Leveling in the classic car showroom of Doctor Detail in California, USA",
+  },
+  "sportano-polen": {
+    titel: "Sportano Sports Store, Warsaw",
+    untertitel: "Self-levelling design floor in polished concrete look for the flagship store",
+    land: "Poland",
+    herausforderungen: [
+      "Representative look for a flagship store in Warsaw's largest shopping centre",
+      "High-quality, decorative floor in a polished concrete look",
+      "Self-levelling, mineral solution across around 600 m²",
+    ],
+    loesung:
+      "TRU PC grey was used, a high-quality, self-levelling, mineral decorative screed based on a special cement technology. The product simulates the appearance of polished concrete and is ideal for polished, decorative screeds in representative interiors. The floor was installed by Concrete Polen.",
+    vorteile: [
+      "Polished concrete look for a high-quality, unique appearance",
+      "Self-levelling mineral application",
+      "Suitable for representative interiors such as retail spaces and foyers",
+      "Suitable for indoor and outdoor as well as wet areas",
+    ],
+    bildAlt: "Polished concrete look design floor in the Sportano sports store in Warsaw",
+  },
+  "stefan-andreas-schulzentrum-schweich": {
+    titel: "Stefan-Andres-Gymnasium Schweich",
+    untertitel: "Polished decorative screed GRANIDUR 05 as a design floor for a prestige school new-build",
+    land: "Germany",
+    herausforderungen: [
+      "Representative, durable floor finish for a prestige school new-build",
+      "Large-area installation across ground and upper floor in school and community-center hallways",
+      "Integration of underfloor heating in the screed build-up",
+      "Architectural combination of the floor areas with parquet strips",
+    ],
+    loesung:
+      "For the hallways of the school and the integrated community center, a basalt grey, polished decorative screed GRANIDUR 05 was installed across a total of 1,500 m² on the ground and upper floor. A cement screed grade CT-C30-F5, on average 8.5 cm thick and with floor heating, was installed first. On top, the on average 1.5 cm thick GRANIDUR 05 composite screed was applied by the local qualified applicator Günter Schlag GmbH.",
+    vorteile: [
+      "Polished decorative screed as a representative design floor",
+      "Robust composite screed for heavily frequented school hallways",
+      "Compatible with underfloor heating in the build-up",
+      "Visually combinable with parquet and exposed concrete",
+    ],
+    bildAlt: "Polished basalt grey GRANIDUR 05 decorative screed in the hallways of the Stefan-Andres-Gymnasium in Schweich",
+  },
+  "strandhaus-bahia-de-kino-mexico": {
+    titel: "Beach House Bahía de Kino",
+    untertitel: "Mineral design floor in the concrete ambience of a beach house",
+    land: "Mexico",
+    herausforderungen: [
+      "Cracks in the substrate had to be closed before installation",
+      "High ambient temperatures at the site",
+      "Windows still missing during installation",
+      "Concern that substrate cracks would later become visible in the coating",
+    ],
+    loesung:
+      "First, the cracks in the substrate were treated with a synthetic mesh laid over a large area and epoxy resin; concrete nails were used to fix the mesh strips. On the first floor, most surfaces were coated with the mineral design floor. Because of the high ambient temperatures and the missing windows, the window openings were covered with foil and the rooms were cooled with an air conditioning unit.",
+    vorteile: [
+      "Crack bridging prevents visible substrate cracks",
+      "Mineral design floor matching the concrete ambience",
+      "Ground exposed surface with high-quality appearance",
+    ],
+    bildAlt: "Mineral design floor in the concrete beach house at Bahía de Kino, Mexico",
+  },
+  "suntago-village-swinice-polen": {
+    titel: "Suntago Village – Park of Poland",
+    untertitel: "Decorative TRUazzo terrazzo floor in the hotel complex foyer",
+    land: "Poland",
+    herausforderungen: [
+      "Representative decorative floor in the central foyer of the hotel complex",
+      "High-grade terrazzo finish for a stylish ambience",
+      "Clean connection to the ornate ceramic tiles in the centre of the foyer",
+    ],
+    loesung:
+      "The Polish specialist installer Concrete System laid a KORODUR TRUazzo decorative floor all around the ceramic tiles. The product TRU PC in grey colour was installed and polished in a slight terrazzo finish. TRU is based on the innovative Rapid Set cement technology from the USA.",
+    vorteile: [
+      "Unique, decorative terrazzo ambience",
+      "Rapid Set cement technology with 30% less CO₂ emissions than conventional systems",
+      "Slight terrazzo polish for a high-grade visible surface",
+      "Representative look for the hotel restaurant area",
+    ],
+    bildAlt: "Decorative grey TRUazzo terrazzo floor in the foyer of Suntago Village in Świnice, Poland",
+  },
+  "truazzo-isabel-marant-store-wien-oesterreich": {
+    titel: "TRUazzo Decorative Screed Isabel Marant Store Vienna",
+    untertitel: "Individually designable decorative floor for the monobrand store",
+    land: "Austria",
+    herausforderungen: [
+      "Comply with the specified colour concept for walls and floors",
+      "Individual, creative floor design fitting the flagship store",
+      "Tight time frame for installation before the reopening",
+    ],
+    loesung:
+      "The specialist installer chose TRU Self-Leveling, a self-levelling, polished decorative screed for layer thicknesses of 5 to 35 mm. The material can be individually designed in different colour variations and by broadcasting decorative grains (glass, marble or chips). For the flagship store, a grey colour variant with additional chip broadcasting was chosen.",
+    vorteile: [
+      "Individually designable through colour variations and decorative grains",
+      "Fast processing: polishing only 24 hours after placement",
+      "Attractive, unique decorative screed for representative rooms",
+      "Ideal for sales rooms, restaurants, foyers and museums",
+    ],
+    bildAlt: "Grey polished TRUazzo decorative screed with chip broadcasting at the Isabel Marant store in Vienna",
+  },
+  "u-bahnhof-koeln": {
+    titel: "Subway Station Breslauer Platz",
+    untertitel: "Wear-resistant GRANIDUR design floor for a high-traffic subway station",
+    land: "Germany",
+    herausforderungen: [
+      "High traffic with up to 15,000 passengers per day",
+      "Floor must be wear-resistant and durable",
+      "Demand for design and a bright, clear layout",
+      "Economy over the entire service life",
+    ],
+    loesung:
+      "The GRANIDUR design floor based on KORODUR VS 0/5 hard aggregates was used, polished and wear-resistant. The floor makes the station of approx. 4,800 m² appear bright and spacious.",
+    vorteile: [
+      "Wear-resistant and durable under high load",
+      "Polished, decorative design surface",
+      "Bright, spacious appearance of the station",
+      "Economical over the entire service life",
+    ],
+    bildAlt: "Polished GRANIDUR design floor in the bright, spacious Breslauer Platz subway station in Cologne",
+  },
+  "under-armoure-store-wisconsin-usa": {
+    titel: "Under Armour Store",
+    untertitel: "Self-leveling design floor in polished concrete appearance for a unique store ambiance",
+    land: "USA",
+    herausforderungen: [
+      "Representative sales room with high design demands",
+      "Unique, individually designable concrete appearance required",
+      "Fast foot traffic to limit construction time",
+      "Load-bearing, dust-free sub-base as a prerequisite",
+    ],
+    loesung:
+      "On the prepared, dust-free and load-bearing sub-base, the epoxy resin primer KORODUR TXPK was first applied and spread with fire-dried quartz sand. The self-leveling design floor TRU PC in polished concrete appearance (decorative aggregates 0 - 2.5 mm, installation thickness 10 - 35 mm) was then applied. Grinding/polishing was carried out up to a degree of 800, and a first maintenance treatment reduces the penetration of liquids and dirt.",
+    vorteile: [
+      "Unique, polished concrete appearance for representative areas",
+      "Fast setting, ready for foot traffic after 2 to 3 hours",
+      "Low shrinkage and durable",
+      "Individually and creatively designable",
+    ],
+    bildAlt: "Polished TRU PC design floor in the Under Armour store in Wisconsin, USA",
+  },
+  "verwaltungsgebaeude-laehitapiola-espoo": {
+    titel: "Administration building LÄHITAPIOLA",
+    untertitel: "Polished white GRANIDUR BIANCO design floor in granite optics",
+    land: "Finland",
+    herausforderungen: [
+      "Decorative design floor matching the post-modern steel-and-concrete architecture",
+      "Consistent appearance across the aisles of all 6 storeys (1,500 m²)",
+      "White granite optics requiring a white-pigmented bonding compound",
+      "Achieving the unique surface through multiple polishing steps",
+    ],
+    loesung:
+      "Following KORODUR instructions, the white GRANIDUR BIANCO design floor was installed in an average thickness of 15 mm on KORODUR Bonding Compound HB 5. As GRANIDUR BIANCO is a white polished floor, the HB 5 bonding compound was also pigmented in white. Multiple polishing steps created the unique granite optics.",
+    vorteile: [
+      "Cementitious, purely mineral design floor meeting ecological sustainability demands",
+      "Distinctive polished granite optics",
+      "Fits perfectly into the post-modern architecture",
+      "Durable decorative screed for high-traffic aisles",
+    ],
+    bildAlt: "White GRANIDUR BIANCO design floor in granite optics in the aisles of the LÄHITAPIOLA administration building in Espoo",
+  },
+  "verwaltungsgebaeude-moedel-amberg": {
+    titel: "Moedel Administration Building, Amberg",
+    untertitel: "Design floor in anthracite for a representative foyer",
+    land: "Germany",
+    herausforderungen: [
+      "Representative design floor for the foyer of a new administration building",
+      "Contemporary, high-quality floor design in anthracite",
+      "Surface refinement through professional grinding and maintenance treatment",
+    ],
+    loesung:
+      "At the foyer of the administration building, a KORODUR design floor KCF 05 (former definition SECUNDUR) in the colour anthracite was installed on an area of approx. 400 m². The KCF design floor was finished in the KOROCLEAN procedure and maintenance treated. The grinding works were carried out by company RSB Steinbodensanierung & Bodenschleiftechnik from Regensburg using sophisticated grinding technique.",
+    vorteile: [
+      "High-quality, contemporary floor design in anthracite",
+      "Refined surface through the KOROCLEAN procedure",
+      "Representative floor for the reception and foyer area",
+    ],
+    bildAlt: "KORODUR KCF 05 design floor in anthracite at the foyer of the Moedel administration building in Amberg",
+  },
+  "weingut-am-nil-kallstadt": {
+    titel: "Weingut am Nil",
+    untertitel: "Anthracite decorative floor in a smoothed KCF finish for a restaurant of purist elegance",
+    land: "Germany",
+    herausforderungen: [
+      "Difficult access to the cellar vaults only via a narrow staircase and a steep ladder",
+      "Installation had to be as dust-free as possible",
+      "The angled access required material conveyance over 80 m of hose length",
+    ],
+    loesung:
+      "In May 2015 an anthracite-coloured KORODUR decorative floor in a smoothed KCF finish was installed in the wine cellar. Using suitable pumping technology, the KCF material was pumped over 80 m of hose length to the angled access and applied at an average thickness of 10 mm. After final smoothing and the curing period, the floor was treated with OBTEGO R-400 to increase stain protection and gloss.",
+    vorteile: [
+      "Smoothed, seamless decorative anthracite finish",
+      "Workable even with difficult access over long hose distances",
+      "Increased stain protection and gloss through aftercare treatment",
+      "Low average installation thickness of 10 mm",
+    ],
+    bildAlt: "Anthracite KORODUR KCF decorative floor in the wine cellar of Weingut am Nil in Kallstadt",
+  },
 };
