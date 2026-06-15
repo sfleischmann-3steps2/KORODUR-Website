@@ -438,4 +438,18 @@ export const REFERENZ_FILTER_V25: Record<string, ReferenzFilterV25> = {
     zeitfenster: "planbar",
     schadenstypen: [],
   },
+  "hochbehaelter-puchheim": {
+    flaecheKategorie: "gross",
+    innenAussen: "aussen",
+    einsatzbereich: "aussen-umwelt-whg",
+    zeitfenster: "planbar",
+    schadenstypen: ["frueher-sanierung"],
+  },
+  "hochbehaelter-krottenbach": {
+    flaecheKategorie: "gross",
+    innenAussen: "aussen",
+    einsatzbereich: "aussen-umwelt-whg",
+    zeitfenster: "planbar",
+    schadenstypen: ["frueher-sanierung"],
+  },
 };
