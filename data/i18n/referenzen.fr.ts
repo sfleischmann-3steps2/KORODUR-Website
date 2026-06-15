@@ -923,4 +923,597 @@ export const referenzenFR: Record<string, {
     ],
     bildAlt: "Réservoir d'eau potable Puchheim pendant la rénovation",
   },
+  "artofchocolate-schwarzach-u-wertheim": {
+    titel: "ARTofCHOCOLATE Schwarzach et Wertheim",
+    untertitel: "Sol décoratif KORODUR pour une manufacture de chocolat tout en verre",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sol décoratif et représentatif pour une manufacture en verre avec shop et café",
+      "Intégration visuelle dans la salle de vente aux couleurs vivantes",
+      "Sol sur lequel de fins délices sont créés et dégustés quotidiennement",
+    ],
+    loesung:
+      "Un sol décoratif KORODUR a été réalisé avec KCF gris naturel (KORODUR COPETTI FLOOR KCF) en combinaison avec KOROCLEAN. Après la première manufacture à Schwarzach am Main en 2008, une nouvelle et encore plus grande manufacture a vu le jour en 2010 dans le village de magasin Outlet à Wertheim avec le même système de sol.",
+    vorteile: [
+      "Aspect décoratif du sol en harmonie avec la salle de vente colorée",
+      "Système éprouvé réutilisé pour l’extension de 2010",
+      "Sol représentatif pour la manufacture de chocolat tout en verre",
+    ],
+    bildAlt: "Sol décoratif KORODUR dans la manufacture de chocolat tout en verre ARTofCHOCOLATE",
+  },
+  "aunn-cafe-shanghai-china": {
+    titel: "AUNN Café Shanghai",
+    untertitel: "Sol décoratif pour un café au design industriel en plein centre de Shanghai",
+    land: "Chine",
+    herausforderungen: [
+      "Sol décoratif continu sur tous les niveaux du bâtiment",
+      "Finition soignée pour un design industriel minimaliste",
+      "Sol résistant pour un café et des espaces d'exposition très fréquentés",
+    ],
+    loesung:
+      "Le sol décoratif innovant KORODUR TRU Self-Leveling, à base de ciment, a été posé sur un total d'environ 1 000 m² à tous les niveaux du bâtiment, y compris des boutiques design, un centre d'art ainsi que des espaces d'exposition. Le sol a été réalisé par Shanghai Hong Qiao Century Enterprise.",
+    vorteile: [
+      "Aspect urbain et très design, telle une œuvre d'art réalisée à la main",
+      "Sol continu sur tous les niveaux du bâtiment",
+      "Sol décoratif innovant à base de ciment",
+    ],
+    bildAlt: "AUNN Café à Shanghai avec sol décoratif KORODUR TRU Self-Leveling",
+  },
+  "balenciaga-flagship-store-miami-usa": {
+    titel: "Balenciaga Magasin Phare à Miami",
+    untertitel: "Chape décorative ponçable TRU Self-Leveling dans le showroom de luxe de style industriel",
+    land: "USA",
+    herausforderungen: [
+      "Sol en accord avec le showroom de style industriel",
+      "Finition décorative de haute qualité pour un magasin phare de luxe",
+      "Surface ponçable et attrayante sur deux étages",
+    ],
+    loesung:
+      "Les sols ont été finis avec la chape décorative TRU Self-Leveling, une chape décorative minérale à prise rapide qui convient parfaitement au ponçage et polissage.",
+    vorteile: [
+      "Application autonivelante",
+      "Surface ponçable et polissable",
+      "Prise rapide",
+      "Finition décorative attrayante",
+    ],
+    bildAlt: "Sol décoratif TRU Self-Leveling dans le showroom du magasin phare Balenciaga à Miami",
+  },
+  "brauerei-bernard-humpolec-tschechien": {
+    titel: "Brasserie Bernard, Humpolec",
+    untertitel: "Chape decorative TRUazzo a l'aspect terrazzo pour le nouveau centre de visiteurs",
+    land: "Republique tcheque",
+    herausforderungen: [
+      "Aspect terrazzo attrayant et unique pour un centre de visiteurs representatif",
+      "Resistance elevee et durable pour des dizaines de milliers de visiteurs par an",
+      "Mise en service rapide pour un avancement zele du chantier",
+      "Construction econome en ressources et reduite en CO2",
+    ],
+    loesung:
+      "L'entreprise specialisee tcheque Provas a mis en oeuvre la chape decorative TRU PC auto nivelante et a prise rapide (TRUazzo) en teinte gris sur une surface d'environ 500 m² en une epaisseur de 12 mm. Le revetement a l'aspect terrazzo a ete finalise par polissage et un traitement de base.",
+    vorteile: [
+      "Aspect terrazzo attrayant par polissage et traitement de base",
+      "Auto nivelante et a prise rapide",
+      "Prete pour le trafic pieton apres 2 a 3 heures, chargeable apres 24 heures",
+      "Econome en ressources : 30 % d'emissions de CO2 en moins que le ciment Portland traditionnel",
+    ],
+    bildAlt: "Chape decorative TRUazzo a l'aspect terrazzo au centre de visiteurs de la brasserie Bernard a Humpolec",
+  },
+  "escada-muenchen": {
+    titel: "Siège ESCADA, Munich",
+    untertitel: "Sol décoratif autonivelant avec granulats décoratifs pour le hall d'un magasin de luxe",
+    land: "Allemagne",
+    herausforderungen: [
+      "Créer une ambiance glamoureuse et en même temps délicate pour un magasin de luxe",
+      "Offrir un cadre de qualité pour les shootings photo de mode réguliers de photographes renommés",
+      "Réunir pièce unique, élégance et naturel dans un seul sol",
+    ],
+    loesung:
+      "Le comité directeur du groupe ESCADA a choisi le sol décoratif KORODUR en anthracite, un revêtement autonivelant additionné de granulats décoratifs et poncé. L'intégration, à intervalle régulière, de profilés en acier inoxydable complète le caractère de ce sol décoratif.",
+    vorteile: [
+      "Caractère de pièce unique grâce aux granulats décoratifs individuels",
+      "Surface élégante poncée en finition fine",
+      "Aspect naturel et de haute qualité",
+      "Profilés en acier inoxydable comme élément de design",
+    ],
+    bildAlt: "Sol décoratif autonivelant anthracite dans le hall du siège ESCADA à Munich",
+  },
+  "fazer-besucherzentrum-vantaa-finnland": {
+    titel: "Fazer centre d'accueil",
+    untertitel: "Sol décoratif clair et poli en optique granite comme cadre luxueux",
+    land: "Finlande",
+    herausforderungen: [
+      "Sol décoratif représentatif pour un exemple exceptionnel de design et d'artisanat finlandais",
+      "Optique claire et luxueuse comme cadre pour la présentation des produits",
+      "Matériau naturel, minéral et durable en accord avec l'architecture",
+    ],
+    loesung:
+      "Le sol décoratif clair et poli GRANIDUR BIANCO en optique granite, brillant, a été posé et offre un cadre magnifique pour la présentation des délices en chocolat noir.",
+    vorteile: [
+      "Optique granite claire à l'allure luxueuse",
+      "Naturel, minéral et durable",
+      "Intégration harmonieuse dans l'architecture",
+    ],
+    bildAlt: "Sol décoratif GRANIDUR BIANCO clair et poli en optique granite au centre d'accueil Fazer à Vantaa, Finlande",
+  },
+  "gut-lippesee-paderborn": {
+    titel: "Gut Lippesee",
+    untertitel: "Sol design robuste à l'aspect KCF lissé pour un ensemble gastronomique à colombage",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sol robuste et résistant pour une exploitation gastronomique exigeante",
+      "Hautes exigences optiques avec un aspect KCF vivant et nuagé en anthracite",
+      "Intégration naturelle dans l'ambiance historique à colombage",
+    ],
+    loesung:
+      "La société Gorlo Industrieboden GmbH & Co. KG de Bielefeld a réalisé avec précision un sol NEODUR HE 65 anthracite en coulis frais sur frais, lissé en aspect KCF.",
+    vorteile: [
+      "Résistant à l'usure et robuste pour une exploitation gastronomique continue",
+      "Aspect KCF vivant et nuagé en couleur anthracite",
+      "Réalisé de manière économique en coulis frais sur frais",
+      "S'intègre naturellement dans l'ambiance historique à colombage",
+    ],
+    bildAlt: "Sol NEODUR HE 65 anthracite à l'aspect KCF dans la bâtisse à colombage du restaurant Gut Lippesee, Paderborn",
+  },
+  "heidelberger-cement-ag-heidelberg": {
+    titel: "Siège de HeidelbergCement AG",
+    untertitel: "Chape décorative en terrazzo blanc GRANIDUR BIANCO dans le hall d'entrée représentatif",
+    land: "Allemagne",
+    herausforderungen: [
+      "Revêtement de sol en accord avec le concept de béton apparent du bâtiment",
+      "Aspect terrazzo blanc comme point fort esthétique dans le hall",
+      "Chape chauffante à prise rapide et haute résistance comme support",
+      "Pose adhérente de la chape décorative en seulement 15 mm d'épaisseur",
+    ],
+    loesung:
+      "Premièrement, une chape à prise rapide a été mise en œuvre comme chape chauffante en utilisant le liant KORODUR FSCem, un liant pour chape à prise rapide sur base ternaire et de dimension stable. Elle a été appliquée à l'aide d'un camion malaxeur-pompe BREMAT. Ensuite, le mortier sec blanc GRANIDUR BIANCO a été appliqué comme chape rapportée avec le primaire KORODUR HB 5 blanc, en une épaisseur de couche moyenne de 15 mm. Pour finir, la surface a été polie en plusieurs passes jusqu'à l'obtention de l'aspect terrazzo individuel souhaité.",
+    vorteile: [
+      "Chape décorative blanche pour un aspect terrazzo individuel et haut de gamme",
+      "Chape chauffante à prise rapide et haute résistance grâce au liant ternaire",
+      "Pose adhérente en faible épaisseur de couche de 15 mm",
+      "Image d'ensemble cohérente dans le concept continu de béton apparent",
+    ],
+    bildAlt: "Sol en terrazzo blanc GRANIDUR BIANCO dans le hall d'entrée du siège de HeidelbergCement AG",
+  },
+  "hora-zentrale-schloss-holte-stuckenbrock": {
+    titel: "Siège de la société HORA",
+    untertitel: "Chape de granulats durs KORODUR poncée, coloris anthracite, comme sol de foyer représentatif",
+    land: "Allemagne",
+    herausforderungen: [
+      "Surface de haute qualité et de beauté durable pour le foyer représentatif",
+      "Surface de granulats durs poncée avec effet terrazzo en coloris anthracite",
+      "Mise en œuvre en chape incorporée (coulis frais sur frais) en épaisseur de 10 mm",
+      "Finition de surface manuelle exigeante par ponçage",
+    ],
+    loesung:
+      "Courant de l'été 2007, le produit NEODUR HE 65 anthracite a été réalisé en chape incorporée (coulis frais sur frais) en épaisseur de 10 mm. Environ 4 semaines après la mise en œuvre, les travaux de ponçage ont été effectués pour obtenir l'effet désiré de terrazzo en optique de GRANIDUR.",
+    vorteile: [
+      "Surface de granulats durs poncée, de beauté durable",
+      "Effet terrazzo représentatif en coloris anthracite",
+      "Haute qualité de mise en œuvre grâce au procédé frais sur frais",
+      "Aménagement architectural de haute qualité du foyer",
+    ],
+    bildAlt: "Sol KORODUR en granulats durs poncé, coloris anthracite, dans le foyer représentatif du siège de HORA à Schloss Holte-Stukenbrock",
+  },
+  "hotel-puro-krakow-polen": {
+    titel: "Hôtel PURO Kraków Vieille-Ville",
+    untertitel: "Sol décoratif poli et sans joint dans le hall d'un hôtel-boutique",
+    land: "Pologne",
+    herausforderungen: [
+      "Aspect représentatif pour la pièce centrale de l'hôtel, le bar du hall",
+      "Intégration avec les carreaux élaborés de la partie centrale du hall",
+      "Surface durable et de haute qualité pour un espace hôtelier très fréquenté",
+    ],
+    loesung:
+      "Le sol décoratif KORODUR de haute qualité, TRU SL naturel, a été mis en œuvre par des professionnels de la société Concrete System. TRU SL est un mélange spécifique à base de ciment spécial Rapid Set provenant des États-Unis et de granulats décoratifs spécialement sélectionnés. Le sol a ensuite été soigneusement poli.",
+    vorteile: [
+      "Aspect décoratif unique grâce à la surface polie",
+      "Mise en œuvre rapide grâce à la base Rapid Set",
+      "Granulats décoratifs spécialement sélectionnés pour un caractère individuel",
+    ],
+    bildAlt: "Sol décoratif poli KORODUR TRU SL dans le hall de l'hôtel PURO Kraków Vieille-Ville",
+  },
+  "kaiserhof-koeln": {
+    titel: "Kaiserhof, Cologne",
+    untertitel: "Chape décorative en terrazzo blanc GRANIDUR BIANCO sur chape de base à prise rapide FSCem",
+    land: "Allemagne",
+    herausforderungen: [
+      "Respecter un calendrier de construction ambitieux sur un immeuble de bureau prestigieux",
+      "Disposer d'une chape de base à prise rapide et à faible retrait",
+      "Installer une chape décorative de qualité supérieure sur neuf niveaux",
+    ],
+    loesung:
+      "L'entreprise a choisi la chape à prise rapide KORODUR FSCem comme chape de base pour sa prise rapide et son faible retrait, puis a appliqué la chape décorative en terrazzo blanc de qualité supérieure GRANIDUR BIANCO sur neuf niveaux, soit 700 m² au total.",
+    vorteile: [
+      "Chape de base à prise rapide pour respecter le calendrier ambitieux",
+      "Faible retrait garantissant une base stable en volume",
+      "Sol brillant et poli qui se fond parfaitement dans l'architecture intemporelle",
+    ],
+    bildAlt: "Chape décorative en terrazzo blanc poli GRANIDUR BIANCO dans l'immeuble de bureau Kaiserhof à Cologne",
+  },
+  "kongresszentrum-dipoli-espoo-finnland": {
+    titel: "Centre de congrès Dipoli",
+    untertitel: "Chape décorative à finition aspect terrazzo poli pour le bâtiment principal de l'Université d'Aalto",
+    land: "Finlande",
+    herausforderungen: [
+      "Hommage au design original expressionniste-moderne des architectes Reima et Raili Pietilä",
+      "Plan géomorphologique aux formes courbées et naturelles inspirées de la nature",
+      "Les couleurs et agrégats devaient s'inspirer d'un sol en terrazzo à base de ciment existant depuis les années 1960",
+      "Usage multifonctionnel avec salles de réunion, espaces d'événements et restauration",
+    ],
+    loesung:
+      "La chape décorative GRANIDUR BIANCO, un système à base de ciment, gris pigmenté, finition aspect terrazzo poli, était parfaitement adaptée et a été mise en œuvre par le partenaire finlandais de longue date de KORODUR.",
+    vorteile: [
+      "Système à base de ciment adapté au terrazzo existant des années 1960",
+      "Finition aspect terrazzo poli avec pigmentation grise",
+      "Sol apparent décoratif pour des espaces représentatifs et multifonctionnels",
+      "Réalisé par un partenaire KORODUR local expérimenté",
+    ],
+    bildAlt: "Sol GRANIDUR BIANCO à finition terrazzo poli au centre de congrès Dipoli, Espoo, Finlande",
+  },
+  "leica-firmenzentrale-wetzlar": {
+    titel: "Siège Leica Wetzlar",
+    untertitel: "Sol décoratif poli à l'élégance intemporelle pour un complexe ultramoderne",
+    land: "Allemagne",
+    herausforderungen: [
+      "Un sol reflétant tradition et modernité, qualité et perfection",
+      "Une ambiance représentative et attrayante à l'intérieur du siège",
+      "Une surface de haute qualité réalisée avec précision artisanale sur 3 000 m²",
+    ],
+    loesung:
+      "Au rez-de-chaussée, sur une surface d'environ 3 000 m², le sol décoratif GRANIDUR BIANCO a été mis en œuvre avec une épaisseur moyenne de 15 mm et une surface polie.",
+    vorteile: [
+      "Surface décorative polie à l'élégance intemporelle",
+      "Réalisé avec précision artisanale",
+      "Ambiance intérieure moderne et attrayante",
+    ],
+    bildAlt: "Sol décoratif poli GRANIDUR BIANCO au siège Leica à Wetzlar",
+  },
+  "libeskind-villa-datteln": {
+    titel: "Villa Libeskind Datteln",
+    untertitel: "Sol décoratif minéral pour le bâtiment de réception d'une icône architecturale",
+    land: "Allemagne",
+    herausforderungen: [
+      "Un revêtement de sol répondant aux standards les plus exigeants en matière de design et d'originalité",
+      "Réaliser des solutions de conception personnalisées avec des matériaux du futur",
+      "Combiner une délicate élégance et une grande résistance",
+    ],
+    loesung:
+      "Au rez-de-chaussée, un sol décoratif minéral KORODUR COPETTI FLOOR KCF 05 (anciennement SECUNDUR) d'une surface de 170 m² a été réalisé dans le coloris gris clair, en 15 mm d'épaisseur, en finition lissée. Un partenariat a ainsi été conclu avec un fabricant allemand innovant au savoir-faire reconnu – le groupe KORODUR de Amberg.",
+    vorteile: [
+      "Délicate élégance grâce à une finition lissée gris clair",
+      "Grande résistance du sol décoratif minéral",
+      "Solution de conception personnalisée pour un concept architectural exigeant",
+    ],
+    bildAlt: "Sol décoratif minéral lissé gris clair KORODUR COPETTI FLOOR dans le bâtiment de réception de la villa Libeskind à Datteln",
+  },
+  "martensbro-schule-espoo-finnland": {
+    titel: "Mårtensbro Skola, Espoo",
+    untertitel: "Un sol industriel gris clair pour une école lumineuse et facile à entretenir durant l'hiver finlandais",
+    land: "Finlande",
+    herausforderungen: [
+      "Abrasion quotidienne due à des milliers de passages dans une école",
+      "Sol à la fois esthétique et facile à nettoyer exigé",
+      "Réflexion optimale de la lumière durant les longs mois sombres de l'hiver",
+      "Deux supports différents : frais sur frais et chape rapportée sur béton existant",
+    ],
+    loesung:
+      "Une chape d'usure KORODUR a été réalisée selon les normes DIN 18560-7 et DIN 1100 (durcisseur de groupe A), avec le produit NEODUR HE 65 gris clair, aspect marbré KCF. Une chape d'environ 600 m² a été réalisée « frais sur frais » en épaisseur de 10 mm. Une chape rapportée de 600 m² a été mise en place sur support béton existant : d'abord le primaire d'accrochage minéral KORODUR HB 5, puis une couche d'usure de 15 mm. Au total, environ 30 tonnes de durcisseur prémixé NEODUR HE 65 ont été utilisées.",
+    vorteile: [
+      "Grande capacité de charge pour l'exploitation quotidienne d'une école",
+      "Gris clair pour une réflexion optimisée de la lumière et des coûts énergétiques réduits",
+      "Facile à entretenir et esthétiquement attrayant",
+      "Solution durable, écologique et économiquement attractive",
+    ],
+    bildAlt: "Sol industriel KORODUR gris clair dans l'école primaire Mårtensbro à Espoo, Finlande",
+  },
+  "mensa-hochschule-weiden": {
+    titel: "Restaurant universitaire, Université Weiden",
+    untertitel: "Sol décoratif lissé KCF 05 anthracite pour le nouveau restaurant universitaire du campus",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sol décoratif représentatif en harmonie avec l'architecture moderne en béton et bois",
+      "Sol résistant pour un espace de restauration de 180 places",
+      "Surface poncée et décorative à l'aspect homogène",
+      "Marches d'escalier coordonnées visuellement",
+    ],
+    loesung:
+      "Sur environ 500 m², le sol décoratif KORODUR KCF 05 dans le coloris anthracite, d'une épaisseur de 15 mm, a été réalisé sur chape ciment durcie. Afin de lui donner la touche finale, ce sol décoratif a été poncé en utilisant le système de nettoyage KOROCLEAN. Les marches ont été poncées afin d'obtenir un aspect GRANIDUR.",
+    vorteile: [
+      "Sol décoratif lissé dans le coloris anthracite",
+      "Alliance architecturale harmonieuse de béton et de bois",
+      "Surface affinée grâce au ponçage de nettoyage KOROCLEAN",
+      "Résistant pour le trafic intense d'un restaurant universitaire",
+    ],
+    bildAlt: "Sol décoratif lissé KCF 05 anthracite dans le nouveau restaurant universitaire de l'Université Amberg-Weiden",
+  },
+  "nationalarchiv-tartu-estland": {
+    titel: "Archives nationales Noora, Tartu",
+    untertitel: "Chape décorative lissée en optique de marbre pour les archives nationales d'Estonie",
+    land: "Estonie",
+    herausforderungen: [
+      "Revêtement de sol adapté au design intérieur moderne et à la façade très moderne des archives",
+      "Finition décorative et représentative pour un bâtiment culturellement et socialement important",
+      "Aspect homogène sur environ 1.000 m²",
+    ],
+    loesung:
+      "Le choix s'est porté sur la chape décorative KORODUR KCF (KORODUR COPETTI FLOOR), une chape lissée en optique de marbre, dans une teinte gris foncé/anthracite. Elle s'intègre parfaitement au design intérieur et à la façade très moderne du bâtiment.",
+    vorteile: [
+      "Chape décorative lissée en optique de marbre",
+      "Teinte gris foncé/anthracite pour un aspect moderne",
+      "Chaque sol unique par sa couleur et sa structure",
+      "Intégration parfaite au design intérieur et à l'architecture du bâtiment",
+    ],
+    bildAlt: "Chape décorative KCF lissée en optique de marbre anthracite aux archives nationales Noora à Tartu, Estonie",
+  },
+  "nike-shop-kaunas-litauen": {
+    titel: "NIKE Store Kaunas",
+    untertitel: "Sol cimentaire decoratif a l'aspect beton industriel pour le magasin NIKE tres frequente du centre commercial Akropolis",
+    land: "Lituanie",
+    herausforderungen: [
+      "Forte frequentation quotidienne du magasin exigeant un sol particulierement resistant",
+      "Choix du bon systeme de sol en comparant les bases epoxy et ciment",
+      "Evaluation des concepts de sol par des architectes internationaux",
+      "Exigence d'un aspect beton industriel allie a un nettoyage facile",
+    ],
+    loesung:
+      "Afin de choisir le bon produit, diverses zones d'essais a base d'epoxy et de ciment ont ete realisees. KORODUR a presente son produit cimentaire TRU Self-Leveling. Les differents essais ont ete evalues par des architectes internationaux.",
+    vorteile: [
+      "Aspect beton industriel pour une ambiance de magasin haut de gamme",
+      "Facilite de mise en oeuvre et durabilite",
+      "Nettoyage facile du sol",
+      "Eprouve par l'experience anterieure dans les NIKE stores du monde entier",
+    ],
+    bildAlt: "Sol cimentaire decoratif a l'aspect beton industriel dans le NIKE Store du centre commercial Akropolis a Kaunas, Lituanie",
+  },
+  "phoenix-media-mall-suzhou-china": {
+    titel: "Phoenix Media Mall",
+    untertitel: "Sol décoratif TRU sans joints en aspect terrazzo poli pour un centre commercial de cinq étages",
+    land: "Chine",
+    herausforderungen: [
+      "Centre commercial de cinq étages avec 15 000 m² de surface de sol",
+      "Sol décoratif haut de gamme dans le cadre du concept d'aménagement intérieur",
+      "Aspect quasiment sans joints sur des bandes courbes s'entrecroisant",
+      "Calendrier de chantier rapide jusqu'à l'ouverture",
+    ],
+    loesung:
+      "Le concept de design intégrait le sol décoratif autonivelant TRU Self-Leveling, aspect terrazzo poli. Il a été mis en œuvre en bandes courbes se croisant les unes aux autres, mélangeant les couleurs champagne, cappuccino et moka, et affiné par l'ajout de grain de marbre blanc.",
+    vorteile: [
+      "Sol décoratif quasiment sans joints en aspect terrazzo poli",
+      "Coloris personnalisés champagne, cappuccino et moka avec grain de marbre blanc",
+      "Polissage possible dès 24 heures après la mise en œuvre",
+      "Ouverture possible une semaine seulement après la pose",
+    ],
+    bildAlt: "Sol décoratif terrazzo poli TRU Self-Leveling dans le Phoenix Media Mall à Suzhou, Chine",
+  },
+  "porsche-showroom-loerrach": {
+    titel: "Showroom Porsche",
+    untertitel: "Sol décoratif poncé GRANIDUR pour une présentation haut de gamme de voitures de sport",
+    land: "Allemagne",
+    herausforderungen: [
+      "Créer une surface de présentation haut de gamme à la hauteur de voitures de sport exclusives",
+      "Réaliser un sol décoratif et design en gris de sécurité et anthracite",
+      "Allier une esthétique soignée à la résistance d'un sol industriel",
+    ],
+    loesung:
+      "Pour son nouveau showroom, le concessionnaire Porsche à Lörrach a choisi un sol décoratif poncé GRANIDUR en gris de sécurité et anthracite de la gamme sol décoratif KORODUR, sur environ 600 m². GRANIDUR est un sol décoratif poncé pour des réalisations architecturales de haute qualité et d'une très grande résistance mécanique.",
+    vorteile: [
+      "Aspect décoratif et haut de gamme en gris de sécurité et anthracite",
+      "Surface poncée idéale pour la présentation de produits exclusifs",
+      "Sol design robuste adapté à un usage quotidien en showroom",
+    ],
+    bildAlt: "Sol décoratif poncé GRANIDUR gris de sécurité et anthracite au showroom Porsche de Lörrach",
+  },
+  "restaurant-mueli-muelligen-schweiz": {
+    titel: "Restaurant Müli, Mülligen",
+    untertitel: "Sol décoratif GRANIDUR NERO pour un lieu gastronomique historique",
+    land: "Suisse",
+    herausforderungen: [
+      "Bâtiment historique aux exigences esthétiques élevées",
+      "Revêtement de sol à la hauteur de la réputation d'un rendez-vous gastronomique",
+      "Aspect décoratif sous sollicitation gastronomique",
+    ],
+    loesung:
+      "Au printemps 2011, les dernières optimisations ont été réalisées et un sol décoratif GRANIDUR NERO a été posé.",
+    vorteile: [
+      "Aspect de sol décoratif",
+      "En harmonie avec l'ambiance gastronomique",
+      "Sol résistant pour l'exploitation continue du restaurant",
+    ],
+    bildAlt: "Sol décoratif GRANIDUR NERO au Restaurant Müli à Mülligen, Suisse",
+  },
+  "showroom-bonsai-group-guernsey-uk": {
+    titel: "Showroom Bonsai Group, Guernesey",
+    untertitel: "Sol decoratif poli TRU Self-Leveling pour une salle d'exposition haut de gamme",
+    land: "UK",
+    herausforderungen: [
+      "Un sol mettant en valeur les meubles haut de gamme presentes",
+      "Sol decoratif au rendu couleur et effet individualise",
+      "Surface durable et pratique pour l'usage de la salle d'exposition",
+      "Entretien minimal pour l'avenir",
+    ],
+    loesung:
+      "Le sol autonivelant TRU Self-Leveling a ete pose en couleur naturelle, a laquelle on a ajoute deux nuances de gris pour un effet marbre, puis poli et scelle. Une surface continue de 180 m² d'une epaisseur de 12 mm a ainsi ete realisee.",
+    vorteile: [
+      "Surface decorative continue de 180 m² en 12 mm d'epaisseur",
+      "Rendu marbre individuel grace a l'effet moucheté",
+      "Surface brillante par polissage et scellement",
+      "Entretien minimal",
+    ],
+    bildAlt: "Sol decoratif poli TRU Self-Leveling dans la salle d'exposition du Bonsai Group a Guernesey, UK",
+  },
+  "showroom-oldtimer-kalifornien-usa": {
+    titel: "Showroom Oldtimer",
+    untertitel: "Sol décoratif à l'esthétique de galerie pour la présentation d'automobiles anciennes",
+    land: "USA",
+    herausforderungen: [
+      "Sol répondant aux exigences élevées d'utilisation et de présentation des véhicules",
+      "Esthétique décorative et soignée pour mettre en valeur les voitures anciennes",
+      "Préparation et primage professionnels du support",
+      "Délai de construction court avant l'utilisation du showroom",
+    ],
+    loesung:
+      "Le choix s'est porté sur le sol décoratif innovant TRU Self-Leveling. Les travaux ont débuté par la préparation et le primage du support. Environ 18 heures plus tard, le mortier TRU Self-Leveling a pu être appliqué et, 16 heures après, le sol TRU Self-Leveling a pu être poli.",
+    vorteile: [
+      "Sol décoratif pour une surface de présentation haut de gamme",
+      "Système autonivelant pour une surface plane",
+      "Ponçable seulement 16 heures après l'application",
+      "Délai de construction court avant l'utilisation",
+    ],
+    bildAlt: "Sol décoratif TRU Self-Leveling dans le showroom de voitures anciennes de Doctor Detail en Californie, USA",
+  },
+  "stefan-andreas-schulzentrum-schweich": {
+    titel: "Centre scolaire Stefan-Andres, Schweich",
+    untertitel: "Chape décorative poncée GRANIDUR 05 comme sol design pour un lycée neuf de prestige",
+    land: "Allemagne",
+    herausforderungen: [
+      "Revêtement de sol représentatif et durable pour un lycée neuf de prestige",
+      "Mise en œuvre sur grande surface au rez-de-chaussée et au premier étage des couloirs",
+      "Intégration d'un chauffage au sol dans la structure de la chape",
+      "Combinaison architecturale des surfaces avec des lames de parquet",
+    ],
+    loesung:
+      "Dans les couloirs du centre socioculturel intégré et du lycée, un sol décoratif GRANIDUR 05 en coloris gris basalte, poncé, a été mis en œuvre sur une surface totale de 1.500 m² au rez-de-chaussée et au premier étage. Une chape de ciment de qualité CT-C30-F5 avec chauffage au sol, d'épaisseur moyenne de 8,5 cm, a d'abord été réalisée. La chape GRANIDUR 05, d'épaisseur moyenne de 1,5 cm, a ensuite été mise en œuvre « frais sur frais » par le spécialiste local Günter Schlag GmbH.",
+    vorteile: [
+      "Chape décorative poncée comme sol design représentatif",
+      "Chape composite robuste pour des couloirs très fréquentés",
+      "Compatible avec un chauffage au sol dans la structure",
+      "Combinable visuellement avec du parquet et du béton apparent",
+    ],
+    bildAlt: "Sol décoratif poncé GRANIDUR 05 gris basalte dans les couloirs du Centre Scolaire Stefan-Andres à Schweich",
+  },
+  "suntago-village-swinice-polen": {
+    titel: "Village de Suntago – Parc de Pologne",
+    untertitel: "Sol décoratif TRUazzo en aspect terrazzo dans le foyer du complexe hôtelier",
+    land: "Pologne",
+    herausforderungen: [
+      "Sol décoratif représentatif dans le foyer central du complexe hôtelier",
+      "Aspect terrazzo haut de gamme pour une ambiance élégante",
+      "Raccord soigné aux carreaux de céramique artistique au centre du foyer",
+    ],
+    loesung:
+      "L'entreprise spécialisée polonaise Concrete System a posé un sol décoratif KORODUR TRUazzo tout autour des carreaux de céramique. Le produit TRU PC, en aspect gris, un produit autonivelant de haute qualité, a été posé puis poncé légèrement en aspect terrazzo. TRU est basé sur la technologie de ciment Rapid Set des États-Unis.",
+    vorteile: [
+      "Ambiance décorative unique en aspect terrazzo",
+      "Technologie de ciment Rapid Set avec 30 % d'émissions de CO₂ en moins que les systèmes conventionnels",
+      "Ponçage léger en aspect terrazzo pour une surface visible de haute qualité",
+      "Aspect représentatif pour l'espace restaurant de l'hôtel",
+    ],
+    bildAlt: "Sol décoratif TRUazzo gris en aspect terrazzo dans le foyer du Village de Suntago à Świnice, Pologne",
+  },
+  "truazzo-isabel-marant-store-wien-oesterreich": {
+    titel: "Chape décorative TRUazzo magasin Isabel Marant Vienne",
+    untertitel: "Sol décoratif personnalisable pour le magasin mono-marque",
+    land: "Autriche",
+    herausforderungen: [
+      "Respecter le concept de couleur défini pour les murs et les sols",
+      "Conception de sol individuelle et créative adaptée au magasin phare",
+      "Délai court disponible pour la mise en œuvre avant la réouverture",
+    ],
+    loesung:
+      "L'installateur professionnel a opté pour TRU Self-Leveling, une chape décorative autonivelante et polie pour des épaisseurs de couche de 5 à 35 mm. Le matériau peut être conçu de manière individuelle dans différentes variations de couleurs et de grains décoratifs (verre, marbre ou copeaux). Pour le magasin phare, une variante de couleur grise avec diffusion supplémentaire de copeaux a été choisie.",
+    vorteile: [
+      "Personnalisable grâce aux variations de couleurs et aux grains décoratifs",
+      "Traitement rapide : polissage seulement 24 heures après la pose",
+      "Chape décorative attrayante et unique pour locaux représentatifs",
+      "Idéale pour espaces de vente, restaurants, foyers et musées",
+    ],
+    bildAlt: "Chape décorative TRUazzo grise polie avec diffusion de copeaux au magasin Isabel Marant à Vienne",
+  },
+  "u-bahnhof-koeln": {
+    titel: "Gare de métro Breslauer Platz",
+    untertitel: "Sol décoratif GRANIDUR résistant à l'usure pour une station de métro à fort trafic",
+    land: "Allemagne",
+    herausforderungen: [
+      "Fort trafic avec jusqu'à 15 000 passagers par jour",
+      "Le sol doit être résistant à l'usure et durable",
+      "Exigence en matière de design et d'aménagement clair et lumineux",
+      "Rentabilité sur toute la durée de vie",
+    ],
+    loesung:
+      "Le sol décoratif GRANIDUR à base de durcisseur KORODUR VS 0/5 a été utilisé, poncé et résistant à l'usure. Le sol donne à cette station d'environ 4 800 m² un aspect lumineux et spacieux.",
+    vorteile: [
+      "Résistant à l'usure et durable sous forte sollicitation",
+      "Surface décorative poncée",
+      "Aspect lumineux et spacieux de la station",
+      "Rentable sur toute la durée de vie",
+    ],
+    bildAlt: "Sol décoratif GRANIDUR poncé dans la station de métro lumineuse et spacieuse Breslauer Platz à Cologne",
+  },
+  "under-armoure-store-wisconsin-usa": {
+    titel: "Magasin Under Armour",
+    untertitel: "Sol decoratif autonivelant en aspect beton poli pour une ambiance de magasin unique",
+    land: "USA",
+    herausforderungen: [
+      "Salle de vente representative aux exigences esthetiques elevees",
+      "Aspect beton unique et personnalisable souhaite",
+      "Mise en circulation rapide pour limiter la duree des travaux",
+      "Support porteur et exempt de poussiere comme condition prealable",
+    ],
+    loesung:
+      "Sur le support prealablement prepare, exempt de poussiere et porteur, le primaire d'accrochage KORODUR TXPK (resine epoxy) a d'abord ete applique et saupoudre de quartz. Le sol decoratif autonivelant TRU PC en aspect beton poli (agregats decoratifs de 0 a 2,5 mm, epaisseur 10 a 35 mm) a ensuite ete applique. Le polissage a ete realise avec un grain de 800, et un premier entretien reduit la penetration des liquides et des salissures.",
+    vorteile: [
+      "Aspect beton poli unique pour des espaces representatifs",
+      "Prise rapide, circulation possible apres 2 a 3 heures",
+      "Faible retrait et resistant au temps",
+      "Realisation individuelle et creative",
+    ],
+    bildAlt: "Sol decoratif TRU PC poli dans le magasin Under Armour au Wisconsin, USA",
+  },
+  "verwaltungsgebaeude-laehitapiola-espoo": {
+    titel: "Bâtiment administratif LÄHITAPIOLA",
+    untertitel: "Sol décoratif blanc poncé GRANIDUR BIANCO, aspect granit",
+    land: "Finlande",
+    herausforderungen: [
+      "Sol décoratif en harmonie avec l'architecture moderne en acier et béton",
+      "Aspect homogène dans les couloirs des 6 étages (1.500 m²)",
+      "Aspect granit blanc nécessitant un primaire d'accrochage teinté en blanc",
+      "Obtention de l'aspect unique par plusieurs phases de ponçage",
+    ],
+    loesung:
+      "Selon les conseils de KORODUR, le sol décoratif blanc GRANIDUR BIANCO a été posé avec une épaisseur moyenne de 15 mm sur un primaire d'accrochage KORODUR HB 5. S'agissant d'un sol décoratif blanc, le primaire a lui aussi été teinté en blanc. Après plusieurs phases de ponçage, l'aspect granit exceptionnel devient visible.",
+    vorteile: [
+      "Sol décoratif minéral répondant aux exigences écologiques d'une gestion durable",
+      "Aspect granit poncé exceptionnel",
+      "S'intègre parfaitement à l'architecture moderne",
+      "Chape décorative durable pour les couloirs fréquentés",
+    ],
+    bildAlt: "Sol décoratif blanc GRANIDUR BIANCO aspect granit dans les couloirs du bâtiment administratif LÄHITAPIOLA à Espoo",
+  },
+  "verwaltungsgebaeude-moedel-amberg": {
+    titel: "Bureaux administratifs Moedel, Amberg",
+    untertitel: "Sol décoratif anthracite pour un foyer représentatif",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sol décoratif représentatif pour le foyer de nouveaux bureaux administratifs",
+      "Conception de sol contemporaine et de qualité dans la couleur anthracite",
+      "Finition de la surface par ponçage et traitement professionnels",
+    ],
+    loesung:
+      "Le sol du foyer des bâtiments administratifs, soit environ 400 m², a été réalisé avec du KCF 05 (ancien SECUNDUR) dans la couleur anthracite. Le sol décoratif KCF a par la suite été poncé et traité selon le procédé KOROCLEAN. Les travaux de ponçage ont été réalisés par la société RSB Steinbodensanierung & Bodenschleiftechnik de Regensburg avec une technique de ponçage ultramoderne.",
+    vorteile: [
+      "Conception de sol contemporaine et de qualité dans la couleur anthracite",
+      "Surface finie selon le procédé KOROCLEAN",
+      "Sol représentatif pour la zone d'accueil et le foyer",
+    ],
+    bildAlt: "Sol décoratif KORODUR KCF 05 anthracite dans le foyer des bureaux administratifs Moedel à Amberg",
+  },
+  "weingut-am-nil-kallstadt": {
+    titel: "Weingut am Nil",
+    untertitel: "Sol décoratif anthracite en optique KCF lissée pour un restaurant au style élégant et épuré",
+    land: "Allemagne",
+    herausforderungen: [
+      "Accès difficile aux caves uniquement par un escalier étroit et une échelle raide",
+      "La mise en œuvre devait être effectuée sans poussière",
+      "L'accès étroit exigeait un pompage du matériau sur 80 m de tuyaux",
+    ],
+    loesung:
+      "En mai 2015, un sol décoratif KORODUR de couleur anthracite, en optique KCF lissée, a été installé dans la cave. Avec une technologie de pompe adaptée, le matériel KCF a été pompé à travers 80 m de tuyaux jusqu'à l'accès étroit et le sol posé avec une épaisseur de couche de 10 mm. Après lissage final et durcissement, le sol décoratif a été traité avec OBTEGO R-400, fournissant une protection contre les taches et plus de brillance.",
+    vorteile: [
+      "Optique décorative anthracite lissée et sans joints",
+      "Mise en œuvre possible même avec un accès difficile sur de longues distances de tuyaux",
+      "Protection accrue contre les taches et brillance grâce au traitement",
+      "Faible épaisseur de pose de 10 mm en moyenne",
+    ],
+    bildAlt: "Sol décoratif KORODUR KCF anthracite dans la cave à vin du Weingut am Nil à Kallstadt",
+  },
 };
