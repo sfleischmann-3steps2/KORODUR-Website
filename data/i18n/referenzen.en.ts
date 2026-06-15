@@ -1588,4 +1588,809 @@ export const referenzenEN: Record<string, {
     ],
     bildAlt: "Anthracite KORODUR KCF decorative floor in the wine cellar of Weingut am Nil in Kallstadt",
   },
+  "airbus-a-380-hamburg-finkenwerder": {
+    titel: "Airbus A 380 Hangar Hamburg-Finkenwerder",
+    untertitel: "20,000 m² of KORODUR hard aggregate screed for the maintenance hall of the world's largest civil aircraft",
+    land: "Germany",
+    herausforderungen: [
+      "A giant area of 20,000 m² to be installed in just 2 ½ months",
+      "Island location of the job-site: all materials could be supplied only by water transport with pontoon tug",
+      "Noise abatement requirements with restricted operating times for transport",
+      "High required daily installation performance of more than 2,000 m²",
+    ],
+    loesung:
+      "The powerful KORODUR silo system was used in combination with the NEODUR HE 65 hard aggregate screed. To ensure timely supply and to meet daily installation performance of more than 2,000 m², two KORODUR silo units with integrated pump technique were operated in parallel. In total around 500 t of NEODUR HE 65 silo material were processed.",
+    vorteile: [
+      "Daily installation performance of more than 2,000 m² thanks to two silo units operated in parallel",
+      "Smooth supply despite island location and noise abatement requirements",
+      "High-performance hard aggregate screed for the demanding hangar application",
+      "Proven silo system with integrated pump technique for large areas",
+    ],
+    bildAlt: "KORODUR industrial floor in the Airbus A 380 hangar in Hamburg-Finkenwerder",
+  },
+  "amazon-logistikzentrum-bad-hersfeld": {
+    titel: "Amazon Logistics Center Bad Hersfeld",
+    untertitel: "Joint-reduced hard-aggregate industrial floor on 100,000 m² for non-stop operation",
+    land: "Germany",
+    herausforderungen: [
+      "High loads in continuous logistics operation",
+      "Almost joint-less floor with field sizes up to 36 x 36 m",
+      "Ensuring smooth non-stop use",
+      "High daily output of around 3,000 m² of industrial floor",
+    ],
+    loesung:
+      "A steel fiber-reinforced concrete was chosen as the basis and coated with NEODUR hard aggregate dry mortar to specifically increase the wear resistance of the flooring surface. About 3,000 m² were installed daily, with around 17.5 tons of steel fibers per 500 m³ of concrete. The major part of the area was treated with NEODUR HE 3 cement-grey, special areas such as incoming and outgoing goods with NEODUR HE 3 red.",
+    vorteile: [
+      "High abrasion and wear resistance of the surface",
+      "Joint-reduced design with large field sizes up to 36 x 36 m",
+      "Fast installation of around 3,000 m² per day",
+      "Color-coded zoning through cement-grey and red",
+    ],
+    bildAlt: "Industrial floor of the Amazon Logistics Center in Bad Hersfeld",
+  },
+  "amazon-logistikzentrum-wroclaw-polen": {
+    titel: "Amazon Distribution Centers Wrocław",
+    untertitel: "Around 260,000 m² of highly wear-resistant KORODUR industrial flooring for two Amazon distribution centers",
+    land: "Poland",
+    herausforderungen: [
+      "Highest wear resistance for intensive logistics and forklift operation",
+      "Very tight schedule of the builder up to commissioning in summer 2014",
+      "Largely joint-free execution with field sizes of 1,200 m²",
+      "Gigantic total area of around 260,000 m² across two halls",
+    ],
+    loesung:
+      "The KORODUR industrial floor NEODUR HE 3 cement-grey was installed by the specialized installer and long-term KORODUR partner PPP Posadzki Przemysłowe Polska from Węgrzce Wielkie. To meet the tight schedule, PPP installed up to 6,000 m² of industrial floor per day, largely joint-free in field sizes of 1,200 m².",
+    vorteile: [
+      "Highest wear and abrasion resistance for heavy-duty and forklift traffic",
+      "High daily installation rate of up to 6,000 m² for the tight schedule",
+      "Joint-free execution with large field sizes of 1,200 m²",
+      "Most economic long-term solution thanks to lasting durability",
+    ],
+    bildAlt: "Amazon distribution center in Wrocław with KORODUR NEODUR HE 3 industrial floor",
+  },
+  "bmw-logistikzentrum-wallersdorf": {
+    titel: "BMW Logistics Center Wallersdorf",
+    untertitel: "Highly wear-resistant hard aggregate industrial floor for one of the world's largest logistics centers",
+    land: "Germany",
+    herausforderungen: [
+      "Industrial floor exposed to extreme stress around the clock from logistics operations",
+      "Reliable handling of logistics and distribution of spare parts had to be ensured",
+      "Enormous area of more than 50 football fields to be installed economically and time-saving",
+      "High demands on surface hardening and quality of install performance",
+    ],
+    loesung:
+      "Both builder owner and planner decided for the mineral heavy-duty KORODUR hard aggregate industrial floor acc. to DIN 1100, installed by CBL Chemobau Industrieboden with an impressive install performance of up to 4,000 m² per day. The most modern concreting equipment, the Laser Screed S22E, was used. The KORODUR hard aggregate material was supplied in big bags and uniformly applied by spreader, allowing a time-saving and economic application of large volumes.",
+    vorteile: [
+      "Highly wear-resistant mineral hard aggregate floor acc. to DIN 1100",
+      "Impressive install performance of up to 4,000 m² per day",
+      "Economic big bag application by spreader with Laser Screed S22E",
+      "Durable load-bearing capacity for round-the-clock logistics operations",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor at the BMW Logistics Center in Wallersdorf",
+  },
+  "bmw-austellungshalle-krefeld": {
+    titel: "New BMW Showroom Krefeld",
+    untertitel: "Wear-resistant KORODUR hard aggregate industrial floor for the constant vehicle movements in the showroom",
+    land: "Germany",
+    herausforderungen: [
+      "Constant vehicle movements in the showroom demand a particularly wear-resistant floor",
+      "Bright, inviting feel-good atmosphere casting the spotlight on customers and vehicles",
+      "Functional industrial floor combined with high aesthetic quality",
+    ],
+    loesung:
+      "To withstand the constant vehicle movements, the client chose a monolithic KORODUR hard aggregate industrial floor, installed by Aslan Industrieboden GmbH from Bocholt. First the base concrete was placed and on top the NEODUR HE 3 hard aggregate mortar, levelled and smoothed with disk trowel and helicopter.",
+    vorteile: [
+      "High wear resistance for constant vehicle movements",
+      "Monolithic construction in one step with the base concrete",
+      "High-quality, representative appearance for the showroom",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor in the new BMW showroom in Krefeld",
+  },
+  "betonwerk-lintel-rheda-wiedenbrueck": {
+    titel: "Betonwerk Lintel – DUROCON Paving Stones",
+    untertitel: "Highly wear-resistant concrete paving stones with KORODUR hard aggregate for the highest stress demands",
+    land: "Germany",
+    herausforderungen: [
+      "Highest wear stress from heavy crawler chain vehicles",
+      "Conventional heavy-duty stones did not withstand the loads durably",
+      "Demand for high-quality appearance in shape, colour and surface",
+    ],
+    loesung:
+      "The intelligent and safe pavement system of the Lintel H-profile was combined with KORODUR hard aggregate. The result is the concrete paving stone DUROCON® with a highly wear-resistant surface, produced in the concrete plant Lintel with consideration of the latest concrete technological findings.",
+    vorteile: [
+      "Highly wear-resistant surface for the highest stress demands",
+      "More robust than conventional everyday and heavy-duty stones",
+      "Proven under heavy crawler chain vehicles",
+      "High-quality appearance in shape, colour and surface",
+    ],
+    bildAlt: "DUROCON concrete paving stones with KORODUR hard aggregate at Betonwerk Lintel, Rheda-Wiedenbrück",
+  },
+  "bomag-shanghai-china": {
+    titel: "BOMAG China Production Site",
+    untertitel: "10,000 m² of heavy-duty KORODUR industrial flooring for the world market leader in compaction technology",
+    land: "China",
+    herausforderungen: [
+      "Heavy-duty, wear-resistant industrial floor for demanding machine production",
+      "Logistic handling over a transport distance of more than 20,000 km by sea container",
+      "On-schedule installation of large areas in professional quality by a local contractor",
+    ],
+    loesung:
+      "In the production site established in 2007, approx. 10,000 m² of KORODUR industrial floors were installed in professional quality. A local contractor installed KORODUR VS 0/5 as a classic 10 mm hard aggregate topping layer. Thanks to KORODUR's many years of export experience, the sea containers loaded with the floor hardeners arrived on schedule at the job-site.",
+    vorteile: [
+      "Heavy-duty and extremely wear-resistant hard aggregate floor",
+      "World-wide proven KORODUR quality and durability",
+      "Smooth logistic handling despite more than 20,000 km of transport",
+      "Most economic solution in the long term",
+    ],
+    bildAlt: "KORODUR industrial floor in the BOMAG production site in Fengxian, Shanghai, China",
+  },
+  "borbet-leichtmetallradproduktion-kodersdorf": {
+    titel: "BORBET Light Alloy Wheel Production Kodersdorf",
+    untertitel: "25,000 m² of hard aggregate flooring for the most stressed area of the new plant",
+    land: "Germany",
+    herausforderungen: [
+      "Industrial floor as the most stressed part of the building",
+      "Installing a very large total area of more than 25,000 m² economically",
+      "Ensuring a punctual production start in spring 2016",
+    ],
+    loesung:
+      "From October to December 2015, more than 20,000 m² were installed with KORODUR hard aggregate material NEODUR HE 3. A further 5,000 m² were executed as a 10 mm layer fresh-on-fresh with NEODUR HE 65 in silo supply. The KORODUR silo system enables economical installation through effective mixing and pumping technique with conveying distances of up to 80 m.",
+    vorteile: [
+      "Daily performances of up to 2,000 m² with the KORODUR silo system",
+      "Economical installation through effective mixing and pumping technique",
+      "Easy logistic handling and savings on labor time",
+      "Proven KORODUR quality for the most stressed area",
+    ],
+    bildAlt: "Industrial floor with KORODUR hard aggregate in the new BORBET light alloy wheel production plant in Kodersdorf",
+  },
+  "caterpillar-abu-dhabi-dubai": {
+    titel: "Caterpillar Workshop Abu Dhabi",
+    untertitel: "Heavy-duty industrial floor for the toughest Caterpillar equipment",
+    land: "United Arab Emirates",
+    herausforderungen: [
+      "Continuous stress on the floors from heavy Caterpillar equipment",
+      "Highest abrasion resistance for workshop operation",
+      "Proven quality continuing the KORODUR floors installed since 1984",
+    ],
+    loesung:
+      "On an area of approximately 1,500 sqm the KORODUR premix product NEODUR HE 65 metallic was installed. The metallic hardener floor offers the highest abrasion resistance and is designed for the toughest stress.",
+    vorteile: [
+      "Highest abrasion resistance thanks to metallic hardener topping",
+      "Designed for the heaviest stress from Caterpillar equipment",
+      "Proven KORODUR quality, in use in the Gulf Region since 1984",
+    ],
+    bildAlt: "Caterpillar workshop in Abu Dhabi with KORODUR NEODUR HE 65 metallic industrial floor",
+  },
+  "fertigstellen-eines-zementfussbodens-in-einem-bewohnten-appartment-gdynia-polen": {
+    titel: "Completion of a cement floor in an occupied apartment",
+    untertitel: "Self-levelling industrial floor in concrete look, walkable after just 10 hours",
+    land: "Poland",
+    herausforderungen: [
+      "Preserve the existing wooden parquet and combine it harmoniously with new screed areas",
+      "Light colour tone matching the ash parquet and the steel frame of the underfloor heating radiator",
+      "Level surface with a natural concrete look",
+      "Floor work without interrupting use of the occupied apartment",
+    ],
+    loesung:
+      "Under the architect's guidance, the applicator produced various mortar samples for colour matching. Because the work had to be carried out without interrupting use, NEODUR Level was chosen – a cement-bound, self-levelling, fast-hardening industrial floor in concrete look. Additional areas were even created for NEODUR Level so that the overall floor appearance would be harmonious.",
+    vorteile: [
+      "Self-levelling for a flat surface with a natural concrete look",
+      "Fast-hardening, walkable after just 10 hours",
+      "Colour can be matched to parquet and built-in elements",
+      "Installation possible without interrupting use",
+    ],
+    bildAlt: "Self-levelling NEODUR Level cement floor in concrete look combined with ash parquet in an occupied apartment in Gdynia, Poland",
+  },
+  "hornbach-baumarkt-bruenn-cz": {
+    titel: "Hornbach DIY Store Brno",
+    untertitel: "KORODUR hard aggregate topping for high pedestrian and pallet traffic in a DIY store",
+    land: "Czech Republic",
+    herausforderungen: [
+      "High pedestrian traffic during ongoing store operation",
+      "Regular pallet movements on the areas",
+      "Requirement of DIN 18560, part 7, table 1, stress group medium",
+      "Permanent use over decades without floor damage",
+    ],
+    loesung:
+      "On the still fresh base concrete, the Czech specialist Largo Spol installed a KORODUR hard aggregate topping over an area of 5,600 m². The KORODUR hard aggregate screed was applied in a thickness of in middle 10 mm to meet the requirements of DIN 18560, part 7, table 1, stress group medium.",
+    vorteile: [
+      "High wear resistance for pedestrian and pallet traffic",
+      "Meets DIN 18560 stress group medium at only 10 mm thickness",
+      "Installed fresh-on-fresh onto the still fresh concrete",
+      "Permanently flawless use over almost 20 years",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor at the Hornbach DIY store in Brno, Czech Republic",
+  },
+  "jura-werkstaetten-amberg": {
+    titel: "New Jura-Werkstätten Amberg",
+    untertitel: "Heavy-duty hard-aggregate floor for workshop and storage areas of a workshop for people with disabilities",
+    land: "Germany",
+    herausforderungen: [
+      "High wear stress on workshop and storage areas from daily operation",
+      "Ensuring a strong bond between the base concrete and the 15 mm hard aggregate topping",
+      "Easy-to-clean, visually appealing floor for daily use",
+      "Creating ideal working conditions for 355 people with disabilities",
+    ],
+    loesung:
+      "On approx. 4,500 m² of workshop and storage areas, the heavy-duty KORODUR industrial floor NEODUR HE 65 was installed as a 15 mm thick hard aggregate topping. The mineral bonding compound KORODUR HB 5 ensured the bond to the base concrete. After installation and curing, the surface was slightly polished twice in the KOROCLEAN process and treated with KOROMINERAL impregnation (silicifying).",
+    vorteile: [
+      "Heavy-duty hard-aggregate floor for lasting durability",
+      "Strong bond via the mineral bonding compound KORODUR HB 5",
+      "Silicified surface for easier cleaning and protection",
+      "Visually enhanced, long-lasting working surface",
+    ],
+    bildAlt: "Heavy-duty NEODUR HE 65 industrial floor in the workshop and storage areas of the new Jura-Werkstätten in Amberg",
+  },
+  "kunstdepot-muenchen": {
+    titel: "Art Depot Munich",
+    untertitel: "Highly wear-resistant industrial screed for a three-level art depot",
+    land: "Germany",
+    herausforderungen: [
+      "Durably wear-resistant floor for the most severely stressed building component",
+      "Thorough base preparation to ensure a permanent bond between base concrete and hard aggregate topping",
+      "Demanding storage conditions for sensitive art and cultural assets across three levels",
+      "Improved cleaning properties and density of the surface",
+    ],
+    loesung:
+      "In October 2017, the flooring specialist CBL Chemobau installed a highly wear-resistant KORODUR industrial screed in the KOROTAN System: on KORODUR Bonding Compound HB 5 with a subsequent NEODUR HE 65 wearing layer. The hard aggregate mortar was mixed and conveyed with the inoComb Cabrio mixing pump from INOTEC and supplied in big-bags. Finally, a surface silicification was applied with the KOROMINERAL impregnation.",
+    vorteile: [
+      "High wear resistance for the most severely stressed building component",
+      "Permanent bond between base concrete and hard aggregate topping in the KOROTAN System",
+      "Improved cleaning properties and density through surface silicification",
+      "Efficient processing of the hard aggregate screed via mixing pump and big-bag supply",
+    ],
+    bildAlt: "Highly wear-resistant KORODUR industrial floor in the IMMO Art depot in Munich",
+  },
+  "lidl-zentrallager-graben": {
+    titel: "LIDL Central Warehouse Graben",
+    untertitel: "Hard aggregate industrial floor for Germany's largest LIDL logistics center",
+    land: "Germany",
+    herausforderungen: [
+      "Execute a floor area of approx. 38,000 m² to a high standard",
+      "High wear resistance for continuous forklift traffic and heavy loads",
+      "Load capacity for more than 18,000 euro-pallets",
+      "Tight construction schedule until completion in late June 2011",
+    ],
+    loesung:
+      "Approx. 38,000 m² of the storage area were carried out as a KORODUR industrial floor with the hard aggregate dry mortar NEODUR HE 3. The monolithically applied hard aggregate screed provides the required wear resistance and load-bearing capacity for the logistics operation.",
+    vorteile: [
+      "High wear resistance for continuous operation",
+      "Load-bearing for more than 18,000 euro-pallets",
+      "Economical execution of large areas",
+      "On-time completion within a tight schedule",
+    ],
+    bildAlt: "KORODUR industrial floor in the LIDL central warehouse in Graben near Augsburg",
+  },
+  "logistikzentrum-daimler-guangzhou-china": {
+    titel: "Daimler Logistics Center Guangzhou",
+    untertitel: "Bright, heavy-duty hardener floor for the Mercedes-Benz spare parts warehouse in China",
+    land: "China",
+    herausforderungen: [
+      "Floor area of 36,000 m² with permanent heavy-duty and forklift loads in logistics operation",
+      "A bright, friendly indoor atmosphere was required to reduce energy costs through light savings",
+      "The consistent NEODUR quality of the first Daimler logistics center in Kunshan had to be reproduced",
+    ],
+    loesung:
+      "As with the logistics center in Kunshan near Shanghai built in 2013, the warehouse floor was finished with the NEODUR HE 65 hardener floor in the light-grey color. The bright material creates a friendlier and brighter atmosphere inside the hall.",
+    vorteile: [
+      "Heavy-duty hardener floor for permanent heavy load and logistics operation",
+      "Light-grey color for a friendly, well-lit hall atmosphere",
+      "Lower energy costs thanks to savings in light consumption",
+      "Proven, reproducible NEODUR quality as in the predecessor project in Kunshan",
+    ],
+    bildAlt: "NEODUR HE 65 light-grey hardener floor in the Daimler logistics center in Guangzhou, China",
+  },
+  "martensbro-schule-espoo-finnland-2": {
+    titel: "Mårtensbro Skola, Espoo",
+    untertitel: "Hard aggregate industrial floor in light-grey for maximum light reflection in the Finnish winter",
+    land: "Finland",
+    herausforderungen: [
+      "Daily high-frequency stress from thousands of foot kicks in a school",
+      "Two different substrates: fresh-on-fresh installation and composite on existing structural concrete",
+      "Optimising light reflection for the long, dark winter months",
+      "Durable and easy-to-maintain surface with appealing aesthetics",
+    ],
+    loesung:
+      "A KORODUR hard aggregate layer was installed acc. to DIN 18560-7, coating group A acc. to DIN 1100, using the product NEODUR HE 65 in light-grey, smoothed in KCF optics. An area of approx. 600 m² was laid in the fresh-on-fresh installation method with a hard aggregate layer of approx. 10 mm. Another area of around 600 m² was installed in composite on an existing concrete base: first the mineral KORODUR bonding HB 5, then a hard aggregate topping of approx. 15 mm. Material consumption: approx. 30 tons of NEODUR HE 65 dry mortar.",
+    vorteile: [
+      "High wear resistance for durable school use",
+      "Light-grey optimises light reflection in dark winter months and saves energy costs",
+      "Easy-to-maintain, aesthetically appealing surface in KCF optics",
+      "Ecologically and economically attractive, durable solution",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor in light-grey at Mårtensbro Skola in Espoo, Finland",
+  },
+  "metro-grossmarkt-wien-oesterreich": {
+    titel: "Remodeling METRO wholesale market",
+    untertitel: "Light-coloured, wear-resistant rapid screed for the sales rooms of a fully renovated wholesale market",
+    land: "Austria",
+    herausforderungen: [
+      "Floor with high wear resistance for the busy wholesale market",
+      "Light colour tone for an attractive look in the sales rooms",
+      "Fast-setting feature to meet the tight remodeling schedule",
+      "Installation in several stages during ongoing remodeling works",
+    ],
+    loesung:
+      "Over a period of one year numerous flooring systems were tested in advance. Thanks to its excellent product properties, high wear resistance, fast-setting feature and light colour tone, the client chose the KORODUR rapid screed system. The work was carried out in several stages. To prevent optical staining during later use, the finished and cleaned surfaces were treated with a surface protection product.",
+    vorteile: [
+      "High wear resistance for the intensive wholesale market operation",
+      "Fast-setting feature secures the tight remodeling schedule",
+      "Light colour tone for an attractive appearance",
+      "Stage-by-stage installation possible during ongoing remodeling",
+    ],
+    bildAlt: "Light-coloured KORODUR rapid screed floor in the sales rooms of the METRO wholesale market near Vienna",
+  },
+  "moxy-hotel": {
+    titel: "Moxy Hotels",
+    untertitel: "Fair-faced screed with industrial floor character for the industrial-chic design of the hotel foyers",
+    land: "Germany",
+    herausforderungen: [
+      "Floor finish with industrial-chic look for a coherent boutique-hotel design",
+      "Hard-wearing surface for heavily frequented foyer areas",
+      "Consistent appearance across four locations",
+      "Installation on a fresh concrete sub-base in a dry-shake method",
+    ],
+    loesung:
+      "In the foyers in Eschborn, Ludwigshafen, Frankfurt and Berlin, NEODUR HE 3 was installed in a dry-shake method on a fresh concrete sub-base. Then the areas were cleaned by grinding and treated with a special impregnation finish.",
+    vorteile: [
+      "Industrial-chic look matching the boutique-hotel design",
+      "Hard-wearing industrial floor character for heavily frequented foyers",
+      "Consistent appearance across all four locations",
+      "Easy-care, impregnated surface",
+    ],
+    bildAlt: "NEODUR HE 3 fair-faced industrial screed in a Moxy Hotel foyer",
+  },
+  "moebelhaus-hoeffner-hamburg": {
+    titel: "Höffner Furniture Store Hamburg",
+    untertitel: "40,000 m² of industrial floor in the custom colour „Krieger-grey“ – mastered logistically with the KORODUR silo system",
+    land: "Germany",
+    herausforderungen: [
+      "Individual colouring of the floor hardener to the client's specification („Krieger-grey“)",
+      "Logistic handling of the material supply for a 40,000 m² major building site",
+      "Meeting the narrow time frame for installation",
+      "Ensuring homogeneous material quality across the entire area",
+    ],
+    loesung:
+      "Around 350 tons of the KORODUR floor hardener NEODUR HE 65 in „Krieger-grey“ were supplied in big-bag packaging. The much larger quantity of around 1,800 tons was handled with the well-approved KORODUR silo system for large construction sites. To cope with the schedule, at times four silo units were in operation simultaneously.",
+    vorteile: [
+      "Daily output of 1,500 to 2,500 m² of industrial floor thanks to the KORODUR silo system",
+      "No need for mixing stations or disposal of packaging material",
+      "Homogeneous fresh mortar quality compared to individual mixing batches",
+      "Custom client colour „Krieger-grey“ realised",
+    ],
+    bildAlt: "Industrial floor in custom colour „Krieger-grey“ in the Höffner furniture store in Hamburg",
+  },
+  "obi-baumaerkte": {
+    titel: "OBI DIY-Stores",
+    untertitel: "Hard aggregate screed in the OBI special color for over 500,000 m² of retail space",
+    land: "Germany",
+    herausforderungen: [
+      "Highest abrasion resistance for heavily frequented retail areas",
+      "Uniform appearance in a specially developed OBI color tone",
+      "Large-scale, economical installation nationwide and internationally",
+      "Consistent quality across hundreds of stores",
+    ],
+    loesung:
+      "KORODUR industrial floors are installed in many OBI stores. In joint work a special color tone was designed, so that nationwide many OBI stores were finished with the hard aggregate screed NEODUR HE 65 in the OBI special color tone 2079. In many projects this specially colored material was processed in the efficient and high-performance KORODUR silo pumping system.",
+    vorteile: [
+      "High hardness and resistance for continuous loads",
+      "Uniform OBI special color tone 2079 for brand-consistent appearance",
+      "Economical processing via the KORODUR silo pumping system",
+      "Proven quality, scalable nationwide and internationally",
+    ],
+    bildAlt: "KORODUR industrial floor in an OBI DIY store in the OBI special color tone",
+  },
+  "ropa-montagezentrum-herrngiersdorf": {
+    titel: "ROPA Assembly Center Herrngiersdorf",
+    untertitel: "Highly wear-resistant hard aggregate industrial floor for the precision manufacturing of premium harvesting machinery",
+    land: "Germany",
+    herausforderungen: [
+      "Floor coating for the technically advanced precision production of heavy premium machinery",
+      "Ensure constant and efficient production on a highly wear-resistant surface",
+      "Install a large area of approx. 20,000 m² economically and within a short construction time",
+    ],
+    loesung:
+      "ROPA again chose the mineral, highly wear-resistant KORODUR hard aggregate industrial floor with an average thickness of 10 mm according to DIN 1100 and DIN 18560-7. The NEODUR HE 65 hard aggregate screed was installed using the proven and economical KORODUR silo pump system and mixing equipment.",
+    vorteile: [
+      "Highly wear-resistant, mineral surface for heavy-duty loads",
+      "Compliant with DIN 1100 and DIN 18560-7",
+      "Economical installation with KORODUR silo pump and mixing system",
+      "Daily performance of up to 2,000 m²",
+    ],
+    bildAlt: "NEODUR HE 65 hard aggregate industrial floor in the ROPA assembly center in Herrngiersdorf",
+  },
+  "restaurant-haerg-tallinn-estland": {
+    titel: "Restaurant HÄRG, Tallinn",
+    untertitel: "An industrial floor as a design statement: deliberate cracks, a rough surface, mixed colors",
+    land: "Estonia",
+    herausforderungen: [
+      "Achieve a characteristic industrial floor look with deliberate cracks and a rough surface",
+      "Deliberately leave sub-base cracks unconsolidated so they could show in the topping layer",
+      "Create a unique coloring by mixing two NEODUR colors directly on site",
+      "Provide a hard-wearing floor for daily restaurant operation",
+    ],
+    loesung:
+      "A 15 mm thick KORODUR industrial floor was installed in the KOROTAN system with the bonding agent KORODUR HB 5. The NEODUR HE 65 hard aggregate screed was supplied in green and basalt-grey and mixed together on site. Cracks in the sub-base were deliberately not consolidated so they could show in the topping layer.",
+    vorteile: [
+      "Characteristic industrial floor look with deliberate cracks and a rough surface",
+      "Unique coloring achieved by mixing green and basalt-grey",
+      "Hard-wearing hard aggregate screed for restaurant operation",
+      "Proven KOROTAN system with bonding agent HB 5",
+    ],
+    bildAlt: "Industrial floor with NEODUR HE 65 hard aggregate screed in mixed green and basalt-grey at Restaurant HÄRG in Tallinn",
+  },
+  "sic-processing-zhenjiang-china": {
+    titel: "SiC Processing Zhenjiang",
+    untertitel: "KORODUR industrial floor for highest mechanical loads in slurry recycling",
+    land: "China",
+    herausforderungen: [
+      "Partially very high mechanical stress in the individual production sections",
+      "Different load requirements depending on the production zone",
+      "Durably smooth running operation for slurry recycling",
+      "Coordination and installation via local partners in China",
+    ],
+    loesung:
+      "Depending on the expected mechanical stress, NEODUR HE 3 or NEODUR HE 3 SVS 3 was used, each in the dry shake procedure. The handling was coordinated by Shanghai Golden Bridge, the installation carried out by local applicator Shanghai Xiao Jie.",
+    vorteile: [
+      "Proven KORODUR industrial floor, trusted by SiC Processing even for foreign investments",
+      "Load capacity precisely matched to the respective production zone",
+      "Dry shake procedure for high wear resistance",
+      "Durably smooth operation of the recycling ensured",
+    ],
+    bildAlt: "KORODUR industrial floor in the SiC Processing production halls in Zhenjiang, China",
+  },
+  "wago-stanzerei-minden": {
+    titel: "New WAGO Pressing Shop",
+    untertitel: "24,000 m² of heavy-duty hard aggregate industrial floor for a long-lasting production flow",
+    land: "Germany",
+    herausforderungen: [
+      "Long-lasting and efficient production flow over a large area of 24,000 m²",
+      "Achieving high daily outputs of 800 to 1,400 m² in best quality",
+      "Efficient logistics and handling of around 500 tonnes of NEODUR HE 65",
+      "Standard-compliant, heavy-duty floor for an industrial pressing shop",
+    ],
+    loesung:
+      "As for previous locations, WAGO again decided for a mineral, heavy-duty KORODUR hard aggregate industrial floor and entrusted flooring specialist Condulith with the installation. With state-of-the-art machine technology, Condulith cast the concrete base slab with double reinforcement and HSD joint profiles and applied a 10 mm thick KORODUR hard aggregate topping \"fresh on fresh\". The hard aggregate screed was installed using the KORODUR silo system, offering considerable advantages such as savings of working time and improved logistical handling.",
+    vorteile: [
+      "Heavy-duty, mineral hard aggregate industrial floor compliant with standards",
+      "Fast installation thanks to the KORODUR silo system",
+      "Savings of working time and improved logistical handling",
+      "No need for several mixing stations or disposal of packaging material",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor in the new WAGO pressing shop in Minden",
+  },
+  "zalando-bygodszcz-polen": {
+    titel: "Zalando Logistics Centre",
+    untertitel: "Wear-resistant industrial floor for 130,000 m² of logistics space",
+    land: "Poland",
+    herausforderungen: [
+      "Wear-resistant industrial floor for the handling of millions of items",
+      "Huge continuous area of around 130,000 m²",
+      "Lasting load-bearing capacity in intensive logistics operations",
+    ],
+    loesung:
+      "NEODUR HE 3 in the colour cement grey was installed across around 130,000 m². The heavy-duty hardener floor is suited to heavily stressed industrial areas such as high-bay warehouses and assembly halls and was laid by the professional installers PPP.",
+    vorteile: [
+      "High wear resistance for continuous operation",
+      "Suitable for heavy-duty industrial and warehouse areas",
+      "Increased energy and resource efficiency, conserving natural resources",
+    ],
+    bildAlt: "NEODUR HE 3 industrial floor at the Zalando logistics centre in Bydgoszcz, Poland",
+  },
+  "pflastersteinsanierung-amberg": {
+    titel: "Pavement Renovation Amberg",
+    untertitel: "Pavement renovation during flowing traffic thanks to fast-setting mortar",
+    land: "Germany",
+    herausforderungen: [
+      "Pavement renovation during flowing traffic",
+      "Preserving the charming flair of the old pavings",
+      "Barrier-free pedestrian crossing of the road",
+      "Noise reduction for residents",
+    ],
+    loesung:
+      "The pavings were repaired with the fast-setting, multipurpose mortar Rapid Set MORTAR MIX. Thanks to its quick setting time, the works could be carried out during flowing traffic. A pedestrian cross way for barrier-free crossing was added.",
+    vorteile: [
+      "Works possible during flowing traffic",
+      "Fast setting time of the Rapid Set mortar",
+      "Preservation of the historic pavement flair",
+      "More safety and quality of life in the city center",
+    ],
+    bildAlt: "Renovated pavement in Franziskanergasse, Amberg",
+  },
+  "pflastersanierung-crailsheim": {
+    titel: "Barrier-free pavement leveling Crailsheim",
+    untertitel: "Paving surfaces milled barrier-free within a few hours – without lengthy closures",
+    land: "Germany",
+    herausforderungen: [
+      "Level uneven large-format pavement in a public traffic area to make it barrier-free",
+      "Grout the pavement so it can be milled without stones breaking out or loosening",
+      "Keep the affected areas closed only briefly",
+      "A fast, easy and CO₂-reduced measure during ongoing city-center operation",
+    ],
+    loesung:
+      "The KORODUR paving joint system was used together with the multipurpose repair mortar Rapid Set MORTAR MIX. After newly grouting with this fast-setting, dimensionally stable, high-strength special mortar, the entire paving surface could be milled barrier-free with suitable equipment after just a few hours. The bond between MORTAR MIX and the paving stone flanks is so strong that the stones do not break out or loosen during milling.",
+    vorteile: [
+      "Fast-setting – milling and release after just a few hours",
+      "Dimensionally stable and high-strength, with a strong bond to the paving stone flanks",
+      "Stones do not break out or loosen during milling",
+      "Innovative, sustainable and CO₂-reduced system with short closure times",
+    ],
+    bildAlt: "Barrier-free pavement leveling in Crailsheim",
+  },
+  "flughafen-zagreb": {
+    titel: "Zagreb Airport, Croatia",
+    untertitel: "Damaged concrete slabs on runways and landing strips repaired in only 4 weeks",
+    land: "Croatia",
+    herausforderungen: [
+      "The runway had to be reopened for regular air traffic every morning at 6 a.m.",
+      "Work exclusively in night shifts between 11.00 pm and 6.00 am",
+      "High demands on durability and longevity of the flight operation areas",
+      "Large-scale repair of approx. 1,000 m² of concrete slabs",
+    ],
+    loesung:
+      "Rapid Set fast-setting concrete was used in combination with volumetric mixing trucks. These hold all concrete components separately; the Rapid Set cement is mixed on site with aggregates, water and additives to fresh concrete which is installed immediately. This allows an optimal concrete formulation tailored to the demanded properties and weather effects and a delay-free on-site concrete production. In each night shift the damaged concrete slabs were cut out, lifted, removed and the areas re-cast in the volumetric system. Concreting, smoothing and broom finish took about 20 minutes per slab, followed by after-treatment.",
+    vorteile: [
+      "Structural strength of > 20 MPa already after approx. 2 hours",
+      "Daily release of the runway for air traffic despite ongoing construction work",
+      "Delay-free, optimally on-site tailored concrete production thanks to volumetric mixing trucks",
+      "Durability and longevity for highly stressed flight operation areas",
+    ],
+    bildAlt: "Repair of concrete slabs on the runways at Zagreb Airport",
+  },
+  "strassensanierung-wien": {
+    titel: "Road Repair Vienna",
+    untertitel: "Partial repair of a concrete pavement within an intersection, reopened to traffic after 1 hour",
+    land: "Austria",
+    herausforderungen: [
+      "Static stress through the design in the corner area",
+      "Shear forces in the heavily trafficked intersection",
+      "Frost and deicer resistance",
+      "Fast reopening to traffic",
+    ],
+    loesung:
+      "The Vienna-based construction company Mörtinger & Co GmbH opted for a partial surface repair of the concrete pavement with DOT Europe CONCRETE MIX: a high-performance, polymer-modified, fast-setting and fiber-reinforced fast concrete for indoor and outdoor applications. The damaged area was chiseled out to a depth of 80 mm, the loose debris removed, the area including its flanks pre-wet and the material cast in a pasty consistency. The surface was then ground and given a broom finish.",
+    vorteile: [
+      "Reopened to traffic after just 1 hour",
+      "Easy processing of the pasty material",
+      "Frost- and deicer-resistant, durable solution",
+      "Fiber-reinforced fast concrete for indoor and outdoor use",
+    ],
+    bildAlt: "Repaired concrete pavement section in a Vienna intersection",
+  },
+  "kopfsteinpflaster-lenningen": {
+    titel: "Cobblestone Pavement Lenningen",
+    untertitel: "Barrier-free levelling of cobblestone pavement with fast-setting repair mortar",
+    land: "Germany",
+    herausforderungen: [
+      "Level uneven cobblestone surfaces barrier-free",
+      "Remove old joint mortar to a depth of more than 30 mm",
+      "Shortest possible shut-down time of public areas",
+      "Realize an economically practical working technique",
+    ],
+    loesung:
+      "The existing joint mortar was removed to a depth of more than 30 mm using a high-pressure cleaner (>300 bar) and replaced by the multipurpose KORODUR repair mortar Rapid Set MORTAR MIX. After cleaning, the surface was levelled barrier-free only one day later by means of a special, patented milling machine. Only the fast-setting, high-strength Rapid Set repair mortar makes this practical working technique with the shortest shut-down times possible.",
+    vorteile: [
+      "Fast-setting: levelling possible just one day later",
+      "High-strength and multipurpose application",
+      "Shortest shut-down times – economically attractive",
+      "Barrier-free, even surface",
+    ],
+    bildAlt: "Cobblestone pavement Lenningen",
+  },
+  "hauptbahnhofsvorplatz-landau": {
+    titel: "Station Plaza Landau",
+    untertitel: "Durable, cleanly grouted concrete slab surface for the redesigned station plaza",
+    land: "Germany",
+    herausforderungen: [
+      "Grouting of the concrete slabs with a joint width of 8-10 mm and a joint depth of 30 mm",
+      "A qualified and easy-to-process paving grout was required",
+      "Permanently clean joints free of cracks, breakouts and contamination",
+      "Design orientation of the plaza towards the Ostbahnstrasse",
+    ],
+    loesung:
+      "The assigned company Groetz opted for the KORODUR pavement grout NEODUR PFM 1K Easyfix in grey color. NEODUR PFM 1K Easyfix is a ready-mixed, vacuum-packed paving joint grout used for the repointing and restoration of paved areas. The grouted stone surface remains nearly resin film free.",
+    vorteile: [
+      "Ready-mixed and vacuum-packed, easy to process",
+      "Nearly resin film free stone surface",
+      "Permanently clean appearance without cracks and breakouts",
+      "Suitable for repointing and restoration of paved areas",
+    ],
+    bildAlt: "Station plaza Landau with anthracite concrete slabs",
+  },
+  "gefaellesanierung-tankstelle-schneeberg": {
+    titel: "Gradient Restoration at a Petrol Pump",
+    untertitel: "A new gradient for free water run-off — petrol pump back in operation after 4 hours",
+    land: "Germany",
+    herausforderungen: [
+      "Form a steeper gradient so that water can run off freely without obstruction",
+      "Ensure resistance to water-polluting substances in line with the DAfStb guideline",
+      "Manage the fast setting of the mortar at 22 °C sub-base and 24 °C air temperature",
+      "Return the petrol pump to operation as quickly as possible",
+    ],
+    loesung:
+      "The sub-base was chiselled in a semi-circular shape to give a good surface key and partially roughened. Rapid Set MORTAR MIX was then used to build the new, steeper gradient. As the product set quickly in the hot conditions, CONCRETE PHARMACY SET CONTROL was added to retard the setting time and gain the working time required.",
+    vorteile: [
+      "Resistance to water-polluting substances in line with the DAfStb guideline",
+      "Low water penetration depth of only 6 mm",
+      "Petrol pump released for use again after just 4 hours",
+      "Setting time precisely adjusted to hot weather via SET CONTROL",
+    ],
+    bildAlt: "Gradient restoration with Rapid Set MORTAR MIX at the base of a petrol pump",
+  },
+  "kanalsanierung-im-schlosspark-muenchen": {
+    titel: "Sewer Repair in the Munich Palace Grounds",
+    untertitel: "Manhole head repaired and released to traffic within 1–2 hours",
+    land: "Germany",
+    herausforderungen: [
+      "Exact height adjustment when assembling the new manhole rings",
+      "Stable, low-shrink and high-strength mortar required",
+      "Fastest possible release of the manhole head to traffic",
+    ],
+    loesung:
+      "Using the multipurpose, high-performance repair mortar Rapid Set MORTAR MIX, the manhole rings were lifted, assembled and set with exact height adjustment. MORTAR MIX is rock-solid after just 1–2 hours, based on the powerful Rapid Set cement technology.",
+    vorteile: [
+      "Fully loadable after just 1–2 hours",
+      "Stable and low-shrink for exact height adjustment",
+      "High strength thanks to Rapid Set cement technology",
+      "Multipurpose use for manhole regulations and repairs",
+    ],
+    bildAlt: "Sewer repair with Rapid Set MORTAR MIX in the grounds of Nymphenburg Castle, Munich",
+  },
+  "kuechenarbeitsplatte-berlin": {
+    titel: "Kitchen Worktop made of MORTAR MIX",
+    untertitel: "Rapid-setting repair mortar as a shapeable concrete worktop with pure concrete character",
+    land: "Germany",
+    herausforderungen: [
+      "Build formwork 6 to 8 cm high to fit the worktop precisely",
+      "Place material in sections of approx. 2 m length without visible joints",
+      "Create the desired surface texture through targeted finishing",
+      "Preserve the pure concrete character without grinding the surface",
+    ],
+    loesung:
+      "MORTAR MIX was cast into a 6 to 8 cm high formwork in sections of approx. 2 m length, with care taken to avoid visible joints. The material was screeded over the outer edges of the formwork and finished with felt and float boards as well as a smoothing trowel, depending on the desired surface texture. After sufficient water curing and drying, the surface was sealed with a water-, grease- and oil-repellent surface protection.",
+    vorteile: [
+      "MORTAR MIX pourable and freely shapeable in formwork or mould",
+      "Versatile surface textures through different finishing tools",
+      "Water-, grease- and oil-repellent surface protection after sealing",
+      "Pure, unground concrete character without any grinding",
+    ],
+    bildAlt: "Kitchen worktop cast from Rapid Set MORTAR MIX in a Berlin loft with pure concrete character",
+  },
+  "kuechenbodensanierung-leinfelden": {
+    titel: "Kitchen Floor Renovation in a Restaurant",
+    untertitel: "Damaged tiled floor renewed in five days – ready for covering after two hours",
+    land: "Germany",
+    herausforderungen: [
+      "Renovation during ongoing restaurant operation with minimal downtime",
+      "Damaged tiles and screed had to be completely dismantled",
+      "Lasting resistance to moisture, grease and cleaning detergents",
+      "Short construction window, fast re-opening of the kitchen",
+    ],
+    loesung:
+      "In five days, the tiles and screed were completely dismantled and renewed. Rapid Set MORTAR MIX proved an excellent choice with its fast readiness for covering after two hours, considerably reducing the regular construction time. Finally, the surface was treated with the transparent impregnation product KOROMINERAL Li+ to increase the resistance of the subbase to grease and cleaning detergents.",
+    vorteile: [
+      "Ready for covering after just two hours",
+      "Significantly reduced construction time compared with regular systems",
+      "Increased resistance to grease and cleaning detergents through impregnation",
+      "Fast re-opening during ongoing operation",
+    ],
+    bildAlt: "Renovated kitchen floor in a restaurant in Leinfelden-Echterdingen using Rapid Set MORTAR MIX",
+  },
+  "pflastersanierung-esslingen": {
+    titel: "Barrier-Free Pavement Renovation Esslingen",
+    untertitel: "Historic paving preserved, unevenness removed, ready for leveling after 2 hours",
+    land: "Germany",
+    herausforderungen: [
+      "Preserve historic paving while creating barrier-free accessibility",
+      "Even out unevenness of the paved road crossings",
+      "Reduce noise emissions and improve traffic safety",
+      "Carry out the inner-city renovation saving time and costs",
+    ],
+    loesung:
+      "The old joint material was removed and the paved areas cleaned. The areas were then re-grouted with the multipurpose Rapid Set fast-setting repair MORTAR MIX, using the special method developed by KORODUR and Blessing. After just 2 hours, the newly grouted areas could be mechanically milled to level them barrier-free.",
+    vorteile: [
+      "Preservation of the historic paving with full barrier-free accessibility",
+      "Leveling possible after just 2 hours",
+      "Reduced noise emissions and improved traffic safety",
+      "Longer service life and reduced CO2 emissions thanks to climate-friendly raw materials",
+    ],
+    bildAlt: "Barrier-free pavement renovation in the historic old town of Esslingen with Rapid Set MORTAR MIX",
+  },
+  "restaurierung-schmucktafeln": {
+    titel: "Restoration of decorative panels made of concrete stucco",
+    untertitel: "Fine facade contours cast fast - several panels per working day, immediately ready for coating",
+    herausforderungen: [
+      "Very tight time window to produce the decorative panels",
+      "Fine contours had to be reproduced precisely",
+      "Subsequent putty works should be avoided as far as possible",
+      "Quick readiness for coating needed for the directly following paint",
+    ],
+    loesung:
+      "We used Rapid Set MORTAR MIX in combination with FLOW Control. The fine contours were shaped so well that any further putty works were not really necessary. Due to the fast-setting of MORTAR MIX, several panels could be cast within one working day.",
+    vorteile: [
+      "Precise reproduction of fine contours - hardly any rework",
+      "Fast setting: several panels per working day",
+      "Very quick readiness for coating - paint applied directly",
+      "Frost and de-icing salt resistant for facade veneering",
+    ],
+    bildAlt: "Decorative panels made of concrete stucco cast with Rapid Set MORTAR MIX for a house facade",
+  },
+  "sanierung-futtertisch-milchhof-beeskow": {
+    titel: "Repair of feeding table in dairy farm",
+    untertitel: "Smooth, odorless feeding table surface with CO2-reduced Rapid Set fast-setting repair mortar",
+    land: "Germany",
+    herausforderungen: [
+      "Optimal feed intake requires a smooth, clean and odorless surface",
+      "Layer thicknesses up to 300 mm in a single application",
+      "Sustainable, CO2-reduced building material matching the farm's standards",
+      "Immediate usability and durability during ongoing stable operation",
+    ],
+    loesung:
+      "The feeding table area of approx. 70 m² was applied with the Rapid Set products MORTAR MIX and CONCRETE MIX in a layer thickness up to 300 mm. No separate primer or bonding bridge was needed. The products are based on Rapid Set Cement, a BCSA cement whose production emits more than 30% less CO2 than conventional Portland cement.",
+    vorteile: [
+      "Extremely high strength and immediate usability",
+      "Layer thickness up to 300 mm without primer or bonding bridge",
+      "Non-shrinking and sulfate-resistant",
+      "CO2-reduced thanks to BCSA cement (more than 30% less CO2)",
+    ],
+    bildAlt: "Renovated feeding table in the cow stalls of the Beeskow dairy farm with Rapid Set repair mortar",
+  },
+  "fussgaengerbruecke-albbruck": {
+    titel: "Repair of a pedestrian bridge",
+    untertitel: "Released for use again approx. 1 hour after application",
+    land: "Germany",
+    herausforderungen: [
+      "Enormous stresses on the bridge from weather conditions such as heat and precipitation",
+      "Deicing salts eroding the cement paste at the surface",
+      "Tripping hazards on the walkways and risk of severe structural damage",
+      "Surface needed to be released for use again as quickly as possible",
+    ],
+    loesung:
+      "The surface was prepared and roughened using a demolition hammer, the loose debris was removed and the surface thoroughly wetted. MORTAR MIX was then applied in a 2 cm thick layer. The surface finish can vary, e.g. broom finish or smoothening. During the setting phase a water mist was applied, and already approx. 1 hour after the application the surface could be released for use.",
+    vorteile: [
+      "Released for use again approx. 1 hour after application",
+      "Resistant to weather and deicing salt exposure",
+      "Flexible surface finish from broom finish to smoothened",
+      "Reliable restoration of the cementitious bridge surface",
+    ],
+    bildAlt: "Repair of a pedestrian bridge in Albbruck with Rapid Set MORTAR MIX",
+  },
+  "schwellensanierung-goeppingen": {
+    titel: "Threshold Repair Göppingen",
+    untertitel: "Garage usable again within hours",
+    land: "Germany",
+    herausforderungen: [
+      "Differing application thicknesses across the threshold",
+      "Avoiding stresses in the material",
+      "Restoring garage use as quickly as possible",
+    ],
+    loesung:
+      "To counteract stresses, the threshold was divided into two sections and, due to the differing application thicknesses, repaired with CEMENT ALL and MORTAR MIX.",
+    vorteile: [
+      "Reopened within a few hours",
+      "Two application thicknesses with matched Rapid Set products",
+      "Simple and fast application",
+    ],
+    bildAlt: "Repaired garage threshold in Göppingen-Jebenhausen with Rapid Set CEMENT ALL and MORTAR MIX",
+  },
+  "tiefbaumassnahme": {
+    titel: "Civil engineering measure under special requirements",
+    untertitel: "Concrete repair in a permanently moist environment with reloading the following day",
+    land: "Germany",
+    herausforderungen: [
+      "Spalling on the upper concrete shell of an earth-contacting pipe",
+      "High degree of carbonation protection required to prevent corrosion of reinforcements according to exposure classes",
+      "Repair in thin application thicknesses of 0 to 30 mm on C70/85 concrete",
+      "Continuing the works on the component as quickly as possible",
+    ],
+    loesung:
+      "The shell was repaired with Rapid Set CEMENT ALL repair mortar in an application thickness of 0 to 30 mm. The strength factor of the concrete pipe of C70/85 allowed working in thin layers without any problems.",
+    vorteile: [
+      "Fast application and early load-bearing capacity",
+      "Very good bond strength even in thin layers from 0 mm",
+      "Compliance with the requirements profile of the exposure classes",
+      "Carbonation protection in a permanently moist environment",
+    ],
+    bildAlt: "Concrete repair of an earth-contacting pipe with Rapid Set CEMENT ALL",
+  },
 };
