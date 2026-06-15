@@ -957,4 +957,493 @@ export const referenzenEN: Record<string, {
     ],
     bildAlt: "Krottenbach drinking water reservoir near Nuremberg coated with MICROTOP",
   },
+  "airbus-a-380-hamburg-finkenwerder": {
+    titel: "Airbus A 380 Hangar Hamburg-Finkenwerder",
+    untertitel: "20,000 m² of KORODUR hard aggregate screed for the maintenance hall of the world's largest civil aircraft",
+    land: "Germany",
+    herausforderungen: [
+      "A giant area of 20,000 m² to be installed in just 2 ½ months",
+      "Island location of the job-site: all materials could be supplied only by water transport with pontoon tug",
+      "Noise abatement requirements with restricted operating times for transport",
+      "High required daily installation performance of more than 2,000 m²",
+    ],
+    loesung:
+      "The powerful KORODUR silo system was used in combination with the NEODUR HE 65 hard aggregate screed. To ensure timely supply and to meet daily installation performance of more than 2,000 m², two KORODUR silo units with integrated pump technique were operated in parallel. In total around 500 t of NEODUR HE 65 silo material were processed.",
+    vorteile: [
+      "Daily installation performance of more than 2,000 m² thanks to two silo units operated in parallel",
+      "Smooth supply despite island location and noise abatement requirements",
+      "High-performance hard aggregate screed for the demanding hangar application",
+      "Proven silo system with integrated pump technique for large areas",
+    ],
+    bildAlt: "KORODUR industrial floor in the Airbus A 380 hangar in Hamburg-Finkenwerder",
+  },
+  "amazon-logistikzentrum-bad-hersfeld": {
+    titel: "Amazon Logistics Center Bad Hersfeld",
+    untertitel: "Joint-reduced hard-aggregate industrial floor on 100,000 m² for non-stop operation",
+    land: "Germany",
+    herausforderungen: [
+      "High loads in continuous logistics operation",
+      "Almost joint-less floor with field sizes up to 36 x 36 m",
+      "Ensuring smooth non-stop use",
+      "High daily output of around 3,000 m² of industrial floor",
+    ],
+    loesung:
+      "A steel fiber-reinforced concrete was chosen as the basis and coated with NEODUR hard aggregate dry mortar to specifically increase the wear resistance of the flooring surface. About 3,000 m² were installed daily, with around 17.5 tons of steel fibers per 500 m³ of concrete. The major part of the area was treated with NEODUR HE 3 cement-grey, special areas such as incoming and outgoing goods with NEODUR HE 3 red.",
+    vorteile: [
+      "High abrasion and wear resistance of the surface",
+      "Joint-reduced design with large field sizes up to 36 x 36 m",
+      "Fast installation of around 3,000 m² per day",
+      "Color-coded zoning through cement-grey and red",
+    ],
+    bildAlt: "Industrial floor of the Amazon Logistics Center in Bad Hersfeld",
+  },
+  "amazon-logistikzentrum-wroclaw-polen": {
+    titel: "Amazon Distribution Centers Wrocław",
+    untertitel: "Around 260,000 m² of highly wear-resistant KORODUR industrial flooring for two Amazon distribution centers",
+    land: "Poland",
+    herausforderungen: [
+      "Highest wear resistance for intensive logistics and forklift operation",
+      "Very tight schedule of the builder up to commissioning in summer 2014",
+      "Largely joint-free execution with field sizes of 1,200 m²",
+      "Gigantic total area of around 260,000 m² across two halls",
+    ],
+    loesung:
+      "The KORODUR industrial floor NEODUR HE 3 cement-grey was installed by the specialized installer and long-term KORODUR partner PPP Posadzki Przemysłowe Polska from Węgrzce Wielkie. To meet the tight schedule, PPP installed up to 6,000 m² of industrial floor per day, largely joint-free in field sizes of 1,200 m².",
+    vorteile: [
+      "Highest wear and abrasion resistance for heavy-duty and forklift traffic",
+      "High daily installation rate of up to 6,000 m² for the tight schedule",
+      "Joint-free execution with large field sizes of 1,200 m²",
+      "Most economic long-term solution thanks to lasting durability",
+    ],
+    bildAlt: "Amazon distribution center in Wrocław with KORODUR NEODUR HE 3 industrial floor",
+  },
+  "bmw-logistikzentrum-wallersdorf": {
+    titel: "BMW Logistics Center Wallersdorf",
+    untertitel: "Highly wear-resistant hard aggregate industrial floor for one of the world's largest logistics centers",
+    land: "Germany",
+    herausforderungen: [
+      "Industrial floor exposed to extreme stress around the clock from logistics operations",
+      "Reliable handling of logistics and distribution of spare parts had to be ensured",
+      "Enormous area of more than 50 football fields to be installed economically and time-saving",
+      "High demands on surface hardening and quality of install performance",
+    ],
+    loesung:
+      "Both builder owner and planner decided for the mineral heavy-duty KORODUR hard aggregate industrial floor acc. to DIN 1100, installed by CBL Chemobau Industrieboden with an impressive install performance of up to 4,000 m² per day. The most modern concreting equipment, the Laser Screed S22E, was used. The KORODUR hard aggregate material was supplied in big bags and uniformly applied by spreader, allowing a time-saving and economic application of large volumes.",
+    vorteile: [
+      "Highly wear-resistant mineral hard aggregate floor acc. to DIN 1100",
+      "Impressive install performance of up to 4,000 m² per day",
+      "Economic big bag application by spreader with Laser Screed S22E",
+      "Durable load-bearing capacity for round-the-clock logistics operations",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor at the BMW Logistics Center in Wallersdorf",
+  },
+  "bmw-austellungshalle-krefeld": {
+    titel: "New BMW Showroom Krefeld",
+    untertitel: "Wear-resistant KORODUR hard aggregate industrial floor for the constant vehicle movements in the showroom",
+    land: "Germany",
+    herausforderungen: [
+      "Constant vehicle movements in the showroom demand a particularly wear-resistant floor",
+      "Bright, inviting feel-good atmosphere casting the spotlight on customers and vehicles",
+      "Functional industrial floor combined with high aesthetic quality",
+    ],
+    loesung:
+      "To withstand the constant vehicle movements, the client chose a monolithic KORODUR hard aggregate industrial floor, installed by Aslan Industrieboden GmbH from Bocholt. First the base concrete was placed and on top the NEODUR HE 3 hard aggregate mortar, levelled and smoothed with disk trowel and helicopter.",
+    vorteile: [
+      "High wear resistance for constant vehicle movements",
+      "Monolithic construction in one step with the base concrete",
+      "High-quality, representative appearance for the showroom",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor in the new BMW showroom in Krefeld",
+  },
+  "betonwerk-lintel-rheda-wiedenbrueck": {
+    titel: "Betonwerk Lintel – DUROCON Paving Stones",
+    untertitel: "Highly wear-resistant concrete paving stones with KORODUR hard aggregate for the highest stress demands",
+    land: "Germany",
+    herausforderungen: [
+      "Highest wear stress from heavy crawler chain vehicles",
+      "Conventional heavy-duty stones did not withstand the loads durably",
+      "Demand for high-quality appearance in shape, colour and surface",
+    ],
+    loesung:
+      "The intelligent and safe pavement system of the Lintel H-profile was combined with KORODUR hard aggregate. The result is the concrete paving stone DUROCON® with a highly wear-resistant surface, produced in the concrete plant Lintel with consideration of the latest concrete technological findings.",
+    vorteile: [
+      "Highly wear-resistant surface for the highest stress demands",
+      "More robust than conventional everyday and heavy-duty stones",
+      "Proven under heavy crawler chain vehicles",
+      "High-quality appearance in shape, colour and surface",
+    ],
+    bildAlt: "DUROCON concrete paving stones with KORODUR hard aggregate at Betonwerk Lintel, Rheda-Wiedenbrück",
+  },
+  "bomag-shanghai-china": {
+    titel: "BOMAG China Production Site",
+    untertitel: "10,000 m² of heavy-duty KORODUR industrial flooring for the world market leader in compaction technology",
+    land: "China",
+    herausforderungen: [
+      "Heavy-duty, wear-resistant industrial floor for demanding machine production",
+      "Logistic handling over a transport distance of more than 20,000 km by sea container",
+      "On-schedule installation of large areas in professional quality by a local contractor",
+    ],
+    loesung:
+      "In the production site established in 2007, approx. 10,000 m² of KORODUR industrial floors were installed in professional quality. A local contractor installed KORODUR VS 0/5 as a classic 10 mm hard aggregate topping layer. Thanks to KORODUR's many years of export experience, the sea containers loaded with the floor hardeners arrived on schedule at the job-site.",
+    vorteile: [
+      "Heavy-duty and extremely wear-resistant hard aggregate floor",
+      "World-wide proven KORODUR quality and durability",
+      "Smooth logistic handling despite more than 20,000 km of transport",
+      "Most economic solution in the long term",
+    ],
+    bildAlt: "KORODUR industrial floor in the BOMAG production site in Fengxian, Shanghai, China",
+  },
+  "borbet-leichtmetallradproduktion-kodersdorf": {
+    titel: "BORBET Light Alloy Wheel Production Kodersdorf",
+    untertitel: "25,000 m² of hard aggregate flooring for the most stressed area of the new plant",
+    land: "Germany",
+    herausforderungen: [
+      "Industrial floor as the most stressed part of the building",
+      "Installing a very large total area of more than 25,000 m² economically",
+      "Ensuring a punctual production start in spring 2016",
+    ],
+    loesung:
+      "From October to December 2015, more than 20,000 m² were installed with KORODUR hard aggregate material NEODUR HE 3. A further 5,000 m² were executed as a 10 mm layer fresh-on-fresh with NEODUR HE 65 in silo supply. The KORODUR silo system enables economical installation through effective mixing and pumping technique with conveying distances of up to 80 m.",
+    vorteile: [
+      "Daily performances of up to 2,000 m² with the KORODUR silo system",
+      "Economical installation through effective mixing and pumping technique",
+      "Easy logistic handling and savings on labor time",
+      "Proven KORODUR quality for the most stressed area",
+    ],
+    bildAlt: "Industrial floor with KORODUR hard aggregate in the new BORBET light alloy wheel production plant in Kodersdorf",
+  },
+  "caterpillar-abu-dhabi-dubai": {
+    titel: "Caterpillar Workshop Abu Dhabi",
+    untertitel: "Heavy-duty industrial floor for the toughest Caterpillar equipment",
+    land: "United Arab Emirates",
+    herausforderungen: [
+      "Continuous stress on the floors from heavy Caterpillar equipment",
+      "Highest abrasion resistance for workshop operation",
+      "Proven quality continuing the KORODUR floors installed since 1984",
+    ],
+    loesung:
+      "On an area of approximately 1,500 sqm the KORODUR premix product NEODUR HE 65 metallic was installed. The metallic hardener floor offers the highest abrasion resistance and is designed for the toughest stress.",
+    vorteile: [
+      "Highest abrasion resistance thanks to metallic hardener topping",
+      "Designed for the heaviest stress from Caterpillar equipment",
+      "Proven KORODUR quality, in use in the Gulf Region since 1984",
+    ],
+    bildAlt: "Caterpillar workshop in Abu Dhabi with KORODUR NEODUR HE 65 metallic industrial floor",
+  },
+  "fertigstellen-eines-zementfussbodens-in-einem-bewohnten-appartment-gdynia-polen": {
+    titel: "Completion of a cement floor in an occupied apartment",
+    untertitel: "Self-levelling industrial floor in concrete look, walkable after just 10 hours",
+    land: "Poland",
+    herausforderungen: [
+      "Preserve the existing wooden parquet and combine it harmoniously with new screed areas",
+      "Light colour tone matching the ash parquet and the steel frame of the underfloor heating radiator",
+      "Level surface with a natural concrete look",
+      "Floor work without interrupting use of the occupied apartment",
+    ],
+    loesung:
+      "Under the architect's guidance, the applicator produced various mortar samples for colour matching. Because the work had to be carried out without interrupting use, NEODUR Level was chosen – a cement-bound, self-levelling, fast-hardening industrial floor in concrete look. Additional areas were even created for NEODUR Level so that the overall floor appearance would be harmonious.",
+    vorteile: [
+      "Self-levelling for a flat surface with a natural concrete look",
+      "Fast-hardening, walkable after just 10 hours",
+      "Colour can be matched to parquet and built-in elements",
+      "Installation possible without interrupting use",
+    ],
+    bildAlt: "Self-levelling NEODUR Level cement floor in concrete look combined with ash parquet in an occupied apartment in Gdynia, Poland",
+  },
+  "hornbach-baumarkt-bruenn-cz": {
+    titel: "Hornbach DIY Store Brno",
+    untertitel: "KORODUR hard aggregate topping for high pedestrian and pallet traffic in a DIY store",
+    land: "Czech Republic",
+    herausforderungen: [
+      "High pedestrian traffic during ongoing store operation",
+      "Regular pallet movements on the areas",
+      "Requirement of DIN 18560, part 7, table 1, stress group medium",
+      "Permanent use over decades without floor damage",
+    ],
+    loesung:
+      "On the still fresh base concrete, the Czech specialist Largo Spol installed a KORODUR hard aggregate topping over an area of 5,600 m². The KORODUR hard aggregate screed was applied in a thickness of in middle 10 mm to meet the requirements of DIN 18560, part 7, table 1, stress group medium.",
+    vorteile: [
+      "High wear resistance for pedestrian and pallet traffic",
+      "Meets DIN 18560 stress group medium at only 10 mm thickness",
+      "Installed fresh-on-fresh onto the still fresh concrete",
+      "Permanently flawless use over almost 20 years",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor at the Hornbach DIY store in Brno, Czech Republic",
+  },
+  "jura-werkstaetten-amberg": {
+    titel: "New Jura-Werkstätten Amberg",
+    untertitel: "Heavy-duty hard-aggregate floor for workshop and storage areas of a workshop for people with disabilities",
+    land: "Germany",
+    herausforderungen: [
+      "High wear stress on workshop and storage areas from daily operation",
+      "Ensuring a strong bond between the base concrete and the 15 mm hard aggregate topping",
+      "Easy-to-clean, visually appealing floor for daily use",
+      "Creating ideal working conditions for 355 people with disabilities",
+    ],
+    loesung:
+      "On approx. 4,500 m² of workshop and storage areas, the heavy-duty KORODUR industrial floor NEODUR HE 65 was installed as a 15 mm thick hard aggregate topping. The mineral bonding compound KORODUR HB 5 ensured the bond to the base concrete. After installation and curing, the surface was slightly polished twice in the KOROCLEAN process and treated with KOROMINERAL impregnation (silicifying).",
+    vorteile: [
+      "Heavy-duty hard-aggregate floor for lasting durability",
+      "Strong bond via the mineral bonding compound KORODUR HB 5",
+      "Silicified surface for easier cleaning and protection",
+      "Visually enhanced, long-lasting working surface",
+    ],
+    bildAlt: "Heavy-duty NEODUR HE 65 industrial floor in the workshop and storage areas of the new Jura-Werkstätten in Amberg",
+  },
+  "kunstdepot-muenchen": {
+    titel: "Art Depot Munich",
+    untertitel: "Highly wear-resistant industrial screed for a three-level art depot",
+    land: "Germany",
+    herausforderungen: [
+      "Durably wear-resistant floor for the most severely stressed building component",
+      "Thorough base preparation to ensure a permanent bond between base concrete and hard aggregate topping",
+      "Demanding storage conditions for sensitive art and cultural assets across three levels",
+      "Improved cleaning properties and density of the surface",
+    ],
+    loesung:
+      "In October 2017, the flooring specialist CBL Chemobau installed a highly wear-resistant KORODUR industrial screed in the KOROTAN System: on KORODUR Bonding Compound HB 5 with a subsequent NEODUR HE 65 wearing layer. The hard aggregate mortar was mixed and conveyed with the inoComb Cabrio mixing pump from INOTEC and supplied in big-bags. Finally, a surface silicification was applied with the KOROMINERAL impregnation.",
+    vorteile: [
+      "High wear resistance for the most severely stressed building component",
+      "Permanent bond between base concrete and hard aggregate topping in the KOROTAN System",
+      "Improved cleaning properties and density through surface silicification",
+      "Efficient processing of the hard aggregate screed via mixing pump and big-bag supply",
+    ],
+    bildAlt: "Highly wear-resistant KORODUR industrial floor in the IMMO Art depot in Munich",
+  },
+  "lidl-zentrallager-graben": {
+    titel: "LIDL Central Warehouse Graben",
+    untertitel: "Hard aggregate industrial floor for Germany's largest LIDL logistics center",
+    land: "Germany",
+    herausforderungen: [
+      "Execute a floor area of approx. 38,000 m² to a high standard",
+      "High wear resistance for continuous forklift traffic and heavy loads",
+      "Load capacity for more than 18,000 euro-pallets",
+      "Tight construction schedule until completion in late June 2011",
+    ],
+    loesung:
+      "Approx. 38,000 m² of the storage area were carried out as a KORODUR industrial floor with the hard aggregate dry mortar NEODUR HE 3. The monolithically applied hard aggregate screed provides the required wear resistance and load-bearing capacity for the logistics operation.",
+    vorteile: [
+      "High wear resistance for continuous operation",
+      "Load-bearing for more than 18,000 euro-pallets",
+      "Economical execution of large areas",
+      "On-time completion within a tight schedule",
+    ],
+    bildAlt: "KORODUR industrial floor in the LIDL central warehouse in Graben near Augsburg",
+  },
+  "logistikzentrum-daimler-guangzhou-china": {
+    titel: "Daimler Logistics Center Guangzhou",
+    untertitel: "Bright, heavy-duty hardener floor for the Mercedes-Benz spare parts warehouse in China",
+    land: "China",
+    herausforderungen: [
+      "Floor area of 36,000 m² with permanent heavy-duty and forklift loads in logistics operation",
+      "A bright, friendly indoor atmosphere was required to reduce energy costs through light savings",
+      "The consistent NEODUR quality of the first Daimler logistics center in Kunshan had to be reproduced",
+    ],
+    loesung:
+      "As with the logistics center in Kunshan near Shanghai built in 2013, the warehouse floor was finished with the NEODUR HE 65 hardener floor in the light-grey color. The bright material creates a friendlier and brighter atmosphere inside the hall.",
+    vorteile: [
+      "Heavy-duty hardener floor for permanent heavy load and logistics operation",
+      "Light-grey color for a friendly, well-lit hall atmosphere",
+      "Lower energy costs thanks to savings in light consumption",
+      "Proven, reproducible NEODUR quality as in the predecessor project in Kunshan",
+    ],
+    bildAlt: "NEODUR HE 65 light-grey hardener floor in the Daimler logistics center in Guangzhou, China",
+  },
+  "martensbro-schule-espoo-finnland": {
+    titel: "Mårtensbro Skola, Espoo",
+    untertitel: "Hard aggregate industrial floor in light-grey for maximum light reflection in the Finnish winter",
+    land: "Finland",
+    herausforderungen: [
+      "Daily high-frequency stress from thousands of foot kicks in a school",
+      "Two different substrates: fresh-on-fresh installation and composite on existing structural concrete",
+      "Optimising light reflection for the long, dark winter months",
+      "Durable and easy-to-maintain surface with appealing aesthetics",
+    ],
+    loesung:
+      "A KORODUR hard aggregate layer was installed acc. to DIN 18560-7, coating group A acc. to DIN 1100, using the product NEODUR HE 65 in light-grey, smoothed in KCF optics. An area of approx. 600 m² was laid in the fresh-on-fresh installation method with a hard aggregate layer of approx. 10 mm. Another area of around 600 m² was installed in composite on an existing concrete base: first the mineral KORODUR bonding HB 5, then a hard aggregate topping of approx. 15 mm. Material consumption: approx. 30 tons of NEODUR HE 65 dry mortar.",
+    vorteile: [
+      "High wear resistance for durable school use",
+      "Light-grey optimises light reflection in dark winter months and saves energy costs",
+      "Easy-to-maintain, aesthetically appealing surface in KCF optics",
+      "Ecologically and economically attractive, durable solution",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor in light-grey at Mårtensbro Skola in Espoo, Finland",
+  },
+  "metro-grossmarkt-wien-oesterreich": {
+    titel: "Remodeling METRO wholesale market",
+    untertitel: "Light-coloured, wear-resistant rapid screed for the sales rooms of a fully renovated wholesale market",
+    land: "Austria",
+    herausforderungen: [
+      "Floor with high wear resistance for the busy wholesale market",
+      "Light colour tone for an attractive look in the sales rooms",
+      "Fast-setting feature to meet the tight remodeling schedule",
+      "Installation in several stages during ongoing remodeling works",
+    ],
+    loesung:
+      "Over a period of one year numerous flooring systems were tested in advance. Thanks to its excellent product properties, high wear resistance, fast-setting feature and light colour tone, the client chose the KORODUR rapid screed system. The work was carried out in several stages. To prevent optical staining during later use, the finished and cleaned surfaces were treated with a surface protection product.",
+    vorteile: [
+      "High wear resistance for the intensive wholesale market operation",
+      "Fast-setting feature secures the tight remodeling schedule",
+      "Light colour tone for an attractive appearance",
+      "Stage-by-stage installation possible during ongoing remodeling",
+    ],
+    bildAlt: "Light-coloured KORODUR rapid screed floor in the sales rooms of the METRO wholesale market near Vienna",
+  },
+  "moxy-hotel": {
+    titel: "Moxy Hotels",
+    untertitel: "Fair-faced screed with industrial floor character for the industrial-chic design of the hotel foyers",
+    land: "Germany",
+    herausforderungen: [
+      "Floor finish with industrial-chic look for a coherent boutique-hotel design",
+      "Hard-wearing surface for heavily frequented foyer areas",
+      "Consistent appearance across four locations",
+      "Installation on a fresh concrete sub-base in a dry-shake method",
+    ],
+    loesung:
+      "In the foyers in Eschborn, Ludwigshafen, Frankfurt and Berlin, NEODUR HE 3 was installed in a dry-shake method on a fresh concrete sub-base. Then the areas were cleaned by grinding and treated with a special impregnation finish.",
+    vorteile: [
+      "Industrial-chic look matching the boutique-hotel design",
+      "Hard-wearing industrial floor character for heavily frequented foyers",
+      "Consistent appearance across all four locations",
+      "Easy-care, impregnated surface",
+    ],
+    bildAlt: "NEODUR HE 3 fair-faced industrial screed in a Moxy Hotel foyer",
+  },
+  "moebelhaus-hoeffner-hamburg": {
+    titel: "Höffner Furniture Store Hamburg",
+    untertitel: "40,000 m² of industrial floor in the custom colour „Krieger-grey“ – mastered logistically with the KORODUR silo system",
+    land: "Germany",
+    herausforderungen: [
+      "Individual colouring of the floor hardener to the client's specification („Krieger-grey“)",
+      "Logistic handling of the material supply for a 40,000 m² major building site",
+      "Meeting the narrow time frame for installation",
+      "Ensuring homogeneous material quality across the entire area",
+    ],
+    loesung:
+      "Around 350 tons of the KORODUR floor hardener NEODUR HE 65 in „Krieger-grey“ were supplied in big-bag packaging. The much larger quantity of around 1,800 tons was handled with the well-approved KORODUR silo system for large construction sites. To cope with the schedule, at times four silo units were in operation simultaneously.",
+    vorteile: [
+      "Daily output of 1,500 to 2,500 m² of industrial floor thanks to the KORODUR silo system",
+      "No need for mixing stations or disposal of packaging material",
+      "Homogeneous fresh mortar quality compared to individual mixing batches",
+      "Custom client colour „Krieger-grey“ realised",
+    ],
+    bildAlt: "Industrial floor in custom colour „Krieger-grey“ in the Höffner furniture store in Hamburg",
+  },
+  "obi-baumaerkte": {
+    titel: "OBI DIY-Stores",
+    untertitel: "Hard aggregate screed in the OBI special color for over 500,000 m² of retail space",
+    land: "Germany",
+    herausforderungen: [
+      "Highest abrasion resistance for heavily frequented retail areas",
+      "Uniform appearance in a specially developed OBI color tone",
+      "Large-scale, economical installation nationwide and internationally",
+      "Consistent quality across hundreds of stores",
+    ],
+    loesung:
+      "KORODUR industrial floors are installed in many OBI stores. In joint work a special color tone was designed, so that nationwide many OBI stores were finished with the hard aggregate screed NEODUR HE 65 in the OBI special color tone 2079. In many projects this specially colored material was processed in the efficient and high-performance KORODUR silo pumping system.",
+    vorteile: [
+      "High hardness and resistance for continuous loads",
+      "Uniform OBI special color tone 2079 for brand-consistent appearance",
+      "Economical processing via the KORODUR silo pumping system",
+      "Proven quality, scalable nationwide and internationally",
+    ],
+    bildAlt: "KORODUR industrial floor in an OBI DIY store in the OBI special color tone",
+  },
+  "ropa-montagezentrum-herrngiersdorf": {
+    titel: "ROPA Assembly Center Herrngiersdorf",
+    untertitel: "Highly wear-resistant hard aggregate industrial floor for the precision manufacturing of premium harvesting machinery",
+    land: "Germany",
+    herausforderungen: [
+      "Floor coating for the technically advanced precision production of heavy premium machinery",
+      "Ensure constant and efficient production on a highly wear-resistant surface",
+      "Install a large area of approx. 20,000 m² economically and within a short construction time",
+    ],
+    loesung:
+      "ROPA again chose the mineral, highly wear-resistant KORODUR hard aggregate industrial floor with an average thickness of 10 mm according to DIN 1100 and DIN 18560-7. The NEODUR HE 65 hard aggregate screed was installed using the proven and economical KORODUR silo pump system and mixing equipment.",
+    vorteile: [
+      "Highly wear-resistant, mineral surface for heavy-duty loads",
+      "Compliant with DIN 1100 and DIN 18560-7",
+      "Economical installation with KORODUR silo pump and mixing system",
+      "Daily performance of up to 2,000 m²",
+    ],
+    bildAlt: "NEODUR HE 65 hard aggregate industrial floor in the ROPA assembly center in Herrngiersdorf",
+  },
+  "restaurant-haerg-tallinn-estland": {
+    titel: "Restaurant HÄRG, Tallinn",
+    untertitel: "An industrial floor as a design statement: deliberate cracks, a rough surface, mixed colors",
+    land: "Estonia",
+    herausforderungen: [
+      "Achieve a characteristic industrial floor look with deliberate cracks and a rough surface",
+      "Deliberately leave sub-base cracks unconsolidated so they could show in the topping layer",
+      "Create a unique coloring by mixing two NEODUR colors directly on site",
+      "Provide a hard-wearing floor for daily restaurant operation",
+    ],
+    loesung:
+      "A 15 mm thick KORODUR industrial floor was installed in the KOROTAN system with the bonding agent KORODUR HB 5. The NEODUR HE 65 hard aggregate screed was supplied in green and basalt-grey and mixed together on site. Cracks in the sub-base were deliberately not consolidated so they could show in the topping layer.",
+    vorteile: [
+      "Characteristic industrial floor look with deliberate cracks and a rough surface",
+      "Unique coloring achieved by mixing green and basalt-grey",
+      "Hard-wearing hard aggregate screed for restaurant operation",
+      "Proven KOROTAN system with bonding agent HB 5",
+    ],
+    bildAlt: "Industrial floor with NEODUR HE 65 hard aggregate screed in mixed green and basalt-grey at Restaurant HÄRG in Tallinn",
+  },
+  "sic-processing-zhenjiang-china": {
+    titel: "SiC Processing Zhenjiang",
+    untertitel: "KORODUR industrial floor for highest mechanical loads in slurry recycling",
+    land: "China",
+    herausforderungen: [
+      "Partially very high mechanical stress in the individual production sections",
+      "Different load requirements depending on the production zone",
+      "Durably smooth running operation for slurry recycling",
+      "Coordination and installation via local partners in China",
+    ],
+    loesung:
+      "Depending on the expected mechanical stress, NEODUR HE 3 or NEODUR HE 3 SVS 3 was used, each in the dry shake procedure. The handling was coordinated by Shanghai Golden Bridge, the installation carried out by local applicator Shanghai Xiao Jie.",
+    vorteile: [
+      "Proven KORODUR industrial floor, trusted by SiC Processing even for foreign investments",
+      "Load capacity precisely matched to the respective production zone",
+      "Dry shake procedure for high wear resistance",
+      "Durably smooth operation of the recycling ensured",
+    ],
+    bildAlt: "KORODUR industrial floor in the SiC Processing production halls in Zhenjiang, China",
+  },
+  "wago-stanzerei-minden": {
+    titel: "New WAGO Pressing Shop",
+    untertitel: "24,000 m² of heavy-duty hard aggregate industrial floor for a long-lasting production flow",
+    land: "Germany",
+    herausforderungen: [
+      "Long-lasting and efficient production flow over a large area of 24,000 m²",
+      "Achieving high daily outputs of 800 to 1,400 m² in best quality",
+      "Efficient logistics and handling of around 500 tonnes of NEODUR HE 65",
+      "Standard-compliant, heavy-duty floor for an industrial pressing shop",
+    ],
+    loesung:
+      "As for previous locations, WAGO again decided for a mineral, heavy-duty KORODUR hard aggregate industrial floor and entrusted flooring specialist Condulith with the installation. With state-of-the-art machine technology, Condulith cast the concrete base slab with double reinforcement and HSD joint profiles and applied a 10 mm thick KORODUR hard aggregate topping \"fresh on fresh\". The hard aggregate screed was installed using the KORODUR silo system, offering considerable advantages such as savings of working time and improved logistical handling.",
+    vorteile: [
+      "Heavy-duty, mineral hard aggregate industrial floor compliant with standards",
+      "Fast installation thanks to the KORODUR silo system",
+      "Savings of working time and improved logistical handling",
+      "No need for several mixing stations or disposal of packaging material",
+    ],
+    bildAlt: "KORODUR hard aggregate industrial floor in the new WAGO pressing shop in Minden",
+  },
+  "zalando-bygodszcz-polen": {
+    titel: "Zalando Logistics Centre",
+    untertitel: "Wear-resistant industrial floor for 130,000 m² of logistics space",
+    land: "Poland",
+    herausforderungen: [
+      "Wear-resistant industrial floor for the handling of millions of items",
+      "Huge continuous area of around 130,000 m²",
+      "Lasting load-bearing capacity in intensive logistics operations",
+    ],
+    loesung:
+      "NEODUR HE 3 in the colour cement grey was installed across around 130,000 m². The heavy-duty hardener floor is suited to heavily stressed industrial areas such as high-bay warehouses and assembly halls and was laid by the professional installers PPP.",
+    vorteile: [
+      "High wear resistance for continuous operation",
+      "Suitable for heavy-duty industrial and warehouse areas",
+      "Increased energy and resource efficiency, conserving natural resources",
+    ],
+    bildAlt: "NEODUR HE 3 industrial floor at the Zalando logistics centre in Bydgoszcz, Poland",
+  },
 };
