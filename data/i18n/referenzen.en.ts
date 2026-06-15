@@ -2197,4 +2197,200 @@ export const referenzenEN: Record<string, {
     ],
     bildAlt: "Station plaza Landau with anthracite concrete slabs",
   },
+  "gefaellesanierung-tankstelle-schneeberg": {
+    titel: "Gradient Restoration at a Petrol Pump",
+    untertitel: "A new gradient for free water run-off — petrol pump back in operation after 4 hours",
+    land: "Germany",
+    herausforderungen: [
+      "Form a steeper gradient so that water can run off freely without obstruction",
+      "Ensure resistance to water-polluting substances in line with the DAfStb guideline",
+      "Manage the fast setting of the mortar at 22 °C sub-base and 24 °C air temperature",
+      "Return the petrol pump to operation as quickly as possible",
+    ],
+    loesung:
+      "The sub-base was chiselled in a semi-circular shape to give a good surface key and partially roughened. Rapid Set MORTAR MIX was then used to build the new, steeper gradient. As the product set quickly in the hot conditions, CONCRETE PHARMACY SET CONTROL was added to retard the setting time and gain the working time required.",
+    vorteile: [
+      "Resistance to water-polluting substances in line with the DAfStb guideline",
+      "Low water penetration depth of only 6 mm",
+      "Petrol pump released for use again after just 4 hours",
+      "Setting time precisely adjusted to hot weather via SET CONTROL",
+    ],
+    bildAlt: "Gradient restoration with Rapid Set MORTAR MIX at the base of a petrol pump",
+  },
+  "kanalsanierung-im-schlosspark-muenchen": {
+    titel: "Sewer Repair in the Munich Palace Grounds",
+    untertitel: "Manhole head repaired and released to traffic within 1–2 hours",
+    land: "Germany",
+    herausforderungen: [
+      "Exact height adjustment when assembling the new manhole rings",
+      "Stable, low-shrink and high-strength mortar required",
+      "Fastest possible release of the manhole head to traffic",
+    ],
+    loesung:
+      "Using the multipurpose, high-performance repair mortar Rapid Set MORTAR MIX, the manhole rings were lifted, assembled and set with exact height adjustment. MORTAR MIX is rock-solid after just 1–2 hours, based on the powerful Rapid Set cement technology.",
+    vorteile: [
+      "Fully loadable after just 1–2 hours",
+      "Stable and low-shrink for exact height adjustment",
+      "High strength thanks to Rapid Set cement technology",
+      "Multipurpose use for manhole regulations and repairs",
+    ],
+    bildAlt: "Sewer repair with Rapid Set MORTAR MIX in the grounds of Nymphenburg Castle, Munich",
+  },
+  "kuechenarbeitsplatte-berlin": {
+    titel: "Kitchen Worktop made of MORTAR MIX",
+    untertitel: "Rapid-setting repair mortar as a shapeable concrete worktop with pure concrete character",
+    land: "Germany",
+    herausforderungen: [
+      "Build formwork 6 to 8 cm high to fit the worktop precisely",
+      "Place material in sections of approx. 2 m length without visible joints",
+      "Create the desired surface texture through targeted finishing",
+      "Preserve the pure concrete character without grinding the surface",
+    ],
+    loesung:
+      "MORTAR MIX was cast into a 6 to 8 cm high formwork in sections of approx. 2 m length, with care taken to avoid visible joints. The material was screeded over the outer edges of the formwork and finished with felt and float boards as well as a smoothing trowel, depending on the desired surface texture. After sufficient water curing and drying, the surface was sealed with a water-, grease- and oil-repellent surface protection.",
+    vorteile: [
+      "MORTAR MIX pourable and freely shapeable in formwork or mould",
+      "Versatile surface textures through different finishing tools",
+      "Water-, grease- and oil-repellent surface protection after sealing",
+      "Pure, unground concrete character without any grinding",
+    ],
+    bildAlt: "Kitchen worktop cast from Rapid Set MORTAR MIX in a Berlin loft with pure concrete character",
+  },
+  "kuechenbodensanierung-leinfelden": {
+    titel: "Kitchen Floor Renovation in a Restaurant",
+    untertitel: "Damaged tiled floor renewed in five days – ready for covering after two hours",
+    land: "Germany",
+    herausforderungen: [
+      "Renovation during ongoing restaurant operation with minimal downtime",
+      "Damaged tiles and screed had to be completely dismantled",
+      "Lasting resistance to moisture, grease and cleaning detergents",
+      "Short construction window, fast re-opening of the kitchen",
+    ],
+    loesung:
+      "In five days, the tiles and screed were completely dismantled and renewed. Rapid Set MORTAR MIX proved an excellent choice with its fast readiness for covering after two hours, considerably reducing the regular construction time. Finally, the surface was treated with the transparent impregnation product KOROMINERAL Li+ to increase the resistance of the subbase to grease and cleaning detergents.",
+    vorteile: [
+      "Ready for covering after just two hours",
+      "Significantly reduced construction time compared with regular systems",
+      "Increased resistance to grease and cleaning detergents through impregnation",
+      "Fast re-opening during ongoing operation",
+    ],
+    bildAlt: "Renovated kitchen floor in a restaurant in Leinfelden-Echterdingen using Rapid Set MORTAR MIX",
+  },
+  "pflastersanierung-esslingen": {
+    titel: "Barrier-Free Pavement Renovation Esslingen",
+    untertitel: "Historic paving preserved, unevenness removed, ready for leveling after 2 hours",
+    land: "Germany",
+    herausforderungen: [
+      "Preserve historic paving while creating barrier-free accessibility",
+      "Even out unevenness of the paved road crossings",
+      "Reduce noise emissions and improve traffic safety",
+      "Carry out the inner-city renovation saving time and costs",
+    ],
+    loesung:
+      "The old joint material was removed and the paved areas cleaned. The areas were then re-grouted with the multipurpose Rapid Set fast-setting repair MORTAR MIX, using the special method developed by KORODUR and Blessing. After just 2 hours, the newly grouted areas could be mechanically milled to level them barrier-free.",
+    vorteile: [
+      "Preservation of the historic paving with full barrier-free accessibility",
+      "Leveling possible after just 2 hours",
+      "Reduced noise emissions and improved traffic safety",
+      "Longer service life and reduced CO2 emissions thanks to climate-friendly raw materials",
+    ],
+    bildAlt: "Barrier-free pavement renovation in the historic old town of Esslingen with Rapid Set MORTAR MIX",
+  },
+  "restaurierung-schmucktafeln": {
+    titel: "Restoration of decorative panels made of concrete stucco",
+    untertitel: "Fine facade contours cast fast - several panels per working day, immediately ready for coating",
+    herausforderungen: [
+      "Very tight time window to produce the decorative panels",
+      "Fine contours had to be reproduced precisely",
+      "Subsequent putty works should be avoided as far as possible",
+      "Quick readiness for coating needed for the directly following paint",
+    ],
+    loesung:
+      "We used Rapid Set MORTAR MIX in combination with FLOW Control. The fine contours were shaped so well that any further putty works were not really necessary. Due to the fast-setting of MORTAR MIX, several panels could be cast within one working day.",
+    vorteile: [
+      "Precise reproduction of fine contours - hardly any rework",
+      "Fast setting: several panels per working day",
+      "Very quick readiness for coating - paint applied directly",
+      "Frost and de-icing salt resistant for facade veneering",
+    ],
+    bildAlt: "Decorative panels made of concrete stucco cast with Rapid Set MORTAR MIX for a house facade",
+  },
+  "sanierung-futtertisch-milchhof-beeskow": {
+    titel: "Repair of feeding table in dairy farm",
+    untertitel: "Smooth, odorless feeding table surface with CO2-reduced Rapid Set fast-setting repair mortar",
+    land: "Germany",
+    herausforderungen: [
+      "Optimal feed intake requires a smooth, clean and odorless surface",
+      "Layer thicknesses up to 300 mm in a single application",
+      "Sustainable, CO2-reduced building material matching the farm's standards",
+      "Immediate usability and durability during ongoing stable operation",
+    ],
+    loesung:
+      "The feeding table area of approx. 70 m² was applied with the Rapid Set products MORTAR MIX and CONCRETE MIX in a layer thickness up to 300 mm. No separate primer or bonding bridge was needed. The products are based on Rapid Set Cement, a BCSA cement whose production emits more than 30% less CO2 than conventional Portland cement.",
+    vorteile: [
+      "Extremely high strength and immediate usability",
+      "Layer thickness up to 300 mm without primer or bonding bridge",
+      "Non-shrinking and sulfate-resistant",
+      "CO2-reduced thanks to BCSA cement (more than 30% less CO2)",
+    ],
+    bildAlt: "Renovated feeding table in the cow stalls of the Beeskow dairy farm with Rapid Set repair mortar",
+  },
+  "fussgaengerbruecke-albbruck": {
+    titel: "Repair of a pedestrian bridge",
+    untertitel: "Released for use again approx. 1 hour after application",
+    land: "Germany",
+    herausforderungen: [
+      "Enormous stresses on the bridge from weather conditions such as heat and precipitation",
+      "Deicing salts eroding the cement paste at the surface",
+      "Tripping hazards on the walkways and risk of severe structural damage",
+      "Surface needed to be released for use again as quickly as possible",
+    ],
+    loesung:
+      "The surface was prepared and roughened using a demolition hammer, the loose debris was removed and the surface thoroughly wetted. MORTAR MIX was then applied in a 2 cm thick layer. The surface finish can vary, e.g. broom finish or smoothening. During the setting phase a water mist was applied, and already approx. 1 hour after the application the surface could be released for use.",
+    vorteile: [
+      "Released for use again approx. 1 hour after application",
+      "Resistant to weather and deicing salt exposure",
+      "Flexible surface finish from broom finish to smoothened",
+      "Reliable restoration of the cementitious bridge surface",
+    ],
+    bildAlt: "Repair of a pedestrian bridge in Albbruck with Rapid Set MORTAR MIX",
+  },
+  "schwellensanierung-goeppingen": {
+    titel: "Threshold Repair Göppingen",
+    untertitel: "Garage usable again within hours",
+    land: "Germany",
+    herausforderungen: [
+      "Differing application thicknesses across the threshold",
+      "Avoiding stresses in the material",
+      "Restoring garage use as quickly as possible",
+    ],
+    loesung:
+      "To counteract stresses, the threshold was divided into two sections and, due to the differing application thicknesses, repaired with CEMENT ALL and MORTAR MIX.",
+    vorteile: [
+      "Reopened within a few hours",
+      "Two application thicknesses with matched Rapid Set products",
+      "Simple and fast application",
+    ],
+    bildAlt: "Repaired garage threshold in Göppingen-Jebenhausen with Rapid Set CEMENT ALL and MORTAR MIX",
+  },
+  "tiefbaumassnahme": {
+    titel: "Civil engineering measure under special requirements",
+    untertitel: "Concrete repair in a permanently moist environment with reloading the following day",
+    land: "Germany",
+    herausforderungen: [
+      "Spalling on the upper concrete shell of an earth-contacting pipe",
+      "High degree of carbonation protection required to prevent corrosion of reinforcements according to exposure classes",
+      "Repair in thin application thicknesses of 0 to 30 mm on C70/85 concrete",
+      "Continuing the works on the component as quickly as possible",
+    ],
+    loesung:
+      "The shell was repaired with Rapid Set CEMENT ALL repair mortar in an application thickness of 0 to 30 mm. The strength factor of the concrete pipe of C70/85 allowed working in thin layers without any problems.",
+    vorteile: [
+      "Fast application and early load-bearing capacity",
+      "Very good bond strength even in thin layers from 0 mm",
+      "Compliance with the requirements profile of the exposure classes",
+      "Carbonation protection in a permanently moist environment",
+    ],
+    bildAlt: "Concrete repair of an earth-contacting pipe with Rapid Set CEMENT ALL",
+  },
 };

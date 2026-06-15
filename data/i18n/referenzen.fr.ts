@@ -2105,4 +2105,141 @@ export const referenzenFR: Record<string, {
     ],
     bildAlt: "Place de la gare Landau avec dalles de beton anthracite",
   },
+  "gefaellesanierung-tankstelle-schneeberg": {
+    titel: "Réfection du dénivelé devant une pompe à essence",
+    untertitel: "Un nouveau dénivelé pour un écoulement libre de l'eau — pompe à essence rouverte après 4 heures",
+    land: "Allemagne",
+    herausforderungen: [
+      "Refaire un dénivelé plus important pour que l'eau s'écoule librement sans obstruction",
+      "Assurer la résistance aux substances polluantes de l'eau selon les directives DAfStb",
+      "Maîtriser la prise rapide du mortier à 22 °C de sol et 24 °C d'air",
+      "Remettre la pompe à essence en service le plus rapidement possible",
+    ],
+    loesung:
+      "Une zone semi-circulaire a été enlevée et partiellement rendue rugueuse. Rapid Set MORTAR MIX a ensuite été utilisé pour créer le nouveau dénivelé plus important. Le produit ayant une prise rapide par forte chaleur, 20 sachets de CONCRETE PHARMACY SET CONTROL ont été ajoutés afin de retarder la prise et d'obtenir le temps de mise en œuvre nécessaire.",
+    vorteile: [
+      "Résistance aux substances polluantes de l'eau selon les directives DAfStb",
+      "Faible profondeur de pénétration de l'eau de seulement 6 mm",
+      "Pompe à essence de nouveau ouverte après seulement 4 heures",
+      "Temps de prise ajusté à la forte chaleur grâce à SET CONTROL",
+    ],
+    bildAlt: "Réfection du dénivelé avec Rapid Set MORTAR MIX au pied d'une pompe à essence",
+  },
+  "kanalsanierung-im-schlosspark-muenchen": {
+    titel: "Réparation d'égout dans le parc du château de Munich",
+    untertitel: "Tête de regard réparée et remise à la circulation en 1 à 2 heures",
+    land: "Allemagne",
+    herausforderungen: [
+      "Réglage exact de la hauteur lors de l'assemblage des nouveaux anneaux de puits",
+      "Mortier stable, à faible retrait et à haute résistance exigé",
+      "Remise à la circulation de la tête de regard dans les plus brefs délais",
+    ],
+    loesung:
+      "Avec le mortier de réparation rapide, polyvalent et à haute performance Rapid Set MORTAR MIX, les anneaux de puits ont été levés, assemblés et posés avec un réglage exact de la hauteur. MORTAR MIX est résistant au trafic après seulement 1 à 2 heures, grâce à la puissante technologie du ciment Rapid Set.",
+    vorteile: [
+      "Pleinement sollicitable après seulement 1 à 2 heures",
+      "Stable et à faible retrait pour un réglage exact de la hauteur",
+      "Haute résistance grâce à la technologie du ciment Rapid Set",
+      "Utilisation polyvalente pour le réglage d'anneaux de puits et les réparations",
+    ],
+    bildAlt: "Réparation d'égout avec Rapid Set MORTAR MIX dans le parc du château de Nymphenburg, Munich",
+  },
+  "kuechenarbeitsplatte-berlin": {
+    titel: "Plan de travail de cuisine en MORTAR MIX",
+    untertitel: "Mortier de réparation à prise rapide comme plan de travail en béton modelable au caractère béton brut",
+    land: "Allemagne",
+    herausforderungen: [
+      "Réaliser un coffrage de 6 à 8 cm de hauteur ajusté précisément au plan de travail",
+      "Mettre en place le matériau par sections d'environ 2 m de longueur sans reprises visibles",
+      "Créer la structure de surface souhaitée par un traitement ciblé",
+      "Conserver le caractère béton brut sans poncer la surface",
+    ],
+    loesung:
+      "Le MORTAR MIX a été coulé dans un coffrage de 6 à 8 cm de hauteur par sections d'environ 2 m de longueur, en veillant à éviter les reprises visibles. Le matériau a été tiré sur les bords extérieurs du coffrage puis travaillé à la taloche en feutre et en bois ainsi qu'à la lisseuse, selon la structure de surface souhaitée. Après une cure à l'eau suffisante et le séchage, la surface a été imprégnée d'une protection hydrofuge, oléofuge et anti-graisse.",
+    vorteile: [
+      "MORTAR MIX coulable et librement modelable en coffrage ou en moule",
+      "Structures de surface variées grâce à différents outils de finition",
+      "Protection de surface hydrofuge, oléofuge et anti-graisse après imprégnation",
+      "Caractère béton pur et non poncé sans aucun ponçage",
+    ],
+    bildAlt: "Plan de travail de cuisine coulé en Rapid Set MORTAR MIX dans un loft berlinois au caractère béton brut",
+  },
+  "kuechenbodensanierung-leinfelden": {
+    titel: "Rénovation d'un sol de cuisine de restaurant",
+    untertitel: "Carrelage endommagé renouvelé en cinq jours – recouvrable au bout de deux heures",
+    land: "Allemagne",
+    herausforderungen: [
+      "Rénovation en exploitation continue du restaurant avec un minimum d'arrêts",
+      "Carrelage et chape endommagés à démonter entièrement",
+      "Résistance durable à l'humidité, aux graisses et aux détergents",
+      "Délai de chantier court, remise en service rapide de la cuisine",
+    ],
+    loesung:
+      "En cinq jours, le carrelage et la chape ont été entièrement démontés et renouvelés. Rapid Set MORTAR MIX s'est révélé un excellent choix grâce à sa mise en recouvrement rapide au bout de deux heures, réduisant considérablement le temps de travaux habituel. Enfin, la surface a été traitée avec le produit d'imprégnation transparent KOROMINERAL Li+ afin d'augmenter la résistance de la sous-couche aux graisses et aux détergents.",
+    vorteile: [
+      "Recouvrable au bout de deux heures seulement",
+      "Temps de travaux nettement réduit par rapport aux systèmes classiques",
+      "Résistance accrue aux graisses et aux détergents grâce à l'imprégnation",
+      "Remise en service rapide en exploitation continue",
+    ],
+    bildAlt: "Sol de cuisine rénové dans un restaurant à Leinfelden-Echterdingen avec Rapid Set MORTAR MIX",
+  },
+  "pflastersanierung-esslingen": {
+    titel: "Rénovation des pavés sans barrière Esslingen",
+    untertitel: "Pavage historique préservé, irrégularités éliminées, égalisable après 2 heures",
+    land: "Allemagne",
+    herausforderungen: [
+      "Préserver le pavage historique tout en garantissant l'accessibilité",
+      "Éliminer les irrégularités des traversées de rue pavées",
+      "Réduire les émissions sonores et améliorer la sécurité routière",
+      "Réaliser la rénovation en centre-ville en économisant temps et argent",
+    ],
+    loesung:
+      "L'ancien matériau des joints a été enlevé et les zones pavées nettoyées. Les zones ont ensuite été jointoyées à nouveau avec le mortier de réparation polyvalent à prise rapide Rapid Set MORTAR MIX, selon le procédé spécialement développé par KORODUR et Blessing. Après seulement deux heures, les zones nouvellement jointoyées ont pu être égalisées sans barrière à l'aide d'une fraise à béton.",
+    vorteile: [
+      "Préservation du pavage historique avec une accessibilité totale",
+      "Égalisation possible après seulement 2 heures",
+      "Émissions sonores réduites et sécurité routière améliorée",
+      "Durée de vie plus longue et émissions de CO2 réduites grâce à des matières premières respectueuses du climat",
+    ],
+    bildAlt: "Rénovation des pavés sans barrière dans la vieille ville historique d'Esslingen avec Rapid Set MORTAR MIX",
+  },
+  "fussgaengerbruecke-albbruck": {
+    titel: "Réparation d'un pont piétonnier",
+    untertitel: "Surfaces réouvertes après seulement 1 heure environ",
+    land: "Allemagne",
+    herausforderungen: [
+      "Contraintes énormes sur le pont dues aux conditions météorologiques telles que la chaleur et les précipitations",
+      "Sel de déneigement endommageant les surfaces en ciment et altérant la pâte de ciment",
+      "Risques de chutes sur les trottoirs et de graves dommages de la structure",
+      "Surface à réouvrir à la circulation le plus rapidement possible",
+    ],
+    loesung:
+      "La surface a été préparée et rendue rugueuse à l'aide d'un marteau de démolition, les débris ont été enlevés et la surface suffisamment humidifiée avec de l'eau. Une couche de 2 cm d'épaisseur du produit MORTAR MIX a ensuite été appliquée. La finition de surface peut varier, par exemple finition balai ou lissage. Pendant la prise, un brouillard d'eau est appliqué et après seulement 1 heure environ, les surfaces sont prêtes à être réouvertes.",
+    vorteile: [
+      "Surfaces réouvertes après seulement 1 heure environ",
+      "Résistant aux intempéries et au sel de déneigement",
+      "Finition de surface flexible, de la finition balai au lissage",
+      "Restauration fiable de la surface en ciment du pont",
+    ],
+    bildAlt: "Réparation d'un pont piétonnier à Albbruck avec Rapid Set MORTAR MIX",
+  },
+  "schwellensanierung-goeppingen": {
+    titel: "Réparation d'un seuil Göppingen",
+    untertitel: "Garage de nouveau accessible en quelques heures",
+    land: "Allemagne",
+    herausforderungen: [
+      "Épaisseurs d'application différentes sur le seuil",
+      "Éviter les tensions dans le matériau",
+      "Rétablir l'usage du garage le plus vite possible",
+    ],
+    loesung:
+      "Pour contrebalancer les tensions éventuelles, le seuil a été divisé en deux parties et réparé en deux couches d'épaisseurs différentes, l'une avec CEMENT ALL et l'autre avec MORTAR MIX.",
+    vorteile: [
+      "De nouveau accessible en quelques heures",
+      "Deux épaisseurs avec des produits Rapid Set adaptés",
+      "Mise en œuvre simple et rapide",
+    ],
+    bildAlt: "Seuil de garage réparé à Göppingen-Jebenhausen avec Rapid Set CEMENT ALL et MORTAR MIX",
+  },
 };
