@@ -7,6 +7,7 @@ import type {
   ZeitKategorie,
   Zusatzfunktion,
 } from "./types";
+import { PRODUKT_EINSATZBEREICHE } from "./produktEinsatzbereiche";
 
 // Produktmatrix-interne Filter-Taxonomie (aus Produktsicht). Bewusst separat
 // von der Referenz-Taxonomie: Referenzen nutzen Einsatzbereich/Sanierungsart/
@@ -2322,4 +2323,13 @@ export function getProdukteByNames(names: string[]): Produkt[] {
   return names
     .map((name) => getProduktByName(name))
     .filter((p): p is Produkt => p !== undefined);
+}
+
+// #177: Einsatzbereiche (PDP "Wo wird das eingesetzt?") aus separater, generierter
+// Map mergen. Quelle: TDS + Produktkontext (data/produktEinsatzbereiche.ts).
+// Bestehende einsatzbereiche am Produkt haben Vorrang.
+for (const p of produkte) {
+  if (!p.einsatzbereiche?.length && PRODUKT_EINSATZBEREICHE[p.id]) {
+    p.einsatzbereiche = PRODUKT_EINSATZBEREICHE[p.id];
+  }
 }
