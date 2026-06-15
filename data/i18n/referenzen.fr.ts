@@ -903,4 +903,24 @@ export const referenzenFR: Record<string, {
     ],
     bildAlt: "Château d'eau en périphérie de Budapest pendant la rénovation",
   },
+  "hochbehaelter-puchheim": {
+    titel: "Réservoir d'eau potable Puchheim",
+    untertitel: "Rénovation minérale pour une eau potable pure",
+    land: "Allemagne",
+    herausforderungen: [
+      "Dommages d'hydrolyse sur le revêtement des deux compartiments d'eau après environ 35 ans de fonctionnement",
+      "Enlèvement complet de l'ancien revêtement sur les murs et le sol et préparation du support",
+      "Garantie d'une eau potable hygiéniquement pure pendant toute la rénovation",
+      "Revêtement d'environ 18 000 m² de surfaces murales et de sol",
+    ],
+    loesung:
+      "Les murs ont été enduits du mortier spécial à base de micro-silice MICROTOP TW 3, par projection par voie sèche d'une épaisseur de 20 mm, lissés avec une règle puis poncés machinalement et lissés. Le sol a été revêtu avec des produits MICROTOP en procédé chape. Au total, plus de 18 000 m² de nouvelles surfaces minérales ont été réalisées.",
+    vorteile: [
+      "Système MICROTOP à base de micro-silice pour une eau potable hygiéniquement pure",
+      "Protection contre de nouveaux dommages d'hydrolyse",
+      "Système uniforme pour les murs et le sol",
+      "Qualité confirmée par les contrôles réguliers de la LGA Nürnberg",
+    ],
+    bildAlt: "Réservoir d'eau potable Puchheim pendant la rénovation",
+  },
 };

@@ -899,4 +899,62 @@ export const referenzenEN: Record<string, {
     bildAlt: "Drinking water tower on the outskirts of Budapest during renovation",
   },
 
+  "trinkwasserspeicher-raecknitz-dresden": {
+    titel: "Räcknitz drinking water reservoir, Dresden",
+    untertitel: "Repair of the water chambers in Dresden's largest drinking water reservoir with KORODUR MICROTOP",
+    land: "Germany",
+    herausforderungen: [
+      "Repair in drinking water contact (DVGW-compliant)",
+      "Rehabilitation of ceiling surfaces and column heads in the water chambers",
+      "Proven, certified product solution required",
+    ],
+    loesung:
+      "After thorough product review by the client DREWAG Netze GmbH, the choice fell on KORODUR MICROTOP TW 3 HOZ and TW 5 HOZ. The microsilica-modified, purely mineral products (DVGW W300/W347, Type Class 1) were applied in the dry-mix shotcreting method by the company Fritz Wiedemann, Dresden branch.",
+    vorteile: [
+      "DVGW-compliant (W300/W347, Type Class 1)",
+      "Purely mineral, without additives",
+      "Proven in numerous large drinking water projects",
+    ],
+    bildAlt: "Repaired water chamber in the Räcknitz drinking water reservoir with KORODUR MICROTOP",
+  },
+  "hochbehaelter-puchheim": {
+    titel: "Drinking Water Reservoir Puchheim",
+    untertitel: "Mineral refurbishment for pure drinking water",
+    land: "Germany",
+    herausforderungen: [
+      "Hydrolysis damage to the coatings of both water chambers after around 35 years of operation",
+      "Complete removal of the old coating on walls and floor and substrate preparation",
+      "Ensuring hygienically pure drinking water throughout the repair",
+      "Coating of around 18,000 m² of wall and floor areas",
+    ],
+    loesung:
+      "The walls were lined with the microsilica-modified special mortar MICROTOP TW 3 in the dry-mix shotcrete method at an application thickness of 20 mm, roughly leveled with a screed rail and then mechanically trowelled and smoothed. The floor was coated with MICROTOP products in the screed procedure. In total around 18,000 m² of new mineral surfaces were created.",
+    vorteile: [
+      "Microsilica-modified MICROTOP system for hygienically pure drinking water",
+      "Protection against renewed hydrolysis damage",
+      "Uniform system for wall and floor",
+      "Quality confirmed by ongoing control tests of the LGA Nuremberg",
+    ],
+    bildAlt: "Drinking water reservoir Puchheim during refurbishment",
+  },
+  "hochbehaelter-krottenbach": {
+    titel: "Krottenbach Drinking Water Reservoir",
+    untertitel: "Major repair of a drinking water reservoir with MICROTOP using the dry shotcrete method",
+    land: "Germany",
+    herausforderungen: [
+      "Ensuring continuous drinking water supply during ongoing construction work",
+      "Very large repair area of 33,500 m² across two water chambers up to 10 m high, each supported by 72 columns",
+      "Watertight coating of walls, ceilings and reservoir floor",
+      "Removal of 10 to 15 mm of old concrete before the new build-up",
+    ],
+    loesung:
+      "The two chambers were repaired one after the other to avoid interrupting the drinking water supply. After the removal of 10 to 15 mm of concrete, the walls and ceilings were newly coated with KORODUR's MICROTOP shotcrete mortar using the dry mix method. A new screed of MICROTOP material was applied to the reservoir floor: first a 25 mm layer of MICROTOP TW 5 for leveling and reinforcement coverage, then the final coat as a sealing layer of approx. 12 to 15 mm MICROTOP TW 3, smoothed off. In total around 3,000 tonnes of MICROTOP were installed.",
+    vorteile: [
+      "MICROTOP coating for walls, ceilings and reservoir floor",
+      "Cost-effective large-area repair using the dry shotcrete method",
+      "Watertight final coat as a sealing layer for lasting protection",
+      "Repair during ongoing operation without interrupting the drinking water supply",
+    ],
+    bildAlt: "Krottenbach drinking water reservoir near Nuremberg coated with MICROTOP",
+  },
 };
