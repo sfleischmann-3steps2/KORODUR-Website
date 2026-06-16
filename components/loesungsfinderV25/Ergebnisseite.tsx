@@ -177,13 +177,13 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
 
       {/* Fachberater zur Empfehlung (Funnel-Karten, Korb 2): persönlicher
           Ansprechpartner mit Durchwahl direkt am Ergebnis */}
-      {topProduktAnzeige && fachberaterFuerBereich(topProduktAnzeige.bereich).length > 0 && (
+      {topProduktAnzeige && fachberaterFuerBereich(topProduktAnzeige.bereich, lang).length > 0 && (
         <div className="mb-4">
           <div className="mb-2 text-[15px] font-semibold text-navy">
             {dict.kontakt.fachberater_title}
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {fachberaterFuerBereich(topProduktAnzeige.bereich).slice(0, 2).map((b) => (
+            {fachberaterFuerBereich(topProduktAnzeige.bereich, lang).slice(0, 2).map((b) => (
               <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
             ))}
           </div>
