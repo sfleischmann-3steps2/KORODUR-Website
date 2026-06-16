@@ -145,7 +145,7 @@ export default async function BereichPage({ params }: { params: Params }) {
       items: localizedProdukte.filter((p) => p.produktgruppe === key),
     }))
     .filter((g) => g.items.length > 0);
-  const alleFachberater = fachberaterFuerBereich(bereich.slug);
+  const alleFachberater = fachberaterFuerBereich(bereich.slug, lang);
 
   return (
     <>

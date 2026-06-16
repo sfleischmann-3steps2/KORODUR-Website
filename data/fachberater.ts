@@ -158,7 +158,36 @@ export const FACHBERATER_INTERNATIONAL: Fachberater[] = [
   },
 ];
 
-/** Fachberater für einen Produktbereich (Funnel-Karten). */
-export function fachberaterFuerBereich(bereich: Produktbereich): Fachberater[] {
-  return FACHBERATER_DE.filter((b) => b.bereiche.includes(bereich));
+/** Allgemeine Export-Ansprechpartner (länderunabhängig) — Fallback für alle
+ *  Nicht-DE-Sprachen ohne eigenen Länder-Manager. */
+const EXPORT_ALLGEMEIN = ["Alexander Pröls", "Mirko Schlicht"];
+
+/** Länder-Manager je App-Sprache, vor die allgemeinen Export-Kontakte gereiht.
+ *  Aktuell nur PL (Daniel May); IT-Manager ohne aktive App-Sprache. */
+const EXPORT_NACH_SPRACHE: Record<string, string[]> = {
+  pl: ["Daniel May"], // Regional Sales Manager Poland
+};
+
+/** Fachberater für einen Produktbereich (Funnel-Karten auf Produkt-/Bereichs-
+ *  seiten und Lösungsfinder-Ergebnis).
+ *
+ *  - `de`: bereichsspezifische DE-Berater (PLZ-Zuständigkeit).
+ *  - sonst: internationale Export-Kontakte. Diese tragen kein Bereichs-Mapping
+ *    (`bereiche: []`), daher greift hier KEIN Bereichsfilter — international
+ *    sind Export/KAM die Ansprechpartner, optional ein Länder-Manager zuerst.
+ *    Behebt #186 (Inline-CTAs zeigten international fälschlich DE-Berater). */
+export function fachberaterFuerBereich(
+  bereich: Produktbereich,
+  lang: string = "de",
+): Fachberater[] {
+  if (lang === "de") {
+    return FACHBERATER_DE.filter((b) => b.bereiche.includes(bereich));
+  }
+  const namen = [...(EXPORT_NACH_SPRACHE[lang] ?? []), ...EXPORT_ALLGEMEIN];
+  const out: Fachberater[] = [];
+  for (const name of namen) {
+    const b = FACHBERATER_INTERNATIONAL.find((x) => x.name === name);
+    if (b && !out.some((x) => x.name === b.name)) out.push(b);
+  }
+  return out;
 }

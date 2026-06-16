@@ -424,15 +424,15 @@ export default async function ProduktDetailPage({
         </section>
       )}
 
-      {/* Fachberater zum Bereich (Funnel-Karten, Korb 2) */}
-      {fachberaterFuerBereich(produkt.bereich).length > 0 && (
+      {/* Fachberater zum Bereich (Funnel-Karten, Korb 2) — locale-abhängig (#186) */}
+      {fachberaterFuerBereich(produkt.bereich, lang).length > 0 && (
         <section className="bg-icon-bg" style={{ padding: "56px 32px 64px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <h2 className="mb-6" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
               {dict.kontakt.fachberater_title}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {fachberaterFuerBereich(produkt.bereich).map((b) => (
+              {fachberaterFuerBereich(produkt.bereich, lang).map((b) => (
                 <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
               ))}
             </div>
