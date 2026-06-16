@@ -6,7 +6,9 @@
 // E-Mail-Format: [Initiale][Nachname]@korodur.de OHNE Punkt (bestätigt Steffi
 // 2026-06-14, gilt für ALLE Berater; die Alt-Site zeigt teils gepunktete
 // Anzeigeformen, die echten Aliase sind ohne Punkt).
-// Benjamin Lorenz: kein Porträt vorhanden (auch nicht auf der Alt-Site).
+// Porträts neu aus benannten Master-Fotos konvertiert (#187, 2026-06-16,
+// Quelle Documents/Claude/Projects/Bilder_mit_namen/, sharp → 320×320 webp).
+// Jens Lang behält das Alt-Site-Bild (kein Master vorhanden).
 
 import type { Produktbereich } from "./types";
 
@@ -43,6 +45,7 @@ export const FACHBERATER_DE: Fachberater[] = [
     telefon: "+49 (0) 170 3733988",
     telefonHref: "tel:+491703733988",
     email: "blorenz@korodur.de",
+    bild: "/images/fachberater/benjamin-lorenz.webp",
     bereiche: ["microtop"],
   },
   {
