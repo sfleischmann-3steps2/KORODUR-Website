@@ -27,18 +27,20 @@ export const bereiche: Bereich[] = [
   {
     slug: "industrieboden",
     bild: "/images/bereiche/industrieboden.webp",
+    // Rollen-sortiert (#93): zuerst alle Bodenprodukte, dann Haftbrücken/
+    // Untergrund, dann Oberflächenfinish — kein Vermischen mehr.
     produktgruppen: [
       "hartstoffestriche",
       "hartstoffeinstreuung",
       "hartstoffe",
       "schnellestrich",
       "selbstverlaufend",
+      "kunstharz-hartstoffe",
+      "systeme",
+      "additive",
       "untergrund-haftbruecken",
       "nachbehandlung",
       "impraegnierung",
-      "additive",
-      "kunstharz-hartstoffe",
-      "systeme",
     ],
   },
   {

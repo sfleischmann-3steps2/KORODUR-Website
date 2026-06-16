@@ -100,6 +100,9 @@
     "page": "Page"
   },
   "produkte": {
+    "produktart_bodenprodukt": "Produits de sol",
+    "produktart_haftbruecke": "Support et ponts d'adhérence",
+    "produktart_oberflaechenfinish": "Finition de surface et cure",
     "breadcrumb": "Produits",
     "title": "Notre gamme de produits",
     "subtitle": "Données techniques, normes et domaines d’application de toute la gamme KORODUR.",

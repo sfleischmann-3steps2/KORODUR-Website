@@ -100,6 +100,9 @@
     "page": "Página"
   },
   "produkte": {
+    "produktart_bodenprodukt": "Productos para suelos",
+    "produktart_haftbruecke": "Soporte y puentes de adherencia",
+    "produktart_oberflaechenfinish": "Acabado de superficie y curado",
     "breadcrumb": "Productos",
     "title": "Nuestra gama de productos",
     "subtitle": "Datos técnicos, normas y campos de aplicación de toda la gama KORODUR.",

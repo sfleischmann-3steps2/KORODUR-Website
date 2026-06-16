@@ -100,6 +100,9 @@
     "page": "Seite"
   },
   "produkte": {
+    "produktart_bodenprodukt": "Bodenprodukte",
+    "produktart_haftbruecke": "Untergrund & Haftbrücken",
+    "produktart_oberflaechenfinish": "Oberflächenfinish & Nachbehandlung",
     "breadcrumb": "Produkte",
     "title": "Unser Produktportfolio",
     "subtitle": "Technische Daten, Normen und Einsatzgebiete aller KORODUR-Produkte.",
