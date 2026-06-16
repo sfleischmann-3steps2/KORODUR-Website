@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "../lib/i18n";
 import type { Dictionary } from "../app/[lang]/dictionaries";
-import { bereiche } from "../data/bereiche";
+import { PORTFOLIO_SLUGS } from "../data/bereiche";
 import {
   KORODUR_ZENTRALE,
   SOCIAL_LINKS,
@@ -66,14 +66,16 @@ export default function Footer({
             {/* min-w-0 + break-words: lange Namen (Schnellbetonsysteme) dürfen
                 umbrechen statt in die Nachbarspalte zu laufen */}
             <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-5">
-              {bereiche.map((b) => (
-                <li key={b.slug} className="min-w-0">
+              {/* Produktportfolio (#188): die 7 Bereiche; Infrastruktur ohne
+                  eigene Seite ("bald verfügbar") wird nicht verlinkt. */}
+              {PORTFOLIO_SLUGS.filter((slug) => slug !== "infrastruktur").map((slug) => (
+                <li key={slug} className="min-w-0">
                   <Link
-                    href={`/${lang}/bereiche/${b.slug}/`}
+                    href={`/${lang}/bereiche/${slug}/`}
                     className={`${linkClass} break-words hyphens-auto`}
                     lang={lang}
                   >
-                    {bereichLabels[`${b.slug}_name`]}
+                    {bereichLabels[`${slug}_name`]}
                   </Link>
                 </li>
               ))}
