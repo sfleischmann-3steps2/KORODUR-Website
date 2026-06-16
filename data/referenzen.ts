@@ -50,7 +50,7 @@ export const referenzen: Referenz[] = [
     ort: "Göppingen",
     land: "Deutschland",
     flaeche: "1.000 m²",
-    produkte: ["NEODUR HE 60 rapid"],
+    produkte: ["NEODUR HE 60 rapid", "KORODUR HB 5 rapid"],
     herausforderungen: [
       "Hohe mechanische Belastung: schwere Maschinen und Kettenfahrzeuge",
       "Begrenzte Ausfallzeiten – exakte Planung erforderlich",
@@ -178,7 +178,7 @@ export const referenzen: Referenz[] = [
     ort: "Sylt",
     land: "Deutschland",
     flaeche: "2.200 m²",
-    produkte: ["NEODUR HE 65", "KORODUR HB 5 rapid"],
+    produkte: ["NEODUR HE 65", "KORODUR HB 5"],
     herausforderungen: [
       "Wiederherstellung im Zeitfenster von nur ca. 4 Monaten nach Brandschaden",
       "Hohe Anforderungen an Beständigkeit gegen mechanischen Verschleiß und Witterung",
@@ -304,7 +304,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Boden mit Charakter – ohne Stillstand",
     ort: "Ibbenbüren",
     land: "Deutschland",
-    produkte: ["NEODUR HE 60 rapid"],
+    produkte: ["NEODUR HE 60 rapid", "KORODUR HB 5 rapid"],
     herausforderungen: [
       "Unterschiedliche Einbauhöhen von 45 bis 115 mm",
       "Gleichzeitiger Kundenverkehr und täglicher Staplereinsatz",
@@ -677,7 +677,7 @@ export const referenzen: Referenz[] = [
     ort: "Zürich",
     land: "Schweiz",
     flaeche: "20.000 m²",
-    produkte: ["Epoxidharz-System"],
+    produkte: ["KORODUR DUROP"],
     herausforderungen: [
       "Parkhausbetrieb muss während der Arbeiten aufrechterhalten werden",
       "Kurze Sperrzeiten, sichere Nutzerführung während der Bauphasen",
@@ -709,7 +709,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Technik trifft Denkmal",
     ort: "Mainz / Wiesbaden",
     land: "Deutschland",
-    produkte: [],
+    produkte: ["KORODUR DUROP"],
     herausforderungen: [
       "Dauerbelastung durch Verkehr & Schwerlast",
       "Schutz der denkmalgeschützten Altbausubstanz",
@@ -885,7 +885,7 @@ export const referenzen: Referenz[] = [
     ort: "Burgdorf",
     land: "Schweiz",
     flaeche: "200 m²",
-    produkte: ["DOT Europe CONCRETE MIX", "Rapid Set CONCRETE PHARMACY"],
+    produkte: ["Rapid Set CONCRETE MIX", "Rapid Set CONCRETE PHARMACY"],
     herausforderungen: [
       "Die Komplettsanierung musste innerhalb von nur drei Wochen abgeschlossen werden. Der Turmboden von ca. 200 m² sollte innerhalb einer Woche herausgestemmt und neu verlegt werden, wobei eine lebensmittelresistente PU-Beschichtung erforderlich war.",
     ],
