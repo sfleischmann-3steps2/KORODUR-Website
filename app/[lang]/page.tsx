@@ -4,14 +4,13 @@ import ReferenceCard from "../../components/ReferenceCard";
 import { getReferenzBySlug } from "../../data/referenzen";
 import { localizeReferenzen } from "../../data/i18n/getLocalized";
 import { FEATURED_SLUGS } from "../../data/featured";
-import { bereiche } from "../../data/bereiche";
+import PortfolioGrid from "../../components/PortfolioGrid";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 import { withBasePath } from "../../lib/basePath";
 import { alternatesFor } from "../../lib/seo";
 import { AppIcon } from "@/components/ui/icon";
 import { ChevronRight } from "lucide-react";
-import { bereichIcon } from "../../components/bereichIcons";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -42,9 +41,6 @@ export default async function Home({
       .filter((r): r is NonNullable<typeof r> => r !== undefined),
     lang
   );
-
-  // Bereichs-Labels (lokalisiert, Keys: `<slug>_name` / `<slug>_teaser`)
-  const bereichTexte = dict.bereiche as Record<string, string>;
 
   // Finder steps
   // 4 Schritte (Steffi 2026-06-13, #89): "Ergebnisse" ist kein Schritt.
@@ -142,54 +138,7 @@ export default async function Home({
           >
             {dict.home.bereiche_subtitle}
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {bereiche.map((bereich) => (
-              <Link
-                key={bereich.slug}
-                href={`/${lang}/bereiche/${bereich.slug}/`}
-                className={`flex flex-col gap-2 rounded-xl bg-white p-6 no-underline transition-all duration-200 hover:border-cyan hover:shadow-lg ${
-                  bereich.abgegrenzt
-                    ? "border border-dashed border-mid-gray"
-                    : "border border-bullet-bg"
-                }`}
-              >
-                <span
-                  className={`flex items-center justify-center w-11 h-11 rounded-xl mb-1 ${bereich.abgegrenzt ? "bg-icon-bg" : "bg-navy"}`}
-                  aria-hidden="true"
-                >
-                  <AppIcon
-                    icon={bereichIcon(bereich.slug)}
-                    width={22}
-                    height={22}
-                    strokeWidth={2}
-                    className={bereich.abgegrenzt ? "text-mid-gray" : "text-white"}
-                  />
-                </span>
-                {bereich.abgegrenzt && (
-                  <span
-                    className="self-start bg-icon-bg text-navy text-xs rounded-full px-2 py-1"
-                    style={{ fontWeight: 700 }}
-                  >
-                    {dict.bereiche.katzenstreu_badge}
-                  </span>
-                )}
-                <span className="flex items-center justify-between gap-2 text-navy text-[17px]" style={{ fontWeight: 800 }}>
-                  {bereichTexte[`${bereich.slug}_name`]}
-                  <AppIcon
-                    icon={ChevronRight}
-                    width={18}
-                    height={18}
-                    strokeWidth={2}
-                    className="text-cyan shrink-0"
-                    aria-hidden="true"
-                  />
-                </span>
-                <span className="text-sm text-navy opacity-60 leading-[1.6]">
-                  {bereichTexte[`${bereich.slug}_teaser`]}
-                </span>
-              </Link>
-            ))}
-          </div>
+          <PortfolioGrid lang={lang} dict={dict} />
         </div>
       </section>
 
