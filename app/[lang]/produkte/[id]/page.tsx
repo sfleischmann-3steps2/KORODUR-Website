@@ -145,6 +145,15 @@ export default async function ProduktDetailPage({
                 {dict.produkte.layer_thickness}: {produkt.schichtdicke}
               </p>
             )}
+            {/* Belastbar nach (Sperrzeit-Versprechen, #132) — prominent im Kopf, wo Daten vorliegen */}
+            {produkt.belastbarNach && (
+              <p className="text-cyan-text mt-2 mb-0" style={{ fontSize: 16, fontWeight: 700 }}>
+                {dict.produkte.belastbar_nach}: {produkt.belastbarNach}
+                {produkt.belastbarNachZusatz && (
+                  <span className="text-navy/60" style={{ fontWeight: 600 }}> ({produkt.belastbarNachZusatz})</span>
+                )}
+              </p>
+            )}
             {/* Bezugsquellen-Hinweis (Rapid Set: exklusiv über den Fachhandel) —
                 Google-Direkteinstieg auf die PDP ist der Normalfall (Korb 2) */}
             {getBereichBySlug(produkt.bereich)?.haendlerHinweis && (
