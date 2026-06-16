@@ -100,6 +100,9 @@
     "page": "Strona"
   },
   "produkte": {
+    "produktart_bodenprodukt": "Produkty podłogowe",
+    "produktart_haftbruecke": "Podłoże i warstwy sczepne",
+    "produktart_oberflaechenfinish": "Wykończenie powierzchni i pielęgnacja",
     "breadcrumb": "Produkty",
     "title": "Nasze portfolio produktów",
     "subtitle": "Dane techniczne, normy i zastosowania całej oferty KORODUR.",

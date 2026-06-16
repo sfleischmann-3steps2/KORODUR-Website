@@ -9,6 +9,11 @@ import { notFound } from "next/navigation";
 import { localizeProdukte } from "../../../data/i18n/getLocalized";
 import { withBasePath } from "../../../lib/basePath";
 import { alternatesFor } from "../../../lib/seo";
+import {
+  PRODUKTART_REIHENFOLGE,
+  produktartVonGruppe,
+  type Produktart,
+} from "../../../data/produktart";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -42,6 +47,93 @@ export default async function ProduktePage({
       items: localizedProdukte.filter((p) => p.bereich === b.slug),
     }))
     .filter((g) => g.items.length > 0);
+
+  type LP = (typeof localizedProdukte)[number];
+
+  // Industrieboden nach Rolle gliedern (#93): Bodenprodukte zuerst, dann
+  // Haftbrücken/Untergrund, dann Oberflächenfinish. Andere Bereiche: flaches Grid.
+  const rollenLabel: Record<Produktart, string> = {
+    bodenprodukt: dict.produkte.produktart_bodenprodukt,
+    haftbruecke: dict.produkte.produktart_haftbruecke,
+    oberflaechenfinish: dict.produkte.produktart_oberflaechenfinish,
+  };
+  const rollenBuckets = (items: LP[]) =>
+    PRODUKTART_REIHENFOLGE.map((art) => ({
+      art,
+      label: rollenLabel[art],
+      // unmappte Gruppen defensiv den Bodenprodukten zuschlagen (kein Produkt verlieren)
+      items: items.filter(
+        (p) => (produktartVonGruppe(p.produktgruppe) ?? "bodenprodukt") === art,
+      ),
+    })).filter((bucket) => bucket.items.length > 0);
+
+  const KartenGrid = ({ items }: { items: LP[] }) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {items.map((produkt) => (
+        <Link
+          key={produkt.id}
+          href={`/${lang}/produkte/${produkt.id}`}
+          className="no-underline group block"
+        >
+          <div
+            className="bg-white p-6 flex flex-row gap-5 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg"
+            style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}
+          >
+            <div className="flex flex-col gap-3 flex-1 min-w-0">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
+                  {produkt.name}
+                </h3>
+                {produkt.qualitaetsklasse && (
+                  <span
+                    className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
+                    style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}
+                  >
+                    {produkt.qualitaetsklasse}
+                  </span>
+                )}
+              </div>
+              <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">
+                {produkt.kurzbeschreibung}
+              </p>
+              {produkt.schichtdicke && (
+                <p className="text-cyan-text text-[12px] m-0" style={{ fontWeight: 700 }}>
+                  {dict.produkte.layer_thickness}: {produkt.schichtdicke}
+                </p>
+              )}
+              <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
+                {produkt.normen.slice(0, 2).map((norm) => (
+                  <span
+                    key={norm}
+                    className="text-[10px] text-navy opacity-50 px-2 py-0.5 rounded"
+                    style={{ backgroundColor: "var(--icon-bg)", fontWeight: 600 }}
+                  >
+                    {norm}
+                  </span>
+                ))}
+                {produkt.normen.length > 2 && (
+                  <span className="text-[10px] text-navy opacity-30 px-1 py-0.5">
+                    +{produkt.normen.length - 2}
+                  </span>
+                )}
+              </div>
+            </div>
+            {produkt.bild && (
+              <div className="shrink-0 flex items-center">
+                <Image
+                  src={withBasePath(produkt.bild)}
+                  alt={produkt.name}
+                  width={90}
+                  height={120}
+                  className="object-contain"
+                />
+              </div>
+            )}
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
 
   return (
     <>
@@ -96,71 +188,26 @@ export default async function ProduktePage({
             >
               {group.label}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {group.items.map((produkt) => (
-                <Link
-                  key={produkt.id}
-                  href={`/${lang}/produkte/${produkt.id}`}
-                  className="no-underline group block"
-                >
-                  <div
-                    className="bg-white p-6 flex flex-row gap-5 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg"
-                    style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}
-                  >
-                    <div className="flex flex-col gap-3 flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-3">
-                        <h3 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
-                          {produkt.name}
-                        </h3>
-                        {produkt.qualitaetsklasse && (
-                          <span
-                            className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
-                            style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}
-                          >
-                            {produkt.qualitaetsklasse}
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">
-                        {produkt.kurzbeschreibung}
-                      </p>
-                      {produkt.schichtdicke && (
-                        <p className="text-cyan-text text-[12px] m-0" style={{ fontWeight: 700 }}>
-                          {dict.produkte.layer_thickness}: {produkt.schichtdicke}
-                        </p>
-                      )}
-                      <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
-                        {produkt.normen.slice(0, 2).map((norm) => (
-                          <span
-                            key={norm}
-                            className="text-[10px] text-navy opacity-50 px-2 py-0.5 rounded"
-                            style={{ backgroundColor: "var(--icon-bg)", fontWeight: 600 }}
-                          >
-                            {norm}
-                          </span>
-                        ))}
-                        {produkt.normen.length > 2 && (
-                          <span className="text-[10px] text-navy opacity-30 px-1 py-0.5">
-                            +{produkt.normen.length - 2}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    {produkt.bild && (
-                      <div className="shrink-0 flex items-center">
-                        <Image
-                          src={withBasePath(produkt.bild)}
-                          alt={produkt.name}
-                          width={90}
-                          height={120}
-                          className="object-contain"
-                        />
-                      </div>
-                    )}
+            {group.slug === "industrieboden" ? (
+              <div className="flex flex-col gap-10">
+                {rollenBuckets(group.items).map((bucket) => (
+                  <div key={bucket.art}>
+                    <h3
+                      className="mb-4 text-navy/70 uppercase"
+                      style={{ fontSize: "clamp(14px, 1.6vw, 17px)", fontWeight: 800, letterSpacing: "0.04em" }}
+                    >
+                      {bucket.label}
+                      <span className="ml-2 text-navy/30 text-[13px]" style={{ fontWeight: 600 }}>
+                        {bucket.items.length}
+                      </span>
+                    </h3>
+                    <KartenGrid items={bucket.items} />
                   </div>
-                </Link>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <KartenGrid items={group.items} />
+            )}
           </div>
         </section>
       ))}

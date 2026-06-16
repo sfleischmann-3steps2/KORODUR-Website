@@ -100,6 +100,9 @@
     "page": "Page"
   },
   "produkte": {
+    "produktart_bodenprodukt": "Floor Products",
+    "produktart_haftbruecke": "Substrate & Bonding Agents",
+    "produktart_oberflaechenfinish": "Surface Finish & Curing",
     "breadcrumb": "Products",
     "title": "Our product portfolio",
     "subtitle": "Technical data, standards and applications across the entire KORODUR range.",
