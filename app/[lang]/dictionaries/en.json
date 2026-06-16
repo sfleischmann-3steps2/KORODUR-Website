@@ -100,6 +100,9 @@
     "page": "Page"
   },
   "produkte": {
+    "suche_reset": "Clear search",
+    "suche_placeholder": "Search products …",
+    "suche_keine": "No products found.",
     "produktart_bodenprodukt": "Floor Products",
     "produktart_haftbruecke": "Substrate & Bonding Agents",
     "produktart_oberflaechenfinish": "Surface Finish & Curing",

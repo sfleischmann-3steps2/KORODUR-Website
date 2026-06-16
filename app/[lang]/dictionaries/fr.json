@@ -100,6 +100,9 @@
     "page": "Page"
   },
   "produkte": {
+    "suche_reset": "Effacer la recherche",
+    "suche_placeholder": "Rechercher un produit …",
+    "suche_keine": "Aucun produit trouvé.",
     "produktart_bodenprodukt": "Produits de sol",
     "produktart_haftbruecke": "Support et ponts d'adhérence",
     "produktart_oberflaechenfinish": "Finition de surface et cure",

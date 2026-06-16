@@ -100,6 +100,9 @@
     "page": "Página"
   },
   "produkte": {
+    "suche_reset": "Borrar búsqueda",
+    "suche_placeholder": "Buscar producto …",
+    "suche_keine": "No se han encontrado productos.",
     "produktart_bodenprodukt": "Productos para suelos",
     "produktart_haftbruecke": "Soporte y puentes de adherencia",
     "produktart_oberflaechenfinish": "Acabado de superficie y curado",
