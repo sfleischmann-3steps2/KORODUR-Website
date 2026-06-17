@@ -25,13 +25,14 @@ type Params = Promise<{ lang: string; slug: string }>;
 // Projekttyp-Einordnung je Bereich (Steffi 2026-06-13, #87): macht auf der
 // Bereich-Detailseite sichtbar, ob der Bereich für Neubau und/oder Sanierung
 // relevant ist, und routet in den passenden Kontext. Katzenstreu + reine
-// Taxonomie-Bereiche (schnellbetonsysteme, 3d-concrete-printing) bleiben ohne.
+// Taxonomie-Bereich (3d-concrete-printing) bleibt ohne.
 const BEREICH_PROJEKTARTEN: Record<string, Projektart[]> = {
   industrieboden: ["neubau", "sanierung"],
   sichtestrich: ["neubau"],
   spezialbaustoffe: ["neubau", "sanierung"],
   microtop: ["sanierung"],
   "rapid-set": ["sanierung"],
+  infrastruktur: ["sanierung"],
 };
 
 // Cross-Selling (Steffi 2026-06-13, #84): kontextuell verwandter Bereich.
@@ -40,6 +41,7 @@ const CROSSSELL: Record<string, string> = {
   industrieboden: "rapid-set",
   spezialbaustoffe: "rapid-set",
   "rapid-set": "industrieboden",
+  infrastruktur: "rapid-set",
 };
 
 function ProduktGrid({
@@ -117,17 +119,22 @@ export default async function BereichPage({ params }: { params: Params }) {
   const bereich = getBereichBySlug(slug);
   if (!bereich) notFound();
 
+  // Multi-Bereich (#215): Produkt gehört zum Bereich über Primär-`bereich`
+  // ODER `zusatzBereiche` (z. B. KOROCRETE in Betonsanierung + Infrastruktur).
+  const gehoertZuBereich = (p: (typeof produkte)[number]) =>
+    p.bereich === bereich.slug || (p.zusatzBereiche?.includes(bereich.slug) ?? false);
+
   const dict = await getDictionary(lang);
   const tb = (k: string) => (dict.bereiche as Record<string, string>)[k] ?? k;
   const localizedProdukte = await localizeProdukte(
-    produkte.filter((p) => p.bereich === bereich.slug),
+    produkte.filter(gehoertZuBereich),
     lang
   );
 
   // Referenz-Teaser (Korb 2): Referenzen, die Produkte dieses Bereichs
   // einsetzen — schließt die Schleife Bereich→Produkt→Referenz→Kontakt.
   const bereichsProduktNamen = new Set(
-    produkte.filter((p) => p.bereich === bereich.slug).map((p) => p.name.toLowerCase())
+    produkte.filter(gehoertZuBereich).map((p) => p.name.toLowerCase())
   );
   const bereichsReferenzen = await localizeReferenzen(
     referenzen

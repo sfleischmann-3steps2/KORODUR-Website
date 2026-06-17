@@ -20,8 +20,7 @@ export const BEREICH_ICONS: Record<string, LucideIcon> = {
   spezialbaustoffe: Package,
   katzenstreu: PawPrint,
   infrastruktur: Route,
-  // Taxonomie-Bereiche ohne eigene Seite — Fallbacks:
-  schnellbetonsysteme: Timer,
+  // Taxonomie-Bereich ohne eigene Seite — Fallback:
   "3d-concrete-printing": Package,
 };
 

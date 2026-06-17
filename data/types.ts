@@ -181,7 +181,7 @@ export type Produktbereich =
   | "sichtestrich"
   | "microtop"
   | "rapid-set"
-  | "schnellbetonsysteme"
+  | "infrastruktur"
   | "spezialbaustoffe"
   | "3d-concrete-printing"
   | "katzenstreu";

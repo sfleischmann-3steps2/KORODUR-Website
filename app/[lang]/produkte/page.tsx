@@ -59,7 +59,9 @@ export default async function ProduktePage({
   // Produktart-Rolle (#93): Bodenprodukte zuerst, dann Haftbrücken, dann Finish.
   const gruppen: BereichsGruppe[] = bereiche
     .map((b): BereichsGruppe | null => {
-      const items = localizedProdukte.filter((p) => p.bereich === b.slug);
+      const items = localizedProdukte.filter(
+        (p) => p.bereich === b.slug || (p.zusatzBereiche?.includes(b.slug) ?? false)
+      );
       if (items.length === 0) return null;
       const base: BereichsGruppe = {
         slug: b.slug,

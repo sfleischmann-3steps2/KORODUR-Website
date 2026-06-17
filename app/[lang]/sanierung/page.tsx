@@ -55,7 +55,7 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
   ];
 
   // Sanierungs-Schwerpunkte (Steffi 2026-06-13): Sanierung ist breiter als
-  // Industrieboden — Infrastruktur (Bereich kommt noch → Platzhalter) und
+  // Industrieboden — Infrastruktur (seit #216 echter Bereich) und
   // Trinkwasser & Spezial (MICROTOP für Trinkwasser, Rapid Set für Schnellreparatur).
   const schwerpunkte: Array<{
     href: string | null;
@@ -65,7 +65,7 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
     badge: string | null;
   }> = [
     { href: `/${lang}/bereiche/industrieboden/`, icon: Layers, title: dict.sanierungHub.sp_industrieboden_title, text: dict.sanierungHub.sp_industrieboden_text, badge: null },
-    { href: null, icon: Route, title: dict.sanierungHub.sp_infrastruktur_title, text: dict.sanierungHub.sp_infrastruktur_text, badge: dict.sanierungHub.sp_infrastruktur_badge },
+    { href: `/${lang}/bereiche/infrastruktur/`, icon: Route, title: dict.sanierungHub.sp_infrastruktur_title, text: dict.sanierungHub.sp_infrastruktur_text, badge: null },
     { href: `/${lang}/bereiche/microtop/`, icon: Droplets, title: dict.sanierungHub.sp_trinkwasser_title, text: dict.sanierungHub.sp_trinkwasser_text, badge: null },
   ];
 

@@ -48,7 +48,12 @@ export const bereiche: Bereich[] = [
     bild: "/images/bereiche/sichtestrich.webp",
     produktgruppen: ["geschliffen", "geglaettet", "truazzo"],
   },
-  { slug: "schnellbetonsysteme", bild: "/images/bereiche/schnellbetonsysteme.webp" },
+  {
+    // Infrastruktur (#216): eigener Bereich, ersetzt „Schnellbetonsysteme".
+    // KOROCRETE erscheint hier als Zweit-Bereich (Primär: Betonsanierung) — #219.
+    slug: "infrastruktur",
+    produktgruppen: ["schnellbeton"],
+  },
   {
     slug: "rapid-set",
     bild: "/images/bereiche/rapid-set.webp",
@@ -80,11 +85,10 @@ export function getBereichBySlug(slug: string): Bereich | undefined {
   return bereiche.find((b) => b.slug === slug);
 }
 
-// Kuratiertes Produktportfolio (Technik-Feedback 2026-06-16, #188): die 7
-// Bereiche, die Homepage-Grid UND /bereiche-Übersicht identisch zeigen.
-// Reihenfolge freigegeben. `infrastruktur` ist (noch) ein Platzhalter-Bereich
-// („Bald verfügbar", kein eigener Bereich in `bereiche`/0 Produkte) — Texte aus
-// `sanierungHub.sp_infrastruktur_*`. Schnellbetonsysteme + 3D-Druck bewusst raus.
+// Kuratiertes Produktportfolio (Technik-Feedback 2026-06-16/-17, #188/#216): die
+// 7 Bereiche, die Homepage-Grid UND /bereiche-Übersicht identisch zeigen.
+// Reihenfolge freigegeben. `infrastruktur` ist seit #216 ein echter Bereich
+// (KOROCRETE als Zweit-Bereich). Schnellbetonsysteme + 3D-Druck bewusst raus.
 export const PORTFOLIO_SLUGS = [
   "industrieboden",
   "rapid-set",

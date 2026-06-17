@@ -35,6 +35,12 @@ export interface Produkt {
    *  Anwendungsmatrix ausgewertet. Quelle: KORODUR-website-Scrape
    *  (01_analyse/scraped_content/produktuebersicht.md). */
   bereich: Produktbereich;
+  /** Weitere Bereiche, in denen das Produkt zusätzlich erscheint (Portfolio-
+   *  Umbau #215). Ein Produkt kann in mehreren Bereichen geführt werden, z. B.
+   *  KOROCRETE in Betonsanierung (primär) UND Infrastruktur. Reine Website-
+   *  Navigation; Lösungsfinder/Anwendungsmatrix werten das NICHT aus.
+   *  Darf den Primär-`bereich` nicht wiederholen (validate-produkte.ts). */
+  zusatzBereiche?: Produktbereich[];
   /** Produktgruppe innerhalb des Bereichs (Bereichsseiten-Gliederung).
    *  Kuratierte Zuordnung mit Sign-off, NICHT aus der Alt-Site übernommen —
    *  siehe docs/website-migration/zuordnung-<bereich>.md. Muss in
