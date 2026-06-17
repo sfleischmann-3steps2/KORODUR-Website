@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Locale } from "../lib/i18n";
 import type { Dictionary } from "../app/[lang]/dictionaries";
-import { PORTFOLIO_SLUGS } from "../data/bereiche";
 import {
   KORODUR_ZENTRALE,
   SOCIAL_LINKS,
@@ -27,11 +26,24 @@ export default function Footer({
 }) {
   const bereichLabels = dict.bereiche as Record<string, string>;
 
+  // #226: Unternehmen-Spalte = Unternehmen · Referenzen · Ausschreibungstexte.
+  // Sanierung-Link ganz aus dem Footer; Kontakt ist eigene Spalte.
   const unternehmenLinks = [
     { href: `/${lang}/unternehmen/`, label: dict.nav.unternehmen },
     { href: `/${lang}/referenzen/`, label: dict.nav.referenzen },
-    { href: `/${lang}/sanierung/`, label: dict.nav.sanierung },
-    { href: `/${lang}/kontakt/`, label: dict.nav.kontakt },
+  ];
+
+  // #226: feste Produktblock-Reihenfolge (spaltenweise, NICHT PORTFOLIO_SLUGS
+  // umsortieren — das steuert das Home-Grid). Links → unten, dann rechts:
+  // links Industrieboden·Betonsanierung·Sichtestrich, rechts
+  // Spezialbaustoffe·TW-Behältersanierung·Katzenstreu. Infrastruktur (noch) ohne Slot.
+  const footerProduktReihenfolge = [
+    "industrieboden",
+    "rapid-set",
+    "sichtestrich",
+    "spezialbaustoffe",
+    "microtop",
+    "katzenstreu",
   ];
 
   const linkClass =
@@ -65,10 +77,10 @@ export default function Footer({
             </Link>
             {/* min-w-0 + break-words: lange Namen (Schnellbetonsysteme) dürfen
                 umbrechen statt in die Nachbarspalte zu laufen */}
-            <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-5">
-              {/* Produktportfolio (#188): die 7 Bereiche; Infrastruktur ohne
-                  eigene Seite ("bald verfügbar") wird nicht verlinkt. */}
-              {PORTFOLIO_SLUGS.filter((slug) => slug !== "infrastruktur").map((slug) => (
+            {/* Spaltenweise gefüllt (grid-flow-col + 3 Reihen): linke Spalte
+                zuerst, dann rechte — feste Reihenfolge aus footerProduktReihenfolge. */}
+            <ul className="list-none m-0 p-0 grid grid-cols-2 grid-rows-3 grid-flow-col gap-x-5">
+              {footerProduktReihenfolge.map((slug) => (
                 <li key={slug} className="min-w-0">
                   <Link
                     href={`/${lang}/bereiche/${slug}/`}
@@ -82,12 +94,13 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* (b) Unternehmen + Ausschreibungstexte */}
-          <div>
+          {/* (b) Unternehmen + Ausschreibungstexte — #226: 3. Spalte rechtsbündig
+              (hebt sich von den Produkten ab); Kontakt + Social bleiben links. */}
+          <div className="lg:text-right">
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_unternehmen}
             </h3>
-            <ul className="list-none m-0 p-0 flex flex-col">
+            <ul className="list-none m-0 p-0 flex flex-col lg:items-end">
               {unternehmenLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className={linkClass}>
