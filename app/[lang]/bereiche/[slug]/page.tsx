@@ -288,12 +288,14 @@ export default async function BereichPage({ params }: { params: Params }) {
                       {tb(isNeubau ? "kontext_neubau_text" : "kontext_sanierung_text")}
                     </p>
                     <div className="flex flex-wrap gap-x-5 gap-y-2">
+                      {/* #233: Weiterschaltung auf die bereichsspezifische Sub-Seite
+                          (/bereiche/<slug>/<art>) statt aufs globale /neubau//sanierung. */}
                       <Link
-                        href={`/${lang}/${isNeubau ? "neubau" : "sanierung"}/`}
+                        href={`/${lang}/bereiche/${slug}/${art}/`}
                         className={`inline-flex items-center gap-1.5 text-[14px] no-underline hover:underline ${isNeubau ? "text-white" : "text-cyan-text"}`}
                         style={{ fontWeight: 700, minHeight: 44 }}
                       >
-                        {isNeubau ? dict.nav.neubau : dict.nav.sanierung}
+                        {tb(`${slug}_name`)}
                         <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
                       </Link>
                       <Link
