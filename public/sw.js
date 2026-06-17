@@ -1,4 +1,4 @@
-const CACHE_NAME = "korodur-v5";
+const CACHE_NAME = "korodur-v6";
 
 // Install: cache app shell.
 // Pfade RELATIV zum SW-Scope ("./de/" statt "/de/"), damit der
