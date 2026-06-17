@@ -10,6 +10,7 @@ import { localizeProdukte, localizeReferenzen } from "../../../../data/i18n/getL
 import { referenzen } from "../../../../data/referenzen";
 import ReferenceCard from "../../../../components/ReferenceCard";
 import { fachberaterFuerBereich } from "../../../../data/fachberater";
+import { KORODUR_ZENTRALE } from "../../../../lib/kontaktDaten";
 import BeraterCard from "../../../../components/BeraterCard";
 import BereichProduktFilter from "../../../../components/BereichProduktFilter";
 import { alternatesFor } from "../../../../lib/seo";
@@ -174,21 +175,32 @@ export default async function BereichPage({ params }: { params: Params }) {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-navy/70" aria-hidden="true" />
-          <div className="relative mx-auto" style={{ maxWidth: 1320, padding: "56px 32px 60px" }}>
-            {bereich.abgegrenzt && (
-              <span
-                className="inline-block bg-white text-navy text-[12px] rounded-full mb-3"
-                style={{ padding: "5px 14px", fontWeight: 700 }}
-              >
-                {tb("katzenstreu_badge")}
-              </span>
-            )}
-            <h1 className="text-white mb-3" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
-              {tb(`${slug}_name`)}
-            </h1>
-            <p className="text-white/90 mb-0" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 760 }}>
-              {tb(`${slug}_intro`)}
-            </p>
+          {/* #231: Text links, ein CTA „Technische Fachberatung" rechts (analog Home-Hero). */}
+          <div className="relative mx-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6" style={{ maxWidth: 1320, padding: "56px 32px 60px" }}>
+            <div className="lg:flex-1">
+              {bereich.abgegrenzt && (
+                <span
+                  className="inline-block bg-white text-navy text-[12px] rounded-full mb-3"
+                  style={{ padding: "5px 14px", fontWeight: 700 }}
+                >
+                  {tb("katzenstreu_badge")}
+                </span>
+              )}
+              <h1 className="text-white mb-3" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
+                {tb(`${slug}_name`)}
+              </h1>
+              <p className="text-white/90 mb-0" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 760 }}>
+                {tb(`${slug}_intro`)}
+              </p>
+            </div>
+            <Link
+              href={`/${lang}/kontakt/?bereich=${slug}`}
+              className="inline-flex items-center justify-center gap-2 shrink-0 rounded-[6px] bg-cyan text-white no-underline hover:bg-cyan-hover transition-colors duration-200"
+              style={{ padding: "14px 26px", fontWeight: 800, fontSize: 15, minHeight: 48 }}
+            >
+              {tb("header_cta")}
+              <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+            </Link>
           </div>
         </section>
       ) : (
@@ -217,6 +229,15 @@ export default async function BereichPage({ params }: { params: Params }) {
                 {tb(`${slug}_intro`)}
               </p>
             </div>
+            {/* #231: ein CTA „Technische Fachberatung" rechts */}
+            <Link
+              href={`/${lang}/kontakt/?bereich=${slug}`}
+              className="inline-flex items-center justify-center gap-2 shrink-0 rounded-[6px] bg-cyan text-white no-underline hover:bg-cyan-hover transition-colors duration-200"
+              style={{ padding: "14px 26px", fontWeight: 800, fontSize: 15, minHeight: 48 }}
+            >
+              {tb("header_cta")}
+              <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+            </Link>
           </div>
         </section>
       )}
@@ -235,33 +256,9 @@ export default async function BereichPage({ params }: { params: Params }) {
         </section>
       )}
 
-      {/* CTA oben: Sprung-Anker zu Produkten + Fachberatern (Steffi #119) */}
-      {(localizedProdukte.length > 0 || alleFachberater.length > 0) && (
-        <section style={{ padding: "0 32px 8px" }}>
-          <div className="mx-auto flex flex-wrap gap-3" style={{ maxWidth: 1320 }}>
-            {localizedProdukte.length > 0 && (
-              <a
-                href="#produkte"
-                className="inline-flex items-center justify-center gap-2 rounded-[6px] bg-navy text-white no-underline hover:bg-navy/90 transition-colors duration-200"
-                style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15, minHeight: 44 }}
-              >
-                {dict.nav.produkte}
-                <AppIcon icon={ChevronRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
-              </a>
-            )}
-            {alleFachberater.length > 0 && (
-              <a
-                href="#fachberater"
-                className="inline-flex items-center justify-center gap-2 rounded-[6px] border-2 border-navy text-navy no-underline hover:bg-navy hover:text-white transition-colors duration-200"
-                style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15, minHeight: 44 }}
-              >
-                {dict.kontakt.fachberater_title}
-                <AppIcon icon={ChevronRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
-              </a>
-            )}
-          </div>
-        </section>
-      )}
+      {/* #231: Sprung-Anker-Band entfernt — der eine Header-CTA „Technische
+          Fachberatung" ersetzt es; Seite fließt Header → Produkte → Referenzen
+          → Fachberatung → Fallback-CTA. */}
 
       {/* Projekttyp-Framing: Neubau und/oder Sanierung (#87) */}
       {/* Framing nur bei Doppelnutzung (Steffi #119): reine-Sanierungs-Bereiche
@@ -430,6 +427,37 @@ export default async function BereichPage({ params }: { params: Params }) {
               {alleFachberater.map((b) => (
                 <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Katzenstreu: generischer Kontaktblock ohne Foto + zentrale Festnetznummer
+          (#232) — eigener Geschäftsbereich ohne Fachberater-Mapping. */}
+      {slug === "katzenstreu" && (
+        <section id="fachberater" className="scroll-mt-24" style={{ padding: "56px 32px 64px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <div className="rounded-xl border border-bullet-bg bg-white p-6" style={{ maxWidth: 560 }}>
+              <h2 className="mb-2" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>
+                {tb("cta_title")}
+              </h2>
+              <p className="text-navy/70 text-[15px] mt-0 mb-4 leading-[1.6]">{tb("cta_text")}</p>
+              <div className="flex flex-col gap-1 mb-5 text-[15px]">
+                <a href={KORODUR_ZENTRALE.telefonHref} className="text-navy no-underline hover:text-cyan-text" style={{ fontWeight: 700 }}>
+                  {KORODUR_ZENTRALE.telefon}
+                </a>
+                <a href={`mailto:${KORODUR_ZENTRALE.email}`} className="text-navy/70 no-underline hover:text-cyan-text">
+                  {KORODUR_ZENTRALE.email}
+                </a>
+              </div>
+              <Link
+                href={`/${lang}/kontakt/?bereich=${slug}`}
+                className="inline-flex items-center gap-2 text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
+                style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15 }}
+              >
+                {tb("cta_button")}
+                <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </section>
