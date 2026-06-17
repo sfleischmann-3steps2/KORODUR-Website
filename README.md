@@ -1,6 +1,6 @@
 # KORODUR Sanierung – Web App
 
-Interaktive Web-Applikation für das KORODUR-Produktportfolio, im Ausbau zur neuen korodur.de (8 Produktbereiche, Unternehmens- und Kontaktseiten). Kern bleibt das Sanierungs-Sales-Tool mit Lösungsfinder. Zielgruppe: Vertriebler, Bauherren, Architekten und Interessenten.
+Interaktive Web-Applikation als neue korodur.de: **Produktportfolio** mit 7 Bereichen (inkl. neuem Bereich Infrastruktur), einheitlichen Bereichsseiten mit Neubau-/Sanierungs-Tiefe sowie Unternehmens- und Kontaktseiten. Kern bleibt das Sanierungs-Sales-Tool mit Lösungsfinder. Zielgruppe: Vertriebler, Bauherren, Architekten und Interessenten.
 
 ## Live ansehen
 
@@ -12,9 +12,11 @@ Verfügbar in: [Deutsch](https://sfleischmann-3steps2.github.io/KORODUR-Sanierun
 
 - **5 Sprachen** – DE / EN / FR / PL / ES, komplett übersetzt (UI + Inhalte), gegen KORODUR-Glossar geprüft
 - **Lösungsfinder** – adaptiver Wizard: Fläche → Innen/Außen → Einsatzbereich (6 referenzgedeckte Cluster) → Zeitfenster → Top-Produkt + passende Referenzen
-- **55 Referenzprojekte** (Neubau + Sanierung) mit Herausforderungen, Lösung, Vorteilen, Produktdaten und **Bildergalerie** (3–8 Fotos pro Referenz, Lightbox mit Pfeiltasten)
-- **78 Produkte** in 8 Bereichen mit technischen Daten, Normen, Qualitätsklassen, Varianten und **Produkt-Mockups** (13 davon in der Sanierungs-Matrix)
-- **Einsatzbereich-Filter** über alle Referenzen (8 Bereiche: Lager & Logistik, Industrie & Produktion, Lebensmittel, Flugzeug, Parkdeck, Infrastruktur & Zufahrten, Verkaufsräume, Schwerindustrie)
+- **Produktportfolio** – Menüpunkt „Portfolio" mit 7 Bereichen (Industrieboden, Betonsanierung, Infrastruktur, Sichtestrich, Spezialbaustoffe, TW-Behältersanierung, Katzenstreu); symbolische Referenzfotos in den Kacheln
+- **Einheitliche Bereichsseiten** – Header mit CTA „Technische Fachberatung", bereichsspezifische Fachberater, Produktgruppen + Referenzen; Bereiche mit Neubau **und** Sanierung haben verschachtelte Sub-Seiten (`/bereiche/<slug>/{neubau,sanierung}`)
+- **133 Referenzprojekte** (Neubau + Sanierung) mit Herausforderungen, Lösung, Vorteilen, Produktdaten und **Bildergalerie** (3–8 Fotos pro Referenz, Lightbox mit Pfeiltasten); Praxis-Teaser auch in den Fachartikeln
+- **71 Produkte** mit technischen Daten, Normen, Qualitätsklassen, Varianten und Produkt-Detailseiten; Produkte können in mehreren Bereichen geführt werden (z. B. KOROCRETE in Betonsanierung + Infrastruktur)
+- **Einsatzbereich-Filter** über alle Referenzen (6 referenzgedeckte Cluster, 3 innen + 3 außen)
 - **Anwendungsmatrix** – Web-Projektion des Messeposters: 6 kuratierte Produkte als Spalten, technische Kernwerte (Klassifizierung, Schichtdicke, belastbar nach) + Vorteil-Zeile + 6 Anwendungs-Zeilen (✓✓ Kernanwendung / ✓ geeignet), „Mehr Infos"-Link je Produkt (TDS bzw. Produktseite)
 - **Volltextsuche** (Cmd/Ctrl+K) über Referenzen, Kategorien und Produkte
 - **Responsive** – Desktop, Tablet, Mobile
@@ -39,7 +41,8 @@ npm run dev
 ```
 /[lang]/
 ├── Startseite (dualer Hero Neubau + Sanierung, Bereichs-Grid, Referenz-Highlights, Lösungsfinder-Teaser)
-├── bereiche/[slug]/ (8 Produktbereiche: Intro, Referenzen, Produktgruppen, Kontakt-CTA)
+├── bereiche/[slug]/ (Portfolio-Bereiche: Header + CTA, Produktgruppen, Referenzen, Fachberater)
+│   └── [neubau|sanierung]/ (verschachtelte Sub-Seiten bei Bereichen mit beidem)
 ├── loesungsfinder/ (adaptiver Wizard → Matching-Referenzen + aggregierte Produkte)
 ├── referenzen/ (Filter: Projektart · Sanierungsart · Einsatzbereich · Dringlichkeit · Produkt)
 ├── produkte/ (Portfolio nach Bereichen + Anwendungsmatrix + Detail-Seiten)
@@ -66,8 +69,8 @@ npm run dev
 │   ├── SearchOverlay.tsx    # Volltextsuche (Cmd+K)
 │   └── ...                  # LanguageSwitcher, TileGrid, etc.
 ├── data/
-│   ├── referenzen.ts        # 55 Referenzen (DE-Basis, Neubau + Sanierung)
-│   ├── produkte.ts          # 78 Produkte mit technischen Daten + Mockup-Bildern (13 in Sanierungs-Matrix)
+│   ├── referenzen.ts        # 133 Referenzen (DE-Basis, Neubau + Sanierung)
+│   ├── produkte.ts          # 71 Produkte mit technischen Daten + Bereich/zusatzBereiche
 │   ├── loesungsfinder.ts    # 4-Step-Definitionen + Scoring-Logik
 │   ├── types.ts             # Referenz-Interface: sanierungsart/einsatzbereiche/
 │   │                        #   zeitDringlichkeit/zusatzfunktionen
