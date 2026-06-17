@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { AppIcon } from "@/components/ui/icon";
-import { ArrowRight, Building2, Compass, Grid3x3, Layers, Route, Droplets } from "lucide-react";
+import { ArrowRight, Layers, Route, Droplets } from "lucide-react";
 import { alternatesFor } from "../../../lib/seo";
 import { referenzen } from "../../../data/referenzen";
 import { localizeReferenzen } from "../../../data/i18n/getLocalized";
@@ -33,26 +33,9 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
     lang
   );
 
-  const cards = [
-    {
-      href: `/${lang}/loesungsfinder/`,
-      icon: Compass,
-      title: dict.sanierungHub.card_loesungsfinder_title,
-      text: dict.sanierungHub.card_loesungsfinder_text,
-    },
-    {
-      href: `/${lang}/anwendungsmatrix/`,
-      icon: Grid3x3,
-      title: dict.sanierungHub.card_matrix_title,
-      text: dict.sanierungHub.card_matrix_text,
-    },
-    {
-      href: `/${lang}/referenzen/`,
-      icon: Building2,
-      title: dict.sanierungHub.card_referenzen_title,
-      text: dict.sanierungHub.card_referenzen_text,
-    },
-  ];
+  // #249: Lösungsfinder- und Anwendungsmatrix-CTAs raus (gehören zu
+  // Industrieboden/Neubau-Sanierung, #250). Auf dem Hub stehen jetzt die
+  // Sanierungsbereiche (analog Menü) + der Sanierungsratgeber im Fokus.
 
   // Sanierungs-Schwerpunkte (Steffi 2026-06-13): Sanierung ist breiter als
   // Industrieboden — Infrastruktur (seit #216 echter Bereich) und
@@ -142,76 +125,15 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      <section style={{ padding: "16px 32px 64px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {cards.map((card) => (
-              <Link key={card.href} href={card.href} className="no-underline group block">
-                <div
-                  className="bg-white border border-bullet-bg p-7 flex flex-col gap-4 h-full transition-all duration-200 group-hover:border-cyan group-hover:-translate-y-1 group-hover:shadow-lg"
-                  style={{ borderRadius: 14 }}
-                >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-icon-bg">
-                    <AppIcon icon={card.icon} width={24} height={24} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
-                  </div>
-                  <h2 className="text-navy text-[19px] m-0" style={{ fontWeight: 900 }}>
-                    {card.title}
-                  </h2>
-                  <p className="text-navy/60 text-[14px] m-0 leading-[1.6]">{card.text}</p>
-                  <span className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] mt-auto" style={{ fontWeight: 700 }}>
-                    {dict.sanierungHub.cta}
-                    <AppIcon icon={ArrowRight} width={15} height={15} strokeWidth={2.5} aria-hidden="true" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href={`/${lang}/loesungsfinder/`}
-              className="inline-flex items-center justify-center text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
-              style={{ padding: "16px 32px", fontWeight: 800, fontSize: 16, minHeight: 44 }}
-            >
-              {dict.sanierungHub.cta}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {sanierungRefs.length > 0 && (
-        <section className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <h2 className="text-center mb-10" style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 900 }}>
-              {dict.sanierungHub.referenzen_title}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {sanierungRefs.map((ref) => (
-                <ReferenceCard key={ref.id} referenz={ref} lang={lang} />
-              ))}
-            </div>
-            <div className="text-center mt-10">
-              <Link
-                href={`/${lang}/referenzen/?projektart=sanierung`}
-                className="inline-flex items-center gap-2 text-cyan-text text-[15px] no-underline hover:underline"
-                style={{ fontWeight: 700 }}
-              >
-                {dict.home.featured_link}
-                <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Ratgeber & Schadensbilder (#130) — Fachartikel aktuell nur auf Deutsch */}
+      {/* #249: Sanierungsratgeber & Schadensbilder prominent nach oben gezogen
+          (ersetzt die Tool-CTAs). Fachartikel aktuell nur auf Deutsch (i18n: #181). */}
       {lang === "de" && (
-        <section style={{ padding: "8px 32px 56px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <h2 className="mb-2" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>
-              Ratgeber und Schadensbilder
+        <section style={{ padding: "16px 32px 64px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1100 }}>
+            <h2 className="text-navy text-center mb-3" style={{ fontSize: "clamp(22px, 3.5vw, 30px)", fontWeight: 900 }}>
+              Sanierungsratgeber und Schadensbilder
             </h2>
-            <p className="text-navy/70 text-[15px] mt-0 mb-6 leading-[1.6]" style={{ maxWidth: 720 }}>
+            <p className="text-navy/70 text-[16px] text-center mt-0 mb-8 mx-auto leading-[1.6]" style={{ maxWidth: 640 }}>
               Verstehen, was am Boden kaputt ist, wie lange die Sanierung dauert und welche Lösung passt.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -233,6 +155,31 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {sanierungRefs.length > 0 && (
+        <section className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="text-center mb-10" style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 900 }}>
+              {dict.sanierungHub.referenzen_title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {sanierungRefs.map((ref) => (
+                <ReferenceCard key={ref.id} referenz={ref} lang={lang} />
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link
+                href={`/${lang}/referenzen/?projektart=sanierung`}
+                className="inline-flex items-center gap-2 text-cyan-text text-[15px] no-underline hover:underline"
+                style={{ fontWeight: 700 }}
+              >
+                {dict.home.featured_link}
+                <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </section>
