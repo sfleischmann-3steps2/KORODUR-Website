@@ -10,7 +10,7 @@
 // `Produkt.belastungenAbgedeckt`. Schnittmenge ≥ 1 = relevant; größere
 // Schnittmenge = höherer Match-Score.
 
-import type { BelastungsTag, EinsatzbereichKategorie, EinsatzbereichV25, InnenAussen } from "./types";
+import type { BelastungsTag, EinsatzbereichKategorie, EinsatzbereichV25, InnenAussen, Referenz } from "./types";
 import { getProduktByName } from "./produkte";
 
 export const EINSATZBEREICH_TAGS: Record<EinsatzbereichV25, BelastungsTag[]> = {
@@ -208,6 +208,106 @@ export const BEREICH_LABELS_I18N: Record<string, Record<EinsatzbereichKategorie,
 /** Bereichs-Label in der gewünschten Sprache, mit DE-Fallback. */
 export function bereichLabel(b: EinsatzbereichKategorie, lang: string): string {
   return BEREICH_LABELS_I18N[lang]?.[b] ?? BEREICH_LABELS_I18N.de[b];
+}
+
+// === Kuratierte Anwendungsbereiche (Referenz-Filter, #251) ==================
+// Grobe, bewusst sparsame Facette für die Referenz-Übersicht — an die
+// Lösungsfinder-V25-Cluster angelehnt, dazu Trinkwasser (Microtop-TW-Portfolio,
+// in V25 kein eigener Cluster). Mehrere feine Branchen (einsatzbereiche) rollen
+// auf einen groben Bereich hoch ("weniger ist mehr"). aussen-umwelt-whg ist
+// bewusst (noch) nicht enthalten — keine Referenz-Branche mappt darauf.
+export type Anwendungsbereich =
+  | "industrie-halle"
+  | "hygiene-lebensmittel"
+  | "sicht-design"
+  | "infrastruktur-verkehr"
+  | "parkdeck"
+  | "trinkwasser-behaelter";
+
+export const ANWENDUNGSBEREICH_ORDER: Anwendungsbereich[] = [
+  "industrie-halle",
+  "hygiene-lebensmittel",
+  "sicht-design",
+  "infrastruktur-verkehr",
+  "parkdeck",
+  "trinkwasser-behaelter",
+];
+
+// Branche (feine 8er-Ebene) -> grober Anwendungsbereich.
+const BRANCHE_ZU_ANWENDUNG: Record<EinsatzbereichKategorie, Anwendungsbereich> = {
+  "lager-logistik": "industrie-halle",
+  "industrie-produktion": "industrie-halle",
+  "schwerindustrie": "industrie-halle",
+  "lebensmittel": "hygiene-lebensmittel",
+  "verkaufsraeume": "sicht-design",
+  "infrastruktur-zufahrten": "infrastruktur-verkehr",
+  "flugzeug": "infrastruktur-verkehr",
+  "parkdeck": "parkdeck",
+};
+
+export const ANWENDUNGSBEREICH_LABELS_I18N: Record<string, Record<Anwendungsbereich, string>> = {
+  de: {
+    "industrie-halle": "Industrie & Halle",
+    "hygiene-lebensmittel": "Hygiene & Lebensmittel",
+    "sicht-design": "Sicht & Design",
+    "infrastruktur-verkehr": "Infrastruktur & Verkehr",
+    "parkdeck": "Parkdeck",
+    "trinkwasser-behaelter": "Trinkwasser & Behälter",
+  },
+  en: {
+    "industrie-halle": "Industrial & warehouse",
+    "hygiene-lebensmittel": "Hygiene & food",
+    "sicht-design": "Visual & design",
+    "infrastruktur-verkehr": "Infrastructure & traffic",
+    "parkdeck": "Parking deck",
+    "trinkwasser-behaelter": "Potable water & tanks",
+  },
+  fr: {
+    "industrie-halle": "Industrie & halls",
+    "hygiene-lebensmittel": "Hygiène & agroalimentaire",
+    "sicht-design": "Esthétique & design",
+    "infrastruktur-verkehr": "Infrastructure & trafic",
+    "parkdeck": "Parking",
+    "trinkwasser-behaelter": "Eau potable & réservoirs",
+  },
+  pl: {
+    "industrie-halle": "Przemysł i hale",
+    "hygiene-lebensmittel": "Higiena i żywność",
+    "sicht-design": "Estetyka i design",
+    "infrastruktur-verkehr": "Infrastruktura i ruch",
+    "parkdeck": "Parking",
+    "trinkwasser-behaelter": "Woda pitna i zbiorniki",
+  },
+  es: {
+    "industrie-halle": "Industria y naves",
+    "hygiene-lebensmittel": "Higiene y alimentación",
+    "sicht-design": "Estética y diseño",
+    "infrastruktur-verkehr": "Infraestructura y tráfico",
+    "parkdeck": "Aparcamiento",
+    "trinkwasser-behaelter": "Agua potable y depósitos",
+  },
+};
+
+/** Anwendungsbereich-Label in der gewünschten Sprache, mit DE-Fallback. */
+export function anwendungsbereichLabel(b: Anwendungsbereich, lang: string): string {
+  return ANWENDUNGSBEREICH_LABELS_I18N[lang]?.[b] ?? ANWENDUNGSBEREICH_LABELS_I18N.de[b];
+}
+
+// Trinkwasser/Behälter aus den eingesetzten Produkten ableiten (Microtop TW).
+function istTrinkwasserReferenz(ref: Referenz): boolean {
+  return ref.produkte.some((p) => /microtop\s*tw/i.test(p));
+}
+
+/** Grobe Anwendungsbereiche einer Referenz (kuratiert, dedupliziert,
+ *  in fester ANWENDUNGSBEREICH_ORDER). */
+export function anwendungsbereicheVonReferenz(ref: Referenz): Anwendungsbereich[] {
+  const set = new Set<Anwendungsbereich>();
+  for (const b of ref.einsatzbereiche ?? []) {
+    const a = BRANCHE_ZU_ANWENDUNG[b];
+    if (a) set.add(a);
+  }
+  if (istTrinkwasserReferenz(ref)) set.add("trinkwasser-behaelter");
+  return ANWENDUNGSBEREICH_ORDER.filter((a) => set.has(a));
 }
 
 // === Produkt-Familien (gruppierter Produktfilter, 4 Sprachen) ================

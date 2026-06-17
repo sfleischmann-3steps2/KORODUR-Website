@@ -5,7 +5,10 @@ import ReferenceCard from "../../../components/ReferenceCard";
 import Breadcrumb from "../../../components/Breadcrumb";
 import { referenzen as alleReferenzen } from "../../../data/referenzen";
 import {
-  bereichLabel,
+  anwendungsbereicheVonReferenz,
+  anwendungsbereichLabel,
+  ANWENDUNGSBEREICH_ORDER,
+  type Anwendungsbereich,
   produktFamilie,
   produktFamilieLabel,
   projektartBucket,
@@ -16,7 +19,7 @@ import { referenzenEN } from "../../../data/i18n/referenzen.en";
 import { referenzenFR } from "../../../data/i18n/referenzen.fr";
 import { referenzenPL } from "../../../data/i18n/referenzen.pl";
 import { referenzenES } from "../../../data/i18n/referenzen.es";
-import type { Referenz, EinsatzbereichKategorie } from "../../../data/types";
+import type { Referenz } from "../../../data/types";
 
 const translationMap: Record<string, Record<string, Partial<Referenz>>> = {
   en: referenzenEN as Record<string, Partial<Referenz>>,
@@ -92,25 +95,26 @@ export default function ReferenzenPage() {
     );
   }, [referenzen, filters.projektart]);
 
-  // Bereiche mit Trefferzahl (aus dem projektart-gefilterten Set), absteigend
-  // sortiert, leere Bereiche entfallen.
+  // #251: Grobe, kuratierte Anwendungsbereiche mit Trefferzahl (aus dem
+  // projektart-gefilterten Set). Feste kuratierte Reihenfolge (nicht nach
+  // Häufigkeit), leere Bereiche entfallen.
   const bereicheSortiert = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const r of ergebnisNachProjektart) {
-      // Defensiv: künftige/importierte Referenzen könnten das Feld (noch) nicht haben.
-      for (const b of r.einsatzbereiche ?? []) counts[b] = (counts[b] ?? 0) + 1;
+      for (const a of anwendungsbereicheVonReferenz(r)) counts[a] = (counts[a] ?? 0) + 1;
     }
-    return (Object.keys(counts) as EinsatzbereichKategorie[]).sort(
-      (a, b) => counts[b] - counts[a]
-    ).map((b) => ({ id: b, count: counts[b] }));
+    return ANWENDUNGSBEREICH_ORDER.filter((a) => counts[a]).map((a) => ({
+      id: a,
+      count: counts[a],
+    }));
   }, [ergebnisNachProjektart]);
 
-  // … dann nach Bereich (Basis für Produkt-Optionen + Einblend-Logik) …
+  // … dann nach Anwendungsbereich (Basis für Produkt-Optionen + Einblend-Logik) …
   const ergebnisNachBereich = useMemo(() => {
     return ergebnisNachProjektart.filter(
       (r) =>
         !filters.bereich ||
-        r.einsatzbereiche?.includes(filters.bereich as EinsatzbereichKategorie)
+        anwendungsbereicheVonReferenz(r).includes(filters.bereich as Anwendungsbereich)
     );
   }, [ergebnisNachProjektart, filters.bereich]);
 
@@ -241,7 +245,7 @@ export default function ReferenzenPage() {
               <option value="">{dict.referenzen.filter_all_areas}</option>
               {bereicheSortiert.map(({ id, count }) => (
                 <option key={id} value={id}>
-                  {bereichLabel(id, lang)} ({count})
+                  {anwendungsbereichLabel(id, lang)} ({count})
                 </option>
               ))}
             </select>
