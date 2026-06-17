@@ -348,15 +348,16 @@
 <div class="divider"><div class="inner">
   <span class="tag">Ebene 2 — Variantenseite (Detail)</span>
   <h2>NEODUR HE 3 metallisch — eigene Seite</h2>
-  <p>Route <code>/produkte/neodur-he-3/metallisch/</code>. Eigenes Use-Case-Bild, eigene Klasse/SKU, eigenes TDS + DoP,
-  Familien-Dokumente klar getrennt geerbt. Marktbeleg: Mapei (Norm je Wert), Sika (eigener Applikations-Tab) — beides
-  hier kombiniert, plus den Varianten-Umschalter, den im Wettbewerb niemand hat.</p>
+  <p>Route <code>/produkte/neodur-he-3-metallisch/</code> — <b>flacher Slug wie auf der Alt-Site</b>
+  (<code>korodur.de/produkt/neodur-he-3-metallisch</code>), damit die gewachsene SEO-URL 1:1 erhalten bleibt. Eigenes
+  Use-Case-Bild, eigene Klasse/SKU, eigenes TDS + DoP, Familien-Dokumente klar getrennt geerbt. Marktbeleg: Mapei (Norm je
+  Wert), Sika (eigener Applikations-Tab), plus den Varianten-Umschalter, den im Wettbewerb niemand hat.</p>
 </div></div>
 
 <div class="wrap">
 <div class="screen">
   <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-    <span class="url">korodur.de<b>/de/produkte/neodur-he-3/metallisch/</b></span></div>
+    <span class="url">korodur.de<b>/de/produkte/neodur-he-3-metallisch/</b></span></div>
   <div class="page">
 
     <div class="crumb">Produkte › Industrieboden › Hartstoffeinstreuung › <b>NEODUR HE 3</b> › metallisch</div>
@@ -488,19 +489,20 @@
     <div class="icard">
       <h4>Datenmodell</h4>
       <ul>
-        <li><code>varianten[]</code> (heute <code>{name, qualitaetsklasse?, hinweis?}</code>) → eigenständige Entität <code>ProduktVariante</code> mit <code>slug, sku?, beschreibung, einsatzbereiche?, technischeDaten?, bild?, bilder?</code></li>
-        <li>Variantenfelder sind <b>Overrides</b> über Familien-Defaults (Vererbung) — sonst Pflege-Explosion</li>
+        <li>Varianten werden <b>vollwertige Produkte</b> mit eigenem Slug (= Alt-Site-Slug) + Feld <code>familieId</code> + <code>istVariante</code> — statt heutigem nested <code>varianten[]</code></li>
+        <li>Familienseite zieht Geschwister über <code>familieId</code>; Variante <b>erbt</b> fehlende Felder von der Familie (Override-Vererbung)</li>
+        <li>Übersicht/Lösungsfinder filtern <code>istVariante</code> raus (Treffer bleibt die Familie) — keine Doppeltreffer</li>
         <li><code>DokumentTyp</code> erweitern: <code>epd</code> (+ optional <code>pruefzeugnis, broschuere, farbkarte</code>)</li>
-        <li><b>green</b> bleibt eigenes Produkt — als Schwesterprodukt verlinken, nicht als Variante modellieren</li>
+        <li><b>green</b> ist bereits so modelliert (eigenes Produkt) — nur <code>familieId</code> nachrüsten + beidseitige Verlinkung</li>
       </ul>
     </div>
     <div class="icard">
-      <h4>Routing / Dokumente</h4>
+      <h4>Routing / SEO-Kontinuität</h4>
       <ul>
-        <li>Familienseite <code>/produkte/[id]/</code> bleibt, Variante wird <code>/produkte/[id]/[variante]/</code></li>
-        <li><code>generateStaticParams</code>: Familien × Varianten × 5 Locales</li>
-        <li>Dokumente-Key auf <code>produktId#variante</code> mit <b>Fallback auf Familien-Doks</b>; klar gelabelt „variantenspezifisch vs. Familie"</li>
-        <li><b>Bereits vorhanden:</b> TDS/DoP je Variante für HE 3 (metallisch, SVS 3, SVS 1,5, SVS 1,5 extra) — nur zuordnen</li>
+        <li><b>Flache Slugs wie Alt-Site</b>: Variante = eigener Top-Level-Slug <code>/produkte/neodur-he-3-metallisch/</code> (nicht verschachtelt), damit gewachsene WooCommerce-URLs erhalten bleiben</li>
+        <li>Passt in die bestehende Route <code>app/[lang]/produkte/[id]/</code> — Variante ist nur ein weiterer <code>[id]</code>-Eintrag, kein neues Segment</li>
+        <li><b>301-Redirect-Map (Cutover):</b> aus <code>product-sitemap.xml</code>, pro Locale altes Segment → neu (DE <code>/produkt/</code>, EN <code>/en/product/</code>, FR <code>/fr/produit/</code>; FR teils andere Slugs, z. B. <code>met-f</code>)</li>
+        <li>Dokumente-Fallback Variante → Familie; <b>TDS/DoP je HE-3-Variante existieren bereits</b>, nur zuordnen</li>
       </ul>
     </div>
     <div class="icard">
