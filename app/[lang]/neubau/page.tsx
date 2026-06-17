@@ -42,10 +42,15 @@ export default async function NeubauHubPage({ params }: { params: Params }) {
   );
 
   const cards = [
-    { slug: "industrieboden" },
-    { slug: "sichtestrich" },
-    { slug: "spezialbaustoffe" },
+    { slug: "industrieboden", preview: false },
+    { slug: "sichtestrich", preview: false },
+    { slug: "spezialbaustoffe", preview: false },
+    // #257: 3D-Betondruck unter Neubau sichtbar einsortiert. Bereich hat
+    // (noch) keine Produkte — Content/Produkte folgen von der Technik (W2),
+    // daher als "In Vorbereitung" markiert (gestrichelt + Badge).
+    { slug: "3d-concrete-printing", preview: true },
   ] as const;
+  const bt = dict.bereiche as Record<string, string>;
 
   return (
     <>
@@ -71,21 +76,30 @@ export default async function NeubauHubPage({ params }: { params: Params }) {
 
       <section style={{ padding: "16px 32px 64px" }}>
         <div className="mx-auto" style={{ maxWidth: 1100 }}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {cards.map((card) => (
               <Link key={card.slug} href={`/${lang}/bereiche/${card.slug}/`} className="no-underline group block">
                 <div
-                  className="bg-white border border-bullet-bg p-7 flex flex-col gap-4 h-full transition-all duration-200 group-hover:border-navy group-hover:-translate-y-1 group-hover:shadow-lg"
+                  className={`bg-white border p-7 flex flex-col gap-4 h-full transition-all duration-200 group-hover:border-navy group-hover:-translate-y-1 group-hover:shadow-lg ${
+                    card.preview ? "border-dashed border-mid-gray" : "border-bullet-bg"
+                  }`}
                   style={{ borderRadius: 14 }}
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-navy">
                     <AppIcon icon={bereichIcon(card.slug)} width={24} height={24} strokeWidth={2} className="text-white" aria-hidden="true" />
                   </div>
-                  <h2 className="text-navy text-[19px] m-0" style={{ fontWeight: 900 }}>
-                    {dict.bereiche[`${card.slug}_name`]}
-                  </h2>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h2 className="text-navy text-[19px] m-0" style={{ fontWeight: 900 }}>
+                      {bt[`${card.slug}_name`]}
+                    </h2>
+                    {card.preview && (
+                      <span className="text-[11px] uppercase tracking-wide rounded px-2 py-0.5 bg-icon-bg text-navy/50" style={{ fontWeight: 800 }}>
+                        {bt.in_vorbereitung}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-navy/60 text-[14px] m-0 leading-[1.6]">
-                    {dict.bereiche[`${card.slug}_teaser`]}
+                    {bt[`${card.slug}_teaser`]}
                   </p>
                   <span className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] mt-auto" style={{ fontWeight: 700 }}>
                     {dict.neubauHub.cta}
