@@ -92,9 +92,9 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       items: [
         { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/`, sub: bt.industrieboden_teaser },
         { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
-        { label: dict.sanierungHub.sp_infrastruktur_title, sub: dict.sanierungHub.sp_infrastruktur_text, badge: dict.sanierungHub.sp_infrastruktur_badge },
+        { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
         { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/`, sub: bt.sichtestrich_teaser },
-        { label: bt.microtop_name, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
+        { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
         { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
         { label: bt.katzenstreu_name, href: `/${lang}/bereiche/katzenstreu/`, sub: bt.katzenstreu_teaser },
         { label: dict.bereiche.alle_produkte_name, href: `/${lang}/produkte/`, sub: dict.bereiche.alle_produkte_teaser, highlight: true },
@@ -113,10 +113,14 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       ],
     },
     sanierung: {
+      // #224: Sanierung-Dropdown vollständig — Industriebodensanierung,
+      // Betonsanierung, TW-Behältersanierung, Infrastruktur, Spezialbaustoffe.
       items: [
         { label: dict.sanierungHub.sp_industrieboden_title, href: `/${lang}/bereiche/industrieboden/`, sub: dict.sanierungHub.sp_industrieboden_text },
-        { label: dict.sanierungHub.sp_infrastruktur_title, sub: dict.sanierungHub.sp_infrastruktur_text, badge: dict.sanierungHub.sp_infrastruktur_badge },
-        { label: dict.sanierungHub.sp_trinkwasser_title, href: `/${lang}/bereiche/microtop/`, sub: dict.sanierungHub.sp_trinkwasser_text },
+        { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
+        { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
+        { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
+        { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
       ],
       footer: [
         { label: `${dict.nav.referenzen} · ${projektartLabel("sanierung", lang)}`, href: `/${lang}/referenzen/?projektart=sanierung` },
