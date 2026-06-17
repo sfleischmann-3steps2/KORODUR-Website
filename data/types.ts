@@ -64,6 +64,10 @@ export interface Referenz {
   vorteile: string[];
   bild: string;
   bildAlt: string;
+  /** Auflösungs-Gate für den Detail-Hero (#256). "niedrig" = Bild zu klein für
+   *  einen Full-Bleed-Hero → kompakte Fallback-Variante. Fehlt/"hoch" = voller
+   *  Hero (Default, nicht regressiv). Wird je Referenz von der Technik gesetzt. */
+  heroQualitaet?: "hoch" | "niedrig";
   galerieBilder?: string[];
 
   // Lösungsfinder-Tags
