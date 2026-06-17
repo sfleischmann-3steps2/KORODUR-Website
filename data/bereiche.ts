@@ -29,15 +29,15 @@ export const bereiche: Bereich[] = [
     bild: "/images/bereiche/industrieboden.webp",
     // Rollen-sortiert (#93): zuerst alle Bodenprodukte, dann Haftbrücken/
     // Untergrund, dann Oberflächenfinish — kein Vermischen mehr.
+    // #218: DIN-1100-Hartstoffe (vormals eigene Gruppe „hartstoffe") auf
+    // Estriche + Einstreuung verteilt; „additive" entfällt (KOROTAN raus, #217).
     produktgruppen: [
       "hartstoffestriche",
       "hartstoffeinstreuung",
-      "hartstoffe",
       "schnellestrich",
       "selbstverlaufend",
       "kunstharz-hartstoffe",
       "systeme",
-      "additive",
       "untergrund-haftbruecken",
       "nachbehandlung",
       "impraegnierung",
@@ -63,7 +63,9 @@ export const bereiche: Bereich[] = [
   {
     slug: "spezialbaustoffe",
     bild: "/images/bereiche/spezialbaustoffe.webp",
-    produktgruppen: ["verguss", "anker-injektion", "spritzmoertel", "pflasterfugen", "schnellbeton"],
+    // #219: KOROCRETE (schnellbeton) → Betonsanierung/Infrastruktur; Anker-/
+    // Injektionssystem (NEODUR AM, #217) entfällt.
+    produktgruppen: ["verguss", "spritzmoertel", "pflasterfugen"],
   },
   { slug: "3d-concrete-printing", bild: "/images/bereiche/3d-concrete-printing.webp" },
   {

@@ -23,7 +23,6 @@ export const PRODUKTART_REIHENFOLGE: Produktart[] = [
 const GRUPPE_ZU_PRODUKTART: Record<string, Produktart> = {
   hartstoffestriche: "bodenprodukt",
   hartstoffeinstreuung: "bodenprodukt",
-  hartstoffe: "bodenprodukt",
   schnellestrich: "bodenprodukt",
   selbstverlaufend: "bodenprodukt",
   "kunstharz-hartstoffe": "bodenprodukt",
