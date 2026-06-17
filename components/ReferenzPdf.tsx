@@ -18,9 +18,10 @@ interface ProduktInfo {
 interface ReferenzPdfProps {
   referenz: Referenz;
   produkt: ProduktInfo | undefined;
+  size?: "default" | "sm";
 }
 
-export default function ReferenzPdf({ referenz, produkt }: ReferenzPdfProps) {
+export default function ReferenzPdf({ referenz, produkt, size = "default" }: ReferenzPdfProps) {
   const { dict } = useLocale();
   const [loading, setLoading] = useState(false);
 
@@ -38,7 +39,7 @@ export default function ReferenzPdf({ referenz, produkt }: ReferenzPdfProps) {
   }
 
   return (
-    <Button onClick={handleClick} disabled={loading} variant="outline">
+    <Button onClick={handleClick} disabled={loading} variant="outline" size={size}>
       <AppIcon icon={Download} width={16} height={16} strokeWidth={2} aria-hidden="true" />
       {loading ? dict.pdf.button_loading : dict.pdf.button}
     </Button>
