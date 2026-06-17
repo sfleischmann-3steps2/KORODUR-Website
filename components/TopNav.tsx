@@ -240,11 +240,11 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       >
         <div
           className="mx-auto flex items-center justify-between"
-          style={{ maxWidth: 1320, height: 64, padding: "0 24px" }}
+          style={{ maxWidth: 1320, height: 74, padding: "0 24px" }}
         >
           {/* Logo */}
           <Link href={`/${lang}`} className="flex items-center no-underline shrink-0" aria-label="KORODUR">
-            <Image src={withBasePath("/images/brand/logo-korodur.png")} alt="KORODUR" width={71} height={48} priority />
+            <Image src={withBasePath("/images/brand/logo-korodur.png")} alt="KORODUR" width={82} height={55} priority />
           </Link>
 
           {/* Desktop Nav */}
@@ -257,13 +257,13 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             {navItems.map((item) => (
               <div
                 key={item.key}
-                className="relative h-16 flex items-center"
+                className="relative h-[74px] flex items-center"
                 onMouseEnter={() => (item.menu ? openNow(item.key) : scheduleClose())}
               >
                 <Link
                   href={item.href}
                   aria-expanded={item.menu ? openMenu === item.key : undefined}
-                  className={`flex items-center gap-1 px-3.5 py-2 rounded-lg text-[14px] no-underline transition-colors duration-150 ${
+                  className={`flex items-center gap-1 px-4 py-2.5 rounded-lg text-[16px] no-underline transition-colors duration-150 ${
                     isActive(item.href) || openMenu === item.key ? "text-cyan-text" : "text-navy hover:bg-icon-bg"
                   }`}
                   style={{ fontWeight: 700 }}
@@ -272,8 +272,8 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                   {item.menu && (
                     <AppIcon
                       icon={ChevronDown}
-                      width={14}
-                      height={14}
+                      width={16}
+                      height={16}
                       strokeWidth={2.5}
                       className={`transition-transform duration-150 ${openMenu === item.key ? "rotate-180" : ""}`}
                       aria-hidden="true"
@@ -313,16 +313,16 @@ export default function TopNav({ lang, dict }: TopNavProps) {
 
             <a
               href={KORODUR_ZENTRALE.telefonHref}
-              className="hidden xl:flex items-center gap-2 text-navy text-[14px] no-underline hover:text-cyan-text transition-colors duration-150"
+              className="hidden xl:flex items-center gap-2 text-navy text-[16px] no-underline hover:text-cyan-text transition-colors duration-150"
               style={{ fontWeight: 700 }}
             >
-              <AppIcon icon={Phone} width={16} height={16} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
+              <AppIcon icon={Phone} width={18} height={18} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
               {KORODUR_ZENTRALE.telefon}
             </a>
 
-            <Button asChild size="lg" className="hidden lg:inline-flex">
-              <Link href={`/${lang}/loesungsfinder/`}>{dict.nav.loesungsfinder}</Link>
-            </Button>
+            {/* Lösungsfinder-Button bewusst entfernt (#225): nach Menü/Logo +15 %
+                zu eng neben Telefon. Lösungsfinder bleibt über Neubau-/Sanierung-
+                Mega-Menü-Footer + Home-Hero erreichbar. */}
 
             {/* Mobile drawer */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
