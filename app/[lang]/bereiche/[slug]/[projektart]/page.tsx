@@ -11,7 +11,7 @@ import { notFound } from "next/navigation";
 import { localizeProdukte, localizeReferenzen } from "../../../../../data/i18n/getLocalized";
 import ReferenceCard from "../../../../../components/ReferenceCard";
 import { AppIcon } from "@/components/ui/icon";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight, Compass, Grid3x3 } from "lucide-react";
 import { withBasePath } from "../../../../../lib/basePath";
 import { alternatesFor } from "../../../../../lib/seo";
 import { projektartBucket, projektartLabel, type Projektart } from "../../../../../data/einsatzbereichMapping";
@@ -54,6 +54,7 @@ export default async function SubBereichPage({ params }: { params: Params }) {
 
   const dict = await getDictionary(lang);
   const tb = (k: string) => (dict.bereiche as Record<string, string>)[k] ?? k;
+  const sh = dict.sanierungHub as Record<string, string>;
   const artLabel = projektartLabel(art, lang);
 
   // Multi-Bereich (#215): Primär-`bereich` ODER zusatzBereiche.
@@ -155,12 +156,48 @@ export default async function SubBereichPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* #250: Lösungsfinder + Anwendungsmatrix hier verorten (F1, aus /sanierung
+          herausgelöst). Der Projektart-Einstieg wird als Kontext mitgegeben. */}
+      <section style={{ padding: "32px 32px 8px" }}>
+        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {[
+              { href: `/${lang}/loesungsfinder/?projektart=${art}`, icon: Compass, title: sh.card_loesungsfinder_title, text: sh.card_loesungsfinder_text },
+              { href: `/${lang}/anwendungsmatrix/`, icon: Grid3x3, title: sh.card_matrix_title, text: sh.card_matrix_text },
+            ].map((card) => (
+              <Link key={card.href} href={card.href} className="no-underline group block">
+                <div
+                  className="bg-white border border-bullet-bg p-7 flex flex-col gap-3 h-full transition-all duration-200 group-hover:border-cyan group-hover:-translate-y-1 group-hover:shadow-lg"
+                  style={{ borderRadius: 14 }}
+                >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-icon-bg">
+                    <AppIcon icon={card.icon} width={24} height={24} strokeWidth={2} className="text-cyan-text" aria-hidden="true" />
+                  </div>
+                  <h2 className="text-navy text-[19px] m-0" style={{ fontWeight: 900 }}>{card.title}</h2>
+                  <p className="text-navy/60 text-[14px] m-0 leading-[1.6]">{card.text}</p>
+                  <span className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] mt-auto" style={{ fontWeight: 700 }}>
+                    {sh.cta}
+                    <AppIcon icon={ArrowRight} width={15} height={15} strokeWidth={2.5} aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Produkte (ref-getrieben auf die Projektart) */}
       <section className="bg-icon-bg" style={{ padding: "48px 32px 56px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <h2 className="mb-6" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}>
+          <h2 className="mb-3" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}>
             {tb(`${slug}_produkte_heading`)}
           </h2>
+          {/* #250: Produkte tragen noch keine Projektart-Klassifizierung
+              (#240/#83/#103). Bis dahin alle Bereichsprodukte + sichtbarer
+              Platzhalter-Hinweis. */}
+          <p className="mb-6 inline-block rounded-md bg-white/70 px-3 py-2 text-[13px] italic text-navy/55">
+            {tb("klassifizierung_folgt")}
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {localizedProdukte.map((produkt) => (
               <Link key={produkt.id} href={`/${lang}/produkte/${produkt.id}`} className="no-underline group block">
