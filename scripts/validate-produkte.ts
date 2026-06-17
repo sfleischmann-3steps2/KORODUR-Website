@@ -25,7 +25,7 @@ const ALLOWED_BEREICH: ReadonlySet<Produktbereich> = new Set<Produktbereich>([
   "sichtestrich",
   "microtop",
   "rapid-set",
-  "schnellbetonsysteme",
+  "infrastruktur",
   "spezialbaustoffe",
   "3d-concrete-printing",
   "katzenstreu",
@@ -74,6 +74,23 @@ for (const p of produkte) {
 
   if (!ALLOWED_BEREICH.has(p.bereich)) {
     issues.push({ id: p.id, level: "error", msg: `bereich '${p.bereich}' nicht im Enum` });
+  }
+
+  // zusatzBereiche (#215): jeder Eintrag im Enum, ungleich Primär-Bereich, keine Dubletten
+  if (p.zusatzBereiche) {
+    const gesehen = new Set<Produktbereich>();
+    for (const zb of p.zusatzBereiche) {
+      if (!ALLOWED_BEREICH.has(zb)) {
+        issues.push({ id: p.id, level: "error", msg: `zusatzBereich '${zb}' nicht im Enum` });
+      }
+      if (zb === p.bereich) {
+        issues.push({ id: p.id, level: "error", msg: `zusatzBereich '${zb}' wiederholt den Primär-Bereich` });
+      }
+      if (gesehen.has(zb)) {
+        issues.push({ id: p.id, level: "error", msg: `zusatzBereich '${zb}' ist doppelt` });
+      }
+      gesehen.add(zb);
+    }
   }
 
   if (!ALLOWED_KATEGORIE.has(p.kategorie)) {

@@ -29,15 +29,15 @@ export const bereiche: Bereich[] = [
     bild: "/images/bereiche/industrieboden.webp",
     // Rollen-sortiert (#93): zuerst alle Bodenprodukte, dann Haftbrücken/
     // Untergrund, dann Oberflächenfinish — kein Vermischen mehr.
+    // #218: DIN-1100-Hartstoffe (vormals eigene Gruppe „hartstoffe") auf
+    // Estriche + Einstreuung verteilt; „additive" entfällt (KOROTAN raus, #217).
     produktgruppen: [
       "hartstoffestriche",
       "hartstoffeinstreuung",
-      "hartstoffe",
       "schnellestrich",
       "selbstverlaufend",
       "kunstharz-hartstoffe",
       "systeme",
-      "additive",
       "untergrund-haftbruecken",
       "nachbehandlung",
       "impraegnierung",
@@ -48,7 +48,12 @@ export const bereiche: Bereich[] = [
     bild: "/images/bereiche/sichtestrich.webp",
     produktgruppen: ["geschliffen", "geglaettet", "truazzo"],
   },
-  { slug: "schnellbetonsysteme", bild: "/images/bereiche/schnellbetonsysteme.webp" },
+  {
+    // Infrastruktur (#216): eigener Bereich, ersetzt „Schnellbetonsysteme".
+    // KOROCRETE erscheint hier als Zweit-Bereich (Primär: Betonsanierung) — #219.
+    slug: "infrastruktur",
+    produktgruppen: ["schnellbeton"],
+  },
   {
     slug: "rapid-set",
     bild: "/images/bereiche/rapid-set.webp",
@@ -58,7 +63,9 @@ export const bereiche: Bereich[] = [
   {
     slug: "spezialbaustoffe",
     bild: "/images/bereiche/spezialbaustoffe.webp",
-    produktgruppen: ["verguss", "anker-injektion", "spritzmoertel", "pflasterfugen", "schnellbeton"],
+    // #219: KOROCRETE (schnellbeton) → Betonsanierung/Infrastruktur; Anker-/
+    // Injektionssystem (NEODUR AM, #217) entfällt.
+    produktgruppen: ["verguss", "spritzmoertel", "pflasterfugen"],
   },
   { slug: "3d-concrete-printing", bild: "/images/bereiche/3d-concrete-printing.webp" },
   {
@@ -80,11 +87,10 @@ export function getBereichBySlug(slug: string): Bereich | undefined {
   return bereiche.find((b) => b.slug === slug);
 }
 
-// Kuratiertes Produktportfolio (Technik-Feedback 2026-06-16, #188): die 7
-// Bereiche, die Homepage-Grid UND /bereiche-Übersicht identisch zeigen.
-// Reihenfolge freigegeben. `infrastruktur` ist (noch) ein Platzhalter-Bereich
-// („Bald verfügbar", kein eigener Bereich in `bereiche`/0 Produkte) — Texte aus
-// `sanierungHub.sp_infrastruktur_*`. Schnellbetonsysteme + 3D-Druck bewusst raus.
+// Kuratiertes Produktportfolio (Technik-Feedback 2026-06-16/-17, #188/#216): die
+// 7 Bereiche, die Homepage-Grid UND /bereiche-Übersicht identisch zeigen.
+// Reihenfolge freigegeben. `infrastruktur` ist seit #216 ein echter Bereich
+// (KOROCRETE als Zweit-Bereich). Schnellbetonsysteme + 3D-Druck bewusst raus.
 export const PORTFOLIO_SLUGS = [
   "industrieboden",
   "rapid-set",

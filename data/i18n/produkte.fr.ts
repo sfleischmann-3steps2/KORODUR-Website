@@ -411,17 +411,6 @@ export const produkteFR: Record<string, {
       { label: "Distance de refoulement", wert: "jusqu'à 80 m" },
     ],
   },
-  "korotan": {
-    kurzbeschreibung: "Additif spécial liquide à effet fluidifiant et stabilisant pour sols industriels KORODUR-KOROTAN",
-    beschreibung: "KOROTAN est utilisé comme aide à la mise en œuvre : pour chapes à agrégats durs KORODUR monocouches sur béton porteur frais ou durci, pour tous les systèmes bicouches ainsi que comme adjuvant pour chapes de tous types.",
-    besonderheiten: ["Effet fluidifiant et stabilisant", "Spécialement pour sols industriels KORODUR-KOROTAN", "Comme adjuvant pour chapes de tous types"],
-    technischeDaten: [
-      { label: "Forme", wert: "liquide vert" },
-      { label: "Densité (20 °C)", wert: "1,13 g/cm³" },
-      { label: "Valeur pH", wert: "env. 9" },
-      { label: "Dosage", wert: "jusqu'à env. 1–2 % du poids de ciment" },
-    ],
-  },
   "korodur-easyfinish": {
     kurzbeschreibung: "Aide au lissage liquide, sans solvant, prête à l'emploi pour NEODUR HE 60 rapid et KOROCRETE",
     beschreibung: "KORODUR easyFinish est pulvérisé et incorporé sur la surface NEODUR HE 60 rapid ou KOROCRETE talochée, avant le premier lissage à la truelle mécanique. Le lissage est facilité, la surface est en outre améliorée, l'étanchéité augmentée et la protection contre les attaques chimiques renforcée.",
@@ -451,17 +440,6 @@ export const produkteFR: Record<string, {
       { label: "Forme", wert: "liquide" },
       { label: "Couleur", wert: "blanc laiteux" },
       { label: "Valeur pH", wert: "11,6" },
-    ],
-  },
-  "koropox": {
-    kurzbeschreibung: "Concentré de résine époxy 2K transparent, émulsifiable dans l'eau, pour l'imprégnation de sols à liant ciment",
-    beschreibung: "KOROPOX augmente l'étanchéité et la résistance à l'eau, aux graisses, aux huiles, aux huiles minérales, aux carburants et aux liquides de frein. L'application s'effectue en deux passes sur les sols industriels KOROPLAN, KORODUR et NEODUR ou les revêtements à liant ciment.",
-    besonderheiten: ["Émulsifiable dans l'eau et transparent", "Résistant à l'eau, aux graisses, aux huiles, aux carburants et aux liquides de frein"],
-    technischeDaten: [
-      { label: "Forme", wert: "liquide" },
-      { label: "Couleur", wert: "incolore" },
-      { label: "Densité", wert: "1,0 g/cm³" },
-      { label: "Consommation", wert: "2 passes, env. 75–175 g/m² de concentré (comp. A + B)" },
     ],
   },
   "koromineral": {
@@ -667,15 +645,6 @@ export const produkteFR: Record<string, {
       { label: "Valeur pH", wert: "env. 11,3" },
     ],
   },
-  "microtop-tw-nsd": {
-    kurzbeschreibung: "Mortier projeté à base de ciment amélioré aux microsilices (C30/37), par voie humide, pour le domaine de l'eau potable",
-    beschreibung: "MICROTOP TW NSD est un mortier projeté à base de ciment, minéral, à prise hydraulique, amélioré aux microsilices, de classe de résistance du béton C30/37, pour le domaine de l'eau potable. L'application s'effectue par projection par voie humide à flux dilué ou à flux dense ; les supports sont des bétons porteurs et des enduits anciens bien adhérents avec une adhérence d'au moins 1,5 N/mm². Conforme aux fiches de travail DVGW W 300 et W 347.",
-    besonderheiten: ["Purement minéral, amélioré aux microsilices", "Projection par voie humide à flux dilué ou à flux dense"],
-    technischeDaten: [
-      { label: "Granulométrie", wert: "0–3 mm" },
-      { label: "Conditionnement", wert: "emballage spécial papier de 25 kg" },
-    ],
-  },
   "neodur-vm-1": {
     kurzbeschreibung: "Mortier de scellement pour sections de scellement de 5 à 20 mm",
     beschreibung: "Les mortiers de montage et de scellement assurent une liaison solide entre le béton et les pièces d'insertion en acier. NEODUR VM 1 est conçu pour des sections de scellement de 5 à 20 mm.",
@@ -724,22 +693,6 @@ export const produkteFR: Record<string, {
     besonderheiten: ["À durcissement rapide", "Déclaration environnementale produit (EPD de groupe) disponible"],
     technischeDaten: [
       { label: "Section de scellement", wert: "5–20 mm" },
-    ],
-  },
-  "neodur-am-super": {
-    kurzbeschreibung: "Mortier d'ancrage pour ancrages rocheux de tous types dans les travaux miniers et souterrains",
-    beschreibung: "Les mortiers d'ancrage s'utilisent avec les ancrages rocheux de tous types dans les travaux miniers et souterrains. NEODUR AM Super est un mortier sec minéral fabriqué en usine, granulométrie 0 à 1 mm.",
-    besonderheiten: ["Pour ancrages rocheux de tous types"],
-    technischeDaten: [
-      { label: "Granulométrie", wert: "0–1 mm" },
-    ],
-  },
-  "neodur-am-plus": {
-    kurzbeschreibung: "Mortier d'ancrage pour ancrages rocheux de tous types dans les travaux miniers et souterrains",
-    beschreibung: "Les mortiers d'ancrage s'utilisent avec les ancrages rocheux de tous types dans les travaux miniers et souterrains. NEODUR AM Plus est un mortier sec minéral fabriqué en usine, granulométrie 0 à 1 mm.",
-    besonderheiten: ["Pour ancrages rocheux de tous types"],
-    technischeDaten: [
-      { label: "Granulométrie", wert: "0–1 mm" },
     ],
   },
   "neodur-msm-3": {

@@ -420,17 +420,6 @@ export const produkteEN: Record<string, {
       { label: "Conveying distance", wert: "up to 80 m" },
     ],
   },
-  "korotan": {
-    kurzbeschreibung: "Liquid special additive with plasticising and stabilising effect for KORODUR-KOROTAN industrial floors",
-    beschreibung: "KOROTAN is used as a processing aid: for single-layer KORODUR hard aggregate screeds on fresh or hardened base concrete, for all two-layer systems, and as an additive for screeds of all kinds.",
-    besonderheiten: ["Plasticising and stabilising effect", "Specifically for KORODUR-KOROTAN industrial floors", "As an additive for screeds of all kinds"],
-    technischeDaten: [
-      { label: "Form", wert: "green liquid" },
-      { label: "Density (20 °C)", wert: "1.13 g/cm³" },
-      { label: "pH value", wert: "approx. 9" },
-      { label: "Dosage", wert: "up to approx. 1–2 % of cement weight" },
-    ],
-  },
   "korodur-easyfinish": {
     kurzbeschreibung: "Liquid, solvent-free, ready-to-use finishing aid for NEODUR HE 60 rapid and KOROCRETE",
     beschreibung: "KORODUR easyFinish is sprayed onto the pan-floated NEODUR HE 60 rapid or KOROCRETE surface before the first blade finishing and worked in. The finishing process is made easier, the surface is additionally enhanced, density is increased and protection against chemical attack is improved.",
@@ -460,17 +449,6 @@ export const produkteEN: Record<string, {
       { label: "Form", wert: "liquid" },
       { label: "Colour", wert: "milky white" },
       { label: "pH value", wert: "11.6" },
-    ],
-  },
-  "koropox": {
-    kurzbeschreibung: "Water-emulsifiable, transparent two-component epoxy resin concentrate for impregnating cement-bound floors",
-    beschreibung: "KOROPOX increases density and resistance to water, grease, oil, mineral oil, fuel and brake fluids. It is applied in two passes on KOROPLAN, KORODUR and NEODUR industrial floors and cement-bound toppings.",
-    besonderheiten: ["Water-emulsifiable and transparent", "Resistant to water, grease, oil, fuel, brake fluids"],
-    technischeDaten: [
-      { label: "Form", wert: "liquid" },
-      { label: "Colour", wert: "colourless" },
-      { label: "Density", wert: "1.0 g/cm³" },
-      { label: "Consumption", wert: "2 passes, approx. 75–175 g/m² concentrate (comp. A + B)" },
     ],
   },
   "koromineral": {
@@ -676,15 +654,6 @@ export const produkteEN: Record<string, {
       { label: "pH value", wert: "approx. 11.3" },
     ],
   },
-  "microtop-tw-nsd": {
-    kurzbeschreibung: "Microsilica-enhanced cement spray mortar (C30/37) applied by the wet spray process for the drinking water sector",
-    beschreibung: "MICROTOP TW NSD is a mineral, hydraulically setting, microsilica-enhanced cement spray mortar of concrete strength class C30/37 for the drinking water sector. It is applied by wet spray thin-stream or dense-stream conveying; suitable substrates are sound concrete and firmly adhering old render with a bond strength of at least 1.5 N/mm². Complies with DVGW worksheets W 300 and W 347.",
-    besonderheiten: ["Purely mineral, microsilica-enhanced", "Wet spray thin-stream or dense-stream conveying"],
-    technischeDaten: [
-      { label: "Grain size", wert: "0–3 mm" },
-      { label: "Delivery form", wert: "25 kg special paper packaging" },
-    ],
-  },
   "neodur-vm-1": {
     kurzbeschreibung: "Grouting mortar for grouting cross-sections of 5 to 20 mm",
     beschreibung: "Assembly and grouting mortars create a strong bond between concrete and steel components. NEODUR VM 1 is designed for grouting cross-sections of 5 to 20 mm.",
@@ -738,22 +707,6 @@ export const produkteEN: Record<string, {
     besonderheiten: ["Rapid setting", "Environmental Product Declaration (group EPD) available"],
     technischeDaten: [
       { label: "Grouting cross-section", wert: "5–20 mm" },
-    ],
-  },
-  "neodur-am-super": {
-    kurzbeschreibung: "Anchor mortar for rock anchors of all kinds in mining and tunnelling",
-    beschreibung: "Anchor mortars are used in conjunction with rock anchors of all kinds in mining and tunnelling. NEODUR AM Super is a mineral factory-made dry mortar with a grain size of 0 to 1 mm.",
-    besonderheiten: ["For rock anchors of all kinds"],
-    technischeDaten: [
-      { label: "Grain size", wert: "0–1 mm" },
-    ],
-  },
-  "neodur-am-plus": {
-    kurzbeschreibung: "Anchor mortar for rock anchors of all kinds in mining and tunnelling",
-    beschreibung: "Anchor mortars are used in conjunction with rock anchors of all kinds in mining and tunnelling. NEODUR AM Plus is a mineral factory-made dry mortar with a grain size of 0 to 1 mm.",
-    besonderheiten: ["For rock anchors of all kinds"],
-    technischeDaten: [
-      { label: "Grain size", wert: "0–1 mm" },
     ],
   },
   "neodur-msm-3": {

@@ -35,6 +35,12 @@ export interface Produkt {
    *  Anwendungsmatrix ausgewertet. Quelle: KORODUR-website-Scrape
    *  (01_analyse/scraped_content/produktuebersicht.md). */
   bereich: Produktbereich;
+  /** Weitere Bereiche, in denen das Produkt zusätzlich erscheint (Portfolio-
+   *  Umbau #215). Ein Produkt kann in mehreren Bereichen geführt werden, z. B.
+   *  KOROCRETE in Betonsanierung (primär) UND Infrastruktur. Reine Website-
+   *  Navigation; Lösungsfinder/Anwendungsmatrix werten das NICHT aus.
+   *  Darf den Primär-`bereich` nicht wiederholen (validate-produkte.ts). */
+  zusatzBereiche?: Produktbereich[];
   /** Produktgruppe innerhalb des Bereichs (Bereichsseiten-Gliederung).
    *  Kuratierte Zuordnung mit Sign-off, NICHT aus der Alt-Site übernommen —
    *  siehe docs/website-migration/zuordnung-<bereich>.md. Muss in
@@ -687,7 +693,10 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korocrete",
-    bereich: "spezialbaustoffe",
+    // #219: KOROCRETE primär in Betonsanierung (rapid-set), zusätzlich in
+    // Infrastruktur; raus aus Spezialbaustoffen.
+    bereich: "rapid-set",
+    zusatzBereiche: ["infrastruktur"],
     produktgruppe: "schnellbeton",
     name: "KOROCRETE Schnellbeton",
     kategorie: "schnellzement",
@@ -929,7 +938,7 @@ export const produkte: Produkt[] = [
     name: "KORODUR 0/4",
     kategorie: "sonstige",
     bereich: "industrieboden",
-    produktgruppe: "hartstoffe",
+    produktgruppe: "hartstoffeinstreuung",
     kurzbeschreibung: "KORODUR Hartstoff (ohne Bindemittel) der Gruppe A nach DIN 1100",
     beschreibung: "Hartstoff für die Herstellung hochbeanspruchter Industrieböden, z. B. Parkhäuser, Industriehallen, Montagehallen, Flugzeughallen, Werkstätten und Hochregallager. Für innen und außen.",
     qualitaetsklasse: "CT-C70-F10-A6",
@@ -947,7 +956,7 @@ export const produkte: Produkt[] = [
     name: "KORODUR VS 0/5",
     kategorie: "sonstige",
     bereich: "industrieboden",
-    produktgruppe: "hartstoffe",
+    produktgruppe: "hartstoffestriche",
     kurzbeschreibung: "KORODUR Hartstoff (ohne Bindemittel) der Gruppe A nach DIN 1100, Basis u. a. für NEODUR HE 65",
     beschreibung: "KORODUR Hartstoff ohne Bindemittel gem. DIN 1100. Dient als Hartstoffbasis für NEODUR HE 65 und als Hartstoffzuschlag für verschleißfeste Nutzestriche, z. B. mit KORODUR FSCem.",
     qualitaetsklasse: "CT-C70-F10-A6",
@@ -965,7 +974,7 @@ export const produkte: Produkt[] = [
     name: "KORODUR WH-Spezial",
     kategorie: "sonstige",
     bereich: "industrieboden",
-    produktgruppe: "hartstoffe",
+    produktgruppe: "hartstoffestriche",
     kurzbeschreibung: "KORODUR Hartstoff (ohne Bindemittel) der Gruppe A nach DIN 1100 für hochbeanspruchte Industrieböden",
     beschreibung: "Hartstoff für die Herstellung hochbeanspruchter Industrieböden. Hartstoffbasis für NEODUR HE 65 SVS 3 und NEODUR HE 65 plus SVS 3. Für innen und außen.",
     qualitaetsklasse: "CT-C70-F10-A3",
@@ -983,7 +992,7 @@ export const produkte: Produkt[] = [
     name: "KORODUR WH-metallisch",
     kategorie: "sonstige",
     bereich: "industrieboden",
-    produktgruppe: "hartstoffe",
+    produktgruppe: "hartstoffeinstreuung",
     kurzbeschreibung: "Metallischer KORODUR Hartstoff (Gruppe M nach DIN 1100) für Panzerestriche und schweren Eisenräderverkehr",
     beschreibung: "Metallischer Hartstoff für hochbeanspruchte Industrieböden, besonders geeignet für schweren Eisenräderverkehr, Koller und hartes Absetzen scharfkantiger Werkstücke, zur Herstellung sogenannter Panzerestriche. Basis für NEODUR HE 3 metallisch und NEODUR HE 65 metallisch. Für innen und außen.",
     qualitaetsklasse: "CT-C60-F12-A3",
@@ -1001,7 +1010,7 @@ export const produkte: Produkt[] = [
     name: "KORODUR Diamantbeton",
     kategorie: "sonstige",
     bereich: "industrieboden",
-    produktgruppe: "hartstoffe",
+    produktgruppe: "hartstoffestriche",
     kurzbeschreibung: "KORODUR Hartstoff der Gruppe KS nach DIN 1100 für höchstmöglichen Abnutzungswiderstand",
     beschreibung: "Hartstoff für die Herstellung hochbeanspruchter Industrieböden bei höchstmöglichem Abnutzungswiderstand. Hartstoffbasis für NEODUR HE 65 SVS 1,5. Für innen und außen.",
     qualitaetsklasse: "CT-C70-F10-A1,5",
@@ -1227,29 +1236,6 @@ export const produkte: Produkt[] = [
   // Defekte Dichte-Einheiten der Alt-Site (easyFinish/nanoFinish/uniPrimer)
   // bewusst NICHT uebernommen — TDS-Klaerung offen (zuordnung-industrieboden.md).
   {
-    id: "korotan",
-    tdsUrl: "/downloads/tds/KORODUR_KOROTAN_de.pdf",
-    name: "KOROTAN",
-    kategorie: "sonstige",
-    bereich: "industrieboden",
-    produktgruppe: "additive",
-    kurzbeschreibung: "Flüssiges Spezial-Additiv mit verflüssigender und stabilisierender Wirkung für KORODUR-KOROTAN Industrieböden",
-    beschreibung: "KOROTAN wird als Verarbeitungshilfe verwendet: für einschichtige KORODUR Hartstoffestriche auf frischem oder erhärtetem Tragbeton, für alle zweischichtigen Systeme sowie als Zusatzmittel bei Estrichen aller Art.",
-    normen: [],
-    technischeDaten: [
-      { label: "Form", wert: "grüne Flüssigkeit" },
-      { label: "Dichte (20 °C)", wert: "1,13 g/cm³" },
-      { label: "pH-Wert", wert: "ca. 9" },
-      { label: "Dosierung", wert: "bis ca. 1–2 % vom Zementgewicht" },
-    ],
-    besonderheiten: [
-      "Verflüssigende und stabilisierende Wirkung",
-      "Speziell für KORODUR-KOROTAN Industrieböden",
-      "Als Zusatzmittel bei Estrichen aller Art",
-    ],
-    zeitKategorie: "normal",
-  },
-  {
     id: "korodur-easyfinish",
     tdsUrl: "/downloads/tds/KORODUR_easyFinish_de.pdf",
     name: "KORODUR easyFinish",
@@ -1313,28 +1299,6 @@ export const produkte: Produkt[] = [
       "Lösemittelfrei, einkomponentig, gebrauchsfertig",
       "Ersetzt zeitaufwändiges Vornässen bei Sanierungen",
       "Minimiert Verdunsten der Haftbrücke",
-    ],
-    zeitKategorie: "normal",
-  },
-  {
-    id: "koropox",
-    tdsUrl: "/downloads/tds/KOROPOX_de_2023.pdf",
-    name: "KOROPOX",
-    kategorie: "beschichtung",
-    bereich: "industrieboden",
-    produktgruppe: "impraegnierung",
-    kurzbeschreibung: "Wasseremulgierbares, transparentes 2K-Epoxidharz-Konzentrat zur Imprägnierung zementgebundener Böden",
-    beschreibung: "KOROPOX erhöht die Dichtigkeit und Beständigkeit gegen Wasser, Fett, Öl, Mineralöl, Treibstoff und Bremsflüssigkeiten. Die Anwendung erfolgt in zwei Arbeitsgängen auf KOROPLAN-, KORODUR- und NEODUR Industrieböden bzw. zementgebundenen Belägen.",
-    normen: [],
-    technischeDaten: [
-      { label: "Form", wert: "flüssig" },
-      { label: "Farbe", wert: "farblos" },
-      { label: "Dichte", wert: "1,0 g/cm³" },
-      { label: "Verbrauch", wert: "2 Arbeitsgänge, ca. 75–175 g/m² Konzentrat (Komp. A + B)" },
-    ],
-    besonderheiten: [
-      "Wasseremulgierbar und transparent",
-      "Beständig gegen Wasser, Fett, Öl, Treibstoff, Bremsflüssigkeiten",
     ],
     zeitKategorie: "normal",
   },
@@ -1418,7 +1382,7 @@ export const produkte: Produkt[] = [
       "Weitgehend fugenlos",
       "Sanierungssystem für Industrieböden",
     ],
-    systemBegleitprodukte: ["korodur-hb-5", "korotan"],
+    systemBegleitprodukte: ["korodur-hb-5"],
     zeitKategorie: "normal",
   },
 
@@ -1932,36 +1896,6 @@ export const produkte: Produkt[] = [
     zeitKategorie: "schnell",
   },
   {
-    id: "neodur-am-super",
-    tdsUrl: "/downloads/tds/NEODUR_AM_Super_AM_Plus_de.pdf",
-    name: "NEODUR AM Super",
-    kategorie: "sonstige",
-    bereich: "spezialbaustoffe",
-    produktgruppe: "anker-injektion",
-    kurzbeschreibung: "Ankermörtel für Gebirgsanker aller Art im Berg- und Tunnelbau",
-    beschreibung: "Ankermörtel werden in Verbindung mit Gebirgsankern aller Art im Berg- und Tunnelbau eingesetzt. NEODUR AM Super ist ein mineralischer Werk-Trockenmörtel mit Körnung 0 bis 1 mm.",
-    qualitaetsklasse: "C30/37",
-    normen: [],
-    technischeDaten: [{ label: "Körnung", wert: "0–1 mm" }],
-    besonderheiten: ["Für Gebirgsanker aller Art"],
-    zeitKategorie: "normal",
-  },
-  {
-    id: "neodur-am-plus",
-    tdsUrl: "/downloads/tds/NEODUR_AM_Super_AM_Plus_de.pdf",
-    name: "NEODUR AM Plus",
-    kategorie: "sonstige",
-    bereich: "spezialbaustoffe",
-    produktgruppe: "anker-injektion",
-    kurzbeschreibung: "Ankermörtel für Gebirgsanker aller Art im Berg- und Tunnelbau",
-    beschreibung: "Ankermörtel werden in Verbindung mit Gebirgsankern aller Art im Berg- und Tunnelbau eingesetzt. NEODUR AM Plus ist ein mineralischer Werk-Trockenmörtel mit Körnung 0 bis 1 mm.",
-    qualitaetsklasse: "C40/50",
-    normen: [],
-    technischeDaten: [{ label: "Körnung", wert: "0–1 mm" }],
-    besonderheiten: ["Für Gebirgsanker aller Art"],
-    zeitKategorie: "normal",
-  },
-  {
     id: "neodur-msm-3",
     tdsUrl: "/downloads/tds/NEODUR_MSM_3_5_MSB_8_de.pdf",
     name: "NEODUR MSM 3",
@@ -2115,27 +2049,6 @@ export const produkte: Produkt[] = [
     zeitKategorie: "normal",
   },
 
-  {
-    id: "microtop-tw-nsd",
-    tdsUrl: "/downloads/tds/MICROTOP_TW_NSD_de.pdf",
-    name: "MICROTOP TW NSD",
-    kategorie: "sonstige",
-    bereich: "microtop",
-    produktgruppe: "nassspritz",
-    kurzbeschreibung: "Microsilica-vergüteter Zementspritzmörtel (C30/37) im Nassspritzverfahren für den Trinkwasserbereich",
-    beschreibung: "MICROTOP TW NSD ist ein mineralischer, hydraulisch abbindender, microsilica-vergüteter Zementspritzmörtel der Betonfestigkeitsklasse C30/37 für den Trinkwasserbereich. Die Applikation erfolgt mittels Nassspritz-Dünnstrom- oder Dichtstromförderung; Untergrund sind tragfähige Betone und festhaftende Altputze mit einer Haftzugfestigkeit von mind. 1,5 N/mm². Entspricht den Anforderungen der DVGW Arbeitsblätter W 300 und W 347.",
-    qualitaetsklasse: "C30/37",
-    normen: ["DVGW W 300", "DVGW W 347"],
-    technischeDaten: [
-      { label: "Körnung", wert: "0–3 mm" },
-      { label: "Lieferform", wert: "25-kg-Papierspezialverpackung" },
-    ],
-    besonderheiten: [
-      "Rein mineralisch, microsilica-vergütet",
-      "Nassspritz-Dünnstrom- oder Dichtstromförderung",
-    ],
-    zeitKategorie: "normal",
-  },
 
   // === TDS-NACHLIEFERUNG STEFFI 2026-06-12 (docs/tds-quellen/) ===
   {

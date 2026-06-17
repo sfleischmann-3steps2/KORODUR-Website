@@ -1377,88 +1377,6 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     }
   ],
-  "koropox": [
-    {
-      "typ": "tds",
-      "titel": "KOROPOX",
-      "url": "/downloads/tds/KOROPOX_de_2023.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "tds",
-      "titel": "KOROPOX",
-      "url": "/downloads/tds/KOROPOX_en_2023.pdf",
-      "sprache": "en"
-    },
-    {
-      "typ": "tds",
-      "titel": "KOROPOX",
-      "url": "/downloads/tds/KOROPOX_fr.pdf",
-      "sprache": "fr"
-    },
-    {
-      "typ": "sds",
-      "titel": "KORODUR KOROPOX Komponente A",
-      "url": "/downloads/sds/KORODUR_KOROPOX_Komponente_A_SDB_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "sds",
-      "titel": "KORODUR KOROPOX Komponente B",
-      "url": "/downloads/sds/KORODUR_KOROPOX_Komponente_B_SDB_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "sds",
-      "titel": "Koropox component B",
-      "url": "/downloads/sds/Koropox_component_B_SDB_en.pdf",
-      "sprache": "en"
-    },
-    {
-      "typ": "sds",
-      "titel": "Koropox comp B",
-      "url": "/downloads/sds/Koropox_comp_B_SDB_fr.pdf",
-      "sprache": "fr"
-    }
-  ],
-  "korotan": [
-    {
-      "typ": "tds",
-      "titel": "KORODUR KOROTAN",
-      "url": "/downloads/tds/KORODUR_KOROTAN_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "tds",
-      "titel": "KOROTAN",
-      "url": "/downloads/tds/KOROTAN_en.pdf",
-      "sprache": "en"
-    },
-    {
-      "typ": "tds",
-      "titel": "KORODUR KOROTAN",
-      "url": "/downloads/tds/KORODUR_KOROTAN_fr.pdf",
-      "sprache": "fr"
-    },
-    {
-      "typ": "sds",
-      "titel": "KORODUR Korotan",
-      "url": "/downloads/sds/KORODUR_Korotan_SDB_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "sds",
-      "titel": "KOROTAN",
-      "url": "/downloads/sds/KOROTAN_SDB_en.pdf",
-      "sprache": "en"
-    },
-    {
-      "typ": "sds",
-      "titel": "KOROTAN",
-      "url": "/downloads/sds/KOROTAN_SDB_fr.pdf",
-      "sprache": "fr"
-    }
-  ],
   "system-korodur-korotan": [
     {
       "typ": "tds",
@@ -1813,38 +1731,6 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "fr"
     }
   ],
-  "microtop-tw-nsd": [
-    {
-      "typ": "tds",
-      "titel": "MICROTOP TW NSD",
-      "url": "/downloads/tds/MICROTOP_TW_NSD_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "tds",
-      "titel": "MICROTOP TW NSD",
-      "url": "/downloads/tds/MICROTOP_TW_NSD_en.pdf",
-      "sprache": "en"
-    },
-    {
-      "typ": "sds",
-      "titel": "KORODUR MICROTOP",
-      "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "sds",
-      "titel": "MICROTOP",
-      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
-      "sprache": "en"
-    },
-    {
-      "typ": "sds",
-      "titel": "MICROTOP",
-      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
-      "sprache": "fr"
-    }
-  ],
   "microtop-tw-nsm": [
     {
       "typ": "tds",
@@ -2055,34 +1941,6 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set Reparaturmoertel Sannierungsarbeiten",
       "url": "/downloads/anwendung/13-Rapid-Set-Reparaturmoertel_Sannierungsarbeiten.pdf",
       "sprache": "de"
-    }
-  ],
-  "neodur-am-super": [
-    {
-      "typ": "tds",
-      "titel": "NEODUR AM Super AM Plus",
-      "url": "/downloads/tds/NEODUR_AM_Super_AM_Plus_de.pdf",
-      "sprache": "de"
-    }
-  ],
-  "neodur-am-plus": [
-    {
-      "typ": "tds",
-      "titel": "NEODUR AM Super AM Plus",
-      "url": "/downloads/tds/NEODUR_AM_Super_AM_Plus_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "tds",
-      "titel": "NEODUR AM Super AM Plus",
-      "url": "/downloads/tds/NEODUR_AM_Super_AM_Plus_en.pdf",
-      "sprache": "en"
-    },
-    {
-      "typ": "tds",
-      "titel": "NEODUR AM super AM Plus",
-      "url": "/downloads/tds/NEODUR_AM_super_AM_Plus_fr.pdf",
-      "sprache": "fr"
     }
   ],
   "neodur-he-2": [
