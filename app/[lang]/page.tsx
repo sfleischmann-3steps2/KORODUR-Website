@@ -56,7 +56,7 @@ export default async function Home({
       {/* Section 1: Full-Bleed-Hero mit Key Visual 1920x1080 (Steffi, 2026-06-12;
           Original: docs/reference/brand/KeyVisual_1920x1080_original.jpg).
           Navy-Gradient links für Text-Lesbarkeit, Amboss-Motiv bleibt rechts sichtbar. */}
-      <section className="relative text-white overflow-hidden" style={{ minHeight: 560 }}>
+      <section className="relative text-white overflow-hidden" style={{ minHeight: 440 }}>
         {/* Manuelles <picture> statt next/image: Bei images.unoptimized gibt es
             kein automatisches Resizing — Mobilgeräte bekamen das volle
             1920px-JPEG (Lighthouse: mobile LCP 4,2s). Die 828px-WebP-Ableitung
@@ -80,41 +80,47 @@ export default async function Home({
               "linear-gradient(to right, rgba(0,45,89,0.93) 0%, rgba(0,45,89,0.88) 30%, rgba(0,45,89,0.55) 45%, rgba(0,45,89,0.15) 60%, rgba(0,45,89,0) 70%)",
           }}
         />
-        <div className="relative mx-auto flex max-w-[1320px] flex-col justify-center px-4 pt-16 pb-20 sm:px-8 md:pt-[110px] md:pb-[130px] md:min-h-[560px]">
-          <p
-            className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-5"
-            style={{ fontWeight: 700 }}
-          >
-            {dict.home.hero_kicker}
-          </p>
-          <h1
-            className="leading-[1.08] mb-6"
-            style={{
-              fontSize: "clamp(32px, 5vw, 52px)",
-              fontWeight: 900,
-              maxWidth: 640,
-              color: "var(--white)",
-            }}
-          >
-            {dict.home.hero_title}
-          </h1>
-          <p
-            className="text-white/85 mb-10 leading-[1.7]"
-            style={{ fontSize: 18, maxWidth: 520 }}
-          >
-            {dict.home.hero_subtitle}
-          </p>
-          <div className="flex flex-wrap gap-4">
+        {/* #227: Text links, 2 CTAs rechts auf Höhe des Sub-Textes (lg);
+            Hero kompakter → Produktportfolio above-the-fold. Mobil gestapelt. */}
+        <div className="relative mx-auto max-w-[1320px] flex flex-col justify-center px-4 pt-12 pb-14 sm:px-8 md:pt-[68px] md:pb-[80px] md:min-h-[440px] lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-x-12">
+          {/* Text links */}
+          <div>
+            <p
+              className="text-cyan text-[13px] uppercase tracking-[0.2em] mb-5"
+              style={{ fontWeight: 700 }}
+            >
+              {dict.home.hero_kicker}
+            </p>
+            <h1
+              className="leading-[1.08] mb-6"
+              style={{
+                fontSize: "clamp(32px, 5vw, 52px)",
+                fontWeight: 900,
+                maxWidth: 640,
+                color: "var(--white)",
+              }}
+            >
+              {dict.home.hero_title}
+            </h1>
+            <p
+              className="text-white/85 mb-0 leading-[1.7]"
+              style={{ fontSize: 18, maxWidth: 520 }}
+            >
+              {dict.home.hero_subtitle}
+            </p>
+          </div>
+          {/* CTAs rechts (lg gestapelt, bündig zur Subtext-Unterkante) */}
+          <div className="flex flex-wrap gap-4 mt-8 lg:mt-0 lg:flex-col lg:flex-nowrap lg:pb-1">
             <Link
               href={`/${lang}/loesungsfinder/`}
-              className="inline-block text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
+              className="inline-block text-center text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
               style={{ padding: "18px 36px", fontWeight: 800, fontSize: 16 }}
             >
               {dict.home.hero_cta}
             </Link>
             <Link
               href={`/${lang}/produkte/`}
-              className="inline-block text-white no-underline rounded-[6px] border-2 border-white/50 hover:bg-white/10 transition-colors duration-200"
+              className="inline-block text-center text-white no-underline rounded-[6px] border-2 border-white/50 hover:bg-white/10 transition-colors duration-200"
               style={{ padding: "16px 34px", fontWeight: 800, fontSize: 16 }}
             >
               {dict.home.hero_cta_secondary}
@@ -124,7 +130,7 @@ export default async function Home({
       </section>
 
       {/* Section 1b: Bereichs-Grid */}
-      <section className="bg-white" style={{ padding: "88px 32px 100px" }}>
+      <section className="bg-white" style={{ padding: "56px 32px 80px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h2
             className="text-center mb-4"
@@ -139,6 +145,26 @@ export default async function Home({
             {dict.home.bereiche_subtitle}
           </p>
           <PortfolioGrid lang={lang} dict={dict} />
+        </div>
+      </section>
+
+      {/* #227: schmaler Beratungs-CTA zwischen Portfolio-Grid und Referenzen */}
+      <section className="bg-icon-bg border-y border-bullet-bg" style={{ padding: "24px 32px" }}>
+        <div
+          className="mx-auto flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-3 text-center"
+          style={{ maxWidth: 1320 }}
+        >
+          <span className="text-navy text-[17px]" style={{ fontWeight: 700 }}>
+            {dict.home.beratung_lead}
+          </span>
+          <Link
+            href={`/${lang}/kontakt/`}
+            className="inline-flex items-center gap-2 text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
+            style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15 }}
+          >
+            {dict.home.beratung_cta}
+            <AppIcon icon={ChevronRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
@@ -217,8 +243,8 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Section 5: CTA + Footer area */}
-      <section className="bg-navy text-white text-center" style={{ padding: "72px 32px" }}>
+      {/* Section 5: CTA + Footer area — #227: Navy-Block schlanker (72→48) */}
+      <section className="bg-navy text-white text-center" style={{ padding: "48px 32px" }}>
         <div className="mx-auto" style={{ maxWidth: 700 }}>
           <h2 className="text-white mb-4" style={{ fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 900 }}>
             {dict.home.cta_title}
