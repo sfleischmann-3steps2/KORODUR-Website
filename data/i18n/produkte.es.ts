@@ -424,17 +424,6 @@ export const produkteES: Record<string, {
       { label: "Distancia de bombeo", wert: "hasta 80 m" },
     ],
   },
-  "korotan": {
-    kurzbeschreibung: "Aditivo especial líquido con efecto fluidificante y estabilizante para pavimentos industriales KORODUR-KOROTAN",
-    beschreibung: "KOROTAN se emplea como ayuda de aplicación: para soleras de áridos duros KORODUR de una sola capa sobre hormigón portante fresco o endurecido, para todos los sistemas de dos capas y como aditivo para soleras de todo tipo.",
-    besonderheiten: ["Efecto fluidificante y estabilizante", "Específico para pavimentos industriales KORODUR-KOROTAN", "Como aditivo para soleras de todo tipo"],
-    technischeDaten: [
-      { label: "Forma", wert: "líquido verde" },
-      { label: "Densidad (20 °C)", wert: "1,13 g/cm³" },
-      { label: "Valor pH", wert: "aprox. 9" },
-      { label: "Dosificación", wert: "hasta aprox. 1–2 % del peso de cemento" },
-    ],
-  },
   "korodur-easyfinish": {
     kurzbeschreibung: "Ayuda de alisado líquida, exenta de disolventes y lista para su uso, para NEODUR HE 60 rapid y KOROCRETE",
     beschreibung: "KORODUR easyFinish se pulveriza sobre la superficie de NEODUR HE 60 rapid o KOROCRETE fratasada con disco antes del primer alisado con aspas y se incorpora a la superficie. Se facilita el proceso de alisado, la superficie se mejora adicionalmente, se incrementa la densidad y se mejora la protección frente a ataques químicos.",
@@ -464,17 +453,6 @@ export const produkteES: Record<string, {
       { label: "Forma", wert: "líquido" },
       { label: "Color", wert: "blanco lechoso" },
       { label: "Valor pH", wert: "11,6" },
-    ],
-  },
-  "koropox": {
-    kurzbeschreibung: "Concentrado de resina epoxi bicomponente, transparente y emulsionable en agua, para la impregnación de suelos aglomerados con cemento",
-    beschreibung: "KOROPOX aumenta la estanqueidad y la resistencia frente a agua, grasa, aceite, aceite mineral, combustible y líquidos de frenos. La aplicación se realiza en dos pasadas sobre pavimentos industriales KOROPLAN, KORODUR y NEODUR o revestimientos aglomerados con cemento.",
-    besonderheiten: ["Emulsionable en agua y transparente", "Resistente a agua, grasa, aceite, combustible y líquidos de frenos"],
-    technischeDaten: [
-      { label: "Forma", wert: "líquido" },
-      { label: "Color", wert: "incoloro" },
-      { label: "Densidad", wert: "1,0 g/cm³" },
-      { label: "Consumo", wert: "2 pasadas, aprox. 75–175 g/m² de concentrado (comp. A + B)" },
     ],
   },
   "koromineral": {
@@ -680,15 +658,6 @@ export const produkteES: Record<string, {
       { label: "Valor pH", wert: "aprox. 11,3" },
     ],
   },
-  "microtop-tw-nsd": {
-    kurzbeschreibung: "Mortero de cemento proyectado (C30/37) mejorado con microsílice, por vía húmeda, para el ámbito del agua potable",
-    beschreibung: "MICROTOP TW NSD es un mortero de cemento proyectado mineral, de fraguado hidráulico y mejorado con microsílice, de la clase de resistencia del hormigón C30/37, para el ámbito del agua potable. La aplicación se realiza mediante proyección por vía húmeda con transporte por flujo diluido o flujo denso; el soporte son hormigones portantes y revocos antiguos firmemente adheridos con una adherencia a tracción de al menos 1,5 N/mm². Cumple los requisitos de las hojas de trabajo DVGW W 300 y W 347.",
-    besonderheiten: ["Puramente mineral, mejorado con microsílice", "Proyección por vía húmeda con flujo diluido o flujo denso"],
-    technischeDaten: [
-      { label: "Granulometría", wert: "0–3 mm" },
-      { label: "Forma de suministro", wert: "envase especial de papel de 25 kg" },
-    ],
-  },
   "neodur-vm-1": {
     kurzbeschreibung: "Mortero de relleno para secciones de relleno de 5 a 20 mm",
     beschreibung: "Los morteros de montaje y de relleno unen el hormigón de forma solidaria con los elementos de acero embebidos. NEODUR VM 1 está concebido para secciones de relleno de 5 a 20 mm.",
@@ -742,22 +711,6 @@ export const produkteES: Record<string, {
     besonderheiten: ["De endurecimiento rápido", "Declaración ambiental de producto (EPD de grupo) disponible"],
     technischeDaten: [
       { label: "Sección de relleno", wert: "5–20 mm" },
-    ],
-  },
-  "neodur-am-super": {
-    kurzbeschreibung: "Mortero de anclaje para anclajes de roca de todo tipo en minería y construcción de túneles",
-    beschreibung: "Los morteros de anclaje se emplean en combinación con anclajes de roca de todo tipo en la minería y la construcción de túneles. NEODUR AM Super es un mortero seco mineral de fábrica con granulometría de 0 a 1 mm.",
-    besonderheiten: ["Para anclajes de roca de todo tipo"],
-    technischeDaten: [
-      { label: "Granulometría", wert: "0–1 mm" },
-    ],
-  },
-  "neodur-am-plus": {
-    kurzbeschreibung: "Mortero de anclaje para anclajes de roca de todo tipo en minería y construcción de túneles",
-    beschreibung: "Los morteros de anclaje se emplean en combinación con anclajes de roca de todo tipo en la minería y la construcción de túneles. NEODUR AM Plus es un mortero seco mineral de fábrica con granulometría de 0 a 1 mm.",
-    besonderheiten: ["Para anclajes de roca de todo tipo"],
-    technischeDaten: [
-      { label: "Granulometría", wert: "0–1 mm" },
     ],
   },
   "neodur-msm-3": {

@@ -469,21 +469,6 @@ export const produktePL: Record<string, {
       "Stała jakość zaprawy, ważna przy wykonaniach barwionych",
     ],
   },
-  "korotan": {
-    kurzbeschreibung: "Płynny specjalny dodatek o działaniu upłynniającym i stabilizującym do posadzek przemysłowych KORODUR-KOROTAN",
-    beschreibung: "KOROTAN stosowany jest jako środek ułatwiający obróbkę: do jednowarstwowych jastrychów z kruszywem twardym KORODUR na świeżym lub stwardniałym betonie nośnym, do wszystkich systemów dwuwarstwowych oraz jako domieszka do jastrychów wszelkiego rodzaju.",
-    technischeDaten: [
-      { label: "Postać", wert: "zielona ciecz" },
-      { label: "Gęstość (20 °C)", wert: "1,13 g/cm³" },
-      { label: "Wartość pH", wert: "ok. 9" },
-      { label: "Dozowanie", wert: "do ok. 1–2 % masy cementu" },
-    ],
-    besonderheiten: [
-      "Działanie upłynniające i stabilizujące",
-      "Specjalnie do posadzek przemysłowych KORODUR-KOROTAN",
-      "Jako domieszka do jastrychów wszelkiego rodzaju",
-    ],
-  },
   "korodur-easyfinish": {
     kurzbeschreibung: "Płynny, bezrozpuszczalnikowy, gotowy do użycia środek ułatwiający zacieranie dla NEODUR HE 60 rapid i KOROCRETE",
     beschreibung: "KORODUR easyFinish natryskuje się i wprowadza w powierzchnię NEODUR HE 60 rapid lub KOROCRETE po zatarciu wstępnym, przed pierwszym zacieraniem łopatkowym. Proces zacierania jest ułatwiony, powierzchnia dodatkowo uszlachetniona, szczelność zwiększona, a ochrona przed agresją chemiczną poprawiona.",
@@ -525,20 +510,6 @@ export const produktePL: Record<string, {
       "Bezrozpuszczalnikowy, jednoskładnikowy, gotowy do użycia",
       "Zastępuje czasochłonne wstępne nawilżanie przy sanacjach",
       "Minimalizuje odparowywanie warstwy sczepnej",
-    ],
-  },
-  "koropox": {
-    kurzbeschreibung: "Emulgowalny w wodzie, transparentny koncentrat 2-składnikowej żywicy epoksydowej do impregnacji posadzek cementowych",
-    beschreibung: "KOROPOX zwiększa szczelność i odporność na wodę, tłuszcz, olej, olej mineralny, paliwo i płyny hamulcowe. Aplikacja w dwóch cyklach roboczych na posadzkach przemysłowych KOROPLAN, KORODUR i NEODUR lub okładzinach cementowych.",
-    technischeDaten: [
-      { label: "Postać", wert: "płynna" },
-      { label: "Barwa", wert: "bezbarwna" },
-      { label: "Gęstość", wert: "1,0 g/cm³" },
-      { label: "Zużycie", wert: "2 cykle robocze, ok. 75–175 g/m² koncentratu (komp. A + B)" },
-    ],
-    besonderheiten: [
-      "Emulgowalny w wodzie i transparentny",
-      "Odporny na wodę, tłuszcz, olej, paliwo, płyny hamulcowe",
     ],
   },
   "koromineral": {
@@ -807,18 +778,6 @@ export const produktePL: Record<string, {
       "Impregnacja do wszystkich zapraw MICROTOP TW",
     ],
   },
-  "microtop-tw-nsd": {
-    kurzbeschreibung: "Uszlachetniona mikrokrzemionką cementowa zaprawa natryskowa (C30/37) w metodzie natrysku mokrego do obszaru wody pitnej",
-    beschreibung: "MICROTOP TW NSD to mineralna, wiążąca hydraulicznie, uszlachetniona mikrokrzemionką cementowa zaprawa natryskowa klasy wytrzymałości betonu C30/37 do obszaru wody pitnej. Aplikacja odbywa się metodą natrysku mokrego z transportem rzadkostrumieniowym lub gęstostrumieniowym; podłożem są nośne betony i mocno przylegające stare tynki o przyczepności co najmniej 1,5 N/mm². Spełnia wymagania arkuszy roboczych DVGW W 300 i W 347.",
-    technischeDaten: [
-      { label: "Uziarnienie", wert: "0–3 mm" },
-      { label: "Forma dostawy", wert: "specjalne opakowanie papierowe 25 kg" },
-    ],
-    besonderheiten: [
-      "Czysto mineralna, uszlachetniona mikrokrzemionką",
-      "Natrysk mokry z transportem rzadkostrumieniowym lub gęstostrumieniowym",
-    ],
-  },
   "neodur-vm-1": {
     kurzbeschreibung: "Zaprawa do podlewek o przekroju podlewki od 5 do 20 mm",
     beschreibung: "Zaprawy montażowe i do podlewek łączą beton w sposób przenoszący siły ze stalowymi elementami wbudowanymi. NEODUR VM 1 jest przeznaczony do przekrojów podlewki od 5 do 20 mm.",
@@ -885,26 +844,6 @@ export const produktePL: Record<string, {
     besonderheiten: [
       "Szybkotwardniejąca",
       "Dostępna środowiskowa deklaracja produktowa (EPD grupowa)",
-    ],
-  },
-  "neodur-am-super": {
-    kurzbeschreibung: "Zaprawa kotwiąca do kotew górotworu wszelkiego rodzaju w budownictwie górniczym i tunelowym",
-    beschreibung: "Zaprawy kotwiące stosowane są w połączeniu z kotwami górotworu wszelkiego rodzaju w budownictwie górniczym i tunelowym. NEODUR AM Super to mineralna fabryczna sucha zaprawa o uziarnieniu 0 do 1 mm.",
-    technischeDaten: [
-      { label: "Uziarnienie", wert: "0–1 mm" },
-    ],
-    besonderheiten: [
-      "Do kotew górotworu wszelkiego rodzaju",
-    ],
-  },
-  "neodur-am-plus": {
-    kurzbeschreibung: "Zaprawa kotwiąca do kotew górotworu wszelkiego rodzaju w budownictwie górniczym i tunelowym",
-    beschreibung: "Zaprawy kotwiące stosowane są w połączeniu z kotwami górotworu wszelkiego rodzaju w budownictwie górniczym i tunelowym. NEODUR AM Plus to mineralna fabryczna sucha zaprawa o uziarnieniu 0 do 1 mm.",
-    technischeDaten: [
-      { label: "Uziarnienie", wert: "0–1 mm" },
-    ],
-    besonderheiten: [
-      "Do kotew górotworu wszelkiego rodzaju",
     ],
   },
   "neodur-msm-3": {

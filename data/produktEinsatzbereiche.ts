@@ -40,11 +40,9 @@ export const PRODUKT_EINSATZBEREICHE: Record<string, string[]> = {
   "korodur-durop": ["Molkereien, Brauereien und Schlachthäuser", "Nassbetriebe und chemische Fabriken", "Batterieräume", "Rampen und Parkhäuser", "Fahrbahnen, Brückenbeschichtungen und Übergänge", "Fahrradwege und Flughafenflächen"],
   "korodur-robust": ["Feuerwehr-Fahrzeughallen und Gerätehäuser", "Waschanlagen und Nassbereiche", "Sanierung schwieriger Untergründe (Estrich, Beton)", "Kunstharzgebundene Estriche mit rutschhemmender Deckbeschichtung"],
   "korodur-silosystem": ["Großflächige Industrieböden", "Hartstoffschichten und NEODUR-Hartstoffestriche", "Flächen mit Termindruck und kurzen Bauzeiten", "Farbige Hartstoffausführungen"],  // abgeleitet
-  "korotan": ["Industrie- und Gewerbebau", "Einschichtige KORODUR Hartstoffestriche im Verbund", "Zweischichtige Hartstoffestrich-Systeme", "Estriche aller Art als Zusatzmittel"],  // abgeleitet
   "korodur-easyfinish": ["Herstellung von Beton- und Estrichflächen", "Hartstoff-Industrieböden (NEODUR HE 60 rapid, KOROCRETE)", "Flächen im Innen- und Außenbereich"],
   "korodur-nanofinish": ["Frische KORODUR Industrieböden während des Glättens", "Innen- und Außenflächen", "Flächenbearbeitung unter heißen, trockenen und windigen Bedingungen", "Großflächige Estrich- und Industriebodenflächen mit Glätt-/Tellerbearbeitung"],
   "korodur-uniprimer": ["Saugende Betonuntergründe vor der Beschichtung mit Hartstoffestrichen", "Industriebodensanierungen mit KORODUR/NEODUR Hartstoffestrichen", "Vorbehandlung trockener Untergründe ohne Vornässen", "Innen- und Außenbereiche"],
-  "koropox": ["Zementgebundene Industrieböden (KORODUR-/NEODUR-Böden)", "Beton- und Estrichflächen", "Lager- und Produktionsräume", "Kühlräume"],
   "koromineral": ["Lager- und Produktionsräume", "Kühlräume", "Zementgebundene Industrieböden und Estriche", "Beton- und Mauermörtelflächen"],
   "koromineral-li": ["Geschliffene und ungeschliffene Betonböden und Estriche", "Betonwerkstein- und Terrazzoböden", "Mineralische, zementgebundene Untergründe"],
   "koroclean": ["KORODUR und NEODUR Hartstoff-Industrieböden", "Sonstige zementäre Industrieböden", "Verkaufs-, Repräsentations- und Veranstaltungsflächen", "Architektonisch anspruchsvolle Industrieböden und Designböden"],
@@ -69,8 +67,6 @@ export const PRODUKT_EINSATZBEREICHE: Record<string, string[]> = {
   "neodur-vm-basic": ["Anker- und Montagelöcher (kraftschlüssiger Verguss)", "Untergießen von Maschinen, Turbinen und Kranbahnschienen", "Verguss von Stahl- und Betonstützen sowie Geländerpfosten", "Rohrdurchführungen und Schwerlastrinnen in Verkehrsflächen", "Trinkwasseranlagen und Rohrverguss im Trinkwasserbereich"],
   "neodur-svm-03": ["Vergussarbeiten in Vergussquerschnitten von 5 bis 20 mm", "Kraftschlüssiger Verguss von Stahleinbauteilen im Beton", "Unterguss von Maschinen- und Anlagenfundamenten", "Reparaturen mit schneller Wiederinbetriebnahme"],  // abgeleitet
   "neodur-svm-4": ["Verguss von Fahrleitungsmasten", "Vergussarbeiten mit kurzfristiger Belastbarkeitsanforderung", "Vergussquerschnitte von 10 bis 50 mm Breite"],  // abgeleitet
-  "neodur-am-super": ["Bergbau und Tunnelbau", "Kraftschlüssige Verankerung von Gebirgsankern aller Art", "Verankerung an Sohle, Stoß und First", "Vornässung von Bohrlöchern, auch über Kopf"],
-  "neodur-am-plus": ["Kraftschlüssige Verankerung von Gebirgsankern aller Art", "Berg- und Tunnelbau", "Anker in Sohle, Stoß und First", "Verfüllung von Bohrlöchern, auch über Kopf"],
   "neodur-msm-3": ["Betoninstandsetzung und Verstärkung bestehender Konstruktionen", "Trinkwasserbehälter", "Tunnelbau und Spezialtiefbau", "Hang- und Baugrubensicherung", "Spritzbeton-Anwendungen im Neubau"],
   "neodur-msm-5": ["Betoninstandsetzung im Neubau und Bestand", "Trinkwasserbehälter", "Tunnelbau", "Spezialtiefbau", "Hang- und Baugrubensicherung", "Verstärkung bestehender Konstruktionen"],
   "neodur-msb-8": ["Betoninstandsetzung", "Trinkwasserbehälter", "Tunnelbau und Spezialtiefbau", "Hang- und Baugrubensicherung", "Verstärkung bestehender Konstruktionen"],
@@ -79,7 +75,6 @@ export const PRODUKT_EINSATZBEREICHE: Record<string, string[]> = {
   "goodcat-golden-nature": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen"],  // abgeleitet
   "goodcat-organic-love": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen"],  // abgeleitet
   "goodcat-silver-classic": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen", "Zoofachhandel und Tierzuchten"],  // abgeleitet
-  "microtop-tw-nsd": ["Trinkwasserbehälter und -anlagen", "Reprofilierung und Beschichtung von Betonflächen", "Erhöhung der Betondeckung", "Finish- und Glättarbeiten im Trinkwasserbereich"],
   "koromineral-lasur": ["Zementgebundene Estrich- und Betonflächen", "KORODUR Estriche", "Neue, optisch ungleichmäßige Betonflächen", "Altbeläge und Bestandsflächen", "Flächen mit Belastung durch Öle und Fette"],
   "neodur-pfm-1k-easyfix": ["Verfugung von Pflasterflächen", "Sanierung bestehender Pflasterfugen", "Terrassen und Gehwege", "Fußgängerbereiche mit leichter Belastung"],
   "neodur-pfm-ze": ["Pflasterflächen aus Natur- und Betonpflaster in starrer Bauweise", "Plattenflächen aus Betonplatten in starrer Bauweise (PFM-ZE Flex)", "Neuverfugung bestehender Pflaster- und Plattenbeläge", "Mit Pkw befahrene Flächen, Wege und Plätze", "Frost- und tausalzbeanspruchte Außenflächen"],

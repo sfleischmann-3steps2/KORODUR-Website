@@ -3628,7 +3628,7 @@ export const referenzen: Referenz[] = [
     land: "Deutschland",
     jahr: 2017,
     flaeche: "6.000 m²",
-    produkte: ["NEODUR HE 65", "KORODUR HB 5", "KOROTAN", "KOROMINERAL"],
+    produkte: ["NEODUR HE 65", "KORODUR HB 5", "System KORODUR-KOROTAN", "KOROMINERAL"],
     ausgangssituation:
       "An der Grasbrunnerstraße in München entstand auf einem 10.000 m² großen Grundstück der zweite Bauabschnitt des 6.000 m² großen IMMO Art Kunstdepots. Auf drei Ebenen wird die Lagerung von Kunst- und Kulturgütern nach modernsten Anforderungen umgesetzt.",
     herausforderungen: [
@@ -4000,7 +4000,7 @@ export const referenzen: Referenz[] = [
     land: "Estland",
     jahr: 2018,
     flaeche: "ca. 100 m²",
-    produkte: ["NEODUR HE 65", "KORODUR HB 5", "KOROTAN"],
+    produkte: ["NEODUR HE 65", "KORODUR HB 5", "System KORODUR-KOROTAN"],
     ausgangssituation:
       "Für das stilvoll-moderne Restaurant HÄRG in Tallinn sollte ein Boden entstehen, der das rustikale Ambiente unterstreicht und gleichzeitig dem Gastronomiebetrieb standhält.",
     herausforderungen: [
