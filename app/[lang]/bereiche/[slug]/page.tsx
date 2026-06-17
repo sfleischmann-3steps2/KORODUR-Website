@@ -322,7 +322,8 @@ export default async function BereichPage({ params }: { params: Params }) {
             className="mb-6"
             style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}
           >
-            {tb("produkte_title")}
+            {/* #220: Per-Bereich-Heading „{Bereich} Produkte"; Fallback generisch. */}
+            {(dict.bereiche as Record<string, string>)[`${slug}_produkte_heading`] ?? tb("produkte_title")}
           </h2>
 
           {localizedProdukte.length > 0 ? (
