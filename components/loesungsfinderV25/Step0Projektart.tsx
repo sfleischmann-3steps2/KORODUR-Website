@@ -21,8 +21,10 @@ export default function Step0Projektart({ onSelect }: Step0Props) {
       </header>
 
       {/* Konstante Mindesthöhe wie die Funnels -> kein Höhensprung beim
-          Weiche->Funnel-Wechsel (Steffi, #102); Auswahl vertikal zentriert. */}
-      <div className="md:flex md:min-h-[500px] md:flex-col md:justify-center">
+          Weiche->Funnel-Wechsel (#102). Inhalt aber oben ausgerichtet
+          (justify-start statt -center), damit die Auswahl-Karten auf
+          Laptop-Viewports ohne Scrollen klickbar bleiben (#246). */}
+      <div className="md:flex md:min-h-[500px] md:flex-col md:justify-start">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {/* Neubau — Navy, Kerngeschäft (links) */}
         <button
