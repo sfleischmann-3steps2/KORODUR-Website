@@ -33,6 +33,7 @@ export default async function SchadensbildPage({ params }: { params: Params }) {
       titel={art.frontmatter.title}
       breadcrumb={[{ label: "Schadensbilder", href: `/${lang}/schadensbilder` }, { label: art.frontmatter.title }]}
       body={art.body}
+      referenzenSlugs={art.frontmatter.referenzen}
     />
   );
 }

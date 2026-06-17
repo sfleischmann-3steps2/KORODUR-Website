@@ -33,6 +33,7 @@ export default async function BranchenPage({ params }: { params: Params }) {
       titel={art.frontmatter.title}
       breadcrumb={[{ label: "Lösungen nach Branche" }, { label: art.frontmatter.title }]}
       body={art.body}
+      referenzenSlugs={art.frontmatter.referenzen}
     />
   );
 }

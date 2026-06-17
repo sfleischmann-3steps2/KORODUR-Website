@@ -30,6 +30,6 @@ export default async function SchadensbilderHubPage({ params }: { params: Params
   const art = getArtikel("schadensbilder", "index");
   if (!art) notFound();
   return (
-    <ArtikelSeite lang={lang} titel={art.frontmatter.title} breadcrumb={[{ label: "Schadensbilder" }]} body={art.body} />
+    <ArtikelSeite lang={lang} titel={art.frontmatter.title} breadcrumb={[{ label: "Schadensbilder" }]} body={art.body} referenzenSlugs={art.frontmatter.referenzen} />
   );
 }
