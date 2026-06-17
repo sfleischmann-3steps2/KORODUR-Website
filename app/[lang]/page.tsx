@@ -113,15 +113,15 @@ export default async function Home({
           <div className="flex flex-wrap gap-4 mt-8 lg:mt-0 lg:flex-col lg:flex-nowrap lg:pb-1">
             <Link
               href={`/${lang}/loesungsfinder/`}
-              className="inline-block text-center text-white no-underline rounded-[6px] bg-cyan hover:bg-cyan-hover transition-colors duration-200"
-              style={{ padding: "18px 36px", fontWeight: 800, fontSize: 16 }}
+              className="inline-block text-center text-navy no-underline rounded-[8px] bg-white shadow-[0_8px_28px_rgba(0,45,89,0.35)] hover:shadow-[0_10px_34px_rgba(0,45,89,0.45)] hover:-translate-y-0.5 transition-all duration-200"
+              style={{ padding: "20px 40px", fontWeight: 900, fontSize: 17 }}
             >
               {dict.home.hero_cta}
             </Link>
             <Link
               href={`/${lang}/produkte/`}
-              className="inline-block text-center text-white no-underline rounded-[6px] border-2 border-white/50 hover:bg-white/10 transition-colors duration-200"
-              style={{ padding: "16px 34px", fontWeight: 800, fontSize: 16 }}
+              className="inline-block text-center text-white no-underline rounded-[8px] bg-navy/40 border-2 border-white/70 hover:bg-navy/60 hover:border-white transition-colors duration-200"
+              style={{ padding: "18px 38px", fontWeight: 800, fontSize: 16 }}
             >
               {dict.home.hero_cta_secondary}
             </Link>
