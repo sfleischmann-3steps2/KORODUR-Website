@@ -47,8 +47,8 @@ export default function Footer({
   ];
 
   const linkClass =
-    "text-white/70 hover:text-white no-underline text-[14px] transition-colors duration-150 inline-block py-1";
-  const headingClass = "text-white text-[13px] uppercase tracking-wider mb-2.5";
+    "text-white/75 hover:text-white no-underline text-[14px] font-medium transition-colors duration-150 inline-block py-1.5";
+  const headingClass = "text-white text-[13px] uppercase tracking-wider mb-4";
 
   return (
     <footer className="bg-navy text-white mt-auto">
@@ -56,10 +56,10 @@ export default function Footer({
       <div className="h-[3px] bg-cyan" aria-hidden="true" />
 
       <div
-        className="mx-auto py-8"
+        className="mx-auto py-12"
         style={{ maxWidth: 1320, paddingLeft: 32, paddingRight: 32 }}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-9">
           {/* (a) Bereiche — zweispaltig, hält den Footer flach */}
           <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
@@ -69,7 +69,7 @@ export default function Footer({
                 Footer gewandert (Nav-Umbau #72/#81). */}
             <Link
               href={`/${lang}/produkte/`}
-              className="inline-flex items-center gap-1.5 text-white hover:text-cyan no-underline text-[14px] mb-2"
+              className="inline-flex items-center gap-1.5 text-white hover:text-cyan no-underline text-[14px] mb-3.5"
               style={{ fontWeight: 700 }}
             >
               {dict.bereiche.alle_produkte_name}
@@ -78,13 +78,15 @@ export default function Footer({
             {/* min-w-0 + break-words: lange Namen (Schnellbetonsysteme) dürfen
                 umbrechen statt in die Nachbarspalte zu laufen */}
             {/* Spaltenweise gefüllt (grid-flow-col + 3 Reihen): linke Spalte
-                zuerst, dann rechte — feste Reihenfolge aus footerProduktReihenfolge. */}
-            <ul className="list-none m-0 p-0 grid grid-cols-2 grid-rows-3 grid-flow-col gap-x-5">
+                zuerst, dann rechte — feste Reihenfolge aus footerProduktReihenfolge.
+                #247: gleich hohe Reihen über items-stretch, damit mehrzeilige
+                Labels (Rapid-Set Betonsanierung) die Zeilen nicht stauchen. */}
+            <ul className="list-none m-0 p-0 grid grid-cols-2 grid-rows-3 grid-flow-col gap-x-8 items-stretch">
               {footerProduktReihenfolge.map((slug) => (
-                <li key={slug} className="min-w-0">
+                <li key={slug} className="min-w-0 flex items-start">
                   <Link
                     href={`/${lang}/bereiche/${slug}/`}
-                    className={`${linkClass} break-words hyphens-auto`}
+                    className={`${linkClass} break-words hyphens-auto leading-snug`}
                     lang={lang}
                   >
                     {bereichLabels[`${slug}_name`]}
