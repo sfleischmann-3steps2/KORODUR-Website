@@ -179,12 +179,22 @@ const EXPORT_NACH_SPRACHE: Record<string, string[]> = {
  *    (`bereiche: []`), daher greift hier KEIN Bereichsfilter — international
  *    sind Export/KAM die Ansprechpartner, optional ein Länder-Manager zuerst.
  *    Behebt #186 (Inline-CTAs zeigten international fälschlich DE-Berater). */
+// #232: Bereiche ohne eigene Berater erben das Mapping eines fachlich
+// verwandten Bereichs (keine Daten-Duplizierung, Intention explizit).
+// Katzenstreu hat bewusst KEIN Alias — dort rendert die Bereichsseite einen
+// generischen Kontaktblock ohne Foto.
+const BEREICH_BERATER_ALIAS: Partial<Record<Produktbereich, Produktbereich>> = {
+  sichtestrich: "industrieboden",
+  spezialbaustoffe: "rapid-set",
+};
+
 export function fachberaterFuerBereich(
   bereich: Produktbereich,
   lang: string = "de",
 ): Fachberater[] {
+  const effektiverBereich = BEREICH_BERATER_ALIAS[bereich] ?? bereich;
   if (lang === "de") {
-    return FACHBERATER_DE.filter((b) => b.bereiche.includes(bereich));
+    return FACHBERATER_DE.filter((b) => b.bereiche.includes(effektiverBereich));
   }
   const namen = [...(EXPORT_NACH_SPRACHE[lang] ?? []), ...EXPORT_ALLGEMEIN];
   const out: Fachberater[] = [];
