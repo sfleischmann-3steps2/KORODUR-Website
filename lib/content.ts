@@ -17,6 +17,9 @@ export interface ArtikelFrontmatter {
   ebene?: string;
   stufe?: string;
   reviewer?: string;
+  /** #170: Slugs echter Referenzen, die als Praxis-Teaser unter dem Artikel
+   *  eingebunden werden (ReferenceCard). Quelle: die im Text genannten Projekte. */
+  referenzen?: string[];
   [key: string]: unknown;
 }
 
