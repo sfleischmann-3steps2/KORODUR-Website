@@ -233,6 +233,9 @@ export default async function ReferenzDetailPage({
   const heroBild =
     !heroPaar && !referenz.bild.includes("_placeholder") ? referenz.bild : null;
   const hatHero = Boolean(heroPaar || heroBild);
+  // #256: Auflösungs-Gate — als "niedrig" markierte Bilder bekommen einen
+  // kompakteren Hero (kein Full-Bleed-Blow-up eines zu kleinen Bildes).
+  const heroKompakt = Boolean(heroBild) && referenz.heroQualitaet === "niedrig";
 
   // Einbau/Ergebnis-Paar bleibt als eigene Sektion unterhalb des Headers
   // (das Vorher/Nachher-Paar wandert in Variante A in den Hero).
@@ -321,8 +324,12 @@ export default async function ReferenzDetailPage({
           </section>
         </>
       ) : heroBild ? (
-        /* Variante B: Bild-Hero mit Navy-Overlay */
-        <section className="relative flex min-h-[400px] items-end overflow-hidden sm:min-h-[440px]">
+        /* Variante B: Bild-Hero mit Navy-Overlay (Höhe per Auflösungs-Gate, #256) */
+        <section
+          className={`relative flex items-end overflow-hidden ${
+            heroKompakt ? "min-h-[240px] sm:min-h-[280px]" : "min-h-[400px] sm:min-h-[440px]"
+          }`}
+        >
           <Image
             src={withBasePath(heroBild)}
             alt={referenz.bildAlt}
@@ -334,8 +341,10 @@ export default async function ReferenzDetailPage({
           <div
             className="absolute inset-0"
             style={{
+              // #256: Gradient verstärkt + Mindest-Tint (.15) über das ganze
+              // Bild, damit die weiße Headline auch auf hellen Bildern lesbar bleibt.
               background:
-                "linear-gradient(to top, rgba(0,45,89,.92) 0%, rgba(0,45,89,.55) 38%, rgba(0,45,89,.12) 70%, rgba(0,45,89,0) 100%)",
+                "linear-gradient(to top, rgba(0,45,89,.97) 0%, rgba(0,45,89,.80) 30%, rgba(0,45,89,.45) 58%, rgba(0,45,89,.22) 82%, rgba(0,45,89,.15) 100%)",
             }}
           />
           <div className="relative w-full px-4 pb-12 pt-20 sm:px-6">
