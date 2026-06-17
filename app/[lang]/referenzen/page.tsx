@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, type CSSProperties } from "react";
 import ReferenceCard from "../../../components/ReferenceCard";
 import Breadcrumb from "../../../components/Breadcrumb";
 import { referenzen as alleReferenzen } from "../../../data/referenzen";
@@ -161,6 +161,20 @@ export default function ReferenzenPage() {
 
   const hasActiveFilters = filters.projektart || filters.bereich || filters.produkt;
 
+  // #248: native Select-Markierung entfernen, eigener Navy-Chevron dicht am
+  // Inhalt (right 0.7rem) statt browser-default ganz am rechten Rand.
+  const selectStyle: CSSProperties = {
+    fontWeight: 700,
+    fontFamily: "inherit",
+    appearance: "none",
+    WebkitAppearance: "none",
+    backgroundImage:
+      "url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23002d59%22%20stroke-width=%223%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpolyline%20points=%226%209%2012%2015%2018%209%22/%3E%3C/svg%3E')",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "right 0.7rem center",
+    backgroundSize: "12px 12px",
+  };
+
   return (
     <>
       <section style={{ padding: "0 32px" }}>
@@ -235,8 +249,8 @@ export default function ReferenzenPage() {
             <select
               value={filters.bereich}
               onChange={(e) => setBereich(e.target.value)}
-              className="text-[14px] text-navy bg-white border border-mid-gray rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-cyan"
-              style={{ fontWeight: 700, fontFamily: "inherit" }}
+              className="text-[14px] text-navy bg-white border border-mid-gray rounded-[8px] pl-4 pr-9 py-2.5 cursor-pointer outline-none focus:border-cyan"
+              style={selectStyle}
             >
               <option value="">{dict.referenzen.filter_all_areas}</option>
               {bereicheSortiert.map(({ id, count }) => (
@@ -250,8 +264,8 @@ export default function ReferenzenPage() {
               <select
                 value={filters.produkt}
                 onChange={(e) => setProdukt(e.target.value)}
-                className="text-[14px] text-navy bg-white border border-mid-gray rounded-[8px] px-4 py-2.5 cursor-pointer outline-none focus:border-cyan"
-                style={{ fontWeight: 700, fontFamily: "inherit" }}
+                className="text-[14px] text-navy bg-white border border-mid-gray rounded-[8px] pl-4 pr-9 py-2.5 cursor-pointer outline-none focus:border-cyan"
+                style={selectStyle}
               >
                 <option value="">{dict.referenzen.filter_all_products}</option>
                 {produktGruppen.map(({ familie, produkte }) => (
