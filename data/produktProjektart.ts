@@ -21,6 +21,7 @@ import { projektartBucket, type Projektart } from "./einsatzbereichMapping";
 export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
   "granidur": ["neubau", "sanierung"],
   "korodur-diamantbeton": ["neubau", "sanierung"],
+  "korodur-durop": ["neubau", "sanierung"], // Technik-bestätigt 2026-06-18: primär Sanierung, kann auch Neubau (sonst aus reinen Sanierungs-Referenzen abgeleitet → Neubau versteckt)
   "korodur-easyfinish": ["neubau"],
   "korodur-fscem": ["neubau", "sanierung"],
   "korodur-fscem-screed": ["neubau", "sanierung"],
@@ -37,7 +38,7 @@ export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
   "neodur-level-au": ["neubau"],
   "neodur-msm-3": ["neubau", "sanierung"],
   "neodur-pfm-1k-easyfix": ["neubau", "sanierung"],
-  "rapid-set-mortar-mix": ["neubau", "sanierung"],
+  "rapid-set-mortar-mix": ["neubau", "sanierung"], // Technik-bestätigt 2026-06-18: primär Sanierung, kann auch Neubau
   "tru-sp": ["neubau"],
 };
 

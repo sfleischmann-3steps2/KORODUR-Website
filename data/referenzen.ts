@@ -1398,7 +1398,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Verlegung von Hartstoffestrich per Silotechnik für eine Interimsverkaufsfläche während des Fachmarkt-Umbaus. Wirtschaftliche Lösung für temporären Betrieb.",
     ort: "Dortmund-Aplerbeck",
     land: "Deutschland",
-    produkte: [],
+    produkte: ["NEODUR HE 65"],
     herausforderungen: [
       "Enge Zeitvorgaben für die Fertigstellung. Belastbarer Industrieboden für temporären Verkaufsbetrieb auf bereits genutzter Fläche benötigt.",
     ],
@@ -2849,7 +2849,7 @@ export const referenzen: Referenz[] = [
     land: "Mexico",
     jahr: undefined,
     flaeche: "6.500 m² Areal",
-    produkte: [],
+    produkte: ["TRU Self-Leveling"],
     ausgangssituation:
       "Auf einem 6.500 m² großen Areal am Meer von Cortez wurde ein Strandhaus komplett aus Beton gebaut. Passend zum Betonambiente sollte ein mineralischer Designboden verlegt werden.",
     herausforderungen: [
@@ -3342,7 +3342,7 @@ export const referenzen: Referenz[] = [
     land: "Deutschland",
     jahr: undefined,
     flaeche: "2.000 m²",
-    produkte: [],
+    produkte: ["KORODUR 0/4"],
     ausgangssituation:
       "Stark beanspruchte Pflasterflächen beim Baumaschinenhändler Kraemer in Rheda-Wiedenbrück, die unter anderem mit schweren Kettenfahrzeugen befahren werden, benötigten eine deutlich verschleißfestere Lösung als herkömmliche Schwerlaststeine.",
     herausforderungen: [
