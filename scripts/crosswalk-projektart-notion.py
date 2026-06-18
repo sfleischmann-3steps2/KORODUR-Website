@@ -71,6 +71,9 @@ ABL_TO_SET = {
     "keine": set(),
 }
 
+NOTION_TO_ABL = {"Neubau": "neubau", "Sanierung": "sanierung"}
+overrides = {}  # repo-id → [projektart] für referenzlose Produkte (Notion-Wert)
+
 matched_notion_slugs = set()
 results = []
 for rp in repo_rows:
@@ -93,10 +96,14 @@ for rp in repo_rows:
         cat = "FRANK"; note = "keine Referenz, Notion leer"
     elif N and not D:
         cat = "NOTION-ONLY"; note = "keine Referenz-Deckung"
+        overrides[rid] = sorted(NOTION_TO_ABL[x] for x in N if x in NOTION_TO_ABL)
     elif D <= N:
         cat = "CONFIRM"; note = ""
     else:
         cat = "CONFLICT"; note = f"Ableitung {sorted(D)} ⊄ Notion {sorted(N)}"
+        # Sicher: Vereinigung, damit das Produkt in keinem relevanten Bereich
+        # verschwindet. Technik grenzt später ein.
+        overrides[rid] = sorted(NOTION_TO_ABL[x] for x in (D | N) if x in NOTION_TO_ABL)
     results.append((bereich, rname, abl, n_disp, cat, note))
 
 # Notion-Produkte OHNE Repo-Gegenstück (in Notion, nicht in den 71 Repo-Produkten)
@@ -148,3 +155,9 @@ out(", ".join(f"{r['notion_titel']}" for r in notion_only) or "(keine)")
 
 Path(BASE / "projektart-crosswalk.md").write_text("\n".join(lines) + "\n")
 print(f"\n→ {BASE / 'projektart-crosswalk.md'} geschrieben.", file=sys.stderr)
+
+import json
+Path(BASE / "projektart-overrides.json").write_text(
+    json.dumps(overrides, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+)
+print(f"→ {len(overrides)} Overrides (referenzlose Produkte mit Notion-Wert) → projektart-overrides.json", file=sys.stderr)

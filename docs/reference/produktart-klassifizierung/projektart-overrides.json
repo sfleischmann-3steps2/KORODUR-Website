@@ -1,0 +1,75 @@
+{
+  "granidur": [
+    "neubau",
+    "sanierung"
+  ],
+  "korodur-diamantbeton": [
+    "neubau",
+    "sanierung"
+  ],
+  "korodur-easyfinish": [
+    "neubau"
+  ],
+  "korodur-fscem": [
+    "neubau",
+    "sanierung"
+  ],
+  "korodur-fscem-screed": [
+    "neubau",
+    "sanierung"
+  ],
+  "korodur-nanofinish": [
+    "neubau"
+  ],
+  "korodur-robust": [
+    "neubau",
+    "sanierung"
+  ],
+  "korodur-uniprimer": [
+    "neubau",
+    "sanierung"
+  ],
+  "korodur-wh-metallisch": [
+    "neubau",
+    "sanierung"
+  ],
+  "korodur-wh-spezial": [
+    "neubau",
+    "sanierung"
+  ],
+  "koromineral-lasur": [
+    "neubau",
+    "sanierung"
+  ],
+  "microtop-tw-vsm": [
+    "sanierung"
+  ],
+  "neodur-he-2": [
+    "neubau"
+  ],
+  "neodur-he-3-green": [
+    "neubau"
+  ],
+  "neodur-he-40": [
+    "neubau",
+    "sanierung"
+  ],
+  "neodur-level-au": [
+    "neubau"
+  ],
+  "neodur-msm-3": [
+    "neubau",
+    "sanierung"
+  ],
+  "neodur-pfm-1k-easyfix": [
+    "neubau",
+    "sanierung"
+  ],
+  "rapid-set-mortar-mix": [
+    "neubau",
+    "sanierung"
+  ],
+  "tru-sp": [
+    "neubau"
+  ]
+}

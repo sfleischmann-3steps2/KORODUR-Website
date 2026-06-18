@@ -15,6 +15,7 @@ import { ArrowRight, ChevronRight, Compass, Grid3x3 } from "lucide-react";
 import { withBasePath } from "../../../../../lib/basePath";
 import { alternatesFor } from "../../../../../lib/seo";
 import { projektartBucket, projektartLabel, type Projektart } from "../../../../../data/einsatzbereichMapping";
+import { produktHatProjektart } from "../../../../../data/produktProjektart";
 
 type Params = Promise<{ lang: string; slug: string; projektart: string }>;
 
@@ -69,25 +70,12 @@ export default async function SubBereichPage({ params }: { params: Params }) {
       projektartBucket(r.projekttyp) === art &&
       r.produkte.some((name) => bereichProduktNamen.has(name.toLowerCase()))
   );
-  // PRODUKTE: bewusst ALLE Bereichsprodukte zeigen. Produkte tragen (noch) keine
-  // Projektart-Klassifizierung (#83/#103 — Daten fehlen auf Produktebene); ein
-  // ref-getriebenes Ausblenden wäre nur ein Datenlücken-Artefakt (z. B.
-  // Spezialbaustoffe hätten 0–1 Produkte) und würde die Seite unvollständig
-  // wirken lassen. Die Projektart-Spezifik liefert hier die Referenz-Auswahl.
-  const localizedProdukte = await localizeProdukte(bereichProdukte, lang);
-
-  // Daten-Lücke protokollieren (nur DE) → Notion-Frageseite: Welche Bereichs-
-  // produkte haben (noch) KEINE Referenz dieser Projektart? (Hinweis für Technik
-  // bzw. spätere produktseitige Projektart-Klassifizierung.)
-  if (lang === "de") {
-    const refProduktNamen = new Set(artRefs.flatMap((r) => r.produkte.map((n) => n.toLowerCase())));
-    const luecken = bereichProdukte.filter((p) => !refProduktNamen.has(p.name.toLowerCase()));
-    if (luecken.length > 0) {
-      console.warn(
-        `[#233 Daten-Lücke] ${slug}/${art}: ${luecken.length} von ${bereichProdukte.length} Produkten ohne ${art}-Referenz`
-      );
-    }
-  }
+  // #83: PRODUKTE projektart-filtern. Projektart liegt jetzt am Produkt
+  // (data/produktProjektart.ts — Referenz-Ableitung + Notion-Override, #240).
+  // "beide"-Produkte erscheinen in Neubau UND Sanierung; ohne Daten → beide
+  // (kein Produkt wird fälschlich aus einem Bereich versteckt).
+  const artProdukte = bereichProdukte.filter((p) => produktHatProjektart(p.id, art));
+  const localizedProdukte = await localizeProdukte(artProdukte, lang);
   const localizedRefs = await localizeReferenzen(artRefs.slice(0, 6), lang);
   const refLink = `/${lang}/referenzen/?projektart=${art}`;
 
