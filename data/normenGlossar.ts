@@ -1,9 +1,11 @@
 // Normen-Glossar (#97). Quelle: Excel "Normen produkte.xlsx" (Source of Truth),
 // Glossar-Block, extrahiert + verifiziert im Spec docs/specs/2026-06-14-produkt-
 // klassifizierung-sot.md. Kurzbeschreibungen wörtlich aus dem SoT (Tippfehler
-// korrigiert, ohne Em-Dashes für KORODUR-Texte). Erfindet KEINE Inhalte:
-// Normen ohne SoT-Eintrag (z. B. DIN 18560 ohne Teil, DIN EN 445, DVGW W 270,
-// ASTM C928, DIN 1048-2, TL BEB-StB) bleiben bewusst ohne Tooltip.
+// korrigiert, ohne Em-Dashes für KORODUR-Texte). Erfindet KEINE Inhalte.
+// 2026-06-18: DIN 18560 (Reihe), DVGW W 270, ASTM C928, TL BEB-StB, RStO 12
+// ergänzt aus extern verifizierter Norm-Recherche (Dynamic Workflow + Fachartikel-
+// Faktencheck docs/reviews/2026-06-15, mit offiziellen Quellen). Siehe
+// docs/reference/technik-blocker-konsolidiert.md (Teil B).
 
 export const NORMEN_GLOSSAR: Record<string, string> = {
   "DIN 18560-1": "Grenzwerte für Belegreife und Regelung zur Überprüfung (Schwindklasse).",
@@ -50,6 +52,13 @@ export const NORMEN_GLOSSAR: Record<string, string> = {
   "DIN EN 13395-2": "Prüfverfahren zur Bestimmung des Fließverhaltens von Vergussmörtel, Feinmörtel oder Mörtel.",
   "DIN EN 12350-5": "Bestimmung des Ausbreitmaßes von Frischbeton im Bauwesen.",
   "DIN EN 12620": "Eigenschaften von Gesteinskörnungen und Füllern für die Herstellung von Beton (Alkaliempfindlichkeitsklasse E1 aus unbedenklichen Vorkommen).",
+  "DIN 18560": "Estriche im Bauwesen (Normenreihe): Teil 3 Verbundestriche, Teil 4 Estriche auf Trennschicht, Teil 7 hochbeanspruchbare Industrieestriche (Hartstoffestriche).",
+  "DVGW W 270": "Prüfverfahren zur Bewertung der Vermehrung von Mikroorganismen auf Werkstoffen im Trinkwasserbereich.",
+  "DVGW Arbeitsblatt W 270": "Prüfverfahren zur Bewertung der Vermehrung von Mikroorganismen auf Werkstoffen im Trinkwasserbereich.",
+  "ASTM C928": "US-amerikanische ASTM-Norm für werkseitig vorgemischte, schnell erhärtende zementgebundene Reparaturmaterialien. Klassen R1/R2/R3 nach Frühfestigkeit. Keine deutsche oder europäische Norm.",
+  "TL BEB-StB": "Technische Lieferbedingungen für Baustoffe und Baustoffgemische zur baulichen Erhaltung von Betonverkehrsflächen (FGSV 895). Reine Material-Lieferbedingung, definiert keine Verkehrs- oder Belastungsklassen.",
+  "RStO 12": "Richtlinien für die Standardisierung des Oberbaus von Verkehrsflächen (FGSV 499). Definiert die Belastungsklassen Bk100 bis Bk0.3.",
+  "RStO": "Richtlinien für die Standardisierung des Oberbaus von Verkehrsflächen (FGSV 499). Definiert die Belastungsklassen Bk100 bis Bk0.3.",
 };
 
 /**
