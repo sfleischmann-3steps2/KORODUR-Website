@@ -384,7 +384,7 @@ export const produkte: Produkt[] = [
       { label: "Verarbeitung", wert: "Selbstverlaufend" },
       { label: "Haftbrücke", wert: "Nicht erforderlich" },
       { label: "Begehbar nach", wert: "ca. 2–3 h" },
-      { label: "Voll belastbar nach", wert: "ca. 24 h" },
+      { label: "Schleifbar bis Hochglanz nach", wert: "ca. 24 h" },
     ],
     besonderheiten: [
       "Designorientierte Betonoptik",
@@ -424,7 +424,7 @@ export const produkte: Produkt[] = [
       "DIN 18202",
     ],
     technischeDaten: [
-      { label: "Haftzugfestigkeit", wert: "≥ 1,5 N/mm²" },
+      { label: "Untergrund-Anforderung", wert: "Tragbeton mind. C25/30, Oberflächenzugfestigkeit ≥ 1,5 N/mm²" },
       { label: "Verarbeitungszeit", wert: "ca. 15 min" },
       { label: "Überarbeitbar nach", wert: "frisch-in-frisch" },
     ],
@@ -629,7 +629,7 @@ export const produkte: Produkt[] = [
       "Ohne Haftbrücke",
       "Einfache Verarbeitung",
       "30-Minuten-Verkehrsfreigabe",
-      "Frost-, tausalz- und sulfatbeständig",
+      "Sulfatbeständig und chloridfrei",
       "Pumpfähig, horizontal und vertikal einsetzbar",
       "Ca. 30 % weniger CO₂ als herkömmlicher Portlandzement",
       "Erhältlich über den Baustoffhandel",
@@ -759,7 +759,7 @@ export const produkte: Produkt[] = [
     ],
     besonderheiten: [
       "Volumetrische Mischtechnik vor Ort",
-      "TL BEB-StB (höchste Verkehrsklasse für Erhaltungsbau)",
+      "Geprüft nach TL BEB-StB für den Erhaltungsbau",
       "2-Stunden-Verkehrsfreigabe",
       "Frost-/tausalzbeständig",
       "Großflächig einsetzbar",
@@ -1415,7 +1415,7 @@ export const produkte: Produkt[] = [
       { label: "Biegezugfestigkeit (GRANIDUR 08)", wert: "5 N/mm²" },
     ],
     besonderheiten: [
-      "Lieferbare Farben: zementgrau, hellgrau, basaltgrau, anthrazit, beige, rot, oliv",
+      "Lieferbar in zementgrau, weitere Farben auf Anfrage",
       "Optik von matt bis glänzend schleifbar",
       "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
     ],
@@ -1491,7 +1491,7 @@ export const produkte: Produkt[] = [
       { label: "Biegezugfestigkeit (KCF 08)", wert: "5 N/mm²" },
     ],
     besonderheiten: [
-      "Lieferbare Farben: zementgrau, hellgrau, basaltgrau, anthrazit, beige, rot, oliv",
+      "Lieferbar in zementgrau, weitere Farben auf Anfrage",
       "Oberflächenbearbeitung mit KOROCLEAN",
       "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
     ],

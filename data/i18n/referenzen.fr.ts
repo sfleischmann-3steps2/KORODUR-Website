@@ -330,9 +330,9 @@ export const referenzenFR: Record<string, {
       "Réglage précis du niveau et résistance à l'abrasion dans la zone de joint",
     ],
     loesung:
-      "Les zones endommagées ont été découpées, démolies sur environ 20 mm, nettoyées et humidifiées ; les flancs ont été traités avec le primaire KORODUR PC. Le joint a été appliqué avec Rapid Set MORTAR MIX DUR en consistance pâteuse, ajusté en hauteur avec précision, lissé et traité à l'eau. Après environ 2 heures, le joint était de nouveau pleinement praticable.",
+      "Les zones endommagées ont été découpées, démolies sur environ 20 mm, nettoyées et humidifiées ; les flancs ont été traités avec le primaire KORODUR PC. Le joint a été appliqué avec Rapid Set MORTAR MIX DUR en consistance pâteuse, ajusté en hauteur avec précision, lissé et traité à l'eau. Après environ 1 heure, le joint était de nouveau pleinement praticable.",
     vorteile: [
-      "Arrêt minimal : mise en charge complète du joint après environ 2 h – la logistique reste en cadence",
+      "Arrêt minimal : mise en charge complète du joint après environ 1 h, la logistique reste en cadence",
       "Réparation de joint durable et résistante à l'abrasion grâce à MORTAR MIX DUR (avec granulats d'usure)",
       "Exécution propre et reproductible : procédure définie avec primaire KORODUR PC",
     ],

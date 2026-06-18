@@ -529,9 +529,9 @@ export const referenzen: Referenz[] = [
       "Präzise Höheneinstellung und Verschleißfestigkeit im Fugenbereich",
     ],
     loesung:
-      "Schadstellen wurden eingeschnitten, ca. 20 mm ausgestemmt, gereinigt und vorgenässt; Flanken mit KORODUR PC grundiert. Das Fugenfeld wurde mit Rapid Set MORTAR MIX DUR in pastöser Konsistenz höhengenau appliziert, geglättet und mit Wasser nachbehandelt. Bereits nach ca. 2 Stunden war die Fuge wieder voll belastbar.",
+      "Schadstellen wurden eingeschnitten, ca. 20 mm ausgestemmt, gereinigt und vorgenässt; Flanken mit KORODUR PC grundiert. Das Fugenfeld wurde mit Rapid Set MORTAR MIX DUR in pastöser Konsistenz höhengenau appliziert, geglättet und mit Wasser nachbehandelt. Bereits nach ca. 1 Stunde war die Fuge wieder voll belastbar.",
     vorteile: [
-      "Minimaler Stillstand: Vollbelastung der Fuge nach ca. 2 h – Logistik bleibt im Takt",
+      "Minimaler Stillstand: Vollbelastung der Fuge nach ca. 1 h, Logistik bleibt im Takt",
       "Dauerhafte, verschleißfeste Fugenreparatur dank MORTAR MIX DUR (mit Verschleißträger)",
       "Saubere, reproduzierbare Ausführung: definierter Ablauf mit KORODUR PC-Grundierung",
     ],

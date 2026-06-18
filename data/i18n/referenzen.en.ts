@@ -345,9 +345,9 @@ export const referenzenEN: Record<string, {
       "Precise height adjustment and abrasion resistance",
     ],
     loesung:
-      "Damaged areas were cut, chiselled out 20 mm, cleaned and pre-wetted; flanks primed with KORODUR PC. Joint field applied with Rapid Set MORTAR MIX DUR in paste consistency, smoothed and water-cured. Fully load-bearing after approx. 2 hours.",
+      "Damaged areas were cut, chiselled out 20 mm, cleaned and pre-wetted; flanks primed with KORODUR PC. Joint field applied with Rapid Set MORTAR MIX DUR in paste consistency, smoothed and water-cured. Fully load-bearing after approx. 1 hour.",
     vorteile: [
-      "Minimal downtime: full load after approx. 2 h – logistics stays on track",
+      "Minimal downtime: full load after approx. 1 h, logistics stays on track",
       "Durable, wear-resistant joint repair with MORTAR MIX DUR",
       "Clean, reproducible execution with KORODUR PC primer",
     ],

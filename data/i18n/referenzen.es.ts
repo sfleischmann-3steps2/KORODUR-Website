@@ -346,9 +346,9 @@ export const referenzenES: Record<string, {
       "Ajuste preciso de la altura y resistencia al desgaste",
     ],
     loesung:
-      "Las zonas dañadas se cortaron, se demolieron unos 20 mm, se limpiaron y se humedecieron previamente; los flancos se imprimaron con KORODUR PC. La junta se aplicó con Rapid Set MORTAR MIX DUR en consistencia pastosa, se alisó y se curó con agua. Plenamente apta para cargas tras aprox. 2 horas.",
+      "Las zonas dañadas se cortaron, se demolieron unos 20 mm, se limpiaron y se humedecieron previamente; los flancos se imprimaron con KORODUR PC. La junta se aplicó con Rapid Set MORTAR MIX DUR en consistencia pastosa, se alisó y se curó con agua. Plenamente apta para cargas tras aprox. 1 hora.",
     vorteile: [
-      "Parada mínima: carga total tras aprox. 2 h – la logística mantiene su ritmo",
+      "Parada mínima: carga total tras aprox. 1 h, la logística mantiene su ritmo",
       "Reparación de juntas duradera y resistente al desgaste con MORTAR MIX DUR",
       "Ejecución limpia y reproducible con la imprimación KORODUR PC",
     ],

@@ -346,9 +346,9 @@ export const referenzenPL: Record<string, {
       "Precyzyjne dopasowanie wysokości i odporność na ścieranie",
     ],
     loesung:
-      "Uszkodzone obszary zostały nacięte, wykute na głębokość 20 mm, oczyszczone i wstępnie nawilżone; krawędzie zagruntowane KORODUR PC. Pole dylatacji wypełnione Rapid Set MORTAR MIX DUR w konsystencji pastowej, wygładzone i utwardzone wodą. Pełna nośność po ok. 2 godzinach.",
+      "Uszkodzone obszary zostały nacięte, wykute na głębokość 20 mm, oczyszczone i wstępnie nawilżone; krawędzie zagruntowane KORODUR PC. Pole dylatacji wypełnione Rapid Set MORTAR MIX DUR w konsystencji pastowej, wygładzone i utwardzone wodą. Pełna nośność po ok. 1 godzinie.",
     vorteile: [
-      "Minimalny czas przestoju: pełne obciążenie po ok. 2 h – logistyka nie traci tempa",
+      "Minimalny czas przestoju: pełne obciążenie po ok. 1 h, logistyka nie traci tempa",
       "Trwała, odporna na zużycie naprawa dylatacji z MORTAR MIX DUR",
       "Czysta, powtarzalna realizacja z gruntowaniem KORODUR PC",
     ],
