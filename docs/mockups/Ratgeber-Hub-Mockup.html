@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ratgeber-Hub — Mockup (KORODUR)</title>
+<style>
+  :root{
+    --navy:#002d59; --cyan:#009ee3; --cyan-text:#0077ab;
+    --icon-bg:#f5f5f6; --bullet-bg:#e8edf5; --white:#fff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--navy);background:#fff;line-height:1.5}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+  .note{background:#fff8e1;border-bottom:1px solid #f0e2b0;font-size:13px;color:#7a5b00}
+  .note .wrap{padding:10px 32px}
+
+  /* Kopf */
+  header.hub{padding:40px 0 8px}
+  .crumbs{font-size:13px;color:rgba(0,45,89,.55);margin-bottom:18px}
+  .crumbs a{color:var(--cyan-text);text-decoration:none}
+  h1{font-size:clamp(30px,5vw,46px);font-weight:900;line-height:1.08;margin:0 0 14px}
+  .intro{max-width:720px;font-size:18px;line-height:1.6;color:rgba(0,45,89,.72);margin:0 0 26px}
+
+  /* Suche */
+  .search{display:flex;align-items:center;gap:10px;max-width:520px;border:1px solid var(--bullet-bg);
+          border-radius:12px;padding:12px 16px;background:var(--icon-bg);margin-bottom:22px}
+  .search input{border:0;background:transparent;outline:none;font-size:16px;width:100%;color:var(--navy);font-family:inherit}
+  .search svg{flex:0 0 auto;opacity:.45}
+
+  /* Filter */
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+  .chip{border:1px solid var(--bullet-bg);background:#fff;color:var(--navy);font-weight:700;font-size:14px;
+        padding:9px 16px;border-radius:999px;cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--cyan)}
+  .chip.active{background:var(--navy);border-color:var(--navy);color:#fff}
+
+  /* Sektionen */
+  section.cluster{padding:34px 0 6px}
+  .cluster h2{font-size:clamp(20px,3vw,28px);font-weight:900;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  .cluster h2 .count{font-size:14px;font-weight:700;color:#fff;background:var(--cyan);border-radius:999px;padding:2px 10px}
+  .cluster .sub{color:rgba(0,45,89,.62);font-size:15px;margin:0 0 18px}
+  .cluster .sub a{color:var(--cyan-text);font-weight:700;text-decoration:none}
+
+  /* Grid + Karten */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{display:flex;flex-direction:column;border:1px solid var(--bullet-bg);border-radius:14px;overflow:hidden;
+        background:#fff;text-decoration:none;color:inherit;transition:.15s}
+  .card:hover{box-shadow:0 14px 30px rgba(0,45,89,.13);transform:translateY(-2px)}
+  .thumb{aspect-ratio:16/9;background:var(--icon-bg);position:relative;overflow:hidden}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb.ph{display:flex;align-items:center;justify-content:center;
+            background:repeating-linear-gradient(45deg,#eef2f8,#eef2f8 12px,#e8edf5 12px,#e8edf5 24px)}
+  .thumb.ph span{font-size:12px;font-weight:700;color:rgba(0,45,89,.4);background:#fff;border:1px solid var(--bullet-bg);
+                 padding:4px 10px;border-radius:999px}
+  .tag{position:absolute;top:10px;left:10px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;
+       background:rgba(0,45,89,.86);color:#fff;padding:4px 9px;border-radius:6px}
+  .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+  .body h3{font-size:18px;font-weight:800;line-height:1.25;margin:0 0 8px}
+  .body p{font-size:14px;line-height:1.55;color:rgba(0,45,89,.65);margin:0 0 14px}
+  .more{margin-top:auto;font-size:13px;font-weight:800;color:var(--cyan-text)}
+
+  /* „Mehr"-Verweiskarte */
+  .card.link{background:var(--navy);color:#fff;justify-content:center;align-items:flex-start;padding:22px;min-height:120px}
+  .card.link h3{color:#fff}
+  .card.link .more{color:#7fd3f5}
+
+  /* Backlog-Platzhalter */
+  .card.todo{border-style:dashed;background:var(--icon-bg);align-items:center;justify-content:center;text-align:center;
+             min-height:200px;color:rgba(0,45,89,.5);padding:22px}
+  .card.todo b{display:block;font-size:15px;color:var(--navy);margin-bottom:4px}
+
+  .empty{display:none;color:rgba(0,45,89,.5);font-style:italic;padding:20px 0}
+  footer.mk{margin-top:40px;border-top:1px solid var(--bullet-bg);padding:24px 0 60px;font-size:13px;color:rgba(0,45,89,.5)}
+</style>
+</head>
+<body>
+
+<div class="note"><div class="wrap"><b>MOCKUP</b> · Ratgeber-Hub (#284). Filter + Suche sind hier funktional zur Demo. Schadensbild-Karten zeigen echte Grafiken; alle übrigen den Platzhalter „Grafik folgt" (#282). Kein finales Design — Layout- und Struktur-Vorschlag.</div></div>
+
+<div class="wrap">
+<header class="hub">
+  <div class="crumbs"><a href="#">Start</a> › Ratgeber</div>
+  <h1>Ratgeber</h1>
+  <p class="intro">Fachwissen rund um Industrieböden: vom Neubau über die Systemwahl bis zur Sanierung im laufenden Betrieb. Finden Sie den passenden Einstieg nach Aufgabe, Schadensbild oder Branche.</p>
+
+  <div class="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="q" type="text" placeholder="Ratgeber durchsuchen … (z. B. Sperrzeit, WHG, Neubau)">
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="chip active" data-f="alle">Alle</button>
+    <button class="chip" data-f="neubau">Neubau</button>
+    <button class="chip" data-f="sanierung">Sanierung</button>
+    <button class="chip" data-f="wirtschaftlichkeit">Wirtschaftlichkeit</button>
+    <button class="chip" data-f="branche">Branche</button>
+    <button class="chip" data-f="schadensbild">Schadensbild</button>
+  </div>
+</header>
+
+<!-- 1) NEUBAU -->
+<section class="cluster" data-cluster="neubau">
+  <h2>Neubau planen <span class="count">4</span></h2>
+  <p class="sub">Das richtige System von Anfang an: Auswahl, Sichtboden, Wirtschaftlichkeit.</p>
+  <div class="grid">
+    <a class="card" href="#" data-themen="neubau" data-title="Industrieboden im Neubau: das passende System wählen sichtboden hartstoff">
+      <div class="thumb ph"><span>Grafik folgt</span></div>
+      <div class="body"><h3>Industrieboden im Neubau: das passende System wählen</h3>
+        <p>Welche Bodensysteme für welche Beanspruchung im Neubau infrage kommen und wie Sie die Wahl strukturiert treffen.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="neubau" data-title="Sichtboden und Designboden im Neubau">
+      <div class="thumb ph"><span>Grafik folgt</span></div>
+      <div class="body"><h3>Sichtboden und Designboden im Neubau</h3>
+        <p>Gestaltung trifft Funktion: Sichtestrich und Designböden als sichtbare Nutzschicht im Neubau.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="neubau wirtschaftlichkeit" data-title="Warum sich ein hochwertiger Industrieboden im Neubau rechnet">
+      <div class="thumb ph"><span>Grafik folgt</span></div>
+      <div class="body"><h3>Warum sich ein hochwertiger Industrieboden im Neubau rechnet</h3>
+        <p>Lebensdauer, Wartung, Stillstand: weshalb sich die höhere Anfangsinvestition über die Nutzungsdauer auszahlt.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="neubau" data-title="Hartstoffeinstreuung oder Hartstoffschicht? Der technische Vergleich">
+      <div class="thumb ph"><span>Grafik folgt</span></div>
+      <div class="body"><h3>Hartstoffeinstreuung oder Hartstoffschicht?</h3>
+        <p>Der technische Vergleich der beiden Verfahren — Schichtaufbau, Beanspruchung, Kosten.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <div class="card todo" data-themen="neubau" data-title="neubau ausbauen backlog">
+      <div><b>Neubau ausbauen</b>Hartstoffeinstreuung-Verfahren, Oberflächenschutz, Normen (EN 13813), Fugen … (Content-Backlog, #284)</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2) SANIERUNG / SCHADEN -->
+<section class="cluster" data-cluster="sanierung">
+  <h2>Sanieren: Schaden erkennen <span class="count">6</span></h2>
+  <p class="sub">Bodenschaden einordnen und passend instand setzen. Alle Schadensbilder im Detail unter <a href="#">Schadensbilder →</a></p>
+  <div class="grid">
+    <a class="card" href="#" data-themen="sanierung schadensbild" data-title="Risse im Industrieboden erkennen einordnen sanieren">
+      <div class="thumb"><span class="tag">Schadensbild</span><img src="../../public/images/schadensbilder/risse.webp" alt="Riss im Industrieboden"></div>
+      <div class="body"><h3>Risse im Industrieboden</h3>
+        <p>Erkennen, einordnen, dauerhaft sanieren — von Haarriss bis durchgehendem Riss.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="sanierung schadensbild" data-title="Abrieb Verschleiß Spurrillen abgetragene Oberflächen">
+      <div class="thumb"><span class="tag">Schadensbild</span><img src="../../public/images/schadensbilder/abrieb-verschleiss.webp" alt="Abrieb und Verschleiß"></div>
+      <div class="body"><h3>Abrieb und Verschleiß</h3>
+        <p>Spurrillen und abgetragene Oberflächen durch Stapler- und Transportverkehr.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="sanierung schadensbild" data-title="Chemischer Angriff Öle Treibstoffe Säuren WHG">
+      <div class="thumb"><span class="tag">Schadensbild</span><img src="../../public/images/schadensbilder/chemischer-angriff.webp" alt="Chemischer Angriff"></div>
+      <div class="body"><h3>Chemischer Angriff: Öle, Treibstoffe, Säuren</h3>
+        <p>Wie aggressive Medien den Beton angreifen und welche Systeme schützen.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="sanierung schadensbild" data-title="Feuchte WHG Nassbereich Auffang Gefahrgut">
+      <div class="thumb"><span class="tag">Schadensbild</span><img src="../../public/images/schadensbilder/feuchte-whg.webp" alt="Feuchte und WHG-Flächen"></div>
+      <div class="body"><h3>Feuchte und WHG-Flächen</h3>
+        <p>Nassbereich, Auffangflächen, Gefahrgut — dichte, beständige Sanierungssysteme.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="sanierung schadensbild" data-title="Absandung Festigkeitsverlust staubt Substanz">
+      <div class="thumb"><span class="tag">Schadensbild</span><img src="../../public/images/schadensbilder/absandung-festigkeitsverlust.webp" alt="Absandung und Festigkeitsverlust"></div>
+      <div class="body"><h3>Absandung und Festigkeitsverlust</h3>
+        <p>Wenn der Boden staubt und Substanz verliert — Ursachen und Sanierung.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="sanierung" data-title="Häufige Fragen zur Industriebodensanierung FAQ Betreiber">
+      <div class="thumb ph"><span>Grafik folgt</span></div>
+      <div class="body"><h3>Häufige Fragen zur Industriebodensanierung</h3>
+        <p>Antworten auf die wichtigsten Betreiberfragen rund um die Sanierung im laufenden Betrieb.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- 3) WIRTSCHAFTLICHKEIT -->
+<section class="cluster" data-cluster="wirtschaftlichkeit">
+  <h2>Wirtschaftlichkeit &amp; Entscheidung <span class="count">3</span></h2>
+  <p class="sub">Kosten, Stillstand, Beratung: die Grundlagen für die Investitionsentscheidung.</p>
+  <div class="grid">
+    <a class="card" href="#" data-themen="sanierung wirtschaftlichkeit" data-title="Wirtschaftlichkeit Bodensanierung Lebensdauer Stillstandskosten CO2 TCO">
+      <div class="thumb ph"><span>Grafik folgt</span></div>
+      <div class="body"><h3>Wirtschaftlichkeit von Bodensanierung</h3>
+        <p>Lebensdauer, Stillstandskosten und CO2 über den gesamten Lebenszyklus betrachtet.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="sanierung wirtschaftlichkeit" data-title="Wie lange steht meine Fläche Sperrzeit Wiederinbetriebnahme belastbar">
+      <div class="thumb ph"><span>Grafik folgt</span></div>
+      <div class="body"><h3>Wie lange steht meine Fläche?</h3>
+        <p>Sperrzeit und Wiederinbetriebnahme — wann die sanierte Fläche wieder belastbar ist.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+    <a class="card" href="#" data-themen="sanierung wirtschaftlichkeit" data-title="Wann eine Fachberatung sinnvoll ist Beratung">
+      <div class="thumb ph"><span>Grafik folgt</span></div>
+      <div class="body"><h3>Wann eine Fachberatung sinnvoll ist</h3>
+        <p>Woran Sie erkennen, dass sich der Griff zum Telefon lohnt — und was die Technik dann braucht.</p>
+        <span class="more">Weiterlesen →</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- 4) BRANCHE -->
+<section class="cluster" data-cluster="branche">
+  <h2>Lösungen nach Branche <span class="count">7</span></h2>
+  <p class="sub">Anforderungen und passende Systeme je Sektor. Übersicht unter <a href="#">Lösungen nach Branche →</a></p>
+  <div class="grid">
+    <a class="card" href="#" data-themen="branche" data-title="Industrieböden für Industrie und Produktion"><div class="thumb ph"><span>Grafik folgt</span></div><div class="body"><h3>Industrie und Produktion</h3><p>Industrieböden für Produktionshallen — mechanisch hoch beansprucht.</p><span class="more">Weiterlesen →</span></div></a>
+    <a class="card" href="#" data-themen="branche" data-title="Industrieböden für Lager und Logistik"><div class="thumb ph"><span>Grafik folgt</span></div><div class="body"><h3>Lager und Logistik</h3><p>Flächen für Hochregal, Stapler- und Transportverkehr.</p><span class="more">Weiterlesen →</span></div></a>
+    <a class="card" href="#" data-themen="branche" data-title="Böden für die Lebensmittelindustrie"><div class="thumb ph"><span>Grafik folgt</span></div><div class="body"><h3>Lebensmittelindustrie</h3><p>Hygiene, Reinigung, Nässe und chemische Beständigkeit.</p><span class="more">Weiterlesen →</span></div></a>
+    <a class="card" href="#" data-themen="branche" data-title="Böden für Parkdecks und Parkflächen"><div class="thumb ph"><span>Grafik folgt</span></div><div class="body"><h3>Parkdecks und Parkflächen</h3><p>Befahrbare, dichte Flächen mit Oberflächenschutz.</p><span class="more">Weiterlesen →</span></div></a>
+    <a class="card" href="#" data-themen="branche" data-title="Böden für Verkaufsräume und Fachmärkte"><div class="thumb ph"><span>Grafik folgt</span></div><div class="body"><h3>Verkaufsräume und Fachmärkte</h3><p>Belastbar und repräsentativ zugleich.</p><span class="more">Weiterlesen →</span></div></a>
+    <a class="card" href="#" data-themen="branche" data-title="Böden für Hangars und Flugbetriebsflächen Flugzeug"><div class="thumb ph"><span>Grafik folgt</span></div><div class="body"><h3>Hangars und Flugbetriebsflächen</h3><p>Höchste Punkt- und Flächenlasten, Treibstoffbeständigkeit.</p><span class="more">Weiterlesen →</span></div></a>
+    <a class="card" href="#" data-themen="branche" data-title="Verkehrsflächen und Infrastruktur instand setzen"><div class="thumb ph"><span>Grafik folgt</span></div><div class="body"><h3>Verkehr und Infrastruktur</h3><p>Verkehrsflächen schnell und dauerhaft instand setzen.</p><span class="more">Weiterlesen →</span></div></a>
+  </div>
+</section>
+
+<p class="empty" id="empty">Keine Artikel zu dieser Auswahl.</p>
+
+<footer class="mk">KORODUR · Ratgeber-Hub-Mockup · Strukturvorschlag zu #284 · 2026-06-18</footer>
+</div>
+
+<script>
+  const chips=[...document.querySelectorAll('.chip')];
+  const cards=[...document.querySelectorAll('.card')];
+  const clusters=[...document.querySelectorAll('.cluster')];
+  const q=document.getElementById('q');
+  const empty=document.getElementById('empty');
+  let filter='alle';
+
+  function apply(){
+    const term=q.value.trim().toLowerCase();
+    let any=false;
+    cards.forEach(c=>{
+      const themen=(c.dataset.themen||'');
+      const title=(c.dataset.title||'').toLowerCase();
+      const okF = filter==='alle' || themen.split(' ').includes(filter);
+      const okQ = !term || title.includes(term);
+      const show = okF && okQ;
+      c.style.display = show ? '' : 'none';
+      if(show) any=true;
+    });
+    // Sektionen verstecken, wenn leer; Backlog-Platzhalter nur bei „alle" ohne Suche
+    clusters.forEach(sec=>{
+      const visible=[...sec.querySelectorAll('.card')].some(c=>c.style.display!=='none');
+      sec.style.display=visible?'':'none';
+    });
+    document.querySelectorAll('.card.todo').forEach(t=>{
+      if(filter!=='alle' && filter!=='neubau' || term) t.style.display='none';
+    });
+    empty.style.display=any?'none':'block';
+  }
+  chips.forEach(ch=>ch.addEventListener('click',()=>{
+    chips.forEach(x=>x.classList.remove('active'));
+    ch.classList.add('active'); filter=ch.dataset.f; apply();
+  }));
+  q.addEventListener('input',apply);
+  apply();
+</script>
+</body>
+</html>
