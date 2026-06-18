@@ -139,12 +139,21 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   // Sanierungs-Content (Fachartikel #130) in die Nav heben — nur DE, da die
   // Artikel aktuell nur auf Deutsch existieren (sonst 404).
   if (lang === "de") {
-    menus.sanierung.items.push({
-      label: "Schadensbilder & Ratgeber",
-      href: `/${lang}/schadensbilder/`,
-      sub: "Schaden erkennen, Sperrzeit, Wirtschaftlichkeit, FAQ",
-    });
-    menus.sanierung.footer = [{ label: "Alle Schadensbilder", href: `/${lang}/schadensbilder/` }];
+    menus.sanierung.items.push(
+      {
+        label: "Schadensbilder",
+        href: `/${lang}/schadensbilder/`,
+        sub: "Bodenschaden erkennen und einordnen",
+      },
+      {
+        label: "Ratgeber",
+        href: `/${lang}/ratgeber/`,
+        sub: "Sperrzeit, Wirtschaftlichkeit, Systemwahl, FAQ",
+      },
+    );
+    // „Lösungen nach Branche" in beide Funnel (relevant für Neubau und Sanierung).
+    menus.sanierung.footer?.push({ label: "Lösungen nach Branche", href: `/${lang}/branchen/` });
+    menus.neubau.footer?.push({ label: "Lösungen nach Branche", href: `/${lang}/branchen/` });
   }
 
   const navItems: { key: string; href: string; label: string; menu: boolean }[] = [
