@@ -8,6 +8,14 @@ Spiegel im Repo: diese Datei. Notion: zentrale Seite „Fragen (zentral) an Tech
 
 ---
 
+> **Gegencheck Erkenntnisseite (2026-06-18):** Mehrere Punkte unten sind auf der zentralen Erkenntnisseite „🧭 Erkenntnisse aus Technik-Terminen & Recherchen" bereits (teil-)beantwortet — beim Final-Abgleich streichen oder dorthin verweisen:
+> - **Varianten-Modell (Abschnitt 3):** Mutter/Tochter-Regel geklärt (Erkenntnis A1, Option 2: Mutter = Standard-Variante; HE 3/HE 65/HE 40 als Mütter, „green" eigene Linie).
+> - **Werteklassen (Abschnitt 2):** A/B/C/D/E mit Produktart-Zuordnung definiert (Erkenntnis B3).
+> - **Projektart / Anwendungsphase (Abschnitt 2):** Regel „ergibt sich aus der Produktart" — Einstreuung = Neubau, Schicht = beides, Rapid Set + Microtop = Sanierung-only (Erkenntnis C4). Reduziert die referenzlosen Projektart-Fälle erheblich.
+> - **Pflichtfelder / Belastbarkeit (Abschnitt 4):** zeitpunktbezogenes Modell + Stützpunkt-Raster + Sterne-Idee (Erkenntnis K1–K5).
+> - **Dichte-Feld (Abschnitt 4):** vermutlich streichen (Erkenntnis L). **Sulfat/Chlorid:** Default-Hinweis, keine Property (Erkenntnis M).
+> - **Haftbrücken-Logik (Abschnitt 2):** wann erforderlich + n:m-Relation geklärt (Erkenntnis I); offen bleibt nur die konkrete Produkt-Haftbrücke-Zuordnung.
+
 ## 1. Sortiment, Aufräumen & Strategie
 
 - **KOROPOX-Ersatz:** Welches Produkt/System empfehlen wir künftig für Öl-/Treibstoffbeständigkeit auf intakten Zementböden, oder ersatzlos streichen?

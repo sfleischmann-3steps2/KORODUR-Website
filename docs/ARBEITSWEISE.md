@@ -38,16 +38,31 @@ Maßgebliche Wahrheit ist das Org-Board **KORODUR-International/projects/1**. Ko
 - **Bild-Policy:** Hixfield/AI-Bilder nur für Bereiche- und Schadensbild-Illustrationen, nie für Referenzen oder Produktbilder (nur echte Fotos).
 - **Schlusskorrektur im Lauf:** Umlaute (gezielt, kein blindes ae→ä) und Em-Dash-Verbot gehören in den Lauf, nicht in einen späteren Cleanup.
 
-## 6. Fragen an die Technik (eine zentrale Seite, datierte Snapshots)
+## 6. Fragen an die Technik & Erkenntnisse (Konvention, 2026-06-18)
 
-Fachliche Rückfragen an die KORODUR-Technik laufen über **eine** zentrale Notion-Seite „Fragen (zentral) an Technik". Darunter liegen nicht mehr Projektseiten nebeneinander, sondern **datierte Snapshot-Sub-Seiten** „Fragen an die Technik — Stand JJJJ-MM-TT". Die jüngste ist die aktuell gültige Frageliste; ältere werden archiviert (nicht gelöscht), sie sind die Historie. Repo-Spiegel: `docs/reference/fragen-an-technik-final.md`.
+Damit dieselben fachlichen Fragen nicht in jedem Projekt neu anfallen und sich nicht über verstreute Seiten verlieren, gilt ein zentraler, additiver Prozess mit **zwei** Notion-Knoten und klaren Rollen.
 
-**Prinzip „erst selbst recherchieren, dann fragen".** Bevor eine Frage auf den Snapshot kommt, wird sie triagiert:
+### 6.1 Zwei zentrale Knoten
+- **Frageseite (zentral):** „Fragen (zentral) an Technik". Darunter **pro Track ein rollender, datierter Frage-Stream** (Claude-spezifisch, NICHT themenspezifisch — z. B. „Fragen Claude KORODUR", „Fragen PDB aufbauen"). Jeder Track hängt seine offenen Interna **additiv** an seinen jüngsten Snapshot „… Stand JJJJ-MM-TT" an. Alte verstreute Projektseiten werden archiviert (nicht gelöscht). Repo-Spiegel: `docs/reference/fragen-an-technik-final.md`.
+- **Erkenntnisseite (zentral):** „🧭 Erkenntnisse aus Technik-Terminen & Recherchen". Thematische Sektionen + datiertes Erkenntnis-/Recherche-Log. Das ist der **geteilte Wissensstand für beide Accounts**. Repo-Spiegel: `data/normenGlossar.ts` + `docs/reference/`.
 
-- **Recherchierbar** (öffentliche Normen, Standards, Materialwissenschaft) → wir klären sie selbst (Web-Recherche + adversariale Verifikation), lassen die Antwort ins Repo (`data/normenGlossar.ts`, `docs/reference/`) und nach Notion zurückfließen, und sie kommt **nicht** auf die Technik-Liste.
-- **Intern** (nur die KORODUR-Technik kann es: Sortiment, interne Klassifizierung, was real verbaut wurde, firmenspezifische TDS-/DoP-Werte) → kommt auf den Snapshot.
+### 6.2 Prinzip „erst Erkenntnisse checken, dann selbst recherchieren, dann fragen"
+Bevor etwas auf einen Frage-Stream kommt:
+1. **Erkenntnisseite prüfen** — ist die Antwort schon da, nutzen, nicht erneut fragen.
+2. **Recherchierbar?** (öffentliche Normen/Standards/Materialwissenschaft) → selbst recherchieren + adversarial verifizieren → in die Erkenntnisseite (Recherche-Log) + ins Repo zurückfließen → kommt NICHT auf die Frageliste.
+3. **Echtes Internum?** (nur KORODUR-Technik: Sortiment, interne Klassifizierung, was real verbaut wurde, firmenspezifische TDS-/DoP-Werte) → additiv an den **eigenen** Track-Stream.
 
-Der Snapshot ist die dublettenfreie Essenz aus **allen** Projekten. Standing Rule „keine Werte erfinden" gilt: lieber eine Frage an die Technik als ein geratener Wert. Ziel: dem Team keine Fragen vorlegen, die wir selbst hätten beantworten können.
+Standing Rule „keine Werte erfinden": lieber eine Frage als ein geratener Wert.
+
+### 6.3 Rollen & der eine Kollisionspunkt
+| Schritt | Wer |
+|---|---|
+| Erkenntnisse prüfen, öffentliche Fakten recherchieren + in Erkenntnisseite/Repo schreiben | jeder Claude (additiv) |
+| Interna an den **eigenen** Track-Stream anhängen | jeder Claude (additiv) |
+| **Streams konsolidieren → eine Termin-Agenda** | **nur Steffi, manuell** |
+| Technik-Antworten in die Erkenntnisseite pflegen | Steffi (Notion-Schreib-Gate) |
+
+**Additiv-Anhängen ist parallel sicher** (jeder Track schreibt nur in seinen eigenen Stream). Der **einzige Kollisionspunkt ist das Konsolidieren** — das macht ausschließlich Steffi, manuell und einmalig. Kein Claude merged Streams oder triggert die Konsolidierung, und kein Claude editiert einen fremden Track-Stream. Notion-Schreibregeln gelten (additiv, nie `replace_content`, verify-after-write).
 
 ## 7. Aufgabenteilung (Stand 2026-06-14)
 
