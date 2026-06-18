@@ -1,0 +1,10 @@
+title,current,proposed,confidence,reason
+NEODUR HE 3,Hartstoffeinstreuung,Hartstoffeinstreuung,ok,bereits gueltiger Ontologie-Wert
+"NEODUR HE 3 SVS 1,5",Hartstoffeinstreuung,Hartstoffeinstreuung,ok,bereits gueltiger Ontologie-Wert
+NEODUR HE 3 metallisch,Hartstoffeinstreuung,Hartstoffeinstreuung,ok,bereits gueltiger Ontologie-Wert
+NEODUR HE 3 green,Archiv - INBO Trockenmoertel,Hartstoffeinstreuung,high,Gewerk Industrieboden + Einstreuverfahren
+Rapid Set MORTAR MIX,Archiv - Rapid Set,Reparaturmörtel,high,Gewerk 'Reparaturmoertel'
+NEODUR VM 1,Archiv - Spezialbaustoffe,Vergussmörtel,high,Gewerk 'Vergussmoertel'
+KOROMINERAL CURE,Archiv - Nachbehandlung,Oberflächenvergütung,high,Gewerk 'Nachbehandlung'
+SET CONTROL,Archiv - Rapid Set,Additive,high,Additiv (Gewerk/Name: SET CONTROL)
+FAST,Archiv - Rapid Set,Additive,high,Additiv (Gewerk/Name: FAST)

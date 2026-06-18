@@ -22,6 +22,13 @@ Sanierungsprodukte_db.zip
 /*.docx
 /Bildschirmfoto*
 
+# Quell-Dumps / Arbeitsmaterial — gehören nach ../_quellen/ bzw. Google Drive,
+# nie ins Repo (verhindert versehentliches Committen großer Scrape-/Bild-Ordner)
+/Bilder_*/
+/Referenzen_von*/
+/Website_relaunch/
+/components/Katze/
+
 # Maschinen-Artefakte
 *.log
 __pycache__/

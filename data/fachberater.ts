@@ -8,8 +8,8 @@
 // Anzeigeformen, die echten Aliase sind ohne Punkt).
 // Porträts neu aus benannten Master-Fotos konvertiert (#187, 2026-06-16,
 // Quelle Documents/Claude/Projects/Bilder_mit_namen/, sharp → 320×320 webp).
-// 2026-06-17: alle Porträts aus dem AD-Master-Satz (Bilder_AD_mit_namen/,
-// einfarbiger Hintergrund) neu generiert — einheitlicher Square-Downscale
+// 2026-06-17: alle Porträts aus dem AD-Master-Satz (Master-Fotos liegen unter
+// ../_quellen/Bilder_AD_mit_namen/, einfarbiger Hintergrund) neu generiert — einheitlicher Square-Downscale
 // (fixt Jens-Döring-Zuschnitt). Jens Lang jetzt mit Master (Jens Lang.png),
 // kein Alt-Site-Bild mehr. SW-Cache korodur-v6 erzwingt das Nachladen
 // (Bild-Dateinamen sind nicht content-gehasht → cache-first hielt Altbilder).
