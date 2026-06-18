@@ -34,13 +34,17 @@ export default function PortfolioGrid({
   withCatalogTile?: boolean;
 }) {
   const bt = dict.bereiche as Record<string, string>;
+  // #253: Solange Beispiele vorläufig sind, sichtbar als Platzhalter taggen.
+  const zeigeBeispielHinweis = PORTFOLIO_SLUGS.some((slug) => bt[`${slug}_beispiele`]);
 
   return (
+    <>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {PORTFOLIO_SLUGS.map((slug) => {
         const isKatze = slug === "katzenstreu";
         const name = bt[`${slug}_name`];
         const teaser = bt[`${slug}_teaser`];
+        const beispiele = bt[`${slug}_beispiele`];
         const bild = BEREICH_KACHELBILD[slug];
 
         const cardClass = `group flex flex-col rounded-xl bg-white overflow-hidden no-underline transition-all duration-200 ${
@@ -92,6 +96,14 @@ export default function PortfolioGrid({
                 />
               </span>
               <span className="text-sm text-navy opacity-60 leading-[1.6]">{teaser}</span>
+              {/* #253: einheitliche Beispiel-Zeile je Kachel. Werte vorläufig
+                  (Technik-Sign-off offen) → Hinweis-Fußnote unter dem Grid. */}
+              {beispiele && (
+                <span className="text-xs text-navy/45 leading-[1.5]">
+                  <span style={{ fontWeight: 700 }}>{bt.beispiele_prefix} </span>
+                  {beispiele}
+                </span>
+              )}
             </div>
           </Link>
         );
@@ -118,5 +130,9 @@ export default function PortfolioGrid({
         </Link>
       )}
     </div>
+    {zeigeBeispielHinweis && (
+      <p className="mt-5 text-xs italic text-navy/40">{bt.beispiele_hinweis}</p>
+    )}
+    </>
   );
 }

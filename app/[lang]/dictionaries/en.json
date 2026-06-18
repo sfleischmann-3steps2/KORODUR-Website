@@ -352,6 +352,8 @@
     "cta_button": "Get in touch",
     "externe_website": "Visit the dedicated website",
     "katzenstreu_badge": "Separate business unit",
+    "beispiele_prefix": "e.g.",
+    "beispiele_hinweis": "Examples provisional — final wording with the technical team pending.",
     "crosssell_title": "This might also fit",
     "haendler_hinweis": "Rapid Set products are available exclusively through builders' merchants, and abroad through our distribution partners. For information on suppliers in your region, call +49 9621 4759-0.",
     "industrieboden_name": "Industrial Flooring",
@@ -416,7 +418,8 @@
     "spezialbaustoffe_produkte_heading": "Special Construction Materials Products",
     "katzenstreu_produkte_heading": "Cat Litter Products",
     "header_cta": "Technical Consulting",
-    "in_vorbereitung": "In preparation"
+    "in_vorbereitung": "In preparation",
+    "klassifizierung_folgt": "Provisionally all products in this area — the new-build/renovation classification will follow (technical team)."
   },
   "neubauHub": {
     "title": "New construction with KORODUR",

@@ -352,6 +352,8 @@
     "cta_button": "Nous contacter",
     "externe_website": "Visiter le site dédié",
     "katzenstreu_badge": "Domaine d'activité distinct",
+    "beispiele_prefix": "p. ex.",
+    "beispiele_hinweis": "Exemples provisoires — formulation finale à valider avec le service technique.",
     "crosssell_title": "Cela pourrait aussi convenir",
     "haendler_hinweis": "Les produits Rapid Set sont disponibles exclusivement auprès des négoces de matériaux, et à l'étranger auprès de nos partenaires de distribution. Pour connaître les points de vente dans votre région, appelez le +49 9621 4759-0.",
     "industrieboden_name": "Sols industriels",
@@ -416,7 +418,8 @@
     "spezialbaustoffe_produkte_heading": "Matériaux spéciaux Produits",
     "katzenstreu_produkte_heading": "Litière pour chats Produits",
     "header_cta": "Conseil technique",
-    "in_vorbereitung": "En préparation"
+    "in_vorbereitung": "En préparation",
+    "klassifizierung_folgt": "Provisoirement tous les produits du domaine — la classification construction neuve/rénovation suivra (service technique)."
   },
   "neubauHub": {
     "title": "Construction neuve avec KORODUR",

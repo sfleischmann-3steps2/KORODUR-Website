@@ -233,6 +233,9 @@ export default async function ReferenzDetailPage({
   const heroBild =
     !heroPaar && !referenz.bild.includes("_placeholder") ? referenz.bild : null;
   const hatHero = Boolean(heroPaar || heroBild);
+  // #256: Auflösungs-Gate — als "niedrig" markierte Bilder bekommen einen
+  // kompakteren Hero (kein Full-Bleed-Blow-up eines zu kleinen Bildes).
+  const heroKompakt = Boolean(heroBild) && referenz.heroQualitaet === "niedrig";
 
   // Einbau/Ergebnis-Paar bleibt als eigene Sektion unterhalb des Headers
   // (das Vorher/Nachher-Paar wandert in Variante A in den Hero).
@@ -262,6 +265,10 @@ export default async function ReferenzDetailPage({
   const parties = (referenz.beteiligte ?? []).filter((party) => party.name || party.role);
   const showSituation = Boolean(referenz.ausgangssituation || referenz.herausforderungen.length > 0);
   const showResult = Boolean(referenz.ergebnis || referenz.vorteile.length > 0 || referenz.langzeit);
+  // #252: Produkte + PDF sind nach oben gewandert. Die Fakten-Karte bleibt nur
+  // für Varianten ohne Hero (sonst stehen die Fakten in der Überlapp-Leiste).
+  const showFactsCard = !hatHero && facts.length > 0;
+  const hasKennwerte = Boolean(referenz.kennwerte && referenz.kennwerte.length > 0);
 
   return (
     <>
@@ -321,8 +328,12 @@ export default async function ReferenzDetailPage({
           </section>
         </>
       ) : heroBild ? (
-        /* Variante B: Bild-Hero mit Navy-Overlay */
-        <section className="relative flex min-h-[400px] items-end overflow-hidden sm:min-h-[440px]">
+        /* Variante B: Bild-Hero mit Navy-Overlay (Höhe per Auflösungs-Gate, #256) */
+        <section
+          className={`relative flex items-end overflow-hidden ${
+            heroKompakt ? "min-h-[240px] sm:min-h-[280px]" : "min-h-[400px] sm:min-h-[440px]"
+          }`}
+        >
           <Image
             src={withBasePath(heroBild)}
             alt={referenz.bildAlt}
@@ -334,8 +345,10 @@ export default async function ReferenzDetailPage({
           <div
             className="absolute inset-0"
             style={{
+              // #256: Gradient verstärkt + Mindest-Tint (.15) über das ganze
+              // Bild, damit die weiße Headline auch auf hellen Bildern lesbar bleibt.
               background:
-                "linear-gradient(to top, rgba(0,45,89,.92) 0%, rgba(0,45,89,.55) 38%, rgba(0,45,89,.12) 70%, rgba(0,45,89,0) 100%)",
+                "linear-gradient(to top, rgba(0,45,89,.97) 0%, rgba(0,45,89,.80) 30%, rgba(0,45,89,.45) 58%, rgba(0,45,89,.22) 82%, rgba(0,45,89,.15) 100%)",
             }}
           />
           <div className="relative w-full px-4 pb-12 pt-20 sm:px-6">
@@ -404,6 +417,36 @@ export default async function ReferenzDetailPage({
         </section>
       )}
 
+      {/* #252: Eingesetzte Produkte direkt unter dem Header (above the fold),
+          PDF-Download kompakt an der Seite — statt erst weiter unten im Block. */}
+      {produktDetails.length > 0 && (
+        <section className="px-4 pt-6 sm:px-6">
+          <div className={CONTAINER}>
+            <div className="flex flex-col gap-3 rounded-xl border border-bullet-bg bg-white p-4 shadow-[0_8px_30px_rgba(0,45,89,0.10)] sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[11px] font-extrabold uppercase tracking-wide text-muted-foreground">
+                  {detail.fakt_produkte}
+                </span>
+                {produktDetails.map((product) => (
+                  <Badge
+                    key={product.id}
+                    asChild
+                    className="rounded-[4px] bg-navy px-2.5 py-1.5 text-xs font-extrabold text-white [a&]:hover:bg-navy/90"
+                  >
+                    <Link href={`/${lang}/produkte/${product.id}/`} className="no-underline">
+                      {product.name}
+                    </Link>
+                  </Badge>
+                ))}
+              </div>
+              <div className="shrink-0">
+                <ReferenzPdf referenz={referenz} produkt={produktDetails[0]} size="sm" />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {imagePair && (
         <section className={SECTION}>
           <div className={`${CONTAINER} grid grid-cols-1 gap-4 md:grid-cols-2`}>
@@ -413,64 +456,48 @@ export default async function ReferenzDetailPage({
         </section>
       )}
 
-      <section className={SECTION}>
-        <div className={`${CONTAINER} grid grid-cols-1 gap-4 md:grid-cols-[1.25fr_1fr]`}>
-          <Card className="gap-0 rounded-lg py-0 shadow-none">
-            <CardContent className="flex flex-col p-5">
-              {/* Bei Hero-Varianten stehen die Fakten in der Leiste oben —
-                  hier bleiben nur Produkte + PDF (Mockup-Diskussionspunkt 2) */}
-              {!hatHero &&
-                facts.map((row) => (
-                  <div
-                    key={row.label}
-                    className="flex items-baseline justify-between gap-4 border-b border-border py-2 last:border-b-0"
-                  >
-                    <span className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">
-                      {row.label}
-                    </span>
-                    <span className="text-right text-sm font-extrabold text-navy">
-                      {row.value}
-                    </span>
+      {(showFactsCard || hasKennwerte) && (
+        <section className={SECTION}>
+          <div
+            className={`${CONTAINER} grid grid-cols-1 gap-4${
+              showFactsCard && hasKennwerte ? " md:grid-cols-[1.25fr_1fr]" : ""
+            }`}
+          >
+            {showFactsCard && (
+              <Card className="gap-0 rounded-lg py-0 shadow-none">
+                <CardContent className="flex flex-col p-5">
+                  {facts.map((row) => (
+                    <div
+                      key={row.label}
+                      className="flex items-baseline justify-between gap-4 border-b border-border py-2 last:border-b-0"
+                    >
+                      <span className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">
+                        {row.label}
+                      </span>
+                      <span className="text-right text-sm font-extrabold text-navy">
+                        {row.value}
+                      </span>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            )}
+
+            {hasKennwerte && (
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {referenz.kennwerte!.map((metric) => (
+                  <div key={`${metric.value}-${metric.label}`} className="rounded-lg bg-navy p-4 text-center">
+                    <div className="text-[22px] font-black leading-tight text-white">
+                      {metric.value}
+                    </div>
+                    <div className="mt-1 text-xs text-white/80">{metric.label}</div>
                   </div>
                 ))}
-              <div className="flex items-start justify-between gap-4 border-b border-border py-2">
-                <span className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">
-                  {detail.fakt_produkte}
-                </span>
-                <div className="flex flex-wrap justify-end gap-2">
-                  {produktDetails.map((product) => (
-                    <Badge
-                      key={product.id}
-                      asChild
-                      className="rounded-[4px] bg-navy px-2.5 py-1.5 text-xs font-extrabold text-white [a&]:hover:bg-navy/90"
-                    >
-                      <Link href={`/${lang}/produkte/${product.id}/`} className="no-underline">
-                        {product.name}
-                      </Link>
-                    </Badge>
-                  ))}
-                </div>
               </div>
-              <div className="pt-4">
-                <ReferenzPdf referenz={referenz} produkt={produktDetails[0]} />
-              </div>
-            </CardContent>
-          </Card>
-
-          {referenz.kennwerte && referenz.kennwerte.length > 0 && (
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {referenz.kennwerte.map((metric) => (
-                <div key={`${metric.value}-${metric.label}`} className="rounded-lg bg-navy p-4 text-center">
-                  <div className="text-[22px] font-black leading-tight text-white">
-                    {metric.value}
-                  </div>
-                  <div className="mt-1 text-xs text-white/80">{metric.label}</div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+            )}
+          </div>
+        </section>
+      )}
 
       {referenz.galerieBilder && referenz.galerieBilder.length > 0 && (
         <DetailSection title={detail.gallery}>
