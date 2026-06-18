@@ -1,28 +1,6 @@
 import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
-import { getArtikel, getSlugs } from "../lib/content";
-
-/** Ersten aussagekraeftigen Absatz aus dem (bereinigten) Markdown-Body ziehen,
- *  Markdown-Reste strippen, auf ~160 Zeichen kuerzen. Reiner Navigations-Teaser
- *  aus dem Artikel selbst, keine erfundene Copy. */
-function teaser(body: string): string {
-  for (const block of body.split(/\n\s*\n/)) {
-    const t = block.trim();
-    if (!t) continue;
-    // Ueberschriften, Tabellen, Zitate, Listen, Links/HTML ueberspringen
-    if (/^[#|>\-[<]/.test(t)) continue;
-    const clean = t
-      .replace(/\*\*(.+?)\*\*/g, "$1")
-      .replace(/\*(.+?)\*/g, "$1")
-      .replace(/\[(.+?)\]\([^)]*\)/g, "$1")
-      .replace(/`(.+?)`/g, "$1")
-      .replace(/\s+/g, " ")
-      .trim();
-    if (clean.length < 30) continue;
-    return clean.length > 160 ? `${clean.slice(0, 159).trimEnd()}…` : clean;
-  }
-  return "";
-}
+import { getArtikel, getSlugs, teaser } from "../lib/content";
 
 /** Uebersichts-Hub fuer eine Fachartikel-Kategorie: Breadcrumb + Titel + Intro
  *  + automatisch gelistete Artikel als verlinkte Karten (Teaser je Artikel). */

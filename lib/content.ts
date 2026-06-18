@@ -57,6 +57,28 @@ export function getArtikel(kategorie: string, slug: string): Artikel | null {
   return { slug, frontmatter: data as ArtikelFrontmatter, body: bereinige(content) };
 }
 
+/** Ersten aussagekraeftigen Absatz aus dem (bereinigten) Markdown-Body ziehen,
+ *  Markdown-Reste strippen, auf ~160 Zeichen kuerzen. Reiner Navigations-Teaser
+ *  aus dem Artikel selbst, keine erfundene Copy. */
+export function teaser(body: string): string {
+  for (const block of body.split(/\n\s*\n/)) {
+    const t = block.trim();
+    if (!t) continue;
+    // Ueberschriften, Tabellen, Zitate, Listen, Links/HTML ueberspringen
+    if (/^[#|>\-[<]/.test(t)) continue;
+    const clean = t
+      .replace(/\*\*(.+?)\*\*/g, "$1")
+      .replace(/\*(.+?)\*/g, "$1")
+      .replace(/\[(.+?)\]\([^)]*\)/g, "$1")
+      .replace(/`(.+?)`/g, "$1")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (clean.length < 30) continue;
+    return clean.length > 160 ? `${clean.slice(0, 159).trimEnd()}…` : clean;
+  }
+  return "";
+}
+
 export function getSlugs(kategorie: string, exclude: string[] = []): string[] {
   const dir = path.join(CONTENT_DIR, kategorie);
   if (!fs.existsSync(dir)) return [];
