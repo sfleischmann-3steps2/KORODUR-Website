@@ -30,6 +30,15 @@ Maßgebliche Wahrheit ist das Org-Board **KORODUR-International/projects/1**. Ko
 6. **Status** über Labels + Frontmatter (`status: entwurf | in_review | freigegeben`, `reviewer:`) + `docs/content-status.md`.
 7. **Kein Force-Push.** Bei Kollision die fremde Version übernehmen und nur prüfen oder ergänzen, nie überschreiben.
 
+### 4.1 Isolierte Worktrees & Branch-Benennung (gegen Parallel-Kollision)
+
+Mehrere Sessions im selben Arbeitsverzeichnis teilen einen Git-HEAD: Commits landen dann auf dem falschen Branch (passiert 2026-06-18, als ein Track den geteilten HEAD wechselte und der Commit des anderen Tracks auf dem fremden Branch landete). Daher:
+
+1. **Eigener Worktree pro Session ist Pflicht.** Nie im selben Arbeitsbaum wie eine andere Session committen. Eigenen Worktree off `origin/main` anlegen: `git worktree add ../_<track>-<thema> -b <branch> origin/main`.
+2. **Vor Arbeitsbeginn prüfen:** `git worktree list` + `git status`. Steht ein Arbeitsbaum auf einem **fremden** Branch, dort nicht committen oder den Branch wechseln, sondern eigenen Worktree nutzen.
+3. **Track-Kürzel im Branch-Namen** macht sichtbar, wer arbeitet: `kd/<typ>-<kebab>` = KORODUR-Claude, `priv/<typ>-<kebab>` = Privater Claude (z. B. `kd/feat-projektart`, `priv/fix-referenz-dublette`). Zusätzlich am Issue „übernehme [Track]".
+4. **Recovery bei Fehl-Branch:** Commit über einen temporären Detached-Worktree auf `origin/main` cherry-picken und `push origin HEAD:main`, ohne den fremden HEAD anzufassen: `git worktree add --detach <tmp> origin/main` dann `git -C <tmp> cherry-pick <sha>` dann `git -C <tmp> push origin HEAD:main` dann `git worktree remove <tmp>`.
+
 ## 5. Standing Rules für Content-Läufe (Fachartikel)
 
 - **Vor jedem Lauf gegen aktuellen main + Branch verifizieren** (besonders Personen-/Kontaktdaten). Niemals gegen einen älteren Snapshot lesen.
