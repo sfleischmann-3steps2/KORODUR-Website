@@ -931,7 +931,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Reparatur abgesackter Asphalt- und Betonflächen im Übergang zur Produktionshalle. Wellenbewegungen gefährdeten transportsichere Verpackungen.",
     ort: "Versmold",
     land: "Deutschland",
-    produkte: ["Rapid Set CONCRETE MIX", "Rapid Set CONCRETE PHARMACY", "Rapid Set CONCRETE PHARMACY"],
+    produkte: ["Rapid Set CONCRETE MIX", "Rapid Set CONCRETE PHARMACY"],
     herausforderungen: [
       "Der Bereich war stark beansprucht durch Flurförderfahrzeuge, was zu Wellen führte, die transportsichere Verpackungen gefährdeten.",
     ],
@@ -2182,7 +2182,7 @@ export const referenzen: Referenz[] = [
     land: "Deutschland",
     jahr: 2020,
     flaeche: "ca. 2.500 m²",
-    produkte: ["GRANIDUR BIANCO/NERO", "KORODUR HB 5", "FSCem"],
+    produkte: ["GRANIDUR BIANCO/NERO", "KORODUR HB 5", "KORODUR FSCem"],
     ausgangssituation:
       "Die neue Konzernzentrale der HeidelbergCement AG demonstriert mit ihrer geschwungenen Fassade und dem hohen Anspruch an Sichtbetonqualität die gestalterischen Möglichkeiten des Baustoffs Beton. Auch der Bodenbelag im repräsentativen Eingangsfoyer (19,80 m x 20,50 m bei 11,00 m Höhe) sollte diesem Anspruch gerecht werden.",
     herausforderungen: [
@@ -2430,7 +2430,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Lichtgrauer Hartstoffboden für eine helle, pflegeleichte Schule im finnischen Winter",
     ort: "Espoo",
     land: "Finnland",
-    jahr: undefined,
+    jahr: 2012,
     flaeche: "1.200 m²",
     produkte: ["NEODUR HE 65", "KORODUR HB 5"],
     ausgangssituation:
@@ -3136,7 +3136,7 @@ export const referenzen: Referenz[] = [
     land: "Deutschland",
     jahr: 2005,
     flaeche: "20.000 m²",
-    produkte: ["NEODUR HE 65", "NEODUR HE 65"],
+    produkte: ["NEODUR HE 65"],
     ausgangssituation:
       "Die Airbus Deutschland GmbH benötigte für die letzten Wartungsarbeiten am A 380 vor der Übergabe an den Kunden eine Halle mit zwei baugleichen Stellplätzen von insgesamt 20.000 m². In die 38 m hohe Airbushalle sollte – wie schon zuvor bei Airbus in Toulouse – ein KORODUR Industrieboden verlegt werden.",
     herausforderungen: [
@@ -3423,7 +3423,7 @@ export const referenzen: Referenz[] = [
     land: "Deutschland",
     jahr: 2015,
     flaeche: "ca. 25.000 m²",
-    produkte: ["NEODUR HE 3", "NEODUR HE 65", "NEODUR HE 65"],
+    produkte: ["NEODUR HE 3", "NEODUR HE 65"],
     ausgangssituation:
       "Mit dem Spatenstich am 13. Mai 2015 begann bei BORBET in Kodersdorf der Neubau eines Werks zur Leichtmetallradproduktion. Rund 100.000 Kubikmeter Boden wurden umgelagert und abgetragen, 2.250 Kubikmeter Beton für die Fundamentierung vergossen. Für den am stärksten belasteten Industrieboden wurde KORODUR Qualität eingesetzt.",
     herausforderungen: [
@@ -3743,49 +3743,6 @@ export const referenzen: Referenz[] = [
     zusatzfunktionen: [],
   },
   {
-    id: "martensbro-schule-espoo-finnland-2",
-    slug: "martensbro-schule-espoo-finnland-2",
-    projekttyp: "neubau",
-    releaseStatus: "oeffentlich",
-    titel: "Mårtensbro Skola, Espoo",
-    untertitel: "Hartstoff-Industrieboden in Lichtgrau für maximale Lichtreflexion im finnischen Winter",
-    ort: "Espoo",
-    land: "Finnland",
-    jahr: 2012,
-    flaeche: "1.200 m²",
-    produkte: ["NEODUR HE 65", "KORODUR HB 5"],
-    ausgangssituation:
-      "Für die Grundschule Mårtensbro Skola wurde ein Bodenbelag gesucht, der den täglichen Belastungen durch tausende Fußtritte standhält und zugleich ästhetisch und pflegeleicht ist.",
-    herausforderungen: [
-      "Tägliche Hochfrequenz-Belastung durch tausende Fußtritte in einer Schule",
-      "Zwei unterschiedliche Untergründe: Frisch-auf-Frisch-Verlegung und Verbund auf bestehendem Tragbeton",
-      "Optimierung der Lichtreflexion für die langen, dunklen Wintermonate",
-      "Langlebige und pflegeleichte Oberfläche bei ansprechender Ästhetik",
-    ],
-    loesung:
-      "Eingebaut wurde eine KORODUR Hartstoffschicht gemäß DIN 18560-7, Hartstoffgruppe A gemäß DIN 1100, mit dem Produkt NEODUR HE 65 in Lichtgrau, geglättet in KCF-Optik. Eine Fläche von rund 600 m² wurde im Frisch-auf-Frisch-Einbauverfahren mit einer Hartstoffschicht von i. M. 10 mm verlegt. Eine weitere Fläche von rund 600 m² wurde im Verbund auf existierenden Tragbeton aufgebracht: zunächst die mineralische KORODUR Haftbrücke HB 5, anschließend eine Hartstoffschicht von i. M. 15 mm. Verbraucht wurden rund 30 Tonnen NEODUR HE 65 Trockenbaustoff.",
-    ergebnis:
-      "Die Lichtgrau-Wahl optimiert die Lichtreflexion in den dunklen Wintermonaten, spart Energiekosten und schafft eine freundliche, motivierende Atmosphäre für die Schüler. Der mineralische Hartstoffindustrieboden ist langlebig, zeitlos schön und hochwertig.",
-    vorteile: [
-      "Hohe Verschleißfestigkeit für dauerhafte Schulnutzung",
-      "Lichtgrau optimiert die Lichtreflexion in dunklen Wintermonaten und spart Energiekosten",
-      "Pflegeleichte, ästhetisch ansprechende Oberfläche in KCF-Optik",
-      "Ökologisch und ökonomisch attraktive, langlebige Lösung",
-    ],
-    beteiligte: [
-      { role: "Verarbeiter", name: "Neliskulma Oy" },
-      { role: "Bauherr", name: "City of Espoo" },
-      { role: "Architekt/Planer", name: "Playa Arkkitehidt Oy / Tuukka Vuori" },
-    ],
-    bild: "/images/referenzen/martensbro-schule-espoo-finnland-2/hero.jpg",
-    bildAlt: "Mårtensbro Skola, Espoo",
-    galerieBilder: ["/images/referenzen/martensbro-schule-espoo-finnland-2/g1.jpg", "/images/referenzen/martensbro-schule-espoo-finnland-2/g2.jpg", "/images/referenzen/martensbro-schule-espoo-finnland-2/g3.jpg", "/images/referenzen/martensbro-schule-espoo-finnland-2/g4.jpg", "/images/referenzen/martensbro-schule-espoo-finnland-2/g5.jpg"],
-    sanierungsart: "grossflaechig",
-    einsatzbereiche: ["verkaufsraeume"],
-    zeitDringlichkeit: "normal",
-    zusatzfunktionen: [],
-  },
-  {
     id: "metro-grossmarkt-wien-oesterreich",
     slug: "metro-grossmarkt-wien-oesterreich",
     projekttyp: "sanierung",
@@ -3876,7 +3833,7 @@ export const referenzen: Referenz[] = [
     land: "Deutschland",
     jahr: 2005,
     flaeche: "40.000 m²",
-    produkte: ["NEODUR HE 65", "NEODUR HE 65"],
+    produkte: ["NEODUR HE 65"],
     ausgangssituation:
       "Für das Großobjekt des Möbelhändlers Höffner in Hamburg wurde ein Industrieboden auf rund 40.000 m² benötigt – in einem speziell nach Kundenwunsch gemischten Farbton, dem „Krieger-grau“.",
     herausforderungen: [
@@ -4042,7 +3999,7 @@ export const referenzen: Referenz[] = [
     land: "China",
     jahr: 2011,
     flaeche: "rd. 12.000 m²",
-    produkte: ["NEODUR HE 3", "NEODUR HE 3"],
+    produkte: ["NEODUR HE 3"],
     ausgangssituation:
       "SiC Processing, ein Hidden Champion aus der Oberpfalz mit rund 40 Prozent Weltmarktanteil in der Aufbereitung gebrauchter Sägesuspension (Slurry), investierte in zwei neue Produktionsstätten in China. Für den Standort Zhenjiang waren Industrieböden gefragt, die einer dauerhaft reibungslosen Wiederaufbereitung standhalten.",
     herausforderungen: [
@@ -4085,7 +4042,7 @@ export const referenzen: Referenz[] = [
     land: "Deutschland",
     jahr: undefined,
     flaeche: "24.000 m²",
-    produkte: ["NEODUR HE 65", "NEODUR HE 65"],
+    produkte: ["NEODUR HE 65"],
     ausgangssituation:
       "Die WAGO-Gruppe aus Minden setzt auf Wachstum und investierte 2015 in eine neue Stanzerei auf rund 24.000 m². Für einen dauerhaften und effizienten Produktionsfluss spielte die Art des Industriebodens eine entscheidende Rolle.",
     herausforderungen: [
@@ -4401,7 +4358,7 @@ export const referenzen: Referenz[] = [
     ort: "Schneeberg",
     land: "Deutschland",
     jahr: undefined,
-    produkte: ["Rapid Set MORTAR MIX", "Rapid Set CONCRETE PHARMACY", "Rapid Set CONCRETE PHARMACY"],
+    produkte: ["Rapid Set MORTAR MIX", "Rapid Set CONCRETE PHARMACY"],
     ausgangssituation:
       "Vor dem Sockel einer Zapfsäule war das Gefälle zu gering ausgebildet. Regen- und Tauwasser konnten nicht ausreichend ablaufen und stauten sich im Tankstellenbereich.",
     herausforderungen: [
@@ -4599,7 +4556,7 @@ export const referenzen: Referenz[] = [
     ort: "",
     land: "",
     jahr: 2018,
-    produkte: ["Rapid Set MORTAR MIX", "Rapid Set CONCRETE PHARMACY", "Rapid Set CONCRETE PHARMACY"],
+    produkte: ["Rapid Set MORTAR MIX", "Rapid Set CONCRETE PHARMACY"],
     ausgangssituation:
       "Fuer eine Hausfassade waren Schmucktafeln aus Betonstuck zu erstellen. Der Auftrag musste sehr schnell bearbeitet werden.",
     herausforderungen: [
