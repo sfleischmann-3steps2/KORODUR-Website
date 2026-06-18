@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# KORODUR Sanierungs-App
+# KORODUR Website (vormals „Sanierungs-App")
 
 Interaktive Web-App (Next.js 16 Static Export, GitHub Pages) für KORODUR, als neue korodur.de mit **Produktportfolio** (7 Bereiche inkl. Infrastruktur + Unternehmens-/Kontaktseiten). Kern bleibt das Sanierungs-Sales-Tool mit **Lösungsfinder** (geführter Wizard), **Referenzdatenbank** (133, Neubau + Sanierung), **71 Produkten** (mehrfach-bereichsfähig), **Anwendungsmatrix** (Poster 1:1, 6 kuratierte Produkte, TDS-Links) und **PDF-Download** je Referenz. Fünf Sprachen: DE/EN/FR/PL/ES.
 

@@ -1,4 +1,4 @@
-# KORODUR Sanierung – Web App
+# KORODUR Website
 
 Interaktive Web-Applikation als neue korodur.de: **Produktportfolio** mit 7 Bereichen (inkl. neuem Bereich Infrastruktur), einheitlichen Bereichsseiten mit Neubau-/Sanierungs-Tiefe sowie Unternehmens- und Kontaktseiten. Kern bleibt das Sanierungs-Sales-Tool mit Lösungsfinder. Zielgruppe: Vertriebler, Bauherren, Architekten und Interessenten.
 
