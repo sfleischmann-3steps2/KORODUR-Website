@@ -68,10 +68,10 @@ Standing Rule „keine Werte erfinden": lieber eine Frage als ein geratener Wert
 |---|---|
 | Erkenntnisse prüfen, öffentliche Fakten recherchieren + in Erkenntnisseite/Repo schreiben | jeder Claude (additiv) |
 | Interna an den **eigenen** Track-Stream anhängen | jeder Claude (additiv) |
+| **Erkenntnisseite iterativ pflegen** (geklärte Fakten + Recherche, auch unabhängig von der Frageseite-Analyse) | **jeder Claude (additiv), wenn sinnvoll**; Steffi ergänzt Termin-Antworten |
 | **Streams konsolidieren → eine Termin-Agenda** | **nur Steffi, manuell** |
-| Technik-Antworten in die Erkenntnisseite pflegen | Steffi (Notion-Schreib-Gate) |
 
-**Additiv-Anhängen ist parallel sicher** (jeder Track schreibt nur in seinen eigenen Stream). Der **einzige Kollisionspunkt ist das Konsolidieren** — das macht ausschließlich Steffi, manuell und einmalig. Kein Claude merged Streams oder triggert die Konsolidierung, und kein Claude editiert einen fremden Track-Stream. Notion-Schreibregeln gelten (additiv, nie `replace_content`, verify-after-write).
+**Additiv-Anhängen ist parallel sicher** (jeder Track schreibt nur in seinen eigenen Stream; die Erkenntnisseite wächst additiv mit klar datierten Sektionen). Erkenntnisse müssen nicht aus der Frageseite-Analyse stammen — was aus Recherche oder laufender Arbeit als belastbares Wissen anfällt, gehört ebenfalls additiv auf die Erkenntnisseite, damit es nicht beim nächsten Thema neu recherchiert wird. Der **einzige echte Kollisionspunkt ist das Konsolidieren der Frage-Streams** — das macht ausschließlich Steffi, manuell und einmalig. Kein Claude merged Frage-Streams oder triggert die Konsolidierung, und kein Claude editiert einen fremden Track-Stream. Notion-Schreibregeln gelten immer (additiv, nie `replace_content`, verify-after-write).
 
 ## 7. Aufgabenteilung (Stand 2026-06-14)
 
