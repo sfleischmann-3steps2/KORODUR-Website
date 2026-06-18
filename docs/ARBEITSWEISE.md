@@ -38,13 +38,24 @@ Maßgebliche Wahrheit ist das Org-Board **KORODUR-International/projects/1**. Ko
 - **Bild-Policy:** Hixfield/AI-Bilder nur für Bereiche- und Schadensbild-Illustrationen, nie für Referenzen oder Produktbilder (nur echte Fotos).
 - **Schlusskorrektur im Lauf:** Umlaute (gezielt, kein blindes ae→ä) und Em-Dash-Verbot gehören in den Lauf, nicht in einen späteren Cleanup.
 
-## 6. Aufgabenteilung (Stand 2026-06-14)
+## 6. Fragen an die Technik (eine zentrale Seite, datierte Snapshots)
+
+Fachliche Rückfragen an die KORODUR-Technik laufen über **eine** zentrale Notion-Seite „Fragen (zentral) an Technik". Darunter liegen nicht mehr Projektseiten nebeneinander, sondern **datierte Snapshot-Sub-Seiten** „Fragen an die Technik — Stand JJJJ-MM-TT". Die jüngste ist die aktuell gültige Frageliste; ältere werden archiviert (nicht gelöscht), sie sind die Historie. Repo-Spiegel: `docs/reference/fragen-an-technik-final.md`.
+
+**Prinzip „erst selbst recherchieren, dann fragen".** Bevor eine Frage auf den Snapshot kommt, wird sie triagiert:
+
+- **Recherchierbar** (öffentliche Normen, Standards, Materialwissenschaft) → wir klären sie selbst (Web-Recherche + adversariale Verifikation), lassen die Antwort ins Repo (`data/normenGlossar.ts`, `docs/reference/`) und nach Notion zurückfließen, und sie kommt **nicht** auf die Technik-Liste.
+- **Intern** (nur die KORODUR-Technik kann es: Sortiment, interne Klassifizierung, was real verbaut wurde, firmenspezifische TDS-/DoP-Werte) → kommt auf den Snapshot.
+
+Der Snapshot ist die dublettenfreie Essenz aus **allen** Projekten. Standing Rule „keine Werte erfinden" gilt: lieber eine Frage an die Technik als ein geratener Wert. Ziel: dem Team keine Fragen vorlegen, die wir selbst hätten beantworten können.
+
+## 7. Aufgabenteilung (Stand 2026-06-14)
 
 - **Content-/Fachartikel-Schiene = KORODUR-Claude.** Entwürfe selbst bauen, Kollegen korrigieren. Kinder von Epic #130 (Problemorientierter Content), Label `content` + `V1`/`V1.5`, Reviewer im Body.
 - **Code-/Daten-Issues laufen getrennt** (z. B. Navigation, Bereichsfilter, Produktklassifizierung, Bilder-Pipeline) und sind nicht Teil der Content-Zuarbeit.
 - **Frank-Sign-off-abhängige Themen** (Produktklassifizierung, Lösungsfinder-Logik) werden nicht frei zugearbeitet, sondern erst nach Sign-off.
 
-## 7. Commitment
+## 8. Commitment
 
 Dieser Vertrag gilt, sobald **beide Tracks** zugestimmt haben (Bestätigung im zugehörigen Commitment-Issue):
 
@@ -55,6 +66,6 @@ Menschliche Bestätigung:
 
 - [ ] **Steffi**: freigegeben.
 
-## 8. Pflege
+## 9. Pflege
 
 Dieses Dokument ist verbindlich, aber lebendig. Wir verbessern es iterativ am echten Objekt. Änderungen laufen über einen PR, der das Commitment-Issue referenziert. Aus `CLAUDE.md` (Repo und global) wird hierauf verwiesen.
