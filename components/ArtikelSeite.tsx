@@ -3,6 +3,7 @@ import ArtikelInhalt from "./ArtikelInhalt";
 import ReferenceCard from "./ReferenceCard";
 import { getReferenzBySlug } from "../data/referenzen";
 import { localizeReferenzen } from "../data/i18n/getLocalized";
+import { withBasePath } from "../lib/basePath";
 
 // #170: Überschrift des Praxis-Referenz-Blocks je Sprache (Artikel sind aktuell
 // v. a. DE; Fallback DE). Bewusst inline statt Dictionary — generische Hülle.
@@ -22,12 +23,17 @@ export default async function ArtikelSeite({
   breadcrumb,
   body,
   referenzenSlugs,
+  bild,
+  bildAlt,
 }: {
   lang: string;
   titel: string;
   breadcrumb: { label: string; href?: string }[];
   body: string;
   referenzenSlugs?: string[];
+  /** Optionales Hero-Bild (public-relativer Pfad, z. B. /images/schadensbilder/risse.webp). */
+  bild?: string;
+  bildAlt?: string;
 }) {
   const refs = (referenzenSlugs ?? [])
     .map((slug) => getReferenzBySlug(slug))
@@ -47,6 +53,17 @@ export default async function ArtikelSeite({
 
       <section style={{ padding: "16px 32px 64px" }}>
         <div className="mx-auto" style={{ maxWidth: 860 }}>
+          {bild && (
+            <figure className="mb-8 overflow-hidden rounded-xl border border-bullet-bg">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={withBasePath(bild)}
+                alt={bildAlt ?? titel}
+                className="w-full h-auto"
+                style={{ aspectRatio: "16 / 9", objectFit: "cover" }}
+              />
+            </figure>
+          )}
           <h1 className="mb-6" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
             {titel}
           </h1>
