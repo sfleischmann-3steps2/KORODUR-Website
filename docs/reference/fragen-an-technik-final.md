@@ -28,6 +28,7 @@ Diese Liste enthält **nur Fragen, die fachlich nur die KORODUR-Technik beantwor
 - **#205 — Dublette?** Produktionshalle Guben vs. „Sanierung einer Sanierung" dasselbe Projekt?
 - **WHG-Split bestätigen:** LKW Waschstraße, TEXACO Tankfläche Arnheim, Hafen Catania als Umwelt-/WHG-Fläche korrekt?
 - **Helipad Płock — Pull-Off-Wert:** Im Artikel steht „Haftzug bis 3,0 N/mm²" (DIN EN 1542). Gibt es das Original-Messprotokoll, oder entschärfen wir die Zahl?
+- **Strandkorbhalle Sylt — Haftbrücke:** Referenzdaten und Artikel sagen durchgängig „KORODUR HB 5" (nicht-rapid); ein Faktencheck-Hinweis vermutete „HB 5 rapid". Welche Haftbrücke wurde real eingesetzt?
 
 ## 4. Firmenspezifische TDS-Werte (liegen nur euch vor)
 
