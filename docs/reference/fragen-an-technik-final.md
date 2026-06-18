@@ -87,7 +87,7 @@ Diese standen teils als Fragen im Raum, sind aber öffentliche Norm-/Standardfak
 - **DIN 1100:** Gruppen A/KS/M; Grenzwert Gruppe A ≤ 5,0 cm³/50 cm². Hartstoffestrich (DIN 18560-7) vs. Trockeneinstreuung (DIN 18560-3/-4).
 - **EN 206:** „C44/55" existiert nicht (→ C45/55). **EN 1015-11** = Prüfverfahren, keine Klasse.
 - **EN 1504-3:** Klassen R1–R4, R4 = höchste (≥ 45 N/mm², strukturell). Für unter die hEN fallende Produkte sind CE-Kennzeichnung + DoP nach BauPVO Pflicht.
-- **A1fl ohne Prüfung (CWFT):** Mineralische/anorganische Produkte (organischer Anteil unter dem Schwellwert) sind nach Kommissions-Entscheidung 96/603/EG ohne weitere Prüfung als A1/A1fl klassifizierbar. *(Die Deklaration bleibt eure Entscheidung.)*
+- **A1fl ohne Prüfung (CWFT):** Mineralische/anorganische Produkte mit **homogen verteiltem organischem Anteil ≤ 1,0 M.-%** sind nach Kommissions-Entscheidung 96/603/EG (heute im CPR-Rahmen via VO 2016/364) ohne weitere Prüfung als A1/A1fl klassifizierbar. Polymermodifizierte Mörtel über 1,0 M.-% brauchen eine Prüfung nach EN 13501-1. *(Verifiziert 2026-06-18; die Deklaration bleibt eure Entscheidung.)*
 - **EN 934-2:** Betonzusatzmittel sind harmonisiert; eigenständig in Verkehr gebracht gelten CE + DoP. *(Ob KORODUR sie standalone vertreibt, ist intern.)*
 - **WHG-Dichtheit** über Eindringtiefe e72 (DAfStb BUmwS), keine 10-mm-Pauschale. **DVGW** W 270 / W 347 / W 300-Reihe. **RStO 12** Bk100–Bk0.3; **TL BEB-StB** ohne Verkehrsklassen. **ASTM C928** = US-Norm (R1/R2/R3).
 
