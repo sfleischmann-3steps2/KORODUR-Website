@@ -143,8 +143,45 @@ export default function Footer({
             </address>
           </div>
 
-          {/* (d) Social Media */}
+          {/* (d) Service & Ratgeber + Social Media. Ratgeber/Schadensbilder/
+              Branchen + Lösungsfinder/Anwendungsmatrix sind aus der Top-Nav in
+              den Footer gewandert (Steffi 2026-06-18, analog „Produkte"). Die
+              Content-Hubs sind aktuell nur DE → für andere Sprachen ausblenden. */}
           <div>
+            <h3 className={headingClass} style={{ fontWeight: 800 }}>
+              {dict.footer.col_service}
+            </h3>
+            <ul className="list-none m-0 p-0 flex flex-col mb-8">
+              <li>
+                <Link href={`/${lang}/loesungsfinder/`} className={linkClass}>
+                  {dict.nav.loesungsfinder}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/anwendungsmatrix/`} className={linkClass}>
+                  {dict.nav.anwendungsmatrix}
+                </Link>
+              </li>
+              {lang === "de" && (
+                <>
+                  <li>
+                    <Link href={`/${lang}/ratgeber/`} className={linkClass}>
+                      Ratgeber
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={`/${lang}/schadensbilder/`} className={linkClass}>
+                      Schadensbilder
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={`/${lang}/branchen/`} className={linkClass}>
+                      Lösungen nach Branche
+                    </Link>
+                  </li>
+                </>
+              )}
+            </ul>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_social}
             </h3>
