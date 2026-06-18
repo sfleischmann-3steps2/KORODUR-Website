@@ -25,7 +25,6 @@ import {
 import LanguageSwitcher from "./LanguageSwitcher";
 import SearchOverlay from "./SearchOverlay";
 import { KORODUR_ZENTRALE } from "../lib/kontaktDaten";
-import { projektartLabel } from "../data/einsatzbereichMapping";
 import type { Locale } from "../lib/i18n";
 import type { Dictionary } from "../app/[lang]/dictionaries";
 
@@ -101,31 +100,25 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       ],
       footer: [{ label: dict.nav.mm_alle_bereiche, href: `/${lang}/bereiche/` }],
     },
+    // Neubau + Sanierung zeigen NUR die Bereiche (Steffi 2026-06-18): keine
+    // Tool-/Subseiten-/Ratgeber-Links im Dropdown. Ratgeber, Schadensbilder,
+    // Lösungen nach Branche, Lösungsfinder + Anwendungsmatrix leben im Footer.
     neubau: {
       items: [
         { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/`, sub: bt.industrieboden_teaser },
         { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/`, sub: bt.sichtestrich_teaser },
         { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
       ],
-      footer: [
-        { label: `${dict.nav.referenzen} · ${projektartLabel("neubau", lang)}`, href: `/${lang}/referenzen/?projektart=neubau` },
-        { label: dict.nav.loesungsfinder, href: `/${lang}/loesungsfinder/` },
-      ],
     },
     sanierung: {
-      // #224: Sanierung-Dropdown vollständig — Industriebodensanierung,
-      // Betonsanierung, TW-Behältersanierung, Infrastruktur, Spezialbaustoffe.
+      // #224: Sanierung-Dropdown — Industriebodensanierung, Betonsanierung,
+      // TW-Behältersanierung, Infrastruktur, Spezialbaustoffe. Nur Bereiche.
       items: [
         { label: dict.sanierungHub.sp_industrieboden_title, href: `/${lang}/bereiche/industrieboden/`, sub: dict.sanierungHub.sp_industrieboden_text },
         { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
         { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
         { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
         { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
-      ],
-      footer: [
-        { label: `${dict.nav.referenzen} · ${projektartLabel("sanierung", lang)}`, href: `/${lang}/referenzen/?projektart=sanierung` },
-        { label: dict.nav.loesungsfinder, href: `/${lang}/loesungsfinder/` },
-        { label: dict.nav.anwendungsmatrix, href: `/${lang}/anwendungsmatrix/` },
       ],
     },
     kontakt: {
@@ -135,26 +128,6 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       ],
     },
   };
-
-  // Sanierungs-Content (Fachartikel #130) in die Nav heben — nur DE, da die
-  // Artikel aktuell nur auf Deutsch existieren (sonst 404).
-  if (lang === "de") {
-    menus.sanierung.items.push(
-      {
-        label: "Schadensbilder",
-        href: `/${lang}/schadensbilder/`,
-        sub: "Bodenschaden erkennen und einordnen",
-      },
-      {
-        label: "Ratgeber",
-        href: `/${lang}/ratgeber/`,
-        sub: "Sperrzeit, Wirtschaftlichkeit, Systemwahl, FAQ",
-      },
-    );
-    // „Lösungen nach Branche" in beide Funnel (relevant für Neubau und Sanierung).
-    menus.sanierung.footer?.push({ label: "Lösungen nach Branche", href: `/${lang}/branchen/` });
-    menus.neubau.footer?.push({ label: "Lösungen nach Branche", href: `/${lang}/branchen/` });
-  }
 
   const navItems: { key: string; href: string; label: string; menu: boolean }[] = [
     { key: "bereiche", href: `/${lang}/bereiche/`, label: dict.nav.bereiche, menu: true },
