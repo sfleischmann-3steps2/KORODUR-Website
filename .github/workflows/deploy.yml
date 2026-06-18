@@ -38,7 +38,7 @@ jobs:
 
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /KORODUR-Sanierung_app
+          NEXT_PUBLIC_BASE_PATH: /KORODUR-Website
           # Canonical/hreflang/Sitemap zeigen auf die aktuelle Pages-Origin;
           # der Cutover-Build setzt stattdessen https://www.korodur.de.
           NEXT_PUBLIC_SITE_URL: https://sfleischmann-3steps2.github.io

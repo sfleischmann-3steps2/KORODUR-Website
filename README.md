@@ -4,9 +4,9 @@ Interaktive Web-Applikation als neue korodur.de: **Produktportfolio** mit 7 Bere
 
 ## Live ansehen
 
-**[https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/)**
+**[https://sfleischmann-3steps2.github.io/KORODUR-Website/de/](https://sfleischmann-3steps2.github.io/KORODUR-Website/de/)**
 
-Verfügbar in: [Deutsch](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/) · [English](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/en/) · [Français](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/fr/) · [Polski](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/pl/) · [Español](https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/es/)
+Verfügbar in: [Deutsch](https://sfleischmann-3steps2.github.io/KORODUR-Website/de/) · [English](https://sfleischmann-3steps2.github.io/KORODUR-Website/en/) · [Français](https://sfleischmann-3steps2.github.io/KORODUR-Website/fr/) · [Polski](https://sfleischmann-3steps2.github.io/KORODUR-Website/pl/) · [Español](https://sfleischmann-3steps2.github.io/KORODUR-Website/es/)
 
 ## Features
 

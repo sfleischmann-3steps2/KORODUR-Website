@@ -4,7 +4,7 @@
 
 Interaktive Web-App (Next.js 16 Static Export, GitHub Pages) für KORODUR, als neue korodur.de mit **Produktportfolio** (7 Bereiche inkl. Infrastruktur + Unternehmens-/Kontaktseiten). Kern bleibt das Sanierungs-Sales-Tool mit **Lösungsfinder** (geführter Wizard), **Referenzdatenbank** (133, Neubau + Sanierung), **71 Produkten** (mehrfach-bereichsfähig), **Anwendungsmatrix** (Poster 1:1, 6 kuratierte Produkte, TDS-Links) und **PDF-Download** je Referenz. Fünf Sprachen: DE/EN/FR/PL/ES.
 
-**Live:** https://sfleischmann-3steps2.github.io/KORODUR-Sanierung_app/de/
+**Live:** https://sfleischmann-3steps2.github.io/KORODUR-Website/de/
 **Zielseite Notion (Single Source of Truth für das Projekt):** [Sanieren mit KORODUR ist als überzeugende Sales-App live](https://www.notion.so/336670e19e1a80f887dad468b1676e57)
 
 > **Arbeitsweise (Mensch + KI) — vor jeder Mitarbeit lesen:** Verbindlicher Koordinations-Vertrag in [`docs/ARBEITSWEISE.md`](docs/ARBEITSWEISE.md). Kern: Board (KORODUR-International/projects/1) = Abstimmung · ein Issue = ein Branch = ein PR · Übernahme am Issue sichtbar machen · kein Force-Push (bei Kollision fremde Version übernehmen) · Content-Standing-Rules (keine Personen im Text → Fachberater-Finder, Quellen Notion→Repo→Web, Bild-Policy, Umlaut/Em-Dash im Lauf).
