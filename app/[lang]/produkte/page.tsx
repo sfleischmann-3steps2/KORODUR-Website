@@ -89,7 +89,8 @@ export default async function ProduktePage({
         </div>
       </section>
 
-      <section style={{ padding: "0 32px 24px" }}>
+      {/* Text-Header-Standard (#297): Top 16px bei Seiten mit Breadcrumb. */}
+      <section style={{ padding: "16px 32px 24px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h1
             className="mb-3"

@@ -44,8 +44,9 @@ export default async function AnwendungsmatrixPage({
   const rawDict = await getDictionary(lang);
   const dict: Dict | undefined = (rawDict as unknown as { anwendungsmatrix?: Dict }).anwendungsmatrix;
 
+  // Text-Header-Standard (#297): horizontal 32px (vorher 24px → Versatz), Top 48px (ohne Breadcrumb).
   return (
-    <section style={{ padding: "32px 24px 64px" }}>
+    <section style={{ padding: "48px 32px 64px" }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
         <header style={{ marginBottom: 26 }}>
           <div
