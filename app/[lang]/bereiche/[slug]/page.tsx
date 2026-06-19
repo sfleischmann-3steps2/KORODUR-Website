@@ -20,6 +20,7 @@ import { ArrowRight, ChevronRight, Info } from "lucide-react";
 import { bereichIcon } from "../../../../components/bereichIcons";
 import Image from "next/image";
 import { withBasePath } from "../../../../lib/basePath";
+import RapidSetBereich from "../../../../components/RapidSetBereich";
 
 type Params = Promise<{ lang: string; slug: string }>;
 
@@ -119,6 +120,14 @@ export default async function BereichPage({ params }: { params: Params }) {
   if (!hasLocale(lang)) notFound();
   const bereich = getBereichBySlug(slug);
   if (!bereich) notFound();
+
+  // Flagship-Bereich Rapid Set: dedizierte, redaktionell ausgearbeitete
+  // DE-Seite (Konzept docs/specs/2026-06-19-rapid-set-bereichsseite-konzept.md).
+  // EN/FR/PL/ES rendern weiter das generische Template (i18n-Follow-up → #181).
+  if (slug === "rapid-set" && lang === "de") {
+    const dict = await getDictionary(lang);
+    return <RapidSetBereich lang={lang} dict={dict} />;
+  }
 
   // Multi-Bereich (#215): Produkt gehört zum Bereich über Primär-`bereich`
   // ODER `zusatzBereiche` (z. B. KOROCRETE in Betonsanierung + Infrastruktur).

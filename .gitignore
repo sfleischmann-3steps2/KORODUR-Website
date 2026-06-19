@@ -33,3 +33,6 @@ Sanierungsprodukte_db.zip
 *.log
 __pycache__/
 .server/
+
+# Rapid-Set-Quellunterlagen (separates Repo, große PDFs → Google Drive)
+korodur-rapidset/
