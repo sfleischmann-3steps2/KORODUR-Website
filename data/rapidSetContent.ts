@@ -165,6 +165,22 @@ export const RAPID_SET_CONTENT = {
       "Concrete Pharmacy: Additive zur gezielten Steuerung von Konsistenz und Verarbeitungszeit, abgestimmt auf Witterung und Anwendung.",
   } as Record<string, string>,
 
+  // --- Produkt-Vorschaubilder: Szenariofoto aus passender Referenz -----
+  // (#E, Steffi 2026-06-19): Kachelbild gibt schnelle Orientierung. Quelle =
+  // echte Referenz, in der das Produkt eingesetzt wurde. Slug → Referenzbild
+  // wird im Component aufgelöst; null = kein passendes Foto → Platzhalter.
+  produktSzenarioReferenz: {
+    "rapid-set-cement-all": "treppenstufen-sanierung",
+    "rapid-set-mortar-mix": "sinusfugen-sanierung",
+    "rapid-set-mortar-mix-dur": "trennfugen-bohnenkamp",
+    "asphalt-repair-mix": "autohaus-versmold",
+    "dot-europe-concrete-mix": "strassensanierung-wien",
+    korocrete: "lkw-umfahrt-darmstadt",
+    "rapid-set-schnellbeton": "flughafen-zagreb",
+    "rapid-set-concrete-mix": null,
+    "rapid-set-concrete-pharmacy": null,
+  } as Record<string, string | null>,
+
   // --- Beweis / Trust (anonym, ohne Personen/Logos) --------------------
   trust: {
     headline: "Belegt statt behauptet",
