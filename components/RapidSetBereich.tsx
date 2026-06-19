@@ -3,6 +3,7 @@ import Image from "next/image";
 import Breadcrumb from "./Breadcrumb";
 import ReferenceCard from "./ReferenceCard";
 import BeraterCard from "./BeraterCard";
+import BereichProduktFilter from "./BereichProduktFilter";
 import { AppIcon } from "@/components/ui/icon";
 import {
   ArrowRight,
@@ -68,6 +69,25 @@ export default async function RapidSetBereich({
     }))
     .filter((g) => g.items.length > 0);
 
+  // #E: Szenario-Vorschaubild je Produkt aus einer passenden Referenz; ohne
+  // passende Referenz fällt es auf den Platzhalter zurück.
+  const szenarioBild = (id: string): string => {
+    const refSlug = C.produktSzenarioReferenz[id];
+    const bild = refSlug ? getReferenzBySlug(refSlug)?.bild : undefined;
+    return bild ?? "/images/_placeholder.jpg";
+  };
+  const filterGruppen = gruppen.map((g) => ({
+    key: g.key,
+    label: g.label,
+    items: g.items.map((p) => ({
+      id: p.id,
+      name: p.name,
+      kurzbeschreibung: p.kurzbeschreibung,
+      qualitaetsklasse: p.qualitaetsklasse,
+      bild: szenarioBild(p.id),
+    })),
+  }));
+
   // Referenz-Teaser unten: Projekte, die Rapid-Set-Produkte einsetzen.
   const bereichsProduktNamen = new Set(
     produkte.filter(gehoertZuBereich).map((p) => p.name.toLowerCase())
@@ -93,7 +113,8 @@ export default async function RapidSetBereich({
       </section>
 
       {/* 1 — Hero ------------------------------------------------------ */}
-      <section className="relative overflow-hidden" style={{ minHeight: 420 }}>
+      {/* Hero-Höhe site-weit vereinheitlicht (Steffi 2026-06-19): minHeight 440. */}
+      <section className="relative overflow-hidden" style={{ minHeight: 440 }}>
         {heldBild && (
           <Image src={withBasePath(heldBild)} alt="" fill priority sizes="100vw" className="object-cover" />
         )}
@@ -117,7 +138,7 @@ export default async function RapidSetBereich({
             <p className="text-white/85 mb-6" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 680 }}>
               {C.hero.lead}
             </p>
-            <div className="flex flex-wrap gap-2 mb-7">
+            <div className="flex flex-wrap gap-2">
               {C.hero.chips.map((chip) => (
                 <span
                   key={chip}
@@ -129,23 +150,24 @@ export default async function RapidSetBereich({
                 </span>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href={`/${lang}/kontakt/?bereich=${SLUG}`}
-                className="inline-flex items-center justify-center gap-2 rounded-[6px] bg-cyan text-white no-underline hover:bg-cyan-hover transition-colors duration-200"
-                style={{ padding: "14px 26px", fontWeight: 800, fontSize: 15, minHeight: 48 }}
-              >
-                {tb("header_cta")}
-                <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
-              </Link>
-              <a
-                href="#portfolio"
-                className="inline-flex items-center justify-center gap-2 rounded-[6px] border-2 border-white/40 text-white no-underline hover:bg-white/10 transition-colors duration-200"
-                style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15, minHeight: 48 }}
-              >
-                Zum Portfolio
-              </a>
-            </div>
+          </div>
+          {/* CTAs rechts, bündig zur Unterkante des Textes (lg) — analog Home-Hero. */}
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+            <Link
+              href={`/${lang}/kontakt/?bereich=${SLUG}`}
+              className="inline-flex items-center justify-center gap-2 rounded-[6px] bg-cyan text-white no-underline hover:bg-cyan-hover transition-colors duration-200"
+              style={{ padding: "14px 26px", fontWeight: 800, fontSize: 15, minHeight: 48 }}
+            >
+              {tb("header_cta")}
+              <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
+            </Link>
+            <a
+              href="#portfolio"
+              className="inline-flex items-center justify-center gap-2 rounded-[6px] border-2 border-white/40 text-white no-underline hover:bg-white/10 transition-colors duration-200"
+              style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15, minHeight: 48 }}
+            >
+              Zum Portfolio
+            </a>
           </div>
         </div>
       </section>
@@ -187,6 +209,47 @@ export default async function RapidSetBereich({
               <p className="text-navy mt-6 mb-0 pt-5 border-t border-bullet-bg text-[16px] leading-[1.6]" style={{ fontWeight: 700 }}>
                 {C.problem.payoff}
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leitmotiv — Der ALLES-BESSER-KÖNNER (Taschenmesser) ---------- */}
+      <section style={{ padding: "56px 32px 8px" }}>
+        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div className="order-2 lg:order-1">
+              <Image
+                src={withBasePath(C.allesBesserKoenner.bild)}
+                alt="Der ALLES-BESSER-KÖNNER: das Rapid Set Taschenmesser-Prinzip, ein Material für viele Anwendungen"
+                width={C.allesBesserKoenner.bildBreite}
+                height={C.allesBesserKoenner.bildHoehe}
+                className="w-full h-auto"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="inline-block text-cyan-text uppercase tracking-[0.12em] text-[12px] mb-2" style={{ fontWeight: 800 }}>
+                {C.allesBesserKoenner.kicker}
+              </span>
+              <h2 className="text-navy mb-4" style={{ fontSize: "clamp(22px, 3.2vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+                {C.allesBesserKoenner.headline}
+              </h2>
+              <p className="text-navy/75 mb-6" style={{ fontSize: 17, lineHeight: 1.7 }}>
+                {C.allesBesserKoenner.text}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {C.allesBesserKoenner.segmente.map((s) => (
+                  <span
+                    key={s}
+                    className="inline-flex items-center gap-1.5 bg-icon-bg text-navy text-[13px] rounded-full border border-bullet-bg"
+                    style={{ padding: "7px 14px", fontWeight: 700 }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan" aria-hidden="true" />
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -290,25 +353,18 @@ export default async function RapidSetBereich({
             ))}
           </div>
 
-          {/* Epoxid-Abgrenzung */}
-          <div className="mt-5 rounded-2xl bg-navy text-white" style={{ padding: "28px 28px" }}>
-            <div className="flex items-start gap-4">
-              <span className="flex items-center justify-center rounded-xl bg-white/10 shrink-0" style={{ width: 48, height: 48 }} aria-hidden="true">
-                <AppIcon icon={Flame} width={24} height={24} strokeWidth={1.9} className="text-cyan" />
-              </span>
-              <div>
-                <h3 className="text-white text-[18px] mt-0 mb-3" style={{ fontWeight: 900 }}>
-                  {C.technologie.epoxid.headline}
-                </h3>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {C.technologie.epoxid.punkte.map((p) => (
-                    <span key={p} className="inline-flex items-center gap-2 text-white/85 text-[14px]">
-                      <AppIcon icon={CheckCircle2} width={16} height={16} strokeWidth={2.25} className="text-cyan shrink-0" aria-hidden="true" />
-                      {p}
-                    </span>
-                  ))}
-                </div>
-              </div>
+          {/* Epoxid-Abgrenzung — zentriert, ohne Icon, größere Schrift (Steffi 2026-06-19). */}
+          <div className="mt-5 rounded-2xl bg-navy text-white text-center" style={{ padding: "40px 28px" }}>
+            <h3 className="text-white mt-0 mb-6" style={{ fontSize: "clamp(20px, 2.8vw, 25px)", fontWeight: 900 }}>
+              {C.technologie.epoxid.headline}
+            </h3>
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-10 gap-y-3">
+              {C.technologie.epoxid.punkte.map((p) => (
+                <span key={p} className="inline-flex items-center gap-2 text-white/90" style={{ fontSize: 17 }}>
+                  <AppIcon icon={CheckCircle2} width={18} height={18} strokeWidth={2.25} className="text-cyan shrink-0" aria-hidden="true" />
+                  {p}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -323,49 +379,15 @@ export default async function RapidSetBereich({
           <p className="text-navy/70 text-[16px] mt-0 mb-8 leading-[1.6]" style={{ maxWidth: 720 }}>
             {C.portfolioIntro}
           </p>
-          <div className="flex flex-col gap-10">
-            {gruppen.map((g) => (
-              <div key={g.key}>
-                <div className="mb-4">
-                  <h3 className="text-navy mb-1" style={{ fontSize: 20, fontWeight: 900 }}>
-                    {g.label}
-                  </h3>
-                  {g.text && <p className="text-navy/65 text-[14.5px] leading-[1.6] m-0" style={{ maxWidth: 820 }}>{g.text}</p>}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                  {g.items.map((produkt) => (
-                    <Link key={produkt.id} href={`/${lang}/produkte/${produkt.id}`} className="no-underline group block">
-                      <div
-                        className="bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg"
-                        style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <h4 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
-                            {produkt.name}
-                          </h4>
-                          {produkt.qualitaetsklasse && (
-                            <span
-                              className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
-                              style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}
-                            >
-                              {produkt.qualitaetsklasse}
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">{produkt.kurzbeschreibung}</p>
-                        {produkt.belastbarNach && (
-                          <span className="inline-flex items-center gap-1.5 text-cyan-text text-[13px] mt-auto pt-2" style={{ fontWeight: 700 }}>
-                            <AppIcon icon={Timer} width={14} height={14} strokeWidth={2.25} aria-hidden="true" />
-                            belastbar nach {produkt.belastbarNach}
-                          </span>
-                        )}
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* #F: bei >6 Produkten Gruppen-Filter (Produkte erst nach Auswahl,
+              hält die Seite kurz). #E: Szenariobilder in den Kacheln. */}
+          <BereichProduktFilter
+            gruppen={filterGruppen}
+            lang={lang}
+            defaultOpen={localizedProdukte.length <= 6}
+            hinweis={tb("produkte_filter_hinweis")}
+            alleLabel={tb("produkte_filter_alle")}
+          />
         </div>
       </section>
 
@@ -401,7 +423,26 @@ export default async function RapidSetBereich({
         </div>
       </section>
 
-      {/* 8 — Referenzen ----------------------------------------------- */}
+      {/* 8 — Fachberatung & Bezug (vor den Referenzen, Steffi 2026-06-19) -- */}
+      {fachberater.length > 0 && (
+        <section id="fachberater" className="scroll-mt-24" style={{ padding: "56px 32px 16px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="text-navy mb-2" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>
+              {dict.kontakt.fachberater_title}
+            </h2>
+            <p className="text-navy/70 text-[15px] mt-0 mb-6 leading-[1.6]" style={{ maxWidth: 640 }}>
+              {dict.kontakt.fachberater_intro}
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {fachberater.map((b) => (
+                <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 9 — Referenzen ----------------------------------------------- */}
       {bereichsReferenzen.length > 0 && (
         <section style={{ padding: "60px 32px 16px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
@@ -421,25 +462,6 @@ export default async function RapidSetBereich({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {bereichsReferenzen.map((r) => (
                 <ReferenceCard key={r.id} referenz={r} lang={lang} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 9 — Fachberatung & Bezug ------------------------------------- */}
-      {fachberater.length > 0 && (
-        <section id="fachberater" className="scroll-mt-24" style={{ padding: "56px 32px 16px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <h2 className="text-navy mb-2" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900 }}>
-              {dict.kontakt.fachberater_title}
-            </h2>
-            <p className="text-navy/70 text-[15px] mt-0 mb-6 leading-[1.6]" style={{ maxWidth: 640 }}>
-              {dict.kontakt.fachberater_intro}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {fachberater.map((b) => (
-                <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
               ))}
             </div>
           </div>

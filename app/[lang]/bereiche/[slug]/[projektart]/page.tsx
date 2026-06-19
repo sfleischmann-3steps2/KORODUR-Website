@@ -94,13 +94,14 @@ export default async function SubBereichPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      {/* Header: Bereichsbild + Projektart-Kontext, ein CTA rechts (analog Dach-Seite). */}
-      <section className="relative overflow-hidden" style={{ minHeight: 240 }}>
+      {/* Header: Bereichsbild + Projektart-Kontext, ein CTA rechts (analog Dach-Seite).
+          Hero-Höhe site-weit vereinheitlicht (Steffi 2026-06-19): minHeight 440. */}
+      <section className="relative overflow-hidden" style={{ minHeight: 440 }}>
         {bereich.bild && (
           <Image src={withBasePath(bereich.bild)} alt="" fill priority sizes="100vw" className="object-cover" />
         )}
         <div className="absolute inset-0 bg-navy/75" aria-hidden="true" />
-        <div className="relative mx-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6" style={{ maxWidth: 1320, padding: "52px 32px 56px" }}>
+        <div className="relative mx-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6" style={{ maxWidth: 1320, padding: "64px 32px 68px" }}>
           <div className="lg:flex-1">
             <span className="inline-block bg-cyan text-white text-[12px] rounded-full mb-3" style={{ padding: "5px 14px", fontWeight: 700 }}>
               {artLabel}

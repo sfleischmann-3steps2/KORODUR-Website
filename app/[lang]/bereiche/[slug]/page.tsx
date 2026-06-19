@@ -174,7 +174,7 @@ export default async function BereichPage({ params }: { params: Params }) {
 
       {/* Kopf: Bereichs-Header. Mit Bereichsbild (#141) als Hintergrund + dunklem Overlay, sonst Icon-Band. */}
       {bereich.bild ? (
-        <section className="relative overflow-hidden" style={{ minHeight: 260 }}>
+        <section className="relative overflow-hidden" style={{ minHeight: 440 }}>
           <Image
             src={withBasePath(bereich.bild)}
             alt=""
@@ -183,9 +183,10 @@ export default async function BereichPage({ params }: { params: Params }) {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-navy/70" aria-hidden="true" />
-          {/* #231: Text links, ein CTA „Technische Fachberatung" rechts (analog Home-Hero). */}
-          <div className="relative mx-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6" style={{ maxWidth: 1320, padding: "56px 32px 60px" }}>
+          <div className="absolute inset-0 bg-navy/75" aria-hidden="true" />
+          {/* #231: Text links, ein CTA „Technische Fachberatung" rechts (analog Home-Hero).
+              Hero-Höhe site-weit vereinheitlicht (Steffi 2026-06-19): minHeight 440. */}
+          <div className="relative mx-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6" style={{ maxWidth: 1320, padding: "64px 32px 68px" }}>
             <div className="lg:flex-1">
               {bereich.abgegrenzt && (
                 <span
@@ -340,7 +341,7 @@ export default async function BereichPage({ params }: { params: Params }) {
                 gruppen={gruppen}
                 lang={lang}
                 neutral={bereich.abgegrenzt}
-                defaultOpen={localizedProdukte.length <= 10}
+                defaultOpen={localizedProdukte.length <= 6}
                 hinweis={tb("produkte_filter_hinweis")}
                 alleLabel={tb("produkte_filter_alle")}
               />

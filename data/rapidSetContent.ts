@@ -58,6 +58,21 @@ export const RAPID_SET_CONTENT = {
     chips: ["belastbar nach 1 Stunde", "ein Material, viele Anwendungen", "ohne schwere Maschinerie"],
   },
 
+  // --- Der ALLES-BESSER-KÖNNER (Taschenmesser-Leitmotiv) ---------------
+  // Interim-Asset: aus der Broschüre extrahiert. Hixfield liefert die
+  // web-optimierte (transparente/SVG) Endfassung + Begleitgrafiken
+  // (Brief: docs/specs/2026-06-19-rapid-set-grafik-brief-hixfield.md).
+  allesBesserKoenner: {
+    bild: "/images/bereiche/rapid-set-alles-besser-koenner.png",
+    bildBreite: 1200,
+    bildHoehe: 1421,
+    kicker: "Wenige Produkte für viele Anwendungen",
+    headline: "Ein Material ersetzt den ganzen Werkzeugkasten",
+    text:
+      "Wie ein Schweizer Taschenmesser vereint Rapid Set viele Funktionen in einem Werkzeug: Boden, Wand und Decke, innen und außen, vom Verguss bis zur Verkehrsfläche. Ein Material, das mitdenkt, schnell belastbar, schwundneutral und nachhaltig.",
+    segmente: ["Materialeigenschaften", "Anwendungsgebiete", "Nachhaltigkeit"],
+  },
+
   // --- Problem / Nutzenversprechen -------------------------------------
   problem: {
     kicker: "Stillstand kostet Geld",
@@ -149,6 +164,22 @@ export const RAPID_SET_CONTENT = {
     additive:
       "Concrete Pharmacy: Additive zur gezielten Steuerung von Konsistenz und Verarbeitungszeit, abgestimmt auf Witterung und Anwendung.",
   } as Record<string, string>,
+
+  // --- Produkt-Vorschaubilder: Szenariofoto aus passender Referenz -----
+  // (#E, Steffi 2026-06-19): Kachelbild gibt schnelle Orientierung. Quelle =
+  // echte Referenz, in der das Produkt eingesetzt wurde. Slug → Referenzbild
+  // wird im Component aufgelöst; null = kein passendes Foto → Platzhalter.
+  produktSzenarioReferenz: {
+    "rapid-set-cement-all": "treppenstufen-sanierung",
+    "rapid-set-mortar-mix": "sinusfugen-sanierung",
+    "rapid-set-mortar-mix-dur": "trennfugen-bohnenkamp",
+    "asphalt-repair-mix": "autohaus-versmold",
+    "dot-europe-concrete-mix": "strassensanierung-wien",
+    korocrete: "lkw-umfahrt-darmstadt",
+    "rapid-set-schnellbeton": "flughafen-zagreb",
+    "rapid-set-concrete-mix": null,
+    "rapid-set-concrete-pharmacy": null,
+  } as Record<string, string | null>,
 
   // --- Beweis / Trust (anonym, ohne Personen/Logos) --------------------
   trust: {

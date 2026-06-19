@@ -2,12 +2,16 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { withBasePath } from "../lib/basePath";
 
 type Item = {
   id: string;
   name: string;
   kurzbeschreibung: string;
   qualitaetsklasse?: string;
+  /** Optionales Szenario-Vorschaubild (z. B. aus einer Referenz). #E */
+  bild?: string;
 };
 type Gruppe = { key: string; label: string; items: Item[] };
 
@@ -99,7 +103,7 @@ export default function BereichProduktFilter({
                 className="no-underline group block"
               >
                 <div
-                  className={`bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 ${
+                  className={`bg-white flex flex-col h-full overflow-hidden transition-all duration-200 group-hover:-translate-y-1 ${
                     neutral
                       ? "border border-mid-gray group-hover:border-navy"
                       : "group-hover:shadow-lg"
@@ -110,22 +114,35 @@ export default function BereichProduktFilter({
                       : { borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }
                   }
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <h4 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
-                      {produkt.name}
-                    </h4>
-                    {produkt.qualitaetsklasse && (
-                      <span
-                        className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
-                        style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}
-                      >
-                        {produkt.qualitaetsklasse}
-                      </span>
-                    )}
+                  {produkt.bild && (
+                    <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16 / 10" }}>
+                      <Image
+                        src={withBasePath(produkt.bild)}
+                        alt={produkt.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6 flex flex-col gap-3 flex-1">
+                    <div className="flex items-start justify-between gap-3">
+                      <h4 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>
+                        {produkt.name}
+                      </h4>
+                      {produkt.qualitaetsklasse && (
+                        <span
+                          className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0"
+                          style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}
+                        >
+                          {produkt.qualitaetsklasse}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">
+                      {produkt.kurzbeschreibung}
+                    </p>
                   </div>
-                  <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">
-                    {produkt.kurzbeschreibung}
-                  </p>
                 </div>
               </Link>
             ))}
