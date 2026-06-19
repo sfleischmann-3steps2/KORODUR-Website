@@ -100,7 +100,15 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
-  color: var(--navy);
+}
+
+/* Default-Headingfarbe in @layer base, damit Farb-Utilities (z. B. text-white
+   über Bild-Overlays) gewinnen. Ungelayert würde diese Regel die Tailwind-
+   Utilities überschreiben → weiße Headlines erschienen navy (Steffi 2026-06-19). */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--navy);
+  }
 }
 
 /* Highlight cyan spans in headings */
