@@ -192,6 +192,47 @@ export default async function RapidSetBereich({
         </div>
       </section>
 
+      {/* Leitmotiv — Der ALLES-BESSER-KÖNNER (Taschenmesser) ---------- */}
+      <section style={{ padding: "56px 32px 8px" }}>
+        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div className="order-2 lg:order-1">
+              <Image
+                src={withBasePath(C.allesBesserKoenner.bild)}
+                alt="Der ALLES-BESSER-KÖNNER: das Rapid Set Taschenmesser-Prinzip, ein Material für viele Anwendungen"
+                width={C.allesBesserKoenner.bildBreite}
+                height={C.allesBesserKoenner.bildHoehe}
+                className="w-full h-auto"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="inline-block text-cyan-text uppercase tracking-[0.12em] text-[12px] mb-2" style={{ fontWeight: 800 }}>
+                {C.allesBesserKoenner.kicker}
+              </span>
+              <h2 className="text-navy mb-4" style={{ fontSize: "clamp(22px, 3.2vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+                {C.allesBesserKoenner.headline}
+              </h2>
+              <p className="text-navy/75 mb-6" style={{ fontSize: 17, lineHeight: 1.7 }}>
+                {C.allesBesserKoenner.text}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {C.allesBesserKoenner.segmente.map((s) => (
+                  <span
+                    key={s}
+                    className="inline-flex items-center gap-1.5 bg-icon-bg text-navy text-[13px] rounded-full border border-bullet-bg"
+                    style={{ padding: "7px 14px", fontWeight: 700 }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan" aria-hidden="true" />
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3 — Drei Kernvorteile ---------------------------------------- */}
       <section style={{ padding: "48px 32px 8px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>

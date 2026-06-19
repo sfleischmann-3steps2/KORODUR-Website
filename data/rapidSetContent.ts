@@ -58,6 +58,21 @@ export const RAPID_SET_CONTENT = {
     chips: ["belastbar nach 1 Stunde", "ein Material, viele Anwendungen", "ohne schwere Maschinerie"],
   },
 
+  // --- Der ALLES-BESSER-KÖNNER (Taschenmesser-Leitmotiv) ---------------
+  // Interim-Asset: aus der Broschüre extrahiert. Hixfield liefert die
+  // web-optimierte (transparente/SVG) Endfassung + Begleitgrafiken
+  // (Brief: docs/specs/2026-06-19-rapid-set-grafik-brief-hixfield.md).
+  allesBesserKoenner: {
+    bild: "/images/bereiche/rapid-set-alles-besser-koenner.png",
+    bildBreite: 1200,
+    bildHoehe: 1421,
+    kicker: "Wenige Produkte für viele Anwendungen",
+    headline: "Ein Material ersetzt den ganzen Werkzeugkasten",
+    text:
+      "Wie ein Schweizer Taschenmesser vereint Rapid Set viele Funktionen in einem Werkzeug: Boden, Wand und Decke, innen und außen, vom Verguss bis zur Verkehrsfläche. Ein Material, das mitdenkt, schnell belastbar, schwundneutral und nachhaltig.",
+    segmente: ["Materialeigenschaften", "Anwendungsgebiete", "Nachhaltigkeit"],
+  },
+
   // --- Problem / Nutzenversprechen -------------------------------------
   problem: {
     kicker: "Stillstand kostet Geld",
