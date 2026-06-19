@@ -214,7 +214,9 @@ export default async function RapidSetBereich({
         </div>
       </section>
 
-      {/* Leitmotiv — Der ALLES-BESSER-KÖNNER (Taschenmesser) ---------- */}
+      {/* Leitmotiv — Taschenmesser links, drei Kernvorteile rechts, Fazit
+          darunter (Umbau Steffi 2026-06-19). Ersetzt die separate
+          Kernvorteil-Karten-Sektion. ----------------------------------- */}
       <section style={{ padding: "56px 32px 8px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
@@ -228,51 +230,33 @@ export default async function RapidSetBereich({
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="order-1 lg:order-2">
-              <span className="inline-block text-cyan-text uppercase tracking-[0.12em] text-[12px] mb-2" style={{ fontWeight: 800 }}>
-                {C.allesBesserKoenner.kicker}
-              </span>
-              <h2 className="text-navy mb-4" style={{ fontSize: "clamp(22px, 3.2vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
-                {C.allesBesserKoenner.headline}
-              </h2>
-              <p className="text-navy/75 mb-6" style={{ fontSize: 17, lineHeight: 1.7 }}>
-                {C.allesBesserKoenner.text}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {C.allesBesserKoenner.segmente.map((s) => (
-                  <span
-                    key={s}
-                    className="inline-flex items-center gap-1.5 bg-icon-bg text-navy text-[13px] rounded-full border border-bullet-bg"
-                    style={{ padding: "7px 14px", fontWeight: 700 }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan" aria-hidden="true" />
-                    {s}
+            <div className="order-1 lg:order-2 flex flex-col gap-6">
+              {C.vorteile.map((v) => (
+                <div key={v.titel} className="flex items-start gap-4">
+                  <span className="flex items-center justify-center rounded-xl bg-navy shrink-0" style={{ width: 52, height: 52 }} aria-hidden="true">
+                    <AppIcon icon={ICONS[v.icon]} width={26} height={26} strokeWidth={1.9} className="text-white" />
                   </span>
-                ))}
-              </div>
+                  <div className="min-w-0">
+                    <span className="text-cyan-text uppercase tracking-[0.1em] text-[11px]" style={{ fontWeight: 800 }}>
+                      {v.kicker}
+                    </span>
+                    <h3 className="text-navy mt-0.5 mb-1" style={{ fontSize: 19, fontWeight: 900, lineHeight: 1.2 }}>
+                      {v.titel}
+                    </h3>
+                    <p className="text-navy/70 text-[14.5px] leading-[1.6] m-0">{v.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 3 — Drei Kernvorteile ---------------------------------------- */}
-      <section style={{ padding: "48px 32px 8px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {C.vorteile.map((v) => (
-              <div key={v.titel} className="bg-white rounded-2xl border border-bullet-bg p-7 flex flex-col" style={{ boxShadow: "0 4px 20px rgba(0,45,89,0.06)" }}>
-                <span className="flex items-center justify-center rounded-xl bg-navy mb-4" style={{ width: 52, height: 52 }} aria-hidden="true">
-                  <AppIcon icon={ICONS[v.icon]} width={26} height={26} strokeWidth={1.9} className="text-white" />
-                </span>
-                <span className="text-cyan-text uppercase tracking-[0.1em] text-[11px] mb-1" style={{ fontWeight: 800 }}>
-                  {v.kicker}
-                </span>
-                <h3 className="text-navy mb-2" style={{ fontSize: 19, fontWeight: 900, lineHeight: 1.2 }}>
-                  {v.titel}
-                </h3>
-                <p className="text-navy/70 text-[14.5px] leading-[1.6] m-0">{v.text}</p>
-              </div>
-            ))}
+          {/* Fazit unter dem ganzen Block. */}
+          <div className="text-center mx-auto" style={{ maxWidth: 860, marginTop: 44 }}>
+            <h2 className="text-navy mb-3" style={{ fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 900, lineHeight: 1.2 }}>
+              {C.allesBesserKoenner.headline}
+            </h2>
+            <p className="text-navy/70 mb-0" style={{ fontSize: 17, lineHeight: 1.7 }}>
+              {C.allesBesserKoenner.text}
+            </p>
           </div>
         </div>
       </section>
