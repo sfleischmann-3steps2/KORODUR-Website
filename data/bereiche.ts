@@ -71,7 +71,9 @@ export const bereiche: Bereich[] = [
   {
     slug: "microtop",
     bild: "/images/bereiche/microtop.webp",
-    produktgruppen: ["trockenspritz", "nassspritz", "beschichtung-schutz"],
+    // "verguss" zusätzlich: NEODUR VM basic (DVGW W 347, Trinkwasser) wird über
+    // zusatzBereiche hier geführt (Technik-Sign-off 2026-06-22).
+    produktgruppen: ["trockenspritz", "nassspritz", "beschichtung-schutz", "verguss"],
   },
   {
     slug: "katzenstreu",
