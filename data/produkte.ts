@@ -1831,6 +1831,10 @@ export const produkte: Produkt[] = [
     name: "NEODUR VM basic",
     kategorie: "sonstige",
     bereich: "spezialbaustoffe",
+    // Technik-Sign-off (2026-06-22): DVGW-W-347-Trinkwasserzulassung → zusätzlich
+    // im TW-/Microtop-Bereich führbar (Quellvergussbeton für Rohrverguss in
+    // Trinkwasseranlagen).
+    zusatzBereiche: ["microtop"],
     produktgruppe: "verguss",
     kurzbeschreibung: "Mineralischer, hochfließfähiger Quellvergussbeton, DVGW-geprüft für Trinkwasserbereiche",
     beschreibung: "NEODUR VM basic ist ein mineralischer, hochfließfähiger Quellvergussbeton für kraftschlüssige Vergussarbeiten und Montagen aller Art, z. B. Rohrverguss in Trinkwasseranlagen. Geprüft gem. DVGW-Arbeitsblatt W 347 für hygienische Anforderungen in Trinkwasserbereichen.",
