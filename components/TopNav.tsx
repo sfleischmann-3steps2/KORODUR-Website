@@ -34,7 +34,8 @@ interface TopNavProps {
 }
 
 type MegaItem = { label: string; href?: string; sub?: string; badge?: string; highlight?: boolean };
-type MegaMenu = { items: MegaItem[]; footer?: { label: string; href: string }[] };
+type MegaCluster = { title: string; items: MegaItem[] };
+type MegaMenu = { items?: MegaItem[]; clusters?: MegaCluster[]; footer?: { label: string; href: string }[] };
 
 export default function TopNav({ lang, dict }: TopNavProps) {
   const pathname = usePathname();
@@ -84,41 +85,72 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   };
 
   const bt = dict.bereiche as Record<string, string>;
+  const pa = dict.produkte as unknown as Record<string, string>;
+  // Deep-Link in das Produktportfolio (Achse A), Anker = Produktart-Slug (#307).
+  const paHref = (art: string) => `/${lang}/produkte/#${art}`;
 
-  // Mega-Menü-Inhalte (Steffi 2026-06-13, #82). Bereiche-Reihenfolge wie /bereiche.
+  // Zwei-Achsen-IA (#306/#309). Portfolio = Achse A „WAS" (Produktart, gruppiert);
+  // Neubau/Sanierung = Achse B „WOFÜR" (Use-Case-Bereiche). Spezialmörtel ist nur
+  // Neubau ein eigener Bereich; im Sanierungspfad geht der Anteil (VM 5, PFM) in
+  // Betonsanierung auf (Steffi 2026-06-22) → kein Spezialmörtel im Sanierung-Menü.
   const menus: Record<string, MegaMenu> = {
-    bereiche: {
-      items: [
-        { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/`, sub: bt.industrieboden_teaser },
-        { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
-        { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
-        { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/`, sub: bt.sichtestrich_teaser },
-        { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
-        { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
-        { label: bt.katzenstreu_name, href: `/${lang}/bereiche/katzenstreu/`, sub: bt.katzenstreu_teaser },
-        { label: dict.bereiche.alle_produkte_name, href: `/${lang}/produkte/`, sub: dict.bereiche.alle_produkte_teaser, highlight: true },
+    portfolio: {
+      clusters: [
+        {
+          title: dict.nav.mm_cluster_industrieboeden,
+          items: [
+            { label: pa["produktart_hartstoffe-din1100"], href: paHref("hartstoffe-din1100") },
+            { label: pa["produktart_industrieboden-trockenmoertel"], href: paHref("industrieboden-trockenmoertel") },
+            { label: pa["produktart_schnellestrich-bindemittel"], href: paHref("schnellestrich-bindemittel") },
+            { label: pa["produktart_selbstverlaufende-industrieboeden"], href: paHref("selbstverlaufende-industrieboeden") },
+            { label: pa["produktart_konstruktiver-schnellbeton"], href: paHref("konstruktiver-schnellbeton") },
+          ],
+        },
+        {
+          title: dict.nav.mm_cluster_sichtestriche,
+          items: [
+            { label: pa["produktart_mineralische-sichtestriche"], href: paHref("mineralische-sichtestriche") },
+          ],
+        },
+        {
+          title: dict.nav.mm_cluster_beton_spezial,
+          items: [
+            { label: pa["produktart_rapid-set"], href: paHref("rapid-set") },
+            { label: pa["produktart_spezialmoertel"], href: paHref("spezialmoertel") },
+            { label: pa["produktart_microtop"], href: paHref("microtop") },
+            { label: pa["produktart_durop"], href: paHref("durop") },
+          ],
+        },
+        {
+          title: dict.nav.mm_cluster_begleit,
+          items: [
+            { label: pa["produktart_haftbruecke-grundierung"], href: paHref("haftbruecke-grundierung") },
+            { label: pa["produktart_nachbehandlung-curing"], href: paHref("nachbehandlung-curing") },
+            { label: pa["produktart_impraegnierung-einpflege"], href: paHref("impraegnierung-einpflege") },
+          ],
+        },
       ],
-      footer: [{ label: dict.nav.mm_alle_bereiche, href: `/${lang}/bereiche/` }],
+      footer: [{ label: dict.bereiche.alle_produkte_name, href: `/${lang}/produkte/` }],
     },
-    // Neubau + Sanierung zeigen NUR die Bereiche (Steffi 2026-06-18): keine
-    // Tool-/Subseiten-/Ratgeber-Links im Dropdown. Ratgeber, Schadensbilder,
-    // Lösungen nach Branche, Lösungsfinder + Anwendungsmatrix leben im Footer.
+    // Neubau + Sanierung zeigen NUR die Bereiche (Achse B). Bereiche mit beiden
+    // Projektarten (Industrieboden, Sichtestrich) verlinken in die projektart-
+    // gefilterte Sub-Seite; reine Neubau-/Sanierungs-Bereiche auf die Dachseite.
     neubau: {
       items: [
-        { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/`, sub: bt.industrieboden_teaser },
-        { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/`, sub: bt.sichtestrich_teaser },
+        { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/neubau/`, sub: bt.industrieboden_teaser },
+        { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/neubau/`, sub: bt.sichtestrich_teaser },
         { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
       ],
     },
     sanierung: {
-      // #224: Sanierung-Dropdown — Industriebodensanierung, Betonsanierung,
-      // TW-Behältersanierung, Infrastruktur, Spezialbaustoffe. Nur Bereiche.
+      // Final (Steffi 2026-06-22): Industrieboden · Sichtestrich · Infrastruktur ·
+      // TW-Behältersanierung · Betonsanierung. KEIN Spezialmörtel (→ Betonsanierung).
       items: [
-        { label: dict.sanierungHub.sp_industrieboden_title, href: `/${lang}/bereiche/industrieboden/`, sub: dict.sanierungHub.sp_industrieboden_text },
-        { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
-        { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
+        { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/sanierung/`, sub: bt.industrieboden_teaser },
+        { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/sanierung/`, sub: bt.sichtestrich_teaser },
         { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
-        { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
+        { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
+        { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
       ],
     },
     kontakt: {
@@ -130,7 +162,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   };
 
   const navItems: { key: string; href: string; label: string; menu: boolean }[] = [
-    { key: "bereiche", href: `/${lang}/bereiche/`, label: dict.nav.bereiche, menu: true },
+    { key: "portfolio", href: `/${lang}/produkte/`, label: dict.nav.bereiche, menu: true },
     { key: "neubau", href: `/${lang}/neubau/`, label: dict.nav.neubau, menu: true },
     { key: "sanierung", href: `/${lang}/sanierung/`, label: dict.nav.sanierung, menu: true },
     { key: "referenzen", href: `/${lang}/referenzen/`, label: dict.nav.referenzen, menu: false },
@@ -141,7 +173,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   // Panel-Layout: unter dem Trigger verankert, Kontakt (rechts außen)
   // rechtsbündig → kurze Mauswege (Steffi, 2026-06-13).
   const layout: Record<string, { w: string; cols: string; align: "left" | "right" }> = {
-    bereiche: { w: "w-[min(760px,calc(100vw-32px))]", cols: "grid-cols-2 lg:grid-cols-4", align: "left" },
+    portfolio: { w: "w-[min(880px,calc(100vw-32px))]", cols: "grid-cols-2 lg:grid-cols-4", align: "left" },
     neubau: { w: "w-[340px]", cols: "grid-cols-1", align: "left" },
     sanierung: { w: "w-[360px]", cols: "grid-cols-1", align: "left" },
     kontakt: { w: "w-[300px]", cols: "grid-cols-1", align: "right" },
@@ -157,8 +189,33 @@ export default function TopNav({ lang, dict }: TopNavProps) {
         onMouseLeave={scheduleClose}
         role="menu"
       >
+        {m.clusters ? (
+          <div className={`grid ${lo.cols} gap-x-4 gap-y-4`}>
+            {m.clusters.map((c) => (
+              <div key={c.title}>
+                <div className="text-[11px] uppercase tracking-wider text-navy/45 px-2 mb-1.5" style={{ fontWeight: 800 }}>
+                  {c.title}
+                </div>
+                <div className="flex flex-col">
+                  {c.items.map((it) => (
+                    <Link
+                      key={it.label}
+                      href={it.href!}
+                      className="block rounded-md px-2 py-1.5 text-[13.5px] text-navy no-underline hover:bg-icon-bg hover:text-cyan-text transition-colors duration-150"
+                      role="menuitem"
+                      style={{ fontWeight: 600 }}
+                      onClick={() => setOpenMenu(null)}
+                    >
+                      {it.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
         <div className={`grid ${lo.cols} gap-2`}>
-          {m.items.map((it) => {
+          {(m.items ?? []).map((it) => {
             // Icon aus der /bereiche/<slug>/-href ableiten (zentrale Ikonografie #104)
             const slugMatch = it.href?.match(/\/bereiche\/([^/]+)\//);
             const ItemIcon = slugMatch ? bereichIcon(slugMatch[1]) : null;
@@ -194,6 +251,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             );
           })}
         </div>
+        )}
         {m.footer && (
           <div className="flex flex-wrap gap-x-5 gap-y-2 mt-3 pt-3 border-t border-bullet-bg px-1">
             {m.footer.map((f) => (
@@ -374,7 +432,24 @@ export default function TopNav({ lang, dict }: TopNavProps) {
                               >
                                 {lang === "de" ? "Übersicht" : lang === "fr" ? "Aperçu" : lang === "pl" ? "Przegląd" : lang === "es" ? "Resumen" : "Overview"} →
                               </Link>
-                              {m.items.map((it) =>
+                              {m.clusters?.map((c) => (
+                                <div key={c.title}>
+                                  <div className="text-[11px] uppercase tracking-wider text-navy/40 px-6 pt-2.5 pb-1" style={{ fontWeight: 800 }}>
+                                    {c.title}
+                                  </div>
+                                  {c.items.map((it) => (
+                                    <Link
+                                      key={it.label}
+                                      href={it.href!}
+                                      className="block rounded-lg no-underline text-[14px] text-navy px-6 py-2"
+                                      onClick={() => setMobileOpen(false)}
+                                    >
+                                      {it.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              ))}
+                              {m.items?.map((it) =>
                                 it.href ? (
                                   <Link
                                     key={it.label}
