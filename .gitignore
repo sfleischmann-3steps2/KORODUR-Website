@@ -36,3 +36,6 @@ __pycache__/
 
 # Rapid-Set-Quellunterlagen (separates Repo, große PDFs → Google Drive)
 korodur-rapidset/
+
+# Asset-Staging (Produkt-Mockups) — verarbeitete Bilder gehen nach public/images/
+Produkt_mockups_fuer_website/
