@@ -20,8 +20,9 @@ import { produktHatProjektart } from "../../../../../data/produktProjektart";
 type Params = Promise<{ lang: string; slug: string; projektart: string }>;
 
 // #233: Verschachtelte Sub-Bereichsseiten nur für Bereiche mit BEIDEN Projektarten.
-// (Vgl. BEREICH_PROJEKTARTEN in ../page.tsx: Industrieboden + Spezialbaustoffe.)
-const SUB_BEREICHE = ["industrieboden", "spezialbaustoffe"] as const;
+// #306/#308: Industrieboden + Sichtestrich (beide Neubau & Sanierung).
+// Spezialmörtel (nur Neubau) braucht keinen Projektart-Split.
+const SUB_BEREICHE = ["industrieboden", "sichtestrich"] as const;
 const PROJEKTARTEN: Projektart[] = ["neubau", "sanierung"];
 
 export function generateStaticParams() {

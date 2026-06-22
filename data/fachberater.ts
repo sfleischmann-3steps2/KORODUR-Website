@@ -189,7 +189,9 @@ const EXPORT_NACH_SPRACHE: Record<string, string[]> = {
 // generischen Kontaktblock ohne Foto.
 const BEREICH_BERATER_ALIAS: Partial<Record<Produktbereich, Produktbereich>> = {
   sichtestrich: "industrieboden",
-  spezialbaustoffe: "rapid-set",
+  spezialmoertel: "rapid-set",
+  // #306/#308: Infrastruktur (Sanierung Verkehrsflächen) erbt Rapid-Set-Beratung.
+  infrastruktur: "rapid-set",
 };
 
 export function fachberaterFuerBereich(

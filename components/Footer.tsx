@@ -41,7 +41,7 @@ export default function Footer({
     "industrieboden",
     "rapid-set",
     "sichtestrich",
-    "spezialbaustoffe",
+    "spezialmoertel",
     "microtop",
     "katzenstreu",
   ];

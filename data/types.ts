@@ -186,7 +186,7 @@ export type Produktbereich =
   | "microtop"
   | "rapid-set"
   | "infrastruktur"
-  | "spezialbaustoffe"
+  | "spezialmoertel"
   | "3d-concrete-printing"
   | "katzenstreu";
 

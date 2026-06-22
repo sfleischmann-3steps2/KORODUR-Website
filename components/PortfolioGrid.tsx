@@ -16,7 +16,7 @@ const BEREICH_KACHELBILD: Record<string, string> = {
   infrastruktur: "/images/referenzen/catania.jpg",
   sichtestrich: "/images/referenzen/porsche-showroom-loerrach/hero.jpg",
   microtop: "/images/referenzen/trinkwasserturm-budapest/hero.jpg",
-  spezialbaustoffe: "/images/referenzen/hauptbahnhofsvorplatz-landau/hero.jpg",
+  spezialmoertel: "/images/referenzen/hauptbahnhofsvorplatz-landau/hero.jpg",
   katzenstreu: "/images/portfolio/katzenstreu.webp",
 };
 
