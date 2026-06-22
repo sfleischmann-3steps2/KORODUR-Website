@@ -174,7 +174,9 @@ Bei Widerspruch zwischen **Leistungskatalog-Dokument** und der Technik-Mail-Antw
 
 ---
 
-## 5. Offene Mapping-Randfälle (vor Code klären)
+## 5. Mapping-Randfälle — GEKLÄRT (Steffi 2026-06-22, Terminal)
+
+> Die folgenden Punkte sind entschieden (siehe §8 für die finale Bereich-Zuordnung + Menüstruktur). Originalfragen unten zur Nachvollziehbarkeit belassen.
 
 1. **Sanierungs-Bereich für N+S-Spezialmörtel:** VM 5, PFM 1-K, PFM ZE sind Neubau **und** Sanierung. Neubau → Bereich „Spezialmörtel". Aber die **Sanierungs-Karte hat kein „Spezialmörtel"**. Wohin im Sanierungspfad? (VM basic ist über TW gelöst.) → Kandidaten: eigener Sanierungs-Slot, oder Betonsanierung, oder nur im Portfolio. **Input nötig.**
 2. **LevelFlor:** Produktart laut Katalog im Rapid-Set-Block, Bereich laut O1 = Industrieboden. Produktart „Bodenausgleichsmasse"? Bestätigen.
@@ -194,3 +196,46 @@ KOROPOX (gestrichen, Ersatz KOROMINERAL Li+, #316) · NEODUR AM Super / AM Plus 
 - **Erkenntnis-Seite Abschnitt P (2026-06-22):** hält die Technik-Mail-Rohantworten („kann beides") fest. Für die **Website-Positionierung** gilt dieses Doc (Konfliktregel §1).
 - **Produktart-Taxonomie C3/#236:** feinere Liste (Hartstoffeinstreuung, Spritzmörtel …). Für das **Portfolio-Menü** führt der Katalog (§2); Feinabgleich mit #236/#307 separat.
 - **Datenmodell:** Mehrfach-Bereich via `zusatzBereiche[]` ist vorhanden (#215). Ein **Produktart-Feld** fehlt noch (#307).
+
+---
+
+## 8. FINAL — Bereich-Zuordnung + Menüstruktur (Steffi 2026-06-22)
+
+### 8.1 Auflösung der Randfälle (§5)
+1. **Spezialmörtel im Sanierungspfad:** VM 5, PFM 1-K, PFM ZE (Sanierungsanteil) → **Betonsanierung** (Sammelbereich). Neubau-Anteil bleibt im Neubau-Bereich „Spezialmörtel".
+2. **KOROCRETE** → Bereiche **Industrieboden + Infrastruktur** (NICHT mehr Betonsanierung — Änderung ggü. #219). Produktart bleibt „Konstruktiver Schnellbeton" (Portfolio).
+3. **Infrastruktur-Bereich (Sanierung)** wird befüllt mit: **HE 65 Plus · KOROCRETE · ASPHALT REPAIR MIX · alle DUROP-Varianten** + Begleitprodukte (Haftbrücke/Grundierung, Nachbehandlung, Imprägnierung, DUROP). Weitere folgen.
+4. **LevelFlor** → Bereich **Industrieboden**, Gruppe „Selbstverlaufende Industrieböden".
+5. **Begleitprodukte** (Haftbrücke/Grundierung, Nachbehandlung/Curing, Imprägnierung/Einpflege) bekommen **keinen eigenen Bereich** — nur Portfolio (als Produktart) + erscheinen innerhalb der Bereiche **Industrieboden & Infrastruktur**. **DUROP** erscheint in **Infrastruktur**.
+6. **DUROP-Varianten anlegen:** 0,5/1 · 1/2 · 2/3 · 2/5 als eigene Produkte/PDPs (eine PDP pro Variante). Ebenso prüfen, dass ASPHALT REPAIR MIX, KOROCRETE, HE 65 Plus angelegt/korrekt zugeordnet sind.
+
+### 8.2 Finale Bereich-Zusammensetzung
+| Bereich | Projektart | Inhalt |
+|---|---|---|
+| **Industrieboden** | Neubau + Sanierung | Hartstoffe (DIN 1100), Industrieboden-Trockenmörtel, Schnellestrich/-Bindemittel, Selbstverlaufende (inkl. **LevelFlor**), HE 65 Plus (San.) + Begleit (Haftbrücke, Nachbehandlung, Imprägnierung) + **KOROCRETE** |
+| **Sichtestrich** | Neubau + Sanierung | KCF, GRANIDUR (Neubau); TRU-Serie (beide) |
+| **Spezialmörtel** | nur Neubau | VM 1/3, VB 8, VM 5, VM basic, PFM 1-K, PFM ZE |
+| **Infrastruktur** | Sanierung | HE 65 Plus, **KOROCRETE**, ASPHALT REPAIR MIX, alle DUROP + Begleit (Haftbrücke, Nachbehandlung, Imprägnierung, DUROP) |
+| **Trinkwasserbehälter-Sanierung** | Sanierung | MICROTOP TW-Serie + VM basic |
+| **Betonsanierung** | Sanierung | Rapid Set (CEMENT ALL/Plus, MORTAR MIX/SVS 5, CONCRETE MIX, DOT, ASPHALT REPAIR MIX, Additive/Pigmente), MSM/MSB, SVM 03, Spezialmörtel-Sanierung (VM 5, PFM) |
+| *Katzenstreu* | abgegrenzt | bleibt separat (Footer), nicht in den zwei Achsen |
+
+### 8.3 Menüstruktur (final)
+**Top-Nav:** `Portfolio ▾` · `Neubau ▾` · `Sanierung ▾` · `Referenzen` · `Unternehmen` · `Kontakt`
+(**Lösungsfinder NICHT im Header** — nur über Home-Hero + Bereichsseiten. 3D-Druck **vorerst versteckt**, bis Technik-Content, #257.)
+
+**`Portfolio ▾` = gruppiertes Mega-Menü** (Experten-Einstieg, je Produktart → `/produkte` gefiltert), 4 Cluster:
+- **Industrieböden:** Hartstoffe (DIN 1100) · Industrieboden-Trockenmörtel · Schnellestrich/-Bindemittel · Selbstverlaufende Industrieböden
+- **Sichtestriche:** Mineralische Sichtestriche
+- **Beton-Instandsetzung & Spezialmörtel:** Rapid Set · Spezialmörtel · MICROTOP · DUROP
+- **Begleitprodukte:** Haftbrücke/Grundierung · Nachbehandlung/Curing · Imprägnierung/Einpflege
+
+**`Neubau ▾`** (Use-Case → `/bereiche/<slug>/neubau`): Industrieboden · Sichtestrich · Spezialmörtel
+**`Sanierung ▾`** (Use-Case → `/bereiche/<slug>/sanierung`): Industrieboden · Sichtestrich · Infrastruktur · Trinkwasserbehälter-Sanierung · Betonsanierung
+
+### 8.4 Slug-/Naming-Konsequenzen
+- Neuer Bereich-Slug **`spezialmoertel`** (Anzeige „Spezialmörtel", nur Neubau); alter `spezialbaustoffe`-Bereich wird aufgelöst (#308).
+- `rapid-set` bleibt interner Slug, Anzeige **„Betonsanierung"** (Sammelbereich, nicht die Marke).
+- Sichtestrich-`BEREICH_PROJEKTARTEN` → `["neubau","sanierung"]` (heute nur neubau).
+- Produktart-Feld am Produkt neu (#307); Produktart-Werte = die 12 Katalog-Bezeichnungen.
+
