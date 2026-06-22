@@ -5,15 +5,13 @@ import ProdukteListe, {
   type ProduktKarte,
 } from "../../../components/ProdukteListe";
 import { produkte } from "../../../data/produkte";
-import { bereiche } from "../../../data/bereiche";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { localizeProdukte } from "../../../data/i18n/getLocalized";
 import { alternatesFor } from "../../../lib/seo";
 import {
   PRODUKTART_REIHENFOLGE,
-  produktartVonGruppe,
-  type Produktart,
+  produktartVonProdukt,
 } from "../../../data/produktart";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -36,7 +34,7 @@ export default async function ProduktePage({
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
   const localizedProdukte = await localizeProdukte(produkte, lang);
-  const bereichTexte = dict.bereiche as Record<string, string>;
+  const paTexte = dict.produkte as unknown as Record<string, string>;
 
   type LP = (typeof localizedProdukte)[number];
   const toKarte = (p: LP): ProduktKarte => ({
@@ -49,37 +47,30 @@ export default async function ProduktePage({
     bild: p.bild,
   });
 
-  const rollenLabel: Record<Produktart, string> = {
-    bodenprodukt: dict.produkte.produktart_bodenprodukt,
-    haftbruecke: dict.produkte.produktart_haftbruecke,
-    oberflaechenfinish: dict.produkte.produktart_oberflaechenfinish,
-  };
-
-  // Gruppierung nach korodur.de-Bereich. Industrieboden zusätzlich nach
-  // Produktart-Rolle (#93): Bodenprodukte zuerst, dann Haftbrücken, dann Finish.
-  const gruppen: BereichsGruppe[] = bereiche
-    .map((b): BereichsGruppe | null => {
-      const items = localizedProdukte.filter(
-        (p) => p.bereich === b.slug || (p.zusatzBereiche?.includes(b.slug) ?? false)
-      );
+  // Achse A „Portfolio" (#306/#307): Gruppierung nach Katalog-Produktart in
+  // Lieferkatalog-Reihenfolge. Anker-Slug = Produktart-Wert (Deep-Links aus dem
+  // Portfolio-Mega-Menü, #309). Produkte ohne Katalog-Produktart (Systeme,
+  // Katzenstreu) landen in einer „Weitere"-Sammelgruppe, damit nichts verschwindet.
+  const gruppen: BereichsGruppe[] = PRODUKTART_REIHENFOLGE.map(
+    (art): BereichsGruppe | null => {
+      const items = localizedProdukte.filter((p) => produktartVonProdukt(p) === art);
       if (items.length === 0) return null;
-      const base: BereichsGruppe = {
-        slug: b.slug,
-        label: bereichTexte[`${b.slug}_name`] ?? b.slug,
+      return {
+        slug: art,
+        label: paTexte[`produktart_${art}`] ?? art,
         items: items.map(toKarte),
       };
-      if (b.slug !== "industrieboden") return base;
-      const rollen = PRODUKTART_REIHENFOLGE.map((art) => ({
-        key: art,
-        label: rollenLabel[art],
-        // unmappte Gruppen defensiv den Bodenprodukten zuschlagen
-        items: items
-          .filter((p) => (produktartVonGruppe(p.produktgruppe) ?? "bodenprodukt") === art)
-          .map(toKarte),
-      })).filter((r) => r.items.length > 0);
-      return { ...base, rollen };
-    })
-    .filter((g): g is BereichsGruppe => g !== null);
+    }
+  ).filter((g): g is BereichsGruppe => g !== null);
+
+  const ohneProduktart = localizedProdukte.filter((p) => !produktartVonProdukt(p));
+  if (ohneProduktart.length > 0) {
+    gruppen.push({
+      slug: "weitere",
+      label: paTexte.produktart_weitere ?? "Weitere Produkte",
+      items: ohneProduktart.map(toKarte),
+    });
+  }
 
   return (
     <>
