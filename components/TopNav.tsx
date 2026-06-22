@@ -103,7 +103,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             { label: pa["produktart_industrieboden-trockenmoertel"], href: paHref("industrieboden-trockenmoertel") },
             { label: pa["produktart_schnellestrich-bindemittel"], href: paHref("schnellestrich-bindemittel") },
             { label: pa["produktart_selbstverlaufende-industrieboeden"], href: paHref("selbstverlaufende-industrieboeden") },
-            { label: pa["produktart_konstruktiver-schnellbeton"], href: paHref("konstruktiver-schnellbeton") },
+            { label: pa["produktart_schnellbetonsysteme"], href: paHref("schnellbetonsysteme") },
           ],
         },
         {
