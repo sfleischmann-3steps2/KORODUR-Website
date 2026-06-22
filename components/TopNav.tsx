@@ -94,7 +94,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
         { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
         { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/`, sub: bt.sichtestrich_teaser },
         { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
-        { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
+        { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
         { label: bt.katzenstreu_name, href: `/${lang}/bereiche/katzenstreu/`, sub: bt.katzenstreu_teaser },
         { label: dict.bereiche.alle_produkte_name, href: `/${lang}/produkte/`, sub: dict.bereiche.alle_produkte_teaser, highlight: true },
       ],
@@ -107,7 +107,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       items: [
         { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/`, sub: bt.industrieboden_teaser },
         { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/`, sub: bt.sichtestrich_teaser },
-        { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
+        { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
       ],
     },
     sanierung: {
@@ -118,7 +118,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
         { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
         { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
         { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
-        { label: bt.spezialbaustoffe_name, href: `/${lang}/bereiche/spezialbaustoffe/`, sub: bt.spezialbaustoffe_teaser },
+        { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
       ],
     },
     kontakt: {

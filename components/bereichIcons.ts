@@ -17,7 +17,7 @@ export const BEREICH_ICONS: Record<string, LucideIcon> = {
   sichtestrich: Sparkles,
   microtop: Droplets,
   "rapid-set": Timer,
-  spezialbaustoffe: Package,
+  spezialmoertel: Package,
   katzenstreu: PawPrint,
   infrastruktur: Route,
   // Taxonomie-Bereich ohne eigene Seite — Fallback:

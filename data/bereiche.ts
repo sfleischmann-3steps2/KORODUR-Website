@@ -38,6 +38,9 @@ export const bereiche: Bereich[] = [
       "selbstverlaufend",
       "kunstharz-hartstoffe",
       "systeme",
+      // #306/#308: KOROCRETE (konstruktiver Schnellbeton) ist seit dem
+      // Zwei-Achsen-Umbau Primär-Bereich Industrieboden (+ Zweit-Infrastruktur).
+      "schnellbeton",
       "untergrund-haftbruecken",
       "nachbehandlung",
       "impraegnierung",
@@ -50,29 +53,51 @@ export const bereiche: Bereich[] = [
   },
   {
     // Infrastruktur (#216): eigener Bereich, ersetzt „Schnellbetonsysteme".
-    // KOROCRETE erscheint hier als Zweit-Bereich (Primär: Betonsanierung) — #219.
+    // #306/#308 (Zwei-Achsen-Umbau): befüllt mit KOROCRETE, HE 65 Plus,
+    // ASPHALT REPAIR MIX, DUROP (alle als Zweit-Bereich) + Begleitprodukten
+    // (Haftbrücke/Grundierung, Nachbehandlung, Imprägnierung).
     slug: "infrastruktur",
-    produktgruppen: ["schnellbeton"],
+    produktgruppen: [
+      "schnellbeton",
+      "hartstoffestriche",
+      "reparaturmoertel",
+      "kunstharz-hartstoffe",
+      "untergrund-haftbruecken",
+      "nachbehandlung",
+      "impraegnierung",
+    ],
   },
   {
+    // Sammelbereich „Betonsanierung" (#306/#308): Rapid Set + NEODUR Schnell-
+    // verguss-/Microsilica-Spritzmörtel (SVM/MSM/MSB) + Spezialmörtel-
+    // Sanierungsanteil (VM 5, PFM als Zweit-Bereich). Interner Slug bleibt
+    // `rapid-set`, Anzeige „Betonsanierung".
     slug: "rapid-set",
     bild: "/images/bereiche/rapid-set.webp",
     haendlerHinweis: true,
-    produktgruppen: ["reparaturmoertel", "schnellbeton", "additive"],
+    produktgruppen: [
+      "reparaturmoertel",
+      "schnellbeton",
+      "verguss",
+      "spritzmoertel",
+      "pflasterfugen",
+      "additive",
+    ],
   },
   {
-    slug: "spezialbaustoffe",
+    // Bereich „Spezialmörtel" (#306/#308): nur Neubau. Ersetzt den aufgelösten
+    // Bereich „Spezialbaustoffe"; Spritzmörtel (MSM/MSB) + Schnellverguss
+    // (SVM) sind in die Betonsanierung gewandert.
+    slug: "spezialmoertel",
     bild: "/images/bereiche/spezialbaustoffe.webp",
-    // #219: KOROCRETE (schnellbeton) → Betonsanierung/Infrastruktur; Anker-/
-    // Injektionssystem (NEODUR AM, #217) entfällt.
-    produktgruppen: ["verguss", "spritzmoertel", "pflasterfugen"],
+    produktgruppen: ["verguss", "pflasterfugen"],
   },
   { slug: "3d-concrete-printing", bild: "/images/bereiche/3d-concrete-printing.webp" },
   {
     slug: "microtop",
     bild: "/images/bereiche/microtop.webp",
-    // "verguss" zusätzlich: NEODUR VM basic (DVGW W 347, Trinkwasser) wird über
-    // zusatzBereiche hier geführt (Technik-Sign-off 2026-06-22).
+    // #317/#308: `verguss` zusätzlich für NEODUR VM basic (DVGW W 347,
+    // Trinkwasser) — wird über zusatzBereiche hier geführt.
     produktgruppen: ["trockenspritz", "nassspritz", "beschichtung-schutz", "verguss"],
   },
   {
@@ -99,6 +124,6 @@ export const PORTFOLIO_SLUGS = [
   "infrastruktur",
   "sichtestrich",
   "microtop",
-  "spezialbaustoffe",
+  "spezialmoertel",
   "katzenstreu",
 ] as const;

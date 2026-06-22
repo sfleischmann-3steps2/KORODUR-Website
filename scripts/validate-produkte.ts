@@ -26,7 +26,7 @@ const ALLOWED_BEREICH: ReadonlySet<Produktbereich> = new Set<Produktbereich>([
   "microtop",
   "rapid-set",
   "infrastruktur",
-  "spezialbaustoffe",
+  "spezialmoertel",
   "3d-concrete-printing",
   "katzenstreu",
 ]);

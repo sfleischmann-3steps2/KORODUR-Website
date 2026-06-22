@@ -30,8 +30,10 @@ type Params = Promise<{ lang: string; slug: string }>;
 // Taxonomie-Bereich (3d-concrete-printing) bleibt ohne.
 const BEREICH_PROJEKTARTEN: Record<string, Projektart[]> = {
   industrieboden: ["neubau", "sanierung"],
-  sichtestrich: ["neubau"],
-  spezialbaustoffe: ["neubau", "sanierung"],
+  // #306/#308: Sichtestrich jetzt Neubau (KCF/GRANIDUR) UND Sanierung (TRU-Serie).
+  sichtestrich: ["neubau", "sanierung"],
+  // #306/#308: Spezialmörtel ist reiner Neubau-Bereich.
+  spezialmoertel: ["neubau"],
   microtop: ["sanierung"],
   "rapid-set": ["sanierung"],
   infrastruktur: ["sanierung"],
@@ -41,7 +43,7 @@ const BEREICH_PROJEKTARTEN: Record<string, Projektart[]> = {
 // Industrieboden -> Rapid Set (schnelle Instandsetzung) ist ihr Leitbeispiel.
 const CROSSSELL: Record<string, string> = {
   industrieboden: "rapid-set",
-  spezialbaustoffe: "rapid-set",
+  spezialmoertel: "rapid-set",
   "rapid-set": "industrieboden",
   infrastruktur: "rapid-set",
 };
