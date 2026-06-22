@@ -5,8 +5,9 @@
 // genau EINE Produktart (anders als Bereiche, wo es mehrfach erscheinen kann).
 //
 // SoT: docs/specs/2026-06-22-portfolio-bereiche-mapping.md §2 (12 Katalog-
-// Sektionen). `konstruktiver-schnellbeton` (KOROCRETE) ist eine 13. Produktart,
-// die noch in den offiziellen Katalog aufgenommen wird (Spec §5.3/§8.1.2).
+// Sektionen). `schnellbetonsysteme` ist die 13. Produktart (Steffi 2026-06-22):
+// fasst KOROCRETE + Rapid Set Schnellbeton als Schnellbetonsysteme zusammen,
+// wird in den Leistungskatalog aufgenommen (TDS folgt).
 //
 // Ableitung primär aus der `produktgruppe` (bereichsbezogen), mit ID-Overrides
 // für die wenigen Fälle, in denen eine Gruppe heterogen ist (z. B. `schnellbeton`
@@ -25,16 +26,16 @@ export type Produktart =
   | "rapid-set"
   | "spezialmoertel"
   | "microtop"
-  | "konstruktiver-schnellbeton";
+  | "schnellbetonsysteme";
 
-/** Anzeige-Reihenfolge = Lieferkatalog-Sektionen 1–12, danach die noch nicht
- *  katalogisierte Produktart „Konstruktiver Schnellbeton". */
+/** Anzeige-Reihenfolge = Lieferkatalog-Sektionen 1–12, plus „Schnellbeton-
+ *  systeme" (KOROCRETE + Rapid Set Schnellbeton), Katalog-Aufnahme angestoßen. */
 export const PRODUKTART_REIHENFOLGE: Produktart[] = [
   "hartstoffe-din1100",
   "industrieboden-trockenmoertel",
   "schnellestrich-bindemittel",
   "selbstverlaufende-industrieboeden",
-  "konstruktiver-schnellbeton",
+  "schnellbetonsysteme",
   "mineralische-sichtestriche",
   "haftbruecke-grundierung",
   "nachbehandlung-curing",
@@ -70,10 +71,11 @@ const GRUPPE_ZU_PRODUKTART: Record<string, Produktart> = {
   "beschichtung-schutz": "microtop",
 };
 
-/** Pro-Produkt-Overrides für heterogene Gruppen. */
+/** Pro-Produkt-Overrides für heterogene Gruppen. KOROCRETE + Rapid Set
+ *  Schnellbeton bilden zusammen die Produktart „Schnellbetonsysteme". */
 const ID_ZU_PRODUKTART: Record<string, Produktart> = {
-  korocrete: "konstruktiver-schnellbeton",
-  "rapid-set-schnellbeton": "rapid-set",
+  korocrete: "schnellbetonsysteme",
+  "rapid-set-schnellbeton": "schnellbetonsysteme",
   koroclean: "impraegnierung-einpflege",
 };
 
