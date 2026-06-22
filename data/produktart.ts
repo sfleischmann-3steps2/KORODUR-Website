@@ -1,43 +1,90 @@
-// Produktart / Rolle im Bodenaufbau (#93).
+// Produktart = Achse A „Portfolio" (Zwei-Achsen-IA, #306/#307).
 //
-// Industrieboden mischte im Listing Bodenprodukte, Haftbrücken, Nachbehandlung
-// und Imprägnierung in einem Grid. Diese Rolle gliedert das Listing: zuerst die
-// Bodenprodukte, dann Haftbrücken/Untergrund, dann Oberflächenfinish.
+// WAS stellen wir her — die Produkttypen des Lieferprogramms/Leistungskatalogs.
+// Gegenstück zu Achse B (Bereiche = WOFÜR, Neubau/Sanierung). Ein Produkt hat
+// genau EINE Produktart (anders als Bereiche, wo es mehrfach erscheinen kann).
 //
-// Ableitung aus der Produktgruppe (selbst aus der Excel-/Kollegen-Matrix
-// abgeleitet): HB 5 = Haftbrücke, easyFinish = Nachbehandlung,
-// KOROMINERAL = Imprägnierung (→ Oberflächenfinish).
+// SoT: docs/specs/2026-06-22-portfolio-bereiche-mapping.md §2 (12 Katalog-
+// Sektionen). `konstruktiver-schnellbeton` (KOROCRETE) ist eine 13. Produktart,
+// die noch in den offiziellen Katalog aufgenommen wird (Spec §5.3/§8.1.2).
+//
+// Ableitung primär aus der `produktgruppe` (bereichsbezogen), mit ID-Overrides
+// für die wenigen Fälle, in denen eine Gruppe heterogen ist (z. B. `schnellbeton`
+// = KOROCRETE vs. Rapid-Set-Schnellbeton; `systeme` = KOROCLEAN vs. Silosystem).
 
-export type Produktart = "bodenprodukt" | "haftbruecke" | "oberflaechenfinish";
+export type Produktart =
+  | "hartstoffe-din1100"
+  | "industrieboden-trockenmoertel"
+  | "schnellestrich-bindemittel"
+  | "selbstverlaufende-industrieboeden"
+  | "mineralische-sichtestriche"
+  | "haftbruecke-grundierung"
+  | "nachbehandlung-curing"
+  | "impraegnierung-einpflege"
+  | "durop"
+  | "rapid-set"
+  | "spezialmoertel"
+  | "microtop"
+  | "konstruktiver-schnellbeton";
 
-/** Anzeige-Reihenfolge der Rollen-Sektionen — Bodenprodukte führen. */
+/** Anzeige-Reihenfolge = Lieferkatalog-Sektionen 1–12, danach die noch nicht
+ *  katalogisierte Produktart „Konstruktiver Schnellbeton". */
 export const PRODUKTART_REIHENFOLGE: Produktart[] = [
-  "bodenprodukt",
-  "haftbruecke",
-  "oberflaechenfinish",
+  "hartstoffe-din1100",
+  "industrieboden-trockenmoertel",
+  "schnellestrich-bindemittel",
+  "selbstverlaufende-industrieboeden",
+  "konstruktiver-schnellbeton",
+  "mineralische-sichtestriche",
+  "haftbruecke-grundierung",
+  "nachbehandlung-curing",
+  "impraegnierung-einpflege",
+  "durop",
+  "rapid-set",
+  "spezialmoertel",
+  "microtop",
 ];
 
-/** Industrieboden-Produktgruppen → Rolle. Additive/Systeme zählen zum
- *  Bodenprodukt-Kontext (Teil des Bodensystems), bis Technik (Frank) eine
- *  feinere Trennung wünscht. Nicht gelistete Gruppen → undefined. */
+/** produktgruppe → Produktart (Standardfall). Heterogene Gruppen
+ *  (schnellbeton, systeme) sowie Katzenstreu (premium/standard) sind bewusst
+ *  NICHT gelistet — die werden über ID-Overrides bzw. gar nicht abgebildet. */
 const GRUPPE_ZU_PRODUKTART: Record<string, Produktart> = {
-  hartstoffestriche: "bodenprodukt",
-  hartstoffeinstreuung: "bodenprodukt",
-  schnellestrich: "bodenprodukt",
-  selbstverlaufend: "bodenprodukt",
-  "kunstharz-hartstoffe": "bodenprodukt",
-  systeme: "bodenprodukt",
-  additive: "bodenprodukt",
-  "untergrund-haftbruecken": "haftbruecke",
-  nachbehandlung: "oberflaechenfinish",
-  impraegnierung: "oberflaechenfinish",
+  hartstoffeinstreuung: "hartstoffe-din1100",
+  hartstoffestriche: "industrieboden-trockenmoertel",
+  schnellestrich: "schnellestrich-bindemittel",
+  selbstverlaufend: "selbstverlaufende-industrieboeden",
+  geschliffen: "mineralische-sichtestriche",
+  geglaettet: "mineralische-sichtestriche",
+  truazzo: "mineralische-sichtestriche",
+  "untergrund-haftbruecken": "haftbruecke-grundierung",
+  nachbehandlung: "nachbehandlung-curing",
+  impraegnierung: "impraegnierung-einpflege",
+  "kunstharz-hartstoffe": "durop",
+  reparaturmoertel: "rapid-set",
+  additive: "rapid-set",
+  verguss: "spezialmoertel",
+  spritzmoertel: "spezialmoertel",
+  pflasterfugen: "spezialmoertel",
+  trockenspritz: "microtop",
+  nassspritz: "microtop",
+  "beschichtung-schutz": "microtop",
 };
 
-/** Rolle eines Produkts im Bodenaufbau. Aktuell nur für Industrieboden
- *  definiert (Listing-Gliederung); andere Bereiche liefern undefined. */
-export function produktartVonGruppe(
-  produktgruppe: string | undefined,
-): Produktart | undefined {
-  if (!produktgruppe) return undefined;
-  return GRUPPE_ZU_PRODUKTART[produktgruppe];
+/** Pro-Produkt-Overrides für heterogene Gruppen. */
+const ID_ZU_PRODUKTART: Record<string, Produktart> = {
+  korocrete: "konstruktiver-schnellbeton",
+  "rapid-set-schnellbeton": "rapid-set",
+  koroclean: "impraegnierung-einpflege",
+};
+
+/** Produktart eines Produkts. ID-Override schlägt Gruppen-Ableitung. Produkte
+ *  ohne Katalog-Produktart (Silosystem, KORODUR-KOROTAN-System, Katzenstreu)
+ *  liefern undefined. */
+export function produktartVonProdukt(p: {
+  id: string;
+  produktgruppe?: string;
+}): Produktart | undefined {
+  if (ID_ZU_PRODUKTART[p.id]) return ID_ZU_PRODUKTART[p.id];
+  if (!p.produktgruppe) return undefined;
+  return GRUPPE_ZU_PRODUKTART[p.produktgruppe];
 }
