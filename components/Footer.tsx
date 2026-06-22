@@ -26,17 +26,13 @@ export default function Footer({
 }) {
   const bereichLabels = dict.bereiche as Record<string, string>;
 
-  // #226: Unternehmen-Spalte = Unternehmen · Referenzen · Ausschreibungstexte.
-  // Sanierung-Link ganz aus dem Footer; Kontakt ist eigene Spalte.
-  const unternehmenLinks = [
-    { href: `/${lang}/unternehmen/`, label: dict.nav.unternehmen },
-    { href: `/${lang}/referenzen/`, label: dict.nav.referenzen },
-  ];
+  // #299: Footer-Restructure (Steffi 2026-06-19) — schlanke 3-Spalten-Logik:
+  // links Produkte/Bereiche · Mitte Unternehmen + Ausschreibungstexte + Kontakt ·
+  // rechts Ratgeber + Referenzen + Social. Lösungsfinder/Anwendungsmatrix/
+  // Schadensbilder/Branchen bewusst aus dem Footer (Steffi „nur den Ratgeber").
 
-  // #226: feste Produktblock-Reihenfolge (spaltenweise, NICHT PORTFOLIO_SLUGS
-  // umsortieren — das steuert das Home-Grid). Links → unten, dann rechts:
-  // links Industrieboden·Betonsanierung·Sichtestrich, rechts
-  // Spezialbaustoffe·TW-Behältersanierung·Katzenstreu. Infrastruktur (noch) ohne Slot.
+  // Feste Produktblock-Reihenfolge (spaltenweise, NICHT umsortieren — das steuert
+  // sonst das Home-Grid). Infrastruktur (noch) ohne Slot.
   const footerProduktReihenfolge = [
     "industrieboden",
     "rapid-set",
@@ -48,7 +44,10 @@ export default function Footer({
 
   const linkClass =
     "text-white/75 hover:text-white no-underline text-[14px] font-medium transition-colors duration-150 inline-block py-1.5";
-  const headingClass = "text-white text-[13px] uppercase tracking-wider mb-4";
+  const headingClass = "text-white text-[13px] uppercase tracking-wider mb-3";
+  // Scan-Hervorhebung (Steffi #299): zentrale Einstiege cyan + fett.
+  const highlightClass =
+    "inline-flex items-center gap-1.5 text-cyan hover:text-cyan-hover no-underline text-[14px] py-1.5";
 
   return (
     <footer className="bg-navy text-white mt-auto">
@@ -56,31 +55,24 @@ export default function Footer({
       <div className="h-[3px] bg-cyan" aria-hidden="true" />
 
       <div
-        className="mx-auto py-12"
+        className="mx-auto py-10"
         style={{ maxWidth: 1320, paddingLeft: 32, paddingRight: 32 }}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-9">
-          {/* (a) Bereiche — zweispaltig, hält den Footer flach */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-9">
+          {/* (1) Produkte & Bereiche — „Alle Produkte" als cyan-Highlight, dann
+              die Bereiche zweispaltig (hält den Footer flach). */}
           <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_bereiche}
             </h3>
-            {/* Gesamtkatalog prominent: "Produkte" ist aus der Top-Nav in den
-                Footer gewandert (Nav-Umbau #72/#81). */}
             <Link
               href={`/${lang}/produkte/`}
-              className="inline-flex items-center gap-1.5 text-white hover:text-cyan no-underline text-[14px] mb-3.5"
-              style={{ fontWeight: 700 }}
+              className={`${highlightClass} mb-2`}
+              style={{ fontWeight: 800 }}
             >
               {dict.bereiche.alle_produkte_name}
               <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
             </Link>
-            {/* min-w-0 + break-words: lange Namen (Schnellbetonsysteme) dürfen
-                umbrechen statt in die Nachbarspalte zu laufen */}
-            {/* Spaltenweise gefüllt (grid-flow-col + 3 Reihen): linke Spalte
-                zuerst, dann rechte — feste Reihenfolge aus footerProduktReihenfolge.
-                #247: gleich hohe Reihen über items-stretch, damit mehrzeilige
-                Labels (Rapid-Set Betonsanierung) die Zeilen nicht stauchen. */}
             <ul className="list-none m-0 p-0 grid grid-cols-2 grid-rows-3 grid-flow-col gap-x-8 items-stretch">
               {footerProduktReihenfolge.map((slug) => (
                 <li key={slug} className="min-w-0 flex items-start">
@@ -96,20 +88,18 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* (b) Unternehmen + Ausschreibungstexte — #226: 3. Spalte rechtsbündig
-              (hebt sich von den Produkten ab); Kontakt + Social bleiben links. */}
-          <div className="lg:text-right">
+          {/* (2) Unternehmen + Ausschreibungstexte + Kontakt — eine zusammen-
+              gefasste Spalte (Steffi #299: Unternehmen oben, dann Adresse/Kontakt). */}
+          <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_unternehmen}
             </h3>
-            <ul className="list-none m-0 p-0 flex flex-col lg:items-end">
-              {unternehmenLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className={linkClass}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="list-none m-0 p-0 flex flex-col mb-4">
+              <li>
+                <Link href={`/${lang}/unternehmen/`} className={linkClass}>
+                  {dict.nav.unternehmen}
+                </Link>
+              </li>
               <li>
                 <a
                   href={AUSSCHREIBEN_URL}
@@ -122,13 +112,6 @@ export default function Footer({
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* (c) Kontakt */}
-          <div>
-            <h3 className={headingClass} style={{ fontWeight: 800 }}>
-              {dict.footer.col_kontakt}
-            </h3>
             <address className="not-italic text-[14px] text-white/70 leading-[1.6]">
               <div>{KORODUR_ZENTRALE.strasse}</div>
               <div>{KORODUR_ZENTRALE.plzOrt}</div>
@@ -143,44 +126,26 @@ export default function Footer({
             </address>
           </div>
 
-          {/* (d) Service & Ratgeber + Social Media. Ratgeber/Schadensbilder/
-              Branchen + Lösungsfinder/Anwendungsmatrix sind aus der Top-Nav in
-              den Footer gewandert (Steffi 2026-06-18, analog „Produkte"). Die
-              Content-Hubs sind aktuell nur DE → für andere Sprachen ausblenden. */}
+          {/* (3) Ratgeber (cyan-Highlight, zentrale Content-Seite) + Referenzen,
+              darunter Social. Ratgeber ist aktuell nur DE. */}
           <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_service}
             </h3>
             <ul className="list-none m-0 p-0 flex flex-col mb-8">
-              <li>
-                <Link href={`/${lang}/loesungsfinder/`} className={linkClass}>
-                  {dict.nav.loesungsfinder}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/anwendungsmatrix/`} className={linkClass}>
-                  {dict.nav.anwendungsmatrix}
-                </Link>
-              </li>
               {lang === "de" && (
-                <>
-                  <li>
-                    <Link href={`/${lang}/ratgeber/`} className={linkClass}>
-                      Ratgeber
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/${lang}/schadensbilder/`} className={linkClass}>
-                      Schadensbilder
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/${lang}/branchen/`} className={linkClass}>
-                      Lösungen nach Branche
-                    </Link>
-                  </li>
-                </>
+                <li>
+                  <Link href={`/${lang}/ratgeber/`} className={highlightClass} style={{ fontWeight: 800 }}>
+                    Ratgeber
+                    <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
+                  </Link>
+                </li>
               )}
+              <li>
+                <Link href={`/${lang}/referenzen/`} className={linkClass}>
+                  {dict.nav.referenzen}
+                </Link>
+              </li>
             </ul>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_social}
@@ -212,7 +177,7 @@ export default function Footer({
         </div>
       </div>
 
-      {/* Sub-Zeile */}
+      {/* Sub-Zeile (Steffi #299: passt, bleibt) */}
       <div className="bg-white/5">
         <div
           className="mx-auto py-4 flex flex-col md:flex-row items-center justify-between gap-3"
