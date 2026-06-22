@@ -96,7 +96,8 @@ export const bereiche: Bereich[] = [
   {
     slug: "microtop",
     bild: "/images/bereiche/microtop.webp",
-    // #317/#308: `verguss` für NEODUR VM basic (Trinkwasser-Vergussmörtel).
+    // #317/#308: `verguss` zusätzlich für NEODUR VM basic (DVGW W 347,
+    // Trinkwasser) — wird über zusatzBereiche hier geführt.
     produktgruppen: ["trockenspritz", "nassspritz", "beschichtung-schutz", "verguss"],
   },
   {

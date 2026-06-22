@@ -106,8 +106,8 @@ export default async function ProduktDetailPage({
         </div>
       </section>
 
-      {/* Header */}
-      <section style={{ padding: "0 32px 56px" }}>
+      {/* Header — Text-Header-Standard (#297): Top 16px bei Seiten mit Breadcrumb. */}
+      <section style={{ padding: "16px 32px 56px" }}>
         <div className="mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8" style={{ maxWidth: 1320 }}>
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-3 mb-5">

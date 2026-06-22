@@ -71,6 +71,8 @@ export default async function Home({
             alt=""
             fetchPriority="high"
             className="absolute inset-0 h-full w-full object-cover"
+            // #295: Amboss-Oberkante nicht anschneiden — Fokus etwas höher als center.
+            style={{ objectPosition: "50% 25%" }}
           />
         </picture>
         <div
@@ -140,7 +142,8 @@ export default async function Home({
           </h2>
           <p
             className="text-center text-navy opacity-60 mb-12 mx-auto"
-            style={{ maxWidth: 600, fontSize: 18 }}
+            // #295: Breite erhöht (600→880), damit die Subline auf Desktop einzeilig bleibt.
+            style={{ maxWidth: 880, fontSize: 18 }}
           >
             {dict.home.bereiche_subtitle}
           </p>

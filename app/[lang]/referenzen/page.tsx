@@ -187,7 +187,8 @@ export default function ReferenzenPage() {
         </div>
       </section>
 
-      <section style={{ padding: "0 32px 48px" }}>
+      {/* Text-Header-Standard (#297): Top 16px bei Seiten mit Breadcrumb, horizontal 32px. */}
+      <section style={{ padding: "16px 32px 48px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h1
             className="mb-3"
