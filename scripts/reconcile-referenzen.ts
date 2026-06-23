@@ -70,6 +70,7 @@ const matchedXml = new Set<XmlRef>();
 const fills: any[] = [];
 const rows: string[] = [];
 const unmatched: string[] = [];
+const unmatchedRefs: any[] = [];
 const prodDiffs: any[] = [];
 let nSlug = 0, nTitle = 0, nOrt = 0, nNone = 0;
 
@@ -96,7 +97,7 @@ for (const r of referenzen) {
     }
     if (best && bestScore >= 1) { x = best; how = "token"; }
   }
-  if (!x) { nNone++; unmatched.push(`${r.slug} (${r.titel}, ${r.ort})`); continue; }
+  if (!x) { nNone++; unmatched.push(`${r.slug} (${r.titel}, ${r.ort})`); unmatchedRefs.push(r); continue; }
   matchedXml.add(x);
   if (how === "slug") nSlug++; else if (how === "titel") nTitle++; else nOrt++; // nOrt = token
 
@@ -132,6 +133,30 @@ for (const r of referenzen) {
 
 const xmlUnused = xmlDe.filter((x) => !matchedXml.has(x) && x.status === "publish");
 
+// Dedup-Pairing: App-Refs ohne Quelle <-> Kandidaten (Sprachvariante/umbenannt?)
+const pairedXml = new Set<XmlRef>();
+const pairs: any[] = [];
+for (const r of unmatchedRefs) {
+  const appTok = new Set([...distinctive(r.titel), ...distinctive(r.ort)]);
+  let best: XmlRef | undefined; let bestScore = 0; let shared: string[] = [];
+  for (const x of xmlUnused) {
+    if (pairedXml.has(x)) continue;
+    const xTok = new Set([...distinctive(x.title), ...distinctive(x.ort)]);
+    const sh = [...appTok].filter((w) => xTok.has(w));
+    const ortMatch = norm(r.ort) && norm(r.ort) === norm(x.ort) ? 1 : 0;
+    const score = sh.length + ortMatch;
+    if (score > bestScore) { bestScore = score; best = x; shared = sh; }
+  }
+  if (best && bestScore >= 1) {
+    pairedXml.add(best);
+    pairs.push({ app: r.slug, appTitel: r.titel, appOrt: r.ort,
+      quelle: best.slug, quelleTitel: best.title, quelleOrt: best.ort,
+      gemeinsam: shared, ortGleich: norm(r.ort) === norm(best.ort),
+      konfidenz: bestScore >= 2 ? "hoch" : "mittel" });
+  }
+}
+const trueNew = xmlUnused.filter((x) => !pairedXml.has(x));
+
 const md: string[] = [];
 md.push("# Referenz-Abgleich App ↔ WP-Quelle\n");
 md.push(`App-Referenzen: ${referenzen.length} · DE-Quell-Referenzen: ${xmlDe.length} (publish: ${xmlDe.filter(x=>x.status==="publish").length}, draft: ${xmlDe.filter(x=>x.status==="draft").length})\n`);
@@ -152,6 +177,8 @@ md.push(...rows);
 writeFileSync(join(ROOT, "docs/website-migration/referenz-abgleich.md"), md.join("\n"));
 writeFileSync(join(ROOT, "docs/website-migration/referenz-fills.json"), JSON.stringify(fills, null, 1));
 writeFileSync(join(ROOT, "docs/website-migration/referenz-produkt-diff.json"), JSON.stringify(prodDiffs, null, 1));
+writeFileSync(join(ROOT, "docs/website-migration/referenz-dedup.json"),
+  JSON.stringify({ pairs, trueNew }, null, 1));
 
 const chatPruefen = prodDiffs.filter((d) => d.empfehlung.startsWith("Im Chat"));
 console.log(`Match: slug=${nSlug} titel=${nTitle} ort=${nOrt} keinMatch=${nNone}`);
