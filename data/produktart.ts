@@ -1,92 +1,150 @@
 // Produktart = Achse A „Portfolio" (Zwei-Achsen-IA, #306/#307).
 //
-// WAS stellen wir her — die Produkttypen des Lieferprogramms/Leistungskatalogs.
-// Gegenstück zu Achse B (Bereiche = WOFÜR, Neubau/Sanierung). Ein Produkt hat
-// genau EINE Produktart (anders als Bereiche, wo es mehrfach erscheinen kann).
+// WAS stellen wir her — die offizielle Produkttyp-Taxonomie aus der Notion-
+// Produktdatenbank-View „Kern Produktdaten" (Property „Produktart"), von der
+// Technik produktweise committet. SoT seit 2026-06-23 (Steffi: „Notion gewinnt
+// eindeutig"). Gegenstück zu Achse B (Bereiche = WOFÜR).
 //
-// SoT: docs/specs/2026-06-22-portfolio-bereiche-mapping.md §2 (12 Katalog-
-// Sektionen). `schnellbetonsysteme` ist die 13. Produktart (Steffi 2026-06-22):
-// fasst KOROCRETE + Rapid Set Schnellbeton als Schnellbetonsysteme zusammen,
-// wird in den Leistungskatalog aufgenommen (TDS folgt).
-//
-// Ableitung primär aus der `produktgruppe` (bereichsbezogen), mit ID-Overrides
-// für die wenigen Fälle, in denen eine Gruppe heterogen ist (z. B. `schnellbeton`
-// = KOROCRETE vs. Rapid-Set-Schnellbeton; `systeme` = KOROCLEAN vs. Silosystem).
+// Zuordnung pro Produkt (Notion ist per-Produkt, nicht aus produktgruppe
+// ableitbar — z. B. Hartstoffeinstreuung vs. Hartstoffschicht). „Ankermörtel"
+// entfällt (nicht für die Website vorgesehen). Produkte ohne Notion-Produktart
+// (Katzenstreu, Systeme, Lasur, Concrete Pharmacy) → undefined → „Weitere".
 
 export type Produktart =
-  | "hartstoffe-din1100"
-  | "industrieboden-trockenmoertel"
-  | "schnellestrich-bindemittel"
-  | "selbstverlaufende-industrieboeden"
-  | "mineralische-sichtestriche"
-  | "haftbruecke-grundierung"
-  | "nachbehandlung-curing"
-  | "impraegnierung-einpflege"
-  | "durop"
-  | "rapid-set"
-  | "spezialmoertel"
-  | "microtop"
-  | "schnellbetonsysteme";
+  | "hartstoff-din1100"
+  | "hartstoffeinstreuung"
+  | "hartstoffschicht"
+  | "estrich-bindemittel"
+  | "schnellestrich"
+  | "bodenausgleichsmasse"
+  | "konstruktiver-schnellbeton"
+  | "sichtestrich"
+  | "reparaturmoertel"
+  | "spritzmoertel"
+  | "spritzbeton"
+  | "vergussmoertel"
+  | "vergussbeton"
+  | "pflasterfugenmoertel"
+  | "unterstopfmoertel"
+  | "haftbruecken-grundierungen"
+  | "oberflaechenverguetung"
+  | "additive"
+  | "tw-beschichtungsmoertel"
+  | "sonstiges";
 
-/** Anzeige-Reihenfolge = Lieferkatalog-Sektionen 1–12, plus „Schnellbeton-
- *  systeme" (KOROCRETE + Rapid Set Schnellbeton), Katalog-Aufnahme angestoßen. */
+/** Anzeige-Reihenfolge (Industrieböden → Sichtestrich → Beton-Instandsetzung &
+ *  Spezialmörtel → Begleitprodukte → TW → Sonstiges). */
 export const PRODUKTART_REIHENFOLGE: Produktart[] = [
-  "hartstoffe-din1100",
-  "industrieboden-trockenmoertel",
-  "schnellestrich-bindemittel",
-  "selbstverlaufende-industrieboeden",
-  "schnellbetonsysteme",
-  "mineralische-sichtestriche",
-  "haftbruecke-grundierung",
-  "nachbehandlung-curing",
-  "impraegnierung-einpflege",
-  "durop",
-  "rapid-set",
-  "spezialmoertel",
-  "microtop",
+  "hartstoff-din1100",
+  "hartstoffeinstreuung",
+  "hartstoffschicht",
+  "estrich-bindemittel",
+  "schnellestrich",
+  "bodenausgleichsmasse",
+  "konstruktiver-schnellbeton",
+  "sichtestrich",
+  "reparaturmoertel",
+  "spritzmoertel",
+  "spritzbeton",
+  "vergussmoertel",
+  "vergussbeton",
+  "pflasterfugenmoertel",
+  "unterstopfmoertel",
+  "haftbruecken-grundierungen",
+  "oberflaechenverguetung",
+  "additive",
+  "tw-beschichtungsmoertel",
+  "sonstiges",
 ];
 
-/** produktgruppe → Produktart (Standardfall). Heterogene Gruppen
- *  (schnellbeton, systeme) sowie Katzenstreu (premium/standard) sind bewusst
- *  NICHT gelistet — die werden über ID-Overrides bzw. gar nicht abgebildet. */
-const GRUPPE_ZU_PRODUKTART: Record<string, Produktart> = {
-  hartstoffeinstreuung: "hartstoffe-din1100",
-  hartstoffestriche: "industrieboden-trockenmoertel",
-  schnellestrich: "schnellestrich-bindemittel",
-  selbstverlaufend: "selbstverlaufende-industrieboeden",
-  geschliffen: "mineralische-sichtestriche",
-  geglaettet: "mineralische-sichtestriche",
-  truazzo: "mineralische-sichtestriche",
-  "untergrund-haftbruecken": "haftbruecke-grundierung",
-  nachbehandlung: "nachbehandlung-curing",
-  impraegnierung: "impraegnierung-einpflege",
-  "kunstharz-hartstoffe": "durop",
-  reparaturmoertel: "rapid-set",
-  additive: "rapid-set",
-  verguss: "spezialmoertel",
-  spritzmoertel: "spezialmoertel",
-  pflasterfugen: "spezialmoertel",
-  trockenspritz: "microtop",
-  nassspritz: "microtop",
-  "beschichtung-schutz": "microtop",
-};
-
-/** Pro-Produkt-Overrides für heterogene Gruppen. KOROCRETE + Rapid Set
- *  Schnellbeton bilden zusammen die Produktart „Schnellbetonsysteme". */
+/** Pro-Produkt-Produktart, 1:1 aus der Notion-View. */
 const ID_ZU_PRODUKTART: Record<string, Produktart> = {
-  korocrete: "schnellbetonsysteme",
-  "rapid-set-schnellbeton": "schnellbetonsysteme",
-  koroclean: "impraegnierung-einpflege",
+  // Hartstoff (DIN 1100)
+  "korodur-0-4": "hartstoff-din1100",
+  "korodur-vs-0-5": "hartstoff-din1100",
+  "korodur-wh-spezial": "hartstoff-din1100",
+  "korodur-wh-metallisch": "hartstoff-din1100",
+  "korodur-diamantbeton": "hartstoff-din1100",
+  "korodur-robust": "hartstoff-din1100",
+  // Hartstoffeinstreuung
+  "neodur-he-3": "hartstoffeinstreuung",
+  "neodur-he-3-green": "hartstoffeinstreuung",
+  "neodur-he-2": "hartstoffeinstreuung",
+  // Hartstoffschicht
+  "neodur-he-65": "hartstoffschicht",
+  "neodur-he-65-plus": "hartstoffschicht",
+  "neodur-he-40": "hartstoffschicht",
+  "neodur-he-60-rapid": "hartstoffschicht",
+  // Estrich-Bindemittel
+  "korodur-fscem": "estrich-bindemittel",
+  // Schnellestrich
+  "korodur-fscem-screed": "schnellestrich",
+  "neodur-level": "schnellestrich",
+  // Bodenausgleichsmasse
+  "neodur-level-au": "bodenausgleichsmasse",
+  "rapid-set-levelflor": "bodenausgleichsmasse",
+  // Konstruktiver Schnellbeton
+  "korocrete": "konstruktiver-schnellbeton",
+  "rapid-set-schnellbeton": "konstruktiver-schnellbeton",
+  // Sichtestrich
+  "tru-self-leveling": "sichtestrich",
+  "tru-pc": "sichtestrich",
+  "tru-sp": "sichtestrich",
+  "kcf": "sichtestrich",
+  "granidur": "sichtestrich",
+  "granidur-bianco-nero": "sichtestrich",
+  // Reparaturmörtel
+  "rapid-set-cement-all": "reparaturmoertel",
+  "rapid-set-mortar-mix": "reparaturmoertel",
+  "rapid-set-mortar-mix-dur": "reparaturmoertel",
+  "rapid-set-concrete-mix": "reparaturmoertel",
+  "dot-europe-concrete-mix": "reparaturmoertel",
+  "asphalt-repair-mix": "reparaturmoertel",
+  // Spritzmörtel
+  "neodur-msm-3": "spritzmoertel",
+  // Spritzbeton
+  "neodur-msm-5": "spritzbeton",
+  "neodur-msb-8": "spritzbeton",
+  // Vergussmörtel
+  "neodur-vm-1": "vergussmoertel",
+  "neodur-svm-03": "vergussmoertel",
+  "neodur-svm-4": "vergussmoertel",
+  // Vergussbeton
+  "neodur-vm-5": "vergussbeton",
+  "neodur-vm-basic": "vergussbeton",
+  // Pflasterfugenmörtel
+  "neodur-pfm-1k-easyfix": "pflasterfugenmoertel",
+  "neodur-pfm-ze": "pflasterfugenmoertel",
+  // Haftbrücken & Grundierungen
+  "korodur-hb-5": "haftbruecken-grundierungen",
+  "korodur-hb-5-rapid": "haftbruecken-grundierungen",
+  "korodur-pc": "haftbruecken-grundierungen",
+  "korodur-txpk": "haftbruecken-grundierungen",
+  "korodur-uniprimer": "haftbruecken-grundierungen",
+  // Oberflächenvergütung (Nachbehandlung/Curing + Imprägnierung in Notion)
+  "korocure": "oberflaechenverguetung",
+  "koromineral-cure": "oberflaechenverguetung",
+  "korotex": "oberflaechenverguetung",
+  "korodur-easyfinish": "oberflaechenverguetung",
+  "korodur-nanofinish": "oberflaechenverguetung",
+  "koromineral": "oberflaechenverguetung",
+  "koromineral-li": "oberflaechenverguetung",
+  "koroclean": "oberflaechenverguetung",
+  "microtop-tw-mineral": "oberflaechenverguetung",
+  // TW-Beschichtungsmörtel
+  "microtop-tw-02": "tw-beschichtungsmoertel",
+  "microtop-tw-bm": "tw-beschichtungsmoertel",
+  "microtop-tw-vsm": "tw-beschichtungsmoertel",
+  "microtop-tw-3": "tw-beschichtungsmoertel",
+  "microtop-tw-5": "tw-beschichtungsmoertel",
+  "microtop-tw-8": "tw-beschichtungsmoertel",
+  "microtop-tw-nsm": "tw-beschichtungsmoertel",
+  // Sonstiges
+  "korodur-durop": "sonstiges",
 };
 
-/** Produktart eines Produkts. ID-Override schlägt Gruppen-Ableitung. Produkte
- *  ohne Katalog-Produktart (Silosystem, KORODUR-KOROTAN-System, Katzenstreu)
- *  liefern undefined. */
-export function produktartVonProdukt(p: {
-  id: string;
-  produktgruppe?: string;
-}): Produktart | undefined {
-  if (ID_ZU_PRODUKTART[p.id]) return ID_ZU_PRODUKTART[p.id];
-  if (!p.produktgruppe) return undefined;
-  return GRUPPE_ZU_PRODUKTART[p.produktgruppe];
+/** Produktart eines Produkts (Notion-View). Produkte ohne Eintrag (Katzenstreu,
+ *  Silosystem, KOROTAN-System, Concrete Pharmacy, Lasur) → undefined → „Weitere". */
+export function produktartVonProdukt(p: { id: string }): Produktart | undefined {
+  return ID_ZU_PRODUKTART[p.id];
 }
