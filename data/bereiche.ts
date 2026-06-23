@@ -41,6 +41,9 @@ export const bereiche: Bereich[] = [
       // #306/#308: KOROCRETE (konstruktiver Schnellbeton) ist seit dem
       // Zwei-Achsen-Umbau Primär-Bereich Industrieboden (+ Zweit-Infrastruktur).
       "schnellbeton",
+      // Notion-Reconciliation (2026-06-23): Rapid-Set-Reparaturmörtel (CEMENT
+      // ALL, MORTAR MIX, CONCRETE MIX) erscheinen zusätzlich im Industrieboden.
+      "reparaturmoertel",
       "untergrund-haftbruecken",
       "nachbehandlung",
       "impraegnierung",
@@ -90,7 +93,9 @@ export const bereiche: Bereich[] = [
     // (SVM) sind in die Betonsanierung gewandert.
     slug: "spezialmoertel",
     bild: "/images/bereiche/spezialbaustoffe.webp",
-    produktgruppen: ["verguss", "pflasterfugen"],
+    // Notion-Reconciliation (2026-06-23): MSM/MSB (spritzmoertel) erscheinen
+    // zusätzlich im Spezialmörtel-Bereich.
+    produktgruppen: ["verguss", "spritzmoertel", "pflasterfugen"],
   },
   { slug: "3d-concrete-printing", bild: "/images/bereiche/3d-concrete-printing.webp" },
   {
