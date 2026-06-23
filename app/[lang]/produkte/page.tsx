@@ -68,8 +68,9 @@ export default async function ProduktePage({
     bereicheMitProduktart.has(s)
   ).map((slug) => ({
     slug,
-    // MICROTOP im Filter nur als Marke (ohne „TW-Behältersanierung"-Zusatz, Steffi).
-    label: slug === "microtop" ? "MICROTOP" : bt[`${slug}_name`] ?? slug,
+    // Bereich „microtop" als Use-Case „TW-Behältersanierung" labeln (Steffi):
+    // der Bereich umfasst auch Nicht-MICROTOP-Produkte für Trinkwasser-Sanierung.
+    label: slug === "microtop" ? bt.microtop_menu : bt[`${slug}_name`] ?? slug,
   }));
 
   // Achse A „Portfolio" (#306/#307): Gruppierung nach Katalog-Produktart in
