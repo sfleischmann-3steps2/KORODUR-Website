@@ -1,45 +1,100 @@
-// Projektart (Neubau/Sanierung) auf Produktebene — derive-at-build (#240, löst #83).
+// Projektart (Neubau/Sanierung) auf Produktebene (#240, löst #83).
 //
-// Das Repo trägt Projektart nicht als statisches Feld am Produkt, sondern leitet
-// es zur Build-Zeit aus den Referenzen ab: welche Referenzen setzen das Produkt
-// (oder eine seiner Varianten) ein → `projektartBucket(projekttyp)`. Für die
-// referenzlosen Produkte und die 3 Referenz↔Notion-Konflikte greift eine
-// Override-Tabelle (Quelle: Notion DB1 `Neubau/Sanierung`, Stand Crosswalk
-// 2026-06-18). Unbekannt → beide (Produkt wird in keinem Bereich versteckt).
+// SoT seit 2026-06-23: die **Notion-Produktdatenbank-View** „Kern Produktdaten"
+// (Property „Neubau/Sanierung"), die Technik im Termin produktweise durchgegangen
+// und committet hat. Sie ist der offizielle aktuelle Stand und löst das frühere
+// Leistungskatalog-Dokument ab (Steffi 2026-06-23: „Notion gewinnt eindeutig").
+// Marginale Abweichungen zum Dokument sind gewollt — z. B. die Rapid-Set-
+// Reparaturmörtel-Familie + LevelFlor + MSM/MSB = jetzt Neubau UND Sanierung,
+// SVM 03/04 + VM 5 = nur Neubau, KOROCURE/WH-Spezial/Diamantbeton = beides.
+//
+// Für Produkte, die NICHT in der View stehen (Lasur, Katzenstreu, Silosystem,
+// Concrete Pharmacy …) gilt: Override > Referenz-Ableitung > beide (nichts
+// wird versteckt).
 //
 // Reihenfolge: Override > Referenz-Ableitung > beide.
-//
-// Overrides regenerieren (nach Referenz- oder Notion-Änderungen):
-//   npx tsx scripts/derive-produkt-projektart.ts
-//   python3 scripts/crosswalk-projektart-notion.py   # → projektart-overrides.json
-// Werte aus docs/reference/produktart-klassifizierung/projektart-overrides.json.
 import { referenzen } from "./referenzen";
 import { produkte } from "./produkte";
 import { projektartBucket, type Projektart } from "./einsatzbereichMapping";
 
-/** Referenzlose Produkte + Konflikte (Referenz ∪ Notion). Quelle: Notion DB1. */
+const N: Projektart[] = ["neubau"];
+const S: Projektart[] = ["sanierung"];
+const NS: Projektart[] = ["neubau", "sanierung"];
+
+/** Autoritative Projektart-Zuordnung aus der Notion-View (1:1). */
 export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
-  "granidur": ["neubau", "sanierung"],
-  "korodur-diamantbeton": ["neubau", "sanierung"],
-  "korodur-durop": ["neubau", "sanierung"], // Technik-bestätigt 2026-06-18: primär Sanierung, kann auch Neubau (sonst aus reinen Sanierungs-Referenzen abgeleitet → Neubau versteckt)
-  "korodur-easyfinish": ["neubau"],
-  "korodur-fscem": ["neubau", "sanierung"],
-  "korodur-fscem-screed": ["neubau", "sanierung"],
-  "korodur-nanofinish": ["neubau"],
-  "korodur-robust": ["neubau", "sanierung"],
-  "korodur-uniprimer": ["neubau", "sanierung"],
-  "korodur-wh-metallisch": ["neubau", "sanierung"],
-  "korodur-wh-spezial": ["neubau", "sanierung"],
-  "koromineral-lasur": ["neubau", "sanierung"],
-  "microtop-tw-vsm": ["sanierung"],
-  "neodur-he-2": ["neubau"],
-  "neodur-he-3-green": ["neubau"],
-  "neodur-he-40": ["neubau", "sanierung"],
-  "neodur-level-au": ["neubau"],
-  "neodur-msm-3": ["neubau", "sanierung"],
-  "neodur-pfm-1k-easyfix": ["neubau", "sanierung"],
-  "rapid-set-mortar-mix": ["neubau", "sanierung"], // Technik-bestätigt 2026-06-18: primär Sanierung, kann auch Neubau
-  "tru-sp": ["neubau"],
+  // --- Notion: Neubau UND Sanierung ---
+  "korodur-0-4": NS,
+  "korodur-vs-0-5": NS,
+  "korodur-wh-spezial": NS,
+  "korodur-wh-metallisch": NS,
+  "korodur-diamantbeton": NS,
+  "korodur-robust": NS,
+  "neodur-he-65": NS,
+  "neodur-he-40": NS,
+  "korodur-fscem": NS,
+  "korodur-fscem-screed": NS,
+  "tru-self-leveling": NS,
+  "tru-pc": NS,
+  "tru-sp": NS,
+  "korocure": NS,
+  "koromineral-cure": NS,
+  "korotex": NS,
+  "korodur-easyfinish": NS,
+  "korodur-nanofinish": NS,
+  "koromineral": NS,
+  "koromineral-li": NS,
+  "koroclean": NS,
+  "korodur-hb-5-rapid": NS,
+  "korodur-pc": NS,
+  "korodur-txpk": NS,
+  "korocrete": NS,
+  "rapid-set-schnellbeton": NS,
+  "rapid-set-cement-all": NS,
+  "rapid-set-mortar-mix": NS,
+  "rapid-set-mortar-mix-dur": NS,
+  "rapid-set-concrete-mix": NS,
+  "dot-europe-concrete-mix": NS,
+  "rapid-set-levelflor": NS,
+  "neodur-vm-basic": NS,
+  "neodur-msm-3": NS,
+  "neodur-msm-5": NS,
+  "neodur-msb-8": NS,
+  "neodur-pfm-1k-easyfix": NS,
+  "neodur-pfm-ze": NS,
+
+  // --- Notion: nur Neubau ---
+  "neodur-he-3": N,
+  "neodur-he-3-green": N,
+  "neodur-he-2": N,
+  "granidur": N,
+  "granidur-bianco-nero": N,
+  "kcf": N, // KCF 05/08
+  "neodur-vm-1": N, // VM 1 / VM 3 / VB 8
+  "neodur-vm-5": N,
+  "neodur-svm-03": N,
+  "neodur-svm-4": N, // SVM 04
+
+  // --- Notion: nur Sanierung ---
+  "neodur-he-60-rapid": S,
+  "neodur-he-65-plus": S,
+  "neodur-level": S,
+  "neodur-level-au": S,
+  "korodur-hb-5": S,
+  "korodur-uniprimer": S,
+  "korodur-durop": S,
+  "asphalt-repair-mix": S,
+  "microtop-tw-02": S,
+  "microtop-tw-bm": S,
+  "microtop-tw-vsm": S,
+  "microtop-tw-3": S,
+  "microtop-tw-5": S,
+  "microtop-tw-8": S,
+  "microtop-tw-nsm": S,
+  "microtop-tw-mineral": S,
+
+  // --- Nicht in der Notion-View: bestehende Einordnung ---
+  "koromineral-lasur": NS,
 };
 
 // Build-Zeit-Ableitung: Name→id-Index (inkl. Varianten), dann Buckets je Produkt.
