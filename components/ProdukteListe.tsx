@@ -57,6 +57,7 @@ export default function ProdukteListe({
   produktartAlleLabel,
   bereichLabel,
   produktartLabel,
+  filterReset,
 }: {
   gruppen: BereichsGruppe[];
   bereichOptionen: { slug: string; label: string }[];
@@ -69,6 +70,7 @@ export default function ProdukteListe({
   produktartAlleLabel: string;
   bereichLabel: string;
   produktartLabel: string;
+  filterReset: string;
 }) {
   const [query, setQuery] = useState("");
   const [bereich, setBereich] = useState(""); // "" = alle Bereiche
@@ -265,7 +267,11 @@ export default function ProdukteListe({
               )}
             </div>
 
-            {filterAktiv && (
+          </div>
+
+          {/* „Filter zurücksetzen" direkt unter den Filtern (Steffi): nur wenn aktiv. */}
+          {filterAktiv && (
+            <div className="mt-3">
               <button
                 type="button"
                 onClick={() => {
@@ -276,10 +282,10 @@ export default function ProdukteListe({
                 className="text-cyan-text text-[14px] hover:underline"
                 style={{ fontWeight: 700 }}
               >
-                {sucheReset}
+                {filterReset}
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 

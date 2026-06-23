@@ -113,6 +113,7 @@
     "filter_produktart_all": "All product types",
     "filter_bereich_label": "Area",
     "filter_produktart_label": "Product type",
+    "filter_reset": "Reset filters",
     "produktart_hartstoff-din1100": "Hardener (DIN 1100)",
     "produktart_hartstoffeinstreuung": "Hardener Topping (Dry-Shake)",
     "produktart_hartstoffschicht": "Hardener Screed",

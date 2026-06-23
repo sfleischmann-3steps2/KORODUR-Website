@@ -113,6 +113,7 @@
     "filter_produktart_all": "Wszystkie rodzaje produktów",
     "filter_bereich_label": "Obszar",
     "filter_produktart_label": "Rodzaj produktu",
+    "filter_reset": "Zresetuj filtry",
     "produktart_hartstoff-din1100": "Utwardzacz (DIN 1100)",
     "produktart_hartstoffeinstreuung": "Posypka utwardzająca",
     "produktart_hartstoffschicht": "Jastrych utwardzany",

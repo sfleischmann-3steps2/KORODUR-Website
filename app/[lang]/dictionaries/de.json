@@ -113,6 +113,7 @@
     "filter_produktart_all": "Alle Produktarten",
     "filter_bereich_label": "Bereich",
     "filter_produktart_label": "Produktart",
+    "filter_reset": "Filter zurücksetzen",
     "produktart_hartstoff-din1100": "Hartstoff (DIN 1100)",
     "produktart_hartstoffeinstreuung": "Hartstoffeinstreuung",
     "produktart_hartstoffschicht": "Hartstoffschicht",

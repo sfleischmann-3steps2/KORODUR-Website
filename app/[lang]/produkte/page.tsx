@@ -60,14 +60,17 @@ export default async function ProduktePage({
     "infrastruktur",
     "microtop",
     "spezialmoertel",
-    "sichtestrich",
   ];
   const bereicheMitProduktart = new Set(
     localizedProdukte.flatMap((p) => (produktartVonProdukt(p) ? bereicheVon(p) : []))
   );
   const bereichOptionen = BEREICH_FILTER_ORDER.filter((s) =>
     bereicheMitProduktart.has(s)
-  ).map((slug) => ({ slug, label: bt[`${slug}_name`] ?? slug }));
+  ).map((slug) => ({
+    slug,
+    // MICROTOP im Filter nur als Marke (ohne „TW-Behältersanierung"-Zusatz, Steffi).
+    label: slug === "microtop" ? "MICROTOP" : bt[`${slug}_name`] ?? slug,
+  }));
 
   // Achse A „Portfolio" (#306/#307): Gruppierung nach Katalog-Produktart in
   // Lieferkatalog-Reihenfolge. Anker-Slug = Produktart-Wert (Deep-Links aus dem
@@ -128,6 +131,7 @@ export default async function ProduktePage({
         produktartAlleLabel={paTexte.filter_produktart_all ?? "Alle Produktarten"}
         bereichLabel={paTexte.filter_bereich_label ?? "Bereich"}
         produktartLabel={paTexte.filter_produktart_label ?? "Produktart"}
+        filterReset={paTexte.filter_reset ?? "Filter zurücksetzen"}
       />
     </>
   );
