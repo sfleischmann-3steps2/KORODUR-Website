@@ -28,10 +28,18 @@ export type BereichsGruppe = {
   rollen?: RollenGruppe[];
 };
 
-/** Alle Suchterme müssen in Name/Beschreibung/Norm vorkommen (UND-Suche). */
+/** Trennzeichen-insensitiv: "HE3", "he-3" und "HE 3" finden dasselbe
+ *  (analog lib/suchindex.ts / Homepage-Suche). Entfernt Leerraum, Binde-/
+ *  Schrägstriche und Punkte/Kommas. */
+function normalisiere(s: string): string {
+  return s.toLowerCase().replace(/[\s\-/.,]+/g, "");
+}
+
+/** Alle Suchterme müssen in Name/Beschreibung/Norm vorkommen (UND-Suche),
+ *  trennzeichen-insensitiv normalisiert. */
 function matcht(p: ProduktKarte, terme: string[]): boolean {
   if (terme.length === 0) return true;
-  const hay = `${p.name} ${p.kurzbeschreibung} ${p.normen.join(" ")}`.toLowerCase();
+  const hay = normalisiere(`${p.name} ${p.kurzbeschreibung} ${p.normen.join(" ")}`);
   return terme.every((t) => hay.includes(t));
 }
 
@@ -51,7 +59,7 @@ export default function ProdukteListe({
   sucheReset: string;
 }) {
   const [query, setQuery] = useState("");
-  const terme = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const terme = query.trim().toLowerCase().split(/\s+/).map(normalisiere).filter(Boolean);
   const sucht = terme.length > 0;
 
   const gefiltert = useMemo(
