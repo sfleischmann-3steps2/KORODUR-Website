@@ -28,6 +28,24 @@ export default async function KontaktPage({ params }: { params: Params }) {
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
 
+  // Internationale Fachberater (#332): auf Nicht-DE-Sprachen der Haupt-Block,
+  // auf der DE-Seite zusätzlich am Ende (deutschsprachiges Ausland AT/CH).
+  const internationalBlock = (
+    <>
+      <h2 className="text-navy mt-0 mb-2" style={{ fontSize: 22, fontWeight: 900 }}>
+        {dict.kontakt.international_title}
+      </h2>
+      <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
+        {dict.kontakt.international_text}
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {FACHBERATER_INTERNATIONAL.map((b) => (
+          <BeraterCard key={`${b.name}-${b.rolle}`} berater={b} />
+        ))}
+      </div>
+    </>
+  );
+
   return (
     <>
       <section style={{ padding: "48px 32px 32px" }}>
@@ -63,20 +81,8 @@ export default async function KontaktPage({ params }: { params: Params }) {
               />
             </>
           ) : (
-            <>
-              {/* Andere Sprachen: internationale Ansprechpartner ohne PLZ-Filter (Steffi #118). */}
-              <h2 className="text-navy mt-0 mb-2" style={{ fontSize: 22, fontWeight: 900 }}>
-                {dict.kontakt.international_title}
-              </h2>
-              <p className="text-navy/70 text-[15px] mt-0 mb-5 leading-[1.6]">
-                {dict.kontakt.international_text}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {FACHBERATER_INTERNATIONAL.map((b) => (
-                  <BeraterCard key={`${b.name}-${b.rolle}`} berater={b} />
-                ))}
-              </div>
-            </>
+            /* Andere Sprachen: internationale Ansprechpartner ohne PLZ-Filter (Steffi #118). */
+            internationalBlock
           )}
         </div>
       </section>
@@ -143,6 +149,16 @@ export default async function KontaktPage({ params }: { params: Params }) {
           </div>
         </div>
       </section>
+
+      {/* DE: internationale Fachberater am Ende — deutschsprachiges Ausland
+          (Österreich, Schweiz) wird auf der deutschen Seite mitbedient (#332). */}
+      {lang === "de" && (
+        <section style={{ padding: "8px 32px 24px" }}>
+          <div className="mx-auto" style={{ maxWidth: 860 }}>
+            {internationalBlock}
+          </div>
+        </section>
+      )}
 
       {/* Kontaktformular nach unten (Steffi #90) */}
       <section style={{ padding: "8px 32px 56px" }}>
