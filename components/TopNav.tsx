@@ -95,6 +95,9 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   // Betonsanierung auf (Steffi 2026-06-22) → kein Spezialmörtel im Sanierung-Menü.
   const menus: Record<string, MegaMenu> = {
     portfolio: {
+      // Reihenfolge (Steffi 2026-06-23): Industrieböden (Sichtestrich als letzte
+      // Produktart, Bereich aufgelöst #331) → Begleitprodukte → Betonsanierung &
+      // Spezialmörtel.
       clusters: [
         {
           title: dict.nav.mm_cluster_industrieboeden,
@@ -106,12 +109,16 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             { label: pa["produktart_schnellestrich"], href: paHref("schnellestrich") },
             { label: pa["produktart_bodenausgleichsmasse"], href: paHref("bodenausgleichsmasse") },
             { label: pa["produktart_schnellbetonsysteme"], href: paHref("schnellbetonsysteme") },
+            { label: pa["produktart_sichtestrich"], href: paHref("sichtestrich") },
           ],
         },
         {
-          title: dict.nav.mm_cluster_sichtestriche,
+          title: dict.nav.mm_cluster_begleit,
           items: [
-            { label: pa["produktart_sichtestrich"], href: paHref("sichtestrich") },
+            { label: pa["produktart_haftbruecken-grundierungen"], href: paHref("haftbruecken-grundierungen") },
+            { label: pa["produktart_nachbehandlung"], href: paHref("nachbehandlung") },
+            { label: pa["produktart_impraegnierung-einpflege"], href: paHref("impraegnierung-einpflege") },
+            { label: pa["produktart_sonstiges"], href: paHref("sonstiges") },
           ],
         },
         {
@@ -126,15 +133,6 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             { label: pa["produktart_tw-beschichtungsmoertel"], href: paHref("tw-beschichtungsmoertel") },
           ],
         },
-        {
-          title: dict.nav.mm_cluster_begleit,
-          items: [
-            { label: pa["produktart_haftbruecken-grundierungen"], href: paHref("haftbruecken-grundierungen") },
-            { label: pa["produktart_nachbehandlung"], href: paHref("nachbehandlung") },
-            { label: pa["produktart_impraegnierung-einpflege"], href: paHref("impraegnierung-einpflege") },
-            { label: pa["produktart_sonstiges"], href: paHref("sonstiges") },
-          ],
-        },
       ],
       footer: [{ label: dict.bereiche.alle_produkte_name, href: `/${lang}/produkte/` }],
     },
@@ -144,7 +142,6 @@ export default function TopNav({ lang, dict }: TopNavProps) {
     neubau: {
       items: [
         { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/neubau/`, sub: bt.industrieboden_teaser },
-        { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/neubau/`, sub: bt.sichtestrich_teaser },
         { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
       ],
     },
@@ -153,7 +150,6 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       // TW-Behältersanierung · Betonsanierung. KEIN Spezialmörtel (→ Betonsanierung).
       items: [
         { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/sanierung/`, sub: bt.industrieboden_teaser },
-        { label: bt.sichtestrich_name, href: `/${lang}/bereiche/sichtestrich/sanierung/`, sub: bt.sichtestrich_teaser },
         { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
         { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
         { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
@@ -179,7 +175,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   // Panel-Layout: unter dem Trigger verankert, Kontakt (rechts außen)
   // rechtsbündig → kurze Mauswege (Steffi, 2026-06-13).
   const layout: Record<string, { w: string; cols: string; align: "left" | "right" }> = {
-    portfolio: { w: "w-[min(880px,calc(100vw-32px))]", cols: "grid-cols-2 lg:grid-cols-4", align: "left" },
+    portfolio: { w: "w-[min(720px,calc(100vw-32px))]", cols: "grid-cols-2 lg:grid-cols-3", align: "left" },
     neubau: { w: "w-[340px]", cols: "grid-cols-1", align: "left" },
     sanierung: { w: "w-[360px]", cols: "grid-cols-1", align: "left" },
     kontakt: { w: "w-[300px]", cols: "grid-cols-1", align: "right" },

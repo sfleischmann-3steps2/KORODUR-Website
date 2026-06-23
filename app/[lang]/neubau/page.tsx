@@ -43,7 +43,6 @@ export default async function NeubauHubPage({ params }: { params: Params }) {
 
   const cards = [
     { slug: "industrieboden", preview: false },
-    { slug: "sichtestrich", preview: false },
     { slug: "spezialmoertel", preview: false },
     // #257: 3D-Betondruck unter Neubau sichtbar einsortiert. Bereich hat
     // (noch) keine Produkte — Content/Produkte folgen von der Technik (W2),
