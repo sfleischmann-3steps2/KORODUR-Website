@@ -1,11 +1,11 @@
 "use client";
 
-// Interaktives /produkte-Listing (#184): On-Page-Suche + Produktart-Subnav.
-// Browse-Modus (leere Suche): Bereichs-Anker-Chips + Sektionen, Industrieboden
-// mit Produktart-Subnav (#93-Buckets). Such-Modus: live gefilterte Sektionen,
-// leere Gruppen/Buckets ausgeblendet, "keine Treffer"-Hinweis.
+// Interaktives /produkte-Listing (#184/#307): zweistufiger Filter (Bereich →
+// Produktart) + On-Page-Suche. Stufe 1 „Bereich" grenzt das Portfolio ein,
+// Stufe 2 „Produktart" zoomt auf eine Lieferprogramm-Gruppe. Suche filtert
+// zusätzlich live (trennzeichen-insensitiv). Leere Gruppen werden ausgeblendet.
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { withBasePath } from "../lib/basePath";
@@ -18,6 +18,8 @@ export type ProduktKarte = {
   schichtdicke?: string;
   normen: string[];
   bild?: string;
+  /** Bereiche (primär + zusatz), in denen das Produkt geführt wird (#307-Filter). */
+  bereiche: string[];
 };
 export type RollenGruppe = { key: string; label: string; items: ProduktKarte[] };
 export type BereichsGruppe = {
@@ -45,40 +47,79 @@ function matcht(p: ProduktKarte, terme: string[]): boolean {
 
 export default function ProdukteListe({
   gruppen,
+  bereichOptionen,
   lang,
   layerThicknessLabel,
   suchePlaceholder,
   sucheKeine,
   sucheReset,
+  bereichAlleLabel,
+  produktartAlleLabel,
+  bereichLabel,
+  produktartLabel,
 }: {
   gruppen: BereichsGruppe[];
+  bereichOptionen: { slug: string; label: string }[];
   lang: string;
   layerThicknessLabel: string;
   suchePlaceholder: string;
   sucheKeine: string;
   sucheReset: string;
+  bereichAlleLabel: string;
+  produktartAlleLabel: string;
+  bereichLabel: string;
+  produktartLabel: string;
 }) {
   const [query, setQuery] = useState("");
+  const [bereich, setBereich] = useState(""); // "" = alle Bereiche
+  const [produktart, setProduktart] = useState(""); // "" = alle Produktarten
   const terme = query.trim().toLowerCase().split(/\s+/).map(normalisiere).filter(Boolean);
-  const sucht = terme.length > 0;
 
-  const gefiltert = useMemo(
-    () =>
-      gruppen
-        .map((g) => ({
-          ...g,
-          items: g.items.filter((p) => matcht(p, terme)),
-          rollen: g.rollen
-            ?.map((r) => ({ ...r, items: r.items.filter((p) => matcht(p, terme)) }))
-            .filter((r) => r.items.length > 0),
-        }))
-        .filter((g) => g.items.length > 0),
-    // terme wird aus query abgeleitet; query als Dep genügt
+  // Deep-Link aus dem Portfolio-Mega-Menü (#309): /produkte/#<produktart> wählt
+  // die passende Produktart in Stufe 2 vor.
+  useEffect(() => {
+    const hash = typeof window !== "undefined" ? window.location.hash.slice(1) : "";
+    if (hash && gruppen.some((g) => g.slug === hash)) setProduktart(hash);
+    // nur beim Mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [gruppen, query],
-  );
+  }, []);
 
-  const treffer = gefiltert.reduce((n, g) => n + g.items.length, 0);
+  // Filter-Pipeline: Suche → Bereich → Produktart. Die Produktart-Optionen
+  // ergeben sich aus dem Ergebnis nach Suche+Bereich (Stufe 2 folgt Stufe 1).
+  const { sichtbar, produktartOptionen, treffer } = useMemo(() => {
+    const nachSuche = gruppen
+      .map((g) => ({ ...g, items: g.items.filter((p) => matcht(p, terme)) }))
+      .filter((g) => g.items.length > 0);
+
+    const nachBereich = bereich
+      ? nachSuche
+          .map((g) => ({ ...g, items: g.items.filter((p) => p.bereiche.includes(bereich)) }))
+          .filter((g) => g.items.length > 0)
+      : nachSuche;
+
+    const optionen = nachBereich.map((g) => ({ slug: g.slug, label: g.label }));
+
+    const final = produktart
+      ? nachBereich.filter((g) => g.slug === produktart)
+      : nachBereich;
+
+    return {
+      sichtbar: final,
+      produktartOptionen: optionen,
+      treffer: final.reduce((n, g) => n + g.items.length, 0),
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gruppen, query, bereich, produktart]);
+
+  // Bereichswechsel setzt die Produktart zurück, wenn sie im neuen Bereich fehlt.
+  const onBereich = (slug: string) => {
+    setBereich(slug);
+    setProduktart("");
+  };
+
+  const selectClass =
+    "appearance-none rounded-full border border-bullet-bg bg-white text-navy text-[15px] outline-none focus:border-cyan cursor-pointer";
+  const selectStyle = { padding: "12px 40px 12px 18px", minHeight: 48 } as const;
 
   const Karte = (produkt: ProduktKarte) => (
     <Link
@@ -150,52 +191,95 @@ export default function ProdukteListe({
     </div>
   );
 
+  const filterAktiv = bereich !== "" || produktart !== "" || query !== "";
+
   return (
     <>
-      {/* Suche + Anker-Navigation */}
+      {/* Zweistufiger Filter + Suche */}
       <section style={{ padding: "0 32px 8px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div className="relative" style={{ maxWidth: 520 }}>
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={suchePlaceholder}
-              aria-label={suchePlaceholder}
-              className="w-full rounded-full border border-bullet-bg bg-white text-navy text-[15px] outline-none focus:border-cyan"
-              style={{ padding: "12px 44px 12px 20px", minHeight: 48 }}
-            />
-            {query && (
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Stufe 1: Bereich */}
+            <div className="relative">
+              <select
+                value={bereich}
+                onChange={(e) => onBereich(e.target.value)}
+                aria-label={bereichLabel}
+                className={selectClass}
+                style={selectStyle}
+              >
+                <option value="">{bereichAlleLabel}</option>
+                {bereichOptionen.map((b) => (
+                  <option key={b.slug} value={b.slug}>
+                    {b.label}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute top-1/2 -translate-y-1/2 right-4 text-navy/40 text-[12px]">
+                ▾
+              </span>
+            </div>
+
+            {/* Stufe 2: Produktart (folgt Stufe 1) */}
+            <div className="relative">
+              <select
+                value={produktart}
+                onChange={(e) => setProduktart(e.target.value)}
+                aria-label={produktartLabel}
+                className={selectClass}
+                style={selectStyle}
+              >
+                <option value="">{produktartAlleLabel}</option>
+                {produktartOptionen.map((p) => (
+                  <option key={p.slug} value={p.slug}>
+                    {p.label}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute top-1/2 -translate-y-1/2 right-4 text-navy/40 text-[12px]">
+                ▾
+              </span>
+            </div>
+
+            {/* Suche */}
+            <div className="relative flex-1" style={{ minWidth: 220, maxWidth: 420 }}>
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={suchePlaceholder}
+                aria-label={suchePlaceholder}
+                className="w-full rounded-full border border-bullet-bg bg-white text-navy text-[15px] outline-none focus:border-cyan"
+                style={{ padding: "12px 44px 12px 20px", minHeight: 48 }}
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  aria-label={sucheReset}
+                  className="absolute top-1/2 -translate-y-1/2 right-3 text-navy/40 hover:text-navy text-[20px] leading-none"
+                  style={{ width: 32, height: 32 }}
+                >
+                  ×
+                </button>
+              )}
+            </div>
+
+            {filterAktiv && (
               <button
                 type="button"
-                onClick={() => setQuery("")}
-                aria-label={sucheReset}
-                className="absolute top-1/2 -translate-y-1/2 right-3 text-navy/40 hover:text-navy text-[20px] leading-none"
-                style={{ width: 32, height: 32 }}
+                onClick={() => {
+                  setBereich("");
+                  setProduktart("");
+                  setQuery("");
+                }}
+                className="text-cyan-text text-[14px] hover:underline"
+                style={{ fontWeight: 700 }}
               >
-                ×
+                {sucheReset}
               </button>
             )}
           </div>
-
-          {/* Bereichs-Anker-Chips (nur im Browse-Modus) */}
-          {!sucht && (
-            <div className="flex flex-wrap gap-2 mt-6">
-              {gefiltert.map((group) => (
-                <a
-                  key={group.slug}
-                  href={`#${group.slug}`}
-                  className="inline-flex items-center rounded-full border border-bullet-bg bg-white text-navy text-[14px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan-text"
-                  style={{ padding: "10px 18px", fontWeight: 700, minHeight: 44 }}
-                >
-                  {group.label}
-                  <span className="ml-2 text-navy/40 text-[12px]" style={{ fontWeight: 600 }}>
-                    {group.items.length}
-                  </span>
-                </a>
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
@@ -206,7 +290,7 @@ export default function ProdukteListe({
           </div>
         </section>
       ) : (
-        gefiltert.map((group) => (
+        sichtbar.map((group) => (
           <section
             key={group.slug}
             className="bg-icon-bg scroll-mt-20"
@@ -219,46 +303,28 @@ export default function ProdukteListe({
                 style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}
               >
                 {group.label}
+                <span className="ml-3 text-navy/30 text-[16px]" style={{ fontWeight: 600 }}>
+                  {group.items.length}
+                </span>
               </h2>
 
               {group.rollen && group.rollen.length > 0 ? (
-                <>
-                  {/* Produktart-Subnav-Chips (Browse-Modus, ab 2 Buckets) */}
-                  {!sucht && group.rollen.length > 1 && (
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {group.rollen.map((r) => (
-                        <a
-                          key={r.key}
-                          href={`#${group.slug}-${r.key}`}
-                          className="inline-flex items-center rounded-full border border-bullet-bg bg-white/70 text-navy/80 text-[13px] no-underline transition-colors duration-150 hover:border-cyan hover:text-cyan-text"
-                          style={{ padding: "8px 14px", fontWeight: 700, minHeight: 40 }}
-                        >
-                          {r.label}
-                          <span className="ml-1.5 text-navy/35 text-[12px]" style={{ fontWeight: 600 }}>
-                            {r.items.length}
-                          </span>
-                        </a>
-                      ))}
+                <div className="flex flex-col gap-10">
+                  {group.rollen.map((r) => (
+                    <div key={r.key} id={`${group.slug}-${r.key}`} className="scroll-mt-20">
+                      <h3
+                        className="mb-4 text-navy/70 uppercase"
+                        style={{ fontSize: "clamp(14px, 1.6vw, 17px)", fontWeight: 800, letterSpacing: "0.04em" }}
+                      >
+                        {r.label}
+                        <span className="ml-2 text-navy/30 text-[13px]" style={{ fontWeight: 600 }}>
+                          {r.items.length}
+                        </span>
+                      </h3>
+                      <Grid items={r.items} />
                     </div>
-                  )}
-
-                  <div className="flex flex-col gap-10">
-                    {group.rollen.map((r) => (
-                      <div key={r.key} id={`${group.slug}-${r.key}`} className="scroll-mt-20">
-                        <h3
-                          className="mb-4 text-navy/70 uppercase"
-                          style={{ fontSize: "clamp(14px, 1.6vw, 17px)", fontWeight: 800, letterSpacing: "0.04em" }}
-                        >
-                          {r.label}
-                          <span className="ml-2 text-navy/30 text-[13px]" style={{ fontWeight: 600 }}>
-                            {r.items.length}
-                          </span>
-                        </h3>
-                        <Grid items={r.items} />
-                      </div>
-                    ))}
-                  </div>
-                </>
+                  ))}
+                </div>
               ) : (
                 <Grid items={group.items} />
               )}

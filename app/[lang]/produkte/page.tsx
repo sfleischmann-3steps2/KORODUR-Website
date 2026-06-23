@@ -35,8 +35,11 @@ export default async function ProduktePage({
   const dict = await getDictionary(lang);
   const localizedProdukte = await localizeProdukte(produkte, lang);
   const paTexte = dict.produkte as unknown as Record<string, string>;
+  const bt = dict.bereiche as unknown as Record<string, string>;
 
   type LP = (typeof localizedProdukte)[number];
+  // Bereiche je Produkt (primär + zusatz) für den Bereich-Filter (#307, Stufe 1).
+  const bereicheVon = (p: LP): string[] => [p.bereich, ...(p.zusatzBereiche ?? [])];
   const toKarte = (p: LP): ProduktKarte => ({
     id: p.id,
     name: p.name,
@@ -45,7 +48,26 @@ export default async function ProduktePage({
     schichtdicke: p.schichtdicke,
     normen: p.normen,
     bild: p.bild,
+    bereiche: bereicheVon(p),
   });
+
+  // Zweistufiger Filter (#307): Stufe 1 Bereich → Stufe 2 Produktart. Bereich-
+  // Optionen in kuratierter Reihenfolge, nur Bereiche mit mind. einem Produkt,
+  // das eine Katalog-Produktart trägt (sonst liefe der Produktart-Filter leer).
+  const BEREICH_FILTER_ORDER = [
+    "industrieboden",
+    "rapid-set",
+    "infrastruktur",
+    "microtop",
+    "spezialmoertel",
+    "sichtestrich",
+  ];
+  const bereicheMitProduktart = new Set(
+    localizedProdukte.flatMap((p) => (produktartVonProdukt(p) ? bereicheVon(p) : []))
+  );
+  const bereichOptionen = BEREICH_FILTER_ORDER.filter((s) =>
+    bereicheMitProduktart.has(s)
+  ).map((slug) => ({ slug, label: bt[`${slug}_name`] ?? slug }));
 
   // Achse A „Portfolio" (#306/#307): Gruppierung nach Katalog-Produktart in
   // Lieferkatalog-Reihenfolge. Anker-Slug = Produktart-Wert (Deep-Links aus dem
@@ -96,11 +118,16 @@ export default async function ProduktePage({
 
       <ProdukteListe
         gruppen={gruppen}
+        bereichOptionen={bereichOptionen}
         lang={lang}
         layerThicknessLabel={dict.produkte.layer_thickness}
         suchePlaceholder={dict.produkte.suche_placeholder}
         sucheKeine={dict.produkte.suche_keine}
         sucheReset={dict.produkte.suche_reset}
+        bereichAlleLabel={paTexte.filter_bereich_all ?? "Alle Bereiche"}
+        produktartAlleLabel={paTexte.filter_produktart_all ?? "Alle Produktarten"}
+        bereichLabel={paTexte.filter_bereich_label ?? "Bereich"}
+        produktartLabel={paTexte.filter_produktart_label ?? "Produktart"}
       />
     </>
   );
