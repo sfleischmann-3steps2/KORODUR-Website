@@ -505,39 +505,82 @@ export default async function ReferenzDetailPage({
         </DetailSection>
       )}
 
-      {showSituation && (
-        <DetailSection title={detail.situation_title}>
-          {referenz.ausgangssituation && (
-            <p className="mb-5 mt-0 text-[15px] leading-[1.7] text-navy">{referenz.ausgangssituation}</p>
-          )}
-          <CheckList items={referenz.herausforderungen} />
-        </DetailSection>
-      )}
-
-      <DetailSection title={detail.solution}>
-        <div className={solutionImage ? "grid grid-cols-1 items-start gap-5 md:grid-cols-2" : ""}>
-          <div>
-            <p className="mb-4 mt-0 text-[15px] leading-[1.7] text-navy">{referenz.loesung}</p>
-            {produktDetails[0] && (
-              <Link
-                href={`/${lang}/produkte/${produktDetails[0].id}/`}
-                className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
-              >
-                {detail.produktdetails_ansehen.replace("{produkt}", produktDetails[0].name)}
-              </Link>
+      {/* #298: Ausgangssituation/Herausforderungen (links) + Lösung (rechts) in
+          einer zweispaltigen Karte — bricht die mechanischen Voll-Breite-Balken
+          auf. Ohne Situations-Block bleibt die Lösung wie bisher voll-breit. */}
+      {showSituation ? (
+        <section className={SECTION}>
+          <div className={CONTAINER}>
+            <Card className="gap-0 rounded-lg py-0 shadow-none">
+              <CardContent className="p-5 sm:p-6 md:p-7">
+                <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8">
+                  <div>
+                    <h2 className="m-0 mb-4 text-lg font-black leading-tight text-navy sm:text-xl">
+                      {detail.situation_title}
+                    </h2>
+                    {referenz.ausgangssituation && (
+                      <p className="mb-5 mt-0 text-[15px] leading-[1.7] text-navy">
+                        {referenz.ausgangssituation}
+                      </p>
+                    )}
+                    <CheckList items={referenz.herausforderungen} />
+                  </div>
+                  <div>
+                    <h2 className="m-0 mb-4 text-lg font-black leading-tight text-navy sm:text-xl">
+                      {detail.solution}
+                    </h2>
+                    <p className="mb-4 mt-0 text-[15px] leading-[1.7] text-navy">
+                      {referenz.loesung}
+                    </p>
+                    {produktDetails[0] && (
+                      <Link
+                        href={`/${lang}/produkte/${produktDetails[0].id}/`}
+                        className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
+                      >
+                        {detail.produktdetails_ansehen.replace("{produkt}", produktDetails[0].name)}
+                      </Link>
+                    )}
+                    {solutionImage && (
+                      <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-lg bg-icon-bg">
+                        <DetailImage
+                          src={solutionImage.src}
+                          alt={solutionImage.alt ?? solutionImage.caption ?? detail.einbau_alt}
+                          sizes="(max-width: 820px) 100vw, 50vw"
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      ) : (
+        <DetailSection title={detail.solution}>
+          <div className={solutionImage ? "grid grid-cols-1 items-start gap-5 md:grid-cols-2" : ""}>
+            <div>
+              <p className="mb-4 mt-0 text-[15px] leading-[1.7] text-navy">{referenz.loesung}</p>
+              {produktDetails[0] && (
+                <Link
+                  href={`/${lang}/produkte/${produktDetails[0].id}/`}
+                  className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
+                >
+                  {detail.produktdetails_ansehen.replace("{produkt}", produktDetails[0].name)}
+                </Link>
+              )}
+            </div>
+            {solutionImage && (
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-icon-bg">
+                <DetailImage
+                  src={solutionImage.src}
+                  alt={solutionImage.alt ?? solutionImage.caption ?? detail.einbau_alt}
+                  sizes="(max-width: 820px) 100vw, 50vw"
+                />
+              </div>
             )}
           </div>
-          {solutionImage && (
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-icon-bg">
-              <DetailImage
-                src={solutionImage.src}
-                alt={solutionImage.alt ?? solutionImage.caption ?? detail.einbau_alt}
-                sizes="(max-width: 820px) 100vw, 50vw"
-              />
-            </div>
-          )}
-        </div>
-      </DetailSection>
+        </DetailSection>
+      )}
 
       {installationRows.length > 0 && (
         <DetailSection title={detail.umsetzung_title}>
