@@ -170,7 +170,6 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "24 h",
     belastbarNachZusatz: "begehbar ca. 3 h",
-    aussenbereich: true,
     belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie-treibstoff", "frost-tausalz", "staplerverkehr"],
     systemBegleitprodukte: ["korodur-hb-5-rapid"],
   },
@@ -216,14 +215,13 @@ export const produkte: Produkt[] = [
     druckfestigkeit: "70 N/mm²",
     belastbarkeitsStufe: 5,
     belastbarNach: "7 d",
-    aussenbereich: false,
     belastungenAbgedeckt: ["schwerlast", "verschleiss", "staplerverkehr", "chemie-treibstoff"],
   },
   {
     id: "neodur-he-65-plus",
     bereich: "industrieboden",
+    aussenbereich: true,
     // #306/#308: zusätzlich im Infrastruktur-Bereich (Sanierung).
-    zusatzBereiche: ["infrastruktur"],
     produktgruppe: "hartstoffestriche",
     varianten: [
       { name: "NEODUR HE 65 plus SVS 3", qualitaetsklasse: "CT-C70-F9-A3" },
@@ -268,7 +266,6 @@ export const produkte: Produkt[] = [
     norm: "DIN 18560-7",
     druckfestigkeit: "70 N/mm²",
     belastbarkeitsStufe: 5,
-    aussenbereich: true,
     whgZulassung: true,
     belastbarNach: "7 d", // 7 Tage Wiederbelastbarkeit (Steffi 2026-06-09); kein Schnellprodukt
     belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie-treibstoff", "frost-tausalz", "staplerverkehr", "whg"],
@@ -308,7 +305,6 @@ export const produkte: Produkt[] = [
     druckfestigkeit: "40 N/mm²",
     belastbarkeitsStufe: 5,
     belastbarNach: "7 d",
-    aussenbereich: true,
     belastungenAbgedeckt: ["schwerlast", "verschleiss", "staplerverkehr", "chemie-treibstoff"],
   },
   {
@@ -359,7 +355,6 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 4,
     belastbarNach: "3 d",
     belastbarNachZusatz: "leicht belastbar 24 h",
-    aussenbereich: false,
     belastungenAbgedeckt: ["verschleiss", "staplerverkehr", "optik"],
     systemBegleitprodukte: ["korodur-pc"],
   },
@@ -404,7 +399,6 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 4,
     belastbarNach: "24 h",
     belastbarNachZusatz: "schleifbar bis Hochglanz",
-    aussenbereich: true,
     sichtestrich: true,
     belastungenAbgedeckt: ["optik", "fleckschutz", "hygiene", "publikumsverkehr"],
   },
@@ -414,8 +408,8 @@ export const produkte: Produkt[] = [
     id: "korodur-hb-5-rapid",
     tdsUrl: "/downloads/tds/KORODUR_HB_5_rapid_de.pdf",
     bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     zusatzBereiche: ["infrastruktur"],
+    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "untergrund-haftbruecken",
     name: "KORODUR HB 5 rapid",
     kategorie: "grundierung",
@@ -446,7 +440,6 @@ export const produkte: Produkt[] = [
     tdsUrl: "/downloads/tds/KORODUR_PC_de.pdf",
     bereich: "industrieboden",
     // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
-    zusatzBereiche: ["infrastruktur"],
     produktgruppe: "untergrund-haftbruecken",
     name: "KORODUR PC",
     kategorie: "grundierung",
@@ -475,6 +468,8 @@ export const produkte: Produkt[] = [
   {
     id: "rapid-set-cement-all",
     bereich: "rapid-set",
+    zusatzBereiche: ["industrieboden"],
+    aussenbereich: true,
     produktgruppe: "reparaturmoertel",
     beschreibung: "Rapid Set CEMENT ALL ist ein auf spezieller Zementtechnologie basierender, mineralischer, multifunktionaler Schnellreparaturmörtel aus Hochleistungs-Rapid-Set-Zement und feinkörnigem Sand. Er ist schnell härtend, dauerhaft und schwundneutral; Erstarrungsbeginn nach ca. 15 Minuten, belastbar in ca. 1 Stunde. Nur mit Wasser anmischen, Konstruktionsfestigkeit innerhalb einer Stunde. Optisch vergleichbar mit Portlandzement-Baustoffen und in ähnlicher Weise verarbeitbar.",
     varianten: [
@@ -521,12 +516,13 @@ export const produkte: Produkt[] = [
     druckfestigkeit: "> 62 N/mm²",
     belastbarkeitsStufe: 3,
     belastbarNach: "1 h",
-    aussenbereich: true,
     belastungenAbgedeckt: ["frost-tausalz", "verschleiss", "chemie-aggressiv"],
   },
   {
     id: "rapid-set-mortar-mix",
     bereich: "rapid-set",
+    zusatzBereiche: ["industrieboden"],
+    aussenbereich: true,
     produktgruppe: "reparaturmoertel",
     beschreibung: "Rapid Set MORTAR MIX ist eine Mischung aus Hochleistungs-Rapid-Set-Zement mit abgestuftem Quarzsand. Schnell härtend, dauerhaft und schwundneutral; kann horizontal, vertikal und über Kopf verarbeitet werden. Nur mit Wasser mischen, Konstruktionsfestigkeit innerhalb einer Stunde. Einsetzbar innen und außen, auch in Nassbereichen.",
     name: "Rapid Set MORTAR MIX",
@@ -562,12 +558,13 @@ export const produkte: Produkt[] = [
     druckfestigkeit: "> 50 N/mm²",
     belastbarkeitsStufe: 3,
     belastbarNach: "1 h",
-    aussenbereich: true,
     belastungenAbgedeckt: ["frost-tausalz", "chemie-aggressiv"],
   },
   {
     id: "rapid-set-mortar-mix-dur",
     bereich: "rapid-set",
+    zusatzBereiche: ["industrieboden"],
+    aussenbereich: true,
     produktgruppe: "reparaturmoertel",
     name: "Rapid Set MORTAR MIX DUR",
     kategorie: "schnellzement",
@@ -600,7 +597,6 @@ export const produkte: Produkt[] = [
     druckfestigkeit: "45 N/mm²",
     belastbarkeitsStufe: 5,
     belastbarNach: "1 h",
-    aussenbereich: true,
     belastungenAbgedeckt: ["schwerlast", "verschleiss", "staplerverkehr", "frost-tausalz"],
   },
   {
@@ -608,6 +604,7 @@ export const produkte: Produkt[] = [
     // #306/#308: Betonsanierung (primär) + zusätzlich Infrastruktur.
     bereich: "rapid-set",
     zusatzBereiche: ["infrastruktur"],
+    aussenbereich: true,
     produktgruppe: "reparaturmoertel",
     name: "ASPHALT REPAIR MIX",
     kategorie: "schnellzement",
@@ -652,12 +649,13 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 3,
     belastbarNach: "30 min",
     belastbarNachZusatz: "Verkehrsfreigabe",
-    aussenbereich: true,
     belastungenAbgedeckt: ["frost-tausalz", "schwerlast", "chemie-aggressiv"],
   },
   {
     id: "dot-europe-concrete-mix",
     bereich: "rapid-set",
+    zusatzBereiche: ["infrastruktur"],
+    aussenbereich: true,
     produktgruppe: "reparaturmoertel",
     beschreibung: "DOT Europe CONCRETE MIX ist ein leistungsstarker, polymermodifizierter, schnellabbindender, faserverstärkter Schnellbeton für innen und außen. Er ist gemäß DIN EN 1504-3 sowohl für statisch als auch nicht statisch relevante Instandsetzungen einsetzbar, ideal wo schnelle Festigkeiten, Dauerhaftigkeit und schwindarmes Aushärten gefordert sind. Verarbeitbar in Stärken von 50–600 mm, bereits nach 1 Stunde belastbar; auch in Nassbereichen einsetzbar.",
     name: "DOT Europe CONCRETE MIX",
@@ -696,7 +694,6 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "60 min",
     belastbarNachZusatz: "nach Erstarrungsende",
-    aussenbereich: true,
     belastungenAbgedeckt: ["frost-tausalz", "schwerlast", "verschleiss"],
   },
   {
@@ -740,13 +737,14 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 4,
     belastbarNach: "wenige h",
     belastbarNachZusatz: "rezepturabhängig",
-    aussenbereich: true,
     systemProdukt: true,
     belastungenAbgedeckt: ["schwerlast", "frost-tausalz"],
   },
   {
     id: "rapid-set-schnellbeton",
-    bereich: "rapid-set",
+    bereich: "industrieboden",
+    zusatzBereiche: ["infrastruktur"],
+    aussenbereich: true,
     produktgruppe: "schnellbeton",
     name: "Rapid Set Schnellbeton",
     kategorie: "schnellzement",
@@ -782,7 +780,6 @@ export const produkte: Produkt[] = [
     belastbarkeitsStufe: 5,
     belastbarNach: "2 h",
     belastbarNachZusatz: "Verkehrsfreigabe",
-    aussenbereich: true,
     systemProdukt: true,
     belastungenAbgedeckt: ["frost-tausalz", "schwerlast", "staplerverkehr"],
   },
@@ -792,8 +789,8 @@ export const produkte: Produkt[] = [
     id: "korocure",
     tdsUrl: "/downloads/tds/KOROCURE_de.pdf",
     bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     zusatzBereiche: ["infrastruktur"],
+    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "nachbehandlung",
     beschreibung: "Zum Schutz des jungen Betons sind gem. DIN EN 13670 in Verbindung mit DIN 1045-3 Zwischen-Nachbehandlungsmaßnahmen erforderlich: Die Zwischen-Nachbehandlung schützt das im Beton enthaltene Wasser vor Verdunstung, damit der Zement vollständig hydratisieren kann. Beim Einsatz als Grundierung für nachfolgende Hartstoffbeschichtungen wird KOROCURE unmittelbar nach Begehbarkeit des Betons aufgetragen.",
     name: "KOROCURE",
@@ -816,8 +813,8 @@ export const produkte: Produkt[] = [
     id: "koromineral-cure",
     tdsUrl: "/downloads/tds/KOROMINERAL_CURE_de.pdf",
     bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     zusatzBereiche: ["infrastruktur"],
+    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "nachbehandlung",
     name: "KOROMINERAL CURE",
     kategorie: "nachbehandlung",
@@ -839,8 +836,9 @@ export const produkte: Produkt[] = [
     id: "korotex",
     tdsUrl: "/downloads/tds/KOROTEX_de.pdf",
     bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     zusatzBereiche: ["infrastruktur"],
+    aussenbereich: true,
+    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "nachbehandlung",
     beschreibung: "Gemäß DIN 18353 (Estricharbeiten) und DIN 18560 (Estriche im Bauwesen) müssen Estriche vor ungleichmäßigem und zu raschem Austrocknen geschützt werden. KOROTEX Nachbehandlung ist besonders wichtig bei erhöhten Temperaturen, niedriger Luftfeuchtigkeit und starker Zugluft; das Aufsprühen ist die rationellste Methode bei frisch verlegten Estrichflächen.",
     name: "KOROTEX",
@@ -1155,7 +1153,6 @@ export const produkte: Produkt[] = [
     kategorie: "grundierung",
     bereich: "industrieboden",
     // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
-    zusatzBereiche: ["infrastruktur"],
     produktgruppe: "untergrund-haftbruecken",
     kurzbeschreibung: "Zementgebundene Haftbrücke für den kraftschlüssigen Verbund von Hartstoffestrichen auf erhärtetem Beton",
     beschreibung: "KORODUR HB 5 ist eine gebrauchsfertige, zementgebundene Haftbrücke für den kraftschlüssigen Verbund von KORODUR Hartstoffestrichen und zementgebundenen Estrichen aller Güteklassen auf erhärtetem Beton. Besonders bewährt im KORODUR-KOROTAN Industriebodensystem, unempfindlich gegen Untergrundfeuchte.",
@@ -1178,7 +1175,6 @@ export const produkte: Produkt[] = [
     kategorie: "grundierung",
     bereich: "industrieboden",
     // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
-    zusatzBereiche: ["infrastruktur"],
     produktgruppe: "untergrund-haftbruecken",
     kurzbeschreibung: "Zweikomponentige Epoxidharz-Spezialgrundierung für selbstverlaufende Beschichtungen",
     beschreibung: "Epoxidharz-Spezialgrundierung, zweikomponentig, für selbstverlaufende Beschichtungen wie TRU Self-Leveling, LevelFlor und NEODUR Level sowie zur Grundierung von Beton- und Estrichflächen, bei denen mit nachträglicher, rückseitiger Feuchteeinwirkung gerechnet werden muss.",
@@ -1194,11 +1190,10 @@ export const produkte: Produkt[] = [
     tdsUrl: "/downloads/tds/DUROP_de.pdf",
     name: "KORODUR DUROP",
     kategorie: "sonstige",
-    bereich: "industrieboden",
+    bereich: "infrastruktur",
     // #306/#308: zusätzlich im Infrastruktur-Bereich (Straßen-/Brückenbau,
     // kunstharzgebundene Dünnbeschichtung). Varianten 0,5/1 · 1/2 · 2/3 · 2/5
     // bleiben vorerst als varianten[]; Aufsplittung in Einzel-PDPs = PDP-Runde.
-    zusatzBereiche: ["infrastruktur"],
     produktgruppe: "kunstharz-hartstoffe",
     kurzbeschreibung: "Synthetischer Hartstoff als Füll- und Abstreumaterial für Kunstharzbeschichtungen und -estriche",
     beschreibung: "Synthetische Hartstoffe des Produktsystems KORODUR DUROP werden überwiegend als Füll- und Abstreumaterial für Kunstharzbeschichtungen und Kunstharzestriche verwendet. DUROP verbessert die Griffigkeit und reduziert Rollgeräusche; im Straßenbau wurden bereits mehr als 1,5 Mio. m² Autobahnteilstrecken als kunstharzgebundene Dünnbeschichtung mit DUROP ausgeführt.",
@@ -1263,8 +1258,9 @@ export const produkte: Produkt[] = [
     name: "KORODUR easyFinish",
     kategorie: "nachbehandlung",
     bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     zusatzBereiche: ["infrastruktur"],
+    aussenbereich: true,
+    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "nachbehandlung",
     kurzbeschreibung: "Flüssige, lösemittelfreie, gebrauchsfertige Glätthilfe für NEODUR HE 60 rapid und KOROCRETE",
     beschreibung: "KORODUR easyFinish wird auf die getellerte NEODUR HE 60 rapid oder KOROCRETE Oberfläche vor dem ersten Flügelglätten aufgesprüht und eingearbeitet. Der Glättvorgang wird erleichtert, die Oberfläche zusätzlich vergütet, die Dichtigkeit erhöht und der Schutz gegen chemische Angriffe verbessert.",
@@ -1287,8 +1283,8 @@ export const produkte: Produkt[] = [
     name: "KORODUR nanoFinish",
     kategorie: "nachbehandlung",
     bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     zusatzBereiche: ["infrastruktur"],
+    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "nachbehandlung",
     kurzbeschreibung: "Flüssiges, gebrauchsfertiges Nano-Silica für die Veredelung von KORODUR Industrieböden",
     beschreibung: "KORODUR nanoFinish verlangsamt den Feuchtigkeitsverlust und verlängert die Verarbeitungszeit: Die Oberflächenbearbeitung beim Glätten wird auch unter heißen, trockenen und windigen Bedingungen erleichtert. Die Nano-Silica-Technologie schließt Feuchtigkeit während der Oberflächenbearbeitung ein und ermöglicht so eine vollständige Hydratation mit maximaler Festigkeitsentwicklung; Ausblühungen und Rissbildung durch Frühschwinden werden reduziert.",
@@ -1312,8 +1308,8 @@ export const produkte: Produkt[] = [
     name: "KORODUR uniPrimer",
     kategorie: "grundierung",
     bereich: "industrieboden",
+    aussenbereich: true,
     // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
-    zusatzBereiche: ["infrastruktur"],
     produktgruppe: "untergrund-haftbruecken",
     kurzbeschreibung: "Lösemittelfreie, einkomponentige Universalgrundierung auf Acrylat-Co-Polymer- und Silikatbasis",
     beschreibung: "KORODUR uniPrimer grundiert saugende Betonuntergründe vor der Beschichtung mit zementgebundenen Hartstoffestrichen und reduziert das Saugverhalten trockener Untergründe: Das zeitaufwändige Vornässen bei Industriebodensanierungen entfällt. Ein Verdunsten der Haftbrücke KORODUR HB 5 oder HB 5 rapid wird minimiert und eine gleichmäßigere Hydratation des Verbundsystems erreicht.",
@@ -1336,8 +1332,9 @@ export const produkte: Produkt[] = [
     name: "KOROMINERAL",
     kategorie: "beschichtung",
     bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     zusatzBereiche: ["infrastruktur"],
+    aussenbereich: true,
+    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "impraegnierung",
     kurzbeschreibung: "Flüssige, transparente Imprägnierung auf Silikatbasis zur Oberflächenverkieselung mineralischer Baustoffe",
     beschreibung: "KOROMINERAL imprägniert Beton- und Estrichflächen in Lager- und Produktionsräumen oder Kühlräumen. Es eignet sich speziell für mineralische Untergründe wie Estriche, zementgebundene Industrieböden, Beton, Mauermörtel und zementgebundenen Putz, erhöht die Dichtigkeit und wirkt wasserabweisend.",
@@ -1361,8 +1358,8 @@ export const produkte: Produkt[] = [
     name: "KOROMINERAL Li+",
     kategorie: "beschichtung",
     bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     zusatzBereiche: ["infrastruktur"],
+    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "impraegnierung",
     kurzbeschreibung: "Flüssige, transparente Imprägnierung auf Basis Hybrid-Lithiumsilikat mit integriertem Basis-Fleckschutz",
     normen: [],
@@ -1719,6 +1716,7 @@ export const produkte: Produkt[] = [
     name: "MICROTOP TW 02",
     kategorie: "sonstige",
     bereich: "microtop",
+    aussenbereich: true,
     produktgruppe: "nassspritz",
     kurzbeschreibung: "Spritzmörtel im Nassspritzdichtstromverfahren mit äußerst geringem Porenvolumen",
     beschreibung: "MICROTOP TW 02 wird im Nassspritzdichtstromverfahren verarbeitet und dient der Beschichtung von Flächen sowie der Erhöhung der Betondeckung und dem Finish im Trinkwasserbereich. Das Produkt hat ein äußerst geringes Porenvolumen und kann auch als Korrosionsschutz und Haftbrücke eingesetzt werden.",
@@ -1823,6 +1821,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Spezialmörtel (Neubau) — Bereich „Spezialbaustoffe" aufgelöst.
     bereich: "spezialmoertel",
+    aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte von 5 bis über 50 mm (Varianten VM 1 / VM 3 / VB 8)",
     beschreibung: "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen. Die Reihe deckt je nach Vergussquerschnitt drei Varianten ab: NEODUR VM 1 (5 bis 20 mm), NEODUR VM 3 (10 bis 50 mm) und NEODUR VB 8 (über 50 mm). Alle drei teilen ein gemeinsames technisches Datenblatt.",
@@ -1850,7 +1849,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Spezialmörtel (Neubau) + Betonsanierung (Sanierungsanteil).
     bereich: "spezialmoertel",
-    zusatzBereiche: ["rapid-set"],
+    aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Vergussbeton (C80/95) für Vergussquerschnitte bis 200 mm, geprüft nach DIN EN 1504-3 (R4)",
     beschreibung: "Montage- und Vergussbeton für große Vergussquerschnitte bis 200 mm. Geprüft nach DIN EN 1504-3 (Klasse R4) und der DAfStb-Richtlinie für zementgebundenen Vergussbeton und Vergussmörtel.",
@@ -1868,7 +1867,8 @@ export const produkte: Produkt[] = [
     // #308/#317: Spezialmörtel (Neubau) + Trinkwasserbehälter-Sanierung
     // (DVGW W 347, Rohrverguss in Trinkwasseranlagen).
     bereich: "spezialmoertel",
-    zusatzBereiche: ["microtop"],
+    zusatzBereiche: ["microtop", "rapid-set"],
+    aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Mineralischer, hochfließfähiger Quellvergussbeton, DVGW-geprüft für Trinkwasserbereiche",
     beschreibung: "NEODUR VM basic ist ein mineralischer, hochfließfähiger Quellvergussbeton für kraftschlüssige Vergussarbeiten und Montagen aller Art, z. B. Rohrverguss in Trinkwasseranlagen. Geprüft gem. DVGW-Arbeitsblatt W 347 für hygienische Anforderungen in Trinkwasserbereichen.",
@@ -1892,7 +1892,8 @@ export const produkte: Produkt[] = [
     name: "NEODUR SVM 03",
     kategorie: "sonstige",
     // #308: Schnellvergussmörtel → Sammelbereich Betonsanierung.
-    bereich: "rapid-set",
+    bereich: "spezialmoertel",
+    aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Schnellvergussmörtel für Vergussquerschnitte von 5 bis 20 mm",
     beschreibung: "Schnellerhärtender Vergussmörtel für Vergussquerschnitte von 5 bis 20 mm. Verbindet Beton kraftschlüssig mit Stahleinbauteilen, wenn eine schnelle Wiederinbetriebnahme gefordert ist.",
@@ -1913,7 +1914,8 @@ export const produkte: Produkt[] = [
     name: "NEODUR SVM 4",
     kategorie: "sonstige",
     // #308: Schnellvergussmörtel → Sammelbereich Betonsanierung.
-    bereich: "rapid-set",
+    bereich: "spezialmoertel",
+    aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Schnellvergussmörtel (Körnung 0–3 mm) für Vergussquerschnitte von 10 bis 50 mm",
     beschreibung: "Gebrauchsfertiger, frühhochfester Schnellvergussmörtel mit Körnung 0–3 mm für Vergussquerschnitte von 10 bis 50 mm. Besonders zum Verguss von Fahrleitungsmasten, wenn kurzfristige Belastbarkeit gefordert ist.",
@@ -1942,6 +1944,8 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Microsilica-Spritzmörtel → Sammelbereich Betonsanierung.
     bereich: "rapid-set",
+    zusatzBereiche: ["spezialmoertel"],
+    aussenbereich: true,
     produktgruppe: "spritzmoertel",
     kurzbeschreibung: "Spritzmörtel für die Betoninstandsetzung, Körnung 0 bis 3 mm",
     beschreibung: "Die Betoninstandsetzung umfasst Technologien zur Wiederherstellung von Bauteilen aus Beton. NEODUR MSM 3 ist ein mineralischer Spritzmörtel mit Körnung 0 bis 3 mm, Verarbeitung gem. DIN 18551 in Verbindung mit DIN EN 14487.",
@@ -1963,6 +1967,8 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Microsilica-Spritzmörtel → Sammelbereich Betonsanierung.
     bereich: "rapid-set",
+    zusatzBereiche: ["spezialmoertel"],
+    aussenbereich: true,
     produktgruppe: "spritzmoertel",
     kurzbeschreibung: "Spritzmörtel für die Betoninstandsetzung, Körnung 0 bis 5 mm",
     beschreibung: "Die Betoninstandsetzung umfasst Technologien zur Wiederherstellung von Bauteilen aus Beton. NEODUR MSM 5 ist ein mineralischer Spritzmörtel mit Körnung 0 bis 5 mm.",
@@ -1984,6 +1990,8 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Microsilica-Spritzbeton → Sammelbereich Betonsanierung.
     bereich: "rapid-set",
+    zusatzBereiche: ["spezialmoertel"],
+    aussenbereich: true,
     produktgruppe: "spritzmoertel",
     kurzbeschreibung: "Spritzbeton für die Betoninstandsetzung, Körnung 0 bis 8 mm",
     beschreibung: "Die Betoninstandsetzung umfasst Technologien zur Wiederherstellung von Bauteilen aus Beton. NEODUR MSB 8 ist ein mineralischer Spritzbeton mit Körnung 0 bis 8 mm.",
@@ -2002,6 +2010,8 @@ export const produkte: Produkt[] = [
     name: "Rapid Set CONCRETE MIX",
     kategorie: "schnellzement",
     bereich: "rapid-set",
+    zusatzBereiche: ["industrieboden"],
+    aussenbereich: true,
     produktgruppe: "reparaturmoertel",
     bild: "/images/produkte/rapid-set-concrete-mix.webp",
     kurzbeschreibung: "Schnellerhärtender Schnellbeton für Einbaustärken von 50 bis 600 mm, belastbar nach 1 Stunde",
@@ -2126,6 +2136,7 @@ export const produkte: Produkt[] = [
     // #308: Spezialmörtel (Neubau) + Betonsanierung (Sanierungsanteil).
     bereich: "spezialmoertel",
     zusatzBereiche: ["rapid-set"],
+    aussenbereich: true,
     produktgruppe: "pflasterfugen",
     kurzbeschreibung: "Fix- und fertiger, 1-komponentiger Pflasterfugenmörtel für Fußgängerbereiche",
     beschreibung: "NEODUR PFM 1K Easyfix dient der Verfugung und Sanierung von Pflasterflächen bei leichter Belastung, z. B. Terrassen und Gehwege. Für Fugenbreiten ab 5 mm und Fugentiefen ab 30 mm.",
@@ -2154,6 +2165,7 @@ export const produkte: Produkt[] = [
     // #308: Spezialmörtel (Neubau) + Betonsanierung (Sanierungsanteil).
     bereich: "spezialmoertel",
     zusatzBereiche: ["rapid-set"],
+    aussenbereich: true,
     produktgruppe: "pflasterfugen",
     kurzbeschreibung: "Pflasterfugenmörtel auf Zementbasis für Pflaster- und Plattenflächen in starrer Bauweise",
     beschreibung: "NEODUR PFM-ZE und PFM-ZE Flex sind werksmäßig hergestellte Trockenmörtel auf Zement- und Natursandbasis (0–2 mm) für die Neuverfugung von Natur- und Betonpflaster bzw. Betonplatten in starrer Bauweise, Bauklasse IV bis VI. Die Fugenbreite sollte mindestens 8 mm betragen.",
