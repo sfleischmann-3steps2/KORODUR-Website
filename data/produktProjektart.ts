@@ -70,6 +70,7 @@ export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
   "granidur": N,
   "granidur-bianco-nero": N,
   "kcf": N, // KCF 05/08
+  "korophalt-02": N,
   "neodur-vm-1": N, // VM 1 / VM 3 / VB 8
   "neodur-vm-5": N,
   "neodur-svm-03": N,

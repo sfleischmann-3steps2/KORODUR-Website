@@ -108,6 +108,7 @@ const ID_ZU_PRODUKTART: Record<string, Produktart> = {
   "neodur-msm-5": "spritzbeton",
   "neodur-msb-8": "spritzbeton",
   // Vergussmörtel
+  "korophalt-02": "vergussmoertel",
   "neodur-vm-1": "vergussmoertel",
   "neodur-svm-03": "vergussmoertel",
   "neodur-svm-4": "vergussmoertel",

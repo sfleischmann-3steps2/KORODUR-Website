@@ -1812,6 +1812,60 @@ export const produkte: Produkt[] = [
   // + Normen produkte.xlsx (bei Klassen-Konflikten autoritativ, dokumentiert in
   // zuordnung-spezialbaustoffe-rapidset.md).
   {
+    // #240: KOROPHALT 02 — Notion-Status „fehlt" → angelegt (TDS 02/2023).
+    // Spezialverfüllmörtel für halbstarre Deckschichten (Asphalt-Traggerüst +
+    // Mörtelverfüllung). Produktart Vergussmörtel, nur Neubau, innen + außen.
+    id: "korophalt-02",
+    tdsUrl: "/downloads/tds/KOROPHALT_02_de.pdf",
+    name: "KOROPHALT 02",
+    kategorie: "sonstige",
+    bereich: "spezialmoertel",
+    aussenbereich: true,
+    produktgruppe: "verguss",
+    kurzbeschreibung: "Frühhochfester Spezialverfüllmörtel für halbstarre Deckschichten auf hoch belasteten Industrie- und Verkehrsflächen",
+    beschreibung: "KOROPHALT 02 ist ein zementgebundener, nicht schrumpfender, frühhochfester Spezialverfüllmörtel zur Herstellung halbstarrer Beläge für Industrie- und Verkehrsflächen, auch farbig lieferbar. Er vereint die Eigenschaften eines hochfesten Vergussmörtels mit der Flexibilität eines bitumengebundenen Systems: Ein speziell entwickeltes Einkorn-Asphalt-Traggerüst mit 25 bis 30 % Hohlraumgehalt wird im zweiten Arbeitsgang mit dem höchst fließwilligen KOROPHALT 02 verfüllt, fugenlos und mit niedriger Bauhöhe.",
+    schichtdicke: "4–6 cm",
+    druckfestigkeit: "70 N/mm²",
+    belastbarNach: "12–24 h",
+    belastbarNachZusatz: "Verkehrsfreigabe",
+    normen: [
+      "DIN EN 1015-11",
+      "DIN EN 13286-41",
+      "DIN EN 12697-26",
+      "DIN EN 13670",
+      "DIN 1045-3",
+    ],
+    technischeDaten: [
+      { label: "Druckfestigkeit (28 d)", wert: "ca. 70 N/mm²" },
+      { label: "Druckfestigkeit (24 h)", wert: "ca. 40 N/mm²" },
+      { label: "Biegezugfestigkeit (28 d)", wert: "ca. 8 N/mm²" },
+      { label: "E-Modul (28 d)", wert: "ca. 10.000–12.000 N/mm²" },
+      { label: "Körnung", wert: "0–0,25 mm" },
+      { label: "Schichtdicke", wert: "4–6 cm" },
+      { label: "Belastbar mit Verkehr", wert: "nach ca. 12–24 h" },
+      { label: "Verarbeitungstemperatur", wert: "≥ 5 °C" },
+      { label: "Lieferform", wert: "25-kg-Sack / Siloware" },
+    ],
+    besonderheiten: [
+      "Höchst fließwillig, selbstverlaufend",
+      "Schwindarm und rissfrei",
+      "Kurze Abbindezeit, schnell belastbar",
+      "Hohe Tragfähigkeit (Druckfestigkeit ca. 70 N/mm²)",
+      "Fugenlose Bauweise, niedrige Bauhöhe",
+      "Auch farbig lieferbar (zementgrau / anthrazit)",
+    ],
+    einsatzbereiche: [
+      "Container-Terminals",
+      "Flughäfen / Luftverkehr",
+      "Stellflächen & Fahrstraßen",
+      "Parkhäuser & Tiefgaragen",
+      "Speditions-Ladestationen",
+      "Industrie- & Produktionshallen",
+      "Lager & Logistik",
+    ],
+    zeitKategorie: "schnell",
+  },
+  {
     // #178: VM 1 / VM 3 / VB 8 auf einer PDP (gemeinsame TDS NEODUR_VM_1_3_8).
     // Unterscheidung nur über den Vergussquerschnitt -> als Varianten geführt.
     // VM 5 (C80/95, R4) und VM basic (Trinkwasser) bleiben eigene PDPs (eigene TDS).
