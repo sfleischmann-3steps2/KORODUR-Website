@@ -371,6 +371,7 @@ export default async function RapidSetBereich({
             defaultOpen={localizedProdukte.length <= 6}
             hinweis={tb("produkte_filter_hinweis")}
             alleLabel={tb("produkte_filter_alle")}
+            waehleLabel={tb("produkte_filter_waehle")}
           />
         </div>
       </section>

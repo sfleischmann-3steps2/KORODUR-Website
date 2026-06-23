@@ -31,6 +31,7 @@ export default function BereichProduktFilter({
   defaultOpen = false,
   hinweis,
   alleLabel,
+  waehleLabel,
 }: {
   gruppen: Gruppe[];
   lang: string;
@@ -38,6 +39,7 @@ export default function BereichProduktFilter({
   defaultOpen?: boolean;
   hinweis: string;
   alleLabel: string;
+  waehleLabel: string;
 }) {
   const [aktiv, setAktiv] = useState<string | null>(defaultOpen ? ALLE : null);
   const sichtbar = (key: string) => aktiv === ALLE || aktiv === key;
@@ -50,7 +52,32 @@ export default function BereichProduktFilter({
 
   return (
     <>
-      <div className="flex flex-wrap gap-2 mb-6">
+      {/* Mobile (#185): platzsparendes Dropdown statt Chip-Reihe. */}
+      <div className="md:hidden mb-6">
+        <div className="relative">
+          <select
+            value={aktiv ?? ""}
+            onChange={(e) => setAktiv(e.target.value === "" ? null : e.target.value)}
+            aria-label={waehleLabel}
+            className="w-full appearance-none rounded-full border border-mid-gray bg-white text-navy text-[15px] outline-none focus:border-cyan"
+            style={{ padding: "12px 40px 12px 18px", minHeight: 48, fontWeight: 700 }}
+          >
+            <option value="">{waehleLabel}</option>
+            {gruppen.map((g) => (
+              <option key={g.key} value={g.key}>
+                {g.label} ({g.items.length})
+              </option>
+            ))}
+            <option value={ALLE}>{alleLabel}</option>
+          </select>
+          <span className="pointer-events-none absolute top-1/2 -translate-y-1/2 right-4 text-navy/40 text-[12px]">
+            ▾
+          </span>
+        </div>
+      </div>
+
+      {/* Desktop: Chip-Reihe unverändert. */}
+      <div className="hidden md:flex flex-wrap gap-2 mb-6">
         {gruppen.map((g) => {
           const on = aktiv === g.key;
           return (
