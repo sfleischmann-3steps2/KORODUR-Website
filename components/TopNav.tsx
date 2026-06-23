@@ -105,7 +105,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             { label: pa["produktart_estrich-bindemittel"], href: paHref("estrich-bindemittel") },
             { label: pa["produktart_schnellestrich"], href: paHref("schnellestrich") },
             { label: pa["produktart_bodenausgleichsmasse"], href: paHref("bodenausgleichsmasse") },
-            { label: pa["produktart_konstruktiver-schnellbeton"], href: paHref("konstruktiver-schnellbeton") },
+            { label: pa["produktart_schnellbetonsysteme"], href: paHref("schnellbetonsysteme") },
           ],
         },
         {
@@ -130,7 +130,8 @@ export default function TopNav({ lang, dict }: TopNavProps) {
           title: dict.nav.mm_cluster_begleit,
           items: [
             { label: pa["produktart_haftbruecken-grundierungen"], href: paHref("haftbruecken-grundierungen") },
-            { label: pa["produktart_oberflaechenverguetung"], href: paHref("oberflaechenverguetung") },
+            { label: pa["produktart_nachbehandlung"], href: paHref("nachbehandlung") },
+            { label: pa["produktart_impraegnierung-einpflege"], href: paHref("impraegnierung-einpflege") },
             { label: pa["produktart_sonstiges"], href: paHref("sonstiges") },
           ],
         },

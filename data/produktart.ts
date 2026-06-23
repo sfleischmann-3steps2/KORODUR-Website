@@ -17,7 +17,7 @@ export type Produktart =
   | "estrich-bindemittel"
   | "schnellestrich"
   | "bodenausgleichsmasse"
-  | "konstruktiver-schnellbeton"
+  | "schnellbetonsysteme"
   | "sichtestrich"
   | "reparaturmoertel"
   | "spritzmoertel"
@@ -27,7 +27,8 @@ export type Produktart =
   | "pflasterfugenmoertel"
   | "unterstopfmoertel"
   | "haftbruecken-grundierungen"
-  | "oberflaechenverguetung"
+  | "nachbehandlung"
+  | "impraegnierung-einpflege"
   | "additive"
   | "tw-beschichtungsmoertel"
   | "sonstiges";
@@ -41,7 +42,7 @@ export const PRODUKTART_REIHENFOLGE: Produktart[] = [
   "estrich-bindemittel",
   "schnellestrich",
   "bodenausgleichsmasse",
-  "konstruktiver-schnellbeton",
+  "schnellbetonsysteme",
   "sichtestrich",
   "reparaturmoertel",
   "spritzmoertel",
@@ -51,7 +52,8 @@ export const PRODUKTART_REIHENFOLGE: Produktart[] = [
   "pflasterfugenmoertel",
   "unterstopfmoertel",
   "haftbruecken-grundierungen",
-  "oberflaechenverguetung",
+  "nachbehandlung",
+  "impraegnierung-einpflege",
   "additive",
   "tw-beschichtungsmoertel",
   "sonstiges",
@@ -83,9 +85,9 @@ const ID_ZU_PRODUKTART: Record<string, Produktart> = {
   // Bodenausgleichsmasse
   "neodur-level-au": "bodenausgleichsmasse",
   "rapid-set-levelflor": "bodenausgleichsmasse",
-  // Konstruktiver Schnellbeton
-  "korocrete": "konstruktiver-schnellbeton",
-  "rapid-set-schnellbeton": "konstruktiver-schnellbeton",
+  // Schnellbetonsysteme (KOROCRETE + Rapid Set Schnellbeton)
+  "korocrete": "schnellbetonsysteme",
+  "rapid-set-schnellbeton": "schnellbetonsysteme",
   // Sichtestrich
   "tru-self-leveling": "sichtestrich",
   "tru-pc": "sichtestrich",
@@ -121,16 +123,19 @@ const ID_ZU_PRODUKTART: Record<string, Produktart> = {
   "korodur-pc": "haftbruecken-grundierungen",
   "korodur-txpk": "haftbruecken-grundierungen",
   "korodur-uniprimer": "haftbruecken-grundierungen",
-  // Oberflächenvergütung (Nachbehandlung/Curing + Imprägnierung in Notion)
-  "korocure": "oberflaechenverguetung",
-  "koromineral-cure": "oberflaechenverguetung",
-  "korotex": "oberflaechenverguetung",
-  "korodur-easyfinish": "oberflaechenverguetung",
-  "korodur-nanofinish": "oberflaechenverguetung",
-  "koromineral": "oberflaechenverguetung",
-  "koromineral-li": "oberflaechenverguetung",
-  "koroclean": "oberflaechenverguetung",
-  "microtop-tw-mineral": "oberflaechenverguetung",
+  // Oberflächenvergütung (Notion-Produktart) → für die Website nach Property
+  // „Gewerk" feiner aufgeteilt: Nachbehandlung vs. Imprägnierung/Einpflege
+  // (Steffi 2026-06-23; Notion-interner Produktart↔Gewerk-Swap noch in Klärung).
+  "korocure": "nachbehandlung",
+  "koromineral-cure": "nachbehandlung",
+  "korotex": "nachbehandlung",
+  "korodur-easyfinish": "nachbehandlung",
+  "korodur-nanofinish": "nachbehandlung",
+  "koromineral": "impraegnierung-einpflege",
+  "koromineral-li": "impraegnierung-einpflege",
+  "koroclean": "impraegnierung-einpflege",
+  // MICROTOP TW Mineral: Gewerk TW-Sanierung → zu den TW-Produkten.
+  "microtop-tw-mineral": "tw-beschichtungsmoertel",
   // TW-Beschichtungsmörtel
   "microtop-tw-02": "tw-beschichtungsmoertel",
   "microtop-tw-bm": "tw-beschichtungsmoertel",
