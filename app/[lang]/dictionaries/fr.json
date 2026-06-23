@@ -113,6 +113,7 @@
     "filter_produktart_all": "Tous les types de produit",
     "filter_bereich_label": "Domaine",
     "filter_produktart_label": "Type de produit",
+    "filter_reset": "Réinitialiser les filtres",
     "produktart_hartstoff-din1100": "Durcisseur (DIN 1100)",
     "produktart_hartstoffeinstreuung": "Saupoudrage durcisseur",
     "produktart_hartstoffschicht": "Chape durcisseur",

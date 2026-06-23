@@ -113,6 +113,7 @@
     "filter_produktart_all": "Todos los tipos de producto",
     "filter_bereich_label": "Área",
     "filter_produktart_label": "Tipo de producto",
+    "filter_reset": "Restablecer filtros",
     "produktart_hartstoff-din1100": "Endurecedor (DIN 1100)",
     "produktart_hartstoffeinstreuung": "Espolvoreo endurecedor",
     "produktart_hartstoffschicht": "Solera endurecedora",
