@@ -1225,28 +1225,9 @@ export const produkte: Produkt[] = [
     besonderheiten: [],
     zeitKategorie: "normal",
   },
-  {
-    id: "korodur-silosystem",
-    tdsUrl: "/downloads/tds/KORODUR_Silosystem_de.pdf",
-    name: "KORODUR Silosystem",
-    kategorie: "sonstige",
-    bereich: "industrieboden",
-    produktgruppe: "systeme",
-    kurzbeschreibung: "Baustellensilo mit Misch- und Pumptechnik für die wirtschaftliche Verlegung von Hartstoffschichten",
-    beschreibung: "Das KORODUR Silosystem ermöglicht die wirtschaftliche Verlegung von KORODUR Hartstoffschichten durch rationelle Arbeitstechnik: Siloware (z. B. NEODUR HE 65), am Silo befestigte Misch- und Pumptechnik und maschinentechnische Betreuung. Kein Einrichten von Mischplätzen, keine Verpackungsentsorgung, gleichbleibende Mörtelqualität.",
-    normen: [],
-    technischeDaten: [
-      { label: "Siloeinheit", wert: "22,5 m³" },
-      { label: "Pumpleistung", wert: "ca. 100 l/min (ca. 600 m² in rd. 1 Stunde)" },
-      { label: "Tagesleistung", wert: "ca. 1.000–2.000 m² (Quelle nennt auch 1.000–1.500 m²)" },
-      { label: "Förderstrecke", wert: "bis zu 80 m" },
-    ],
-    besonderheiten: [
-      "Verarbeitbare Qualitäten: NEODUR HE 65, HE 65 SVS 3, HE 65 SVS 1,5, HE 40",
-      "Gleichbleibende Mörtelqualität, wichtig bei farbigen Ausführungen",
-    ],
-    zeitKategorie: "normal",
-  },
+  // KORODUR Silosystem entfernt (2026-06-23): aus der Produktdatenbank genommen,
+  // ist eher ein Service als ein Website-Produkt (Steffi). Silotechnik bleibt als
+  // Verarbeitungs-Hinweis bei den Hartstoffschicht-Produkten erwähnt.
 
   // === WEBSITE-MIGRATION STUFE 2, INDUSTRIEBODEN TEIL 2: BAUCHEMIE (2026-06-12) ===
   // Quelle: extraktion-industrieboden-bauchemie.json + Normen produkte.xlsx.
@@ -2158,30 +2139,7 @@ export const produkte: Produkt[] = [
 
 
   // === TDS-NACHLIEFERUNG STEFFI 2026-06-12 (docs/tds-quellen/) ===
-  {
-    id: "koromineral-lasur",
-    tdsUrl: "/downloads/tds/KOROMINERAL_Lasur_de_.pdf",
-    name: "KOROMINERAL Lasur",
-    kategorie: "beschichtung",
-    bereich: "industrieboden",
-    // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
-    zusatzBereiche: ["infrastruktur"],
-    produktgruppe: "impraegnierung",
-    kurzbeschreibung: "Spezialimprägnierung mit farbiger Oberflächenvergütung auf Basis Lithiumsilikat",
-    beschreibung: "KOROMINERAL Lasur wird zur Imprägnierung von zementgebundenen Estrich- und Betonflächen und speziell von KORODUR Estrichen verwendet. Durch die Pigmentierung entsteht eine farbige Oberflächenvergütung. Verarbeitung mit kurzfloriger Nylonwalze in zwei Arbeitsgängen im Kreuzgang.",
-    normen: [],
-    technischeDaten: [
-      { label: "Form", wert: "flüssig" },
-      { label: "Farben", wert: "steingrau, mausgrau (keine RAL-Farben)" },
-      { label: "Oberflächentemperatur", wert: "+10 °C bis +25 °C" },
-      { label: "Trocknungszeit zwischen den Arbeitsgängen", wert: "1–3 Stunden (temperaturabhängig)" },
-    ],
-    besonderheiten: [
-      "Farbige Oberflächenvergütung auf Lithiumsilikat-Basis",
-      "Zwei Arbeitsgänge im Kreuzgang",
-    ],
-    zeitKategorie: "normal",
-  },
+  // KOROMINERAL Lasur entfernt (2026-06-23): Produkt gibt es nicht mehr (Steffi).
   {
     id: "neodur-pfm-1k-easyfix",
     tdsUrl: "/downloads/tds/NEODUR_PFM_1K_Easyfix_de.pdf",

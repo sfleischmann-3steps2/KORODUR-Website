@@ -39,7 +39,6 @@ export const PRODUKT_EINSATZBEREICHE: Record<string, string[]> = {
   "korodur-txpk": ["Grundierung von Beton- und Estrichflächen", "Untergründe mit rückseitiger Feuchteeinwirkung", "Voranstrich unter selbstverlaufende Beschichtungen (TRU Self-Leveling, NEODUR Level)", "Gewerbliche Bodenflächen mit Beschichtungsaufbau"],
   "korodur-durop": ["Molkereien, Brauereien und Schlachthäuser", "Nassbetriebe und chemische Fabriken", "Batterieräume", "Rampen und Parkhäuser", "Fahrbahnen, Brückenbeschichtungen und Übergänge", "Fahrradwege und Flughafenflächen"],
   "korodur-robust": ["Feuerwehr-Fahrzeughallen und Gerätehäuser", "Waschanlagen und Nassbereiche", "Sanierung schwieriger Untergründe (Estrich, Beton)", "Kunstharzgebundene Estriche mit rutschhemmender Deckbeschichtung"],
-  "korodur-silosystem": ["Großflächige Industrieböden", "Hartstoffschichten und NEODUR-Hartstoffestriche", "Flächen mit Termindruck und kurzen Bauzeiten", "Farbige Hartstoffausführungen"],  // abgeleitet
   "korodur-easyfinish": ["Herstellung von Beton- und Estrichflächen", "Hartstoff-Industrieböden (NEODUR HE 60 rapid, KOROCRETE)", "Flächen im Innen- und Außenbereich"],
   "korodur-nanofinish": ["Frische KORODUR Industrieböden während des Glättens", "Innen- und Außenflächen", "Flächenbearbeitung unter heißen, trockenen und windigen Bedingungen", "Großflächige Estrich- und Industriebodenflächen mit Glätt-/Tellerbearbeitung"],
   "korodur-uniprimer": ["Saugende Betonuntergründe vor der Beschichtung mit Hartstoffestrichen", "Industriebodensanierungen mit KORODUR/NEODUR Hartstoffestrichen", "Vorbehandlung trockener Untergründe ohne Vornässen", "Innen- und Außenbereiche"],
@@ -75,7 +74,6 @@ export const PRODUKT_EINSATZBEREICHE: Record<string, string[]> = {
   "goodcat-golden-nature": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen"],  // abgeleitet
   "goodcat-organic-love": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen"],  // abgeleitet
   "goodcat-silver-classic": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen", "Zoofachhandel und Tierzuchten"],  // abgeleitet
-  "koromineral-lasur": ["Zementgebundene Estrich- und Betonflächen", "KORODUR Estriche", "Neue, optisch ungleichmäßige Betonflächen", "Altbeläge und Bestandsflächen", "Flächen mit Belastung durch Öle und Fette"],
   "neodur-pfm-1k-easyfix": ["Verfugung von Pflasterflächen", "Sanierung bestehender Pflasterfugen", "Terrassen und Gehwege", "Fußgängerbereiche mit leichter Belastung"],
   "neodur-pfm-ze": ["Pflasterflächen aus Natur- und Betonpflaster in starrer Bauweise", "Plattenflächen aus Betonplatten in starrer Bauweise (PFM-ZE Flex)", "Neuverfugung bestehender Pflaster- und Plattenbeläge", "Mit Pkw befahrene Flächen, Wege und Plätze", "Frost- und tausalzbeanspruchte Außenflächen"],
 };

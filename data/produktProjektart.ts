@@ -95,7 +95,6 @@ export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
   "microtop-tw-mineral": S,
 
   // --- Nicht in der Notion-View: bestehende Einordnung ---
-  "koromineral-lasur": NS,
 };
 
 // Build-Zeit-Ableitung: Name→id-Index (inkl. Varianten), dann Buckets je Produkt.

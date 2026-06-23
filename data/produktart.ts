@@ -145,12 +145,15 @@ const ID_ZU_PRODUKTART: Record<string, Produktart> = {
   "microtop-tw-5": "tw-beschichtungsmoertel",
   "microtop-tw-8": "tw-beschichtungsmoertel",
   "microtop-tw-nsm": "tw-beschichtungsmoertel",
+  // Additive (Concrete Pharmacy = Überbegriff der Rapid-Set-Additive
+  // SET, FAST, SET CONTROL, FLOW CONTROL)
+  "rapid-set-concrete-pharmacy": "additive",
   // Sonstiges
   "korodur-durop": "sonstiges",
 };
 
 /** Produktart eines Produkts (Notion-View). Produkte ohne Eintrag (Katzenstreu,
- *  Silosystem, KOROTAN-System, Concrete Pharmacy, Lasur) → undefined → „Weitere". */
+ *  KOROTAN-System — in Notion noch leer) → undefined → „Weitere". */
 export function produktartVonProdukt(p: { id: string }): Produktart | undefined {
   return ID_ZU_PRODUKTART[p.id];
 }
