@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import { referenzen } from "../data/referenzen";
+import { produkte } from "../data/produkte";
 
 type XmlRef = {
   title: string; slug: string; status: string;
@@ -69,7 +70,15 @@ const matchedXml = new Set<XmlRef>();
 const fills: any[] = [];
 const rows: string[] = [];
 const unmatched: string[] = [];
+const prodDiffs: any[] = [];
 let nSlug = 0, nTitle = 0, nOrt = 0, nNone = 0;
+
+// Produkt-Katalog (App): normalisierte Namen + IDs zum Existenz-Check
+const catalogNorm = produkte.flatMap((p) => [norm(p.name), norm(p.id)]).filter(Boolean);
+const inCatalog = (s: string) => {
+  const n = norm(s);
+  return n.length >= 3 && catalogNorm.some((c) => c.includes(n) || n.includes(c));
+};
 
 for (const r of referenzen) {
   let x = bySlug.get(r.slug);
@@ -101,10 +110,24 @@ for (const r of referenzen) {
   // Produkt-Mapping (informativ, fuzzy)
   const appProds = r.produkte.join(" | ");
   const xmlProds = x.produkte_text || x.produkte_slugs.join(", ");
-  const prodFlag = norm(appProds).length && norm(xmlProds).length &&
-    !x.produkte_slugs.some((s) => r.produkte.some((p) => norm(p).includes(norm(s)) || norm(s).includes(norm(p))))
-    ? " ⚠️" : "";
+  const overlap = x.produkte_slugs.some((s) => r.produkte.some((p) => norm(p).includes(norm(s)) || norm(s).includes(norm(p))));
+  const isDiff = norm(appProds).length > 0 && norm(xmlProds).length > 0 && !overlap;
+  const prodFlag = isDiff ? " ⚠️" : "";
   rows.push(`| ${r.slug} | ${how} | ${r.flaeche || "—"} → ${x.flaeche || "—"} | ${r.jahr || "—"} → ${x.baujahr || "—"} | ${appProds} _/_ ${xmlProds}${prodFlag} |`);
+  if (isDiff) {
+    // Quell-Produkte gegen Katalog prüfen: existiert das Quell-Produkt bei uns?
+    const srcItems = (x.produkte_slugs.length ? x.produkte_slugs : xmlProds.split(/[,;/]| und |–|-/))
+      .map((s) => s.trim()).filter((s) => s.length >= 3);
+    const srcUnknown = srcItems.filter((s) => !inCatalog(s));
+    prodDiffs.push({
+      slug: r.slug, titel: r.titel, ort: r.ort,
+      app: r.produkte, quelle_text: x.produkte_text, quelle_slugs: x.produkte_slugs,
+      quelle_nicht_im_katalog: srcUnknown,
+      empfehlung: srcUnknown.length === srcItems.length
+        ? "App behalten (Quell-Produkt existiert nicht im Katalog)"
+        : "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)",
+    });
+  }
 }
 
 const xmlUnused = xmlDe.filter((x) => !matchedXml.has(x) && x.status === "publish");
@@ -128,7 +151,10 @@ md.push(...rows);
 
 writeFileSync(join(ROOT, "docs/website-migration/referenz-abgleich.md"), md.join("\n"));
 writeFileSync(join(ROOT, "docs/website-migration/referenz-fills.json"), JSON.stringify(fills, null, 1));
+writeFileSync(join(ROOT, "docs/website-migration/referenz-produkt-diff.json"), JSON.stringify(prodDiffs, null, 1));
 
+const chatPruefen = prodDiffs.filter((d) => d.empfehlung.startsWith("Im Chat"));
 console.log(`Match: slug=${nSlug} titel=${nTitle} ort=${nOrt} keinMatch=${nNone}`);
 console.log(`Fills: flaeche=${fills.filter(f=>f.flaeche).length} jahr=${fills.filter(f=>f.jahr).length}`);
+console.log(`Produkt-Diffs: ${prodDiffs.length} (App behalten: ${prodDiffs.length - chatPruefen.length}, im Chat prüfen: ${chatPruefen.length})`);
 console.log(`Quell-Refs nicht in App: ${xmlUnused.length}`);

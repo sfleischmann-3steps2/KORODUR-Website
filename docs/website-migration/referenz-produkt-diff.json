@@ -1,0 +1,322 @@
+[
+ {
+  "slug": "kleemann-produktionshalle",
+  "titel": "Produktionshalle Kleemann",
+  "ort": "Göppingen",
+  "app": [
+   "NEODUR HE 60 rapid",
+   "KORODUR HB 5 rapid"
+  ],
+  "quelle_text": "NEODUR HE 50 rapid SVS 5",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [
+   "NEODUR HE 50 rapid SVS 5"
+  ],
+  "empfehlung": "App behalten (Quell-Produkt existiert nicht im Katalog)"
+ },
+ {
+  "slug": "loosen-werkzeug-klausen",
+  "titel": "Sanierung im laufenden Betrieb – Loosen",
+  "ort": "Klausen (Moselregion)",
+  "app": [
+   "KOROCRETE Schnellbeton",
+   "KORODUR HB 5 rapid"
+  ],
+  "quelle_text": "NEODUR Level, KORODUR PC",
+  "quelle_slugs": [
+   "neodur-level",
+   "korodur-pc"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "nike-store-polen",
+  "titel": "Nike Store Polen",
+  "ort": "Szczecin",
+  "app": [
+   "TRU Self-Leveling"
+  ],
+  "quelle_text": "NEODUR LEVEL mit Basaltzuschlägen",
+  "quelle_slugs": [
+   "neodur-level"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "sanierung-einer-sanierung",
+  "titel": "Sanierung einer Sanierung",
+  "ort": "Deutschland",
+  "app": [
+   "NEODUR Level"
+  ],
+  "quelle_text": "NEODUR HE 65 plus",
+  "quelle_slugs": [
+   "neodur-he-65-plus"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "absenksteine-tankstelle",
+  "titel": "Absenksteine schnell verlegt",
+  "ort": "Spreewald",
+  "app": [
+   "Rapid Set MORTAR MIX"
+  ],
+  "quelle_text": "Rapid Set DOT Europe CONCRETE MIX",
+  "quelle_slugs": [
+   "dot-europe-concrete-mix"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "lkw-einstellplatz-berlin",
+  "titel": "LKW Einstellplatz Berlin",
+  "ort": "Berlin",
+  "app": [
+   "Rapid Set MORTAR MIX"
+  ],
+  "quelle_text": "GRANIDUR anthrazit",
+  "quelle_slugs": [
+   "granidur"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "parkhaus-flughafen-zuerich",
+  "titel": "Parkhaus Flughafen Zürich",
+  "ort": "Zürich",
+  "app": [
+   "KORODUR DUROP"
+  ],
+  "quelle_text": "Rapid Set CEMENT ALL®, MORTAR MIX",
+  "quelle_slugs": [
+   "cement-all",
+   "mortar-mix"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "sanierung-lkw-zufahrt-logistikzentrum-sankt",
+  "titel": "Sanierung LKW-Zufahrt Logistikzentrum Spedition Brummer, Sankt Marienkirchen (Österreich)",
+  "ort": "Sankt Marienkirchen bei Schärding",
+  "app": [
+   "Rapid Set Schnellbeton"
+  ],
+  "quelle_text": "NEODUR HE 65 plus",
+  "quelle_slugs": [
+   "neodur-he-65-plus"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "texaco-tankflache-arnheim",
+  "titel": "TEXACO Tankfläche, Arnheim (2018)",
+  "ort": "Arnheim",
+  "app": [
+   "DOT Europe CONCRETE MIX"
+  ],
+  "quelle_text": "Rapid Set Schnellbeton (volumetrisch)",
+  "quelle_slugs": [
+   "rapid-set-concrete"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "parkhaus-freiburger-munster-freiburg",
+  "titel": "Parkhaus Freiburger Münster, Freiburg",
+  "ort": "Freiburg",
+  "app": [
+   "KORODUR DUROP"
+  ],
+  "quelle_text": "Rapid Set CEMENT ALL®, MORTAR MIX",
+  "quelle_slugs": [
+   "cement-all",
+   "mortar-mix"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "bruckensanierung-amberg",
+  "titel": "Brückensanierung, Amberg (2012)",
+  "ort": "Amberg",
+  "app": [
+   "Rapid Set CEMENT ALL"
+  ],
+  "quelle_text": "NEODUR HE 65",
+  "quelle_slugs": [
+   "neodur-he-65"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "trinkwasserbehaelter-haidberg",
+  "titel": "Trinkwasser-Hochbehälter Haidberg",
+  "ort": "Haidberg",
+  "app": [
+   "MICROTOP TW 3",
+   "MICROTOP TW 5",
+   "MICROTOP TW 8",
+   "MICROTOP TW BM",
+   "MICROTOP TW 02",
+   "MICROTOP TW Mineral"
+  ],
+  "quelle_text": "MICROTOP TW 3, TW 5, TW 8, TW BM, TW 02, TW Mineral",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "trinkwasserbehaelter-bad-nauheim",
+  "titel": "Trinkwasserbehälter Bad Nauheim",
+  "ort": "Bad Nauheim",
+  "app": [
+   "MICROTOP TW NSM",
+   "MICROTOP TW 5"
+  ],
+  "quelle_text": "MICROTOP TW NSM blau, MICROTOP TW NSM weiß, MICROTOP TW 5 natur",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "artofchocolate-schwarzach-u-wertheim",
+  "titel": "ARTofCHOCOLATE Schwarzach und Wertheim",
+  "ort": "Schwarzach und Wertheim",
+  "app": [
+   "KORODUR COPETTI FLOOR KCF",
+   "KOROCLEAN"
+  ],
+  "quelle_text": "KCF zementgrau (mit KOROCLEAN)",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "aunn-cafe-shanghai-china",
+  "titel": "AUNN Café Shanghai",
+  "ort": "Shanghai",
+  "app": [
+   "TRU Self-Leveling"
+  ],
+  "quelle_text": "TRU® Self-Leveling",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "escada-muenchen",
+  "titel": "ESCADA Headquarter, München",
+  "ort": "München",
+  "app": [
+   "TRU Self-Leveling"
+  ],
+  "quelle_text": "GAMMADUR* anthrazit",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [
+   "GAMMADUR* anthrazit"
+  ],
+  "empfehlung": "App behalten (Quell-Produkt existiert nicht im Katalog)"
+ },
+ {
+  "slug": "kongresszentrum-dipoli-espoo-finnland",
+  "titel": "Kongresszentrum Dipoli",
+  "ort": "Espoo",
+  "app": [
+   "GRANIDUR BIANCO/NERO"
+  ],
+  "quelle_text": "GRANIDUR Dipoli",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "nationalarchiv-tartu-estland",
+  "titel": "Nationalarchiv Noora, Tartu",
+  "ort": "Tartu",
+  "app": [
+   "KORODUR COPETTI FLOOR KCF"
+  ],
+  "quelle_text": "KCF anthrazit",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "strandhaus-bahia-de-kino-mexico",
+  "titel": "Strandhaus Bahia de Kino",
+  "ort": "Bahia de Kino",
+  "app": [
+   "TRU Self-Leveling"
+  ],
+  "quelle_text": "TRU® GRAY",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [
+   "TRU® GRAY"
+  ],
+  "empfehlung": "App behalten (Quell-Produkt existiert nicht im Katalog)"
+ },
+ {
+  "slug": "betonwerk-lintel-rheda-wiedenbrueck",
+  "titel": "Betonwerk Lintel – DUROCON Pflastersteine",
+  "ort": "Rheda-Wiedenbrück",
+  "app": [
+   "KORODUR 0/4"
+  ],
+  "quelle_text": "KORODUR Hartstoff",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [
+   "KORODUR Hartstoff"
+  ],
+  "empfehlung": "App behalten (Quell-Produkt existiert nicht im Katalog)"
+ },
+ {
+  "slug": "fertigstellen-eines-zementfussbodens-in-einem-bewohnten-appartment-gdynia-polen",
+  "titel": "Fertigstellung eines Zementfußbodens in einem bewohnten Appartement",
+  "ort": "Gdynia",
+  "app": [
+   "NEODUR Level"
+  ],
+  "quelle_text": "Rapid Set MORTAR MIX",
+  "quelle_slugs": [
+   "mortar-mix"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "metro-grossmarkt-wien-oesterreich",
+  "titel": "Umbau METRO Großmarkt",
+  "ort": "Langenzersdorf bei Wien",
+  "app": [
+   "KORODUR HB 5 rapid"
+  ],
+  "quelle_text": "TRU Self-Leveling",
+  "quelle_slugs": [
+   "tru-self-leveling"
+  ],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ },
+ {
+  "slug": "flughafen-zagreb",
+  "titel": "Flughafen Zagreb, Kroatien",
+  "ort": "Zagreb",
+  "app": [
+   "Rapid Set Schnellbeton"
+  ],
+  "quelle_text": "Rapid Set Schnellbeton (volumetrisch)",
+  "quelle_slugs": [],
+  "quelle_nicht_im_katalog": [],
+  "empfehlung": "Im Chat prüfen (Quell-Produkt existiert, Abweichung könnte echt sein)"
+ }
+]
