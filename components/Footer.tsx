@@ -36,7 +36,6 @@ export default function Footer({
   const footerProduktReihenfolge = [
     "industrieboden",
     "rapid-set",
-    "sichtestrich",
     "spezialmoertel",
     "microtop",
     "katzenstreu",

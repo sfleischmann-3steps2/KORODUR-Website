@@ -47,12 +47,12 @@ export const bereiche: Bereich[] = [
       "untergrund-haftbruecken",
       "nachbehandlung",
       "impraegnierung",
+      // #331: Bereich „Sichtestrich" aufgelöst → seine Produktgruppen
+      // (geschliffen/geglättet/Truazzo) als letzte Sub-Bereiche unter Industrieboden.
+      "geschliffen",
+      "geglaettet",
+      "truazzo",
     ],
-  },
-  {
-    slug: "sichtestrich",
-    bild: "/images/bereiche/sichtestrich.webp",
-    produktgruppen: ["geschliffen", "geglaettet", "truazzo"],
   },
   {
     // Infrastruktur (#216): eigener Bereich, ersetzt „Schnellbetonsysteme".
@@ -127,7 +127,6 @@ export const PORTFOLIO_SLUGS = [
   "industrieboden",
   "rapid-set",
   "infrastruktur",
-  "sichtestrich",
   "microtop",
   "spezialmoertel",
   "katzenstreu",

@@ -30,8 +30,6 @@ type Params = Promise<{ lang: string; slug: string }>;
 // Taxonomie-Bereich (3d-concrete-printing) bleibt ohne.
 const BEREICH_PROJEKTARTEN: Record<string, Projektart[]> = {
   industrieboden: ["neubau", "sanierung"],
-  // #306/#308: Sichtestrich jetzt Neubau (KCF/GRANIDUR) UND Sanierung (TRU-Serie).
-  sichtestrich: ["neubau", "sanierung"],
   // #306/#308: Spezialmörtel ist reiner Neubau-Bereich.
   spezialmoertel: ["neubau"],
   microtop: ["sanierung"],

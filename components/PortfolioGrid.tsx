@@ -14,7 +14,6 @@ const BEREICH_KACHELBILD: Record<string, string> = {
   industrieboden: "/images/referenzen/kleemann-produktionshalle/hero.jpg",
   "rapid-set": "/images/referenzen/dhl-ueberadebruecken/hero.jpg",
   infrastruktur: "/images/referenzen/catania.jpg",
-  sichtestrich: "/images/referenzen/porsche-showroom-loerrach/hero.jpg",
   microtop: "/images/referenzen/trinkwasserturm-budapest/hero.jpg",
   spezialmoertel: "/images/referenzen/hauptbahnhofsvorplatz-landau/hero.jpg",
   katzenstreu: "/images/portfolio/katzenstreu.webp",
