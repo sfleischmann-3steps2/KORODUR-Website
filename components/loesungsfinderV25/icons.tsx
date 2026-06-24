@@ -15,19 +15,30 @@ import {
   ChefHat,
   Factory,
   Flame,
+  FlaskConical,
+  Footprints,
   Forklift,
   LayoutGrid,
+  Leaf,
+  Package,
+  Palette,
   Phone,
   RotateCw,
+  Ruler,
+  ShieldCheck,
   ShoppingCart,
+  SprayCan,
   Square,
   SquareParking,
+  Store,
   Sun,
   Target,
   Timer,
   Truck,
   Warehouse,
+  Weight,
   X,
+  Zap,
 } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
 
@@ -92,6 +103,20 @@ export function IconRoad(props: IconProps) {
 export const IconClockBolt = lucide(Timer);
 export const IconCalendar = lucide(Calendar);
 export const IconCalendarMonth = lucide(CalendarDays);
+
+// === Neubau-Funnel (RV-Struktur 2026-06-24) ===
+
+export const IconStore = lucide(Store);
+export const IconWeight = lucide(Weight);
+export const IconPackage = lucide(Package);
+export const IconFootprints = lucide(Footprints);
+export const IconFlask = lucide(FlaskConical);
+export const IconPalette = lucide(Palette);
+export const IconSpray = lucide(SprayCan);
+export const IconRuler = lucide(Ruler);
+export const IconShield = lucide(ShieldCheck);
+export const IconLeaf = lucide(Leaf);
+export const IconZap = lucide(Zap);
 
 // === Ergebnisseite ===
 

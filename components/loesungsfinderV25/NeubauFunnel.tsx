@@ -1,12 +1,17 @@
-// Neubau-Funnel (Option C, Steffi 2026-06-13) — 4 Schritte:
-// Nutzung → Beanspruchung → Anforderung → Zeitfenster.
+// Neubau-Funnel (Industrieboden) — finalisierte Schritt-Struktur nach
+// Kollegen-Abstimmung (RV, 2026-06-24). 3 Schritte:
+//   1. Wo entsteht der Boden       (Einfachauswahl)
+//   2. Wie wird der Boden beansprucht  (Einfachauswahl)
+//   3. Weitere Anforderungen        (Mehrfachauswahl)
+// Der Schritt "Wann nutzbar" (Zeitfenster) entfällt im Neubau (RV: dort nicht
+// projektrelevant). Die Schritt-Labels sind final (DE); die i18n
+// (DE/EN/FR/PL/ES) folgt am Ende des Relaunchs mit dem KORODUR-Glossar.
 //
-// PROVISORISCH: Schritt-Optionen (Labels) und die Produktempfehlung sind ein
-// erster Vorschlag für die Kollegen-Abstimmung. Die echte Auswahl-Logik
-// (Produkt-Mapping) wird mit dem Produktmanagement (Frank) geschärft, danach
-// folgt die i18n (DE/EN/FR/PL/ES). Bewusst eine self-contained Komponente,
-// damit der Sanierungs-Funnel unangetastet bleibt und die Strecke per
-// NEUBAU_STRECKE_AKTIV ein-/ausschaltbar ist.
+// PROVISORISCH bleibt nur die Produktempfehlung am Ende: ein kuratierter
+// Default, den die technische Fachberatung final schärft. Das exakte
+// Antwort->System-Mapping liefert das Produktmanagement (Frank/RV) nach.
+// Self-contained Komponente: der Sanierungs-Funnel bleibt unangetastet, die
+// Strecke ist per NEUBAU_STRECKE_AKTIV ein-/ausschaltbar. Siehe Issue #103.
 
 "use client";
 
@@ -18,16 +23,18 @@ import ProgressHeader from "./ProgressHeader";
 import {
   IconFactory,
   IconWarehouse,
+  IconStore,
   IconShoppingCart,
-  IconChefHat,
-  IconForklift,
-  IconRefresh,
-  IconFlame,
-  IconSun,
-  IconSquare,
-  IconClockBolt,
-  IconCalendar,
-  IconCalendarMonth,
+  IconWeight,
+  IconPackage,
+  IconFootprints,
+  IconFlask,
+  IconPalette,
+  IconSpray,
+  IconRuler,
+  IconShield,
+  IconLeaf,
+  IconZap,
 } from "./icons";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { AppIcon } from "@/components/ui/icon";
@@ -45,52 +52,47 @@ interface StepDef {
   key: string;
   question: string;
   subline: string;
+  /** Mehrfachauswahl (Schritt 3 "Weitere Anforderungen"). Default Einfachauswahl. */
+  multi?: boolean;
   options: StepOption[];
 }
 
-// Provisorische Schritt-Definitionen (DE) — siehe Datei-Kommentar.
+// Schritt-Definitionen (DE, RV-final 2026-06-24) — siehe Datei-Kommentar.
 const STEPS: StepDef[] = [
   {
     key: "nutzung",
-    question: "Wo entsteht der neue Boden?",
+    question: "Wo entsteht der Boden?",
     subline: "Die Nutzung bestimmt die Bodenklasse.",
     options: [
-      { id: "industriehalle", Icon: IconFactory, titel: "Industrie- & Produktionshalle", beschreibung: "Fertigung, Maschinen, Mischverkehr." },
-      { id: "lager-logistik", Icon: IconWarehouse, titel: "Lager & Logistik", beschreibung: "Hochregal, Staplerverkehr, große Flächen." },
-      { id: "verkaufsraum", Icon: IconShoppingCart, titel: "Verkaufsraum / Showroom", beschreibung: "Sichtbarer Boden, Publikumsverkehr." },
-      { id: "lebensmittel-nass", Icon: IconChefHat, titel: "Lebensmittel / Nassbereich", beschreibung: "Hygiene, Feuchtigkeit, Reinigung." },
+      { id: "industriehalle", Icon: IconFactory, titel: "Industrie & Produktionshalle", beschreibung: "Fertigung, Maschinen, Schwerindustrie, Schüttgüter." },
+      { id: "lager-logistik", Icon: IconWarehouse, titel: "Lager & Logistik", beschreibung: "Distributions- und Verteilzentren, Hochregal, Staplerverkehr." },
+      { id: "verkauf-veranstaltung", Icon: IconStore, titel: "Verkaufsraum & Veranstaltungsraum", beschreibung: "Publikumsverkehr, Präsentationsfläche, Museen, Boutique." },
+      { id: "fachmarkt", Icon: IconShoppingCart, titel: "Fachmärkte & Fachzentren", beschreibung: "Lebensmittel, Einzelhandel, Baumärkte, Hygiene." },
     ],
   },
   {
     key: "beanspruchung",
     question: "Wie wird der Boden beansprucht?",
-    subline: "Wählen Sie die Hauptbelastung.",
+    subline: "Die maßgebliche Beanspruchung bestimmt das System.",
     options: [
-      { id: "stapler-schwerlast", Icon: IconForklift, titel: "Stapler- & Schwerlast", beschreibung: "Hohe mechanische Punktlasten." },
-      { id: "verschleiss", Icon: IconRefresh, titel: "Verschleiß & Abrieb", beschreibung: "Dauerhafte Abriebbeanspruchung." },
-      { id: "chemisch", Icon: IconFlame, titel: "Chemische Beanspruchung", beschreibung: "Öle, Säuren, Betriebsstoffe." },
-      { id: "frost-tausalz", Icon: IconSun, titel: "Frost & Tausalz", beschreibung: "Außen, Witterung, Streusalz." },
+      { id: "hoch", Icon: IconWeight, titel: "Hohe Beanspruchung", beschreibung: "Abrieb durch Metallteile, Absetzen mit Metallgabeln, Verkehr über 1.000 Personen pro Tag." },
+      { id: "mittel", Icon: IconPackage, titel: "Mittlere Beanspruchung", beschreibung: "Holz, Papierrollen, Kunststoff, Verkehr 100 bis 1.000 Personen pro Tag." },
+      { id: "leicht", Icon: IconFootprints, titel: "Leichte Beanspruchung", beschreibung: "Elastik- und Luftreifenverkehr, Montage, bis 100 Personen pro Tag." },
+      { id: "chemisch", Icon: IconFlask, titel: "Chemische Beanspruchung", beschreibung: "Öle, Betriebsstoffe, Säuren, Reinigungsmittel, Frost- und Streusalz." },
     ],
   },
   {
     key: "anforderung",
-    question: "Welche Anforderung steht im Vordergrund?",
-    subline: "Bestimmt Oberfläche und Finish.",
+    question: "Welche weiteren Anforderungen gelten?",
+    subline: "Mehrfachauswahl möglich.",
+    multi: true,
     options: [
-      { id: "sicht-design", Icon: IconSquare, titel: "Sicht- & Designoptik", beschreibung: "Repräsentativer, gestalteter Boden." },
-      { id: "hygiene", Icon: IconChefHat, titel: "Hygiene & Reinigung", beschreibung: "Fugenlos, leicht zu reinigen." },
-      { id: "leitfaehig", Icon: IconClockBolt, titel: "Leitfähig (ESD)", beschreibung: "Ableitfähig für Elektronik / Ex-Schutz." },
-      { id: "hell-reflektierend", Icon: IconSun, titel: "Hell & reflektierend", beschreibung: "Mehr Helligkeit, weniger Beleuchtung." },
-    ],
-  },
-  {
-    key: "zeitfenster",
-    question: "Wann muss der Boden nutzbar sein?",
-    subline: "Bestimmt das Aushärtesystem.",
-    options: [
-      { id: "sehr-kurz", Icon: IconClockBolt, titel: "Sehr schnell", beschreibung: "Über Nacht / Wochenende." },
-      { id: "kurz", Icon: IconCalendar, titel: "Kurzfristig", beschreibung: "1–2 Wochen." },
-      { id: "planbar", Icon: IconCalendarMonth, titel: "Planbar", beschreibung: "Keine Zeitbegrenzung." },
+      { id: "optik", Icon: IconPalette, titel: "Optik & Design", beschreibung: "Oberflächenoptik (geschliffen oder geglättet), Farbgebung, Betonoptik." },
+      { id: "hygiene", Icon: IconSpray, titel: "Hygiene & Reinigung", beschreibung: "Häufig und leicht zu reinigen, hohe Dichtigkeit." },
+      { id: "ebenheit", Icon: IconRuler, titel: "Ebenheit", beschreibung: "Hochregallager nach DIN 18202, für leitliniengeführte Stapler." },
+      { id: "rutschhemmung", Icon: IconShield, titel: "Sicherheit & Rutschhemmung", beschreibung: "Rutschhemmung R9 bis R13 nach DIN 51130 je Einsatzbereich." },
+      { id: "nachhaltigkeit", Icon: IconLeaf, titel: "Nachhaltigkeit & Klimaschutz", beschreibung: "EPD-Nachweis, CO₂-Reduzierung, Langlebigkeit." },
+      { id: "esd", Icon: IconZap, titel: "Ableitfähigkeit (ESD)", beschreibung: "E-Mobilität, Elektronikfertigung." },
     ],
   },
 ];
@@ -104,17 +106,26 @@ export default function NeubauFunnel({ onZurueck }: NeubauFunnelProps) {
   const { dict } = useLocale();
   const t = dict.loesungsfinder;
   const [stepIndex, setStepIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, string>>({});
+  // Antworten je Schritt als String-Liste: Einfachauswahl = 0/1 Eintrag,
+  // Mehrfachauswahl (Schritt 3) = beliebig viele.
+  const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [showResult, setShowResult] = useState(false);
 
   const totalSteps = STEPS.length;
   const step = STEPS[stepIndex];
   const isFinalStep = stepIndex === totalSteps - 1;
-  const selected = answers[step.key] ?? null;
-  const stepIsReady = selected !== null;
+  const selected = answers[step.key] ?? [];
+  const stepIsReady = selected.length > 0;
 
-  const select = useCallback(
-    (key: string, id: string) => setAnswers((a) => ({ ...a, [key]: id })),
+  const toggle = useCallback(
+    (key: string, id: string, multi: boolean) =>
+      setAnswers((a) => {
+        const cur = a[key] ?? [];
+        if (multi) {
+          return { ...a, [key]: cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id] };
+        }
+        return { ...a, [key]: [id] };
+      }),
     []
   );
 
@@ -136,9 +147,12 @@ export default function NeubauFunnel({ onZurueck }: NeubauFunnelProps) {
 
   const zusammenfassung = useMemo(
     () =>
-      STEPS.filter((s) => answers[s.key]).map((s) => ({
+      STEPS.filter((s) => (answers[s.key]?.length ?? 0) > 0).map((s) => ({
         frage: s.question,
-        antwort: s.options.find((o) => o.id === answers[s.key])?.titel ?? "",
+        antwort: s.options
+          .filter((o) => answers[s.key]!.includes(o.id))
+          .map((o) => o.titel)
+          .join(", "),
       })),
     [answers]
   );
@@ -147,7 +161,7 @@ export default function NeubauFunnel({ onZurueck }: NeubauFunnelProps) {
     return (
       <div className="rounded-2xl bg-light-gray p-4 sm:p-6 md:p-8">
         <span className="mb-3 inline-flex rounded-md bg-cyan/12 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-cyan-text">
-          Vorschau
+          Systemempfehlung
         </span>
         <h2 className="text-xl font-medium text-navy sm:text-[22px]">Ihr Neubau-Bodensystem</h2>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -159,12 +173,12 @@ export default function NeubauFunnel({ onZurueck }: NeubauFunnelProps) {
             NEODUR HE 3 green + Hartstoffeinstreuung
           </div>
           <div className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            CO₂-reduzierter Hochleistungsestrich mit mineralischer Hartstoffeinstreuung und Nachbehandlung — weltweit bewährt.
+            CO₂-reduzierter Hochleistungsestrich mit mineralischer Hartstoffeinstreuung und Nachbehandlung, weltweit bewährt.
           </div>
         </div>
 
         <p className="mt-4 rounded-lg bg-cyan/10 p-3 text-xs leading-relaxed text-cyan-text">
-          Hinweis: Die exakte Produktempfehlung des Neubau-Pfads wird derzeit mit dem Produktmanagement abgestimmt (Platzhalter-Logik).
+          Die finale Systemauswahl stimmen wir in der technischen Fachberatung auf Ihr Projekt ab.
         </p>
 
         {zusammenfassung.length > 0 && (
@@ -204,17 +218,22 @@ export default function NeubauFunnel({ onZurueck }: NeubauFunnelProps) {
         </header>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-          {step.options.map((opt) => (
-            <OptionCard
-              key={opt.id}
-              Icon={opt.Icon}
-              titel={opt.titel}
-              beschreibung={opt.beschreibung}
-              selected={selected === opt.id}
-              dimmed={selected !== null && selected !== opt.id}
-              onSelect={() => select(step.key, opt.id)}
-            />
-          ))}
+          {step.options.map((opt) => {
+            const isSelected = selected.includes(opt.id);
+            return (
+              <OptionCard
+                key={opt.id}
+                Icon={opt.Icon}
+                titel={opt.titel}
+                beschreibung={opt.beschreibung}
+                selected={isSelected}
+                // Nur bei Einfachauswahl die übrigen Karten abdimmen; bei
+                // Mehrfachauswahl bleiben alle gleich präsent.
+                dimmed={!step.multi && selected.length > 0 && !isSelected}
+                onSelect={() => toggle(step.key, opt.id, step.multi ?? false)}
+              />
+            );
+          })}
         </div>
       </div>
 
