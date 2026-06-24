@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ratgeber-Zickzack-Layout — Mockup (#296)</title>
+<style>
+  :root {
+    --navy: #002D59;
+    --cyan: #00A0C8;
+    --cyan-text: #007a99;
+    --icon-bg: #eef2f6;
+    --bullet-bg: #d8e0e8;
+    --mid-gray: #c4ccd6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--navy);
+    background: #fff;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .breadcrumb { color: #6b7785; font-size: 13px; padding: 20px 0 0; }
+  h1 { font-size: clamp(28px,5vw,44px); font-weight: 900; line-height: 1.1; margin: 16px 0 24px; }
+  h2 { font-size: clamp(20px,3vw,28px); font-weight: 900; line-height: 1.2; margin: 40px 0 16px; }
+  h3 { font-size: clamp(17px,2.4vw,22px); font-weight: 800; margin: 28px 0 10px; }
+  p { margin: 16px 0; }
+  ul, ol { padding-left: 20px; }
+  li { margin: 8px 0; }
+  .hero {
+    width: 100%; aspect-ratio: 16/9; object-fit: cover;
+    border-radius: 12px; border: 1px solid var(--bullet-bg); margin-bottom: 32px;
+  }
+
+  /* Prosa-Spalte: auch in der 1100er-Hülle bleibt Fließtext lesbar schmal. */
+  .prosa { max-width: 760px; }
+
+  /* Zickzack-Band: Referenzkachel + anschließender Textabschnitt nebeneinander. */
+  .band {
+    display: grid; grid-template-columns: 360px 1fr; gap: 40px;
+    align-items: start; margin: 44px 0;
+  }
+  .band.rechts { grid-template-columns: 1fr 360px; }
+  .band.rechts .refcard { order: 2; }
+  .band .bandtext { min-width: 0; }
+  .band .bandtext h2 { margin-top: 0; }
+
+  /* Referenzkachel (wie ReferenceCard) */
+  .refcard {
+    display: block; text-decoration: none; color: inherit;
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,45,89,.10);
+    border: 1px solid var(--bullet-bg);
+  }
+  .refcard img { display: block; width: 100%; aspect-ratio: 16/10; object-fit: cover; background: var(--icon-bg); }
+  .refcard .body { padding: 18px 18px 20px; }
+  .refcard .chip {
+    display: inline-block; font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--cyan-text); background: rgba(0,160,200,.12);
+    border-radius: 4px; padding: 4px 9px; margin-bottom: 10px;
+  }
+  .refcard h4 { margin: 0 0 6px; font-size: 17px; font-weight: 900; line-height: 1.25; }
+  .refcard .ort { color: #6b7785; font-size: 14px; margin: 0; }
+  .refcard .link { color: var(--cyan-text); font-weight: 700; font-size: 14px; margin-top: 12px; }
+
+  .note {
+    background: var(--icon-bg); border-left: 4px solid var(--cyan);
+    border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px;
+  }
+  .label {
+    position: sticky; top: 0;
+    background: var(--navy); color: #fff; font-size: 12px; font-weight: 800;
+    letter-spacing: .06em; text-transform: uppercase; padding: 6px 12px;
+    border-radius: 0 0 8px 0; display: inline-block;
+  }
+  .tag {
+    display: inline-block; font-size: 11px; font-weight: 800; color: #fff;
+    background: var(--cyan); border-radius: 4px; padding: 2px 8px; margin-left: 8px;
+    vertical-align: middle; text-transform: uppercase; letter-spacing: .04em;
+  }
+  a.inline { color: var(--cyan-text); font-weight: 600; }
+  @media (max-width: 820px) {
+    .band, .band.rechts { grid-template-columns: 1fr; gap: 20px; }
+    .band.rechts .refcard { order: 0; }
+    .prosa { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="breadcrumb">Ratgeber › Schadensbilder › Risse</div>
+
+  <!-- Annotations-Kasten oben -->
+  <div class="note" style="margin-top:18px">
+    <strong>Mockup #296 — Zickzack-Rhythmus für Ratgeber-/Schadensbild-/Branchenseiten.</strong><br>
+    Regel: Hülle <strong>860 → 1100 px</strong>. Body wird an <code>## H2</code> zerschnitten. Fließtext bleibt in lesbarer
+    <strong>760-px-Prosaspalte</strong> (links). Vorhandene <code>referenzen:</code>-Kacheln wandern aus dem Block am Seitenende
+    <strong>einzeln in den Fluss</strong> und sitzen abwechselnd <strong>links / rechts</strong> neben dem folgenden Abschnitt.
+    Ohne Referenz: durchgehender Textabschnitt (voll). Reihenfolge des Contents bleibt unverändert.
+  </div>
+
+  <img class="hero" src="https://placehold.co/1100x620/002D59/ffffff?text=Hero+16:9" alt="Hero" />
+
+  <h1>Risse im Industrieboden: erkennen, einordnen, dauerhaft sanieren</h1>
+
+  <!-- 1) Voll-breiter Einstieg (Prosaspalte) -->
+  <div class="prosa">
+    <span class="label">① Textabschnitt — voll</span>
+    <p>Ein Riss im Hallenboden ist selten ein rein optisches Problem. Er ist ein Signal. Die Frage ist nur, wofür:
+    harmlose Schwindspannung oder beginnender Tragfähigkeitsverlust unter Last. Wir helfen Ihnen, das schnell
+    einzuordnen und die richtige Sanierungsstrategie für Ihren konkreten Fall zu finden.</p>
+
+    <h2>Was Sie sehen</h2>
+    <p>Risse zeigen sich im Industrieboden in mehreren Erscheinungsformen, die Sie als Betreiber gut unterscheiden können:</p>
+    <ul>
+      <li>Feine, netzartige oder einzelne Haarrisse an der Oberfläche</li>
+      <li>Durchgehende Risse, die sich quer über die Fläche oder entlang von Fugen ziehen</li>
+      <li>Risse mit Kantenausbrüchen oder abgeplatzten Rändern, häufig im Bereich von Fahrspuren</li>
+      <li>Risse, die mit Höhenversatz einhergehen</li>
+    </ul>
+  </div>
+
+  <!-- 2) Band: Referenzkachel LINKS, Text rechts -->
+  <div class="band">
+    <a class="refcard" href="#">
+      <img src="https://placehold.co/360x225/4a5d70/ffffff?text=Helipad+P%C5%82ock" alt="Referenz" />
+      <div class="body">
+        <span class="chip">Betonsanierung</span>
+        <h4>Helipad Płock</h4>
+        <p class="ort">Płock, Polen</p>
+        <div class="link">Referenz ansehen →</div>
+      </div>
+    </a>
+    <div class="bandtext">
+      <span class="label">② Referenz links · Text rechts <span class="tag">eingewebt</span></span>
+      <h2>Mögliche Ursachen</h2>
+      <p>Risse haben unterschiedliche Auslöser, und die Ursache bestimmt die Sanierungsstrategie. Belegbar aus unseren Projekten:</p>
+      <ul>
+        <li><strong>Lasteintrag und Schwerlast.</strong> Punktlasten aus Regalstützen, Stoßlasten von Staplern und schwere Maschinen bringen Bestandsböden an ihre Grenzen.</li>
+        <li><strong>Schwinden des Betons.</strong> Ungleichmäßiges oder zu rasches Austrocknen erzeugt Schwindspannungen.</li>
+        <li><strong>Witterung und chemischer Angriff im Außenbereich.</strong> Frost-Tau-Wechsel und Auftaumittel führen zu Rissen und Ausbrüchen.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3) Voll-breiter Abschnitt -->
+  <div class="prosa">
+    <span class="label">③ Textabschnitt — voll</span>
+    <h2>Sanierungsstrategie</h2>
+    <p>Vor jeder Maßnahme steht die Diagnose. Wir prüfen Tragfähigkeit und Haftverbund des Untergrunds, bevor wir die
+    Aufbauart festlegen. Auf dem Helipad in Płock haben wir die Haftzugwerte vor Ort über Pull-Off-Tests nachgewiesen
+    (bis 3,0 N/mm²) und so die Tragfähigkeit der Instandsetzung belegt.</p>
+    <ol>
+      <li><strong>Punktuelle Riss- und Fugenreparatur</strong>, wenn der Schaden lokal begrenzt ist.</li>
+      <li><strong>Großflächige Verschleißschicht im Verbund</strong>, wenn die Oberfläche flächig geschädigt ist.</li>
+    </ol>
+  </div>
+
+  <!-- 4) Band: Text LINKS, Referenzkachel rechts (umgekehrt) -->
+  <div class="band rechts">
+    <a class="refcard" href="#">
+      <img src="https://placehold.co/360x225/4a5d70/ffffff?text=Kleemann+G%C3%B6ppingen" alt="Referenz" />
+      <div class="body">
+        <span class="chip">Industrieboden</span>
+        <h4>Produktionshalle Kleemann</h4>
+        <p class="ort">Göppingen</p>
+        <div class="link">Referenz ansehen →</div>
+      </div>
+    </a>
+    <div class="bandtext">
+      <span class="label">④ Text links · Referenz rechts <span class="tag">umgekehrt</span></span>
+      <h2>Passende KORODUR-Systeme</h2>
+      <p>Je nach Lastanforderung und Lage (innen/außen) setzen wir diese Systeme ein. Alle Kennwerte aus den technischen Produktdaten:</p>
+      <h3>NEODUR HE 65 Plus</h3>
+      <p>Hochbelastbarer Hartstoffestrich für höchste Lasten, auch im Außenbereich. Polymermodifiziert und faserverstärkt.</p>
+    </div>
+  </div>
+
+  <!-- 5) Voll-breiter Abschluss -->
+  <div class="prosa">
+    <span class="label">⑤ Textabschnitt — voll</span>
+    <h2>So finden Sie Ihre Lösung</h2>
+    <p>Sie wissen nicht sicher, ob bei Ihnen eine punktuelle Reparatur reicht oder eine neue Verschleißschicht nötig ist?
+    Wir machen es Ihnen einfach.</p>
+    <ul>
+      <li><a class="inline" href="#">Lösungsfinder starten</a> — in wenigen Schritten zum passenden System.</li>
+      <li><a class="inline" href="#">Fachberatung anfragen</a> — unsere technische Vertriebsberatung ordnet Ihr Schadensbild ein.</li>
+    </ul>
+  </div>
+
+  <div class="note" style="margin:48px 0 64px">
+    <strong>Fragen an dich (Steffi):</strong><br>
+    1. Rhythmus ok (voll → Referenz-links → voll → Referenz-rechts → voll)?<br>
+    2. Bei nur <strong>1 Referenz</strong> (wie hier oft): nur <em>ein</em> Band einweben oder die eine Kachel trotzdem mittig? Aktuell: jede vorhandene Referenz wird der Reihe nach eingewebt, Rest des Artikels bleibt voll.<br>
+    3. Prosabreite 760 px ok, oder lieber bis ~820?
+  </div>
+</div>
+
+</body>
+</html>

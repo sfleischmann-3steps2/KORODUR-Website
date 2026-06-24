@@ -34,6 +34,7 @@ export default async function RatgeberPage({ params }: { params: Params }) {
       breadcrumb={[{ label: "Ratgeber" }, { label: art.frontmatter.title }]}
       body={art.body}
       referenzenSlugs={art.frontmatter.referenzen}
+      produkteIds={art.frontmatter.produkte}
     />
   );
 }
