@@ -32,6 +32,22 @@ export interface ArtikelFrontmatter {
  *  auf `false` setzen, dann werden die Notizen still entfernt. */
 const EXPERTEN_HINWEISE_SICHTBAR = true;
 
+/** Content-Gate (Steffi 2026-06-24): V1 darf nur fachlich freigegebenen Content
+ *  zeigen. Solange `true`, bauen Detail-Fachartikel mit `status:"entwurf"` NICHT
+ *  zu Live-Seiten — sie bleiben als Quelle im Repo (für Bereichskonzept/Abgleich),
+ *  shippen aber erst nach Freigabe (status auf z. B. "veroeffentlicht" setzen).
+ *  Hub-Gerüste (slug "index") bleiben als Navigationsrahmen erhalten.
+ *  Zum Wiedereinblenden für Franks In-Context-Review: auf `false` setzen. */
+const NUR_FREIGEGEBENE_ARTIKEL = true;
+
+/** Ein Artikel ist freigegeben, wenn das Gate aus ist, es ein Hub-Gerüst ist
+ *  ("index"), oder sein Frontmatter-Status nicht "entwurf" ist. */
+function istFreigegeben(slug: string, fm: ArtikelFrontmatter): boolean {
+  if (!NUR_FREIGEGEBENE_ARTIKEL) return true;
+  if (slug === "index") return true;
+  return fm.status !== "entwurf";
+}
+
 export interface Artikel {
   slug: string;
   frontmatter: ArtikelFrontmatter;
@@ -71,7 +87,9 @@ export function getArtikel(kategorie: string, slug: string): Artikel | null {
   const datei = path.join(CONTENT_DIR, kategorie, `${slug}.mdx`);
   if (!fs.existsSync(datei)) return null;
   const { data, content } = matter(fs.readFileSync(datei, "utf8"));
-  return { slug, frontmatter: data as ArtikelFrontmatter, body: bereinige(content) };
+  const fm = data as ArtikelFrontmatter;
+  if (!istFreigegeben(slug, fm)) return null;
+  return { slug, frontmatter: fm, body: bereinige(content) };
 }
 
 /** Ersten aussagekraeftigen Absatz aus dem (bereinigten) Markdown-Body ziehen,
@@ -99,6 +117,10 @@ export function teaser(body: string): string {
 export function getSlugs(kategorie: string, exclude: string[] = []): string[] {
   const dir = path.join(CONTENT_DIR, kategorie);
   if (!fs.existsSync(dir)) return [];
+  // Ungated: listet ALLE Slugs (Dateibasis). generateStaticParams braucht das,
+  // damit dynamische Routen unter output:export nicht leer laufen. Das Gate
+  // greift in getArtikel (Detailseite -> notFound) und in den Hubs, die
+  // null-Artikel ohnehin herausfiltern (s. ArtikelHub / Ratgeber-Hub).
   return fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".mdx"))
