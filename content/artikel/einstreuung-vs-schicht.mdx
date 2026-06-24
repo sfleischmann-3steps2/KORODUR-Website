@@ -9,16 +9,27 @@ stufe: "V1.5"
 status: "entwurf"
 reviewer: "Frank Sander"
 quellen:
+  - "KORODUR Industrieboden-Broschüre 2023, Seiten S2 bis S4 (autoritativ, #349: docs/content-quellen/broschuere-extrakt/)"
   - "KORODUR Doppelseite Einstreuung/Schicht (Stand 02/2024)"
   - "data/produkte.ts"
+referenzen:
+  - "amazon-logistikzentrum-bad-hersfeld"
+  - "borbet-leichtmetallradproduktion-kodersdorf"
+  - "wirtgen-produktionshallen-weltweit"
+produkte:
+  - "neodur-he-3"
+  - "neodur-he-65"
+  - "korodur-diamantbeton"
 bilder:
   - pfad: "public/images/diagramme/einstreuung-schicht/v2-bohrkerne/B-schema-querschnitt.webp"
     brief: "Schematischer Querschnitt: links eine dicke Hartstoffschicht auf Tragbeton, rechts eine dünne Hartstoffeinstreuung in der Betonoberfläche. Beschriftungsfrei, Proportionen illustrativ. Im Artikel-Body eingebunden (unter Was ist was)."
     quelle: "higgsfield-illustration"
 todo_frank:
+  - "Kennzahl Dauerhaftigkeit der Einstreuung (Größenordnung gegenüber einer Hartstoffschicht) aus der KORODUR-Doppelseite (02/2024): für die öffentliche Web-Nutzung freigeben bzw. Bezugsbedingungen bestätigen, bevor wir sie quantifizieren. Im Text aktuell nur qualitativ als deutlich geringer."
+  - "Mindest-Einstreumenge 3 bis 5 kg/m2 (Gruppe A/KS) bzw. 6 bis 8 kg/m2 (Gruppe M) und die Aussage geringere Mengen erzielen keine Verbesserung für die Web-Veröffentlichung bestätigen (Quelle: Broschüre 2023, S3)."
+  - "Norm-Bezug der Hartstoffeinstreuung festlegen: Sie ist in DIN 18560-7 nicht geregelt. Den korrekten Normverweis (statt der zuvor genannten DIN 18560-3/-4) fachlich bestätigen."
+  - "WHG-Eindringtiefe NEODUR HE 65 Plus: dokumentierten Messwert mit TDS-Quelle belegen, bevor wir eine konkrete Zahl veröffentlichen. Im Text aktuell ohne Zahlenwert."
   - "Doppelseite Einstreuung/Schicht (02/2024) als Provenienz in Notion/Repo sichern. Optional: Mass-Labels (10 mm / 2 mm, DIN-Bezug) auf das eingebundene Schnittbild-Diagramm setzen."
-  - "Kennzahl Dauerhaftigkeit Einstreuung ca. 10% einer Hartstoffschicht stammt aus der KORODUR-Doppelseite (02/2024). Für die öffentliche Web-Nutzung freigeben bzw. Bezugsbedingungen bestätigen."
-  - "Mindest-Einstreumenge 3 bis 5 kg/m2 (Gruppe A/KS) bzw. 6 bis 8 kg/m2 (Gruppe M) und die Aussage geringere Mengen erzielen keine Verbesserung für die Web-Veröffentlichung bestätigen."
   - "Produkt-Schleifverschleißwerte je Variante (z. B. NEODUR HE 65 Gruppe A) gegen das aktuelle TDS gegenprüfen, bevor exakte Werte ergänzt werden."
 ---
 
@@ -26,39 +37,49 @@ todo_frank:
 
 Beide Begriffe klingen ähnlich, beschreiben aber zwei grundverschiedene Bauweisen mit sehr unterschiedlicher Leistung. Wer einen hoch beanspruchten Industrieboden plant oder ausschreibt, sollte den Unterschied kennen, denn er entscheidet über Verschleiß, Dauerhaftigkeit und Nachweisbarkeit der fertigen Fläche.
 
-Die kurze Antwort vorweg: Ein KORODUR Industrieboden ist eine Hartstoffschicht nach DIN 18560-7. Die Hartstoffeinstreuung ist eine Oberflächenvergütung des Betons, sie verbessert die Oberfläche, ist einer Hartstoffschicht technisch aber nicht gleichwertig. Dieser Beitrag zeigt warum, mit den Kennwerten aus unserer eigenen Praxis.
+Die kurze Antwort vorweg: Ein KORODUR Industrieboden ist eine Hartstoffschicht nach DIN 18560-7. Die Hartstoffeinstreuung ist eine Oberflächenvergütung des Betons, sie verbessert die Oberfläche, ist einer Hartstoffschicht technisch aber nicht gleichwertig. Welche Bauweise sinnvoll ist, hängt von der geplanten Nutzung ab, also von der künftigen Beanspruchung und Belastung der Fläche. Dieser Beitrag zeigt die Unterschiede mit den Kennwerten aus unserer Praxis und der aktuellen Industrieboden-Broschüre.
 
 ## Was ist was
 
 **Hartstoffschicht (Hartstoffestrich).** Ein hoch beanspruchbarer, zementgebundener Industrieestrich mit Zuschlag aus Hartstoffen nach DIN 1100, ausgeführt nach DIN 18560-7 (und DIN EN 13318). Sie bringt einen erhöhten und definierten Widerstand gegen Verschleiß und Abrieb in einer eigenen, planbaren Schichtdicke auf die Fläche.
 
-**Hartstoffeinstreuung.** Eine Oberflächenvergütung nach DIN 18560-3 und -4: Hartstoff wird trocken in die frische Betonoberfläche eingestreut und eingearbeitet. Das erhöht den Verschleißwiderstand gegenüber unvergütetem Beton, ist einer Hartstoffschicht technisch aber nicht gleichwertig: Einstreuungen sind in DIN 18560-7 nicht geregelt.
+**Hartstoffeinstreuung.** Eine Oberflächenvergütung: Hartstoff wird trocken in die frische Betonoberfläche eingestreut und eingearbeitet. Das erhöht den Verschleißwiderstand gegenüber unvergütetem Beton, ist einer Hartstoffschicht technisch aber nicht gleichwertig. Anders als die Hartstoffschicht ist die Einstreuung in DIN 18560-7 nicht geregelt.
 
 ![Schematischer Querschnitt: links die dicke Hartstoffschicht auf dem Tragbeton, rechts die dünne Hartstoffeinstreuung in der Betonoberfläche. Proportionen illustrativ, nicht maßstabsgetreu.](/images/diagramme/einstreuung-schicht/v2-bohrkerne/B-schema-querschnitt.webp)
 
+Der entscheidende Unterschied lässt sich an der Materialmenge ablesen: Mit einer Einstreuung sind rechnerisch nur Schichtstärken von maximal 1 bis 2 mm zu erzielen. Eine Hartstoffschicht von zum Beispiel 10 bis 15 mm ist einer solchen Vergütung deshalb technisch überlegen.
+
 ## Der Vergleich auf einen Blick
 
-| Kriterium | Hartstoffschicht (DIN 18560-7) | Hartstoffeinstreuung (DIN 18560-3/4) |
+Der folgende Vergleich folgt den Kriterien der aktuellen KORODUR Industrieboden-Broschüre (2023).
+
+| Kriterium | Hartstoffschicht (DIN 18560-7) | Hartstoffeinstreuung |
 | :--- | :--- | :--- |
-| Verschleißwiderstand n. Böhme | genormt und definiert je Hartstoffgruppe (DIN 1100) | nicht genormt, nur durch nachträgliche Prüfung an Probekörpern ermittelbar |
-| Dauerhaftigkeit | nach Nutzung, je nach Schichtdicke und Hartstoffgruppe ausgelegt | bei gleicher Beanspruchung und Hartstoffqualität nur ca. 10% einer Hartstoffschicht |
-| Schichtdicke | planbar nach Beanspruchungsgruppe (Nenndicke nach DIN 18560-7) | verfahrensbedingt sehr dünn, Beanspruchungsgruppen nach DIN 18560-7 nicht erreichbar |
-| eingebrachte Hartstoffmenge | definiert und nachweisbar | über die fertige Fläche nicht nachprüfbar |
+| Schichtdicke | planbar nach Beanspruchungsgruppe, in der Regel 10 bis 15 mm (Nenndicke nach DIN 18560-7) | verfahrensbedingt sehr dünn, rechnerisch max. 1 bis 2 mm |
+| Verschleißwiderstand n. Böhme | genormt und je Hartstoffgruppe definiert (DIN 1100) | nicht genormt, nur durch nachträgliche Prüfung an Probekörpern ermittelbar |
+| Schleifverschleiß am fertigen Bauteil | in DIN 18560-7 je Hartstoffgruppe verbindlich definiert | durch Vermischung mit dem Tragbeton erfahrungsgemäß schlechter als der Wert des eingesetzten Hartstoffs |
+| Druckfestigkeit | mindestens 70 N/mm² | entspricht erfahrungsgemäß nur der Betongüte |
 | Schlagbeanspruchung | wird durch die Schichtstärke aufgefangen, dicker gleich widerstandsfähiger | wird nur vom Tragbeton aufgefangen |
-| Flüssigkeitsdichtheit / WHG | über ein zugelassenes flüssigkeitsdichtes System im Sinne der DAfStb-Richtlinie (BUmwS) nachweisbar | kein Dichtigkeitsnachweis möglich (fehlende Schichtstärke) |
-| Frost-Tausalz | nachweisbar (CDF-Verfahren) über das zugelassene System | kein Nachweis erbringbar |
-| farbige Ausführung | durchgängige Einfärbung der Schicht | Gefahr der Vermischung mit dem grauen Tragbeton |
-| Lebensmittel / Ableitfähigkeit | geeignet | geeignet (in diesen Punkten gleichwertig) |
+| Dauerhaftigkeit | nach Nutzung, Schichtdicke und Hartstoffgruppe ausgelegt | bei gleicher Beanspruchung und Hartstoffqualität deutlich geringer |
+| eingebrachte Hartstoffmenge | definiert und nachweisbar | über die fertige Fläche nicht nachprüfbar |
+| Flüssigkeitsdichtheit / WHG | über ein zugelassenes System in Anlehnung an die DAfStb-Richtlinie (Betonbau beim Umgang mit wassergefährdenden Stoffen) als dicht einzustufen | kein Dichtigkeitsnachweis möglich (geringe Schichtdicke) |
+| Frost-Tausalz | nach dem CDF-Prüfverfahren als frost-/tausalzbeständig einzustufen | kein Nachweis erbringbar (geringe Schichtdicke) |
+| farbige Böden | durchgängige Einfärbung der Schicht | Gefahr der Vermischung mit dem grauen Tragbeton |
+| Ebenheit | kann dazu beitragen, erhöhte Ebenheitsanforderungen zu erfüllen | wird nur durch die Einbaugenauigkeit des Tragbetons bestimmt |
+| Stahlfasern / organische Bestandteile | überdeckt zuverlässig hervorstehende Stahlfasern und aufschwimmende organische Bestandteile | können je nach Betonrezeptur und Stahlfasertyp/-menge an der Oberfläche auftreten |
+| Lebensmittel / Ableitfähigkeit | geeignet | in diesen Punkten gleichwertig |
 
 ## Schichtdicke und Verbrauch
 
 Bei der Hartstoffschicht richten sich Nenndicke und Verbrauch nach Hartstoffgruppe und Beanspruchungsgruppe (DIN 18560-7):
 
-| Hartstoffgruppe | Böhme-Verschleiß | Nenndicke (schwer / mittel / leicht) | Verbrauch |
+| Hartstoffgruppe | Böhme-Verschleiß (DIN 1100) | Nenndicke (schwer / mittel / leicht) | Verbrauch |
 | :--- | :--- | :--- | :--- |
-| A | ≤ 5,0 cm³/50 cm² | ≥ 15 / ≥ 10 / ≥ 8 mm | 31 / 21 / 16 kg/m² |
+| A | ≤ 6,0 cm³/50 cm² | ≥ 15 / ≥ 10 / ≥ 8 mm | 31 / 21 / 16 kg/m² |
 | M | ≤ 3,0 cm³/50 cm² | ≥ 8 / ≥ 6 / ≥ 6 mm | 28 / 21 / 21 kg/m² |
 | KS | ≤ 1,5 cm³/50 cm² | ≥ 6 / ≥ 5 / ≥ 4 mm | 13 / 11 / 9 kg/m² |
+
+Die Werte in der Spalte Böhme-Verschleiß sind die Gruppen-Grenzwerte nach DIN 1100. Einzelne Produkte erreichen bessere Werte, zum Beispiel NEODUR HE 65 in Gruppe A mit ≤ 5,0 cm³/50 cm². Die Nenndicken entsprechen DIN 18560-7, Tabelle 6.
 
 Die Einstreuung arbeitet dagegen mit sehr geringen Mengen (Gruppe A und KS ca. 3 bis 5 kg/m², Gruppe M ca. 6 bis 8 kg/m²). Eine spürbare Verbesserung entsteht nur, wenn ausreichend Hartstoff in guter Qualität eingebracht wird. Geringere Mengen verbessern die Oberfläche praktisch nicht.
 
@@ -68,7 +89,7 @@ Die Hartstoffschicht bauen wir frisch auf frisch oder nachträglich im Verbund a
 
 ## Unsere Empfehlung
 
-Ist aufgrund der Belastung ein zementgebundener Industrieestrich gefordert, führt an einer Hartstoffschicht nach DIN 18560-7 kein Weg vorbei. Nur sie liefert einen definierten, nachweisbaren Verschleißwiderstand, eine planbare Dauerhaftigkeit und, über ein zugelassenes System, die Nachweise für Flüssigkeitsdichtheit und Frost-Tausalz-Beständigkeit. Die WHG-Dichtheit wird dabei über die Eindringtiefe am tragenden Bauteil nachgewiesen (NEODUR HE 65 Plus: 25,7 mm dokumentiert), nicht über eine pauschale Mindestschichtdicke.
+Ist aufgrund der Belastung ein zementgebundener Industrieestrich gefordert, führt an einer Hartstoffschicht nach DIN 18560-7 kein Weg vorbei. Nur sie liefert einen definierten, nachweisbaren Verschleißwiderstand, eine planbare Dauerhaftigkeit und, über ein zugelassenes System, die Nachweise für Flüssigkeitsdichtheit und Frost-Tausalz-Beständigkeit. Die WHG-Dichtheit wird dabei über die dokumentierte Eindringtiefe am tragenden Bauteil nachgewiesen, nicht über eine pauschale Mindestschichtdicke.
 
 Die Einstreuung hat ihren Platz als Oberflächenvergütung dort, wo die Anforderungen begrenzt sind. Sie ersetzt aber keine Hartstoffschicht und sollte nicht ausgeschrieben werden, wenn eine definierte Verschleißklasse, Dichtheit oder hohe Dauerhaftigkeit gefordert ist.
 

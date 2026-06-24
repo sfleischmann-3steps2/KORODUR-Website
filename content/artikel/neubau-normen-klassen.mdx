@@ -9,10 +9,19 @@ stufe: "V1"
 status: "entwurf"
 reviewer: "Frank Sander"
 quellen:
+  - "KORODUR Industrieboden-Broschüre 2023, Seite S2 (autoritativ, #349: docs/content-quellen/broschuere-extrakt/)"
   - "data/normenGlossar.ts"
   - "data/produkte.ts"
   - "content/artikel/einstreuung-vs-schicht.mdx"
   - "content/artikel/neubau-systemwahl.mdx"
+referenzen:
+  - "borbet-leichtmetallradproduktion-kodersdorf"
+  - "caterpillar-abu-dhabi-dubai"
+  - "wirtgen-produktionshallen-weltweit"
+produkte:
+  - "neodur-he-65"
+  - "korodur-wh-metallisch"
+  - "korodur-diamantbeton"
 bilder:
   - pfad: "public/images/artikel/neubau-normen-klassen.webp"
     brief: "Aufsicht auf einen Ausschnitt eines technischen Ausschreibungs-/Planungsdokuments neben einer Ecke eines grauen Hartstoff-Industriebodens, dazu ein Bohrkern als Probekörper. Sachlich, dokumentarisch, kühles Licht, keine Menschen, keine Logos, kein lesbarer Text im Bild. Querformat 16:9."
@@ -20,6 +29,7 @@ bilder:
 todo_frank:
   - "Entschluesselungstabelle EN 13813 (CT / C / F / A / AR) fuer die Web-Veroeffentlichung bestaetigen. Buchstaben-Bedeutung ist Normstandard, im Repo aber nur ueber die Produktklassen (z. B. CT-C70-F9-A6) belegt."
   - "Hartstoffgruppen-Kuerzel: M = metallisch ist belegt (KORODUR WH-metallisch, Gruppe M). Bedeutung von KS bitte bestaetigen (im Artikel bewusst nicht ausgeschrieben)."
+  - "Beanspruchungsgruppen (DIN 18560-7, Tab. 1) und Nenndicken (Tab. 6) stammen aus der KORODUR Industrieboden-Broschuere 2023; gegen die aktuell gueltige DIN 18560-7 gegenlesen, falls zwischenzeitlich geaendert."
   - "Ob ein direkter Verweis auf die LV-Texte bei ausschreiben.de gewuenscht ist."
 ---
 
@@ -63,25 +73,38 @@ Zwei echte Beispiele aus unserem Portfolio:
 
 Bei Hartstoffestrichen kommt eine zweite Klassifizierung dazu: die Hartstoffgruppe nach DIN 1100. Sie beschreibt den Abnutzungswiderstand des verwendeten Hartstoffs, gemessen nach Böhme:
 
-| Hartstoffgruppe | Böhme-Verschleiß |
+| Hartstoffgruppe | Böhme-Verschleiß (DIN 1100) |
 | :--- | :--- |
-| A | höchstens 5,0 cm³/50 cm² |
+| A | höchstens 6,0 cm³/50 cm² |
 | M | höchstens 3,0 cm³/50 cm² |
 | KS | höchstens 1,5 cm³/50 cm² |
 
-Gruppe M ist die metallische Variante (zum Beispiel KORODUR WH-metallisch für schweren Eisenräderverkehr), Gruppe KS bietet den höchstmöglichen Abnutzungswiderstand (zum Beispiel KORODUR Diamantbeton). Welche Schichtdicke und welcher Verbrauch zu welcher Gruppe und Beanspruchung gehören, zeigt die Tabelle in unserem Beitrag [Hartstoffeinstreuung oder Hartstoffschicht](/ratgeber/einstreuung-vs-schicht).
+Die Werte sind die Gruppen-Grenzwerte nach DIN 1100. Einzelne Produkte erreichen bessere Werte, zum Beispiel NEODUR HE 65 in Gruppe A mit höchstens 5,0 cm³/50 cm². Gruppe M ist die metallische Variante (zum Beispiel KORODUR WH-metallisch für schweren Eisenräderverkehr), Gruppe KS bietet den höchstmöglichen Abnutzungswiderstand (zum Beispiel KORODUR Diamantbeton).
+
+## Beanspruchungsgruppen nach DIN 18560-7
+
+DIN 18560-7 ordnet Industrieestriche drei Gruppen mechanischer Beanspruchung zu. Sie sind die Basis für Planung und Ausschreibung, denn aus ihnen ergibt sich zusammen mit der Hartstoffgruppe die nötige Schichtdicke.
+
+| Beanspruchungsgruppe | Beanspruchung durch (Flurförderzeuge, Bereifung) | Beispiele |
+| :--- | :--- | :--- |
+| I (schwer) | Stahl und Polyamid | Bearbeiten, Schleifen und Kollern von Metallteilen; Absetzen von Gütern mit Metallgabeln; Fußgängerverkehr mit mehr als 1000 Personen/Tag |
+| II (mittel) | Urethan-Elastomer (Vulkollan) und Gummi | Schleifen und Kollern von Holz, Papierrollen und Kunststoffteilen; Fußgängerverkehr von 100 bis 1000 Personen/Tag |
+| III (leicht) | Elastik und Luftreifen | Montage auf Tischen; Fußgängerverkehr bis 100 Personen/Tag |
+
+Aus Beanspruchungsgruppe und Hartstoffgruppe ergibt sich die Nenndicke der Hartstoffschicht (DIN 18560-7, Tabelle 6). Die konkreten Schichtdicken und Verbräuche je Kombination zeigt die Tabelle im Beitrag [Hartstoffeinstreuung oder Hartstoffschicht](/ratgeber/einstreuung-vs-schicht).
 
 ## Der häufigste Ausschreibungsfehler
 
-Eine Hartstoff**einstreuung** ist eine Oberflächenvergütung nach DIN 18560-3 und -4 und in DIN 18560-7 nicht geregelt. Eine definierte Verschleißklasse über die fertige Fläche lässt sich an ihr nicht nachweisen. Wer also eine bestimmte Verschleißklasse, Dichtheit oder hohe Dauerhaftigkeit fordert, muss eine Hartstoff**schicht** nach DIN 18560-7 ausschreiben, nicht eine Einstreuung. Den vollständigen technischen Vergleich liefert der Beitrag [Hartstoffeinstreuung oder Hartstoffschicht](/ratgeber/einstreuung-vs-schicht).
+Eine Hartstoff**einstreuung** ist eine Oberflächenvergütung und in DIN 18560-7 nicht geregelt. Eine definierte Verschleißklasse über die fertige Fläche lässt sich an ihr nicht nachweisen. Wer also eine bestimmte Verschleißklasse, Dichtheit oder hohe Dauerhaftigkeit fordert, muss eine Hartstoff**schicht** nach DIN 18560-7 ausschreiben, nicht eine Einstreuung. Den vollständigen technischen Vergleich liefert der Beitrag [Hartstoffeinstreuung oder Hartstoffschicht](/ratgeber/einstreuung-vs-schicht).
 
 ## So schreiben Sie nachweisbar aus
 
-Für einen Industrieboden, der hält und prüfbar ist, gehören drei Angaben in die Ausschreibung:
+Für einen Industrieboden, der hält und prüfbar ist, gehören diese Angaben in die Ausschreibung:
 
 1. **Die Materialklasse nach DIN EN 13813** (zum Beispiel CT-C70-F9-A6), also Druck, Biegezug und Verschleiß.
 2. **Die Bauweise nach DIN 18560-7** (Hartstoffestrich, nicht Einstreuung, wenn eine Verschleißklasse gefordert ist).
-3. **Die Hartstoffgruppe nach DIN 1100** (A, M oder KS), passend zur erwarteten Beanspruchung.
+3. **Die Beanspruchungsgruppe nach DIN 18560-7** (I, II oder III), passend zur erwarteten mechanischen Belastung.
+4. **Die Hartstoffgruppe nach DIN 1100** (A, M oder KS), passend zum geforderten Verschleißwiderstand.
 
 So beschreiben Sie die geforderte Leistung über genormte, prüfbare Kennwerte statt über unverbindliche Begriffe. Welche Werte zu Ihrer Nutzung passen, ordnet der Beitrag [Industrieboden im Neubau: das passende System wählen](/ratgeber/neubau-systemwahl); wie die Fläche danach entsteht, zeigt [Verfahren und Ablauf im Neubau](/ratgeber/neubau-industrieboden-ablauf).
 
