@@ -4,13 +4,44 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { withBasePath } from "@/lib/basePath";
+import { EXPERTE_PREFIX } from "@/lib/artikelMarker";
 
-/** Rendert den Markdown-Body eines Fachartikels im KORODUR-Stil.
- *  Interne Links bekommen den lang-Präfix (z. B. /loesungsfinder -> /de/loesungsfinder),
- *  externe Links öffnen in neuem Tab. */
-export default function ArtikelInhalt({ lang, body }: { lang: string; body: string }) {
+/** Markierter Experten-/Fachprüfungs-Hinweis (#296), erzeugt aus einer
+ *  `TODO(Frank)`-Notiz. Amber statt im Fließtext untergehen. */
+function ExpertenHinweis({ children }: { children: React.ReactNode }) {
   return (
-    <div className="text-navy" style={{ fontSize: 16, lineHeight: 1.7 }}>
+    <aside
+      className="my-6 rounded-lg border border-amber-300 border-l-4 border-l-amber-600 bg-amber-50 text-amber-900"
+      style={{ padding: "13px 17px" }}
+    >
+      <span
+        className="mr-2 inline-block rounded bg-amber-600 px-2 py-0.5 align-middle text-[11px] font-extrabold uppercase tracking-wide text-white"
+      >
+        Für Fachprüfung
+      </span>
+      <span className="text-[15px] leading-[1.6]">{children}</span>
+    </aside>
+  );
+}
+
+/** Rendert den Markdown-Body eines Fachartikels im KORODUR-Blog-Stil (#296):
+ *  Lesetype 18px/1.8, großzügige Headings. Interne Links bekommen den lang-Präfix,
+ *  externe öffnen im neuen Tab. `lead` hebt den ersten Absatz als Einleitung hervor.
+ *  `TODO(Frank)`-Notizen (Sentinel-Präfix) werden als Experten-Hinweis markiert. */
+export default function ArtikelInhalt({
+  lang,
+  body,
+  lead = false,
+}: {
+  lang: string;
+  body: string;
+  lead?: boolean;
+}) {
+  const leadKlassen = lead
+    ? " [&>p:first-of-type]:text-[21px] [&>p:first-of-type]:leading-[1.6] [&>p:first-of-type]:font-medium [&>p:first-of-type]:text-[#43576b]"
+    : "";
+  return (
+    <div className={`text-[#1b2b3d] text-[18px] leading-[1.8]${leadKlassen}`}>
       <Markdown
         remarkPlugins={[remarkGfm]}
         components={{
@@ -59,20 +90,32 @@ export default function ArtikelInhalt({ lang, body }: { lang: string; body: stri
             );
           },
           h2: ({ children }) => (
-            <h2 className="mt-10 mb-4" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.2 }}>
+            <h2
+              className="text-navy mt-11 mb-3.5"
+              style={{ fontSize: "clamp(23px, 3vw, 27px)", fontWeight: 900, lineHeight: 1.25, letterSpacing: "-0.01em" }}
+            >
               {children}
             </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="mt-8 mb-3" style={{ fontSize: "clamp(17px, 2.4vw, 22px)", fontWeight: 800, lineHeight: 1.25 }}>
+            <h3 className="text-navy mt-8 mb-2" style={{ fontSize: "clamp(18px, 2.4vw, 21px)", fontWeight: 800, lineHeight: 1.3 }}>
               {children}
             </h3>
           ),
-          p: ({ children }) => <p className="my-4">{children}</p>,
-          ul: ({ children }) => <ul className="my-4 pl-5 list-disc space-y-2">{children}</ul>,
-          ol: ({ children }) => <ol className="my-4 pl-5 list-decimal space-y-2">{children}</ol>,
-          li: ({ children }) => <li className="leading-[1.6]">{children}</li>,
-          strong: ({ children }) => <strong style={{ fontWeight: 800 }}>{children}</strong>,
+          p: ({ children }) => {
+            // Experten-Hinweis: Absatz beginnt mit dem Sentinel-Präfix.
+            const first = Array.isArray(children) ? children[0] : children;
+            if (typeof first === "string" && first.startsWith(EXPERTE_PREFIX)) {
+              const rest = first.slice(EXPERTE_PREFIX.length);
+              const inhalt = Array.isArray(children) ? [rest, ...children.slice(1)] : rest;
+              return <ExpertenHinweis>{inhalt}</ExpertenHinweis>;
+            }
+            return <p className="my-5">{children}</p>;
+          },
+          ul: ({ children }) => <ul className="my-5 pl-6 list-disc space-y-2.5">{children}</ul>,
+          ol: ({ children }) => <ol className="my-5 pl-6 list-decimal space-y-2.5">{children}</ol>,
+          li: ({ children }) => <li className="leading-[1.7]">{children}</li>,
+          strong: ({ children }) => <strong className="text-navy" style={{ fontWeight: 800 }}>{children}</strong>,
           blockquote: ({ children }) => (
             <blockquote className="border-l-4 border-cyan bg-icon-bg my-6" style={{ padding: "12px 20px", borderRadius: 8 }}>
               {children}
@@ -80,7 +123,7 @@ export default function ArtikelInhalt({ lang, body }: { lang: string; body: stri
           ),
           table: ({ children }) => (
             <div className="my-6" style={{ overflowX: "auto" }}>
-              <table className="w-full text-[14px]" style={{ borderCollapse: "collapse" }}>
+              <table className="w-full text-[15px]" style={{ borderCollapse: "collapse" }}>
                 {children}
               </table>
             </div>
