@@ -86,8 +86,10 @@ export default function TopNav({ lang, dict }: TopNavProps) {
 
   const bt = dict.bereiche as Record<string, string>;
   const pa = dict.produkte as unknown as Record<string, string>;
-  // Deep-Link in das Produktportfolio (Achse A), Anker = Produktart-Slug (#307).
-  const paHref = (art: string) => `/${lang}/produkte/#${art}`;
+  // Deep-Link in das Produktportfolio (Achse A), Query = Produktart-Slug (#307/
+  // #352). Query statt #hash, damit der Filter auch bei erneuter Menü-Navigation
+  // reaktiv vorwählt (ProdukteListe liest ?produktart= über useSearchParams).
+  const paHref = (art: string) => `/${lang}/produkte/?produktart=${art}`;
 
   // Zwei-Achsen-IA (#306/#309). Portfolio = Achse A „WAS" (Produktart, gruppiert);
   // Neubau/Sanierung = Achse B „WOFÜR" (Use-Case-Bereiche). Spezialmörtel ist nur
