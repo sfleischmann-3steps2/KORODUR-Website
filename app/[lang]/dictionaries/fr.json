@@ -571,7 +571,16 @@
   },
   "downloads": {
     "title": "Téléchargements",
-    "intro": "Les documents liés aux produits (fiches techniques, fiches de données de sécurité, déclarations des performances) sont disponibles sur la page du produit concerné. Les documents généraux sont disponibles ici.",
-    "zentrale": "Documents généraux"
+    "intro": "Tous les documents techniques à télécharger : fiches techniques, fiches de données de sécurité, déclarations des performances ainsi que recommandations d'application et d'entretien. Filtrez par type de document et par domaine ou recherchez par produit.",
+    "zentrale": "Documents généraux",
+    "alle": "Tous",
+    "suche_placeholder": "Rechercher un document ou un produit …",
+    "treffer": "{n} documents",
+    "keine_treffer": "Aucun document pour cette sélection. Ajustez ou réinitialisez les filtres.",
+    "filter_typ": "Type de document",
+    "filter_bereich": "Domaine",
+    "reset": "Réinitialiser les filtres",
+    "produkt_label": "Produit : {name}",
+    "uebergreifend": "Général"
   }
 }

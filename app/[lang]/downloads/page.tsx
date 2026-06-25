@@ -1,18 +1,31 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { LOCALES } from "../../../lib/i18n";
 import { notFound } from "next/navigation";
 import { alternatesFor } from "../../../lib/seo";
-import { ZENTRALE_DOKUMENTE } from "../../../data/produktDokumente";
-import DokumentListe from "../../../components/DokumentListe";
+import {
+  buildDownloadKatalog,
+  katalogBereiche,
+  UEBERGREIFEND,
+} from "../../../lib/downloadKatalog";
+import DownloadCenter from "../../../components/DownloadCenter";
 
-// Schlankes Download-Center (Launch-Plan M3, Steffi 2026-06-12: sekundär,
-// Footer-Einstieg). Primärer Ort für Produktdokumente ist die Produktseite;
-// hier liegen nur übergreifende Dokumente (Lieferprogramm, Bestellformulare,
-// Gruppen-SDS bis zur Produkt-Freigabe durch die Technik).
+// Download-Center (#301): filterbarer Katalog aller lokal vorliegenden
+// Produktdokumente (TDS/SDB/DoP/Anwendung/Reinigung/Service). Quelle ist die
+// verifizierte data/produktDokumente.ts; das Gap-Inventar (#300) ist separat.
 
 type Params = Promise<{ lang: string }>;
+
+const BEREICH_ORDER = [
+  "industrieboden",
+  "rapid-set",
+  "infrastruktur",
+  "microtop",
+  "spezialmoertel",
+  "katzenstreu",
+  "3d-concrete-printing",
+  UEBERGREIFEND,
+];
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { lang } = await params;
@@ -34,25 +47,41 @@ export default async function DownloadsPage({ params }: { params: Params }) {
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
 
+  const katalog = buildDownloadKatalog();
+  const vorhanden = new Set(katalogBereiche(katalog));
+  const bereichOptionen = BEREICH_ORDER.filter((b) => vorhanden.has(b));
+  const bereichLabels = {
+    ...(dict.bereiche as Record<string, string>),
+    uebergreifend_name: dict.downloads.uebergreifend,
+  };
+  const strings = {
+    alle: dict.downloads.alle,
+    suchePlaceholder: dict.downloads.suche_placeholder,
+    treffer: dict.downloads.treffer,
+    keineTreffer: dict.downloads.keine_treffer,
+    filterTyp: dict.downloads.filter_typ,
+    filterBereich: dict.downloads.filter_bereich,
+    reset: dict.downloads.reset,
+    produktLabel: dict.downloads.produkt_label,
+    uebergreifend: dict.downloads.uebergreifend,
+  };
+
   return (
     <section style={{ padding: "48px 32px 88px" }}>
-      <div className="mx-auto" style={{ maxWidth: 760 }}>
+      <div className="mx-auto" style={{ maxWidth: 960 }}>
         <h1 className="mb-4" style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900 }}>
           {dict.downloads.title}
         </h1>
-        <p className="text-navy/70 mb-10" style={{ fontSize: 16, lineHeight: 1.7 }}>
-          {dict.downloads.intro}{" "}
-          <Link href={`/${lang}/produkte/`} className="text-cyan-text" style={{ fontWeight: 700 }}>
-            → {dict.nav.produkte}
-          </Link>
+        <p className="text-navy/70 mb-8" style={{ fontSize: 16, lineHeight: 1.7, maxWidth: 720 }}>
+          {dict.downloads.intro}
         </p>
-        <h2 className="mb-5 text-[20px]" style={{ fontWeight: 900 }}>
-          {dict.downloads.zentrale}
-        </h2>
-        <DokumentListe
-          dokumente={ZENTRALE_DOKUMENTE}
+        <DownloadCenter
+          katalog={katalog}
+          bereichOptionen={bereichOptionen}
           lang={lang}
-          labels={dict.produkte as Record<string, string>}
+          bereichLabels={bereichLabels}
+          typLabels={dict.produkte as Record<string, string>}
+          strings={strings}
         />
       </div>
     </section>

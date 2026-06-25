@@ -571,7 +571,16 @@
   },
   "downloads": {
     "title": "Descargas",
-    "intro": "Los documentos relacionados con los productos, como fichas técnicas, fichas de datos de seguridad y declaraciones de prestaciones, se encuentran directamente en la página de cada producto. Aquí están disponibles los documentos generales.",
-    "zentrale": "Documentos generales"
+    "intro": "Todos los documentos técnicos para descargar: fichas técnicas, fichas de datos de seguridad, declaraciones de prestaciones y recomendaciones de aplicación y mantenimiento. Filtre por tipo de documento y área o busque por producto.",
+    "zentrale": "Documentos generales",
+    "alle": "Todos",
+    "suche_placeholder": "Buscar documento o producto …",
+    "treffer": "{n} documentos",
+    "keine_treffer": "No hay documentos para esta selección. Ajuste o restablezca los filtros.",
+    "filter_typ": "Tipo de documento",
+    "filter_bereich": "Área",
+    "reset": "Restablecer filtros",
+    "produkt_label": "Producto: {name}",
+    "uebergreifend": "Generales"
   }
 }
