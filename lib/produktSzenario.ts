@@ -27,16 +27,55 @@ for (const r of referenzen) {
   }
 }
 
-/** Thumbnail-Pfad des Kachel-Szenarios oder null (→ Mockup-Fallback). Matching
- *  über die DEUTSCHEN Basis-Produkt-/Variantennamen (Referenzen führen diese). */
+// Kuratierte Szenario-Zuordnung (#356, Steffi 2026-06-25): Produkte ohne eigenes
+// Referenzprojekt bekommen eine passende, variierte Szene aus ihrer Familie/ihrem
+// Bereich. Zentral + reviewbar an einer Stelle; das Feld `produkt.heroReferenz`
+// überschreibt einen Eintrag hier bei Bedarf. Map: Produkt-ID → Referenz-Slug.
+const KURATIERTE_SZENARIO_REFERENZ: Record<string, string> = {
+  // Industrieboden (Hartstoffe / Estriche / Einstreuung / Finish / Grundierung)
+  "neodur-he-40": "antolin-wochenend-sanierung",
+  "neodur-he-3-green": "kleemann-produktionshalle",
+  "neodur-he-2": "monheim-produktionsflaeche",
+  "korodur-wh-spezial": "weag-entsorgungsbetrieb",
+  "korodur-wh-metallisch": "wochenend-sanierung-werkstatt",
+  "korodur-diamantbeton": "strandkorbhalle-sylt",
+  "korodur-fscem-screed": "loosen-werkzeug-klausen",
+  "neodur-level-au": "guben-produktionshalle",
+  "korodur-robust": "nike-store-polen",
+  "korodur-easyfinish": "obstplantage-ibbenbueren",
+  "korodur-nanofinish": "sanierung-einer-sanierung",
+  "korodur-uniprimer": "lkw-waschstrasse",
+  "tru-sp": "kaiserhof-koeln", // Designboden → Retail-Szene
+  // Trinkwasser
+  "microtop-tw-vsm": "trinkwasserbehaelter-haidberg",
+  // Betonsanierung / Spritzmörtel
+  "neodur-msm-3": "dhl-ueberadebruecken",
+  "neodur-msm-5": "fugensanierung-lyreco",
+  "neodur-msb-8": "treppenstufen-sanierung",
+  // Verguss / Vergussbeton / Pflasterfugen → Infrastruktur/Brücken/Parkhäuser
+  "korophalt-02": "strassensanierung-wien",
+  "neodur-vm-1": "theodor-heuss-bruecke",
+  "neodur-vm-5": "bruckensanierung-amberg",
+  "neodur-vm-basic": "parkhaus-flughafen-zuerich",
+  "neodur-svm-03": "fussgaengerbruecke-albbruck",
+  "neodur-svm-4": "parkhaus-freiburger-munster-freiburg",
+  "neodur-pfm-ze": "hauptbahnhofsvorplatz-landau",
+  // goodcat (Katzenstreu): kein Referenzprojekt → bleibt ohne Szene (leerer Cover).
+};
+
+/** Thumbnail-Pfad des Kachel-Szenarios oder null (→ Mockup-Fallback). Reihenfolge:
+ *  explizites Feld `heroReferenz` → kuratierte Map → Auto-Match über die DEUTSCHEN
+ *  Basis-Produkt-/Variantennamen (Referenzen führen diese). */
 export function produktSzenarioBild(p: {
+  id?: string;
   name: string;
   heroReferenz?: string;
   varianten?: { name: string }[];
 }): string | null {
-  // 1. Kuratierter Override (Referenz-Slug)
-  if (p.heroReferenz) {
-    const r = referenzen.find((x) => x.slug === p.heroReferenz);
+  // 1. Kuratierter Override: Feld vor zentraler Map
+  const slug = p.heroReferenz ?? (p.id ? KURATIERTE_SZENARIO_REFERENZ[p.id] : undefined);
+  if (slug) {
+    const r = referenzen.find((x) => x.slug === slug);
     if (r && istEchtesFoto(r.bild)) return thumbSrc(r.bild);
   }
   // 2. Auto: beste Referenz, die das Produkt (oder eine Variante) einsetzt
