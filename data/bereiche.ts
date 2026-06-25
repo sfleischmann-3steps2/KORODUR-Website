@@ -105,6 +105,14 @@ export const bereiche: Bereich[] = [
     // Trinkwasser) — wird über zusatzBereiche hier geführt.
     produktgruppen: ["trockenspritz", "nassspritz", "beschichtung-schutz", "verguss"],
   },
+  {
+    slug: "katzenstreu",
+    bild: "/images/bereiche/katzenstreu.webp",
+    abgegrenzt: true,
+    // Variante B "neutral-reduziert" (Steffi, 2026-06-12). Highlights in
+    // sattem Grün (Richtung Heidelberg-Materials-Grün) später nach Abklärung.
+    produktgruppen: ["premium", "standard"],
+  },
 ];
 
 export function getBereichBySlug(slug: string): Bereich | undefined {
@@ -121,14 +129,15 @@ export const PORTFOLIO_SLUGS = [
   "infrastruktur",
   "microtop",
   "spezialmoertel",
+  "katzenstreu",
 ] as const;
 
-/** Kuratierte Portfolio-Kacheln (Steffi 2026-06-24/25, #352): 7 Kacheln, identisch
- *  auf Homepage UND /bereiche-Übersicht (angeglichen). Industrieboden in Neubau +
- *  Sanierung gesplittet (Links auf die bestehenden Unterseiten
- *  /bereiche/industrieboden/{neubau,sanierung}/), 3D-Betondruck als vorerst
- *  Platzhalter-Kachel (klickbar auf die generische Bereichsseite, Content folgt
- *  #347). Katzenstreu ist von der neuen Website entfernt (Steffi 2026-06-25). */
+/** Home-spezifische Portfolio-Kacheln (Steffi 2026-06-24, #352): 8 Kacheln statt
+ *  der 6 Portfolio-Bereiche. Industrieboden in Neubau + Sanierung gesplittet
+ *  (Links auf die bestehenden Unterseiten /bereiche/industrieboden/{neubau,
+ *  sanierung}/), 3D-Betondruck als vorerst Platzhalter-Kachel vor Katzenstreu
+ *  (klickbar auf die bestehende generische Bereichsseite, Content folgt #347).
+ *  Die /bereiche-Übersicht bleibt bewusst bei PORTFOLIO_SLUGS (6 Bereiche). */
 export type PortfolioKachel = {
   /** Dictionary-Lookup: bereiche.<dictKey>_name / _teaser / _beispiele. */
   dictKey: string;
@@ -160,4 +169,5 @@ export const HOME_PORTFOLIO_KACHELN: PortfolioKachel[] = [
     href: "bereiche/3d-concrete-printing/",
     bild: "/images/bereiche/3d-concrete-printing.webp",
   },
+  { dictKey: "katzenstreu", iconSlug: "katzenstreu", href: "bereiche/katzenstreu/", abgegrenzt: true },
 ];

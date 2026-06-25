@@ -38,6 +38,7 @@ export default function Footer({
     "rapid-set",
     "spezialmoertel",
     "microtop",
+    "katzenstreu",
   ];
 
   const linkClass =
