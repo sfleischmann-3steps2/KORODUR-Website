@@ -571,7 +571,16 @@
   },
   "downloads": {
     "title": "Downloads",
-    "intro": "Product-specific documents such as data sheets, safety data sheets and declarations of performance are available on the respective product page. General documents are provided here.",
-    "zentrale": "General Documents"
+    "intro": "All technical documents for download: data sheets, safety data sheets, declarations of performance as well as application and care instructions. Filter by document type and area or search by product.",
+    "zentrale": "General Documents",
+    "alle": "All",
+    "suche_placeholder": "Search document or product …",
+    "treffer": "{n} documents",
+    "keine_treffer": "No documents for this selection. Adjust or reset the filters.",
+    "filter_typ": "Document type",
+    "filter_bereich": "Area",
+    "reset": "Reset filters",
+    "produkt_label": "Product: {name}",
+    "uebergreifend": "General"
   }
 }

@@ -578,7 +578,16 @@
   },
   "downloads": {
     "title": "Downloads",
-    "intro": "Produktbezogene Dokumente wie Datenblätter, Sicherheitsdatenblätter und Leistungserklärungen finden Sie direkt auf der jeweiligen Produktseite. Hier stehen übergreifende Dokumente bereit.",
-    "zentrale": "Übergreifende Dokumente"
+    "intro": "Alle technischen Dokumente zum Download: Datenblätter, Sicherheitsdatenblätter, Leistungserklärungen sowie Anwendungs- und Pflegehinweise. Nach Dokumenttyp und Bereich filtern oder nach Produkt suchen.",
+    "zentrale": "Übergreifende Dokumente",
+    "alle": "Alle",
+    "suche_placeholder": "Dokument oder Produkt suchen …",
+    "treffer": "{n} Dokumente",
+    "keine_treffer": "Keine Dokumente für diese Auswahl. Filter anpassen oder zurücksetzen.",
+    "filter_typ": "Dokumenttyp",
+    "filter_bereich": "Bereich",
+    "reset": "Filter zurücksetzen",
+    "produkt_label": "Produkt: {name}",
+    "uebergreifend": "Übergreifend"
   }
 }
