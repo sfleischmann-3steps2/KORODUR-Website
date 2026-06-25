@@ -5,6 +5,7 @@ import ProdukteListe, {
   type ProduktKarte,
 } from "../../../components/ProdukteListe";
 import { produkte } from "../../../data/produkte";
+import { produktSzenarioBild } from "../../../lib/produktSzenario";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { notFound } from "next/navigation";
 import { localizeProdukte } from "../../../data/i18n/getLocalized";
@@ -40,6 +41,9 @@ export default async function ProduktePage({
   type LP = (typeof localizedProdukte)[number];
   // Bereiche je Produkt (primär + zusatz) für den Bereich-Filter (#307, Stufe 1).
   const bereicheVon = (p: LP): string[] => [p.bereich, ...(p.zusatzBereiche ?? [])];
+  // Kachel-Szenario (#356) aus dem BASIS-Produkt auflösen — die Referenzen führen
+  // deutsche Produktnamen, ein Match gegen den lokalisierten Namen ginge fehl.
+  const szenarioById = new Map(produkte.map((p) => [p.id, produktSzenarioBild(p)]));
   const toKarte = (p: LP): ProduktKarte => ({
     id: p.id,
     name: p.name,
@@ -48,6 +52,7 @@ export default async function ProduktePage({
     schichtdicke: p.schichtdicke,
     normen: p.normen,
     bild: p.bild,
+    szenarioBild: szenarioById.get(p.id) ?? undefined,
     bereiche: bereicheVon(p),
   });
 
