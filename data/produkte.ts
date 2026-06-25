@@ -113,6 +113,11 @@ export interface Produkt {
   /** @deprecated Alter Eignungs-Array, entfällt nach Migrationsabschluss. */
   eignungen?: (Belastung | Sonderbedingung | Massnahme)[];
   bild?: string;
+  /** Kuratiertes Kachel-Szenario (#356/#304): Slug der Referenz, deren Hero-Foto
+   *  als Einsatz-Szene auf der Produkt-Kachel gezeigt wird. Ohne Angabe wird die
+   *  repräsentativste Referenz automatisch gewählt; fehlt auch die, fällt die
+   *  Kachel auf das Produkt-Mockup (`bild`) zurück. */
+  heroReferenz?: string;
 }
 
 export const produkte: Produkt[] = [
