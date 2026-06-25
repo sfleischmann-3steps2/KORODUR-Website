@@ -755,30 +755,6 @@ export const produkteEN: Record<string, {
       { name: "FAST Control", hinweis: "Accelerator for cold temperatures" },
     ],
   },
-  "goodcat-golden-nature": {
-    kurzbeschreibung: "Bentonite clumping litter with brown granules, high odour binding and extra-strong clump formation",
-    beschreibung: "goodcat clumping litter is untreated and a 100 % pure natural product. golden nature: brown granules, high odour binding, extra-strong clump formation, low-dust and untreated.",
-    besonderheiten: ["100 % pure natural product", "Low-dust and untreated", "Extra-strong clump formation"],
-    technischeDaten: [
-      { label: "Pack size", wert: "7 litres" },
-    ],
-  },
-  "goodcat-organic-love": {
-    kurzbeschreibung: "Clumping litter made from 100 % plant fibres with high odour binding",
-    beschreibung: "goodcat clumping litter is untreated and a 100 % pure natural product. organic love: 100 % plant fibres, high odour binding, good clump formation, low-dust and untreated.",
-    besonderheiten: ["100 % plant fibres", "Low-dust and untreated", "Good clump formation"],
-    technischeDaten: [
-      { label: "Pack size", wert: "8 litres" },
-    ],
-  },
-  "goodcat-silver-classic": {
-    kurzbeschreibung: "Bentonite clumping litter with classic white granules and high odour binding",
-    beschreibung: "goodcat clumping litter is untreated and a 100 % pure natural product. silver classic: classic white granules, high odour binding, extra-strong clump formation, low-dust and untreated.",
-    besonderheiten: ["100 % pure natural product", "Low-dust and untreated", "Extra-strong clump formation"],
-    technischeDaten: [
-      { label: "Pack size", wert: "7 litres" },
-    ],
-  },
   "koromineral-lasur": {
     kurzbeschreibung: "Special impregnation with coloured surface finish based on lithium silicate",
     beschreibung: "KOROMINERAL Lasur is used for the impregnation of cement-bound screed and concrete surfaces and especially of KORODUR screeds. The pigmentation creates a coloured surface finish. Application with a short-pile nylon roller in two passes in a criss-cross pattern.",

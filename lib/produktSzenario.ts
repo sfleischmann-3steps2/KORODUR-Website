@@ -60,7 +60,6 @@ const KURATIERTE_SZENARIO_REFERENZ: Record<string, string> = {
   "neodur-svm-03": "fussgaengerbruecke-albbruck",
   "neodur-svm-4": "parkhaus-freiburger-munster-freiburg",
   "neodur-pfm-ze": "hauptbahnhofsvorplatz-landau",
-  // goodcat (Katzenstreu): kein Referenzprojekt → bleibt ohne Szene (leerer Cover).
 };
 
 /** Thumbnail-Pfad des Kachel-Szenarios oder null (→ Mockup-Fallback). Reihenfolge:

@@ -759,30 +759,6 @@ export const produkteES: Record<string, {
       { name: "FAST Control", hinweis: "Acelerante para temperaturas frías" },
     ],
   },
-  "goodcat-golden-nature": {
-    kurzbeschreibung: "Arena aglomerante de bentonita con granulado marrón, alta retención de olores y formación de aglomerados extrafuerte",
-    beschreibung: "La arena aglomerante goodcat no está tratada y es un producto natural 100 % puro. golden nature: granulado marrón, alta retención de olores, formación de aglomerados extrafuerte, baja en polvo y sin tratar.",
-    besonderheiten: ["Producto natural 100 % puro", "Baja en polvo y sin tratar", "Formación de aglomerados extrafuerte"],
-    technischeDaten: [
-      { label: "Envase", wert: "7 litros" },
-    ],
-  },
-  "goodcat-organic-love": {
-    kurzbeschreibung: "Arena aglomerante de fibras vegetales al 100 % con alta retención de olores",
-    beschreibung: "La arena aglomerante goodcat no está tratada y es un producto natural 100 % puro. organic love: 100 % fibras vegetales, alta retención de olores, buena formación de aglomerados, baja en polvo y sin tratar.",
-    besonderheiten: ["100 % fibras vegetales", "Baja en polvo y sin tratar", "Buena formación de aglomerados"],
-    technischeDaten: [
-      { label: "Envase", wert: "8 litros" },
-    ],
-  },
-  "goodcat-silver-classic": {
-    kurzbeschreibung: "Arena aglomerante de bentonita con granulado blanco clásico y alta retención de olores",
-    beschreibung: "La arena aglomerante goodcat no está tratada y es un producto natural 100 % puro. silver classic: granulado blanco clásico, alta retención de olores, formación de aglomerados extrafuerte, baja en polvo y sin tratar.",
-    besonderheiten: ["Producto natural 100 % puro", "Baja en polvo y sin tratar", "Formación de aglomerados extrafuerte"],
-    technischeDaten: [
-      { label: "Envase", wert: "7 litros" },
-    ],
-  },
   "koromineral-lasur": {
     kurzbeschreibung: "Impregnación especial con acabado superficial coloreado a base de silicato de litio",
     beschreibung: "KOROMINERAL Lasur se utiliza para la impregnación de superficies de solera y hormigón aglomeradas con cemento y especialmente de soleras KORODUR. La pigmentación crea un acabado superficial coloreado. Aplicación con rodillo de nailon de pelo corto en dos pasadas en cruz.",
