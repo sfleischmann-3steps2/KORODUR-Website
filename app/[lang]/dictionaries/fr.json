@@ -581,6 +581,8 @@
     "filter_bereich": "Domaine",
     "reset": "Réinitialiser les filtres",
     "produkt_label": "Produit : {name}",
-    "uebergreifend": "Général"
+    "uebergreifend": "Général",
+    "alle_produkt": "Tous les documents de ce produit",
+    "alle_bereich": "Tous les documents de ce domaine"
   }
 }

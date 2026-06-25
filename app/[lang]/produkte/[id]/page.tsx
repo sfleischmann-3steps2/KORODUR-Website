@@ -373,6 +373,15 @@ export default async function ProduktDetailPage({
                 gruppieren
               />
             )}
+            {dokumente.length > 0 && (
+              <Link
+                href={`/${lang}/downloads/?produkt=${produkt.id}`}
+                className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] no-underline hover:underline mt-4"
+                style={{ fontWeight: 700 }}
+              >
+                {dict.downloads.alle_produkt} →
+              </Link>
+            )}
             <a
               href={lvUrl}
               target="_blank"

@@ -588,6 +588,8 @@
     "filter_bereich": "Bereich",
     "reset": "Filter zurücksetzen",
     "produkt_label": "Produkt: {name}",
-    "uebergreifend": "Übergreifend"
+    "uebergreifend": "Übergreifend",
+    "alle_produkt": "Alle Dokumente zu diesem Produkt",
+    "alle_bereich": "Alle Dokumente in diesem Bereich"
   }
 }

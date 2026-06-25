@@ -370,6 +370,17 @@ export default async function BereichPage({ params }: { params: Params }) {
               </Link>
             </div>
           )}
+          {localizedProdukte.length > 0 && (
+            <div className="mt-8">
+              <Link
+                href={`/${lang}/downloads/?bereich=${slug}`}
+                className="inline-flex items-center gap-1.5 text-cyan-text text-[15px] no-underline hover:underline"
+                style={{ fontWeight: 700 }}
+              >
+                {dict.downloads.alle_bereich} →
+              </Link>
+            </div>
+          )}
         </div>
       </section>
       )}
