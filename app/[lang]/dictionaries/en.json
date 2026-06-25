@@ -355,7 +355,8 @@
     "copyright": "All rights reserved.",
     "contact_cta": "Technical Advisory",
     "contact_desc": "Talk directly to our experts.",
-    "col_bereiche": "Business Areas",
+    "col_bereiche": "Product portfolio",
+    "alle_bereiche": "All areas",
     "col_unternehmen": "Company",
     "col_kontakt": "Contact",
     "impressum": "Legal Notice",
@@ -366,7 +367,7 @@
     "downloads": "Downloads",
     "agb": "Terms and Conditions",
     "hinweisgeber": "Whistleblower System",
-    "col_service": "Service & Guides"
+    "col_service": "Service"
   },
   "bereiche": {
     "breadcrumb_home": "Home",

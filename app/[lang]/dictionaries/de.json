@@ -355,7 +355,8 @@
     "copyright": "Alle Rechte vorbehalten.",
     "contact_cta": "Technische Beratung",
     "contact_desc": "Sprechen Sie direkt mit unseren Experten.",
-    "col_bereiche": "Bereiche",
+    "col_bereiche": "Produktportfolio",
+    "alle_bereiche": "Alle Bereiche",
     "col_unternehmen": "Unternehmen",
     "col_kontakt": "Kontakt",
     "impressum": "Impressum",
@@ -366,7 +367,7 @@
     "downloads": "Downloads",
     "agb": "AGB",
     "hinweisgeber": "Hinweisgebersystem",
-    "col_service": "Service & Ratgeber"
+    "col_service": "Service"
   },
   "bereiche": {
     "breadcrumb_home": "Start",

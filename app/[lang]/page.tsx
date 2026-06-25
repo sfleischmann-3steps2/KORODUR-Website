@@ -135,7 +135,7 @@ export default async function Home({
       </section>
 
       {/* Section 1b: Bereichs-Grid */}
-      <section className="bg-white" style={{ padding: "56px 32px 80px" }}>
+      <section id="bereiche" className="bg-white scroll-mt-24" style={{ padding: "56px 32px 80px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h2
             className="text-center mb-4"

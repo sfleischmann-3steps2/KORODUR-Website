@@ -355,7 +355,8 @@
     "copyright": "Todos los derechos reservados.",
     "contact_cta": "Asesoramiento técnico",
     "contact_desc": "Hable directamente con nuestros expertos.",
-    "col_bereiche": "Áreas",
+    "col_bereiche": "Portafolio de productos",
+    "alle_bereiche": "Todas las áreas",
     "col_unternehmen": "Empresa",
     "col_kontakt": "Contacto",
     "impressum": "Aviso legal",
@@ -366,7 +367,7 @@
     "downloads": "Descargas",
     "agb": "Condiciones generales",
     "hinweisgeber": "Canal de denuncias",
-    "col_service": "Servicio y guías"
+    "col_service": "Servicio"
   },
   "bereiche": {
     "breadcrumb_home": "Inicio",
