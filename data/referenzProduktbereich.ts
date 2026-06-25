@@ -36,3 +36,21 @@ export function produktbereichLabel(slug: string, lang: string): string {
   const m = PRODUKTBEREICH_LABELS[slug];
   return m ? (m[lang] ?? m.de) : "";
 }
+
+/** Akzentfarbe je Produktbereich für das Karten-Flag (Steffi 2026-06-25, #352):
+ *  unterschiedliche Themen → unterschiedliche Farben statt nur Neubau/Sanierung.
+ *  CD erlaubt knallige Töne; Textfarbe je Hintergrund kontrastsicher (Gelb →
+ *  Navy-Text). Fallback (kein/unbekannter Bereich): Navy. */
+const PRODUKTBEREICH_FARBE: Record<string, { bg: string; text: string }> = {
+  industrieboden: { bg: "#002d59", text: "#ffffff" },
+  sichtestrich: { bg: "#6d5bba", text: "#ffffff" },
+  microtop: { bg: "#0e9b96", text: "#ffffff" },
+  "rapid-set": { bg: "#ffc400", text: "#002d59" },
+  spezialmoertel: { bg: "#e8651e", text: "#ffffff" },
+  infrastruktur: { bg: "#5a7184", text: "#ffffff" },
+  katzenstreu: { bg: "#4caf50", text: "#ffffff" },
+};
+
+export function produktbereichFarbe(slug: string | null): { bg: string; text: string } {
+  return (slug ? PRODUKTBEREICH_FARBE[slug] : undefined) ?? { bg: "#002d59", text: "#ffffff" };
+}
