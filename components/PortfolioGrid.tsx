@@ -9,7 +9,7 @@ import type { Dictionary } from "../app/[lang]/dictionaries";
 
 // Symbolische Referenzfotos je Bereich (#228). Bewusst in der Component (Track B),
 // NICHT in data/bereiche.ts. Echte Referenzbilder (Bild-Policy); Katzenstreu hebt
-// sich farblich ab (Benticat). Fehlt ein Bild, fällt die Kachel auf das Icon zurück.
+// sich farblich ab. Fehlt ein Bild, fällt die Kachel auf das Icon zurück.
 const BEREICH_KACHELBILD: Record<string, string> = {
   industrieboden: "/images/referenzen/kleemann-produktionshalle/hero.jpg",
   "rapid-set": "/images/referenzen/dhl-ueberadebruecken/hero.jpg",

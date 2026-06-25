@@ -71,9 +71,6 @@ export const PRODUKT_EINSATZBEREICHE: Record<string, string[]> = {
   "neodur-msb-8": ["Betoninstandsetzung", "Trinkwasserbehälter", "Tunnelbau und Spezialtiefbau", "Hang- und Baugrubensicherung", "Verstärkung bestehender Konstruktionen"],
   "rapid-set-concrete-mix": ["Betoninstandsetzung und Reparatur", "Gehwege und Fahrbahnen", "Beton- und Maschinenfundamente", "Industrieböden innen und außen", "Schalungsarbeiten", "Nassbereiche"],
   "rapid-set-concrete-pharmacy": ["Verarbeitungssteuerung von Rapid-Set-Reparaturmörteln", "Verlängerung der Verarbeitungszeit bei großen oder komplexen Verlegungen", "Verarbeitung bei höheren Temperaturen mit verzögerter Abbindung", "Verarbeitung bei kalten Temperaturen mit beschleunigter Abbindung", "Fließfähige Einstellung und Reduzierung des Anmachwasserbedarfs"],  // abgeleitet
-  "goodcat-golden-nature": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen"],  // abgeleitet
-  "goodcat-organic-love": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen"],  // abgeleitet
-  "goodcat-silver-classic": ["Haushalte mit Katzen", "Mehrkatzenhaushalte", "Tierheime und Tierpensionen", "Zoofachhandel und Tierzuchten"],  // abgeleitet
   "neodur-pfm-1k-easyfix": ["Verfugung von Pflasterflächen", "Sanierung bestehender Pflasterfugen", "Terrassen und Gehwege", "Fußgängerbereiche mit leichter Belastung"],
   "neodur-pfm-ze": ["Pflasterflächen aus Natur- und Betonpflaster in starrer Bauweise", "Plattenflächen aus Betonplatten in starrer Bauweise (PFM-ZE Flex)", "Neuverfugung bestehender Pflaster- und Plattenbeläge", "Mit Pkw befahrene Flächen, Wege und Plätze", "Frost- und tausalzbeanspruchte Außenflächen"],
 };

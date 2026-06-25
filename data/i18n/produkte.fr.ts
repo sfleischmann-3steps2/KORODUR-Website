@@ -741,30 +741,6 @@ export const produkteFR: Record<string, {
       { name: "FAST Control", hinweis: "Accélérateur pour températures froides" },
     ],
   },
-  "goodcat-golden-nature": {
-    kurzbeschreibung: "Litière agglomérante à la bentonite, granulés bruns, haute absorption des odeurs et agglomération extra-forte",
-    beschreibung: "La litière agglomérante goodcat est non traitée et constitue un produit 100 % naturel. golden nature : granulés bruns, haute absorption des odeurs, agglomération extra-forte, pauvre en poussière et non traitée.",
-    besonderheiten: ["Produit 100 % naturel", "Pauvre en poussière et non traitée", "Agglomération extra-forte"],
-    technischeDaten: [
-      { label: "Conditionnement", wert: "7 litres" },
-    ],
-  },
-  "goodcat-organic-love": {
-    kurzbeschreibung: "Litière agglomérante en 100 % fibres végétales avec haute absorption des odeurs",
-    beschreibung: "La litière agglomérante goodcat est non traitée et constitue un produit 100 % naturel. organic love : 100 % fibres végétales, haute absorption des odeurs, bonne agglomération, pauvre en poussière et non traitée.",
-    besonderheiten: ["100 % fibres végétales", "Pauvre en poussière et non traitée", "Bonne agglomération"],
-    technischeDaten: [
-      { label: "Conditionnement", wert: "8 litres" },
-    ],
-  },
-  "goodcat-silver-classic": {
-    kurzbeschreibung: "Litière agglomérante à la bentonite, granulés blancs classiques et haute absorption des odeurs",
-    beschreibung: "La litière agglomérante goodcat est non traitée et constitue un produit 100 % naturel. silver classic : granulés blancs classiques, haute absorption des odeurs, agglomération extra-forte, pauvre en poussière et non traitée.",
-    besonderheiten: ["Produit 100 % naturel", "Pauvre en poussière et non traitée", "Agglomération extra-forte"],
-    technischeDaten: [
-      { label: "Conditionnement", wert: "7 litres" },
-    ],
-  },
   "koromineral-lasur": {
     kurzbeschreibung: "Imprégnation spéciale avec finition de surface colorée à base de silicate de lithium",
     beschreibung: "KOROMINERAL Lasur est utilisé pour l'imprégnation des surfaces de chape et de béton à liant ciment et spécialement des chapes KORODUR. La pigmentation crée une finition de surface colorée. Application au rouleau nylon à poils courts en deux passes croisées.",

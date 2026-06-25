@@ -2099,50 +2099,6 @@ export const produkte: Produkt[] = [
     zeitKategorie: "normal",
   },
 
-  // === WEBSITE-MIGRATION STUFE 2, KATZENSTREU (2026-06-12, Variante B) ===
-  // Quelle: bereiche_katzenstreu_details.md. B2B-Bereich (Handel/Private
-  // Label), bewusst schlank — Review-Entscheidung Steffi 2026-06-12.
-  {
-    id: "goodcat-golden-nature",
-    name: "goodcat golden nature",
-    kategorie: "sonstige",
-    bereich: "katzenstreu",
-    produktgruppe: "premium",
-    kurzbeschreibung: "Bentonit-Klumpstreu mit brauner Körnung, hoher Geruchsbindung und extrastarker Klumpenbildung",
-    beschreibung: "goodcat Klumpstreu ist unbehandelt und ein 100 % reines Naturprodukt. golden nature: braune Körnung, hohe Geruchsbindung, extrastarke Klumpenbildung, staubarm und unbehandelt.",
-    normen: [],
-    technischeDaten: [{ label: "Gebinde", wert: "7 Liter" }],
-    besonderheiten: ["100 % reines Naturprodukt", "Staubarm und unbehandelt", "Extrastarke Klumpenbildung"],
-    zeitKategorie: "normal",
-  },
-  {
-    id: "goodcat-organic-love",
-    name: "goodcat organic love",
-    kategorie: "sonstige",
-    bereich: "katzenstreu",
-    produktgruppe: "premium",
-    kurzbeschreibung: "Klumpstreu aus 100 % Pflanzenfasern mit hoher Geruchsbindung",
-    beschreibung: "goodcat Klumpstreu ist unbehandelt und ein 100 % reines Naturprodukt. organic love: 100 % Pflanzenfasern, hohe Geruchsbindung, gute Klumpenbildung, staubarm und unbehandelt.",
-    normen: [],
-    technischeDaten: [{ label: "Gebinde", wert: "8 Liter" }],
-    besonderheiten: ["100 % Pflanzenfasern", "Staubarm und unbehandelt", "Gute Klumpenbildung"],
-    zeitKategorie: "normal",
-  },
-  {
-    id: "goodcat-silver-classic",
-    name: "goodcat silver classic",
-    kategorie: "sonstige",
-    bereich: "katzenstreu",
-    produktgruppe: "standard",
-    kurzbeschreibung: "Bentonit-Klumpstreu mit klassisch weißer Körnung und hoher Geruchsbindung",
-    beschreibung: "goodcat Klumpstreu ist unbehandelt und ein 100 % reines Naturprodukt. silver classic: klassisch weiße Körnung, hohe Geruchsbindung, extrastarke Klumpenbildung, staubarm und unbehandelt.",
-    normen: [],
-    technischeDaten: [{ label: "Gebinde", wert: "7 Liter" }],
-    besonderheiten: ["100 % reines Naturprodukt", "Staubarm und unbehandelt", "Extrastarke Klumpenbildung"],
-    zeitKategorie: "normal",
-  },
-
-
   // === TDS-NACHLIEFERUNG STEFFI 2026-06-12 (docs/tds-quellen/) ===
   // KOROMINERAL Lasur entfernt (2026-06-23): Produkt gibt es nicht mehr (Steffi).
   {

@@ -324,7 +324,11 @@ export default async function BereichPage({ params }: { params: Params }) {
         </section>
       )}
 
-      {/* Produkte des Bereichs */}
+      {/* Produkte des Bereichs. Abgegrenzte Bereiche (Katzenstreu) ohne einzeln
+          gelistete Produkte überspringen die Sektion — der Private-Label-Block
+          trägt den Inhalt; der „keine_produkte"-Leerzustand (Coming-Soon-Wording)
+          bleibt nur Platzhalter-Bereichen (z. B. 3D-Betondruck) vorbehalten. */}
+      {!(bereich.abgegrenzt && localizedProdukte.length === 0) && (
       <section id="produkte" className={`${bereich.abgegrenzt ? "bg-white" : "bg-icon-bg"} scroll-mt-24`} style={{ padding: "56px 32px 64px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h2
@@ -368,6 +372,7 @@ export default async function BereichPage({ params }: { params: Params }) {
           )}
         </div>
       </section>
+      )}
 
       {/* Variante B (abgegrenzte Bereiche): Vertrauenszeile + Private Label */}
       {bereich.abgegrenzt && (

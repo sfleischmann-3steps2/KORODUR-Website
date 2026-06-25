@@ -901,42 +901,6 @@ export const produktePL: Record<string, {
       { name: "FAST Control", hinweis: "Przyspieszacz do niskich temperatur" },
     ],
   },
-  "goodcat-golden-nature": {
-    kurzbeschreibung: "Żwirek zbrylający z bentonitu o brązowym uziarnieniu, wysokim wiązaniu zapachów i ekstramocnym zbrylaniu",
-    beschreibung: "Żwirek zbrylający goodcat jest niepoddawany obróbce i stanowi w 100 % czysty produkt naturalny. golden nature: brązowe uziarnienie, wysokie wiązanie zapachów, ekstramocne zbrylanie, niskopylący i niepoddawany obróbce.",
-    technischeDaten: [
-      { label: "Opakowanie", wert: "7 litrów" },
-    ],
-    besonderheiten: [
-      "W 100 % czysty produkt naturalny",
-      "Niskopylący i niepoddawany obróbce",
-      "Ekstramocne zbrylanie",
-    ],
-  },
-  "goodcat-organic-love": {
-    kurzbeschreibung: "Żwirek zbrylający w 100 % z włókien roślinnych o wysokim wiązaniu zapachów",
-    beschreibung: "Żwirek zbrylający goodcat jest niepoddawany obróbce i stanowi w 100 % czysty produkt naturalny. organic love: 100 % włókien roślinnych, wysokie wiązanie zapachów, dobre zbrylanie, niskopylący i niepoddawany obróbce.",
-    technischeDaten: [
-      { label: "Opakowanie", wert: "8 litrów" },
-    ],
-    besonderheiten: [
-      "100 % włókien roślinnych",
-      "Niskopylący i niepoddawany obróbce",
-      "Dobre zbrylanie",
-    ],
-  },
-  "goodcat-silver-classic": {
-    kurzbeschreibung: "Żwirek zbrylający z bentonitu o klasycznie białym uziarnieniu i wysokim wiązaniu zapachów",
-    beschreibung: "Żwirek zbrylający goodcat jest niepoddawany obróbce i stanowi w 100 % czysty produkt naturalny. silver classic: klasycznie białe uziarnienie, wysokie wiązanie zapachów, ekstramocne zbrylanie, niskopylący i niepoddawany obróbce.",
-    technischeDaten: [
-      { label: "Opakowanie", wert: "7 litrów" },
-    ],
-    besonderheiten: [
-      "W 100 % czysty produkt naturalny",
-      "Niskopylący i niepoddawany obróbce",
-      "Ekstramocne zbrylanie",
-    ],
-  },
   "koromineral-lasur": {
     kurzbeschreibung: "Specjalna impregnacja z barwnym uszlachetnieniem powierzchni na bazie krzemianu litu",
     beschreibung: "KOROMINERAL Lasur stosuje się do impregnacji powierzchni jastrychowych i betonowych na bazie cementu, a specjalnie jastrychów KORODUR. Dzięki pigmentacji powstaje barwne uszlachetnienie powierzchni. Obróbka wałkiem nylonowym o krótkim włosiu w dwóch przejściach na krzyż.",
