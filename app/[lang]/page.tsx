@@ -5,6 +5,7 @@ import { getReferenzBySlug } from "../../data/referenzen";
 import { localizeReferenzen } from "../../data/i18n/getLocalized";
 import { FEATURED_SLUGS } from "../../data/featured";
 import PortfolioGrid from "../../components/PortfolioGrid";
+import { HOME_PORTFOLIO_KACHELN } from "../../data/bereiche";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 import { withBasePath } from "../../lib/basePath";
@@ -149,7 +150,7 @@ export default async function Home({
           >
             {dict.home.bereiche_subtitle}
           </p>
-          <PortfolioGrid lang={lang} dict={dict} />
+          <PortfolioGrid lang={lang} dict={dict} tiles={HOME_PORTFOLIO_KACHELN} />
         </div>
       </section>
 

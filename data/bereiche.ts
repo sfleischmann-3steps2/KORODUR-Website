@@ -131,3 +131,43 @@ export const PORTFOLIO_SLUGS = [
   "spezialmoertel",
   "katzenstreu",
 ] as const;
+
+/** Home-spezifische Portfolio-Kacheln (Steffi 2026-06-24, #352): 8 Kacheln statt
+ *  der 6 Portfolio-Bereiche. Industrieboden in Neubau + Sanierung gesplittet
+ *  (Links auf die bestehenden Unterseiten /bereiche/industrieboden/{neubau,
+ *  sanierung}/), 3D-Betondruck als vorerst Platzhalter-Kachel vor Katzenstreu
+ *  (klickbar auf die bestehende generische Bereichsseite, Content folgt #347).
+ *  Die /bereiche-Übersicht bleibt bewusst bei PORTFOLIO_SLUGS (6 Bereiche). */
+export type PortfolioKachel = {
+  /** Dictionary-Lookup: bereiche.<dictKey>_name / _teaser / _beispiele. */
+  dictKey: string;
+  /** Slug für Icon-Fallback (bereichIcon) + Standard-Kachelbild. */
+  iconSlug: string;
+  /** Pfad nach /<lang>/, z. B. "bereiche/industrieboden/neubau/". */
+  href: string;
+  /** Explizites (symbolisches) Kachelbild; sonst BEREICH_KACHELBILD[iconSlug]. */
+  bild?: string;
+  /** Optisch abgegrenzt (gestrichelt + Badge), z. B. Katzenstreu. */
+  abgegrenzt?: boolean;
+};
+
+export const HOME_PORTFOLIO_KACHELN: PortfolioKachel[] = [
+  { dictKey: "industrieboden_neubau", iconSlug: "industrieboden", href: "bereiche/industrieboden/neubau/" },
+  {
+    dictKey: "industrieboden_sanierung",
+    iconSlug: "industrieboden",
+    href: "bereiche/industrieboden/sanierung/",
+    bild: "/images/referenzen/antolin-wochenend-sanierung/hero.jpg",
+  },
+  { dictKey: "rapid-set", iconSlug: "rapid-set", href: "bereiche/rapid-set/" },
+  { dictKey: "infrastruktur", iconSlug: "infrastruktur", href: "bereiche/infrastruktur/" },
+  { dictKey: "microtop", iconSlug: "microtop", href: "bereiche/microtop/" },
+  { dictKey: "spezialmoertel", iconSlug: "spezialmoertel", href: "bereiche/spezialmoertel/" },
+  {
+    dictKey: "3d-concrete-printing",
+    iconSlug: "3d-concrete-printing",
+    href: "bereiche/3d-concrete-printing/",
+    bild: "/images/bereiche/3d-concrete-printing.webp",
+  },
+  { dictKey: "katzenstreu", iconSlug: "katzenstreu", href: "bereiche/katzenstreu/", abgegrenzt: true },
+];
