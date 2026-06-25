@@ -1,0 +1,10468 @@
+[
+ {
+  "id": "11944",
+  "title": "Microtop Table",
+  "slug": "microtop-table",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=11944",
+  "data": [
+   [
+    "Parameter",
+    "Trockenspritzverfahren",
+    "Nassspritzverfahren"
+   ],
+   [
+    "Ideale Förderlänge [m]",
+    "> 40 bis 400",
+    "< 40"
+   ],
+   [
+    "Mögliche Materialfördermenge [kg/h]",
+    "1.000",
+    "300"
+   ],
+   [
+    "Variable Materialmenge",
+    "ja",
+    "ja"
+   ],
+   [
+    "Kontinuierliches Spritzen möglich",
+    "ja",
+    "ja"
+   ],
+   [
+    "Erforderliche Arbeitsgänge",
+    "1",
+    "1"
+   ],
+   [
+    "Luftbedarf [m³/min]",
+    "5",
+    "1 - 1,5"
+   ],
+   [
+    "Luftdruck [bar]",
+    "2,5 - 3",
+    "2 - 5"
+   ],
+   [
+    "Misch-/Reifezeiten nötig",
+    "nein",
+    "nein"
+   ],
+   [
+    "Materialaustrittgeschwindigkeit [m/s]",
+    "25 - 45",
+    "15 - 25"
+   ],
+   [
+    "Materialverbrauch",
+    "hoch",
+    "niedrig"
+   ],
+   [
+    "Maximaler Rückprall je nach Anwendungsbedingungen [%]",
+    "30 - 60",
+    "10"
+   ],
+   [
+    "Spritzbild ohne Nachbearbeitung",
+    "mittel",
+    "fein"
+   ],
+   [
+    "Energiebedarf",
+    "hoch",
+    "niedrig"
+   ],
+   [
+    "Reinigungsaufwand Maschine und Schläuche",
+    "niedrig",
+    "mittel"
+   ],
+   [
+    "Staubentwicklung",
+    "hoch",
+    "niedrig"
+   ],
+   [
+    "Belüftungsaufwand",
+    "hoch",
+    "niedrig"
+   ],
+   [
+    "Arbeitsaufwand für das Herstellen einer glatten Oberfläche",
+    "niedrig",
+    "niedrig"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12194",
+  "title": "Test Tabelle",
+  "slug": "test-tabelle",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12194",
+  "data": [
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12220",
+  "title": "GK",
+  "slug": "12220",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12220",
+  "data": [
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12447",
+  "title": "KORODUR® 0/4",
+  "slug": "korodur-0-4",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12447",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 4 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "70 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "10 N/mm²"
+   ],
+   [
+    "Schleifverschleiß",
+    "≤ 5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12456",
+  "title": "KORODUR® VS 0/5",
+  "slug": "12456",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12456",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 5 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "70 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "10 N/mm²"
+   ],
+   [
+    "Schleifverschleiß",
+    "≤ 5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12461",
+  "title": "KORODUR® WH-Spezial",
+  "slug": "korodur-wh-spezial",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12461",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 5 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "70 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "10 N/mm²"
+   ],
+   [
+    "Schleifverschleiß",
+    "≤ 3 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12483",
+  "title": "KORODUR® Diamantbeton",
+  "slug": "korodur-diamantbeton",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12483",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 4 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "70 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "10 N/mm²"
+   ],
+   [
+    "Schleifverschleiß",
+    "≤ 1,5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12488",
+  "title": "NEODUR® HE 2",
+  "slug": "neodur-he-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12488",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 3 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "70 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "9 N/mm²"
+   ],
+   [
+    "Schleifverschleiß",
+    "≤ 8 cm³/ 50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12493",
+  "title": "KORODUR® FSCem",
+  "slug": "korodur-fscem",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12493",
+  "data": [
+   [
+    "Technische Kennwerte",
+    "",
+    ""
+   ],
+   [
+    "Mischungsverhältnis\nbeispielhaft 1:4 in Gewichtsteilen*\nQualität CT-C50-F7",
+    "KORODUR FSCem\nEstrichsand A8 - B8\nWasser/Zementwert",
+    "75 kg\n300 kg\nca. 0,42"
+   ],
+   [
+    "Mischungsverhältnis\nbeispielhaft 1:5 in Gewichtsteilen*\nQualität CT-C40-F6",
+    "KORODUR FSCem\nEstrichsand A8 - B8\nWasser/Zementwert",
+    "60 kg\n300 kg\nca. 0,40"
+   ],
+   [
+    "Restfeuchte",
+    "CM-Messung nach Einbau\nMV 1:4 und 1:5, siehe oben",
+    "nach 24 Stunden ca. 5,9 %\nnach 3 Tagen ca. 1,9 %\nnach 28 Tagen ca. 1,3 %\n"
+   ],
+   [
+    "Schwindklasse gem. DIN 18560-1",
+    "SW 1 - schwindarm (< 0,2 mm/m)",
+    ""
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12504",
+  "title": "KORODUR® FSCem Screed",
+  "slug": "korodur-fscem-screed",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12504",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 6 mm"
+   ],
+   [
+    "Druckfestigkeit [N/mm²]\ngemessen an definierten Prismen gem. DIN EN 13892-2",
+    "nach 1 Tag ca. 20 N/mm²\nnach 28 Tagen ca. 40 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit [N/mm²]\ngemessen an definierten Prismen gem. DIN EN 13892-2",
+    "nach 1 Tag ca. 4 N/mm²\nnach 28 Tagen ca. 6 N/mm²"
+   ],
+   [
+    "Schwindklasse gem. DIN 18560-1",
+    "SW 1 - schwindarm (< 0,2 mm/m)"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12509",
+  "title": "NEODUR® Level",
+  "slug": "neodur-level",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12509",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Schichtstärke",
+    "4 - 30 mm"
+   ],
+   [
+    "Begehbar",
+    "nach ca. 3 Stunden"
+   ],
+   [
+    "Druckfestigkeit",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "≥ 8 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12515",
+  "title": "NEODUR® Level AU",
+  "slug": "neodur-level-au",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12515",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "processing time",
+    "at +20°C approx. 30 minutes"
+   ],
+   [
+    "walkability",
+    "after approx. 3 - 4 hours"
+   ],
+   [
+    "Compressive strength",
+    "after 28 days ≥ 33 N/mm²"
+   ],
+   [
+    "consumption",
+    "approx. 1,7 kg/mm/m²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12521",
+  "title": "DUROP 0,5/1",
+  "slug": "durop-05-1",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12521",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0,5 - 1 mm"
+   ],
+   [
+    "Schlagzertrümmerungswert SZ",
+    "15,9"
+   ],
+   [
+    "Polierbeiwert PSV 5/6,3 mm",
+    "ca. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12527",
+  "title": "DUROP 1/2",
+  "slug": "durop-1-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12527",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "1 - 2 mm"
+   ],
+   [
+    "Schlagzertrümmerungswert SZ",
+    "15,9"
+   ],
+   [
+    "Polierbeiwert PSV 5/6,3 mm",
+    "ca. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12532",
+  "title": "DUROP 2/3",
+  "slug": "durop-2-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12532",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "2 - 3 mm"
+   ],
+   [
+    "Schlagzertrümmerungswert SZ",
+    "15,9"
+   ],
+   [
+    "Polierbeiwert PSV 5/6,3 mm",
+    "ca. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12537",
+  "title": "DUROP 2/5",
+  "slug": "durop-2-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12537",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "2 - 5 mm"
+   ],
+   [
+    "Schlagzertrümmerungswert SZ",
+    "15,9"
+   ],
+   [
+    "Polierbeiwert PSV 5/6,3 mm",
+    "ca. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12543",
+  "title": "KORODUR® Robust 0/3",
+  "slug": "korodur-robust-0-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12543",
+  "data": [
+   [
+    "Technische Kennwerte",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Verbrauch MV 1:10",
+    "Schichtstärke 8 mm",
+    "Schichtstärke 10 mm",
+    "Schichtstärke 15 mm"
+   ],
+   [
+    "EP-Harz",
+    "1,5 kg",
+    "2,0 kg",
+    "3,0 kg"
+   ],
+   [
+    "KORODUR Robust",
+    "14,5 kg",
+    "18,0 kg",
+    "27,0 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12940",
+  "title": "KOROTEX",
+  "slug": "korotex",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12940",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Form",
+    "weiße Flüssigkeit"
+   ],
+   [
+    "Dichte (20°C)",
+    "1,01 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12945",
+  "title": "KOROCURE",
+  "slug": "korocure",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12945",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Form",
+    "gelbliche Flüssigkeit"
+   ],
+   [
+    "Dichte",
+    "i. M. 1,0 kg/dm³"
+   ],
+   [
+    "ph-Wert",
+    "ca. 11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12950",
+  "title": "KOROPOX",
+  "slug": "koropox",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12950",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Form",
+    "flüssig"
+   ],
+   [
+    "Farbe",
+    "farblos"
+   ],
+   [
+    "Dichte g/cm³",
+    "1,0"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12955",
+  "title": "KOROMINERAL",
+  "slug": "koromineral",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12955",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Farbe",
+    "transparent"
+   ],
+   [
+    "Dichte",
+    "ca. 1,12 g/cm³"
+   ],
+   [
+    "pH-Wert",
+    "ca. 11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12960",
+  "title": "KOROMINERAL Li+",
+  "slug": "koromineral-li",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12960",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Farbe",
+    "transparent"
+   ],
+   [
+    "Materialverbrauch je nach Saugfähigkeit des Untergrundes\nExakte Werte lassen sich durch entsprechende Vorversuche ermitteln",
+    "ca. 100 - 200 g/m²"
+   ],
+   [
+    "Ergiebigkeit je 20 kg Gebinde",
+    "ca. 100 - 200 m²"
+   ],
+   [
+    "Trocknungszeit",
+    "ca. 1 - 2 Stunden"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12966",
+  "title": "KOROMINERAL CURE",
+  "slug": "koromineral-cure",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12966",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Farbe",
+    "milchig weiß"
+   ],
+   [
+    "Verbrauch",
+    "ca. 60 - 100 ml/m²"
+   ],
+   [
+    "pH-Wert",
+    "11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12971",
+  "title": "OBTEGO P 20 Porenfüller",
+  "slug": "obtego-p-20-porenfueller",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12971",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Trocknungszeit",
+    "ca. 1 - 2 Stunden"
+   ],
+   [
+    "Ergiebigkeit geschliffene Oberflächen",
+    "ca. 20 - 30 m²/Liter"
+   ],
+   [
+    "Ergiebigkeit ungeschliffene Oberflächen",
+    "ca. 10 - 20 m²/Liter"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12976",
+  "title": "OBTEGO FleckSchutz R 400",
+  "slug": "obtego-fleckschutz-r-400",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12976",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Begehbar nach",
+    "ca. 6 Stunden"
+   ],
+   [
+    "Ergiebigkeit geschliffene Oberflächen",
+    "ca. 20 - 50 m²/Liter"
+   ],
+   [
+    "Ergiebigkeit ungeschliffene Oberflächen",
+    "ca. 10 - 20 m²/Liter"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12982",
+  "title": "KORODUR PC",
+  "slug": "korodur-pc",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12982",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Farbe",
+    "hellblau"
+   ],
+   [
+    "Verbrauch je m²",
+    "50 - 200 g je nach Saugfähigkeit"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "12999",
+  "title": "KORODUR TXPK",
+  "slug": "korodur-txpk",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=12999",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Farbe",
+    "weiß"
+   ],
+   [
+    "Dichte",
+    "ca. 1,10 g/cm³"
+   ],
+   [
+    "Viskosität",
+    "ca. 750 mPa s ± 100"
+   ],
+   [
+    "Druckfestigkeit",
+    "ca. 60 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "ca. 30 N/mm²"
+   ],
+   [
+    "E-Modul",
+    "ca. 2.000 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13004",
+  "title": "KOROTAN",
+  "slug": "korotan",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13004",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Form",
+    "grüne Flüssigkeit"
+   ],
+   [
+    "Dichte (20°C)",
+    "1,13 g/cm³"
+   ],
+   [
+    "pH-Wert",
+    "ca. 9"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13009",
+  "title": "KCF 05",
+  "slug": "kcf-05",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13009",
+  "data": [
+   [
+    "Technische Kennwerte KCF 05",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 5 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "45 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "6 N/mm²"
+   ],
+   [
+    "Schleifverschleiß",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Schichtstärke",
+    "15 - 25 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13015",
+  "title": "KCF 08",
+  "slug": "kcf-08",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13015",
+  "data": [
+   [
+    "Technische Kennwerte KCF 08",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 8 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "35 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "5 N/mm²"
+   ],
+   [
+    "Schleifverschleiß",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Schichtstärke",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13022",
+  "title": "GRANIDUR 05",
+  "slug": "granidur-05",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13022",
+  "data": [
+   [
+    "Technische Kennwerte GRANIDUR 05",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 5 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "45 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "6 N/mm²"
+   ],
+   [
+    "Schichtstärke",
+    "15 - 25 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13027",
+  "title": "GRANIDUR 08",
+  "slug": "granidur-08",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13027",
+  "data": [
+   [
+    "Technische Kennwerte GRANIDUR 08",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 8 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "35 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "5 N/mm²"
+   ],
+   [
+    "Schichtstärke",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13034",
+  "title": "GRANIDUR® BIANCO/NERO",
+  "slug": "granidur-bianco-nero",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13034",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 5 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "45 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "6 N/mm²"
+   ],
+   [
+    "Schichtstärke",
+    "i.M. 15 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13040",
+  "title": "TRU® Self-Leveling",
+  "slug": "tru-self-leveling",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13040",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Qualität",
+    "CT-C40-F10"
+   ],
+   [
+    "Farbe",
+    "natur\ngrau"
+   ],
+   [
+    "Druckfestigkeit (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "nach 4 Stunden",
+    "ca. 20,0 N/mm²"
+   ],
+   [
+    "nach 1 Tag",
+    "ca. 34,0 N/mm²"
+   ],
+   [
+    "nach 28 Tagen",
+    "ca. 45,0 N/mm²"
+   ],
+   [
+    "Verarbeitungszeit",
+    "ca. 20 Minuten"
+   ],
+   [
+    "Fließzeit",
+    "ca. 15 Minuten"
+   ],
+   [
+    "Schichtdicke",
+    "5 - 35 mm"
+   ],
+   [
+    "Materialverbrauch\npro m² / pro mm Schichtstärke",
+    "ca. 1,7 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13059",
+  "title": "TRU® PC",
+  "slug": "tru-pc",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13059",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Qualität",
+    "CT-C40-F10"
+   ],
+   [
+    "Farbe",
+    "natur\ngrau"
+   ],
+   [
+    "Druckfestigkeit (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "nach 4 Stunden",
+    "ca. 19,0 N/mm²"
+   ],
+   [
+    "nach 1 Tag",
+    "ca. 34,0 N/mm²"
+   ],
+   [
+    "nach 28 Tagen",
+    "ca. 48,0 N/mm²"
+   ],
+   [
+    "Verarbeitungszeit",
+    "ca. 20 Minuten"
+   ],
+   [
+    "Fließzeit ",
+    "ca. 15 Minuten"
+   ],
+   [
+    "Schichtdicke ",
+    "10 - 35 mm"
+   ],
+   [
+    "Materialverbrauch\npro m² / pro mm Schichtstärke",
+    "ca. 1,8 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13067",
+  "title": "TRU® SP",
+  "slug": "tru-sp",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13067",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Qualität",
+    "CT-C40-F10"
+   ],
+   [
+    "Farbe",
+    "natur\ngrau"
+   ],
+   [
+    "Druckfestigkeit (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "nach 4 Stunden",
+    "ca. 13,0 N/mm²"
+   ],
+   [
+    "nach 1 Tag",
+    "ca. 27,0 N/mm²"
+   ],
+   [
+    "nach 28 Tagen",
+    "ca. 44,0 N/mm²"
+   ],
+   [
+    "Verarbeitungszeit",
+    "ca. 20 Minuten"
+   ],
+   [
+    "Fließzeit",
+    "ca. 15 Minuten"
+   ],
+   [
+    "Schichtdicke",
+    "10 - 35 mm"
+   ],
+   [
+    "Materialverbrauch\npro m² / pro mm Schichtstärke",
+    "ca. 1,8 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13214",
+  "title": "MICROTOP® TW 3",
+  "slug": "microtop-tw-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13214",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 3 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Dichte",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Farben",
+    "natur, weiß, blau"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13219",
+  "title": "MICROTOP® TW 5",
+  "slug": "microtop-tw-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13219",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 5 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Dichte",
+    "2,25 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13224",
+  "title": "MICROTOP® TW 8",
+  "slug": "microtop-tw-8",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13224",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 8 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Dichte",
+    "2,27 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13229",
+  "title": "MICROTOP® TW Mineral",
+  "slug": "microtop-tw-mineral",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13229",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Form",
+    "flüssig"
+   ],
+   [
+    "Farbe",
+    "transparent"
+   ],
+   [
+    "Dichte",
+    "ca. 1,14 g/cm³"
+   ],
+   [
+    "pH-Wert",
+    "ca. 11,3"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13234",
+  "title": "MICROTOP® TW NSM",
+  "slug": "microtop-tw-nsm",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13234",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 3 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Dichte",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Farben",
+    "natur, weiß, blau"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13239",
+  "title": "MICROTOP® TW VSM",
+  "slug": "microtop-tw-vsm",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13239",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 2 mm"
+   ],
+   [
+    "Qualität",
+    "C 12/15"
+   ],
+   [
+    "Dichte",
+    "1,98 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13244",
+  "title": "MICROTOP® TW BM",
+  "slug": "microtop-tw-bm",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13244",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 1,0 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "35 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "6,3 N/mm²"
+   ],
+   [
+    "Farben",
+    "natur, weiß"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13249",
+  "title": "MICROTOP® TW 02",
+  "slug": "microtop-tw-02",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13249",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 0,2 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "≥ 30 N/mm²"
+   ],
+   [
+    "Dichte",
+    "2,04 kg/l"
+   ],
+   [
+    "Farben",
+    "natur, weiß, blau"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13255",
+  "title": "CEMENT ALL®",
+  "slug": "cement-all",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13255",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 1 mm"
+   ],
+   [
+    "Einbaustärke",
+    "0 - 100 mm"
+   ],
+   [
+    "Belastbar",
+    "nach 60 Min."
+   ],
+   [
+    "Druckfestigkeit nach 60 Min.",
+    "20,0 N/mm²"
+   ],
+   [
+    "Druckfestigkeit nach 28 Tagen",
+    "62,0 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit nach 60 Min.",
+    "6,0 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit nach 28 Tagen",
+    "11,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13261",
+  "title": "MORTAR MIX",
+  "slug": "mortar-mix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13261",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 3 mm"
+   ],
+   [
+    "Einbaustärke",
+    "10 - 150 mm"
+   ],
+   [
+    "Belastbar",
+    "nach 60 Min."
+   ],
+   [
+    "Druckfestigkeit nach 60 Min.",
+    "17,0 N/mm²"
+   ],
+   [
+    "Druckfestigkeit nach 28 Tagen",
+    "50,0 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit nach 60 Min.",
+    "3,40 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit nach 28 Tagen",
+    "5,25 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13266",
+  "title": "CONCRETE MIX",
+  "slug": "concrete-mix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13266",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 8 mm"
+   ],
+   [
+    "Einbaustärke",
+    "50 - 600 mm"
+   ],
+   [
+    "Belastbar",
+    "nach 60 Min."
+   ],
+   [
+    "Druckfestigkeit nach 60 Min.",
+    "19,0 N/mm²"
+   ],
+   [
+    "Druckfestigkeit nach 28 Tagen",
+    "41,0 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit nach 60 Min.",
+    "4,5 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit nach 28 Tagen",
+    "7,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13271",
+  "title": "ASPHALT REPAIR MIX",
+  "slug": "asphalt-repair-mix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13271",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 8 mm"
+   ],
+   [
+    "Schichtdicke",
+    "30 - 600 mm"
+   ],
+   [
+    "Belastbar",
+    "nach ca. 30 Minuten"
+   ],
+   [
+    "Druckfestigkeit",
+    "nach 30 Minuten ca. 15 N/mm²"
+   ],
+   [
+    "Druckfestigkeit",
+    "nach 1 Stunde ca. 22 N/mm²"
+   ],
+   [
+    "Druckfestigkeit",
+    "nach 28 Tagen ca. 38 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "nach 30 Minuten ca. 3,0 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "nach 1 Stunde ca. 4,0 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "nach 28 Tagen ca. 6,4 N/mm²"
+   ],
+   [
+    "Dynamischer E-Modul",
+    "nach 28 Tagen ca. 26.000 N/mm²"
+   ],
+   [
+    "Statischer E-Modul",
+    "nach 28 Tagen ca. 22.000 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13277",
+  "title": "LevelFlor®",
+  "slug": "levelflor",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13277",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Einbaustärke",
+    "bis zu 70 mm"
+   ],
+   [
+    "Verarbeitungszeit",
+    "30 Min."
+   ],
+   [
+    "Fließzeit",
+    "15 Min."
+   ],
+   [
+    "Druckfestigkeit (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "nach 25 Stunden",
+    "ca. 20,0 N/mm²"
+   ],
+   [
+    "nach 7 Tagen",
+    "ca. 24 N/mm²"
+   ],
+   [
+    "nach 28 Tagen",
+    "ca. 34 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit (ASTM C-348)",
+    ""
+   ],
+   [
+    "nach 7 Tagen",
+    "ca. 7,9 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13282",
+  "title": "DOT Europe CONCRETE MIX",
+  "slug": "dot-europe-concrete-mix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13282",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 8 mm"
+   ],
+   [
+    "Einbaustärke",
+    "50 - 600 mm"
+   ],
+   [
+    "Belastbar",
+    "nach 60 Min."
+   ],
+   [
+    "Druckfestigkeit nach 28 Tagen",
+    "ca. 60,0 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit nach 28 Tagen",
+    "ca. 6,5 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13354",
+  "title": "NEODUR Vergussmörtel VM 1",
+  "slug": "neodur-vergussmoertel-vm-1",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13354",
+  "data": [
+   [
+    "Technische Kennwerte NEODUR VM 1",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 1 mm"
+   ],
+   [
+    "Qualität",
+    "C55/67"
+   ],
+   [
+    "Quellmaß",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13356",
+  "title": "NEODUR Vergussmörtel VM 3",
+  "slug": "neodur-vergussmoertel-vm-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13356",
+  "data": [
+   [
+    "Technische Kennwerte NEODUR VM 3",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 3 mm"
+   ],
+   [
+    "Qualität",
+    "C55/67"
+   ],
+   [
+    "Quellmaß",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13359",
+  "title": "NEODUR Vergussmörtel VM 5",
+  "slug": "neodur-vergussmoertel-vm-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13359",
+  "data": [
+   [
+    "Technische Kennwerte NEODUR VM 5",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 5 mm"
+   ],
+   [
+    "Qualität",
+    "C80/95"
+   ],
+   [
+    "Quellmaß",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13361",
+  "title": "NEODUR Vergussmörtel VB 8",
+  "slug": "neodur-vergussmoertel-vb-8",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13361",
+  "data": [
+   [
+    "Technische Kennwerte NEODUR VB 8",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 8 mm"
+   ],
+   [
+    "Qualität",
+    "C55/67"
+   ],
+   [
+    "Quellmaß",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13366",
+  "title": "NEODUR® SVM 03",
+  "slug": "neodur-svm-03",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13366",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Körnung",
+    "0 - 0,5 mm"
+   ],
+   [
+    "Vergussquerschnitt",
+    "ca. 5 - 30 mm"
+   ],
+   [
+    "Druckfestigkeit n. 1 h",
+    "> 8 N/mm²"
+   ],
+   [
+    "Druckfestigkeit n. 28 d",
+    "> 55 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13371",
+  "title": "NEODUR® AM Super / AM Plus",
+  "slug": "neodur-am-super-am-plus",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13371",
+  "data": [
+   [
+    "Technische Kennwerte",
+    "",
+    ""
+   ],
+   [
+    "Produkt",
+    "NEODUR AM Super",
+    "NEODUR AM Plus"
+   ],
+   [
+    "Körnung",
+    "0 - 1 mm",
+    "0 - 1 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "> 55 N/mm²",
+    "> 80 N/mm²"
+   ],
+   [
+    "Quellmaß",
+    "> 0,1 Vol.%",
+    "> 0,1 Vol.%"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13376",
+  "title": "NEODUR® MSM 3 / MSM 5 / MSB 8",
+  "slug": "neodur-msm-3-msm-5-msb-8",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13376",
+  "data": [
+   [
+    "Technische Kennwerte",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Produkt",
+    "NEODUR MSM 3",
+    "NEODUR MSM 5",
+    "NEODUR MSB 8"
+   ],
+   [
+    "Körnung",
+    "0 - 3 mm",
+    "0 - 5 mm",
+    "0 - 8 mm"
+   ],
+   [
+    "Druckfestigkeit",
+    "> 30 N/mm²",
+    "> 30 N/mm²",
+    "> 30 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13381",
+  "title": "NEODUR® PFM 1-K Easyfix",
+  "slug": "neodur-pfm-1-k-easyfix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13381",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Farbe",
+    "neutral/steingrau/basalt"
+   ],
+   [
+    "Druckfestigkeit",
+    "4,0 N/mm²"
+   ],
+   [
+    "Begehbar",
+    "nach 24 Std."
+   ],
+   [
+    "Belastbar",
+    "nach 6 Tagen"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13387",
+  "title": "NEODUR® PFM-ZE",
+  "slug": "neodur-pfm-ze",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13387",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Korngröße",
+    "0 - 2 mm"
+   ],
+   [
+    "Farbe",
+    "grau/hellgrau"
+   ],
+   [
+    "Druckfestigkeit",
+    "> 50 N/mm²"
+   ],
+   [
+    "Biegezugfestigkeit",
+    "> 7 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13393",
+  "title": "KORODUR uniPrimer",
+  "slug": "korodur-uniprimer",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13393",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Form",
+    "flüssig"
+   ],
+   [
+    "Farbe",
+    "milchig weiß"
+   ],
+   [
+    "Dichte",
+    "1,05 g/m³"
+   ],
+   [
+    "pH-Wert",
+    "11,6"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13398",
+  "title": "KORODUR easyFinish",
+  "slug": "korodur-easyfinish",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13398",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Form",
+    "flüssig"
+   ],
+   [
+    "Farbe",
+    "bläulich"
+   ],
+   [
+    "Dichte",
+    "1,0 +/- 0,02 kg/m³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13403",
+  "title": "KORODUR nanoFinish",
+  "slug": "korodur-nanofinish",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13403",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Form",
+    "flüssig"
+   ],
+   [
+    "Farbe",
+    "milchig trüb"
+   ],
+   [
+    "Dichte",
+    "1,035 cm³"
+   ],
+   [
+    "pH-Wert",
+    "5"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13408",
+  "title": "THILOS dünnflüssig",
+  "slug": "thilos-duennfluessig",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13408",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Entsorgung",
+    "Abfallschlüssel 15 01 10"
+   ],
+   [
+    "UN.-Nr.",
+    "1993"
+   ],
+   [
+    "Lagerung",
+    "VbF-Klasse A II"
+   ],
+   [
+    "Flammpunkt",
+    "> 30°C"
+   ],
+   [
+    "Durchschnittsverbrauch",
+    "0,10 Liter/m²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "13413",
+  "title": "Glossprofi 1905",
+  "slug": "glossprofi-1905",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=13413",
+  "data": [
+   [
+    "Technische Kennwerte",
+    ""
+   ],
+   [
+    "Mischungsverhältnis Einpflege",
+    "1:1 bis 1:5 GLOSSPROFI mit Wasser"
+   ],
+   [
+    "MV Tägliche Reinigung mit Automaten",
+    "ca. 500 - 1.000 ml auf 100 l Wasser"
+   ],
+   [
+    "MV Tägliche Reinigung manuell",
+    "ca. 100 - 125 ml auf 10 l Wasser"
+   ],
+   [
+    "Ergiebigkeit",
+    "ca. 500 - 800 m² je Liter GLOSSPROFI 1905"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "14930",
+  "title": "Montage- und Vergusssystem",
+  "slug": "neodur-vergussmoertel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=14930",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Vergussquerschnitt"
+   ],
+   [
+    "NEODUR VM 1",
+    "C 60/75",
+    "5 - 20 mm"
+   ],
+   [
+    "NEODUR VM 3",
+    "C 60/75",
+    "10 - 50 mm"
+   ],
+   [
+    "NEODUR VM 5",
+    "C 80/95",
+    "bis 200 mm"
+   ],
+   [
+    "NEODUR VB 8",
+    "C 60/75",
+    "> 50 mm"
+   ],
+   [
+    "NEODUR SVM 03",
+    "C 45/55",
+    "5 - 20 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "14960",
+  "title": "Anker-/ Injektionsmörtel",
+  "slug": "neodur-anker-injektionsmoertel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=14960",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Körnung"
+   ],
+   [
+    "NEODUR AM Super",
+    "C 30/37",
+    "0 - 1 mm"
+   ],
+   [
+    "NEODUR AM Plus",
+    "C 40/50",
+    "0 - 1 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "14972",
+  "title": "Betoninstandsetzungsmörtel",
+  "slug": "neodur-betoninstandsetzungsmoertel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=14972",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Körnung"
+   ],
+   [
+    "NEODUR MSM 3",
+    "C 30/37",
+    "0 - 3 mm"
+   ],
+   [
+    "NEODUR MSM 5",
+    "C 30/37",
+    "0 - 5 mm"
+   ],
+   [
+    "NEODUR MSB 8",
+    "C 30/37",
+    "0 - 8 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "14986",
+  "title": "Rapid Set Reparaturmörtel",
+  "slug": "rapid-set-reparaturmoertel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=14986",
+  "data": [
+   [
+    "",
+    "CEMENT ALL",
+    "MORTAR MIX",
+    "CONCRETE MIX"
+   ],
+   [
+    "Innen und Außen",
+    "ja",
+    "ja",
+    "ja"
+   ],
+   [
+    "Nassbereiche",
+    "ja",
+    "ja",
+    "ja"
+   ],
+   [
+    "Schichtstärken",
+    "0 - 100 mm",
+    "10 - 150 mm",
+    "50 - 600 mm"
+   ],
+   [
+    "Erstarrungsbeginn²",
+    "nach 15 Min.",
+    "nach 15 Min.",
+    "nach 15 Min."
+   ],
+   [
+    "Belastbar²",
+    "nach 60 Min.",
+    "nach 60 Min.",
+    "nach 60 Min."
+   ],
+   [
+    "Druckfestigkeiten²",
+    "",
+    "",
+    ""
+   ],
+   [
+    "nach 60 Min.",
+    "> 20,0 N/mm²",
+    "> 17,0 N/mm²",
+    "> 19,0 N/mm²"
+   ],
+   [
+    "nach 180 Min.",
+    "> 31,0 N/mm²",
+    "> 28,0 N/mm²",
+    "> 25,0 N/mm²"
+   ],
+   [
+    "nach 7 Tagen",
+    "> 41,0 N/mm²",
+    "> 35,0 N/mm²",
+    "> 35,0 N/mm²"
+   ],
+   [
+    "nach 28 Tagen",
+    "> 62,0 N/mm²",
+    "> 50,0 N/mm²",
+    "> 41,0 N/mm²"
+   ],
+   [
+    "E-Modul",
+    "31.700 N/mm²",
+    "26.827 N/mm²",
+    "30.690 N/mm²"
+   ],
+   [
+    "Sulfatbeständigkeit",
+    "ja",
+    "ja",
+    "ja"
+   ],
+   [
+    "Frost-Tausalzbeständigkeit",
+    "ja",
+    "ja",
+    "ja"
+   ],
+   [
+    "Penetrationsverhalten",
+    "ja",
+    "NPD³",
+    "NPD³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "15751",
+  "title": "Trockenspritzverfahren",
+  "slug": "trockenspritzverfahren",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=15751",
+  "data": [
+   [
+    "Produkte",
+    "Schichtstärken",
+    "Druckfestigkeit 28 d",
+    "Gesamtporosität 90 d"
+   ],
+   [
+    "MICROTOP TW 3",
+    "9 - 20 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ],
+   [
+    "MICROTOP TW 5",
+    "10 - 30 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ],
+   [
+    "MICROTOP TW 8",
+    "≥ 25 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "15903",
+  "title": "Nassspritzverfahren",
+  "slug": "nassspritzverfahren",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=15903",
+  "data": [
+   [
+    "Produkte",
+    "Schichtstärken",
+    "Körnung",
+    "Druckfestigkeit 28 d"
+   ],
+   [
+    "MICROTOP TW NSM",
+    "10 - 20 mm",
+    "0 - 3,0 mm",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "MICROTOP TW VSM",
+    "15 - 20 mm",
+    "0 - 2,0 mm",
+    "≥ 15 N/mm²"
+   ],
+   [
+    "MICROTOP TW BM",
+    "3 - 8 mm",
+    "0 - 1,0 mm",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "MICROTOP TW 02",
+    "2 - 5 mm",
+    "0 - 0,2 mm",
+    "≥ 30 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "15951",
+  "title": "Geglätteter Sichtestrich",
+  "slug": "kcf",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=15951",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Schichtstärke",
+    "Körnung"
+   ],
+   [
+    "KCF 05",
+    "CT-C45-F6-A5",
+    "15 - 25 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "KCF 08",
+    "CT-C35-F5-A5",
+    "25 - 50 mm",
+    "0 - 8 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16007",
+  "title": "Geschliffener Sichtestrich",
+  "slug": "granidur",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16007",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Schichtstärke",
+    "Körnung"
+   ],
+   [
+    "GRANIDUR 05",
+    "CT-C45-F6",
+    "15 - 25 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "GRANIDUR 08",
+    "CT-C35-F5",
+    "25 - 50 mm",
+    "0 - 8 mm"
+   ],
+   [
+    "GRANIDUR BIANCO",
+    "CT-C45-F6",
+    "15 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "GRANIDUR NERO",
+    "CT-C45-F6",
+    "15 mm",
+    "0 - 5 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16079",
+  "title": "TRUazzo",
+  "slug": "tru",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16079",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Schichtstärke"
+   ],
+   [
+    "TRU Self-Leveling",
+    "CT-C40-F10",
+    "5 - 35 mm"
+   ],
+   [
+    "TRU PC",
+    "CT-C40-F10",
+    "10 - 35 mm"
+   ],
+   [
+    "TRU SP",
+    "CT-C40-F10",
+    "10 - 35 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16145",
+  "title": "Hartstoffschicht",
+  "slug": "hartstoffschicht",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16145",
+  "data": [
+   [
+    "Produkte",
+    "Qualität*",
+    "Gruppe/DIN 1100",
+    "Schleifverschleiß*"
+   ],
+   [
+    "KORODUR VS 0/5",
+    "CT-C70-F10-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "KORODUR WH-Spezial",
+    "CT-C70-F10-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR WH-metallisch",
+    "CT-C60-F12-A3",
+    "M",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR Diamantbeton",
+    "CT-C70-F10-A1,5",
+    "KS",
+    "≤ 1,5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16148",
+  "title": "Hartstoffschicht",
+  "slug": "neodur-harstoffe-mit-bindemittel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16148",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Gruppe/DIN 1100",
+    "Schleifverschleiß",
+    ""
+   ],
+   [
+    "NEODUR HE 65",
+    "CT-C70-F9-A6",
+    "A",
+    "≤ 5 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 SVS 3",
+    "CT-C70-F9-A3",
+    "A",
+    "≤ 3 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 SVS 1,5",
+    "CT-C70-F9-A1,5",
+    "A",
+    "≤ 1,5 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 metallisch",
+    "CT-C80-F11-A3",
+    "M",
+    "≤ 3 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 plus",
+    "CT-C70-F9-A6",
+    "A",
+    "≤ 5 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 plus SVS 3",
+    "CT-C70-F9-A3",
+    "A",
+    "≤ 3 cm³/50 cm²",
+    ""
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16265",
+  "title": "Hartstoffeinstreuung",
+  "slug": "neodur-einstreuung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16265",
+  "data": [
+   [
+    "Produkte",
+    "Qualität *",
+    "Gruppe/DIN 1100",
+    "Schleifverschleiß"
+   ],
+   [
+    "NEODUR HE 3",
+    "CT-C70-F9-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 green",
+    "CT-C70-F9-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "KORODUR 0/4",
+    "CT-C70-F10-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 SVS 3",
+    "CT-C70-F9-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 SVS 1,5",
+    "CT-C70-F9-A1,5",
+    "A",
+    "≤ 1,5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 metallisch",
+    "CT-C80-F11-A3",
+    "M",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 2",
+    "CT-C70-F9-A8",
+    "",
+    "≤ 8 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16274",
+  "title": "Schnellestrich-Systeme",
+  "slug": "schnellestrich",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16274",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Gruppe/DIN 1100",
+    "Schleifverschleiß"
+   ],
+   [
+    "NEODUR HE 60 rapid",
+    "CT-C60-F8-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid SVS 3",
+    "CT-C60-F8-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid SVS 1,5",
+    "CT-C60-F8-A1,5",
+    "KS",
+    "≤ 1,5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid metallisch",
+    "CT-C60-F8-A3",
+    "M",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR FSCem",
+    "CT-C50-F7 bis CT-C40-F6",
+    "",
+    ""
+   ],
+   [
+    "KORODUR FSCem Screed",
+    "CT-C40-F6",
+    "",
+    ""
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16515",
+  "title": "Selbstverlaufende Systeme",
+  "slug": "selbstverlaufender-industrieboden",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16515",
+  "data": [
+   [
+    "Produkte",
+    "Qualität",
+    "Schichtstärke"
+   ],
+   [
+    "NEODUR Level",
+    "CT-C40-F8-AR0,5",
+    "4 bis 30 mm"
+   ],
+   [
+    "NEODUR Level AU",
+    "CT-C35-F5",
+    "5 bis 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16544",
+  "title": "Industriebodensanierung",
+  "slug": "inbo-sanierung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16544",
+  "data": [
+   [
+    "System",
+    "Produkte",
+    "Schichtstärke"
+   ],
+   [
+    "KORODUR-KOROTAN",
+    "s. Hartstoffschicht",
+    "15 mm"
+   ],
+   [
+    "NEODUR HE 60 rapid",
+    "s. Schnellestrich-Systeme",
+    "ab 10 mm"
+   ],
+   [
+    "NEODUR Level",
+    "s. Selbstverlaufende Systeme",
+    "4 - 30 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16563",
+  "title": "Hartstoff für Kunstharze",
+  "slug": "hartstoffe-fuer-kunstharzbeschichtungen",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16563",
+  "data": [
+   [
+    "Produkte",
+    "Körnung",
+    "Härte nach Mohs"
+   ],
+   [
+    "DUROP 05/1",
+    "0,5 - 1 mm",
+    "8"
+   ],
+   [
+    "DUROP 1/2",
+    "1 - 2 mm",
+    "8"
+   ],
+   [
+    "DUROP 2/3",
+    "2 - 3 mm",
+    "8"
+   ],
+   [
+    "DUROP 2/5",
+    "2 - 5 mm",
+    "8"
+   ],
+   [
+    "KORODUR Robust",
+    "0 - 3 mm",
+    "7"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16601",
+  "title": "Nachbechandlung / Curing",
+  "slug": "nachbechandlung-curing",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16601",
+  "data": [
+   [
+    "Produkte",
+    "Verbrauch",
+    "Beschreibung"
+   ],
+   [
+    "KOROTEX",
+    "ca. 150 g/m²",
+    "Nachbehandlungsmittel auf Kunstharzbasis für KORODUR Estriche gegen vorzeitige Austrocknung."
+   ],
+   [
+    "KOROCURE",
+    "ca. 120 g/m²",
+    "Temporärer Verdunstungsschutz zur Zwischen-Nachbehandlung."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16603",
+  "title": "Imprägnierung / Einpflege",
+  "slug": "impraegnierung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16603",
+  "data": [
+   [
+    "Produkte",
+    "Verbrauch",
+    "Beschreibung"
+   ],
+   [
+    "KOROMINERAL",
+    "ca. 100-200 g/m²\n(je nach Saugfähigkeit)",
+    "Flüssige, transparente Imprägnierung auf Silikatbasis mit Verkieselungseffekt."
+   ],
+   [
+    "KOROMINERAL Li+",
+    "ca. 40-100 g/m²\n(je nach Saugfähigkeit)",
+    "Flüssige, transparente Imprägnierung auf Basis Hybrid-Lithiumsilikat mit integriertem Basis-Fleckschutz."
+   ],
+   [
+    "KOROMINERAL Cure",
+    "1 Arbeitsgang\n(je nach Saugfähigkeit)\nca. 60-100 ml/m²",
+    "Flüssiges, einkomponentiges, membranbildendes Nachbehandlungsmittel gegen vorzeitige Austrocknung mit kombinierter Silikatisierung als Oberflächenschutz für zementäre Beton- und Industrieböden."
+   ],
+   [
+    "KOROCLEAN",
+    "Mechanisches Verfahren\nReinigungsschliff",
+    "(System der MKS Funke Schleiftechnik)\nMechanisches Verfahren zur Verbesserung der optischen Eigenschaften, Sicherheit und Rutschhemmung von zementgebundenen Industrieböden (Reinigungsschliff)."
+   ],
+   [
+    "OBTEGO P-20",
+    "ca. 20-30 m²/ltr geschliffene Böden\n\nca. 10-20 m²/ltr gelättete Böden",
+    "(Produkt der OBTEGO AG)\nGrundierung für OBTEGO R-400 auf Basis eines Acryl Copolymers mit hervorragender Porenfüller-Eigenschaft und wasserabweisender Wirkung auf geschliffenen und geglätteten KORODUR Designböden."
+   ],
+   [
+    "OBTEGO R-400",
+    "ca. 40-50 m²/ltr geschliffene Böden\n\nca. 15-30 m²/ltr geglättete Böden",
+    "(Produkt der OBTEGO AG)\nSpezialimprägnierung auf Silan/Siloxan mit hervorragender wasser- und ölabweisender Wirkung auf geschliffenen und geglätteten KORODUR Designböden."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16605",
+  "title": "Haftbrücke / Grundierung",
+  "slug": "haftbruecke",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16605",
+  "data": [
+   [
+    "Produkte",
+    "Verbrauch",
+    "Beschreibung"
+   ],
+   [
+    "KORODUR HB 5",
+    "ca. 2 kg/m²",
+    "Haftbrücke für einen kraftschlüssigen Verbund zementgebundener Estriche aller Festigkeitsklassen – einschl. KORODUR oder NEODUR Estrichen – auf Beton. Für Verlegung frisch auf erhärtetem Untergrund und für zeitversetzte Verlegetechnik."
+   ],
+   [
+    "KORODUR HB 5 rapid",
+    "ca. 2 kg/m²",
+    "Schnellerhärtende System-Haftbrücke für den kraftschlüssigen Verbund von NEODUR HE 60 rapid auf erhärtetem Beton."
+   ],
+   [
+    "KORODUR PC",
+    "ca. 50-200 g/m²",
+    "Flüssige, lösemittelfreie, einkomponentige, wasserverdünnbare Kunstharzdispersion."
+   ],
+   [
+    "KORODUR TXPK",
+    "ca. 400-500 g/m²\nje nach Rauigkeit des Untergrundes",
+    "Epoxidharz-Spezialgrundierung, zweikomp., für selbstverlaufende Beschichtungen wie TRU Self-Leveling, LevelFlor und NEODUR Level sowie zur Grundierung von Beton- und Estrichflächen, bei denen mit nachträglicher, rückseitiger Feuchteeinwirkung gerechnet werden muss."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "16607",
+  "title": "Bauchemische Spezialprodukte (Zusatzmittel)",
+  "slug": "bauchemische-spezialprodukte",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=16607",
+  "data": [
+   [
+    "Produkte",
+    "Verbrauch",
+    "Beschreibung"
+   ],
+   [
+    "KOROTAN",
+    "Dosierung bis ca. 1-2 % vom Zementgewicht",
+    "Estrichfließmittel, Spezial-Additiv mit stabilisierenden Eigenschaften. Speziell für KORODUR-KOROTAN Industrieböden."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18029",
+  "title": "MICROTOP",
+  "slug": "microtop",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18029",
+  "data": [
+   [
+    "Parameter",
+    "Dry-mix method",
+    "Wet-mix method"
+   ],
+   [
+    "Ideal pumping distance (m)",
+    "> 40 to 400",
+    "< 40"
+   ],
+   [
+    "Possible material pumping quantity (kg/h)",
+    "1.000",
+    "300"
+   ],
+   [
+    "Variable material quantity",
+    "yes",
+    "yes"
+   ],
+   [
+    "Continuous shotcreting possible",
+    "yes",
+    "yes"
+   ],
+   [
+    "Required working steps",
+    "1",
+    "1"
+   ],
+   [
+    "Air requirement (m³/min)",
+    "5",
+    "1 - 1,5"
+   ],
+   [
+    "Air pressure (bar)",
+    "2,5 - 3",
+    "2 - 5"
+   ],
+   [
+    "Mixing / riping time required",
+    "no",
+    "no"
+   ],
+   [
+    "Material outlet speed (m/s)",
+    "25 - 45",
+    "15 - 25"
+   ],
+   [
+    "Material consumption",
+    "high",
+    "low"
+   ],
+   [
+    "Maximum rebound depending on application conditions (%)",
+    "30 - 60",
+    "10"
+   ],
+   [
+    "Spray pattern without refinishing",
+    "medium",
+    "fine"
+   ],
+   [
+    "Energy requirement",
+    "high",
+    "low"
+   ],
+   [
+    "Cleaning expense machine, hoses",
+    "low",
+    "medium"
+   ],
+   [
+    "Dust development",
+    "high",
+    "low"
+   ],
+   [
+    "Ventilation expense",
+    "high",
+    "low"
+   ],
+   [
+    "Work expense for the production of a smooth surface",
+    "low",
+    "low"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18130",
+  "title": "MICROTOP",
+  "slug": "microtop-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18130",
+  "data": [
+   [
+    "Parameter",
+    "Trockenspritzverfahren",
+    "Nassspritzverfahren"
+   ],
+   [
+    "Ideale Förderlänge (m)",
+    "> 40 bis 400",
+    "< 40"
+   ],
+   [
+    "Mögliche Materialfördermenge (kg/h)",
+    "1.000",
+    "300"
+   ],
+   [
+    "Variable Materialmenge",
+    "ja ",
+    "ja"
+   ],
+   [
+    "Kontinuirliches Spritzen möglich",
+    "ja",
+    "ja"
+   ],
+   [
+    "Erforderliche Arbeitsgänge",
+    "1",
+    "1"
+   ],
+   [
+    "Luftbedarf (m³/min)",
+    "5",
+    "1 - 1,5"
+   ],
+   [
+    "Luftdruck (bar)",
+    "2,5 - 3",
+    "2 - 5"
+   ],
+   [
+    "Misch-/Reifezeiten nötig",
+    "nein",
+    "nein"
+   ],
+   [
+    "Materialaustrittgeschwindigkeit (m/s)",
+    "25 - 45",
+    "15 - 25"
+   ],
+   [
+    "Materialverbrauch",
+    "hoch",
+    "niedrig"
+   ],
+   [
+    "Maximaler Rückprall je nach Anwendungsbedingungen (%)",
+    "30 - 60",
+    "10"
+   ],
+   [
+    "Spritzbild ohne Nachbearbeitung",
+    "mittel",
+    "fein"
+   ],
+   [
+    "Energiebedarf",
+    "hoch",
+    "niedrig"
+   ],
+   [
+    "Reinigungsaufwand Maschine und Schläuche",
+    "niedrig",
+    "mittel"
+   ],
+   [
+    "Staubentwicklung",
+    "hoch",
+    "niedrig"
+   ],
+   [
+    "Belüftungsaufwand",
+    "hoch",
+    "niedrig"
+   ],
+   [
+    "Arbeitsaufwand für das Herstellen einer glatten Oberfläche",
+    "niedrig",
+    "niedrig"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18141",
+  "title": "KORODUR® 0/4",
+  "slug": "korodur-0-4-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18141",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 4 mm"
+   ],
+   [
+    "Compressive strength",
+    "70 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "10 N/mm²"
+   ],
+   [
+    "Wear resistance",
+    "≤ 5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18143",
+  "title": "KORODUR® VS 0/5",
+  "slug": "kopie-von-korodur-vs-0-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18143",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Compressive strength",
+    "70 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "10 N/mm²"
+   ],
+   [
+    "Wear resistance",
+    "≤ 5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18145",
+  "title": "KORODUR® WH-Special",
+  "slug": "kopie-von-korodur-wh-spezial",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18145",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Compressive strength",
+    "70 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "10 N/mm²"
+   ],
+   [
+    "Wear resistance",
+    "≤ 3 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18147",
+  "title": "KORODUR® Diamantbeton",
+  "slug": "kopie-von-korodur-diamantbeton",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18147",
+  "data": [
+   [
+    "Technical date",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 4 mm"
+   ],
+   [
+    "Compressive strength",
+    "70 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "10 N/mm²"
+   ],
+   [
+    "Wear resistance",
+    "≤ 1,5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18149",
+  "title": "NEODUR® HE 2",
+  "slug": "kopie-von-neodur-he-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18149",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm"
+   ],
+   [
+    "Compressive strength",
+    "70 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "9 N/mm²"
+   ],
+   [
+    "Wear resistance",
+    "≤ 8 cm³/ 50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18151",
+  "title": "KORODUR® FSCem",
+  "slug": "kopie-von-korodur-fscem",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18151",
+  "data": [
+   [
+    "Technical data",
+    "",
+    ""
+   ],
+   [
+    "Mixing ratio\nas an example 1:4\nin weight units*\nQuality CT-C50-F7",
+    "KORODUR FSCem\nscreed sand A8 - B8\nwater/cement ratio",
+    "75 kg\n300 kg\napprox. 0,42"
+   ],
+   [
+    "Mixing ratio\nas an example 1:5\nin weight units*\nQuality CT-C40-F6",
+    "KORODUR FSCem\nscreed sand A8 - B8\nwater/cement ratio",
+    "60 kg\n300 kg\napprox. 0,40"
+   ],
+   [
+    "Residual moisture",
+    "CM-measurement after installation\nmixing ratio 1:4 and 1:5,\nsee above",
+    "after 24 hours approx. 5,9 %\nafter 3 days approx. 1,9 %\nafter 28 days approx. 1,3 %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18153",
+  "title": "KORODUR® FSCem Screed",
+  "slug": "kopie-von-korodur-fscem-screed",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18153",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Granulometry",
+    "0 - 6 mm"
+   ],
+   [
+    "Compressive strength (N/mm²)\nmeasured at defined prisms acc. to DIN EN 13892-2",
+    "after 1 day approx. 20 N/mm²\nafter 28 days approx. 40 N/mm²"
+   ],
+   [
+    "Flexural strength (N/mm²)\nmeasured at defined prisms acc. to DIN EN 13892-2",
+    "after 1 day approx. 4 N/mm²\nafter 28 days approx. 6 N/mm²"
+   ],
+   [
+    "shrinkage class acc. to. DIN 18560-1",
+    "SW 1 low shrinkage (< 0,2 mm/m)"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18155",
+  "title": "NEODUR® Level",
+  "slug": "kopie-von-neodur-level",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18155",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Layer thickness",
+    "4 - 30 mm"
+   ],
+   [
+    "Walkability",
+    "after approx. 3 hours"
+   ],
+   [
+    "Compressive strength",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "≥ 8 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18158",
+  "title": "DUROP 0,5/1",
+  "slug": "kopie-von-durop-05-1",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18158",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0,5 - 1 mm"
+   ],
+   [
+    "Impact resistance value SZ",
+    "15,9"
+   ],
+   [
+    "Polishing coefficient PSV 5 / 6,3 mm",
+    "approx. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18160",
+  "title": "DUROP 1/2",
+  "slug": "kopie-von-durop-1-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18160",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "1 - 2 mm"
+   ],
+   [
+    "Impact resistance value SZ",
+    "15,9"
+   ],
+   [
+    "Polishing coefficient PSV 5 / 6,3 mm",
+    "approx. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18162",
+  "title": "DUROP 2/3",
+  "slug": "kopie-von-durop-2-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18162",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "2 - 3 mm"
+   ],
+   [
+    "Impact resistance value SZ",
+    "15,9"
+   ],
+   [
+    "Polishing coefficient PSV 5 / 6,3 mm",
+    "approx. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18165",
+  "title": "DUROP 2/5",
+  "slug": "kopie-von-durop-2-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18165",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "2 - 5 mm"
+   ],
+   [
+    "Impact resistance value SZ",
+    "15,9"
+   ],
+   [
+    "Polishing coefficient PSV 5 / 3,6 mm",
+    "approx. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18167",
+  "title": "KORODUR® Robust 0/3",
+  "slug": "kopie-von-korodur-robust-0-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18167",
+  "data": [
+   [
+    "Technical data",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Consumption MV 1:10",
+    "Layer thickness 8 mm",
+    "Layer thickness 10 mm",
+    "Layer thickness 15 mm"
+   ],
+   [
+    "EP-resin",
+    "1,5 kg",
+    "2,0 kg",
+    "3,0 kg"
+   ],
+   [
+    "KORODUR Robust",
+    "14,5 kg",
+    "18,0 kg",
+    "27,0 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18169",
+  "title": "KOROTEX",
+  "slug": "kopie-von-korotex",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18169",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Colour and condition",
+    "white liquid"
+   ],
+   [
+    "Density (20°C)",
+    "1,01 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18171",
+  "title": "KOROCURE",
+  "slug": "kopie-von-korocure",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18171",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Colour and condition",
+    "yellowish liquid"
+   ],
+   [
+    "Density",
+    "in Middle 1,0 kg/dm³"
+   ],
+   [
+    "pH-value",
+    "approx. 11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18174",
+  "title": "KOROPOX",
+  "slug": "kopie-von-koropox",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18174",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Form",
+    "liquid"
+   ],
+   [
+    "Colour",
+    "colorless"
+   ],
+   [
+    "Density g/cm³",
+    "1,0"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18178",
+  "title": "KOROMINERAL",
+  "slug": "kopie-von-koromineral",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18178",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Colour",
+    "transparent"
+   ],
+   [
+    "Density",
+    "approx. 1,12 g/cm³"
+   ],
+   [
+    "pH-value",
+    "approx. 11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18180",
+  "title": "KOROMINERAL Li+",
+  "slug": "kopie-von-koromineral-li",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18180",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Colour",
+    "transparent"
+   ],
+   [
+    "Consumption depending on the suction property ot the sub-base",
+    "polished surfaces\napprox. 15 - 25 m²/liter\n\nnot polished surfaces\napprox. 10 - 20 m²/liter"
+   ],
+   [
+    "Drying time",
+    "approx. 1 - 2 hours"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18182",
+  "title": "KOROMINERAL CURE",
+  "slug": "kopie-von-koromineral-cure",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18182",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Colour",
+    "milky white"
+   ],
+   [
+    "Consumption",
+    "approx. 60 - 100 ml/m²"
+   ],
+   [
+    "pH-value",
+    "11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18184",
+  "title": "OBTEGO P 20 Porenfüller",
+  "slug": "kopie-von-obtego-p-20-porenfueller",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18184",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Drying time",
+    "approx. 1 - 2 hours"
+   ],
+   [
+    "Productiveness grinded surfaces",
+    "approx. 20 - 30 m²/Liter"
+   ],
+   [
+    "Productiveness not grinded surfaces",
+    "approx. 10 - 20 m²/Liter"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18186",
+  "title": "OBTEGO FleckSchutz R 400",
+  "slug": "kopie-von-obtego-fleckschutz-r-400",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18186",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Walkable after",
+    "approx. 6 hours"
+   ],
+   [
+    "Productiveness grinded surfaces",
+    "approx. 20 - 50 m²/liter"
+   ],
+   [
+    "Productiveness not grinded surfaces",
+    "approx. 10 - 20 m²/Liter"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18188",
+  "title": "KORODUR PC",
+  "slug": "kopie-von-korodur-pc",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18188",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Colour",
+    "light blue"
+   ],
+   [
+    "Consumption per m²",
+    "50 - 200 g depending on the absorbency"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18190",
+  "title": "KORODUR TXPK",
+  "slug": "kopie-von-korodur-txpk",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18190",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Colour",
+    "white (off-white)"
+   ],
+   [
+    "Density",
+    "approx. 1,10 g/cm³"
+   ],
+   [
+    "Viscosity",
+    "approx. 750 mPa s ± 100"
+   ],
+   [
+    "Compressive strength",
+    "approx. 60 N/mm²"
+   ],
+   [
+    "Flexural strength",
+    "approx. 30 N/mm²"
+   ],
+   [
+    "Modulus of elasticity",
+    "approx. 2.000 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18192",
+  "title": "KOROTAN",
+  "slug": "kopie-von-korotan",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18192",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Form",
+    "green liquid"
+   ],
+   [
+    "Density (20°C)",
+    "1,13 g/cm³"
+   ],
+   [
+    "pH-value",
+    "approx. 9"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18194",
+  "title": "KCF 05",
+  "slug": "kopie-von-kcf-05",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18194",
+  "data": [
+   [
+    "Technical data KCF 05",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Compressive strength",
+    "45 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "6 N/mm²"
+   ],
+   [
+    "Wear resistance",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Layer thickness",
+    "15 - 25 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18196",
+  "title": "KCF 08",
+  "slug": "kopie-von-kcf-08",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18196",
+  "data": [
+   [
+    "Technical data KCF 08",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Compressive strength",
+    "35 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "5 N/mm²"
+   ],
+   [
+    "Wear resistance",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Layer thickness",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18198",
+  "title": "GRANIDUR 05",
+  "slug": "kopie-von-granidur-05",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18198",
+  "data": [
+   [
+    "Technical data GRANIDUR 05",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Compressive strength",
+    "45 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "6 N/mm²"
+   ],
+   [
+    "Layer thickness",
+    "15 - 25 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18200",
+  "title": "GRANIDUR 08",
+  "slug": "kopie-von-granidur-08",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18200",
+  "data": [
+   [
+    "Technical data GRANIDUR 08",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Compressive strength",
+    "35 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "5 N/mm²"
+   ],
+   [
+    "Layer thickness",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18202",
+  "title": "GRANIDUR® BIANCO/NERO",
+  "slug": "kopie-von-granidur-bianco-nero",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18202",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Compressive strenght",
+    "45 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "6 N/mm²"
+   ],
+   [
+    "Layer thickness",
+    "i.M. 15 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18204",
+  "title": "TRU® Self-Leveling",
+  "slug": "kopie-von-tru-self-leveling",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18204",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Quality",
+    "CT-C40-F10"
+   ],
+   [
+    "Colour",
+    "natural\ngray"
+   ],
+   [
+    "Compressive strength (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "after 4 hours",
+    "approx. 20,0 N/mm²"
+   ],
+   [
+    "after 1 day",
+    "approx. 34,0 N/mm²"
+   ],
+   [
+    "after 28 days",
+    "approx. 45,0 N/mm²"
+   ],
+   [
+    "Working time",
+    "approx. 20 Minuten"
+   ],
+   [
+    "Flow time",
+    "approx. 15 Minuten"
+   ],
+   [
+    "Layer thickness",
+    "5 - 35 mm"
+   ],
+   [
+    "Material consumption\nper m² / per mm layer thickness",
+    "approx. 1,7 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18206",
+  "title": "TRU® PC",
+  "slug": "kopie-von-tru-pc",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18206",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Quality",
+    "CT-C40-F10"
+   ],
+   [
+    "Colour",
+    "natural\ngray"
+   ],
+   [
+    "Compressive strength (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "after 4 hours",
+    "approx. 19,0 N/mm²"
+   ],
+   [
+    "after 1 day",
+    "approx. 34,0 N/mm²"
+   ],
+   [
+    "after 28 days",
+    "approx. 48,0 N/mm²"
+   ],
+   [
+    "Working time",
+    "approx. 20 minutes"
+   ],
+   [
+    "Flow time",
+    "approx. 15 minutes"
+   ],
+   [
+    "Layer thickness",
+    "10 - 35 mm"
+   ],
+   [
+    "Material consumption\nper m² / per mm layer thickness",
+    "approx. 1,8 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18208",
+  "title": "TRU® SP",
+  "slug": "kopie-von-tru-sp",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18208",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Quality",
+    "CT-C40-F10"
+   ],
+   [
+    "Colour",
+    "natural\ngray"
+   ],
+   [
+    "Compressive strength (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "after 4 hours",
+    "approx. 13,0 N/mm²"
+   ],
+   [
+    "after 1 day",
+    "approx. 27,0 N/mm²"
+   ],
+   [
+    "after 28 days",
+    "approx. 44,0 N/mm²"
+   ],
+   [
+    "Working time",
+    "approx. 20 minutes"
+   ],
+   [
+    "Flow time",
+    "approx. 15 minutes"
+   ],
+   [
+    "Layer thickness",
+    "10 - 35 mm"
+   ],
+   [
+    "Material consumption\nper m² / per mm layer thickness\t",
+    "approx. 1,8 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18210",
+  "title": "MICROTOP® TW 3",
+  "slug": "kopie-von-microtop-tw-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18210",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Density",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Colours",
+    "nature, white, blue"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18212",
+  "title": "MICROTOP® TW 5",
+  "slug": "kopie-von-microtop-tw-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18212",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Density",
+    "2,25 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18214",
+  "title": "MICROTOP® TW Mineral",
+  "slug": "kopie-von-microtop-tw-mineral",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18214",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Base",
+    "liquid"
+   ],
+   [
+    "Colour",
+    "transparent"
+   ],
+   [
+    "Densitiy",
+    "approx. 1,14 g/cm³"
+   ],
+   [
+    "pH-value",
+    "approx. 11,3"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18216",
+  "title": "MICROTOP® TW NSM",
+  "slug": "kopie-von-microtop-tw-nsm",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18216",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Density",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Colours",
+    "nature, white, blue"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18218",
+  "title": "MICROTOP® TW VSM",
+  "slug": "kopie-von-microtop-tw-vsm",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18218",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 2 mm"
+   ],
+   [
+    "Quality",
+    "C 12/15"
+   ],
+   [
+    "Density",
+    "1,98 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18220",
+  "title": "MICROTOP® TW BM",
+  "slug": "kopie-von-microtop-tw-bm",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18220",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 1,0 mm"
+   ],
+   [
+    "Compressive strength",
+    "35 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "6,3 N/mm²"
+   ],
+   [
+    "Colours",
+    "nature, white"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18222",
+  "title": "MICROTOP® TW 02",
+  "slug": "kopie-von-microtop-tw-02",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18222",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 0,2 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 30 N/mm²"
+   ],
+   [
+    "Density",
+    "2,04 kg/l"
+   ],
+   [
+    "Colours",
+    "nature, white, blue"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18224",
+  "title": "CEMENT ALL®",
+  "slug": "kopie-von-cement-all",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18224",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 1 mm"
+   ],
+   [
+    "Layer thickness",
+    "0 - 100 mm"
+   ],
+   [
+    "Ready for traffic",
+    "after 60 Min."
+   ],
+   [
+    "Compressive strength after 60 min.",
+    "20,0 N/mm²"
+   ],
+   [
+    "Compressive strength after 28 days",
+    "62,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 60 min.",
+    "6,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 28 days",
+    "11,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18226",
+  "title": "MORTAR MIX",
+  "slug": "kopie-von-mortar-mix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18226",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm"
+   ],
+   [
+    "Layer thickness",
+    "10 - 150 mm"
+   ],
+   [
+    "Ready for traffic",
+    "after 60 Min."
+   ],
+   [
+    "Compressive strength after 60 min.",
+    "17,0 N/mm²"
+   ],
+   [
+    "Compressive strength after 28 days",
+    "50,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 60 min.",
+    "3,40 N/mm²"
+   ],
+   [
+    "Flexural strength after 28 days",
+    "5,25 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18228",
+  "title": "CONCRETE MIX",
+  "slug": "kopie-von-concrete-mix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18228",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Layer thickness",
+    "50 - 600 mm"
+   ],
+   [
+    "Ready for traffic",
+    "after 60 Min."
+   ],
+   [
+    "Compressive strength after 60 min.",
+    "19,0 N/mm²"
+   ],
+   [
+    "Compressive strength after 28 days",
+    "41,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 60 min.",
+    "4,5 N/mm²"
+   ],
+   [
+    "Flexural strength after 28 days",
+    "7,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18230",
+  "title": "ASPHALT REPAIR MIX",
+  "slug": "kopie-von-asphalt-repair-mix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18230",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Layer thickness",
+    "30 - 600 mm"
+   ],
+   [
+    "Loadable",
+    "after 3 hours"
+   ],
+   [
+    "Compressive strength",
+    "after 3 hours ca. 10 N/mm²"
+   ],
+   [
+    "Compressive strength",
+    "after 3 hours ca. 25 N/mm²"
+   ],
+   [
+    "Flexural strength",
+    "after 3 hours ca. 3,0 N/mm²"
+   ],
+   [
+    "Flexural strength",
+    "after 28 days ca. 6,8 N/mm²"
+   ],
+   [
+    "Dynamic modulus of elasticity",
+    "after 28 days ca. 20.000 N/mm²"
+   ],
+   [
+    "Static modulus of elasticity",
+    "after 28 days ca. 16.000 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18232",
+  "title": "LevelFlor®",
+  "slug": "kopie-von-levelflor",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18232",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Installation Thickness",
+    "up to 70 mm"
+   ],
+   [
+    "Working time",
+    "30 Min."
+   ],
+   [
+    "Flow life",
+    "15 Min."
+   ],
+   [
+    "Compressive strength(ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "after 25 hours",
+    "approx. 20,0 N/mm²"
+   ],
+   [
+    "after 7 hours",
+    "approx. 24 N/mm²"
+   ],
+   [
+    "after 28 hours",
+    "approx. 34 N/mm²"
+   ],
+   [
+    "Flexural strength(ASTM C-348)",
+    ""
+   ],
+   [
+    "after 7 days",
+    "approx. 7,9 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18234",
+  "title": "DOT Europe CONCRETE MIX",
+  "slug": "kopie-von-dot-europe-concrete-mix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18234",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Layer thickness",
+    "50 - 600 mm"
+   ],
+   [
+    "Ready for traffic",
+    "after 60 Min."
+   ],
+   [
+    "Compressive strength after 28 days",
+    "approx. 60,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 28 days",
+    "approx. 6,5 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18236",
+  "title": "NEODUR Vergussmörtel VM 1",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-1",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18236",
+  "data": [
+   [
+    "Technical data NEODUR VM 1",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 1 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "Swelling index",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18238",
+  "title": "NEODUR Vergussmörtel VM 3",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18238",
+  "data": [
+   [
+    "Technical data NEODUR VM 3",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "Swelling index",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18240",
+  "title": "NEODUR Vergussmörtel VM 5",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18240",
+  "data": [
+   [
+    "Technical data NEODUR VM 5",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "Swelling index",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18242",
+  "title": "NEODUR Vergussmörtel VB 8",
+  "slug": "kopie-von-neodur-vergussmoertel-vb-8",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18242",
+  "data": [
+   [
+    "Technical data NEODUR VB 8",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 65 N/mm²"
+   ],
+   [
+    "Swelling index",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18244",
+  "title": "NEODUR® SVM 03",
+  "slug": "kopie-von-neodur-svm-03",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18244",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 0,5 mm"
+   ],
+   [
+    "Grouting cross section",
+    "approx. 5 - 30 mm"
+   ],
+   [
+    "Compressive strength n. 1 h",
+    "> 8 N/mm²"
+   ],
+   [
+    "Compressive strength n. 28 days",
+    "> 55 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18247",
+  "title": "NEODUR® AM Super / AM Plus",
+  "slug": "kopie-von-neodur-am-super-am-plus",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18247",
+  "data": [
+   [
+    "Technical data",
+    "",
+    ""
+   ],
+   [
+    "Product",
+    "NEODUR AM Super",
+    "NEODUR AM Plus"
+   ],
+   [
+    "Grain size",
+    "0 - 1 mm",
+    "0 - 1 mm"
+   ],
+   [
+    "Compressive strength",
+    "> 55 N/mm²",
+    "> 80 N/mm²"
+   ],
+   [
+    "Swelling index",
+    "> 0,1 Vol.%",
+    "> 0,1 Vol.%"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18249",
+  "title": "NEODUR® MSM 3 / MSM 5 / MSB 8",
+  "slug": "kopie-von-neodur-msm-3-msm-5-msb-8",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18249",
+  "data": [
+   [
+    "Technical data",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Product",
+    "NEODUR MSM 3",
+    "NEODUR MSM 5",
+    "NEODUR MSB 8"
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm",
+    "0 - 5 mm",
+    "0 - 8 mm"
+   ],
+   [
+    "Compressive strength",
+    "> 30 N/mm²",
+    "> 30 N/mm²",
+    "> 30 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18251",
+  "title": "NEODUR® PFM 1-K Easyfix",
+  "slug": "kopie-von-neodur-pfm-1-k-easyfix",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18251",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Colour",
+    "neutral/stone-grey/basalt"
+   ],
+   [
+    "Compressive strength",
+    "4,0 N/mm²"
+   ],
+   [
+    "Ready for foot traffic",
+    "after 24 hours"
+   ],
+   [
+    "Ready for full stress",
+    "after 6 days"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18253",
+  "title": "NEODUR® PFM-ZE",
+  "slug": "kopie-von-neodur-pfm-ze",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18253",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "grain size",
+    "0 - 2 mm"
+   ],
+   [
+    "Colour",
+    "grey/light grey"
+   ],
+   [
+    "compressive strength",
+    "> 50 N/mm²"
+   ],
+   [
+    "tensile strength",
+    "> 7 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18255",
+  "title": "KORODUR uniPrimer",
+  "slug": "kopie-von-korodur-uniprimer",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18255",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Form",
+    "liquid"
+   ],
+   [
+    "Colour",
+    "milky-white"
+   ],
+   [
+    "Density",
+    "1,05 g/m³"
+   ],
+   [
+    "pH-value",
+    "11,6"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18257",
+  "title": "KORODUR easyFinish",
+  "slug": "kopie-von-korodur-easyfinish",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18257",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Form",
+    "liquid"
+   ],
+   [
+    "Colour",
+    "bluish"
+   ],
+   [
+    "Density",
+    "1,0 +/- 0,02 kg/m³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18259",
+  "title": "KORODUR nanoFinish",
+  "slug": "kopie-von-korodur-nanofinish",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18259",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Form",
+    "liquid"
+   ],
+   [
+    "Colour",
+    "milky dull"
+   ],
+   [
+    "Density",
+    "1,035 cm³"
+   ],
+   [
+    "pH-value",
+    "5"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18261",
+  "title": "THILOS dünnflüssig",
+  "slug": "kopie-von-thilos-duennfluessig",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18261",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Disposal",
+    "disposal code 15 01 10"
+   ],
+   [
+    "UN.-Nr.",
+    "1993"
+   ],
+   [
+    "Storage",
+    "VbF-Class A II"
+   ],
+   [
+    "Flash point",
+    "> 30°C"
+   ],
+   [
+    "Average consumption",
+    "0,10 liter/m²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18264",
+  "title": "Glossprofi 1905",
+  "slug": "kopie-von-glossprofi-1905",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18264",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Mixing ratio of first maintenance treatment",
+    "1:1 to 1:5 GLOSSPROFI with water"
+   ],
+   [
+    "Mixing ratio daily mechanical cleaning",
+    "approx. 500 – 1000 ml on 100 l water"
+   ],
+   [
+    "Mixing ratio daily manual cleaning",
+    "approx. 100 – 125 ml on 10 l water"
+   ],
+   [
+    "Yield",
+    "approx. 500 – 800 m² per liter GLOSSPROFI 1905"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18418",
+  "title": "Hartstoffschicht",
+  "slug": "kopie-von-hartstoffschicht-ohne-bindemittel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18418",
+  "data": [
+   [
+    "Products",
+    "Quality",
+    "Group/DIN 1100",
+    "Wear resistance"
+   ],
+   [
+    "KORODUR VS 0/5",
+    "CT-C70-F10-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "KORODUR WH-Special",
+    "CT-C70-F10-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR WH-metallic",
+    "CT-C60-F12-A3",
+    "M",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR Diamond concrete",
+    "CT-C70-F10-A1,5",
+    "KS",
+    "≤ 1,5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18420",
+  "title": "Hartstoffschicht",
+  "slug": "kopie-von-hartstoffschicht-mit-bindemittel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18420",
+  "data": [
+   [
+    "Products",
+    "Quality",
+    "Group/DIN 1100",
+    "Wear resistance",
+    ""
+   ],
+   [
+    "NEODUR HE 65",
+    "CT-C70-F9-A6",
+    "A",
+    "≤ 5 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 SVS 3",
+    "CT-C70-F9-A3",
+    "A",
+    "≤ 3 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 SVS 1,5",
+    "CT-C70-F9-A1,5",
+    "A",
+    "≤ 1,5 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 metallic",
+    "CT-C80-F11-A3",
+    "M",
+    "≤ 3 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 plus",
+    "CT-C70-F9-A6",
+    "A",
+    "≤ 5 cm³/50 cm²",
+    ""
+   ],
+   [
+    "NEODUR HE 65 plus SVS 3",
+    "CT-C70-F9-A3",
+    "A",
+    "≤ 3 cm³/50 cm²",
+    ""
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18422",
+  "title": "Hartstoffeinstreuung",
+  "slug": "kopie-von-hartstoffeinstreuung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18422",
+  "data": [
+   [
+    "Product",
+    "Quality",
+    "Group/DIN 1100",
+    "Wear resistance"
+   ],
+   [
+    "NEODUR HE 3",
+    "CT-C70-F9-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 green",
+    "CT-C70-F9-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "KORODUR 0/4",
+    "CT-C70-F10-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 SVS 3",
+    "CT-C70-F9-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 SVS 1,5",
+    "CT-C70-F9-A1,5",
+    "A",
+    "≤ 1,5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 metallic",
+    "CT-C80-F11-A3",
+    "M",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 2",
+    "CT-C70-F9-A8",
+    "",
+    "≤ 8 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18424",
+  "title": "Schnellestrich-Systeme",
+  "slug": "kopie-von-schnellestrich-systeme",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18424",
+  "data": [
+   [
+    "Product",
+    "Quality",
+    "Group/DIN 1100",
+    "Wear resistance"
+   ],
+   [
+    "NEODUR HE 60 rapid",
+    "CT-C60-F8-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid SVS 3",
+    "CT-C60-F8-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid SVS 1,5",
+    "CT-C60-F8-A1,5",
+    "KS",
+    "≤ 1,5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid metallic",
+    "CT-C60-F8-A3",
+    "M",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR FSCem",
+    "CT-C50-F7 bis CT-C40-F6",
+    "",
+    ""
+   ],
+   [
+    "KORODUR FSCem Screed",
+    "CT-C40-F6",
+    "",
+    ""
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18426",
+  "title": "Selbstverlaufende Systeme",
+  "slug": "kopie-von-selbstverlaufende-systeme",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18426",
+  "data": [
+   [
+    "Product",
+    "Quality",
+    "Layer thickness"
+   ],
+   [
+    "NEODUR Level",
+    "CT-C40-F8-AR0,5",
+    "4 to 30 mm"
+   ],
+   [
+    "NEODUR Level AU",
+    "CT-C35-F5",
+    "5 to 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18428",
+  "title": "Hartstoff für Kunstharze",
+  "slug": "kopie-von-hartstoff-fuer-kunstharze",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18428",
+  "data": [
+   [
+    "Product",
+    "Grain size",
+    "Hardness acc. to Mohs"
+   ],
+   [
+    "DUROP 05/1",
+    "0,5 - 1 mm",
+    "8"
+   ],
+   [
+    "DUROP 1/2",
+    "1 - 2 mm",
+    "8"
+   ],
+   [
+    "DUROP 2/3",
+    "2 - 3 mm",
+    "8"
+   ],
+   [
+    "DUROP 2/5",
+    "2 - 5 mm",
+    "8"
+   ],
+   [
+    "KORODUR Robust",
+    "0 - 3 mm",
+    "7"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18431",
+  "title": "Nachbehandlung / Curing",
+  "slug": "kopie-von-bauchemische-produkte-nachbehandlung-curing",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18431",
+  "data": [
+   [
+    "Product",
+    "Consumption",
+    "Description"
+   ],
+   [
+    "KOROTEX",
+    "approx. 150 g/m²",
+    "After-treatment agent on synthetic-resin basis for KORODUR screeds to avoid premature drying out."
+   ],
+   [
+    "KOROCURE",
+    "approx. 120 g/m²",
+    "Temporary evaporation protection by curing of the base concrete."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18434",
+  "title": "Imprägnierung / Einpflege",
+  "slug": "kopie-von-bauchemische-produkte-impraegnierung-einpflege",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18434",
+  "data": [
+   [
+    "Product",
+    "Consumption",
+    "Description"
+   ],
+   [
+    "KOROMINERAL",
+    "approx. 100-200 g/m²\n(depending on absorbency)",
+    "Liquid, transparent impregnation on silicate basis with silicifying effect."
+   ],
+   [
+    "KOROMINERAL Li+",
+    "approx. 40-100 g/m²\n(depending on absorbency)",
+    "Liquid, transparent impregnation on hybrid lithium silicate with integrated stain protection."
+   ],
+   [
+    "KOROMINERAL Cure",
+    "approx. 60-100 ml/m²\n(depending on absorbency)",
+    "Liquid, one-component, membrane-forming curing agent to prevent premature drying out in combination with a densification, as surface protection of cementitious concrete and industrial floors."
+   ],
+   [
+    "KOROCLEAN",
+    "mechanical procedure cleaning-polishing",
+    "(system of MKS Funke Schleiftechnik)\nMechanical procedure to improve the optical properties, safety and skid-resistance of cementitious industrial floors (cleaning-polishing)."
+   ],
+   [
+    "OBTEGO P-20",
+    "approx. 20-30 m²/l polished floors\n\napprox. 10-20 m²/l smoothed floors",
+    "(product of OBTEGO AG)\nPrimer for OBTEGO R-400 on acrylic co-polymer basis with excellent pore-filling property and water-repellent effect on polished and smoothed KORODUR design floors.\n"
+   ],
+   [
+    "OBTEGO R-400",
+    "approx. 40-50 m²/l polished floors\n\napprox. 15-30 m²/l smoothed floors",
+    "(product of OBTEGO AG)\nSpecial impregnation on silan/siloxan basis with excellent water- and oil-repellent effect on polished and smoothed KORODUR design floors."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18436",
+  "title": "Haftbrücke / Grundierung",
+  "slug": "kopie-von-bauchemische-produkte-haftbruecke-grundierung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18436",
+  "data": [
+   [
+    "Product",
+    "Consumption",
+    "Describtion"
+   ],
+   [
+    "KORODUR HB 5",
+    "approx. 2 kg/m²",
+    "Bonding compound for the permabond composite of cementitious screeds of all strength classes – including KORODUR or NEODUR screeds – on concrete. For installation fresh on set base concrete and for time-deferred installation technique."
+   ],
+   [
+    "KORODUR HB 5 rapid",
+    "approx. 2 kg/m²",
+    "Fast-setting system bonding compound for the optimal bond of NEODUR HE 60 rapid on set concrete."
+   ],
+   [
+    "KORODUR PC",
+    "approx. 50-200 g/m²",
+    "Liquid, solvent-free, one-component, water-thinnable synthetic resin dispersion."
+   ],
+   [
+    "KORODUR TXPK",
+    "approx. 400-500 g/m² depending on roughness of sub-base",
+    "Epoxy resin special primer, two-components, for self-leveling coatings, e.g. for TRU Self-Leveling and NEODUR Level as well as for priming of concrete and screed areas, where a later moisture exposure on the back has to be considered."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "18438",
+  "title": "Bauchemische Spezialprodukte (Zusatzmittel)",
+  "slug": "kopie-von-bauchemische-produkte-bauchemische-spezialprodukte",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=18438",
+  "data": [
+   [
+    "Product",
+    "Consumption",
+    "Describtion"
+   ],
+   [
+    "KOROTAN",
+    "dosage up to approx. 1-2 % referred to cement weight",
+    "Screed plasticizer, special additive with stabilizing properties. Specially for KORODUR-KOROTAN industrial floors."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "19074",
+  "title": "Industriebodensanierung",
+  "slug": "19074",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=19074",
+  "data": [
+   [
+    "Système",
+    "Produits",
+    "Epaisseur"
+   ],
+   [
+    "KORODUR-KOROTAN",
+    "voir Coulis",
+    "15 mm"
+   ],
+   [
+    "NEODUR HE 60 rapid",
+    "voir Chape rapide",
+    "à partir de 10 mm"
+   ],
+   [
+    "NEODUR Level",
+    "voir Revêtement autonivelant",
+    "4 - 30 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "19724",
+  "title": "Montage-/Vergusssystem",
+  "slug": "kopie-von-neodur-vergussmoertel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=19724",
+  "data": [
+   [
+    "Products",
+    "Quality",
+    "Grouting cross sections"
+   ],
+   [
+    "NEODUR VM 1",
+    "C 60/75",
+    "5 - 20 mm"
+   ],
+   [
+    "NEODUR VM 3",
+    "C 60/75",
+    "10 - 50 mm"
+   ],
+   [
+    "NEODUR VM 5",
+    "C 60/75",
+    "20 - 80 mm"
+   ],
+   [
+    "NEODUR VB 8",
+    "C 60/75",
+    "> 50 mm"
+   ],
+   [
+    "NEODUR SVM 03",
+    "C 45/55",
+    "5 - 20 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "19777",
+  "title": "Geschliffener Sichtestrich",
+  "slug": "kopie-von-granidur",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=19777",
+  "data": [
+   [
+    "Products",
+    "Quality",
+    "Layer thickness",
+    "Grain size"
+   ],
+   [
+    "GRANIDUR 05",
+    "CT-C45-F6",
+    "15 - 25 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "GRANIDUR 08",
+    "CT-C35-F5",
+    "25 - 50 mm",
+    "0 - 8 mm"
+   ],
+   [
+    "GRANIDUR BIANCO",
+    "CT-C45-F6",
+    "15 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "GRANIDUR NERO",
+    "CT-C45-F6",
+    "15 mm",
+    "0 - 5 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "19827",
+  "title": "Nassspritzverfahren",
+  "slug": "kopie-von-nassspritzverfahren",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=19827",
+  "data": [
+   [
+    "Products",
+    "Layer thickness",
+    "Grain size",
+    "Compressive strength 28 d"
+   ],
+   [
+    "MICROTOP TW NSM",
+    "10 - 20 mm",
+    "0 - 3,0 mm",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "MICROTOP TW VSM",
+    "15 - 20 mm",
+    "0 - 2,0 mm",
+    "≥ 15 N/mm²"
+   ],
+   [
+    "MICROTOP TW BM",
+    "3 - 8 mm",
+    "0 - 1,0 mm",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "MICROTOP TW 02",
+    "2 - 5 mm",
+    "0 - 0,2 mm",
+    "≥ 30 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "19836",
+  "title": "Trockenspritzverfahren",
+  "slug": "kopie-von-trockenspritzverfahren",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=19836",
+  "data": [
+   [
+    "Products",
+    "Layer thickness",
+    "Compressive strength 28 d",
+    "Total porosity 90 d"
+   ],
+   [
+    "MICROTOP TW 3",
+    "9 - 20 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ],
+   [
+    "MICROTOP TW 5",
+    "10 - 30 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ],
+   [
+    "MICROTOP TW 8",
+    "≥ 25 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "19856",
+  "title": "Rapid Set Reparaturmörtel",
+  "slug": "kopie-von-rapid-set-reparaturmoertel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=19856",
+  "data": [
+   [
+    "",
+    "CEMENT ALL",
+    "MORTAR MIX",
+    "CONCRETE MIX"
+   ],
+   [
+    "Indoors and outdoors",
+    "yes",
+    "yes",
+    "yes"
+   ],
+   [
+    "In wet environments",
+    "yes",
+    "yes",
+    "yes"
+   ],
+   [
+    "Layer thickness",
+    "0 - 100 mm",
+    "10 - 150 mm",
+    "50 - 600 mm"
+   ],
+   [
+    "Initial set²",
+    "after 15 min.",
+    "after 15 min.",
+    "after 15 min."
+   ],
+   [
+    "Ready for traffic²",
+    "after 60 min.",
+    "after 60 min.",
+    "after 60 min."
+   ],
+   [
+    "Compressive Strength²",
+    "",
+    "",
+    ""
+   ],
+   [
+    "after 60 min.",
+    "> 20,0 N/mm²",
+    "> 17,0 N/mm²",
+    "> 19,0 N/mm²"
+   ],
+   [
+    "after 180 min.",
+    "> 31,0 N/mm²",
+    "> 28,0 N/mm²",
+    "> 25,0 N/mm²"
+   ],
+   [
+    "after 7 days",
+    "> 41,0 N/mm²",
+    "> 35,0 N/mm²",
+    "> 35,0 N/mm²"
+   ],
+   [
+    "after 28 days",
+    "> 62,0 N/mm²",
+    "> 50,0 N/mm²",
+    "> 41,0 N/mm²"
+   ],
+   [
+    "Modulus of elasticity",
+    "31.700 N/mm²",
+    "26.827 N/mm²",
+    "30.690 N/mm²"
+   ],
+   [
+    "Sulfate resistance",
+    "yes",
+    "yes",
+    "yes"
+   ],
+   [
+    "Frost/deicer resistance",
+    "yes",
+    "yes",
+    "yes"
+   ],
+   [
+    "Penetration behavior",
+    "yes",
+    "NPD³",
+    "NPD³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "19871",
+  "title": "Geglätteter Sichtestrich",
+  "slug": "kopie-von-kcf",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=19871",
+  "data": [
+   [
+    "Products",
+    "Quality",
+    "Layer thickness",
+    "Grain size"
+   ],
+   [
+    "KCF 05",
+    "CT-C45-F6-A5",
+    "15 - 25 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "KCF 08",
+    "CT-C35-F5-A5",
+    "25 - 50 mm",
+    "0 - 8 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "19880",
+  "title": "TRUazzo",
+  "slug": "kopie-von-tru",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=19880",
+  "data": [
+   [
+    "Products",
+    "Quality",
+    "Layer thickness"
+   ],
+   [
+    "TRU Self-Leveling",
+    "CT-C40-F10",
+    "5 - 35 mm"
+   ],
+   [
+    "TRU PC",
+    "CT-C40-F10",
+    "10 - 35 mm"
+   ],
+   [
+    "TRU SP",
+    "CT-C40-F10",
+    "10 - 35 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20062",
+  "title": "Betoninstandsetzung",
+  "slug": "kopie-von-neodur-betoninstandsetzungsmoertel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20062",
+  "data": [
+   [
+    "Products",
+    "Quality",
+    "Grain size"
+   ],
+   [
+    "NEODUR MSM 3",
+    "C 30/37",
+    "0 - 3 mm"
+   ],
+   [
+    "NEODUR MSM 5",
+    "C 30/37",
+    "0 - 5 mm"
+   ],
+   [
+    "NEODUR MSB 8",
+    "C 30/37",
+    "0 - 8 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20076",
+  "title": "Hartstoff für Kunstharze",
+  "slug": "kopie-von-hartstoff-fuer-kunstharze-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20076",
+  "data": [
+   [
+    "Produits",
+    "Granulométrie",
+    "Dureté Mohs"
+   ],
+   [
+    "DUROP 05/1",
+    "0,5 - 1 mm",
+    "8"
+   ],
+   [
+    "DUROP 1/2",
+    "1 - 2 mm",
+    "8"
+   ],
+   [
+    "DUROP 2/3",
+    "2 - 3 mm",
+    "8"
+   ],
+   [
+    "DUROP 2/5",
+    "2 - 5 mm",
+    "8"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20086",
+  "title": "Schnellestrich-Systeme",
+  "slug": "kopie-von-schnellestrich-systeme-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20086",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Groupe/DIN 1100",
+    "Résistance à l'usure"
+   ],
+   [
+    "NEODUR HE 60 rapid",
+    "CT-C60-F8-A6",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid SVS 3",
+    "CT-C60-F8-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid SVS 1,5",
+    "CT-C60-F8-A1,5",
+    "KS",
+    "≤ 1,5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 60 rapid métallic",
+    "CT-C60-F8-A3",
+    "M",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR FSCem",
+    "CT-C50-F7 bis CT-C40-F6",
+    "",
+    ""
+   ],
+   [
+    "KORODUR FSCem Screed",
+    "CT-C40-F6",
+    "",
+    ""
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20099",
+  "title": "Selbstverlaufende Systeme",
+  "slug": "kopie-von-selbstverlaufende-systeme-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20099",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Epaisseur"
+   ],
+   [
+    "NEODUR Level",
+    "CT-C40-F8-AR0,5",
+    "4 - 30 mm"
+   ],
+   [
+    "NEODUR Level AU",
+    "CT-C35-F5",
+    "5 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20166",
+  "title": "Nassspritzverfahren",
+  "slug": "kopie-von-nassspritzverfahren-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20166",
+  "data": [
+   [
+    "Produits",
+    "Epaisseur",
+    "Granulométrie",
+    "Résistance à la compression 28 jours"
+   ],
+   [
+    "MICROTOP TW NSM",
+    "10 - 20 mm",
+    "0 - 3,0 mm",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "MICROTOP TW VSM",
+    "15 - 20 mm",
+    "0 - 2,0 mm",
+    "≥ 15 N/mm²"
+   ],
+   [
+    "MICROTOP TW BM",
+    "3 - 8 mm",
+    "0 - 1,0 mm",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "MICROTOP TW 02",
+    "2 - 5 mm",
+    "0 - 0,2 mm",
+    "≥ 30 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20174",
+  "title": "Trockenspritzverfahren",
+  "slug": "kopie-von-trockenspritzverfahren-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20174",
+  "data": [
+   [
+    "Produits",
+    "Epaisseur",
+    "Résistance à la compression 28 jours",
+    "Porosité totale 90 jours"
+   ],
+   [
+    "MICROTOP TW 3",
+    "9 - 20 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ],
+   [
+    "MICROTOP TW 5",
+    "10 - 30 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ],
+   [
+    "MICROTOP TW 8",
+    "≥ 25 mm",
+    "≥ 45 N/mm²",
+    "≤ 10 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20239",
+  "title": "Industriebodensanierung",
+  "slug": "industriebodensanierung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20239",
+  "data": [
+   [
+    "System",
+    "Products",
+    "Layer thickness"
+   ],
+   [
+    "KORODUR-KOROTAN",
+    "see hard aggregate layer",
+    "15 mm"
+   ],
+   [
+    "NEODUR HE 60 rapid",
+    "see hard aggregate fast-setting screed",
+    "10 mm and up"
+   ],
+   [
+    "NEODUR Level",
+    "see self-leveling flooring",
+    "4 - 30 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20256",
+  "title": "Anker-/Injektionsmörtel",
+  "slug": "anker-injektionsmoertel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20256",
+  "data": [
+   [
+    "Products",
+    "Quality",
+    "Grain size"
+   ],
+   [
+    "NEODUR AM Super",
+    "C 30/37",
+    "0 - 1 mm"
+   ],
+   [
+    "NEODUR AM Plus",
+    "C 40/50",
+    "0 - 1 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20264",
+  "title": "Hartstoffschicht",
+  "slug": "hartstoffschicht-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20264",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Groupe/DIN 1100",
+    "Résistance à l'usure"
+   ],
+   [
+    "KORODUR VS 0/5",
+    "CT-C70-F10-A5",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "KORODUR WH-Special",
+    "CT-C70-F10-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR WH-metal",
+    "CT-C60-F12-A3",
+    "M",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "KORODUR Diamant-Beton",
+    "CT-C70-F10-A1,5",
+    "KS",
+    "≤ 1,5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20266",
+  "title": "Hartstoffschicht",
+  "slug": "hartstoffschicht-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20266",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Groupe/DIN 1100",
+    "Résistance à l'usure"
+   ],
+   [
+    "NEODUR HE 65",
+    "CT-C70-F9-A5",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 65 SVS 3",
+    "CT-C70-F9-A3",
+    "A",
+    "≤ 3 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 65 SVS 1,5",
+    "CT-C70-F9-A1,5",
+    "A",
+    "≤ 1,5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 65 M4",
+    "CT-C80-F11-A3",
+    "",
+    "≤ 3 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20268",
+  "title": "Hartstoffeinstreuung",
+  "slug": "hartstoffeinstreuung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20268",
+  "data": [
+   [
+    "Produits",
+    "Qualités",
+    "Groupe/DIN 1100",
+    "Classement performanciel"
+   ],
+   [
+    "NEODUR HE 2 F",
+    "CT-C70-F9-A8",
+    "",
+    "1-2-2-2"
+   ],
+   [
+    "NEODUR HE 2",
+    "CT-C70-F9-A8",
+    "",
+    "2-2-3-2"
+   ],
+   [
+    "NEODUR HE 3",
+    "CT-C70-F9-A5",
+    "A",
+    "2-3-4-3"
+   ],
+   [
+    "NEODUR HE 3 green",
+    "CT-C70-F9-A5",
+    "A",
+    "2-3-4-3"
+   ],
+   [
+    "KORODUR 0/4",
+    "CT-C70-F10-A5",
+    "A",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "NEODUR HE 3 SVS 3",
+    "CT-C70-F9-A3",
+    "A",
+    ""
+   ],
+   [
+    "NEODUR HE 3 SVS 1,5",
+    "CT-C70-F9-A1,5",
+    "A",
+    ""
+   ],
+   [
+    "NEODUR HE 3 met",
+    "CT-C80-F11-A3",
+    "M",
+    "3-4-4-4"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20270",
+  "title": "Nachbehandlung/Curing",
+  "slug": "nachbehandlung-curing",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20270",
+  "data": [
+   [
+    "Produit",
+    "Consommation",
+    "Description"
+   ],
+   [
+    "KOROTEX",
+    "env. 150 g/m²",
+    "Produit de cure en phase aqueuse à base de résines pour protéger des chapes KORODUR contre une dessiccation trop rapide."
+   ],
+   [
+    "KOROCURE",
+    "env. 120 g/m²",
+    "Protection temporaire contre l‘évaporation.\r\nCure intermédiaire."
+   ],
+   [
+    "KOROMINERAL CURE",
+    "env. 10-15 m²/l",
+    "Un produit de cure à un composant, à base de silicate de lithium."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20272",
+  "title": "Imprägnierung/Einpflege",
+  "slug": "impraegnierung-einpflege",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20272",
+  "data": [
+   [
+    "Produit",
+    "Consommation",
+    "Description"
+   ],
+   [
+    "KOROMINERAL",
+    "env. 100-200 g/m²\r\n(selon le degré d’absorption)",
+    "Imprégnation  de surface, liquide, transparente, à base de silicate.  Effet de minéralisation."
+   ],
+   [
+    "KOROMINERAL Li+",
+    "env. 40-100 g/m²\r\n(selon le degré d’absorption)",
+    "Imprégnation de surface, liquide, transparente, à base de silicate de lithium hybride avec protection anti-taches intégrée."
+   ],
+   [
+    "KOROMINERAL CURE",
+    "env. 60-100 ml/m²\r\n(selon le degré d’absorption)",
+    "Produit de cure liquide, mono-composant, formant une membrane, contre le dessèchement prématuré, combiné à une silicatisation, comme protection de surface pour les sols industriels à base de ciment.\n"
+   ],
+   [
+    "KOROCLEAN",
+    "Polissage mécanique",
+    "(Système de la société MKS Funke Schleiftechnik)\nPolissage mécanique léger améliorant la finition de la surface, la sécurité et la résistance au glissement des sols industriels liés en ciments. Facilitant l’entretien. "
+   ],
+   [
+    "OBTEGO P-20",
+    "env. 20-30 m²/l pour des sols polis\r\n\r\nenv. 10-20 m²/l pour des sols polis\t",
+    "(Produit de la société OBTEGO AG)\nPrimaire d’acchrochage pour OBTEGO R-400 à base d'un copolymère d'acrylate avec d'excellentes propriétés de remplissage de pores et d’un effet hydrofuge sur des sols décoratifs KORODUR, polies et lissés."
+   ],
+   [
+    "OBTEGO R-400",
+    "env. 40-50 m²/l pour des sols polis\n\nenv. 15-30 m²/l pour des sols lissés",
+    "(Produit de la société OBTEGO AG)\nImprégnation spéciale à base de silane / siloxane avec un excellent effet hydrofuge et oléofuge sur les sols décoratifs KORODUR polies et lissées."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20274",
+  "title": "Haftbrücke / Grundierung",
+  "slug": "haftbruecke-grundierung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20274",
+  "data": [
+   [
+    "Produit",
+    "Consommation",
+    "Déscription"
+   ],
+   [
+    "KORODUR HB 5",
+    "env. 2 kg/m²",
+    "Primaire d’accrochage hydraulique, assurant une adhérence très résistante entre les chapes ciment de toutes qualités (y compris celles à base de durcisseurs KORODUR ou NEODUR) sur béton. Il est particulièrement adapté aux applications fraîches sur des supports durcis ainsi, pour le système KORODUR KOROTAN."
+   ],
+   [
+    "KORODUR HB 5 rapid",
+    "env. 2 kg/m²",
+    "Primaire d’accrochage hydraulique à prise rapide, pour une adhérence optimale de NEODUR HE 60 rapid sur béton durci."
+   ],
+   [
+    "KORODUR PC",
+    "env. 50-200 g/m²",
+    "Dispersion aqueuse mono-composante de résines, sans solvant."
+   ],
+   [
+    "KORODUR TXPK",
+    "env. 400-500 g/m²\r\nselon la rugosité du sol support",
+    "Primaire  d’accrochage à 2 composants à base de résine époxy spécialement étudié pour les revêtements autonivelants comme TRU Self-Leveling, TRU PC, produits NEODUR Level etc.  et pour des bétons et chapes lors d’un risque de remontée d’humidité."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20276",
+  "title": "Bauchemische Spezialprodukte (Zusatzmittel)",
+  "slug": "bauchemische-spezialprodukte-zusatzmittel",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20276",
+  "data": [
+   [
+    "Produit",
+    "Consommation",
+    "Déscription"
+   ],
+   [
+    "KOROTAN",
+    "Dosage jusqu’à env. 1-2 % du poids du ciment",
+    "Additif spécial, propriétés stabilisantes et fluidifiantes. Pour le système KORODUR KOROTAN."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20278",
+  "title": "Geglätteter Sichtestrich",
+  "slug": "geglaetteter-sichtestrich",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20278",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Epaisseur",
+    "Granulométrie"
+   ],
+   [
+    "KCF 05",
+    "CT-C45-F6-A5",
+    "15 - 25 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "KCF 08",
+    "CT-C35-F5-A5",
+    "25 - 50 mm",
+    "0 - 8 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20280",
+  "title": "Geschliffener Sichtestrich",
+  "slug": "geschliffener-sichtestrich",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20280",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Epaisseur",
+    "Granulométrie"
+   ],
+   [
+    "GRANIDUR 05",
+    "CT-C45-F6",
+    "15 - 25 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "GRANIDUR 08",
+    "CT-C35-F5",
+    "25 - 50 mm",
+    "0 - 8 mm"
+   ],
+   [
+    "GRANIDUR BIANCO",
+    "CT-C45-F6",
+    "15 mm",
+    "0 - 5 mm"
+   ],
+   [
+    "GRANIDUR NERO",
+    "CT-C45-F6",
+    "15 mm",
+    "0 - 5 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20282",
+  "title": "TRUazzo",
+  "slug": "truazzo",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20282",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Epaisseur"
+   ],
+   [
+    "TRU Self-Leveling",
+    "CT-C40-F10",
+    "5 - 35 mm"
+   ],
+   [
+    "TRU PC",
+    "CT-C40-F10",
+    "10 - 35 mm"
+   ],
+   [
+    "TRU SP",
+    "CT-C40-F10",
+    "10 - 35 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20284",
+  "title": "Rapid Set Reparaturmörtel",
+  "slug": "rapid-set-reparaturmoertel-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20284",
+  "data": [
+   [
+    "",
+    "CEMENT ALL",
+    "MORTAR MIX",
+    "CONCRETE MIX"
+   ],
+   [
+    "intérieur et extérieur",
+    "oui",
+    "oui",
+    "oui"
+   ],
+   [
+    "en zones humides",
+    "oui",
+    "oui",
+    "oui"
+   ],
+   [
+    "épaisseur",
+    "0 - 100 mm",
+    "10 - 150 mm",
+    "50 - 600 mm"
+   ],
+   [
+    "début de prise²",
+    "en 15 min.",
+    "en 15 min.",
+    "en 15 min."
+   ],
+   [
+    "durcissement²",
+    "en 60 min.",
+    "en 60 min.",
+    "en 60 min."
+   ],
+   [
+    "résistance à la compression²",
+    "",
+    "",
+    ""
+   ],
+   [
+    "après 60 min.",
+    "> 20,0 N/mm²",
+    "> 17,0 N/mm²",
+    "> 19,0 N/mm²"
+   ],
+   [
+    "après 180 min.",
+    "> 31,0 N/mm²",
+    "> 28,0 N/mm²",
+    "> 25,0 N/mm²"
+   ],
+   [
+    "après 7 jours",
+    "> 41,0 N/mm²",
+    "> 35,0 N/mm²",
+    "> 35,0 N/mm²"
+   ],
+   [
+    "après 28 jours",
+    "> 62,0 N/mm²",
+    "> 50,0 N/mm²",
+    "> 41,0 N/mm²"
+   ],
+   [
+    "module d’élasticité statique",
+    "31.700 N/mm²",
+    "26.827 N/mm²",
+    "30.690 N/mm²"
+   ],
+   [
+    "résistance aux sulfates",
+    "oui",
+    "oui",
+    "oui"
+   ],
+   [
+    "résistance au gel – sel dégivrage",
+    "oui",
+    "oui",
+    "oui"
+   ],
+   [
+    "test de pénétration",
+    "oui",
+    "NPD³",
+    "NPD³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20286",
+  "title": "Montage-/Vergusssystem",
+  "slug": "montage-vergusssystem",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20286",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Croix-section"
+   ],
+   [
+    "NEODUR VM 1",
+    "C 60/75",
+    "5 - 20 mm"
+   ],
+   [
+    "NEODUR VM 3",
+    "C 60/75",
+    "10 - 50 mm"
+   ],
+   [
+    "NEODUR VM 5",
+    "C 60/75",
+    "20 - 80 mm"
+   ],
+   [
+    "NEODUR VB 8",
+    "C 60/75",
+    "> 50 mm"
+   ],
+   [
+    "NEODUR SVM 03",
+    "C 45/55",
+    "5 - 20 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20288",
+  "title": "Anker-/Injektionsmörtel",
+  "slug": "anker-injektionsmoertel-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20288",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Granulométrie"
+   ],
+   [
+    "NEODUR AM Super",
+    "C 30/37",
+    "0 - 1 mm"
+   ],
+   [
+    "NEODUR AM Plus",
+    "C 40/50",
+    "0 - 1 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20290",
+  "title": "Betoninstandsetzung",
+  "slug": "betoninstandsetzung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20290",
+  "data": [
+   [
+    "Produits",
+    "Qualité",
+    "Granulométrie"
+   ],
+   [
+    "NEODUR MSM 3",
+    "C 30/37",
+    "0 - 3 mm"
+   ],
+   [
+    "NEODUR MSM 5",
+    "C 30/37",
+    "0 - 5 mm"
+   ],
+   [
+    "NEODUR MSB 8",
+    "C 30/37",
+    "0 - 8 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "20476",
+  "title": "MICROTOP",
+  "slug": "microtop-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=20476",
+  "data": [
+   [
+    "Paramètre",
+    "Par voie sèche",
+    "Par voie humide"
+   ],
+   [
+    "Longeur idéal de pompage [m]",
+    "> 40 à 400",
+    "< 40"
+   ],
+   [
+    "Quantité maximale du matériel par heure [kg/h]",
+    "1.000",
+    "300"
+   ],
+   [
+    "Quantité variable du matériel",
+    "oui",
+    "oui"
+   ],
+   [
+    "Projection continue",
+    "oui",
+    "oui"
+   ],
+   [
+    "Phase de travail",
+    "1",
+    "1"
+   ],
+   [
+    "Quantité d’air absorbé [m³/min]",
+    "5",
+    "1 - 1,5"
+   ],
+   [
+    "Pression d’air [bar]",
+    "2,5 - 3",
+    "2 - 5"
+   ],
+   [
+    "Temps de maturation",
+    "non",
+    "non"
+   ],
+   [
+    "Vitesse du matériel [m/s]",
+    "25 - 45",
+    "15 - 25"
+   ],
+   [
+    "Consommation du matériel",
+    "élevé",
+    "faible"
+   ],
+   [
+    "Rebond max. [%]",
+    "30 - 60",
+    "10"
+   ],
+   [
+    "Qualité de finition",
+    "moyen",
+    "fin"
+   ],
+   [
+    "Besoin d’énergie",
+    "élevé",
+    "faible"
+   ],
+   [
+    "Effort entretien/nettoyage des machines et tuyaux",
+    "faible",
+    "moyen"
+   ],
+   [
+    "Développement de poussières",
+    "élevé",
+    "faible"
+   ],
+   [
+    "Effort de ventilation",
+    "élevé",
+    "faible"
+   ],
+   [
+    "Somme de travail pour la production d’une surface lissée",
+    "élevé",
+    "faible"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22287",
+  "title": "KORODUR® 0/4",
+  "slug": "korodur-0-4-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22287",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 4 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "10 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22289",
+  "title": "KORODUR® VS 0/5",
+  "slug": "korodur-vs-0-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22289",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "10 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22291",
+  "title": "KORODUR® WH-Special",
+  "slug": "korodur-wh-special",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22291",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "10 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 3 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22295",
+  "title": "KORODUR® Diamant-Beton",
+  "slug": "korodur-diamant-beton",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22295",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 4 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "10 N/mm²"
+   ],
+   [
+    "Résistance à l’usure",
+    "≤ 1,5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22297",
+  "title": "NEODUR® HE 2 F",
+  "slug": "neodur-he-2-f",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22297",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 2 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "9 N/mm²"
+   ],
+   [
+    "Classement performanciel",
+    "1-2-2-2"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22299",
+  "title": "NEODUR® HE 2",
+  "slug": "neodur-he-2-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22299",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "9 N/mm²"
+   ],
+   [
+    "Classement performanciel",
+    "2-2-3-2"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22301",
+  "title": "KORODUR® FSCem",
+  "slug": "korodur-fscem-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22301",
+  "data": [
+   [
+    "Caractéristiques",
+    "",
+    ""
+   ],
+   [
+    "Rapport de mélange\npar exemple 1:4\nunités de poids\nQualité CT-C50-F7",
+    "KORODUR FSCem\nsable de chape A8 – B8\nrapport eau / ciment",
+    "75 kg\n300 kg\nenv. 0,42"
+   ],
+   [
+    "Rapport de mélange\npar exemple 1:5\nunités de poids\nQualité CT-C40-F6",
+    "KORODUR FSCem\nsable de chape A8 – B8\nrapport eau / ciment",
+    "60 kg\n300 kg\nenv. 0,40"
+   ],
+   [
+    "Humidité résiduelle",
+    "mesure CM après la pose\nrapport de mélange 1:4 et 1:5,\nvoir ci-dessus",
+    "après 24 heures env. 5,9 %\naprès 3 jours env. 1,9 %\naprès 28 jours env. 1,3 %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22303",
+  "title": "KORODUR® FSCem Screed",
+  "slug": "korodur-fscem-screed-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22303",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 6 mm"
+   ],
+   [
+    "Résistance à la compression [N/mm²]\nmésurée sur des prismes définis selon DIN\nEN 13892-2",
+    "après 1 jour env. 20 N/mm²\naprès 28 jours env. 40 N/mm²"
+   ],
+   [
+    "Résistance à la flexion [N/mm²]\nmésurée sur des prismes définis selon DIN EN 13892-2",
+    "après 1 jour env. 4 N/mm²\naprès 28 jours env. 6 N/mm²"
+   ],
+   [
+    "classe de retrait selon la norme DIN 18560-1",
+    "SW 1 classe de retrait (< 0,2 mm/m)"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22305",
+  "title": "NEODUR® Level",
+  "slug": "neodur-level-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22305",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Épaisseur",
+    "4 - 30 mm"
+   ],
+   [
+    "Trafic piétonnier",
+    "après env. 3 heures"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 35 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "≥ 8 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22307",
+  "title": "NEODUR® Level AU",
+  "slug": "neodur-level-au-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22307",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Temps de mise en œuvre à +20° C",
+    "env. 30 minutes"
+   ],
+   [
+    "Trafic piétonnier",
+    "après env. 3 – 4 heures"
+   ],
+   [
+    "Résistance à la compression",
+    "après 28 jours ≥ 33 N/mm²"
+   ],
+   [
+    "Consommation",
+    "env. 1,7 kg/mm/m²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22309",
+  "title": "DUROP 0,5/1",
+  "slug": "durop-05-1-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22309",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0,5-1 mm"
+   ],
+   [
+    "Valeur d'écrasement de l'impact SZ",
+    "15,9"
+   ],
+   [
+    "Coefficient de polissage PSV 5/6,3 mm",
+    "ca. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22311",
+  "title": "DUROP 1/2",
+  "slug": "durop-1-2-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22311",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "1 - 2 mm"
+   ],
+   [
+    "Valeur d'écrasement de l'impact SZ",
+    "15,9"
+   ],
+   [
+    "Coefficient de polissage PSV 5/6,3 mm",
+    "ca. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22313",
+  "title": "DUROP 2/3",
+  "slug": "durop-2-3-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22313",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "2 - 3 mm"
+   ],
+   [
+    "Valeur d'écrasement de l'impact SZ",
+    "15,9"
+   ],
+   [
+    "Coefficient de polissage PSV 5/6,3 mm",
+    "ca. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22315",
+  "title": "DUROP 2/5",
+  "slug": "durop-2-5-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22315",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "2 - 5 mm"
+   ],
+   [
+    "Valeur d'écrasement de l'impact SZ",
+    "15,9"
+   ],
+   [
+    "Coefficient de polissage PSV 5/6,3 mm",
+    "ca. 61"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22317",
+  "title": "KOROTEX",
+  "slug": "korotex-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22317",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Consistance",
+    "couleur: liquide blanc"
+   ],
+   [
+    "Densité à 20°C",
+    "1,01 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22319",
+  "title": "KOROCURE",
+  "slug": "korocure-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22319",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Forme",
+    "liquide, jaunâtre"
+   ],
+   [
+    "Densité",
+    "env. 1,0 kg/dm³"
+   ],
+   [
+    "ph",
+    "env. 11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22321",
+  "title": "KOROMINERAL CURE",
+  "slug": "koromineral-cure-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22321",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Teinte",
+    "blanc laiteux"
+   ],
+   [
+    "Densité",
+    "env. 60 - 100 ml/m²"
+   ],
+   [
+    "valeur du pH",
+    "11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22323",
+  "title": "KOROPOX",
+  "slug": "koropox-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22323",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Forme",
+    "liquide"
+   ],
+   [
+    "Couleur",
+    "incolore"
+   ],
+   [
+    "Densité g/cm³",
+    "1,0"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22325",
+  "title": "KOROMINERAL",
+  "slug": "koromineral-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22325",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Teinte",
+    "incolore"
+   ],
+   [
+    "Densité",
+    "env. 1,12 g/cm³"
+   ],
+   [
+    "pH",
+    "env. 11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22327",
+  "title": "KOROMINERAL Li+",
+  "slug": "koromineral-li-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22327",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Teinte",
+    "incolore"
+   ],
+   [
+    "Consommation selon\nle degré d’absorption du sol",
+    "surfaces poncées\nenv. 15 - 25 m²/litre\n\nsurfaces non poncées\nenv. 10 - 20 m²/litre"
+   ],
+   [
+    "Temps de séchage",
+    "env. 1 á 2 heures"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22329",
+  "title": "KOROMINERAL CURE",
+  "slug": "koromineral-cure-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22329",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Teinte",
+    "blanc laiteux"
+   ],
+   [
+    "Densité",
+    "env. 60-100 ml/m²"
+   ],
+   [
+    "valeur du pH",
+    "11"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22331",
+  "title": "KORODUR PC",
+  "slug": "korodur-pc-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22331",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Couleur",
+    "bleu clair"
+   ],
+   [
+    "Consommation au m²",
+    "de 50 á 200 g selon le degré d’absorption du support"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22333",
+  "title": "KORODUR TXPK",
+  "slug": "korodur-txpk-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22333",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Teinte",
+    "blanc"
+   ],
+   [
+    "Densité",
+    "env. 1,10 g/cm³"
+   ],
+   [
+    "Viscosité",
+    "env. 750 mPa s ± 100"
+   ],
+   [
+    "Résistance à la compression",
+    "env. 60 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "env. 30 N/mm²"
+   ],
+   [
+    "Module d'élasticité",
+    "env. 2.000 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22335",
+  "title": "KOROTAN",
+  "slug": "korotan-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22335",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "consistance",
+    "liquide vert"
+   ],
+   [
+    "densité (20°C)",
+    "1,13 g/cm³"
+   ],
+   [
+    "valeur pH",
+    "env. 9"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22337",
+  "title": "KCF 05",
+  "slug": "kcf-05-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22337",
+  "data": [
+   [
+    "Caractéristiques KCF 05",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "45 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "6 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Épaisseur",
+    "15 - 25 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22339",
+  "title": "KCF 08",
+  "slug": "kcf-08-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22339",
+  "data": [
+   [
+    "Caractéristiques KCF 08",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "35 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "5 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Épaisseur",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22341",
+  "title": "GRANIDUR 05",
+  "slug": "granidur-05-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22341",
+  "data": [
+   [
+    "Caractéristiques GRANIDUR 05",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "45 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "6 N/mm²"
+   ],
+   [
+    "Épaisseur",
+    "15 - 25 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22343",
+  "title": "GRANIDUR 08",
+  "slug": "granidur-08-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22343",
+  "data": [
+   [
+    "Caractéristiques GRANIDUR 08",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "35 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "5 N/mm²"
+   ],
+   [
+    "Épaisseur",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22345",
+  "title": "GRANIDUR® BIANCO/NERO",
+  "slug": "granidur-bianco-nero-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22345",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "45 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "6 N/mm²"
+   ],
+   [
+    "Épaisseur",
+    "env. 15 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22347",
+  "title": "TRU® Self-Leveling",
+  "slug": "tru-self-leveling-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22347",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Qualité",
+    "CT-C40-F10"
+   ],
+   [
+    "Teinte",
+    "naturel\ngrais"
+   ],
+   [
+    "Résistance à la compression (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "après 4 heures",
+    "env. 20,0 N/mm²"
+   ],
+   [
+    "après 1 jour",
+    "env. 34,0 N/mm²"
+   ],
+   [
+    "après 28 jours",
+    "env. 45,0 N/mm²"
+   ],
+   [
+    "Temps de mise en œuvre",
+    "env. 20 minutes"
+   ],
+   [
+    "Temps d‘écoulement",
+    "env. 15 minutes"
+   ],
+   [
+    "Epaisseur",
+    "5 - 35 mm"
+   ],
+   [
+    "Consommation\npar m² / par mm épaisseur",
+    "env. 1,7 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22349",
+  "title": "TRU® SP",
+  "slug": "tru-sp-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22349",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Qualité",
+    "CT-C40-F10"
+   ],
+   [
+    "Teinte",
+    "naturel\ngris"
+   ],
+   [
+    "Résistance à la compression (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "après 4 heures",
+    "env. 13,0 N/mm²"
+   ],
+   [
+    "après 1 jour",
+    "env. 27,0 N/mm²"
+   ],
+   [
+    "après 28 jours",
+    "env. 44,0 N/mm²"
+   ],
+   [
+    "Temps de mise en œuvre",
+    "env. 20 Minuten"
+   ],
+   [
+    "Temps d’écoulement",
+    "env. 15 Minuten"
+   ],
+   [
+    "Epaisseur",
+    "10 - 35 mm"
+   ],
+   [
+    "Consommation\npar m² / par mm d‘épaisseur",
+    "env. 1,8 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22351",
+  "title": "MICROTOP® TW 3",
+  "slug": "microtop-tw-3-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22351",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Couleurs",
+    "gris naturel, blanc, bleu"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22353",
+  "title": "MICROTOP® TW 5",
+  "slug": "microtop-tw-5-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22353",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,25 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22355",
+  "title": "MICROTOP® TW 8",
+  "slug": "microtop-tw-8-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22355",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,27 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22357",
+  "title": "MICROTOP® TW NSM",
+  "slug": "microtop-tw-nsm-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22357",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Couleurs",
+    "gris naturel, blanc, bleu"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22359",
+  "title": "MICROTOP® TW VSM",
+  "slug": "microtop-tw-vsm-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22359",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 2 mm"
+   ],
+   [
+    "Qualité",
+    "C 12/15"
+   ],
+   [
+    "Densité",
+    "1,98 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22361",
+  "title": "MICROTOP® TW BM",
+  "slug": "microtop-tw-bm-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22361",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 1,0 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "35 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "6,3 N/mm²"
+   ],
+   [
+    "Couleurs",
+    "gris naturel, blanc"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22363",
+  "title": "MICROTOP® TW 02",
+  "slug": "microtop-tw-02-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22363",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 0,2 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 30 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,04 kg/l"
+   ],
+   [
+    "Couleurs",
+    "gris naturel, blanc, bleu"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22365",
+  "title": "MICROTOP® TW Mineral",
+  "slug": "microtop-tw-mineral-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22365",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Forme",
+    "liquide"
+   ],
+   [
+    "Couleur",
+    "incolore"
+   ],
+   [
+    "Densité",
+    "env. 1,14 g/cm³"
+   ],
+   [
+    "Valeur pH",
+    "env. 11,3"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22367",
+  "title": "CEMENT ALL®",
+  "slug": "cement-all-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22367",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "granolométrie",
+    "0 - 1 mm"
+   ],
+   [
+    "épaisseur",
+    "0 - 100 mm"
+   ],
+   [
+    "durcissement",
+    "après 60 Min."
+   ],
+   [
+    "résistance à la compression après 60 min.",
+    "20,0 N/mm²"
+   ],
+   [
+    "résistance à la compression après 28 jours",
+    "62,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 60 min.",
+    "6,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 28 jours",
+    "11,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22369",
+  "title": "MORTAR MIX",
+  "slug": "mortar-mix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22369",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "granolométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "épaisseur",
+    "10 - 150 mm"
+   ],
+   [
+    "durcissement",
+    "après 60 Min."
+   ],
+   [
+    "résistance à la compression après 60 min.",
+    "17,0 N/mm²"
+   ],
+   [
+    "résistance à la compression après 28 jours",
+    "50,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 60 min.",
+    "3,40 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 28 jours",
+    "5,25 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22371",
+  "title": "CONCRETE MIX",
+  "slug": "concrete-mix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22371",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "granolométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "épaisseur",
+    "50 - 600 mm"
+   ],
+   [
+    "durcissement",
+    "après 60 Min."
+   ],
+   [
+    "résistance à la compression après 60 min.",
+    "19,0 N/mm²"
+   ],
+   [
+    "résistance à la compression après 28 jours",
+    "41,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 60 min.",
+    "4,5 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 28 jours",
+    "7,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22373",
+  "title": "DOT Europe CONCRETE MIX",
+  "slug": "dot-europe-concrete-mix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22373",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "granolométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "épaisseur",
+    "50 - 600 mm"
+   ],
+   [
+    "résistance à l'utilisation",
+    "après 60 min."
+   ],
+   [
+    "résistance à la compression après 28 jours",
+    "env. 60,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 28 jours",
+    "env. 6,5 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22375",
+  "title": "ASPHALT REPAIR MIX",
+  "slug": "asphalt-repair-mix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22375",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "Épaisseur",
+    "30 - 600 mm"
+   ],
+   [
+    "Mise en charge",
+    "après 3 heures"
+   ],
+   [
+    "Résistance à la compression",
+    "après 3 heures env. 10 N/mm²"
+   ],
+   [
+    "Résistance à la compression",
+    "après 28 heures env. 25 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "après 3 heures env. 3,0 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "après 28 jours env. 6,8 N/mm²"
+   ],
+   [
+    "Module d´élasticité dynamique",
+    "après 28 jours env. 20.000 N/mm²"
+   ],
+   [
+    "Module d´élasticité statique",
+    "après 28 jours env. 16.000 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22377",
+  "title": "LevelFlor®",
+  "slug": "levelflor-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22377",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Epaisseur",
+    "jusqu’à 70 mm"
+   ],
+   [
+    "Temps de mise en œuvre",
+    "30 minutes"
+   ],
+   [
+    "Temps d’écoulement",
+    "15 minutes"
+   ],
+   [
+    "Résistance à la compression(ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "après 24 heures",
+    "env. 20,0 N/mm²"
+   ],
+   [
+    "après 7 jours",
+    "env. 24 N/mm²"
+   ],
+   [
+    "après 28 jours",
+    "env. 34 N/mm²"
+   ],
+   [
+    "Résistance à la flexion(ASTM C-348)",
+    ""
+   ],
+   [
+    "après 7 jours",
+    "env. 7,9 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22379",
+  "title": "NEODUR VM 1",
+  "slug": "neodur-vm-1",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22379",
+  "data": [
+   [
+    "Caractéristiques NEODUR VM 1",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 1 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "> 35 N/mm²"
+   ],
+   [
+    "Taux de gonflement",
+    "> 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22381",
+  "title": "NEODUR VM 3",
+  "slug": "neodur-vm-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22381",
+  "data": [
+   [
+    "Caractéristiques NEODUR VM 3",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "> 35 N/mm²"
+   ],
+   [
+    "Taux de gonflement",
+    "> 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22383",
+  "title": "NEODUR VM 5",
+  "slug": "neodur-vm-5",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22383",
+  "data": [
+   [
+    "Caractéristiques NEODUR VM 5",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "> 35 N/mm²"
+   ],
+   [
+    "Taux de gonflement",
+    "> 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22385",
+  "title": "NEODUR® AM Super / AM Plus",
+  "slug": "neodur-am-super-am-plus-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22385",
+  "data": [
+   [
+    "Caractéristiques",
+    "",
+    ""
+   ],
+   [
+    "Produit",
+    "NEDOUR AM Super",
+    "NEODUR AM Plus"
+   ],
+   [
+    "Granulométrie",
+    "0 - 1 mm",
+    "0 - 1 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "> 55 N/mm²",
+    "> 80 N/mm²"
+   ],
+   [
+    "Taux de gonflement",
+    "> 0,1 Vol.%",
+    "> 0,1 Vol.%"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "22387",
+  "title": "NEODUR® MSM 3 / MSM 5 / MSB 8",
+  "slug": "neodur-msm-3-msm-5-msb-8-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=22387",
+  "data": [
+   [
+    "Caractéristiques",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Produit",
+    "NEDOUR MSM 3",
+    "NEODUR MSM 5",
+    "NEODUR MSB 8"
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm",
+    "0 - 5 mm",
+    "0 - 8 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "> 30 N/mm²",
+    "> 30 N/mm²",
+    "> 30 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "23338",
+  "title": "MICROTOP neue Tabelle",
+  "slug": "microtop-neue-tabelle",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=23338",
+  "data": [
+   [
+    "Produkt",
+    "Anwendung",
+    "Geeignet für",
+    "#colspan#",
+    "#colspan#",
+    "Verarbeitung im",
+    "#colspan#",
+    "#colspan#"
+   ],
+   [
+    "#rowspan#",
+    "#rowspan#",
+    "Decke",
+    "Boden",
+    "Wand",
+    "Trockenspritzen",
+    "Nassspritzen",
+    "von Hand"
+   ],
+   [
+    "MICROTOP TW 3, 5 u. 8",
+    "Dickschicht",
+    "✓",
+    "✓",
+    "✓",
+    "✓",
+    "",
+    "✓"
+   ],
+   [
+    "MICROTOP TW NSM",
+    "Dickschicht",
+    "✓",
+    "",
+    "✓",
+    "",
+    "✓",
+    "✓"
+   ],
+   [
+    "MICROTOP TW NSD",
+    "Dickschicht",
+    "✓",
+    "",
+    "✓",
+    "",
+    "✓",
+    "✓"
+   ],
+   [
+    "MICROTOP TW VSM",
+    "Vorspritz",
+    "",
+    "",
+    "✓",
+    "✓",
+    "",
+    "✓"
+   ],
+   [
+    "MICROTOP TW BM",
+    "Beschichtung\nSchleudermörtel\nHaftbrücke",
+    "✓",
+    "✓",
+    "",
+    "",
+    "✓",
+    "✓"
+   ],
+   [
+    "MICROTOP TW 02",
+    "Dünnschicht",
+    "✓",
+    "",
+    "✓",
+    "",
+    "✓",
+    "✓"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "24851",
+  "title": "KCF 05",
+  "slug": "kopie-von-kcf-05-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=24851",
+  "data": [
+   [
+    "Caractéristiques KCF 05",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "45 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "6 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Épaisseur",
+    "15 - 25 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "24853",
+  "title": "Kopie von KCF 08",
+  "slug": "kopie-von-kcf-08-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=24853",
+  "data": [
+   [
+    "Technical data KCF 08",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Compressive strength",
+    "35 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "5 N/mm²"
+   ],
+   [
+    "Wear resistance",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Layer thickness",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "24854",
+  "title": "KCF 08",
+  "slug": "kopie-von-kcf-08-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=24854",
+  "data": [
+   [
+    "Caractéristiques KCF 08",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "35 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "5 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 5 cm³/50 cm²"
+   ],
+   [
+    "Épaisseur",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25125",
+  "title": "NEODUR® PFM-ZE",
+  "slug": "kopie-von-neodur-pfm-ze-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25125",
+  "data": [
+   [
+    "Technical Data",
+    ""
+   ],
+   [
+    "grain size",
+    "0-2 mm"
+   ],
+   [
+    "colour",
+    "grey/light grey"
+   ],
+   [
+    "compressive strength",
+    "> 50 N/mm²"
+   ],
+   [
+    "tensile strength",
+    "> 7 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25140",
+  "title": "NEODUR® SVM 03",
+  "slug": "kopie-von-neodur-svm-03-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25140",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 0,5 mm"
+   ],
+   [
+    "Grouting cross section",
+    "approx. 5 - 30 mm"
+   ],
+   [
+    "Compressive strength n. 1 h",
+    "> 8 N/mm²"
+   ],
+   [
+    "Compressive strength n. 28 d",
+    "> 55 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25150",
+  "title": "NEODUR® SVM 03",
+  "slug": "kopie-von-neodur-svm-03-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25150",
+  "data": [
+   [
+    "Valeurs techniques",
+    ""
+   ],
+   [
+    "Produit",
+    "NEDOUR SVM 03"
+   ],
+   [
+    "Granulométrie",
+    "0 - 0,5 mm"
+   ],
+   [
+    "Épaisseur",
+    "env. 5 - 30 mm"
+   ],
+   [
+    "Résistance à la compression après 1 h",
+    "> 8 N/mm²"
+   ],
+   [
+    "Résistance à la compression après 28 d",
+    "> 55 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25209",
+  "title": "NEODUR® PFM 1-K Easyfix",
+  "slug": "kopie-von-neodur-pfm-1-k-easyfix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25209",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Color",
+    "neutral/stone-grey/basalt"
+   ],
+   [
+    "Compressive strength",
+    "4,0 N/mm²"
+   ],
+   [
+    "Ready for foot traffic",
+    "after 24 hours"
+   ],
+   [
+    "Ready for full stress",
+    "after 6 days"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25217",
+  "title": "NEODUR® MSM 3 / MSM 5 / MSB 8",
+  "slug": "kopie-von-neodur-msm-3-msm-5-msb-8-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25217",
+  "data": [
+   [
+    "Technical data",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Product",
+    "NEDOUR MSM 3",
+    "NEODUR MSM 5",
+    "NEODUR MSB 8"
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm",
+    "0 - 5 mm",
+    "0 - 8 mm"
+   ],
+   [
+    "Compressive strength",
+    "> 30 N/mm²",
+    "> 30 N/mm²",
+    "> 30 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25225",
+  "title": "NEODUR® MSM 3 / MSM 5 / MSB 8",
+  "slug": "kopie-von-neodur-msm-3-msm-5-msb-8-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25225",
+  "data": [
+   [
+    "Valeurs techniques",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Produit",
+    "NEDOUR MSM 3",
+    "NEODUR MSM 5",
+    "NEODUR MSB 8"
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm",
+    "0 - 5 mm",
+    "0 - 8 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "> 30 N/mm²",
+    "> 30 N/mm²",
+    "> 30 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25234",
+  "title": "NEODUR® AM Super / AM Plus",
+  "slug": "kopie-von-neodur-am-super-am-plus-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25234",
+  "data": [
+   [
+    "Technical data",
+    "",
+    ""
+   ],
+   [
+    "Product",
+    "NEDOUR AM Super",
+    "NEODUR AM Plus"
+   ],
+   [
+    "Grain size",
+    "0 - 1 mm",
+    "0 - 1 mm"
+   ],
+   [
+    "Compressive strength",
+    "> 55 N/mm²",
+    "> 80 N/mm²"
+   ],
+   [
+    "Swelling index",
+    "> 0,1 Vol.%",
+    "> 0,1 Vol.%"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25243",
+  "title": "Kopie von NEODUR® AM Super / AM Plus",
+  "slug": "kopie-von-neodur-am-super-am-plus-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25243",
+  "data": [
+   [
+    "Valeurs techniques",
+    "",
+    ""
+   ],
+   [
+    "Produit",
+    "NEDOUR AM Super",
+    "NEODUR AM Plus"
+   ],
+   [
+    "Granulométrie",
+    "0 - 1 mm",
+    "0 - 1 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "> 55 N/mm²",
+    "> 80 N/mm²"
+   ],
+   [
+    "Taux de gonflement",
+    "> 0,1 Vol.%",
+    "> 0,1 Vol.%"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25257",
+  "title": "NEODUR Vergussmörtel VM 1",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-1-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25257",
+  "data": [
+   [
+    "Technical Data NEODUR VM 1",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 1 mm"
+   ],
+   [
+    "Quality",
+    "C55/67"
+   ],
+   [
+    "Swelling index",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25259",
+  "title": "NEODUR Vergussmörtel VM 3",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-3-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25259",
+  "data": [
+   [
+    "Technical Data NEODUR VM 3",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm"
+   ],
+   [
+    "Quality",
+    "C55/67"
+   ],
+   [
+    "Swelling index",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25265",
+  "title": "NEODUR Vergussmörtel VM 5",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-5-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25265",
+  "data": [
+   [
+    "Technical Data NEODUR VM 5",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Quality",
+    "C80/95"
+   ],
+   [
+    "Swelling index",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25270",
+  "title": "NEODUR Vergussmörtel VB 8",
+  "slug": "kopie-von-neodur-vergussmoertel-vb-8-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25270",
+  "data": [
+   [
+    "Technical Data NEODUR VB 8",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Quality",
+    "C55/67"
+   ],
+   [
+    "Swelling index",
+    "≥ 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25279",
+  "title": "NEODUR Vergussmörtel VM 1",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-1-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25279",
+  "data": [
+   [
+    "Valeurs techniques NEODUR VM 1",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 1 mm"
+   ],
+   [
+    "Qualité",
+    "C55/67"
+   ],
+   [
+    "Taux de gonflement",
+    "> 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25281",
+  "title": "NEODUR Vergussmörtel VM 3",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-3-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25281",
+  "data": [
+   [
+    "Valeurs technique NEODUR VM 3",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "Qualité",
+    "C55/67"
+   ],
+   [
+    "Taux de gonflement",
+    "> 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25283",
+  "title": "NEODUR Vergussmörtel VM 5",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-5-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25283",
+  "data": [
+   [
+    "Valeurs technique NEODUR VM 5",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Qualité",
+    "C80/95"
+   ],
+   [
+    "Taux de gonflement",
+    "> 0,1 Vol. %"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25304",
+  "title": "TRU® SP",
+  "slug": "kopie-von-tru-sp-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25304",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Quality",
+    "CT-C40-F10"
+   ],
+   [
+    "Teinte",
+    "naturel gris"
+   ],
+   [
+    "Résistance à la compression (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "après 4 heures",
+    "env. 13,0 N/mm²"
+   ],
+   [
+    "après 1 jour",
+    "env. 27,0 N/mm²"
+   ],
+   [
+    "après 28 jours",
+    "env. 44,0 N/mm²"
+   ],
+   [
+    "Temps de mise en œuvre",
+    "env. 20 Minuten"
+   ],
+   [
+    "Temps d’écoulement",
+    "env. 15 Minuten"
+   ],
+   [
+    "Epaisseur",
+    "10 - 35 mm"
+   ],
+   [
+    "Consommation",
+    "approx. 1,8 kg"
+   ],
+   [
+    "par m² / par mm d‘épaisseur",
+    "env. 1,8 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25316",
+  "title": "GRANIDUR® BIANCO/NERO",
+  "slug": "kopie-von-granidur-bianco-nero-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25316",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "45 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "6 N/mm²"
+   ],
+   [
+    "Épaisseur",
+    "env. 15 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25336",
+  "title": "GRANIDUR 05",
+  "slug": "kopie-von-granidur-05-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25336",
+  "data": [
+   [
+    "Caractéristiques GRANIDUR 05",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "45 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "6 N/mm²"
+   ],
+   [
+    "Épaisseur",
+    "15 - 25 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25339",
+  "title": "GRANIDUR 08",
+  "slug": "kopie-von-granidur-05-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25339",
+  "data": [
+   [
+    "Caractéristiques GRANIDUR 08",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "35 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "5 N/mm²"
+   ],
+   [
+    "Épaisseur",
+    "25 - 50 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25358",
+  "title": "TRU® Self-Leveling",
+  "slug": "kopie-von-tru-self-leveling-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25358",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Quality",
+    "CT-C40-F10"
+   ],
+   [
+    "Teinte",
+    "naturel gris"
+   ],
+   [
+    "Résistance à la compression (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "après 4 heures",
+    "env. 20,0 N/mm²"
+   ],
+   [
+    "après 1 jour",
+    "env. 34,0 N/mm²"
+   ],
+   [
+    "après 28 jours",
+    "env. 45,0 N/mm²"
+   ],
+   [
+    "Temps de mise en œuvre",
+    "env. 20 minutes"
+   ],
+   [
+    "Temps d‘écoulement",
+    "env. 15 minutes"
+   ],
+   [
+    "Epaisseur",
+    "5 - 35 mm"
+   ],
+   [
+    "Consommation",
+    "approx. 1,7 kg"
+   ],
+   [
+    "par m² / par mm épaisseur",
+    "env. 1,7 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25369",
+  "title": "KORODUR® 0/4",
+  "slug": "kopie-von-korodur-0-4",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25369",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 4 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "10 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25375",
+  "title": "KORODUR® VS 0/5",
+  "slug": "kopie-von-korodur-vs-0-5-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25375",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "10 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25399",
+  "title": "KORODUR® WH-Spezial",
+  "slug": "kopie-von-korodur-wh-spezial-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25399",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "10 N/mm²"
+   ],
+   [
+    "Résistance à l‘usure",
+    "≤ 3 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25419",
+  "title": "KORODUR® Diamantbeton",
+  "slug": "kopie-von-korodur-diamantbeton-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25419",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 4 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "10 N/mm²"
+   ],
+   [
+    "Résistance à l’usure",
+    "≤ 1,5 cm³/50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25558",
+  "title": "CEMENT ALL®",
+  "slug": "kopie-von-cement-all-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25558",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 1 mm"
+   ],
+   [
+    "Layer thickness",
+    "0 - 100 mm"
+   ],
+   [
+    "Ready for traffic",
+    "after 60 Min."
+   ],
+   [
+    "Compressive strength after 60 min.",
+    "20,0 N/mm²"
+   ],
+   [
+    "Compressive strength after 28 days",
+    "62,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 60 min.",
+    "6,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 28 days",
+    "11,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25570",
+  "title": "CEMENT ALL®",
+  "slug": "kopie-von-cement-all-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25570",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "granolométrie",
+    "0 - 1 mm"
+   ],
+   [
+    "épaisseur",
+    "0 - 100 mm"
+   ],
+   [
+    "durcissement",
+    "après 60 Min."
+   ],
+   [
+    "résistance à la compression après 60 min.",
+    "20,0 N/mm²"
+   ],
+   [
+    "résistance à la compression après 28 jours",
+    "62,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 60 min.",
+    "6,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 28 jours",
+    "11,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25682",
+  "title": "MORTAR MIX",
+  "slug": "kopie-von-mortar-mix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25682",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm"
+   ],
+   [
+    "Layer thickness",
+    "10 - 150 mm"
+   ],
+   [
+    "Ready for traffic",
+    "after 60 Min."
+   ],
+   [
+    "Compressive strength after 60 min.",
+    "17,0 N/mm²"
+   ],
+   [
+    "Compressive strength after 28 days",
+    "50,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 60 min.",
+    "3,40 N/mm²"
+   ],
+   [
+    "Flexural strength after 28 days",
+    "5,25 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25693",
+  "title": "MORTAR MIX",
+  "slug": "kopie-von-mortar-mix-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25693",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "granolométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "épaisseur",
+    "10 - 150 mm"
+   ],
+   [
+    "durcissement",
+    "après 60 Min."
+   ],
+   [
+    "résistance à la compression après 60 min.",
+    "17,0 N/mm²"
+   ],
+   [
+    "résistance à la compression après 28 jours",
+    "50,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 60 min.",
+    "3,40 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 28 jours",
+    "5,25 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25714",
+  "title": "CONCRETE MIX",
+  "slug": "kopie-von-concrete-mix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25714",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Layer thickness",
+    "50 - 600 mm"
+   ],
+   [
+    "Ready for traffic",
+    "after 60 Min."
+   ],
+   [
+    "Compressive strength after 60 min.",
+    "19,0 N/mm²"
+   ],
+   [
+    "Compressive strength after 28 days",
+    "41,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 60 min.",
+    "4,5 N/mm²"
+   ],
+   [
+    "Flexural strength after 28 days",
+    "7,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25722",
+  "title": "CONCRETE MIX",
+  "slug": "kopie-von-concrete-mix-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25722",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "granolométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "épaisseur",
+    "50 - 600 mm"
+   ],
+   [
+    "durcissement",
+    "après 60 Min."
+   ],
+   [
+    "résistance à la compression après 60 min.",
+    "19,0 N/mm²"
+   ],
+   [
+    "résistance à la compression après 28 jours",
+    "41,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 60 min.",
+    "4,5 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 28 jours",
+    "7,0 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25748",
+  "title": "ASPHALT REPAIR MIX",
+  "slug": "kopie-von-asphalt-repair-mix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25748",
+  "data": [
+   [
+    "Technical Data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Layer thickness",
+    "30 - 600 mm"
+   ],
+   [
+    "Loadable",
+    "after 3 hours"
+   ],
+   [
+    "Compressive strength",
+    "after 30 minutes approx. 15 N/mm²"
+   ],
+   [
+    "Compressive strength",
+    "after 1 hour approx. 22 N/mm²"
+   ],
+   [
+    "Compressive strength",
+    "after 28 days approx. 38 N/mm²"
+   ],
+   [
+    "Flexural strength",
+    "after 30 minutes approx. 3,0 N/mm²"
+   ],
+   [
+    "Flexural strength",
+    "after 1 hour approx. 4,0 N/mm²"
+   ],
+   [
+    "Flexural strength",
+    "after 28 days approx. 6,8 N/mm²"
+   ],
+   [
+    "Dynamic modulus of elasticity",
+    "after 28 days approx. 20.000 N/mm²"
+   ],
+   [
+    "Static modulus of elasticity",
+    "after 28 days approx. 16.000 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25758",
+  "title": "ASPHALT REPAIR MIX",
+  "slug": "kopie-von-asphalt-repair-mix-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25758",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "Épaisseur",
+    "30 - 600 mm"
+   ],
+   [
+    "Mise en charge",
+    "après 3 heures"
+   ],
+   [
+    "Résistance à la compression",
+    "après 30 minutes env. 15 N/mm²"
+   ],
+   [
+    "Résistance à la compression",
+    "après 1 heure env. 22 N/mm²"
+   ],
+   [
+    "Résistance à la compression",
+    "après 28 jours env. 38 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "après 33 minutes env. 3,0 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "après 1 heure env. 4,0 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "après 28 jours env. 6,4 N/mm²"
+   ],
+   [
+    "Module d´élasticité dynamique",
+    "après 28 jours env. 20.000 N/mm²"
+   ],
+   [
+    "Module d´élasticité statique",
+    "après 28 jours env. 16.000 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25787",
+  "title": "LevelFlor®",
+  "slug": "kopie-von-levelflor-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25787",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Installation Thickness",
+    "up to 70 mm"
+   ],
+   [
+    "Working time",
+    "30 Min."
+   ],
+   [
+    "Flow life",
+    "15 Min."
+   ],
+   [
+    "Compressive strength(ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "after 24 hours",
+    "approx. 20,0 N/mm²"
+   ],
+   [
+    "after 7 hours",
+    "approx. 24 N/mm²"
+   ],
+   [
+    "after 28 hours",
+    "approx. 34 N/mm²"
+   ],
+   [
+    "Flexural strength(ASTM C-348)",
+    ""
+   ],
+   [
+    "after 7 days",
+    "approx. 7,9 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25796",
+  "title": "LevelFlor®",
+  "slug": "kopie-von-levelflor-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25796",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Epaisseur",
+    "jusqu’à 70 mm"
+   ],
+   [
+    "Temps de mise en œuvre",
+    "30 minutes"
+   ],
+   [
+    "Temps d’écoulement",
+    "15 minutes"
+   ],
+   [
+    "Résistance à la compression(ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "après 24 heures",
+    "env. 20,0 N/mm²"
+   ],
+   [
+    "après 7 jours",
+    "env. 24 N/mm²"
+   ],
+   [
+    "après 28 jours",
+    "env. 34 N/mm²"
+   ],
+   [
+    "Résistance à la flexion(ASTM C-348)",
+    ""
+   ],
+   [
+    "après 7 jours",
+    "env. 7,9 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25812",
+  "title": "DOT Europe CONCRETE MIX",
+  "slug": "kopie-von-dot-europe-concrete-mix-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25812",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Layer thickness",
+    "50 - 600 mm"
+   ],
+   [
+    "Ready for traffic",
+    "after 60 minutes"
+   ],
+   [
+    "Compressive strength after 28 days",
+    "approx. ≥ 60,0 N/mm²"
+   ],
+   [
+    "Flexural strength after 28 days",
+    "approx. ≥   6,5 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25871",
+  "title": "DOT Europe CONCRETE MIX",
+  "slug": "kopie-von-dot-europe-concrete-mix-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25871",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "granolométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "épaisseur",
+    "50 - 600 mm"
+   ],
+   [
+    "résistance à l'utilisation",
+    "après 60 min."
+   ],
+   [
+    "résistance à la compression après 28 jours",
+    "env. 60,0 N/mm²"
+   ],
+   [
+    "résistance à la flexion après 28 jours",
+    "env. 6,5 N/mm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25899",
+  "title": "MICROTOP® TW 02",
+  "slug": "kopie-von-microtop-tw-02-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25899",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 0,2 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 30 N/mm²"
+   ],
+   [
+    "Density",
+    "2,04 kg/l"
+   ],
+   [
+    "Colours",
+    "nature, white, blue"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25913",
+  "title": "MICROTOP® TW 02",
+  "slug": "kopie-von-microtop-tw-02-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25913",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 0,2 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 30 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,04 kg/l"
+   ],
+   [
+    "Couleurs",
+    "gris naturel, blanc, bleu"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25926",
+  "title": "MICROTOP® TW BM",
+  "slug": "kopie-von-microtop-tw-bm-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25926",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 1,0 mm"
+   ],
+   [
+    "Compressive strength",
+    "35 N/mm²"
+   ],
+   [
+    "Tensile strength",
+    "6,3 N/mm²"
+   ],
+   [
+    "Colours",
+    "nature, white"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25941",
+  "title": "MICROTOP® TW 5",
+  "slug": "kopie-von-microtop-tw-5-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25941",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 5 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Density",
+    "2,25 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25950",
+  "title": "MICROTOP® TW 8",
+  "slug": "kopie-von-microtop-tw-8",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25950",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 8 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Density",
+    "2,27 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25961",
+  "title": "MICROTOP® TW Mineral",
+  "slug": "kopie-von-microtop-tw-mineral-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25961",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Base",
+    "liquid"
+   ],
+   [
+    "Colour",
+    "transparent"
+   ],
+   [
+    "Density",
+    "approx. 1,14 g/cm³"
+   ],
+   [
+    "pH-value",
+    "approx. 11,3"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25969",
+  "title": "MICROTOP® TW NSM",
+  "slug": "kopie-von-microtop-tw-nsm-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25969",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 3 mm"
+   ],
+   [
+    "Compressive strength",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Density",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Colours",
+    "nature, white, blue"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25977",
+  "title": "MICROTOP® TW VSM",
+  "slug": "kopie-von-microtop-tw-vsm-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25977",
+  "data": [
+   [
+    "Technical data",
+    ""
+   ],
+   [
+    "Grain size",
+    "0 - 2 mm"
+   ],
+   [
+    "Quality",
+    "C 12/15"
+   ],
+   [
+    "Density",
+    "1,98 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25984",
+  "title": "MICROTOP® TW 3",
+  "slug": "kopie-von-microtop-tw-3-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25984",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Couleurs",
+    "gris naturel, blanc, bleu"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "25991",
+  "title": "MICROTOP® TW 5",
+  "slug": "kopie-von-microtop-tw-5-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=25991",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 5 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,25 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "26001",
+  "title": "MICROTOP® TW 8",
+  "slug": "kopie-von-microtop-tw-8-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=26001",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 8 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,27 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "26009",
+  "title": "MICROTOP® TW Mineral",
+  "slug": "kopie-von-microtop-tw-mineral-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=26009",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Forme",
+    "liquide"
+   ],
+   [
+    "Couleur",
+    "incolore"
+   ],
+   [
+    "Densité",
+    "env. 1,14 g/cm³"
+   ],
+   [
+    "Valeur pH",
+    "env. 11,3"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "26021",
+  "title": "MICROTOP® TW NSM",
+  "slug": "kopie-von-microtop-tw-nsm-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=26021",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "≥ 45 N/mm²"
+   ],
+   [
+    "Densité",
+    "2,24 kg/dm³"
+   ],
+   [
+    "Couleurs",
+    "gris naturel, blanc, bleu"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "26029",
+  "title": "MICROTOP® TW VSM",
+  "slug": "kopie-von-microtop-tw-vsm-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=26029",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 2 mm"
+   ],
+   [
+    "Qualité",
+    "C 12/15"
+   ],
+   [
+    "Densité",
+    "1,98 kg/dm³"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "26038",
+  "title": "MICROTOP® TW BM",
+  "slug": "kopie-von-microtop-tw-bm-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=26038",
+  "data": [
+   [
+    "Caractéristique",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 1,0 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "35 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "6,3 N/mm²"
+   ],
+   [
+    "Couleurs",
+    "gris naturel, blanc"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "26228",
+  "title": "KORODUR® FSCem",
+  "slug": "kopie-von-korodur-fscem-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=26228",
+  "data": [
+   [
+    "Caractéristiques techniques",
+    "",
+    ""
+   ],
+   [
+    "Rapport de mélange\npar exemple 1:4\nunités de poids*\nQualité CT-C50-F7",
+    "KORODUR FSCem\nsable de chape A8 – B8\nrapport eau / ciment",
+    "75 kg\n300 kg\nenv. 0,42"
+   ],
+   [
+    "Rapport de mélange\npar exemple 1:5\nunités de poids*\nQualité CT-C40-F6",
+    "KORODUR FSCem\nsable de chape A8 – B8\nrapport eau / ciment",
+    "60 kg\n300 kg\nenv. 0,40"
+   ],
+   [
+    "Humidité résiduelle",
+    "mesure CM après la pose\nrapport de mélange 1:4 et 1:5,\nvoir ci-dessus",
+    "après 24 heures env. 5,9%\naprès   3 jours    env. 1,9%\naprès 28 jours    env. 1,3%"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "28142",
+  "title": "TRU® Self-Leveling",
+  "slug": "kopie-von-tru-self-leveling-3",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=28142",
+  "data": [
+   [
+    "Qualität",
+    "CT-C40-F10"
+   ],
+   [
+    "Farbe",
+    "natur grau"
+   ],
+   [
+    "Druckfestigkeit (ASTM C-109 Mod.)",
+    ""
+   ],
+   [
+    "nach 4 Stunden",
+    "ca. 20,0 N/mm²"
+   ],
+   [
+    "nach 1 Tag",
+    "ca. 34,0 N/mm²"
+   ],
+   [
+    "nach 28 Tagen",
+    "ca. 45,0 N/mm²"
+   ],
+   [
+    "Verarbeitungszeit",
+    "ca. 20 Minuten"
+   ],
+   [
+    "Fließzeit",
+    "ca. 15 Minuten"
+   ],
+   [
+    "Schichtdicke",
+    "5 - 35 mm"
+   ],
+   [
+    "Materialverbrauch",
+    "approx. 1,7 kg"
+   ],
+   [
+    "pro m² / pro mm Schichtstärke",
+    "ca. 1,7 kg"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "28181",
+  "title": "KORODUR nanoFinish",
+  "slug": "kopie-von-korodur-nanofinish-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=28181",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Condition",
+    "liquide"
+   ],
+   [
+    "Teinte",
+    "aspect laiteux trouble"
+   ],
+   [
+    "Densité",
+    "1,035 cm³"
+   ],
+   [
+    "Valeur de ph",
+    "5"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "28649",
+  "title": "NEODUR® HE 2",
+  "slug": "kopie-von-neodur-he-2-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=28649",
+  "data": [
+   [
+    "Caractéristiques",
+    ""
+   ],
+   [
+    "Granulométrie",
+    "0 - 3 mm"
+   ],
+   [
+    "Résistance à la compression",
+    "70 N/mm²"
+   ],
+   [
+    "Résistance à la flexion",
+    "9 N/mm²"
+   ],
+   [
+    "Résistance à l’usure",
+    "≤ 8 cm³/ 50 cm²"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "32799",
+  "title": "NEODUR Vergussmörtel VM basic",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-1-4",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=32799",
+  "data": [
+   [
+    "Technische Kennwerte NEODUR VM basic",
+    ""
+   ],
+   [
+    "Qualität",
+    "C55/67"
+   ],
+   [
+    "Untergusshöhe/-breite",
+    "15 - 200 mm"
+   ],
+   [
+    "Fließmaßklasse",
+    "a3> 700mm"
+   ],
+   [
+    "Mitgeltende Norme u. Richtlinien",
+    "DAfStb-Richtlinie (VeBMR) Vergussbeton; DIN EN 1504-3, DIN 12620, DIN EN 206 und DVGW-Arbeitsblatt W 347."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "32806",
+  "title": "NEODUR Vergussmörtel VM basic EN",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-basic",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=32806",
+  "data": [
+   [
+    "Technical data NEODUR VM basic",
+    ""
+   ],
+   [
+    "Quality",
+    "C55/67"
+   ],
+   [
+    "Grouting height/width",
+    "15 - 200 mm"
+   ],
+   [
+    "Slump class",
+    "a3> 700mm"
+   ],
+   [
+    "Applicable norms / guidelines",
+    "DAfStb guideline (VeBMR) grouting mortars; DIN EN 1504-3, DIN 12620, DIN EN 206 and DVGW-worksheet W 347."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "33243",
+  "title": "NEODUR Vergussmörtel VM basic",
+  "slug": "kopie-von-neodur-vergussmoertel-vm-basic-2",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=33243",
+  "data": [
+   [
+    "Valeurs techniques NEODUR VM basic",
+    ""
+   ],
+   [
+    "Qualité",
+    "C55/67"
+   ],
+   [
+    "Hauteur/largeur de scellement",
+    "15 - 200 mm"
+   ],
+   [
+    "Classe de fluidité",
+    "a3> 700mm"
+   ],
+   [
+    "Normes / Directives Applicables",
+    "Directive DAfStb (VeBMR) Fabrication et utilisation de mortiers et bétons de scellement à base de ciment ; DIN EN 1504-3, DIN 12620, DIN EN 206 et spécification W 347 du DVGW."
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "33937",
+  "title": "Industriebodensanierung EN",
+  "slug": "kopie-von-industriebodensanierung",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=33937",
+  "data": [
+   [
+    "system",
+    "products",
+    "layer thickness"
+   ],
+   [
+    "KORODUR-KOROTAN",
+    "see hard aggregate",
+    "15 mm"
+   ],
+   [
+    "NEODUR HE 60 rapid",
+    "see fast setting screed systems",
+    "from 10 mm"
+   ],
+   [
+    "NEODUR Level",
+    "see self-leveling systems",
+    "4 - 30 mm"
+   ]
+  ],
+  "raw": null
+ },
+ {
+  "id": "33946",
+  "title": "Industriebodensanierung FR",
+  "slug": "kopie-von-industriebodensanierung-en",
+  "status": "publish",
+  "link": "https://www.korodur.de/?post_type=tablepress_table&p=33946",
+  "data": [
+   [
+    "Système",
+    "produits",
+    "épaisseur"
+   ],
+   [
+    "KORODUR-KOROTAN",
+    "voir sols industriels coulis",
+    "15 mm"
+   ],
+   [
+    "NEODUR HE 60 rapid",
+    "voir systèmes à prise rapide",
+    "à partir de 10 mm"
+   ],
+   [
+    "NEODUR Level",
+    "voir systèmes autonivelants",
+    "4 - 30 mm"
+   ]
+  ],
+  "raw": null
+ }
+]
