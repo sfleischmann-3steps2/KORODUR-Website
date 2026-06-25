@@ -44,7 +44,6 @@ export default function PortfolioGrid({
       iconSlug: slug,
       href: `bereiche/${slug}/`,
       bild: BEREICH_KACHELBILD[slug],
-      abgegrenzt: slug === "katzenstreu",
     }));
   // #253: Solange Beispiele vorläufig sind, sichtbar als Platzhalter taggen.
   const zeigeBeispielHinweis = kacheln.some((k) => bt[`${k.dictKey}_beispiele`]);

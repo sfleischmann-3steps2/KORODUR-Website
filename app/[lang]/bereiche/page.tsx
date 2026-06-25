@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getDictionary, hasLocale } from "../dictionaries";
 import { alternatesFor } from "../../../lib/seo";
 import PortfolioGrid from "../../../components/PortfolioGrid";
+import { HOME_PORTFOLIO_KACHELN } from "../../../data/bereiche";
 
 export async function generateMetadata({
   params,
@@ -45,7 +46,8 @@ export default async function BereicheOverview({
         </p>
 
         {/* Gemeinsames Produktportfolio-Grid (7 Bereiche + Katalog-Kachel), #188 */}
-        <PortfolioGrid lang={lang} dict={dict} withCatalogTile />
+        {/* Identisch zur Home (#352, angeglichen): dieselbe 7-Kachel-Liste. */}
+        <PortfolioGrid lang={lang} dict={dict} withCatalogTile tiles={HOME_PORTFOLIO_KACHELN} />
       </div>
     </section>
   );
