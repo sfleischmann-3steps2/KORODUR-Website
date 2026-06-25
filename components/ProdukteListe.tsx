@@ -5,9 +5,10 @@
 // Stufe 2 „Produktart" zoomt auf eine Lieferprogramm-Gruppe. Suche filtert
 // zusätzlich live (trennzeichen-insensitiv). Leere Gruppen werden ausgeblendet.
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { withBasePath } from "../lib/basePath";
 
 export type ProduktKarte = {
@@ -45,6 +46,29 @@ function matcht(p: ProduktKarte, terme: string[]): boolean {
   return terme.every((t) => hay.includes(t));
 }
 
+/** Liest den Produktart-Deep-Link reaktiv aus `?produktart=…` und meldet ihn
+ *  nach oben — auch bei erneuter Menü-Navigation, während man schon auf
+ *  /produkte ist. Bewusst isoliert + via <Suspense> eingebunden, damit
+ *  useSearchParams nicht die ganze Produktliste aus dem Static-Export-Prerender
+ *  kippt (sonst 0 Produkt-Cards im crawlbaren HTML — vgl. referenzen/page.tsx). */
+function ProduktartDeepLink({
+  onApply,
+}: {
+  onApply: (art: string, initial: boolean) => void;
+}) {
+  const params = useSearchParams();
+  const art = params.get("produktart") ?? "";
+  const last = useRef<string | null>(null);
+  useEffect(() => {
+    if (art !== last.current) {
+      const initial = last.current === null;
+      last.current = art;
+      onApply(art, initial);
+    }
+  }, [art, onApply]);
+  return null;
+}
+
 export default function ProdukteListe({
   gruppen,
   bereichOptionen,
@@ -77,14 +101,20 @@ export default function ProdukteListe({
   const [produktart, setProduktart] = useState(""); // "" = alle Produktarten
   const terme = query.trim().toLowerCase().split(/\s+/).map(normalisiere).filter(Boolean);
 
-  // Deep-Link aus dem Portfolio-Mega-Menü (#309): /produkte/#<produktart> wählt
-  // die passende Produktart in Stufe 2 vor.
-  useEffect(() => {
-    const hash = typeof window !== "undefined" ? window.location.hash.slice(1) : "";
-    if (hash && gruppen.some((g) => g.slug === hash)) setProduktart(hash);
-    // nur beim Mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const filterRef = useRef<HTMLElement>(null);
+
+  // Deep-Link aus dem Portfolio-Mega-Menü (#309/#352): ?produktart=<slug> wählt
+  // die Produktart vor — reaktiv (auch bei erneuter Menü-Navigation, während man
+  // schon auf /produkte ist; der frühere mount-only #hash-Effect verfehlte das).
+  const applyDeepLink = useCallback(
+    (art: string, initial: boolean) => {
+      if (art && !gruppen.some((g) => g.slug === art)) return; // unbekannter Slug → ignorieren
+      setBereich("");
+      setProduktart(art); // "" = zurücksetzen (z. B. Menü-Footer „Alle Produkte")
+      if (!initial) filterRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+    },
+    [gruppen]
+  );
 
   // Filter-Pipeline: Suche → Bereich → Produktart. Die Produktart-Optionen
   // ergeben sich aus dem Ergebnis nach Suche+Bereich (Stufe 2 folgt Stufe 1).
@@ -197,8 +227,12 @@ export default function ProdukteListe({
 
   return (
     <>
+      <Suspense fallback={null}>
+        <ProduktartDeepLink onApply={applyDeepLink} />
+      </Suspense>
+
       {/* Zweistufiger Filter + Suche */}
-      <section style={{ padding: "0 32px 8px" }}>
+      <section ref={filterRef} style={{ padding: "0 32px 8px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <div className="flex flex-wrap items-center gap-3">
             {/* Stufe 1: Bereich */}

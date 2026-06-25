@@ -3,7 +3,7 @@ import Image from "next/image";
 import { AppIcon } from "@/components/ui/icon";
 import { ChevronRight, LayoutGrid } from "lucide-react";
 import { bereichIcon } from "./bereichIcons";
-import { PORTFOLIO_SLUGS } from "../data/bereiche";
+import { PORTFOLIO_SLUGS, type PortfolioKachel } from "../data/bereiche";
 import { withBasePath } from "../lib/basePath";
 import type { Dictionary } from "../app/[lang]/dictionaries";
 
@@ -27,33 +27,46 @@ export default function PortfolioGrid({
   lang,
   dict,
   withCatalogTile = false,
+  tiles,
 }: {
   lang: string;
   dict: Dictionary;
   withCatalogTile?: boolean;
+  /** Optionale eigene Kachelliste (Home: 8 Kacheln, #352). Default = die 6
+   *  Portfolio-Bereiche aus PORTFOLIO_SLUGS (z. B. /bereiche-Übersicht). */
+  tiles?: PortfolioKachel[];
 }) {
   const bt = dict.bereiche as Record<string, string>;
+  const kacheln: PortfolioKachel[] =
+    tiles ??
+    PORTFOLIO_SLUGS.map((slug) => ({
+      dictKey: slug,
+      iconSlug: slug,
+      href: `bereiche/${slug}/`,
+      bild: BEREICH_KACHELBILD[slug],
+      abgegrenzt: slug === "katzenstreu",
+    }));
   // #253: Solange Beispiele vorläufig sind, sichtbar als Platzhalter taggen.
-  const zeigeBeispielHinweis = PORTFOLIO_SLUGS.some((slug) => bt[`${slug}_beispiele`]);
+  const zeigeBeispielHinweis = kacheln.some((k) => bt[`${k.dictKey}_beispiele`]);
 
   return (
     <>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {PORTFOLIO_SLUGS.map((slug) => {
-        const isKatze = slug === "katzenstreu";
-        const name = bt[`${slug}_name`];
-        const teaser = bt[`${slug}_teaser`];
-        const beispiele = bt[`${slug}_beispiele`];
-        const bild = BEREICH_KACHELBILD[slug];
+      {kacheln.map((kachel) => {
+        const isKatze = kachel.dictKey === "katzenstreu";
+        const name = bt[`${kachel.dictKey}_name`];
+        const teaser = bt[`${kachel.dictKey}_teaser`];
+        const beispiele = bt[`${kachel.dictKey}_beispiele`];
+        const bild = kachel.bild ?? BEREICH_KACHELBILD[kachel.iconSlug];
 
         const cardClass = `group flex flex-col rounded-xl bg-white overflow-hidden no-underline transition-all duration-200 ${
-          isKatze
+          kachel.abgegrenzt
             ? "border border-dashed border-mid-gray hover:border-cyan hover:shadow-lg"
             : "border border-bullet-bg hover:border-cyan hover:shadow-lg"
         }`;
 
         return (
-          <Link key={slug} href={`/${lang}/bereiche/${slug}/`} className={cardClass}>
+          <Link key={kachel.dictKey} href={`/${lang}/${kachel.href}`} className={cardClass}>
             {/* Bild-Banner (symbolisches Referenzfoto); Fallback: Icon auf Navy */}
             <div className="relative aspect-[16/10] overflow-hidden bg-navy">
               {bild ? (
@@ -66,7 +79,7 @@ export default function PortfolioGrid({
                 />
               ) : (
                 <span className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-                  <AppIcon icon={bereichIcon(slug)} width={36} height={36} strokeWidth={1.75} className="text-white" />
+                  <AppIcon icon={bereichIcon(kachel.iconSlug)} width={36} height={36} strokeWidth={1.75} className="text-white" />
                 </span>
               )}
               {isKatze && (

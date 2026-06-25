@@ -58,7 +58,11 @@ export interface Artikel {
 /** Bereinigt den Body: führende H1 raus (Titel wird separat gerendert) und
  *  `TODO(Frank)`-Reviewer-Notizen werden — je nach Schalter — als markierte
  *  Experten-Hinweise (Sentinel-Präfix) erhalten oder still entfernt (#296). */
-function bereinige(body: string): string {
+function bereinige(body: string, kategorie: string): string {
+  // #296/#352: Experten-/Fachprüfungs-Hinweise nur auf den Ratgeber-Fachbeiträgen
+  // (kategorie "artikel") für den Technik-Review zeigen; auf Schadensbildern und
+  // Branchen werden TODO(Frank)-Notizen still entfernt (Steffi 2026-06-24).
+  const hinweiseSichtbar = EXPERTEN_HINWEISE_SICHTBAR && kategorie === "artikel";
   const zeilen = body.split("\n");
   const out: string[] = [];
   let h1Weg = false;
@@ -74,7 +78,7 @@ function bereinige(body: string): string {
     // TODO(Frank)-Absatz → markierter Experten-Hinweis oder (vor Cutover) raus.
     const note = t.match(/^TODO\(Frank\):\s*(.*)$/);
     if (note) {
-      if (EXPERTEN_HINWEISE_SICHTBAR) out.push(`${EXPERTE_PREFIX}${note[1]}`);
+      if (hinweiseSichtbar) out.push(`${EXPERTE_PREFIX}${note[1]}`);
       continue;
     }
     out.push(zeile);
@@ -89,7 +93,7 @@ export function getArtikel(kategorie: string, slug: string): Artikel | null {
   const { data, content } = matter(fs.readFileSync(datei, "utf8"));
   const fm = data as ArtikelFrontmatter;
   if (!istFreigegeben(slug, fm)) return null;
-  return { slug, frontmatter: fm, body: bereinige(content) };
+  return { slug, frontmatter: fm, body: bereinige(content, kategorie) };
 }
 
 /** Ersten aussagekraeftigen Absatz aus dem (bereinigten) Markdown-Body ziehen,

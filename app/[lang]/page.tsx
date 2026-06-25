@@ -5,6 +5,7 @@ import { getReferenzBySlug } from "../../data/referenzen";
 import { localizeReferenzen } from "../../data/i18n/getLocalized";
 import { FEATURED_SLUGS } from "../../data/featured";
 import PortfolioGrid from "../../components/PortfolioGrid";
+import { HOME_PORTFOLIO_KACHELN } from "../../data/bereiche";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 import { withBasePath } from "../../lib/basePath";
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     // Absolut statt Template: Die Startseite braucht den Markennamen vorne
     // in der SERP, nicht als "%s | KORODUR"-Anhang am Hero-Satz.
     title: { absolute: dict.home.meta_title },
-    description: dict.home.hero_subtitle,
+    description: `${dict.home.hero_subtitle} ${dict.home.hero_subtitle_2}`,
     alternates: alternatesFor(lang, "/"),
   };
 }
@@ -109,6 +110,8 @@ export default async function Home({
               style={{ fontSize: 18, maxWidth: 520 }}
             >
               {dict.home.hero_subtitle}
+              <br />
+              {dict.home.hero_subtitle_2}
             </p>
           </div>
           {/* CTAs rechts (lg gestapelt, bündig zur Subtext-Unterkante) */}
@@ -147,7 +150,7 @@ export default async function Home({
           >
             {dict.home.bereiche_subtitle}
           </p>
-          <PortfolioGrid lang={lang} dict={dict} />
+          <PortfolioGrid lang={lang} dict={dict} tiles={HOME_PORTFOLIO_KACHELN} />
         </div>
       </section>
 

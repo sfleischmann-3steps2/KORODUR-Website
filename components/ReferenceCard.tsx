@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { Referenz } from "../data/types";
 import { bereichLabel, projektartBucket, projektartLabel } from "../data/einsatzbereichMapping";
-import { referenzProduktbereich, produktbereichLabel } from "../data/referenzProduktbereich";
+import { referenzProduktbereich, produktbereichLabel, produktbereichFarbe } from "../data/referenzProduktbereich";
 import { withBasePath } from "../lib/basePath";
 import { thumbSrc } from "../lib/images";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,6 +25,8 @@ export default function ReferenceCard({
   // Produktbereich für das "Projektart · Bereich"-Tag (Steffi, #99).
   const pBereich = referenzProduktbereich(referenz);
   const pBereichLabel = pBereich ? produktbereichLabel(pBereich, lang) : "";
+  // Flag-Akzentfarbe nach Produktbereich (#352): Themen visuell trennen.
+  const flagFarbe = produktbereichFarbe(pBereich);
 
   return (
     <Link href={`/${lang}/referenzen/${referenz.slug}`} className="no-underline group block">
@@ -40,8 +42,8 @@ export default function ReferenceCard({
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <span
-            className="absolute left-3 top-3 z-10 rounded-[5px] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white"
-            style={{ background: art === "neubau" ? "rgba(0,45,89,0.92)" : "#009ee3" }}
+            className="absolute left-3 top-3 z-10 rounded-[5px] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider"
+            style={{ background: flagFarbe.bg, color: flagFarbe.text }}
           >
             {projektartLabel(art, lang)}
             {pBereichLabel ? ` · ${pBereichLabel}` : ""}
