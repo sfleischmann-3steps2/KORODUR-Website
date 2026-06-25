@@ -20,7 +20,8 @@
   },
   "home": {
     "hero_title": "Industrial floors for new construction and renovation. Proven worldwide.",
-    "hero_subtitle": "We have been developing and producing mineral hard aggregates and cementitious systems since 1936. More than 90 years of experience and 750 million m² of industrial floors installed worldwide are our best reference.",
+    "hero_subtitle": "We have been developing and producing mineral hard aggregates and cementitious systems since 1936.",
+    "hero_subtitle_2": "More than 90 years of experience and 750 million m² of industrial floors installed worldwide are our best reference.",
     "hero_cta": "Start Solution Finder",
     "featured_title": "Proven solutions from practice",
     "featured_link": "View all references",
@@ -37,7 +38,7 @@
     "cta_button": "Contact a consultant",
     "hero_kicker": "KORODUR. Since 1936.",
     "hero_cta_secondary": "Explore products",
-    "bereiche_title": "Our Product Portfolio",
+    "bereiche_title": "Our Product Areas",
     "bereiche_subtitle": "From industrial flooring to special construction materials: all KORODUR product worlds at a glance.",
     "meta_title": "KORODUR | Industrial Floors, Decorative Screeds and Special Construction Materials",
     "beratung_lead": "Planning a project?",

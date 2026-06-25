@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     // Absolut statt Template: Die Startseite braucht den Markennamen vorne
     // in der SERP, nicht als "%s | KORODUR"-Anhang am Hero-Satz.
     title: { absolute: dict.home.meta_title },
-    description: dict.home.hero_subtitle,
+    description: `${dict.home.hero_subtitle} ${dict.home.hero_subtitle_2}`,
     alternates: alternatesFor(lang, "/"),
   };
 }
@@ -109,6 +109,8 @@ export default async function Home({
               style={{ fontSize: 18, maxWidth: 520 }}
             >
               {dict.home.hero_subtitle}
+              <br />
+              {dict.home.hero_subtitle_2}
             </p>
           </div>
           {/* CTAs rechts (lg gestapelt, bündig zur Subtext-Unterkante) */}
