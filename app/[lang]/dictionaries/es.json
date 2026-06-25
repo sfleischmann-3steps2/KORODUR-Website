@@ -581,6 +581,8 @@
     "filter_bereich": "Área",
     "reset": "Restablecer filtros",
     "produkt_label": "Producto: {name}",
-    "uebergreifend": "Generales"
+    "uebergreifend": "Generales",
+    "alle_produkt": "Todos los documentos de este producto",
+    "alle_bereich": "Todos los documentos de esta área"
   }
 }
