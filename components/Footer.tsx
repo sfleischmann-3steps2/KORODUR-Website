@@ -24,22 +24,12 @@ export default function Footer({
   lang: Locale;
   dict: Dictionary;
 }) {
-  const bereichLabels = dict.bereiche as Record<string, string>;
-
-  // #299: Footer-Restructure (Steffi 2026-06-19) — schlanke 3-Spalten-Logik:
-  // links Produkte/Bereiche · Mitte Unternehmen + Ausschreibungstexte + Kontakt ·
-  // rechts Ratgeber + Referenzen + Social. Lösungsfinder/Anwendungsmatrix/
-  // Schadensbilder/Branchen bewusst aus dem Footer (Steffi „nur den Ratgeber").
-
-  // Feste Produktblock-Reihenfolge (spaltenweise, NICHT umsortieren — das steuert
-  // sonst das Home-Grid). Infrastruktur (noch) ohne Slot.
-  const footerProduktReihenfolge = [
-    "industrieboden",
-    "rapid-set",
-    "spezialmoertel",
-    "microtop",
-    "katzenstreu",
-  ];
+  // Footer-Redesign (Steffi 2026-06-25) — schlanke 4-Spalten-Logik:
+  // (1) Produktportfolio: nur „Alle Produkte" + „Alle Bereiche" (beide cyan/fett),
+  //     keine Einzel-Bereiche mehr → bleibt automatisch mit dem Portfolio synchron.
+  // (2) Unternehmen: nur Adresse + Telefon + E-Mail (Unternehmens-Link steht oben in der Nav).
+  // (3) Service: Ratgeber (DE) + Referenzen (beide cyan) + Ausschreibungstexte.
+  // (4) Social Media ganz rechts. Sub-Zeile unverändert.
 
   const linkClass =
     "text-white/75 hover:text-white no-underline text-[14px] font-medium transition-colors duration-150 inline-block py-1.5";
@@ -57,60 +47,35 @@ export default function Footer({
         className="mx-auto py-10"
         style={{ maxWidth: 1320, paddingLeft: 32, paddingRight: 32 }}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-9">
-          {/* (1) Produkte & Bereiche — „Alle Produkte" als cyan-Highlight, dann
-              die Bereiche zweispaltig (hält den Footer flach). */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-9">
+          {/* (1) Produktportfolio — zwei prominente Einstiege (cyan/fett):
+              „Alle Produkte" und „Alle Bereiche" (Home-Bereichsgrid). Keine
+              Einzel-Bereiche mehr → bleibt mit dem wachsenden Portfolio synchron. */}
           <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_bereiche}
             </h3>
-            <Link
-              href={`/${lang}/produkte/`}
-              className={`${highlightClass} mb-2`}
-              style={{ fontWeight: 800 }}
-            >
-              {dict.bereiche.alle_produkte_name}
-              <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
-            </Link>
-            <ul className="list-none m-0 p-0 grid grid-cols-2 grid-rows-3 grid-flow-col gap-x-8 items-stretch">
-              {footerProduktReihenfolge.map((slug) => (
-                <li key={slug} className="min-w-0 flex items-start">
-                  <Link
-                    href={`/${lang}/bereiche/${slug}/`}
-                    className={`${linkClass} break-words hyphens-auto leading-snug`}
-                    lang={lang}
-                  >
-                    {bereichLabels[`${slug}_name`]}
-                  </Link>
-                </li>
-              ))}
+            <ul className="list-none m-0 p-0 flex flex-col">
+              <li>
+                <Link href={`/${lang}/produkte/`} className={highlightClass} style={{ fontWeight: 800 }}>
+                  {dict.bereiche.alle_produkte_name}
+                  <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/#bereiche`} className={highlightClass} style={{ fontWeight: 800 }}>
+                  {dict.footer.alle_bereiche}
+                  <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* (2) Unternehmen + Ausschreibungstexte + Kontakt — eine zusammen-
-              gefasste Spalte (Steffi #299: Unternehmen oben, dann Adresse/Kontakt). */}
+          {/* (2) Unternehmen — nur Adresse + Kontakt (Unternehmens-Link steht in der Nav). */}
           <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_unternehmen}
             </h3>
-            <ul className="list-none m-0 p-0 flex flex-col mb-4">
-              <li>
-                <Link href={`/${lang}/unternehmen/`} className={linkClass}>
-                  {dict.nav.unternehmen}
-                </Link>
-              </li>
-              <li>
-                <a
-                  href={AUSSCHREIBEN_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${linkClass} inline-flex items-center gap-1.5`}
-                >
-                  {dict.footer.ausschreibungen}
-                  <AppIcon icon={ExternalLink} width={12} height={12} strokeWidth={2.5} aria-hidden="true" />
-                </a>
-              </li>
-            </ul>
             <address className="not-italic text-[14px] text-white/70 leading-[1.6]">
               <div>{KORODUR_ZENTRALE.strasse}</div>
               <div>{KORODUR_ZENTRALE.plzOrt}</div>
@@ -125,13 +90,12 @@ export default function Footer({
             </address>
           </div>
 
-          {/* (3) Ratgeber (cyan-Highlight, zentrale Content-Seite) + Referenzen,
-              darunter Social. Ratgeber ist aktuell nur DE. */}
+          {/* (3) Service — Ratgeber (DE) + Referenzen (beide cyan) + Ausschreibungstexte. */}
           <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_service}
             </h3>
-            <ul className="list-none m-0 p-0 flex flex-col mb-8">
+            <ul className="list-none m-0 p-0 flex flex-col">
               {lang === "de" && (
                 <li>
                   <Link href={`/${lang}/ratgeber/`} className={highlightClass} style={{ fontWeight: 800 }}>
@@ -141,11 +105,27 @@ export default function Footer({
                 </li>
               )}
               <li>
-                <Link href={`/${lang}/referenzen/`} className={linkClass}>
+                <Link href={`/${lang}/referenzen/`} className={highlightClass} style={{ fontWeight: 800 }}>
                   {dict.nav.referenzen}
+                  <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
                 </Link>
               </li>
+              <li>
+                <a
+                  href={AUSSCHREIBEN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${linkClass} inline-flex items-center gap-1.5`}
+                >
+                  {dict.footer.ausschreibungen}
+                  <AppIcon icon={ExternalLink} width={12} height={12} strokeWidth={2.5} aria-hidden="true" />
+                </a>
+              </li>
             </ul>
+          </div>
+
+          {/* (4) Social Media — ganz rechts. */}
+          <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_social}
             </h3>

@@ -355,7 +355,8 @@
     "copyright": "Wszelkie prawa zastrzeżone.",
     "contact_cta": "Doradztwo techniczne",
     "contact_desc": "Porozmawiaj bezpośrednio z naszymi ekspertami.",
-    "col_bereiche": "Obszary",
+    "col_bereiche": "Portfolio produktów",
+    "alle_bereiche": "Wszystkie obszary",
     "col_unternehmen": "Firma",
     "col_kontakt": "Kontakt",
     "impressum": "Impressum",
@@ -366,7 +367,7 @@
     "downloads": "Pliki do pobrania",
     "agb": "Ogólne warunki",
     "hinweisgeber": "System sygnalistów",
-    "col_service": "Serwis i poradnik"
+    "col_service": "Serwis"
   },
   "bereiche": {
     "breadcrumb_home": "Start",

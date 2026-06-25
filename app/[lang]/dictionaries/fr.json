@@ -355,7 +355,8 @@
     "copyright": "Tous droits réservés.",
     "contact_cta": "Conseil technique",
     "contact_desc": "Parlez directement à nos experts.",
-    "col_bereiche": "Domaines",
+    "col_bereiche": "Portefeuille de produits",
+    "alle_bereiche": "Tous les domaines",
     "col_unternehmen": "Entreprise",
     "col_kontakt": "Contact",
     "impressum": "Mentions légales",
@@ -366,7 +367,7 @@
     "downloads": "Téléchargements",
     "agb": "Conditions générales",
     "hinweisgeber": "Système d'alerte",
-    "col_service": "Service et guides"
+    "col_service": "Service"
   },
   "bereiche": {
     "breadcrumb_home": "Accueil",
