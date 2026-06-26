@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { AppIcon } from "@/components/ui/icon";
 import { ArrowRight, Layers, Route, Droplets } from "lucide-react";
 import { alternatesFor } from "../../../lib/seo";
+import { SHELL_MAXWIDTH } from "@/lib/layout";
 import { referenzen } from "../../../data/referenzen";
 import { localizeReferenzen } from "../../../data/i18n/getLocalized";
 import ReferenceCard from "../../../components/ReferenceCard";
@@ -78,7 +79,7 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
       {/* Sanierungs-Schwerpunkte: macht sichtbar, dass Sanierung breiter ist als
           Industrieboden (Infrastruktur, Trinkwasser/Spezial mit MICROTOP + Rapidset). */}
       <section style={{ padding: "8px 32px 8px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
           <h2 className="text-navy text-center mb-8" style={{ fontSize: "clamp(22px, 3.5vw, 30px)", fontWeight: 900 }}>
             {dict.sanierungHub.schwerpunkte_title}
           </h2>
@@ -129,7 +130,7 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
           (ersetzt die Tool-CTAs). Fachartikel aktuell nur auf Deutsch (i18n: #181). */}
       {lang === "de" && (
         <section style={{ padding: "16px 32px 64px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1100 }}>
+          <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
             <h2 className="text-navy text-center mb-3" style={{ fontSize: "clamp(22px, 3.5vw, 30px)", fontWeight: 900 }}>
               Sanierungsratgeber und Schadensbilder
             </h2>
@@ -162,7 +163,7 @@ export default async function SanierungHubPage({ params }: { params: Params }) {
 
       {sanierungRefs.length > 0 && (
         <section className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
             <h2 className="text-center mb-10" style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 900 }}>
               {dict.sanierungHub.referenzen_title}
             </h2>

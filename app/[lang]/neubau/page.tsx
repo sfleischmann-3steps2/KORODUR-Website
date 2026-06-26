@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { AppIcon } from "@/components/ui/icon";
 import { ArrowRight } from "lucide-react";
 import { alternatesFor } from "../../../lib/seo";
+import { SHELL_MAXWIDTH } from "@/lib/layout";
 import { referenzen } from "../../../data/referenzen";
 import { localizeReferenzen } from "../../../data/i18n/getLocalized";
 import ReferenceCard from "../../../components/ReferenceCard";
@@ -74,7 +75,7 @@ export default async function NeubauHubPage({ params }: { params: Params }) {
       </section>
 
       <section style={{ padding: "16px 32px 64px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {cards.map((card) => (
               <Link key={card.slug} href={`/${lang}/bereiche/${card.slug}/`} className="no-underline group block">

@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 import Breadcrumb from "./Breadcrumb";
 import { AppIcon } from "@/components/ui/icon";
 import { withBasePath } from "../lib/basePath";
+import { SHELL_MAXWIDTH } from "@/lib/layout";
 
 export type RatgeberCard = {
   slug: string;
@@ -96,13 +97,13 @@ export default function RatgeberHub({ lang, cards }: { lang: string; cards: Ratg
   return (
     <>
       <section style={{ padding: "0 32px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
           <Breadcrumb items={[{ label: "Ratgeber" }]} lang={lang} />
         </div>
       </section>
 
       <section style={{ padding: "16px 32px 64px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
           <h1 className="mb-4" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
             Ratgeber
           </h1>

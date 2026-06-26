@@ -7,6 +7,7 @@ import { getReferenzBySlug } from "../data/referenzen";
 import { getProduktById } from "../data/produkte";
 import { localizeReferenzen, localizeProdukte } from "../data/i18n/getLocalized";
 import { withBasePath } from "../lib/basePath";
+import { SHELL_MAXWIDTH, LESEMASS_MAXWIDTH } from "@/lib/layout";
 
 // #170/#296: Überschriften der eingewebten Karten-Elemente je Sprache (Artikel
 // sind v. a. DE; Fallback DE). Bewusst inline — generische Hülle.
@@ -189,10 +190,12 @@ export default async function ArtikelSeite({
 
   const minuten = lesezeitMinuten(body);
 
+  // #342: Artikel-Rahmen laeuft auf Shell-Breite (Hero + Karten fuellen ihn),
+  // nur die Prosa bleibt auf dem Lesemass (~80 Zeichen/Zeile), zentriert.
   const ARTIKEL = "mx-auto" as const;
-  const ARTIKEL_STYLE = { maxWidth: 760 } as const;
+  const ARTIKEL_STYLE = { maxWidth: LESEMASS_MAXWIDTH } as const;
   const FRAME = "mx-auto" as const;
-  const FRAME_STYLE = { maxWidth: 1100 } as const;
+  const FRAME_STYLE = { maxWidth: SHELL_MAXWIDTH } as const;
 
   const RefElement = refs.length > 0 && (
     <section className="bg-icon-bg" style={{ padding: "48px 32px" }}>

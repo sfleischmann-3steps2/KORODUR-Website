@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
 import { getArtikel, getSlugs, teaser } from "../lib/content";
+import { SHELL_MAXWIDTH } from "@/lib/layout";
 
 /** Uebersichts-Hub fuer eine Fachartikel-Kategorie: Breadcrumb + Titel + Intro
  *  + automatisch gelistete Artikel als verlinkte Karten (Teaser je Artikel). */
@@ -29,13 +30,13 @@ export default function ArtikelHub({
   return (
     <>
       <section style={{ padding: "0 32px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
           <Breadcrumb items={breadcrumb} lang={lang} />
         </div>
       </section>
 
       <section style={{ padding: "16px 32px 64px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
           <h1 className="mb-4" style={{ fontSize: "clamp(28px, 5vw, 44px)", fontWeight: 900, lineHeight: 1.1 }}>
             {titel}
           </h1>
