@@ -38,7 +38,10 @@ const EXPERTEN_HINWEISE_SICHTBAR = true;
  *  shippen aber erst nach Freigabe (status auf z. B. "veroeffentlicht" setzen).
  *  Hub-Gerüste (slug "index") bleiben als Navigationsrahmen erhalten.
  *  Zum Wiedereinblenden für Franks In-Context-Review: auf `false` setzen. */
-const NUR_FREIGEGEBENE_ARTIKEL = true;
+// Review-Publish (Steffi 2026-06-26): Entwurfs-Artikel fuers Team/Frank im
+// In-Context-Review sichtbar machen. Anmerkungen bleiben sichtbar
+// (EXPERTEN_HINWEISE_SICHTBAR). Vor dem echten Live-Cutover zurueck auf `true`.
+const NUR_FREIGEGEBENE_ARTIKEL = false;
 
 /** Ein Artikel ist freigegeben, wenn das Gate aus ist, es ein Hub-Gerüst ist
  *  ("index"), oder sein Frontmatter-Status nicht "entwurf" ist. */
