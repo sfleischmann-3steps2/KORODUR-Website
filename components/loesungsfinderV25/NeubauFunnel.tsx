@@ -1,8 +1,14 @@
 // Neubau-Funnel (Industrieboden) — finalisierte Schritt-Struktur nach
 // Kollegen-Abstimmung (RV, 2026-06-24). 3 Schritte:
-//   1. Wo entsteht der Boden       (Einfachauswahl)
-//   2. Wie wird der Boden beansprucht  (Einfachauswahl)
-//   3. Weitere Anforderungen        (Mehrfachauswahl)
+//   1. Wo entsteht der Boden            (Einfachauswahl)
+//   2. Wie wird der Boden beansprucht   (Einfachauswahl, Intensitätsachse
+//      höchste/hohe/mittlere/leichte)
+//   3. Weitere Anforderungen            (Mehrfachauswahl, als Abhak-Liste)
+// Optimierung 2026-06-26 (Steffi): in Schritt 2 löst die "höchste Beanspruchung"
+// (Kettenfahrzeuge/Panzer) die chemische Beanspruchung ab — Chemie wandert als
+// Anforderung in Schritt 3. Schritt 3 startet mit Ebenheit, "Optik & Design"
+// steht ganz unten und die Mehrfachauswahl rendert als längliche Abhak-Liste
+// (ChecklistOption), damit klar ist, dass mehrere Punkte wählbar sind.
 // Der Schritt "Wann nutzbar" (Zeitfenster) entfällt im Neubau (RV: dort nicht
 // projektrelevant). Die Schritt-Labels sind final (DE); die i18n
 // (DE/EN/FR/PL/ES) folgt am Ende des Relaunchs mit dem KORODUR-Glossar.
@@ -19,12 +25,14 @@ import { useCallback, useMemo, useState } from "react";
 import type { ComponentType, SVGProps } from "react";
 import { useLocale } from "@/lib/LocaleContext";
 import OptionCard from "./OptionCard";
+import ChecklistOption from "./ChecklistOption";
 import ProgressHeader from "./ProgressHeader";
 import {
   IconFactory,
   IconWarehouse,
   IconStore,
   IconShoppingCart,
+  IconAnvil,
   IconWeight,
   IconPackage,
   IconFootprints,
@@ -75,24 +83,25 @@ const STEPS: StepDef[] = [
     question: "Wie wird der Boden beansprucht?",
     subline: "Die maßgebliche Beanspruchung bestimmt das System.",
     options: [
+      { id: "hoechste", Icon: IconAnvil, titel: "Höchste Beanspruchung", beschreibung: "Kettenfahrzeuge, Panzer, extreme Schlag- und Punktlasten, Stahlketten." },
       { id: "hoch", Icon: IconWeight, titel: "Hohe Beanspruchung", beschreibung: "Abrieb durch Metallteile, Absetzen mit Metallgabeln, Verkehr über 1.000 Personen pro Tag." },
       { id: "mittel", Icon: IconPackage, titel: "Mittlere Beanspruchung", beschreibung: "Holz, Papierrollen, Kunststoff, Verkehr 100 bis 1.000 Personen pro Tag." },
       { id: "leicht", Icon: IconFootprints, titel: "Leichte Beanspruchung", beschreibung: "Elastik- und Luftreifenverkehr, Montage, bis 100 Personen pro Tag." },
-      { id: "chemisch", Icon: IconFlask, titel: "Chemische Beanspruchung", beschreibung: "Öle, Betriebsstoffe, Säuren, Reinigungsmittel, Frost- und Streusalz." },
     ],
   },
   {
     key: "anforderung",
     question: "Welche weiteren Anforderungen gelten?",
-    subline: "Mehrfachauswahl möglich.",
+    subline: "Wählen Sie alle zutreffenden Anforderungen aus.",
     multi: true,
     options: [
-      { id: "optik", Icon: IconPalette, titel: "Optik & Design", beschreibung: "Oberflächenoptik (geschliffen oder geglättet), Farbgebung, Betonoptik." },
-      { id: "hygiene", Icon: IconSpray, titel: "Hygiene & Reinigung", beschreibung: "Häufig und leicht zu reinigen, hohe Dichtigkeit." },
       { id: "ebenheit", Icon: IconRuler, titel: "Ebenheit", beschreibung: "Hochregallager nach DIN 18202, für leitliniengeführte Stapler." },
+      { id: "chemisch", Icon: IconFlask, titel: "Chemische Beanspruchung", beschreibung: "Öle, Betriebsstoffe, Säuren, Reinigungsmittel, Frost- und Streusalz." },
       { id: "rutschhemmung", Icon: IconShield, titel: "Sicherheit & Rutschhemmung", beschreibung: "Rutschhemmung R9 bis R13 nach DIN 51130 je Einsatzbereich." },
-      { id: "nachhaltigkeit", Icon: IconLeaf, titel: "Nachhaltigkeit & Klimaschutz", beschreibung: "EPD-Nachweis, CO₂-Reduzierung, Langlebigkeit." },
+      { id: "hygiene", Icon: IconSpray, titel: "Hygiene & Reinigung", beschreibung: "Häufig und leicht zu reinigen, hohe Dichtigkeit." },
       { id: "esd", Icon: IconZap, titel: "Ableitfähigkeit (ESD)", beschreibung: "E-Mobilität, Elektronikfertigung." },
+      { id: "nachhaltigkeit", Icon: IconLeaf, titel: "Nachhaltigkeit & Klimaschutz", beschreibung: "EPD-Nachweis, CO₂-Reduzierung, Langlebigkeit." },
+      { id: "optik", Icon: IconPalette, titel: "Optik & Design", beschreibung: "Oberflächenoptik (geschliffen oder geglättet), Farbgebung, Betonoptik." },
     ],
   },
 ];
@@ -213,28 +222,58 @@ export default function NeubauFunnel({ onZurueck }: NeubauFunnelProps) {
 
       <div className="md:min-h-[500px]">
         <header className="mb-6">
-          <h2 className="text-xl font-medium text-navy sm:text-[22px]">{step.question}</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.subline}</p>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+            <h2 id="nf-step-frage" className="text-xl font-medium text-navy sm:text-[22px]">{step.question}</h2>
+            {step.multi && (
+              <span className="inline-flex items-center rounded-md bg-cyan/12 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-cyan-text">
+                Mehrfachauswahl
+              </span>
+            )}
+          </div>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {step.subline}
+            {step.multi && selected.length > 0 && (
+              <span className="ml-1 font-medium text-navy">· {selected.length} ausgewählt</span>
+            )}
+          </p>
         </header>
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-          {step.options.map((opt) => {
-            const isSelected = selected.includes(opt.id);
-            return (
-              <OptionCard
+        {step.multi ? (
+          // Mehrfachauswahl als längliche Abhak-Liste — leere Checkbox vor dem
+          // Klick macht klar, dass mehrere Punkte wählbar sind (Steffi 2026-06-26).
+          // role="group" + aria-labelledby koppelt die Checkboxen programmatisch
+          // an die Frage (ARIA-APG-Checkbox-Pattern).
+          <div role="group" aria-labelledby="nf-step-frage" className="flex flex-col gap-2.5">
+            {step.options.map((opt) => (
+              <ChecklistOption
                 key={opt.id}
                 Icon={opt.Icon}
                 titel={opt.titel}
                 beschreibung={opt.beschreibung}
-                selected={isSelected}
-                // Nur bei Einfachauswahl die übrigen Karten abdimmen; bei
-                // Mehrfachauswahl bleiben alle gleich präsent.
-                dimmed={!step.multi && selected.length > 0 && !isSelected}
-                onSelect={() => toggle(step.key, opt.id, step.multi ?? false)}
+                selected={selected.includes(opt.id)}
+                onSelect={() => toggle(step.key, opt.id, true)}
               />
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+            {step.options.map((opt) => {
+              const isSelected = selected.includes(opt.id);
+              return (
+                <OptionCard
+                  key={opt.id}
+                  Icon={opt.Icon}
+                  titel={opt.titel}
+                  beschreibung={opt.beschreibung}
+                  selected={isSelected}
+                  // Einfachauswahl: übrige Karten abdimmen, sobald eine gewählt ist.
+                  dimmed={selected.length > 0 && !isSelected}
+                  onSelect={() => toggle(step.key, opt.id, false)}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
 
       {/* Footer auf allen Viewports sticky -> Weiter-Button nie unter dem Fold (#101). */}

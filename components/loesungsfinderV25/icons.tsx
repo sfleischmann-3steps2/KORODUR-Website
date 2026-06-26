@@ -6,6 +6,7 @@
 import type { SVGProps } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
+  Anvil,
   ArrowLeft,
   ArrowRight,
   Building2,
@@ -107,6 +108,7 @@ export const IconCalendarMonth = lucide(CalendarDays);
 // === Neubau-Funnel (RV-Struktur 2026-06-24) ===
 
 export const IconStore = lucide(Store);
+export const IconAnvil = lucide(Anvil);
 export const IconWeight = lucide(Weight);
 export const IconPackage = lucide(Package);
 export const IconFootprints = lucide(Footprints);
