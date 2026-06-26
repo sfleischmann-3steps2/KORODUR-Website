@@ -8,6 +8,7 @@ import {
   KORODUR_WERK_BOCHUM,
 } from "../../../lib/kontaktDaten";
 import { alternatesFor } from "../../../lib/seo";
+import { SHELL_MAXWIDTH } from "@/lib/layout";
 
 type Params = Promise<{ lang: string }>;
 
@@ -48,7 +49,7 @@ export default async function UnternehmenPage({ params }: { params: Params }) {
 
       {/* Standorte */}
       <section className="bg-icon-bg" style={{ padding: "56px 32px 64px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="mx-auto" style={{ maxWidth: SHELL_MAXWIDTH }}>
           <h2
             className="mb-6"
             style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}
