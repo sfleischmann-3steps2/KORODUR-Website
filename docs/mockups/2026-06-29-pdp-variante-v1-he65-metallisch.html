@@ -142,6 +142,18 @@
   .icard li{ font-size:13px; color:var(--ink); margin-bottom:7px; line-height:1.5; }
   .icard code{ background:var(--icon-bg); padding:1px 6px; border-radius:4px; font-size:12px; color:var(--navy); }
   .footnote{ font-size:12px; color:var(--ink2); padding:24px 0 50px; max-width:920px; }
+
+  /* Vergleichstabelle (Ebene-1-Stil: Überblick + Direktlink) */
+  table{ width:100%; border-collapse:collapse; font-size:13px; }
+  th,td{ text-align:left; padding:11px 12px; border-bottom:1px solid var(--bullet-bg); }
+  th{ font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink2); font-weight:900; }
+  td.mono{ font-family:ui-monospace,monospace; font-size:12px; color:var(--navy); }
+  tr.active td{ background:var(--soft); }
+  td a{ font-weight:800; text-decoration:none; color:var(--cyan-text); }
+  .here{ font-size:10.5px; font-weight:900; color:var(--cyan-text); white-space:nowrap; }
+  td .muted{ font-size:11.5px; color:var(--ink2); font-weight:700; }
+  .tscroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .tscroll table{ min-width:680px; }
 </style>
 </head>
 <body>
@@ -213,6 +225,24 @@
           <div class="pt"><b>Produktbild vorhanden</b> <span class="ann xml">XML</span><br>Alt-Site-Asset (WooCommerce-Packshot), direkt übernehmbar.</div>
         </div>
       </div>
+    </div>
+
+    <!-- AUSFÜHRUNGEN IM VERGLEICH (Überblick + Direktlink, Stil Ebene-1-Familienseite) -->
+    <div class="sec">
+      <h3>Ausführungen im Vergleich <span class="ann xml">XML</span><span class="line"></span></h3>
+      <div class="tscroll">
+      <table>
+        <thead><tr><th>Ausführung</th><th>Qualitätsklasse</th><th>Basis-Hartstoff</th><th>Artikel-Nr.</th><th>Schwerpunkt</th><th></th></tr></thead>
+        <tbody>
+          <tr><td><b>HE 65</b> (Standard)</td><td class="mono">CT-C70-F9-A6</td><td>VS 0/5</td><td class="mono">1220024S25KG</td><td>Standard, höchste Belastung</td><td><a href="#">öffnen →</a></td></tr>
+          <tr><td><b>HE 65 SVS 3</b></td><td class="mono">CT-C70-F9-A3</td><td>WH-Spezial</td><td class="mono">1220053S25KG</td><td>Höhere Verschleißklasse (A3)</td><td><a href="#">öffnen →</a></td></tr>
+          <tr><td><b>HE 65 SVS 1,5</b></td><td class="mono">CT-C70-F9-A1,5</td><td>Diamantbeton</td><td class="mono">1220060S30KG</td><td>Höchster Abrieb, glatte Optik</td><td><a href="#">öffnen →</a></td></tr>
+          <tr class="active"><td><b>HE 65 metallisch</b> <span class="here">● Sie sind hier</span></td><td class="mono">CT-C80-F11-A3</td><td>WH-metallisch (M)</td><td class="mono">1220032S40KG</td><td>Panzerestrich, Eisenräderverkehr</td><td><span class="muted">aktuell</span></td></tr>
+          <tr><td><b>HE 65 plus</b></td><td class="mono">CT-C70-F9-A6</td><td>kunststoffmod.</td><td class="mono">1220051S25KG</td><td>WHG, frost-/tausalzbeständig</td><td><a href="#">öffnen →</a></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="note">Überblick aller Ausführungen mit Direktlink, aktuelle Seite hervorgehoben. Speist sich aus <code>variantenGruppe</code> (#368); Daten aus dem Alt-XML, Normwerte final über die PDB.</div>
     </div>
 
     <!-- EIGENSCHAFTEN (TDS) -->
@@ -322,20 +352,6 @@
         Produkte (z. B. KOROPOX → entfällt). Verlinkung als ehrliches Cross-Selling.</div>
     </div>
 
-    <!-- WEITERE AUSFÜHRUNGEN (XML, V1-Querverweis statt Familien-Hub) -->
-    <div class="sec">
-      <h3>Weitere Ausführungen von NEODUR HE 65 <span class="ann xml">XML</span><span class="line"></span></h3>
-      <div class="xsell">
-        <div class="xcard"><div class="xt">NEODUR HE 65 SVS 3</div><div class="xd">Basis WH-Spezial · CT-C70-F9-A3 · Standard, höchste Belastung.</div><div class="xg">zur Ausführung</div></div>
-        <div class="xcard"><div class="xt">NEODUR HE 65 SVS 1,5</div><div class="xd">Basis Diamantbeton · CT-C70-F9-A1,5 · höchster Abrieb, glatte Optik.</div><div class="xg">zur Ausführung</div></div>
-        <div class="xcard"><div class="xt">NEODUR HE 65 plus</div><div class="xd">Kunststoffmodifiziert · 15–30 mm ohne Haftbrücke · WHG, frost-/tausalzbeständig.</div><div class="xg">zur Ausführung</div></div>
-        <div class="xcard"><div class="xt">NEODUR HE 60 rapid</div><div class="xd">Schnellvariante · gleiches Anwendungsfeld, nutzbar nach Stunden.</div><div class="xg">zur Ausführung</div></div>
-      </div>
-      <div class="note"><b>V1-Muster (wie alte korodur.de):</b> Geschwister-Ausführungen als gegenseitige Querverweise zwischen
-        eigenständigen Seiten. In <b>V2</b> ersetzt die „Varianten-Familien-Seite" diesen Block durch einen echten Hub mit
-        Raster + Umschalter (siehe Mockup <code>2026-06-29-pdp-he65-pilot-mockup.html</code>).</div>
-    </div>
-
     <!-- REFERENZEN -->
     <div class="sec">
       <h3>Passende Referenzen <span class="ann repo">Repo</span><span class="line"></span></h3>
@@ -351,6 +367,18 @@
         <span class="ct">Projekt mit höchster Beanspruchung?</span>
         <a class="btn" href="#">Fachberater kontaktieren</a>
       </div>
+    </div>
+
+    <!-- WEITERE AUSFÜHRUNGEN (ganz unten unter den Referenzen; den Überblick liefert die Vergleichstabelle oben) -->
+    <div class="sec">
+      <h3>Weitere Ausführungen von NEODUR HE 65 <span class="ann xml">XML</span><span class="line"></span></h3>
+      <div class="xsell">
+        <div class="xcard"><div class="xt">NEODUR HE 65 SVS 3</div><div class="xd">Basis WH-Spezial · CT-C70-F9-A3 · höhere Verschleißklasse.</div><div class="xg">zur Ausführung</div></div>
+        <div class="xcard"><div class="xt">NEODUR HE 65 SVS 1,5</div><div class="xd">Basis Diamantbeton · CT-C70-F9-A1,5 · höchster Abrieb, glatte Optik.</div><div class="xg">zur Ausführung</div></div>
+        <div class="xcard"><div class="xt">NEODUR HE 65 plus</div><div class="xd">Kunststoffmodifiziert · 15–30 mm ohne Haftbrücke · WHG, frost-/tausalzbeständig.</div><div class="xg">zur Ausführung</div></div>
+        <div class="xcard"><div class="xt">NEODUR HE 60 rapid</div><div class="xd">Schnellvariante · gleiches Anwendungsfeld, nutzbar nach Stunden.</div><div class="xg">zur Ausführung</div></div>
+      </div>
+      <div class="note">Dezenter Querverweis am Seitenende. Den Überblick mit Direktlinks liefert die Vergleichstabelle oben. In <b>V2</b> ersetzt die Varianten-Familien-Seite beides durch einen Hub.</div>
     </div>
 
   </div>
