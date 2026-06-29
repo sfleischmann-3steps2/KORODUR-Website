@@ -2437,6 +2437,40 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     }
   ],
+  // #372 hand-ergänzt: Doku-Einträge der neuen HE-65-Ausführungen. Zeigen auf
+  // lokal vorhandene PDFs; ein späterer Generator-Lauf (mit wp-content-Spiegel)
+  // reproduziert sie automatisch (Namens-/DoP-Match). Standard-Block-Bereinigung
+  // (metallisch/SVS-Docs raus aus "neodur-he-65") folgt mit dem Generator-Lauf.
+  "neodur-he-65-svs-3": [
+    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_fr.pdf", "sprache": "fr" },
+    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_pl.pdf", "sprache": "pl" },
+    { "typ": "dop", "titel": "NEODUR HE 65 SVS 3", "url": "/downloads/dop/13813_2.2_NEODUR_HE_65_SVS_3_de.pdf", "sprache": "de" },
+    { "typ": "sds", "titel": "NEODUR HE 65", "url": "/downloads/sds/NEODUR_HE_65_SDB_de.pdf", "sprache": "de" }
+  ],
+  "neodur-he-65-svs-15": [
+    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_fr.pdf", "sprache": "fr" },
+    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_pl.pdf", "sprache": "pl" },
+    { "typ": "dop", "titel": "NEODUR HE 65 SVS 1,5", "url": "/downloads/dop/13813_2.3_NEODUR_HE_65_SVS_15_de.pdf", "sprache": "de" },
+    { "typ": "sds", "titel": "NEODUR HE 65", "url": "/downloads/sds/NEODUR_HE_65_SDB_de.pdf", "sprache": "de" }
+  ],
+  "neodur-he-65-metallisch": [
+    { "typ": "tds", "titel": "NEODUR HE 65 metallisch", "url": "/downloads/tds/NEODUR_HE_65_metallisch_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 65 metallisch", "url": "/downloads/tds/NEODUR_HE_65_metallisch_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 65 metallisch", "url": "/downloads/tds/NEODUR_HE_65_metallisch_fr.pdf", "sprache": "fr" },
+    { "typ": "dop", "titel": "NEODUR HE 65 metallisch", "url": "/downloads/dop/13813_2.5_NEODUR_HE_65_metallisch_de.pdf", "sprache": "de" },
+    { "typ": "sds", "titel": "NEODUR HE 65", "url": "/downloads/sds/NEODUR_HE_65_SDB_de.pdf", "sprache": "de" },
+    { "typ": "anwendung", "titel": "HE 65 metallisch auf erhärteten Tragbeton", "url": "/downloads/anwendung/6.-HE-65-metallisch-auf-erhaerteten-Tragbeton-1.pdf", "sprache": "de" }
+  ],
+  "neodur-he-65-plus-svs-3": [
+    { "typ": "tds", "titel": "NEODUR HE 65 Plus", "url": "/downloads/tds/NEODUR_HE_65_Plus_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 65 Plus", "url": "/downloads/tds/NEODUR_HE_65_plus_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 65 Plus", "url": "/downloads/tds/NEODUR_HE_65_plus_fr.pdf", "sprache": "fr" },
+    { "typ": "sds", "titel": "NEODUR HE 65 Plus", "url": "/downloads/sds/NEODUR_HE_65_plus_SDB_de.pdf", "sprache": "de" }
+  ],
   "neodur-he-65-plus": [
     {
       "typ": "tds",

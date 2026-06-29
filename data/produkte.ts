@@ -153,6 +153,86 @@ export interface Produkt {
   heroReferenz?: string;
 }
 
+// ===========================================================================
+// NEODUR HE 65 — Familie (#372, Pilot V1-Varianten-PDPs).
+// Jede Ausführung ist ein eigenständiges, gleichrangiges Produkt mit eigener
+// PDP, verknüpft über `variantenGruppe: "neodur-he-65"` (Mutter = Standard).
+// Geteilte Inhalte aus der Familien-TDS (docs/tds-quellen/texts/13_NEODUR_HE_65
+// .txt) + Alt-Site-XML, quellenbelegt. NORMWERTE PROVISORISCH (aus TDS/CT-Klasse
+// abgeleitet) bis der Technik-Termin sie über die PDB final liefert (#368).
+// ===========================================================================
+const HE65_BESONDERHEITEN = [
+  "Hochverschleißfest auch bei schwerster Beanspruchung",
+  "Hohe Oberflächendichtigkeit",
+  "Beständig gegen Benzin, Mineralöl, Lösemittel",
+  "Hubladerfest",
+  "Wasserfest, nassraumtauglich",
+  "Rutschfest, gleitsicher",
+  "Frostbeständig",
+  "Chloridfrei",
+];
+const HE65_EINSATZ = [
+  "Fabrikhallen",
+  "Werkstätten",
+  "Hochregallager",
+  "Industrieflächen mit stärkster Beanspruchung",
+];
+const HE65_VERWANDTE = ["korodur-hb-5", "korocure", "koromineral-cure", "korotex", "koromineral-li", "korodur-nanofinish"];
+// 2 Verarbeitungs-Modi (frisch auf frisch / auf erhärtetem Tragbeton), aus TDS.
+const HE65_VERARBEITUNG_MODI = [
+  {
+    titel: "Frisch auf frisch",
+    schritte: [
+      "Untergrund: Tragbeton mind. C 25/30 (DIN EN 206, kein Luftporenbeton), höhengerecht nach DIN 18202. Zwischen-Nachbehandlung des Tragbetons mit KOROCURE. Frischen, begehbaren Tragbeton mit Tellerglättmaschine abreiben.",
+      "Verarbeitung: HE 65 mit vorgegebener Wassermenge ca. 3 Min. (Zwangsmischer) mischen, auf die abgetellerte Fläche aufbringen, über Lehren abziehen, porenschließend abreiben und je nach Oberfläche glätten (Flügelglättmaschine).",
+    ],
+  },
+  {
+    titel: "Auf erhärtetem Tragbeton",
+    schritte: [
+      "Untergrund: Erhärteter Tragbeton (C 25/30, Oberflächenzugfestigkeit ≥ 1,5 N/mm²) fräsen/kugelstrahlen — rissefrei, rau, offenporig (DIN 18365/18560). Einen Tag vorher vornässen. Haftbrücke KORODUR HB 5 auftragen.",
+      "Verarbeitung: Verlegung analog „frisch auf frisch“ in i. M. 15 mm Schichtdicke (siehe Datenblatt KORODUR-KOROTAN).",
+    ],
+  },
+];
+const HE65_META = (lieferform: string) => [
+  { titel: "Nachbehandlung", text: "Vor zu rascher Austrocknung schützen (DIN EN 13670 / DIN 1045-3). Empfehlung: KOROMINERAL CURE oder KOROTEX." },
+  { titel: "Fugen", text: "Fugenraster vom Planer. Alle Fugen des Tragbetons in der Hartstoffschicht übernehmen; von aufgehenden Bauteilen trennen." },
+  { titel: "Lieferform / Lagerung", text: lieferform },
+];
+// Schichtdicke-Kennwerte aus CT-Klasse ableiten (member-korrekt, norm provisorisch).
+const he65Technik = (klasse: string, c: string, f: string, aWert: string) => [
+  { label: "Klassifizierung", wert: klasse, norm: "DIN EN 13813" },
+  { label: "Druckfestigkeit", wert: `≥ ${c} N/mm²`, norm: "DIN EN 13892-2" },
+  { label: "Biegezugfestigkeit", wert: `≥ ${f} N/mm²`, norm: "DIN EN 13892-2" },
+  { label: "Verschleißwiderstand (Böhme)", wert: aWert, norm: "DIN EN 13892-3" },
+  { label: "Körnung", wert: "0–5 mm" },
+  { label: "Farbe", wert: "zementgrau" },
+];
+const HE65_LIEFER_25 = "25-kg-Papierspezialverpackung, lose als Silo- und Big-Bag-Ware. Trocken lagern, Haltbarkeit ca. 12 Monate.";
+// HE 65 Plus: kunststoffmodifiziert, ohne Haftbrücke, frost-/tausalzbeständig, WHG.
+const HE65_PLUS_BESONDERHEITEN = [
+  "Ohne zusätzliche Haftbrücke verarbeitbar",
+  "Polymermodifiziert & faserverstärkt",
+  "Frost- und tausalzbeständig",
+  "WHG-tauglich",
+  "Hochverschleißfest auch bei schwerster Beanspruchung",
+  "Hohe Oberflächendichtigkeit",
+  "Beständig gegen Benzin, Mineralöl, Lösemittel",
+  "Chloridfrei",
+];
+const HE65_PLUS_EINSATZ = ["Parkhäuser", "Industriehallen", "Montagehallen", "Flugzeughallen", "Werkstätten"];
+const HE65_PLUS_VERWANDTE = ["korocure", "koromineral-cure", "korotex", "koromineral-li", "korodur-nanofinish"];
+const HE65_PLUS_MODI = [
+  {
+    titel: "Auf erhärtetem Tragbeton (ohne Haftbrücke)",
+    schritte: [
+      "Untergrund: Erhärteter Tragbeton (C 25/30, Oberflächenzugfestigkeit ≥ 1,5 N/mm²) fräsen/kugelstrahlen — rissefrei, rau, offenporig (DIN 18365/18560). Einen Tag vorher vornässen. HE 65 Plus wasserverdünnt in schlämmfähiger Konsistenz als Haftgrund einbürsten.",
+      "Verarbeitung: HE 65 Plus ca. 3 Min. mischen, „frisch auf frisch“ auf den vorgeschlämmten Untergrund über Lehren abziehen, porenschließend abreiben und je nach Oberfläche glätten.",
+    ],
+  },
+];
+
 export const produkte: Produkt[] = [
   // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
@@ -212,38 +292,28 @@ export const produkte: Produkt[] = [
     systemBegleitprodukte: ["korodur-hb-5-rapid"],
   },
   {
+    // HE 65 Standard = Mutter/Repräsentant der variantenGruppe (#372).
     id: "neodur-he-65",
     bereich: "industrieboden",
     produktgruppe: "hartstoffestriche",
-    varianten: [
-      { name: "NEODUR HE 65 SVS 3", qualitaetsklasse: "CT-C70-F9-A3" },
-      { name: "NEODUR HE 65 SVS 1,5", qualitaetsklasse: "CT-C70-F9-A1,5", hinweis: "Hartstoffgruppe KS" },
-      { name: "NEODUR HE 65 SVS 1,5 extra", qualitaetsklasse: "CT-C70-F9-A1,5" },
-      { name: "NEODUR HE 65 metallisch", qualitaetsklasse: "CT-C80-F11-A3", hinweis: "Hartstoffgruppe M" },
-    ],
+    variantenGruppe: "neodur-he-65",
+    sku: "1220024S25KG",
+    basisHartstoff: "KORODUR VS 0/5",
+    variantenSchwerpunkt: "Standard, höchste Belastung",
     name: "NEODUR HE 65",
     kategorie: "estrich",
     kurzbeschreibung: "Hochbelastbarer Hartstoffestrich",
+    beschreibung:
+      "NEODUR HE 65 ist ein gebrauchsfertiger, zementgebundener Hartstoffestrich auf Basis von KORODUR VS 0/5. Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7, auch farbig lieferbar. Für hochbeanspruchbare Industrieböden mit stärkster Beanspruchung.",
     schichtdicke: "A: 15/10/8 mm · KS: 6/5/4 mm",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560-7",
-      "DIN 1100",
-    ],
-    technischeDaten: [
-      { label: "Druckfestigkeit", wert: "≥ 70 N/mm²" },
-      { label: "Biegezugfestigkeit", wert: "≥ 9 N/mm²" },
-      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)" },
-      { label: "Verarbeitung", wert: "Silosystem / Pumptechnik" },
-      { label: "Schichtdicke", wert: "DIN 18560-7: A 15/10/8 mm · KS 6/5/4 mm" },
-    ],
-    besonderheiten: [
-      "Höchste Verschleißfestigkeit",
-      "Mit Silosystem verarbeitbar",
-      "Wirtschaftlich auf Großflächen",
-      "Kraftschlüssiger Verbund",
-    ],
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he65Technik("CT-C70-F9-A6", "70", "9", "A6 (≤ 6 cm³/50 cm²)"),
+    besonderheiten: HE65_BESONDERHEITEN,
+    einsatzbereiche: HE65_EINSATZ,
+    verarbeitungModi: HE65_VERARBEITUNG_MODI,
+    verarbeitungMeta: HE65_META(HE65_LIEFER_25),
+    verwandteProdukte: HE65_VERWANDTE,
     tdsUrl: "/downloads/tds/NEODUR_HE_65_de.pdf",
     eignungen: ["grossflaechige-sanierung", "schwerlast", "rollende-lasten"],
     bild: "/images/produkte/neodur-he-65.webp",
@@ -261,41 +331,28 @@ export const produkte: Produkt[] = [
     aussenbereich: true,
     // #306/#308: zusätzlich im Infrastruktur-Bereich (Sanierung).
     produktgruppe: "hartstoffestriche",
-    varianten: [
-      { name: "NEODUR HE 65 plus SVS 3", qualitaetsklasse: "CT-C70-F9-A3" },
-    ],
+    variantenGruppe: "neodur-he-65",
+    sku: "1220051S25KG",
+    basisHartstoff: "kunststoffmodifiziert",
+    variantenSchwerpunkt: "Ohne Haftbrücke, frost-/tausalzbeständig, WHG",
     name: "NEODUR HE 65 Plus",
     kategorie: "estrich",
-    kurzbeschreibung: "Hochbelastbarer Hartstoffestrich",
+    kurzbeschreibung: "Hartstoffestrich Plus, ohne Haftbrücke",
+    beschreibung:
+      "NEODUR HE 65 Plus ist ein gebrauchsfertiger, zementgebundener, kunststoffmodifizierter Hartstoffestrich. Einschichtig als Verbundestrich auf erhärtetem Tragbeton (15–30 mm) ohne zusätzliche Haftbrücke. Frost- und tausalzbeständig, WHG-tauglich — auch für Außenbereiche.",
     schichtdicke: "15–30 mm",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560-7",
-      "DIN CEN/TS 12390-9",
-      "DAfStB-Richtlinie",
-    ],
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
     technischeDaten: [
-      { label: "Druckfestigkeit", wert: "≥ 70 N/mm²" },
-      { label: "Biegezugfestigkeit", wert: "≥ 9 N/mm²" },
-      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)" },
+      ...he65Technik("CT-C70-F9-A6", "70", "9", "A6 (≤ 6 cm³/50 cm²)"),
       { label: "Frost-/Tausalzbeständig", wert: "Ja" },
       { label: "Haftbrücke erforderlich", wert: "Nein" },
     ],
-    besonderheiten: [
-      "Ohne Haftbrücke verarbeitbar",
-      "Frost- & tausalzbeständig",
-      "WHG-tauglich",
-      "Polymermodifiziert & faserverstärkt",
-    ],
-    verarbeitung: {
-      untergrundvorbereitung: "Tragfähiger Betonuntergrund, fräsen oder kugelstrahlen. Keine Haftbrücke erforderlich.",
-      mischverhaeltnis: "25 kg Pulver auf ca. 3,0–3,5 l Wasser. Zwangsmischer erforderlich.",
-      schichtaufbau: "Einschichtig 15–30 mm direkt auf vorbereiteten Untergrund.",
-      verarbeitungszeit: "Ca. 30–40 Minuten bei 20 °C.",
-      aushaertezeit: "Begehbar nach ca. 6–8 h. Voll belastbar nach ca. 48 h.",
-      besonderheiten: "Frost- und tausalzbeständig. Auch für Außenbereiche geeignet. WHG-konform.",
-    },
+    besonderheiten: HE65_PLUS_BESONDERHEITEN,
+    einsatzbereiche: HE65_PLUS_EINSATZ,
+    verarbeitungModi: HE65_PLUS_MODI,
+    verarbeitungMeta: HE65_META(HE65_LIEFER_25),
+    verwandteProdukte: HE65_PLUS_VERWANDTE,
     tdsUrl: "/downloads/tds/NEODUR_HE_65_Plus_de.pdf",
     eignungen: ["grossflaechige-sanierung", "schwerlast", "rollende-lasten", "chemikalien", "tausalz", "aussenbereich"],
     zeitKategorie: "normal",
@@ -307,6 +364,128 @@ export const produkte: Produkt[] = [
     whgZulassung: true,
     belastbarNach: "7 d", // 7 Tage Wiederbelastbarkeit (Steffi 2026-06-09); kein Schnellprodukt
     belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie-treibstoff", "frost-tausalz", "staplerverkehr", "whg"],
+  },
+  {
+    // Variante (#372) — kein Finder-/Matrix-Feld: die Mutter repräsentiert die
+    // Gruppe (Entdoppelung folgt #370); im Katalog erscheint sie als eigene Kachel.
+    id: "neodur-he-65-svs-3",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffestriche",
+    variantenGruppe: "neodur-he-65",
+    sku: "1220053S25KG",
+    basisHartstoff: "KORODUR WH-Spezial",
+    variantenSchwerpunkt: "Höhere Verschleißklasse (A3)",
+    name: "NEODUR HE 65 SVS 3",
+    kategorie: "estrich",
+    kurzbeschreibung: "Hartstoffestrich, Verschleißklasse A3",
+    beschreibung:
+      "NEODUR HE 65 SVS 3 ist ein gebrauchsfertiger, zementgebundener Hartstoffestrich auf Basis von KORODUR WH-Spezial. Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7, höhere Verschleißklasse A3. Auch farbig lieferbar.",
+    schichtdicke: "A: 15/10/8 mm · KS: 6/5/4 mm",
+    qualitaetsklasse: "CT-C70-F9-A3",
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he65Technik("CT-C70-F9-A3", "70", "9", "A3 (≤ 3 cm³/50 cm²)"),
+    besonderheiten: HE65_BESONDERHEITEN,
+    einsatzbereiche: HE65_EINSATZ,
+    verarbeitungModi: HE65_VERARBEITUNG_MODI,
+    verarbeitungMeta: HE65_META(HE65_LIEFER_25),
+    verwandteProdukte: HE65_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_65_de.pdf",
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-he-65-svs-15",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffestriche",
+    variantenGruppe: "neodur-he-65",
+    sku: "1220060S30KG",
+    basisHartstoff: "KORODUR Diamantbeton",
+    variantenSchwerpunkt: "Höchster Abrieb (A1,5)",
+    name: "NEODUR HE 65 SVS 1,5",
+    kategorie: "estrich",
+    kurzbeschreibung: "Hartstoffestrich, Verschleißklasse A1,5",
+    beschreibung:
+      "NEODUR HE 65 SVS 1,5 ist ein gebrauchsfertiger, zementgebundener Hartstoffestrich auf Basis von KORODUR Diamantbeton. Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7, höchster Abriebwiderstand (Hartstoffgruppe KS). Auch farbig lieferbar.",
+    schichtdicke: "KS: 6/5/4 mm",
+    qualitaetsklasse: "CT-C70-F9-A1,5",
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he65Technik("CT-C70-F9-A1,5", "70", "9", "A1,5 (≤ 1,5 cm³/50 cm²)"),
+    besonderheiten: HE65_BESONDERHEITEN,
+    einsatzbereiche: HE65_EINSATZ,
+    verarbeitungModi: HE65_VERARBEITUNG_MODI,
+    verarbeitungMeta: HE65_META(HE65_LIEFER_25),
+    verwandteProdukte: HE65_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_65_de.pdf",
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-he-65-metallisch",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffestriche",
+    variantenGruppe: "neodur-he-65",
+    sku: "1220032S40KG",
+    basisHartstoff: "KORODUR WH-metallisch",
+    variantenSchwerpunkt: "Panzerestrich, Eisenräderverkehr",
+    name: "NEODUR HE 65 metallisch",
+    kategorie: "estrich",
+    kurzbeschreibung: "Metallischer Hartstoffestrich (Panzerestrich)",
+    beschreibung:
+      "NEODUR HE 65 metallisch ist ein zementgebundener Hartstoffestrich mit metallischem Hartstoffzuschlag (KORODUR WH-metallisch) gem. DIN 1100 (Gruppe M). Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7. Extrem widerstandsfähig gegen schlagende und stoßende Beanspruchung — zur Herstellung von Panzerestrichen.",
+    schichtdicke: "A: 15/10/8 mm",
+    qualitaetsklasse: "CT-C80-F11-A3",
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he65Technik("CT-C80-F11-A3", "80", "11", "A3 (≤ 3 cm³/50 cm²)"),
+    besonderheiten: [
+      "Metallischer Hartstoffzuschlag (DIN 1100 Gruppe M)",
+      "Extrem schlag- und stoßfest",
+      "Für Panzerestriche",
+      "Hochverschleißfest auch bei schwerster Beanspruchung",
+      "Hohe Oberflächendichtigkeit",
+      "Hubladerfest",
+      "Frostbeständig",
+      "Chloridfrei",
+    ],
+    einsatzbereiche: [
+      "Schwerer Eisenräderverkehr",
+      "Kettenfahrzeuge",
+      "Kollern",
+      "Hartes Absetzen scharfkantiger Werkstücke",
+      "Panzerestriche",
+    ],
+    verarbeitungModi: HE65_VERARBEITUNG_MODI,
+    verarbeitungMeta: HE65_META("40-kg-Gebinde, lose als Silo- und Big-Bag-Ware. Trocken lagern, Haltbarkeit ca. 12 Monate."),
+    verwandteProdukte: HE65_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_65_metallisch_de.pdf",
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-he-65-plus-svs-3",
+    bereich: "industrieboden",
+    aussenbereich: true,
+    produktgruppe: "hartstoffestriche",
+    variantenGruppe: "neodur-he-65",
+    sku: "1220056S25KG",
+    basisHartstoff: "KORODUR WH-Spezial",
+    variantenSchwerpunkt: "Plus + Verschleißklasse A3",
+    name: "NEODUR HE 65 Plus SVS 3",
+    kategorie: "estrich",
+    kurzbeschreibung: "Hartstoffestrich Plus, Verschleißklasse A3",
+    beschreibung:
+      "NEODUR HE 65 Plus SVS 3 ist ein gebrauchsfertiger, zementgebundener, kunststoffmodifizierter Hartstoffestrich auf Basis von KORODUR WH-Spezial. Einschichtig als Verbundestrich auf erhärtetem Tragbeton ohne zusätzliche Haftbrücke, höhere Verschleißklasse A3. Frost- und tausalzbeständig.",
+    schichtdicke: "15–30 mm",
+    qualitaetsklasse: "CT-C70-F9-A3",
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: [
+      ...he65Technik("CT-C70-F9-A3", "70", "9", "A3 (≤ 3 cm³/50 cm²)"),
+      { label: "Frost-/Tausalzbeständig", wert: "Ja" },
+      { label: "Haftbrücke erforderlich", wert: "Nein" },
+    ],
+    besonderheiten: HE65_PLUS_BESONDERHEITEN,
+    einsatzbereiche: HE65_PLUS_EINSATZ,
+    verarbeitungModi: HE65_PLUS_MODI,
+    verarbeitungMeta: HE65_META(HE65_LIEFER_25),
+    verwandteProdukte: HE65_PLUS_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_65_Plus_de.pdf",
+    zeitKategorie: "normal",
   },
   {
     id: "neodur-he-40",
