@@ -87,6 +87,22 @@ export default async function ProduktDetailPage({
     (produkt.einsatzbereiche?.length ?? 0) > 0 ||
     varianten.length > 0;
 
+  // V1-Varianten-PDP (#369): Geschwister derselben variantenGruppe (inkl. self
+  // für die hervorgehobene Zeile der Vergleichstabelle) + System-Begleitprodukte
+  // (Cross-Sell). Alles leer-safe — Produkte ohne variantenGruppe rendern nichts.
+  const geschwister = produkt.variantenGruppe
+    ? produkte.filter((p) => p.variantenGruppe === produkt.variantenGruppe)
+    : [];
+  const andereAusfuehrungen = geschwister.filter((p) => p.id !== produkt.id);
+  const grpHatKlasse = geschwister.some((p) => p.qualitaetsklasse);
+  const grpHatBasis = geschwister.some((p) => p.basisHartstoff);
+  const grpHatSku = geschwister.some((p) => p.sku);
+  const grpHatSchwerpunkt = geschwister.some((p) => p.variantenSchwerpunkt);
+  const verwandteBase = (produkt.verwandteProdukte ?? [])
+    .map((vid) => getProduktById(vid))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+  const verwandte = await Promise.all(verwandteBase.map((p) => localizeProdukt(p, lang)));
+
   return (
     <>
       <section style={{ padding: "0 32px" }}>
@@ -125,6 +141,15 @@ export default async function ProduktDetailPage({
                   {produkt.qualitaetsklasse}
                 </span>
               )}
+              {/* SKU-Badge (#369) — Artikelnummer der konkreten Ausführung */}
+              {produkt.sku && (
+                <span
+                  className="text-navy/70 text-[11px] uppercase tracking-wider px-3 py-1 rounded-[4px]"
+                  style={{ backgroundColor: "var(--icon-bg)", fontWeight: 700 }}
+                >
+                  {dict.produkte.sku_label} {produkt.sku}
+                </span>
+              )}
             </div>
             <h1
               className="mb-3"
@@ -135,6 +160,16 @@ export default async function ProduktDetailPage({
             <p className="text-navy opacity-70 mb-0" style={{ fontSize: 20, lineHeight: 1.5, maxWidth: 700 }}>
               {produkt.kurzbeschreibung}
             </p>
+            {/* Sprung zu den technischen Dokumenten (#369, Mockup: Link oben unter Art.-Nr.) */}
+            {sichtbareDokumente.length > 0 && (
+              <a
+                href="#dokumente"
+                className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] no-underline hover:underline mt-4"
+                style={{ fontWeight: 700 }}
+              >
+                {dict.produkte.technische_dokumente} →
+              </a>
+            )}
             {produkt.beschreibung && (
               <p className="text-navy/70 mt-4 mb-0" style={{ fontSize: 16, lineHeight: 1.7, maxWidth: 700 }}>
                 {produkt.beschreibung}
@@ -301,8 +336,13 @@ export default async function ProduktDetailPage({
                     style={i < produkt.technischeDaten.length - 1 ? { borderBottom: "1px solid var(--icon-bg)" } : {}}
                   >
                     <span className="text-navy opacity-60 text-[14px]">{td.label}</span>
-                    <span className="text-navy text-[14px] text-right" style={{ fontWeight: 700 }}>
-                      {td.wert}
+                    <span className="flex flex-col items-end text-right">
+                      <span className="text-navy text-[14px]" style={{ fontWeight: 700 }}>
+                        {td.wert}
+                      </span>
+                      {td.norm && (
+                        <span className="text-navy/45 text-[11px] uppercase tracking-wide">{td.norm}</span>
+                      )}
                     </span>
                   </div>
                 ))}
@@ -326,36 +366,139 @@ export default async function ProduktDetailPage({
       </section>
 
       {/* Verarbeitungshinweise */}
-      {produkt.verarbeitung && (
+      {(produkt.verarbeitungModi?.length || produkt.verarbeitung || produkt.verarbeitungMeta?.length) && (
         <section style={{ padding: "64px 32px 72px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <h2 className="mb-6" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
               {dict.produkte.verarbeitung_title}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { label: dict.produkte.untergrundvorbereitung, value: produkt.verarbeitung.untergrundvorbereitung },
-                { label: dict.produkte.mischverhaeltnis, value: produkt.verarbeitung.mischverhaeltnis },
-                { label: dict.produkte.schichtaufbau, value: produkt.verarbeitung.schichtaufbau },
-                { label: dict.produkte.verarbeitungszeit, value: produkt.verarbeitung.verarbeitungszeit },
-                { label: dict.produkte.aushaertezeit, value: produkt.verarbeitung.aushaertezeit },
-                { label: dict.produkte.besonderheiten_verarbeitung, value: produkt.verarbeitung.besonderheiten },
-              ]
-                .filter(({ value }) => value)
-                .map(({ label, value }) => (
-                  <div key={label} className="p-5 bg-icon-bg" style={{ borderRadius: 14 }}>
-                    <div className="text-sm text-navy/72 mb-1" style={{ fontWeight: 700 }}>{label}</div>
-                    <div className="text-navy">{value}</div>
+
+            {produkt.verarbeitungModi && produkt.verarbeitungModi.length > 0 ? (
+              /* Varianten-PDP (#369): mehrere Verarbeitungs-Modi mit nummerierten Schritten */
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {produkt.verarbeitungModi.map((modus, mi) => (
+                  <div key={mi} className="p-6 bg-icon-bg" style={{ borderRadius: 14 }}>
+                    <h3 className="text-navy text-[17px] mb-4" style={{ fontWeight: 900 }}>{modus.titel}</h3>
+                    <ol className="flex flex-col gap-3 m-0 p-0" style={{ listStyle: "none" }}>
+                      {modus.schritte.map((s, si) => (
+                        <li key={si} className="flex items-start gap-3 text-navy text-[14px] leading-[1.6]">
+                          <span
+                            className="shrink-0 inline-flex items-center justify-center text-white text-[12px] rounded-full"
+                            style={{ backgroundColor: "var(--cyan)", width: 22, height: 22, fontWeight: 700 }}
+                          >
+                            {si + 1}
+                          </span>
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ol>
                   </div>
                 ))}
+              </div>
+            ) : produkt.verarbeitung ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { label: dict.produkte.untergrundvorbereitung, value: produkt.verarbeitung.untergrundvorbereitung },
+                  { label: dict.produkte.mischverhaeltnis, value: produkt.verarbeitung.mischverhaeltnis },
+                  { label: dict.produkte.schichtaufbau, value: produkt.verarbeitung.schichtaufbau },
+                  { label: dict.produkte.verarbeitungszeit, value: produkt.verarbeitung.verarbeitungszeit },
+                  { label: dict.produkte.aushaertezeit, value: produkt.verarbeitung.aushaertezeit },
+                  { label: dict.produkte.besonderheiten_verarbeitung, value: produkt.verarbeitung.besonderheiten },
+                ]
+                  .filter(({ value }) => value)
+                  .map(({ label, value }) => (
+                    <div key={label} className="p-5 bg-icon-bg" style={{ borderRadius: 14 }}>
+                      <div className="text-sm text-navy/72 mb-1" style={{ fontWeight: 700 }}>{label}</div>
+                      <div className="text-navy">{value}</div>
+                    </div>
+                  ))}
+              </div>
+            ) : null}
+
+            {/* Meta-Karten: Nachbehandlung / Fugen / Lieferform (#369) */}
+            {produkt.verarbeitungMeta && produkt.verarbeitungMeta.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                {produkt.verarbeitungMeta.map((m, mi) => (
+                  <div key={mi} className="p-5 bg-icon-bg" style={{ borderRadius: 14 }}>
+                    <div className="text-sm text-navy/72 mb-1" style={{ fontWeight: 700 }}>{m.titel}</div>
+                    <div className="text-navy text-[14px] leading-[1.6]">{m.text}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Ausführungen im Vergleich (#369) — alle Produkte der variantenGruppe,
+          aktuelle Zeile hervorgehoben; nach der Verarbeitung (Mockup-Reihenfolge) */}
+      {geschwister.length > 1 && (
+        <section style={{ padding: "0 32px 8px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-6" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {dict.produkte.ausfuehrungen_title}
+            </h2>
+            <div
+              className="overflow-x-auto bg-white"
+              style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.06)" }}
+              tabIndex={0}
+              role="region"
+              aria-label={dict.produkte.ausfuehrungen_title}
+            >
+              <table className="w-full border-collapse" style={{ minWidth: 560 }}>
+                <caption className="sr-only">{dict.produkte.ausfuehrungen_title}</caption>
+                <thead>
+                  <tr style={{ borderBottom: "2px solid var(--icon-bg)" }}>
+                    <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>{dict.produkte.variante_col_name}</th>
+                    {grpHatKlasse && <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>{dict.produkte.variante_col_klasse}</th>}
+                    {grpHatBasis && <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>{dict.produkte.ausfuehrung_col_basis}</th>}
+                    {grpHatSku && <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>{dict.produkte.ausfuehrung_col_sku}</th>}
+                    {grpHatSchwerpunkt && <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>{dict.produkte.ausfuehrung_col_schwerpunkt}</th>}
+                    <th scope="col" className="px-6 py-3" />
+                  </tr>
+                </thead>
+                <tbody>
+                  {geschwister.map((g, i) => {
+                    const aktiv = g.id === produkt.id;
+                    return (
+                      <tr
+                        key={g.id}
+                        style={{
+                          borderBottom: i < geschwister.length - 1 ? "1px solid var(--icon-bg)" : undefined,
+                          backgroundColor: aktiv ? "var(--soft)" : undefined,
+                        }}
+                      >
+                        <th scope="row" className="text-left text-navy text-[14px] px-6 py-3.5" style={{ fontWeight: 700 }}>
+                          {g.name}
+                          {aktiv && <span className="text-cyan-text text-[12px] ml-2" style={{ fontWeight: 700 }}>● {dict.produkte.ausfuehrung_aktuell}</span>}
+                        </th>
+                        {grpHatKlasse && <td className="text-navy/80 text-[13px] px-6 py-3.5" style={{ fontVariantNumeric: "tabular-nums" }}>{g.qualitaetsklasse ?? "–"}</td>}
+                        {grpHatBasis && <td className="text-navy/80 text-[13px] px-6 py-3.5">{g.basisHartstoff ?? "–"}</td>}
+                        {grpHatSku && <td className="text-navy/80 text-[13px] px-6 py-3.5" style={{ fontVariantNumeric: "tabular-nums" }}>{g.sku ?? "–"}</td>}
+                        {grpHatSchwerpunkt && <td className="text-navy/80 text-[13px] px-6 py-3.5">{g.variantenSchwerpunkt ?? "–"}</td>}
+                        <td className="px-6 py-3.5 text-right whitespace-nowrap">
+                          {aktiv ? (
+                            <span className="text-navy/40 text-[13px]">{dict.produkte.ausfuehrung_aktuell}</span>
+                          ) : (
+                            <Link href={`/${lang}/produkte/${g.id}`} className="text-cyan-text text-[13px] no-underline hover:underline" style={{ fontWeight: 700 }}>
+                              {dict.produkte.ausfuehrung_oeffnen} →
+                            </Link>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
       )}
 
       {/* Downloads & Dokumente: TDS/SDS/DoP/Anwendung/Pflege je Produkt + Ausschreibungstext
-          (Launch-Plan M3 — "alle wichtigen Dokumente auf der Produktseite"; LV-Deeplink #136) */}
-      <section style={{ padding: "56px 32px 64px" }}>
+          (Launch-Plan M3 — "alle wichtigen Dokumente auf der Produktseite"; LV-Deeplink #136).
+          id="dokumente": Sprungziel des Header-Links (#369). */}
+      <section id="dokumente" style={{ padding: "56px 32px 64px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h2
             className="mb-6"
@@ -403,6 +546,35 @@ export default async function ProduktDetailPage({
         </div>
       </section>
 
+      {/* Systemkomponenten / Cross-Sell (#369) — verwandteProdukte als Karten, leer-safe */}
+      {verwandte.length > 0 && (
+        <section style={{ padding: "0 32px 64px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-6" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {dict.produkte.systemkomponenten_title}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {verwandte.map((vp) => (
+                <Link
+                  key={vp.id}
+                  href={`/${lang}/produkte/${vp.id}`}
+                  className="no-underline group block bg-white"
+                  style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.06)", padding: "20px 22px" }}
+                >
+                  {vp.qualitaetsklasse && (
+                    <span className="inline-block text-navy/70 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded mb-2" style={{ backgroundColor: "var(--bullet-bg)", fontWeight: 700 }}>
+                      {vp.qualitaetsklasse}
+                    </span>
+                  )}
+                  <div className="text-navy text-[16px] group-hover:text-cyan-text transition-colors" style={{ fontWeight: 900 }}>{vp.name}</div>
+                  <div className="text-navy/60 text-[13px] leading-[1.5] mt-1">{vp.kurzbeschreibung}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Related References */}
       {relatedRefs.length > 0 && (
         <section style={{ padding: "72px 32px 88px" }}>
@@ -429,6 +601,27 @@ export default async function ProduktDetailPage({
                 </Link>
               </div>
             )}
+          </div>
+        </section>
+      )}
+
+      {/* Weitere Ausführungen (#369) — dezente Geschwister-Links, ganz unten (Mockup) */}
+      {andereAusfuehrungen.length > 0 && (
+        <section style={{ padding: "0 32px 56px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-4" style={{ fontSize: 16, fontWeight: 900 }}>{dict.produkte.weitere_ausfuehrungen_title}</h2>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {andereAusfuehrungen.map((g) => (
+                <Link
+                  key={g.id}
+                  href={`/${lang}/produkte/${g.id}`}
+                  className="text-cyan-text text-[14px] no-underline hover:underline"
+                  style={{ fontWeight: 600 }}
+                >
+                  {g.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       )}

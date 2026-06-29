@@ -181,7 +181,19 @@
     "einsatzbereiche_title": "Obszary zastosowania",
     "variante_col_name": "Wariant",
     "variante_col_klasse": "Klasa jakości",
-    "variante_col_hinweis": "Uwaga"
+    "variante_col_hinweis": "Uwaga",
+    "sku_label": "Nr art.",
+    "technische_dokumente": "Dokumenty techniczne",
+    "ausfuehrungen_title": "Porównanie wariantów",
+    "ausfuehrung_col_basis": "Kruszywo bazowe",
+    "ausfuehrung_col_sku": "Nr artykułu",
+    "ausfuehrung_col_schwerpunkt": "Zastosowanie",
+    "ausfuehrung_aktuell": "Tutaj jesteś",
+    "ausfuehrung_oeffnen": "otwórz",
+    "weitere_ausfuehrungen_title": "Inne warianty",
+    "dok_farbkarte": "Wzornik kolorów",
+    "dok_epd": "EPD",
+    "systemkomponenten_title": "Pasujące komponenty systemu"
   },
   "sanierung": {
     "title": "Wyszukiwarka produktów",

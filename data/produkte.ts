@@ -67,6 +67,12 @@ export interface Produkt {
    *  Vererbung — speist nur Vergleichstabelle + dezente Geschwister-Links (#369)
    *  und die Lösungsfinder-/Matrix-Entdoppelung (#370). Nicht übersetzt. */
   variantenGruppe?: string;
+  /** Basis-Hartstoff/Zuschlag der Ausführung (z. B. "KORODUR VS 0/5",
+   *  "WH-metallisch"). Spalte der Ausführungs-Vergleichstabelle (#369). */
+  basisHartstoff?: string;
+  /** Kurzer Schwerpunkt der Ausführung für die Vergleichstabelle (#369),
+   *  z. B. "Standard, höchste Belastung" / "Panzerestrich, Eisenräderverkehr". */
+  variantenSchwerpunkt?: string;
   /** Cross-Sell/System-Begleitprodukte (Produkt-IDs, z. B. "korodur-hb-5",
    *  "koromineral-cure"). NICHT die Geschwister derselben Familie — die laufen
    *  über `variantenGruppe`. Wird als Cross-Sell-Karten gerendert (#369). */
@@ -89,6 +95,9 @@ export interface Produkt {
    *  Tragbeton") für die Varianten-PDP (#368/#369). Ergänzt das einfache
    *  `verarbeitung`-Objekt; für Einfach-Produkte leer lassen. Quelle: TDS. */
   verarbeitungModi?: { titel: string; schritte: string[] }[];
+  /** Meta-Karten neben den Verarbeitungs-Modi (Nachbehandlung, Fugen,
+   *  Lieferform/Lagerung) für die Varianten-PDP (#369). Quelle: TDS. Leer-safe. */
+  verarbeitungMeta?: { titel: string; text: string }[];
   tdsUrl?: string;
 
   // === Lösungsfinder (2026-04-22) ===

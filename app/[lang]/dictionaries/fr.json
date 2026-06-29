@@ -181,7 +181,19 @@
     "einsatzbereiche_title": "Domaines d'application",
     "variante_col_name": "Variante",
     "variante_col_klasse": "Classe de qualité",
-    "variante_col_hinweis": "Remarque"
+    "variante_col_hinweis": "Remarque",
+    "sku_label": "Réf.",
+    "technische_dokumente": "Documents techniques",
+    "ausfuehrungen_title": "Comparatif des variantes",
+    "ausfuehrung_col_basis": "Granulat de base",
+    "ausfuehrung_col_sku": "Réf. article",
+    "ausfuehrung_col_schwerpunkt": "Usage principal",
+    "ausfuehrung_aktuell": "Vous êtes ici",
+    "ausfuehrung_oeffnen": "ouvrir",
+    "weitere_ausfuehrungen_title": "Autres variantes",
+    "dok_farbkarte": "Nuancier",
+    "dok_epd": "EPD",
+    "systemkomponenten_title": "Composants système associés"
   },
   "sanierung": {
     "title": "Trouveur de produits",
