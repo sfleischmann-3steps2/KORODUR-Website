@@ -181,7 +181,19 @@
     "einsatzbereiche_title": "Campos de aplicación",
     "variante_col_name": "Variante",
     "variante_col_klasse": "Clase de calidad",
-    "variante_col_hinweis": "Nota"
+    "variante_col_hinweis": "Nota",
+    "sku_label": "Ref.",
+    "technische_dokumente": "Documentos técnicos",
+    "ausfuehrungen_title": "Comparativa de variantes",
+    "ausfuehrung_col_basis": "Árido base",
+    "ausfuehrung_col_sku": "N.º de artículo",
+    "ausfuehrung_col_schwerpunkt": "Uso principal",
+    "ausfuehrung_aktuell": "Está aquí",
+    "ausfuehrung_oeffnen": "abrir",
+    "weitere_ausfuehrungen_title": "Otras variantes",
+    "dok_farbkarte": "Carta de colores",
+    "dok_epd": "EPD",
+    "systemkomponenten_title": "Componentes del sistema"
   },
   "sanierung": {
     "title": "Buscador de productos",

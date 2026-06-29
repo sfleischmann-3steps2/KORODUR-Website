@@ -181,7 +181,19 @@
     "einsatzbereiche_title": "Einsatzbereiche",
     "variante_col_name": "Variante",
     "variante_col_klasse": "Qualitätsklasse",
-    "variante_col_hinweis": "Hinweis"
+    "variante_col_hinweis": "Hinweis",
+    "sku_label": "Art.-Nr.",
+    "technische_dokumente": "Technische Dokumente",
+    "ausfuehrungen_title": "Ausführungen im Vergleich",
+    "ausfuehrung_col_basis": "Basis-Hartstoff",
+    "ausfuehrung_col_sku": "Artikel-Nr.",
+    "ausfuehrung_col_schwerpunkt": "Schwerpunkt",
+    "ausfuehrung_aktuell": "Sie sind hier",
+    "ausfuehrung_oeffnen": "öffnen",
+    "weitere_ausfuehrungen_title": "Weitere Ausführungen",
+    "dok_farbkarte": "Farbkarte",
+    "dok_epd": "EPD",
+    "systemkomponenten_title": "Passende Systemkomponenten"
   },
   "sanierung": {
     "title": "Produktfinder",

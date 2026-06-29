@@ -181,7 +181,19 @@
     "einsatzbereiche_title": "Areas of application",
     "variante_col_name": "Variant",
     "variante_col_klasse": "Quality class",
-    "variante_col_hinweis": "Note"
+    "variante_col_hinweis": "Note",
+    "sku_label": "Art. no.",
+    "technische_dokumente": "Technical documents",
+    "ausfuehrungen_title": "Variants compared",
+    "ausfuehrung_col_basis": "Base aggregate",
+    "ausfuehrung_col_sku": "Article no.",
+    "ausfuehrung_col_schwerpunkt": "Focus",
+    "ausfuehrung_aktuell": "You are here",
+    "ausfuehrung_oeffnen": "open",
+    "weitere_ausfuehrungen_title": "Other variants",
+    "dok_farbkarte": "Colour chart",
+    "dok_epd": "EPD",
+    "systemkomponenten_title": "Matching system components"
   },
   "sanierung": {
     "title": "Product Finder",
