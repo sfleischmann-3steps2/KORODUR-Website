@@ -3,7 +3,9 @@
 //   + data/dokument-funde-2026-06.json (verifizierte Funde WP-Export 2026-06-11, #121).
 // Regenerieren: node scripts/generate-produkt-dokumente.mjs
 
-export type DokumentTyp = "tds" | "sds" | "dop" | "anwendung" | "reinigung" | "service";
+// `farbkarte` (#368): eigener Dokumenttyp für Farbkarten (bisher als "tds"
+// fehl-typisiert). `epd` reserviert (Render sobald Datei vorliegt, V1-Slot).
+export type DokumentTyp = "tds" | "sds" | "dop" | "epd" | "anwendung" | "reinigung" | "farbkarte" | "service";
 
 export interface ProduktDokument {
   typ: DokumentTyp;

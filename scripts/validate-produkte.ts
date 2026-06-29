@@ -130,6 +130,26 @@ for (const p of produkte) {
   }
 }
 
+// V1-Varianten-Datenmodell (#368): Gruppen-/Cross-Sell-Referenzen müssen
+// auf existierende Produkte zeigen. `variantenGruppe` = id der Mutter/des
+// Repräsentanten (muss als Produkt existieren). `verwandteProdukte` = IDs
+// echter Begleitprodukte. (Die „genau ein Repräsentant je Gruppe"-Prüfung
+// kommt mit der Lösungsfinder-Entdoppelung #370.)
+for (const p of produkte) {
+  if (p.variantenGruppe && !alleIds.has(p.variantenGruppe)) {
+    issues.push({
+      id: p.id,
+      level: "error",
+      msg: `variantenGruppe '${p.variantenGruppe}' verweist auf kein existierendes Produkt (Repräsentant fehlt)`,
+    });
+  }
+  for (const vp of p.verwandteProdukte ?? []) {
+    if (!alleIds.has(vp)) {
+      issues.push({ id: p.id, level: "error", msg: `verwandtesProdukt '${vp}' existiert nicht` });
+    }
+  }
+}
+
 const proBereich = new Map<string, number>();
 for (const p of produkte) {
   proBereich.set(p.bereich, (proBereich.get(p.bereich) ?? 0) + 1);

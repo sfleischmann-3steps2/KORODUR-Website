@@ -50,14 +50,34 @@ export interface Produkt {
   /** Längerer Beschreibungstext (2-4 Sätze) für die Produktdetailseite.
    *  SEO-relevant: technischer Inhalt als HTML statt nur im TDS-PDF. */
   beschreibung?: string;
-  /** Lieferbare Qualitäten/Varianten (z. B. SVS 3, SVS 1,5, metallisch).
-   *  Entscheidung 2026-06-11: Varianten am Stammprodukt statt eigener
-   *  Produktseiten — siehe zuordnung-industrieboden.md. */
+  /** Leichtes Inline-Varianten-Array am Stammprodukt (z. B. SVS 3, SVS 1,5,
+   *  metallisch). Für Einfach-Produkte, die KEINE eigenen Varianten-PDPs
+   *  bekommen. ACHTUNG Reversal 2026-06-30 (#367): Familien wie NEODUR HE 65
+   *  werden in V1 NICHT mehr hier gepflegt, sondern als je eigenständige,
+   *  gleichrangige Produkte mit gemeinsamem `variantenGruppe` (eigene PDP je
+   *  Ausführung, keine Basis-PDP). Dieses Feld bleibt für unmigrierte/einfache
+   *  Fälle erhalten. */
   varianten?: { name: string; qualitaetsklasse?: string; hinweis?: string }[];
+  /** Artikelnummer/SKU der konkreten Ausführung (Alt-Site-XML). Nicht
+   *  übersetzt. V1-Varianten-PDP (#368). */
+  sku?: string;
+  /** Gruppenschlüssel für eigenständige Varianten-PDPs einer Familie (#367/#368).
+   *  Konvention: = `id` der Standard-/Mutter-Ausführung (z. B. "neodur-he-65").
+   *  Geschwister = alle Produkte mit gleicher `variantenGruppe`. KEIN Hub, KEINE
+   *  Vererbung — speist nur Vergleichstabelle + dezente Geschwister-Links (#369)
+   *  und die Lösungsfinder-/Matrix-Entdoppelung (#370). Nicht übersetzt. */
+  variantenGruppe?: string;
+  /** Cross-Sell/System-Begleitprodukte (Produkt-IDs, z. B. "korodur-hb-5",
+   *  "koromineral-cure"). NICHT die Geschwister derselben Familie — die laufen
+   *  über `variantenGruppe`. Wird als Cross-Sell-Karten gerendert (#369). */
+  verwandteProdukte?: string[];
   schichtdicke?: string;
   qualitaetsklasse?: string;
   normen: string[];
-  technischeDaten: { label: string; wert: string }[];
+  /** `norm` optional je Kennwert-Zeile (Norm rechts neben dem Wert, #368/#369).
+   *  Abwärtskompatibel/leer-safe. Werte erarbeitet die Technik und liefert sie
+   *  über die PDB (Produktdatenbank/Notion-SoT) — bis dahin provisorisch. */
+  technischeDaten: { label: string; wert: string; norm?: string }[];
   besonderheiten: string[];
   /** Einsatzbereiche/Anwendungen als Bullet-Liste für die PDP ("wo wird das
    *  eingesetzt"). Kundentauglicher Klartext, NICHT die Lösungsfinder-Taxonomie.
@@ -65,6 +85,10 @@ export interface Produkt {
    *  Frank-prüfbar auf der Live-Seite. */
   einsatzbereiche?: string[];
   verarbeitung?: Verarbeitung;
+  /** Mehrere Verarbeitungs-Modi (z. B. A „frisch auf frisch" / B „auf erhärteten
+   *  Tragbeton") für die Varianten-PDP (#368/#369). Ergänzt das einfache
+   *  `verarbeitung`-Objekt; für Einfach-Produkte leer lassen. Quelle: TDS. */
+  verarbeitungModi?: { titel: string; schritte: string[] }[];
   tdsUrl?: string;
 
   // === Lösungsfinder (2026-04-22) ===

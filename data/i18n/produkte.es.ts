@@ -3,7 +3,7 @@ export const produkteES: Record<string, {
   kurzbeschreibung?: string;
   beschreibung?: string;
   besonderheiten?: string[];
-  technischeDaten?: { label: string; wert: string }[];
+  technischeDaten?: { label: string; wert: string; norm?: string }[];
   varianten?: { name: string; qualitaetsklasse?: string; hinweis?: string }[];
 }> = {
   "neodur-he-60-rapid": {
