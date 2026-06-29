@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>V1-PDP eigenständige Variante — NEODUR HE 65 metallisch (2026-06-29)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#002d59; --cyan:#009ee3; --cyan-text:#0077ab; --cyan-hover:#0090d0;
+    --icon-bg:#f5f5f6; --bullet-bg:#e8edf5; --light-gray:#ececed; --mid-gray:#d9dada;
+    --soft:#e6f6fd; --ink:#42566f; --ink2:#5a6b80;
+    --new:#e0b500; --have:#1f9d57;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:Gabarito, system-ui, sans-serif; color:var(--navy); background:#fff; line-height:1.5; }
+  a{ color:var(--cyan-text); }
+  .label{ background:#ffd84d; color:var(--navy); font-weight:900; font-size:13.5px; padding:10px 24px; position:sticky; top:0; z-index:50; display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .label .mini{ font-weight:700; font-size:12px; opacity:.8; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+
+  .divider{ background:var(--navy); color:#fff; padding:24px 28px; margin-top:48px; }
+  .divider .inner{ max-width:1180px; margin:0 auto; }
+  .divider h2{ margin:0 0 6px; font-size:22px; font-weight:900; color:#fff; }
+  .divider p{ margin:0; opacity:.85; font-size:13.5px; max-width:920px; line-height:1.55; }
+  .divider code{ background:rgba(255,255,255,.16); padding:2px 8px; border-radius:5px; font-size:13px; }
+  .divider .tag{ display:inline-block; background:var(--cyan); color:#fff; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.08em; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
+
+  .legend{ background:var(--icon-bg); border:1px solid var(--bullet-bg); border-radius:14px; padding:18px 20px; margin:22px 0 6px; }
+  .legend h3{ margin:0 0 12px; font-size:14px; font-weight:900; text-transform:uppercase; letter-spacing:.05em; color:var(--ink); }
+  .legend .row{ display:flex; flex-wrap:wrap; gap:16px; }
+  .legend .it{ display:flex; align-items:center; gap:9px; font-size:13px; color:var(--ink); }
+
+  /* Datenquellen-Pills */
+  .ann{ display:inline-block; font-size:10.5px; font-weight:900; text-transform:uppercase; letter-spacing:.05em; padding:3px 8px; border-radius:5px; vertical-align:middle; }
+  .ann.xml{ background:#eef2ff; color:#3730a3; border:1px solid #c7d2fe; }
+  .ann.tds{ background:#fef3c7; color:#92400e; border:1px solid #fde68a; }
+  .ann.repo{ background:#e7f7ee; color:#137a42; border:1px solid #a9e0c1; }
+  .ann.exp{ background:#fff1ea; color:#9a3412; border:1px dashed #f3c4a8; }
+
+  .screen{ border:1px solid var(--bullet-bg); border-radius:16px; overflow:hidden; margin:20px 0 8px; box-shadow:0 8px 30px rgba(0,45,89,.06); }
+  .bar{ background:#f3f5f8; border-bottom:1px solid var(--bullet-bg); padding:9px 16px; display:flex; align-items:center; gap:8px; }
+  .bar .dot{ width:11px; height:11px; border-radius:50%; background:var(--mid-gray); }
+  .bar .url{ flex:1; background:#fff; border:1px solid var(--bullet-bg); border-radius:7px; padding:6px 12px; font-size:12.5px; color:var(--ink2); margin-left:8px; }
+  .bar .url b{ color:var(--navy); }
+  .page{ padding:26px 30px 34px; }
+  @media(max-width:760px){ .page{ padding:20px 16px 26px; } .wrap{ padding:0 16px; } }
+
+  .crumb{ font-size:12px; color:var(--ink2); margin-bottom:16px; }
+  .crumb b{ color:var(--navy); }
+
+  .phead{ display:grid; grid-template-columns:1.15fr .85fr; gap:26px; align-items:start; }
+  @media(max-width:760px){ .phead{ grid-template-columns:1fr; } }
+  .badge{ display:inline-block; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; padding:5px 11px; border-radius:6px; background:var(--bullet-bg); color:var(--navy); }
+  .phead h1{ margin:12px 0 8px; font-size:34px; font-weight:900; line-height:1.08; }
+  @media(max-width:760px){ .phead h1{ font-size:27px; } }
+  .lead{ font-size:16px; color:var(--ink); margin:0 0 16px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:7px; margin:4px 0 0; }
+  .chip{ font-size:12px; font-weight:800; padding:5px 10px; border-radius:7px; background:var(--soft); color:var(--cyan-text); border:1px solid #bfe9fa; }
+  .chip.sku{ background:#fff; color:var(--navy); border:1px solid var(--bullet-bg); font-family:ui-monospace,monospace; font-size:11.5px; }
+
+  .beratertop{ display:flex; gap:12px; align-items:center; border:1px solid var(--bullet-bg); border-radius:12px; padding:11px 14px; margin-top:16px; background:#fbfdff; }
+  .beratertop .bimg{ width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,#cdd9e8,#aebfd4); flex-shrink:0; }
+  .beratertop .bt{ font-size:13.5px; font-weight:900; }
+  .beratertop .bd{ font-size:12px; color:var(--ink2); }
+  .beratertop .bbtn{ margin-left:auto; background:var(--cyan); color:#fff; font-weight:900; font-size:12.5px; padding:9px 16px; border-radius:8px; text-decoration:none; white-space:nowrap; min-height:38px; display:inline-flex; align-items:center; }
+
+  .heroimg{ border-radius:14px; background:linear-gradient(135deg,#9aa6b4,#5f6e80); display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; min-height:210px; position:relative; overflow:hidden; }
+  .heroimg .ph{ font-size:13px; font-weight:800; padding:0 16px; }
+  .heroimg .cap{ position:absolute; left:10px; bottom:10px; right:10px; background:rgba(0,45,89,.78); color:#fff; font-size:11.5px; font-weight:700; padding:7px 10px; border-radius:8px; text-align:left; }
+  .packshot{ margin-top:10px; border:1px solid var(--bullet-bg); border-radius:12px; padding:12px; display:flex; gap:12px; align-items:center; background:#fff; }
+  .packshot img{ width:70px; height:70px; object-fit:contain; }
+  .packshot .pt{ font-size:12px; color:var(--ink2); }
+  .packshot .pt b{ color:var(--navy); }
+
+  .sec{ margin-top:30px; }
+  .sec > h3{ font-size:13px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; color:var(--ink); margin:0 0 14px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .sec > h3 .line{ flex:1; height:1px; background:var(--bullet-bg); min-width:30px; }
+
+  .bullets{ margin:0; padding-left:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px 22px; }
+  @media(max-width:600px){ .bullets{ grid-template-columns:1fr; } }
+  .bullets li{ font-size:13.5px; color:var(--ink); padding-left:22px; position:relative; }
+  .bullets li::before{ content:"✓"; position:absolute; left:0; color:var(--cyan-text); font-weight:900; }
+
+  .data{ border:1px solid var(--bullet-bg); border-radius:12px; overflow:hidden; }
+  .data .d{ display:grid; grid-template-columns:1.3fr auto auto; gap:12px; padding:11px 14px; border-bottom:1px solid var(--bullet-bg); font-size:13px; align-items:center; }
+  .data .d:last-child{ border-bottom:none; }
+  .data .d .k{ color:var(--ink2); }
+  .data .d .v{ font-weight:800; }
+  .data .d .nrm{ font-size:11px; color:var(--cyan-text); font-weight:800; justify-self:end; white-space:nowrap; }
+
+  /* Verarbeitung */
+  .vmode{ border:1px solid var(--bullet-bg); border-radius:12px; padding:16px 18px; margin-bottom:12px; }
+  .vmode .mt{ font-size:13px; font-weight:900; color:var(--navy); margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+  .vmode .mt .pin{ font-size:10px; font-weight:900; background:var(--cyan); color:#fff; padding:3px 8px; border-radius:5px; text-transform:uppercase; }
+  .vmode ol{ margin:0; padding-left:18px; }
+  .vmode li{ font-size:13px; color:var(--ink); margin-bottom:6px; line-height:1.5; }
+  .vmode li b{ color:var(--navy); }
+  .vmeta{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  @media(max-width:700px){ .vmeta{ grid-template-columns:1fr; } }
+  .vmeta .vm{ background:var(--icon-bg); border-radius:10px; padding:11px 13px; }
+  .vmeta .vm .vmk{ font-size:11px; font-weight:900; color:var(--ink2); text-transform:uppercase; letter-spacing:.04em; }
+  .vmeta .vm .vmv{ font-size:13px; font-weight:700; margin-top:3px; }
+
+  .docs{ display:flex; flex-direction:column; gap:8px; }
+  .doc{ display:flex; align-items:center; gap:12px; border:1px solid var(--bullet-bg); border-radius:10px; padding:11px 14px; min-height:44px; }
+  .doc .typ{ font-size:10.5px; font-weight:900; text-transform:uppercase; letter-spacing:.04em; padding:4px 8px; border-radius:5px; background:var(--navy); color:#fff; min-width:48px; text-align:center; }
+  .doc .typ.sds{ background:#7a4ea8; } .doc .typ.dop{ background:#1f7a9d; } .doc .typ.farb{ background:#8a6d00; }
+  .doc .dt{ flex:1; font-size:13.5px; font-weight:700; }
+  .doc .meta{ font-size:11.5px; color:var(--ink2); }
+  .doc .lv{ font-size:11.5px; font-weight:800; color:var(--cyan-text); white-space:nowrap; }
+
+  .xsell{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  @media(max-width:600px){ .xsell{ grid-template-columns:1fr; } }
+  .xcard{ border:1px solid var(--bullet-bg); border-radius:12px; padding:13px 15px; }
+  .xcard .xt{ font-size:14px; font-weight:900; }
+  .xcard .xd{ font-size:12px; color:var(--ink2); margin-top:2px; }
+  .xcard .xg{ font-size:12px; font-weight:900; color:var(--cyan-text); margin-top:7px; }
+  .xcard .xg::after{ content:" →"; }
+
+  .refgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  @media(max-width:760px){ .refgrid{ grid-template-columns:1fr; } }
+  .ref{ border:1px solid var(--bullet-bg); border-radius:12px; overflow:hidden; }
+  .ref .rimg{ min-height:104px; background:linear-gradient(135deg,#d3deea,#bccadb); display:flex; align-items:center; justify-content:center; color:#4d647f; font-size:11px; font-weight:800; text-align:center; padding:8px; }
+  .ref .rb{ padding:11px 13px; }
+  .ref .rb .rt{ font-size:13.5px; font-weight:900; }
+  .ref .rb .rc{ font-size:11.5px; color:var(--ink2); }
+
+  .cta{ background:var(--navy); color:#fff; border-radius:14px; padding:22px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-top:18px; }
+  .cta .ct{ font-size:18px; font-weight:900; color:#fff; }
+  .cta .btn{ background:var(--cyan); color:#fff; font-weight:900; font-size:14px; padding:13px 26px; border-radius:8px; text-decoration:none; min-height:44px; display:inline-flex; align-items:center; }
+
+  .note{ font-size:12px; color:var(--ink2); background:#fbfcfe; border:1px dashed var(--mid-gray); border-radius:10px; padding:10px 13px; margin-top:10px; }
+  .note b{ color:var(--navy); }
+
+  .impl{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:820px){ .impl{ grid-template-columns:1fr; } }
+  .icard{ border:1px solid var(--bullet-bg); border-radius:14px; padding:16px 18px; background:#fff; }
+  .icard h4{ margin:0 0 8px; font-size:14.5px; font-weight:900; }
+  .icard ul{ margin:0; padding-left:17px; }
+  .icard li{ font-size:13px; color:var(--ink); margin-bottom:7px; line-height:1.5; }
+  .icard code{ background:var(--icon-bg); padding:1px 6px; border-radius:4px; font-size:12px; color:var(--navy); }
+  .footnote{ font-size:12px; color:var(--ink2); padding:24px 0 50px; max-width:920px; }
+</style>
+</head>
+<body>
+
+<div class="label">
+  <span>● MOCKUP V1 — eigenständige Varianten-PDP <span class="mini">NEODUR HE 65 metallisch · Stand 2026-06-29</span></span>
+  <span class="mini">V1: jede Variante eigene Seite (wie alte korodur.de) · Familien-Bündelung = V2 · DE · mobil-first · KORODUR-CD</span>
+</div>
+
+<div class="wrap">
+  <div class="legend">
+    <h3>Datenquellen — woher jeder Block gespeist wird</h3>
+    <div class="row">
+      <span class="it"><span class="ann xml">XML</span> Alt-Site-Export (extraktion-produkte.json)</span>
+      <span class="it"><span class="ann tds">TDS</span> Technisches Merkblatt (tds-quellen)</span>
+      <span class="it"><span class="ann repo">Repo</span> bereits im App-Datenmodell</span>
+      <span class="it"><span class="ann exp">Experten</span> später strukturiert zu erarbeiten</span>
+    </div>
+    <div class="note" style="margin-top:14px;">
+      <b>Scope V1:</b> Diese Seite steht für sich allein (eigener Slug, wie es die alte korodur.de hatte) und wird aus
+      <b>Daten gefüllt, die wir haben</b> — Produkttext/SKU/Klasse aus dem XML-Export, Eigenschaften/Kennwerte/Verarbeitung
+      aus dem TDS. Felder, die erst mit den Experten strukturiert erarbeitet werden, sind <span class="ann exp">Experten</span>
+      markiert und bleiben vorerst leer (nicht erfunden). In <b>V2</b> kommt die „Varianten-Familien-Seite" als Hub darüber.
+      Alle gezeigten Werte sind echt und quellenbelegt.
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="screen">
+  <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    <span class="url">korodur.de<b>/de/produkte/neodur-he-65-metallisch/</b></span></div>
+  <div class="page">
+
+    <div class="crumb">Produkte › Industrieboden › Hartstoffestriche › <b>NEODUR HE 65 metallisch</b></div>
+
+    <!-- HEADER -->
+    <div class="phead">
+      <div>
+        <span class="badge">Hartstoffestrich · Industrieboden</span>
+        <h1>NEODUR HE 65 metallisch</h1>
+        <p class="lead">Gebrauchsfertiger, zementgebundener Hartstoffestrich mit metallischem Hartstoffzuschlag (Gruppe M,
+          DIN 1100) auf Basis KORODUR WH-metallisch. Einschichtig als Verbundestrich gem. DIN 18560-7. Extrem
+          widerstandsfähig gegen schlagende und stoßende Beanspruchung — für schweren Eisenräderverkehr, Kettenfahrzeuge,
+          Kollern und das harte Absetzen scharfkantiger Werkstücke. Zur Herstellung sogenannter Panzerestriche.
+          <span class="ann xml">XML</span></p>
+        <div class="chips">
+          <span class="chip">Qualitätsklasse CT-C80-F11-A3</span>
+          <span class="chip">Hartstoffgruppe M</span>
+          <span class="chip">Körnung 0–5 mm</span>
+          <span class="chip sku">Art.-Nr. 1220032S40KG</span>
+        </div>
+        <div class="beratertop">
+          <div class="bimg"></div>
+          <div>
+            <div class="bt">Fachberatung Industrieboden <span class="ann repo">Mapping da</span></div>
+            <div class="bd">Projekt mit höchster mechanischer Beanspruchung? Direkt zum Berater nach Bereich + PLZ.</div>
+          </div>
+          <a class="bbtn" href="#">Technische Fachberatung</a>
+        </div>
+      </div>
+      <div>
+        <div class="heroimg">
+          <span class="ph">Use-Case-Hauptbild:<br>Panzerestrich · Stahlräder-Verkehr</span>
+          <span class="cap">Anwendungsszene <span class="ann exp" style="color:#ffd6c2;">Experten/Foto später</span></span>
+        </div>
+        <div class="packshot">
+          <img src="https://www.korodur.de/wp-content/uploads/2023/02/35.png" alt="NEODUR HE 65 metallisch Gebinde" onerror="this.style.display='none'" />
+          <div class="pt"><b>Produktbild vorhanden</b> <span class="ann xml">XML</span><br>Alt-Site-Asset (WooCommerce-Packshot), direkt übernehmbar.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EIGENSCHAFTEN (TDS) -->
+    <div class="sec">
+      <h3>Eigenschaften <span class="ann tds">TDS</span><span class="line"></span></h3>
+      <ul class="bullets">
+        <li>Hochverschleißfest auch bei schwerster Beanspruchung</li>
+        <li>Hohe Oberflächendichtigkeit</li>
+        <li>Beständig gegen Benzin, Mineralöl, Lösemittel</li>
+        <li>Hubladerfest</li>
+        <li>Wasserfest, nassraumtauglich</li>
+        <li>Rutschfest, gleitsicher</li>
+        <li>Frostbeständig</li>
+        <li>Elektrostatisch nicht aufladbar</li>
+        <li>Chloridfrei</li>
+        <li>Physiologisch und ökologisch unbedenklich</li>
+        <li>Pumpfähig (Silosystem)</li>
+        <li>Qualitätssicherung gem. DIN EN 13813</li>
+      </ul>
+    </div>
+
+    <!-- EINSATZGEBIETE (XML/TDS) -->
+    <div class="sec">
+      <h3>Einsatzgebiete <span class="ann xml">XML</span> <span class="ann tds">TDS</span><span class="line"></span></h3>
+      <ul class="bullets">
+        <li>Panzerestriche mit höchster mechanischer Beanspruchung</li>
+        <li>Schwerer Eisenräderverkehr und Kettenfahrzeuge</li>
+        <li>Kollern, hartes Absetzen scharfkantiger Werkstücke</li>
+        <li>Werkstätten, Montage- und Flugzeughallen</li>
+        <li>Hochregallager, Industriehallen</li>
+        <li>Innen und außen (frostbeständig)</li>
+      </ul>
+    </div>
+
+    <!-- TECHNISCHE DATEN & NORMEN (XML-Klasse + TDS-Prüfnormen) -->
+    <div class="sec">
+      <h3>Technische Daten &amp; Normen — jeder Wert mit Norm <span class="ann xml">XML</span> <span class="ann tds">TDS</span><span class="line"></span></h3>
+      <div class="data">
+        <div class="d"><span class="k">Druckfestigkeitsklasse</span><span class="v">C80</span><span class="nrm">DIN EN 13892-2</span></div>
+        <div class="d"><span class="k">Biegezugfestigkeitsklasse</span><span class="v">F11</span><span class="nrm">DIN EN 13892-2</span></div>
+        <div class="d"><span class="k">Verschleißwiderstand (Böhme)</span><span class="v">A3 (≤ 3,0 cm³/50 cm²)</span><span class="nrm">DIN EN 13892-3</span></div>
+        <div class="d"><span class="k">Hartstoffgruppe</span><span class="v">M (metallisch)</span><span class="nrm">DIN 1100</span></div>
+        <div class="d"><span class="k">Klassifizierung</span><span class="v">CT-C80-F11-A3</span><span class="nrm">DIN EN 13813</span></div>
+        <div class="d"><span class="k">Körnung</span><span class="v">0–5 mm</span><span class="nrm">TDS</span></div>
+        <div class="d"><span class="k">Schichtdicke Verbundestrich</span><span class="v">i. M. 15 mm</span><span class="nrm">DIN 18560-7</span></div>
+        <div class="d"><span class="k">Verarbeitungstemperatur</span><span class="v">≥ 5 °C</span><span class="nrm">TDS</span></div>
+        <div class="d"><span class="k">Materialverbrauch</span><span class="v">variantenspezifisch zu bestätigen</span><span class="nrm"><span class="ann exp">Experten</span></span></div>
+      </div>
+      <div class="note">Festigkeits-/Verschleißklassen aus dem Alt-Site-Produktdatensatz (CT-C80-F11-A3), Prüfnormen und Körnung aus
+        dem TDS. <b>Materialverbrauch</b> der metallischen Ausführung steht im Familien-TDS nur für die Standard-Qualitäten
+        (ca. 2,1–2,2 kg/m² je mm) — der metallische Zuschlag (40-kg-Gebinde) weicht ab, daher hier bewusst offen statt geschätzt.</div>
+    </div>
+
+    <!-- VERARBEITUNG (TDS — Datensource 2) -->
+    <div class="sec">
+      <h3>Verarbeitung &amp; Applikation <span class="ann tds">TDS</span><span class="line"></span></h3>
+
+      <div class="vmode">
+        <p class="mt"><span class="pin">Variante A</span> frisch auf frisch</p>
+        <ol>
+          <li><b>Untergrund:</b> Tragbeton mind. C 25/30 gem. DIN EN 206 (kein Luftporen-Beton), höhengerecht nach DIN 18202. Frischen, begehbaren Tragbeton mit Tellerglättmaschine abreiben.</li>
+          <li><b>Mischen:</b> NEODUR HE 65 metallisch mit vorgegebener Wassermenge ca. 3 Min. im Zwangsmischer mischen.</li>
+          <li><b>Aufbringen:</b> Auf die frische, abgetellerte Fläche aufbringen, über Lehren (Rundeisen) per Alu-Richtscheit oder Rüttelbohle abziehen.</li>
+          <li><b>Glätten:</b> Zeitgerecht mit Tellerglättmaschine porenschließend abreiben und je nach Oberflächenstruktur mit Flügelglättmaschine glätten.</li>
+        </ol>
+      </div>
+
+      <div class="vmode">
+        <p class="mt"><span class="pin">Variante B</span> auf erhärtetem Tragbeton</p>
+        <ol>
+          <li><b>Untergrund:</b> Tragbeton mind. C 25/30, Oberflächenzugfestigkeit ≥ 1,5 N/mm². Vorbereiten durch Fräsen/Kugelstrahlen — rissefrei, eben, rau, offenporig (DIN 18365 / DIN 18560).</li>
+          <li><b>Vornässen:</b> Tragbeton einen Tag vorher gründlich vornässen, Pfützen vermeiden.</li>
+          <li><b>Haftbrücke:</b> Auf die mattfeuchte Oberfläche Haftbrücke KORODUR HB 5 auftragen.</li>
+          <li><b>Verlegung:</b> Analog Variante A, Schichtdicke i. M. 15 mm.</li>
+        </ol>
+      </div>
+
+      <div class="vmeta">
+        <div class="vm"><div class="vmk">Nachbehandlung</div><div class="vmv">Vor zu rascher Austrocknung schützen (DIN EN 13670 / DIN 1045-3). KOROMINERAL CURE oder KOROTEX.</div></div>
+        <div class="vm"><div class="vmk">Fugen</div><div class="vmv">Vom Planer vorzugeben. Alle Fugen aus dem Tragbeton übernehmen, von aufgehenden Bauteilen trennen.</div></div>
+        <div class="vm"><div class="vmk">Lieferform / Lagerung</div><div class="vmv">40-kg-Gebinde (Art.-Nr.), lose als Silo-/Big-Bag-Ware. Trocken lagern, Haltbarkeit ca. 12 Monate.</div></div>
+      </div>
+    </div>
+
+    <!-- DOKUMENTE -->
+    <div class="sec">
+      <h3>Dokumente &amp; Downloads <span class="ann repo">Repo</span> <span class="ann tds">TDS</span><span class="line"></span></h3>
+      <div class="docs">
+        <div class="doc"><span class="typ">TDS</span><span class="dt">NEODUR HE 65 — Technisches Merkblatt (Stand 03/2025)</span><span class="meta">PDF · DE</span><span class="lv">LV ausschreiben.de →</span></div>
+        <div class="doc"><span class="typ sds">SDS</span><span class="dt">NEODUR HE 65 — Sicherheitsdatenblatt</span><span class="meta">PDF · DE</span></div>
+        <div class="doc"><span class="typ dop">DoP</span><span class="dt">Leistungserklärung — NEODUR HE 65</span><span class="meta">PDF · DE</span></div>
+        <div class="doc"><span class="typ farb">FARBE</span><span class="dt">KORODUR Farbkarte (auch farbig lieferbar)</span><span class="meta">PDF · DE</span><span class="lv"><span class="ann tds">im TDS genannt</span></span></div>
+      </div>
+      <div class="note">TDS/SDS/DoP liegen im Datenmodell (<code>data/produktDokumente.ts</code>). Das TDS nennt „auch farbig lieferbar,
+        siehe KORODUR Farbkarte" — Dokumenttyp <code>farbkarte</code> ist neu im Enum. Ein eigenes Varianten-TDS gibt es heute
+        nicht (Familien-TDS deckt metallisch mit ab) — das ist die verfügbare Datenlage für V1.</div>
+    </div>
+
+    <!-- SYSTEM-BEGLEITPRODUKTE (XML) -->
+    <div class="sec">
+      <h3>Im System verwendet <span class="ann xml">XML</span><span class="line"></span></h3>
+      <div class="xsell">
+        <div class="xcard"><div class="xt">KORODUR HB 5</div><div class="xd">Haftbrücke für die Verlegung auf erhärtetem Tragbeton.</div><div class="xg">zum Produkt</div></div>
+        <div class="xcard"><div class="xt">KOROMINERAL CURE / KOROTEX</div><div class="xd">Nachbehandlung der Hartstoffschicht gegen zu rasche Austrocknung.</div><div class="xg">zum Produkt</div></div>
+      </div>
+      <div class="note">Begleitprodukte aus den „Ergänzenden Systemkomponenten" des Alt-Datensatzes, bereinigt um eingestellte
+        Produkte (z. B. KOROPOX → entfällt). Verlinkung als ehrliches Cross-Selling.</div>
+    </div>
+
+    <!-- WEITERE AUSFÜHRUNGEN (XML, V1-Querverweis statt Familien-Hub) -->
+    <div class="sec">
+      <h3>Weitere Ausführungen von NEODUR HE 65 <span class="ann xml">XML</span><span class="line"></span></h3>
+      <div class="xsell">
+        <div class="xcard"><div class="xt">NEODUR HE 65 SVS 3</div><div class="xd">Basis WH-Spezial · CT-C70-F9-A3 · Standard, höchste Belastung.</div><div class="xg">zur Ausführung</div></div>
+        <div class="xcard"><div class="xt">NEODUR HE 65 SVS 1,5</div><div class="xd">Basis Diamantbeton · CT-C70-F9-A1,5 · höchster Abrieb, glatte Optik.</div><div class="xg">zur Ausführung</div></div>
+        <div class="xcard"><div class="xt">NEODUR HE 65 plus</div><div class="xd">Kunststoffmodifiziert · 15–30 mm ohne Haftbrücke · WHG, frost-/tausalzbeständig.</div><div class="xg">zur Ausführung</div></div>
+        <div class="xcard"><div class="xt">NEODUR HE 60 rapid</div><div class="xd">Schnellvariante · gleiches Anwendungsfeld, nutzbar nach Stunden.</div><div class="xg">zur Ausführung</div></div>
+      </div>
+      <div class="note"><b>V1-Muster (wie alte korodur.de):</b> Geschwister-Ausführungen als gegenseitige Querverweise zwischen
+        eigenständigen Seiten. In <b>V2</b> ersetzt die „Varianten-Familien-Seite" diesen Block durch einen echten Hub mit
+        Raster + Umschalter (siehe Mockup <code>2026-06-29-pdp-he65-pilot-mockup.html</code>).</div>
+    </div>
+
+    <!-- REFERENZEN -->
+    <div class="sec">
+      <h3>Passende Referenzen <span class="ann repo">Repo</span><span class="line"></span></h3>
+      <div class="refgrid">
+        <div class="ref"><div class="rimg">Referenzbild</div><div class="rb"><div class="rt">Schwerlast-Werkstatt</div><div class="rc">Industrieboden · HE 65 metallisch</div></div></div>
+        <div class="ref"><div class="rimg">Referenzbild</div><div class="rb"><div class="rt">Industriehalle</div><div class="rc">Eisenräderverkehr</div></div></div>
+        <div class="ref"><div class="rimg">Referenzbild</div><div class="rb"><div class="rt">Logistikzentrum</div><div class="rc">Hartstoffestrich</div></div></div>
+      </div>
+      <div class="note">Referenzen aus der App-Datenbank, gefiltert auf Produkt/Bereich. Der Alt-Datensatz hatte für metallisch
+        keine verknüpften Referenzen (<code>referenz_links: []</code>) — Verknüpfung über die bestehende Referenzdatenbank.</div>
+
+      <div class="cta">
+        <span class="ct">Projekt mit höchster Beanspruchung?</span>
+        <a class="btn" href="#">Fachberater kontaktieren</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- IMPLIKATIONEN V1 -->
+<div class="divider"><div class="inner">
+  <span class="tag">Vom Mockup zum Umbau — V1</span>
+  <h2>Was V1 datenseitig braucht</h2>
+  <p>V1 ist bewusst leichter als die Familien-Architektur: jede Variante wird ein eigenständiger Produkteintrag mit eigenem Slug — kein Familien-/Vererbungsmodell nötig (das kommt in V2).</p>
+</div></div>
+
+<div class="wrap">
+  <div class="impl" style="margin-top:22px;">
+    <div class="icard">
+      <h4>Datenmodell V1 (leicht)</h4>
+      <ul>
+        <li>Jede Variante = <b>eigenständiger Produkteintrag</b> in <code>data/produkte.ts</code> mit eigenem Slug (= Alt-Site-Slug), wie es die alte korodur.de hatte</li>
+        <li>Felder direkt aus den vorhandenen Quellen: Name/SKU/Klasse/Use-Case-Text aus dem XML, Eigenschaften/Kennwerte/Verarbeitung aus dem TDS</li>
+        <li><b>Kein</b> <code>familieId</code>/Vererbung in V1 — Geschwister nur als manuelle Querverweise (Feld <code>verwandteProdukte[]</code>)</li>
+        <li><code>DokumentTyp</code> um <code>farbkarte</code> erweitern</li>
+        <li>Verarbeitung als strukturierte Felder (2 Modi A/B) — Modell muss zwei Verlege-Varianten tragen</li>
+      </ul>
+    </div>
+    <div class="icard">
+      <h4>Datenbeschaffung pro Variante</h4>
+      <ul>
+        <li><b>XML liefert:</b> Name, SKU, Klasse, Basis-Hartstoff, Use-Case-Text, Packshot, Systemkomponenten</li>
+        <li><b>TDS liefert:</b> Eigenschaften, Kennwerte mit Prüfnorm, Verarbeitung, Nachbehandlung, Fugen, Lieferform</li>
+        <li><b>Experten/später:</b> variantenspezifischer Verbrauch, eigenes TDS je Variante, Use-Case-Foto, EPD</li>
+        <li>Pro Pilotfamilie (HE 65 = 6 Varianten) ist die Quelle verifiziert vorhanden</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footnote">
+    Quellen im Repo: <b>docs/website-migration/extraktion-produkte.json</b> (NEODUR HE 65 metallisch, SKU 1220032S40KG) ·
+    <b>docs/tds-quellen/texts/13_NEODUR_HE_65.txt</b> (Stand 03/2025 — Eigenschaften, Kennwerte, Verarbeitung, Nachbehandlung) ·
+    <b>data/produkte.ts</b> · <b>data/produktDokumente.ts</b> · <b>app/[lang]/produkte/[id]/page.tsx</b>.
+    V2-Design (Familien-Hub): <b>docs/mockups/2026-06-29-pdp-he65-pilot-mockup.html</b>.
+    Mockup-Stand 2026-06-29 · Scope V1: eigenständige Varianten-PDP, alle Werte quellenbelegt.
+  </p>
+</div>
+
+</body>
+</html>
