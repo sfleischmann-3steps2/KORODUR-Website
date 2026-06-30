@@ -12,9 +12,10 @@
 // generische Bereichs-Template (i18n-Follow-up → #181).
 //
 // Content-Standing-Rules: keine Personen/Testimonials, keine Kundenlogos.
-// Verbatim-Slogans aus den Live-/Quell-Unterlagen. FAKTENCHECK-Flags markieren
-// Werte, die Technik vor dem Live-Gang bestätigen muss (Rapid-Set-Track:
-// CO₂ ~30 %, Lebensdauer bis 4×, Brandklasse A1 — Frank-Sign-off offen).
+// Verbatim-Slogans aus den Live-/Quell-Unterlagen. Die zuvor faktencheck-
+// pflichtigen Werte (CO₂ ~30 %, Lebensdauer bis 4×, Brandklasse A1) sind
+// freigegeben (Steffi 2026-06-30); das optionale faktencheck-Flag bleibt als
+// Mechanismus für künftige, noch ungesicherte Werte erhalten.
 
 /** Icon-Schlüssel → in components/BetonsanierungBereich.tsx auf lucide gemappt. */
 export type BetonIcon =
@@ -157,13 +158,13 @@ export const BETONSANIERUNG_CONTENT = {
         { icon: "timer", titel: "Hohe Frühfestigkeit", text: "Über 20 N/mm² nach 60 Minuten, bis Klasse C55/67 nach 28 Tagen. Hochfest und schnellerhärtend ohne nachträgliche Beschleuniger." },
         { icon: "layers", titel: "Schwundneutral", text: "Volumenstabiles, schwund- und spannungsarmes Erhärten. Das reduziert Risse und Ablösungen und macht Haftbrücken überflüssig." },
         { icon: "shield", titel: "Dauerhaft beständig", text: "Sulfatbeständig (Prüfung nach Wittekindt) sowie frost- und tausalzbeständig (CDF-Prüfung). Sehr niedriger Chloridionengehalt." },
-        // FAKTENCHECK: CO2- und Lebensdauer-Werte aus Broschüre, Technik-Sign-off offen.
-        { icon: "leaf", titel: "CO₂-reduziert", text: "Rund 30 % weniger CO₂-Ausstoß als Portlandzement. EPD nach ISO 14025 und EN 15804, third-party verifiziert, LEED-konform.", faktencheck: true },
-        { icon: "recycle", titel: "Bis 4× langlebiger", text: "Bis zu vierfache Lebensdauer gegenüber Portlandzement. Weniger Instandhaltung, längere Nutzungsdauer, bessere Lebenszykluskosten.", faktencheck: true },
+        // CO2- und Lebensdauer-Werte freigegeben (Steffi 2026-06-30).
+        { icon: "leaf", titel: "CO₂-reduziert", text: "Rund 30 % weniger CO₂-Ausstoß als Portlandzement. EPD nach ISO 14025 und EN 15804, third-party verifiziert, LEED-konform." },
+        { icon: "recycle", titel: "Bis 4× langlebiger", text: "Bis zu vierfache Lebensdauer gegenüber Portlandzement. Weniger Instandhaltung, längere Nutzungsdauer, bessere Lebenszykluskosten." },
         { icon: "droplets", titel: "Konsistenz steuerbar", text: "Über die Concrete-Pharmacy-Additive lassen sich Konsistenz und Verarbeitungszeit gezielt an Witterung und Aufgabe anpassen." },
       ] satisfies BetonTechPunkt[],
       epoxid: {
-        // FAKTENCHECK: Brandklasse-A1-Aussage noch nicht TDS-belegt (Frank-Sign-off offen).
+        // Brandklasse-A1-Aussage freigegeben (Steffi 2026-06-30).
         headline: "Die mineralische Alternative zu Epoxidharz-Mörtel",
         punkte: [
           "Brandklasse A1, nichtbrennbar statt B1",
