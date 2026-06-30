@@ -156,11 +156,28 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
     return a.wiederbelastungInH - b.wiederbelastungInH;
   });
 
+  // #370: Treffer je variantenGruppe entdoppeln — ein Repräsentant je Familie
+  // (die Mutter, id === variantenGruppe; sonst der best-gerankte Geschwister-
+  // Kandidat). Verhindert N fast identische Familien-Treffer; der Repräsentant
+  // verlinkt auf seine PDP, wo die Vergleichstabelle die Ausführungswahl trägt.
+  const gruppeKey = (p: V25Produkt) => p.variantenGruppe ?? p.id;
+  const geseheneGruppen = new Set<string>();
+  const kandidatenEntdoppelt: V25Produkt[] = [];
+  for (const p of kandidaten) {
+    const key = gruppeKey(p);
+    if (geseheneGruppen.has(key)) continue;
+    geseheneGruppen.add(key);
+    const mutter = p.variantenGruppe
+      ? v25Produkte.find((c) => c.id === p.variantenGruppe)
+      : undefined;
+    kandidatenEntdoppelt.push(mutter ?? p);
+  }
+
   // A1: bestes tag-gerankte Produkt. A2: kuratierte Tabelle gewinnt, sofern ein
   // Eintrag existiert und das Produkt auffindbar ist (sonst Fallback auf A1).
   // Die Alternative (produkt2) gibt es nur im kuratierten Modus; A1 bleibt
   // unverändert ein Ein-Produkt-Ergebnis.
-  let topProdukt = kandidaten[0] ?? null;
+  let topProdukt = kandidatenEntdoppelt[0] ?? null;
   let alternativProdukt: V25Produkt | null = null;
   let alternativHinweis: string | null = null;
   if (EMPFEHLUNGS_MODUS === "kuratiert") {
@@ -173,6 +190,13 @@ export function berechneErgebnisV25(state: LoesungsfinderState): ErgebnisV25 {
         : null;
       alternativHinweis = alternativProdukt ? eintrag.produkt2Hinweis ?? null : null;
     }
+  }
+
+  // #370: Top und Alternative dürfen nicht zwei Geschwister derselben Gruppe
+  // sein (sonst doppelte Familien-Empfehlung) — Alternative dann verwerfen.
+  if (topProdukt && alternativProdukt && gruppeKey(topProdukt) === gruppeKey(alternativProdukt)) {
+    alternativProdukt = null;
+    alternativHinweis = null;
   }
 
   // --- Referenzen filtern: produktunabhängig, mit Auffüllen auf MIN_REFS ---

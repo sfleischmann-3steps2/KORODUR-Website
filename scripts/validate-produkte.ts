@@ -18,6 +18,7 @@
  */
 import { produkte } from "../data/produkte";
 import { bereiche } from "../data/bereiche";
+import { anwendungMatrixProducts } from "../data/anwendungsmatrix";
 import type { BelastungsTag, Produktbereich } from "../data/types";
 
 const ALLOWED_BEREICH: ReadonlySet<Produktbereich> = new Set<Produktbereich>([
@@ -147,6 +148,41 @@ for (const p of produkte) {
     if (!alleIds.has(vp)) {
       issues.push({ id: p.id, level: "error", msg: `verwandtesProdukt '${vp}' existiert nicht` });
     }
+  }
+}
+
+// #370: Jede variantenGruppe hat GENAU EINEN Repräsentanten — das Produkt, dessen
+// id der Gruppe entspricht (Mutter/Standard-Ausführung), und das seine Gruppe
+// selbst deklariert. Lösungsfinder/Matrix entdoppeln auf diesen Repräsentanten.
+const gruppenWerte = new Set(
+  produkte.map((p) => p.variantenGruppe).filter((g): g is string => Boolean(g)),
+);
+for (const g of gruppenWerte) {
+  const repr = produkte.filter((p) => p.id === g);
+  if (repr.length !== 1) {
+    issues.push({ id: g, level: "error", msg: `variantenGruppe '${g}': ${repr.length} Repräsentanten (genau 1 erwartet)` });
+  } else if (repr[0].variantenGruppe !== g) {
+    issues.push({ id: g, level: "error", msg: `Repräsentant '${g}' deklariert seine variantenGruppe nicht selbst` });
+  }
+}
+
+// #370: Die kuratierte Anwendungsmatrix darf keine zwei Geschwister derselben
+// variantenGruppe führen (sonst doppelte Familien-Spalte).
+const matrixGruppen = new Map<string, string>();
+for (const m of anwendungMatrixProducts) {
+  const link = m.link;
+  if (link.kind !== "tds") continue;
+  const p = produkte.find((x) => x.id === link.productId);
+  if (!p) {
+    issues.push({ id: link.productId, level: "error", msg: "Anwendungsmatrix: productId existiert nicht in produkte.ts" });
+    continue;
+  }
+  const key = p.variantenGruppe ?? p.id;
+  const vorhanden = matrixGruppen.get(key);
+  if (vorhanden) {
+    issues.push({ id: p.id, level: "error", msg: `Anwendungsmatrix: zweites Produkt der Gruppe '${key}' (${vorhanden} + ${p.id})` });
+  } else {
+    matrixGruppen.set(key, p.id);
   }
 }
 
