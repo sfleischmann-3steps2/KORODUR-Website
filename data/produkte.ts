@@ -233,10 +233,49 @@ const HE65_PLUS_MODI = [
   },
 ];
 
+// ===========================================================================
+// NEODUR HE 3 — Familie (#395, Welle 1). Hartstoff-EINSTREUUNG (Trockeneinstreu-
+// verfahren), je Ausführung eigenständiges Produkt, variantenGruppe "neodur-he-3"
+// (Mutter = Standard). Inhalte aus Alt-XML + HE-3-TDS via Workflow, quellenbelegt.
+// technischeDaten bewusst als KLASSEN (C/F/A aus der CT-Klasse, quelltreu) statt
+// abgeleiteter ≥-Werte. NORMWERTE PROVISORISCH bis PDB/Technik-Termin (#368).
+// ===========================================================================
+const HE3_BESONDERHEITEN = [
+  "Erhöhte Oberflächenhärte",
+  "Hoher Verschleißwiderstand bei unmittelbarer industrieller Bodenbeanspruchung",
+  "Für innen und außen geeignet",
+  "Auch farbig lieferbar",
+];
+const HE3_EINSATZ = ["Industrieböden mit stärkster Bodenbeanspruchung", "Innen- und Außenflächen"];
+const HE3_VERWANDTE = ["korocure", "korotex", "koromineral-cure", "koromineral-li", "koroclean", "korodur-nanofinish"];
+const HE3_MODI = [
+  {
+    titel: "Einstreuverfahren (Hartstoffeinstreuung)",
+    schritte: [
+      "Trockeneinstreuung: NEODUR HE 3 gleichmäßig auf den frischen KORODUR Industrieboden/Beton einstreuen und einarbeiten — verbessert Oberflächenhärte und Verschleißwiderstand.",
+      "Zwischen-Nachbehandlung mit KOROCURE, anschließend Nachbehandlung mit KOROTEX bzw. KOROMINERAL Cure.",
+    ],
+  },
+];
+const HE3_META = (gebinde: string) => [
+  { titel: "Nachbehandlung", text: "Zwischen-Nachbehandlung mit KOROCURE; Nachbehandlung mit KOROTEX bzw. KOROMINERAL Cure; Imprägnierung mit KOROMINERAL bzw. KOROMINERAL Li+." },
+  { titel: "Oberflächenbearbeitung", text: "Oberflächenbearbeitung mit KOROCLEAN; optionales Finish mit KORODUR nanoFinish." },
+  { titel: "Lieferform / Lagerung", text: `${gebinde}, lose als Siloware. Trocken lagern, Haltbarkeit ca. 12 Monate.` },
+];
+// Kennwerte als Klassen aus der CT-Klasse (quelltreu, keine abgeleiteten ≥-Werte).
+const he3Technik = (klasse: string, c: string, f: string, aWert: string, gruppe: string) => [
+  { label: "Klassifizierung", wert: klasse, norm: "DIN EN 13813" },
+  { label: "Druckfestigkeitsklasse", wert: `C ${c}`, norm: "DIN EN 13892-2" },
+  { label: "Biegezugfestigkeitsklasse", wert: `F ${f}`, norm: "DIN EN 13892-2" },
+  { label: "Verschleißwiderstand (Böhme)", wert: aWert, norm: "DIN EN 13892-3" },
+  { label: "Hartstoffgruppe (DIN 1100)", wert: gruppe },
+];
+
 export const produkte: Produkt[] = [
   // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
     id: "neodur-he-60-rapid",
+    sku: "1220049S25KG",
     bereich: "industrieboden",
     produktgruppe: "schnellestrich",
     varianten: [
@@ -504,10 +543,33 @@ export const produkte: Produkt[] = [
       "DIN 18560-7",
     ],
     technischeDaten: [
-      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
-      { label: "Biegezugfestigkeit", wert: "≥ 6 N/mm²" },
-      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)" },
-      { label: "Schichtdicke", wert: "8–15 mm frisch auf frisch; 15–35 mm im Verbund; HE 40/8 25–50 mm" },
+      { label: "Klassifizierung", wert: "CT-C40-F6-A6 (HE 40) / CT-C40-F7-A6 (HE 40/8)", norm: "DIN EN 13813" },
+      { label: "Druckfestigkeit", wert: "C40 (≥ 40 N/mm²) nach 28 Tagen", norm: "DIN EN 13892-2" },
+      { label: "Biegezugfestigkeit", wert: "F6 (≥ 6 N/mm²); HE 40/8: F7 (≥ 7 N/mm²) nach 28 Tagen", norm: "DIN EN 13892-2" },
+      { label: "Verschleißwiderstand (Böhme)", wert: "A6 (≤ 6,0 cm³/50 cm²)", norm: "DIN EN 13892-3" },
+      { label: "Hartstoffgruppe", wert: "Gruppe A", norm: "DIN 1100" },
+      { label: "Körnung", wert: "0–5 mm (HE 40) / 0–8 mm (HE 40/8)" },
+      { label: "Farbe", wert: "zementgrau" },
+      { label: "Schichtdicke", wert: "frisch auf frisch 8–15 mm; im Verbund 15–35 mm; HE 40/8 im Verbund 25–50 mm", norm: "DIN 18560-7" },
+      { label: "Materialverbrauch", wert: "ca. 2,1 kg/m² je mm Schichtdicke" },
+      { label: "Wasserzugabe", wert: "ca. 3,25 l / 25-kg-Gebinde" },
+      { label: "Verarbeitungszeit", wert: "ca. 2–3 Stunden (je nach Umgebungstemperatur)" },
+      { label: "Verarbeitungstemperatur", wert: "≥ 5 °C (Material, Umgebung, Untergrund)" },
+    ],
+    verarbeitungModi: [
+      { titel: "Verbundestrich frisch auf frisch", schritte: [
+        "Tragbeton mind. C 25/30 gem. DIN EN 206 herstellen, kein Luftporenbeton, höhengerecht innerhalb der Toleranz nach DIN 18202.",
+        "Zur Zwischen-Nachbehandlung des Tragbetons KOROCURE einsetzen; den frischen, soeben begehbaren Tragbeton mit Tellerglättmaschine abreiben.",
+        "NEODUR HE 40 mit vorgegebener Wassermenge ca. 3 Minuten mischen.",
+        "Auf die frische, zuvor abgetellerte Fläche aufbringen, über Lehren (Rundeisen) per Alu-Richtscheit oder Rüttelbohle abziehen.",
+        "Zeitgerecht mit Tellerglättmaschine porenschließend abreiben und je nach verlangter Oberflächenstruktur mit Flügelglättmaschine glätten.",
+      ] },
+      { titel: "Verbundestrich auf erhärtetem Tragbeton", schritte: [
+        "Tragbeton (mind. C 25/30, Oberflächenzugfestigkeit ≥ 1,5 N/mm²) vorbereiten, z. B. Fräsen und Kugelstrahlen; rissefrei, eben, frei von losen/mürben Bestandteilen, rau und offenporig (Anforderungen DIN 18365 / DIN 18560, Ebenheit DIN 18202 Tab. 3 Zeile 3).",
+        "Tragbeton einen Tag vor der Verlegung gründlich vornässen, Pfützenbildung vermeiden.",
+        "Haftbrücke KORODUR HB 5 auf die mattfeuchte Oberfläche auftragen; bei KORODUR uniPrimer ist unter normalen Bedingungen kein Vornässen erforderlich.",
+        "NEODUR HE 40 analog der Verarbeitung 'frisch auf frisch' mischen, abziehen, porenschließend abreiben und glätten.",
+      ] },
     ],
     besonderheiten: [
       "Hohe Verschleißfestigkeit",
@@ -526,6 +588,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-level",
+    sku: "1220285S25KG",
     bereich: "industrieboden",
     produktgruppe: "selbstverlaufend",
     name: "NEODUR Level",
@@ -577,6 +640,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "tru-self-leveling",
+    sku: "1220295",
     bereich: "industrieboden",
     produktgruppe: "truazzo",
     beschreibung: "Rapid Set TRU Self-Leveling ist ein auf spezieller Zementtechnologie basierender, selbstverlaufender, mineralischer, geschliffener Sichtestrich. Ideal, wenn Frühfestigkeit, Dauerhaftigkeit und schwindarmes Aushärten gefordert sind: bis zu 20 Minuten verarbeitbar, nach 2 bis 3 Stunden begehbar und bereits 24 Stunden nach Einbau bis zur Hochglanzoptik schleifbar. In verschiedenen Farbvarianten und mit eingestreuter Dekorkörnung (z. B. Glas, Marmor) individuell gestaltbar.",
@@ -623,6 +687,7 @@ export const produkte: Produkt[] = [
   // === GRUNDIERUNGEN / HAFTBRÜCKEN (nicht in Sanierungs-Matrix) ===
   {
     id: "korodur-hb-5-rapid",
+    sku: "1220280S25KG",
     tdsUrl: "/downloads/tds/KORODUR_HB_5_rapid_de.pdf",
     bereich: "industrieboden",
     zusatzBereiche: ["infrastruktur"],
@@ -654,6 +719,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-pc",
+    sku: "1320579",
     tdsUrl: "/downloads/tds/KORODUR_PC_de.pdf",
     bereich: "industrieboden",
     // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
@@ -818,6 +884,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "asphalt-repair-mix",
+    sku: "1220542S25KG",
     // #306/#308: Betonsanierung (primär) + zusätzlich Infrastruktur.
     bereich: "rapid-set",
     zusatzBereiche: ["infrastruktur"],
@@ -870,6 +937,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "dot-europe-concrete-mix",
+    sku: "1220516S25KG",
     bereich: "rapid-set",
     zusatzBereiche: ["infrastruktur"],
     aussenbereich: true,
@@ -1004,6 +1072,7 @@ export const produkte: Produkt[] = [
   // === NACHBEHANDLUNG (nicht in Sanierungs-Matrix) ===
   {
     id: "korocure",
+    sku: "1320576G30KG",
     tdsUrl: "/downloads/tds/KOROCURE_de.pdf",
     bereich: "industrieboden",
     zusatzBereiche: ["infrastruktur"],
@@ -1028,6 +1097,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koromineral-cure",
+    sku: "1320591",
     tdsUrl: "/downloads/tds/KOROMINERAL_CURE_de.pdf",
     bereich: "industrieboden",
     zusatzBereiche: ["infrastruktur"],
@@ -1051,6 +1121,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korotex",
+    sku: "1320574",
     tdsUrl: "/downloads/tds/KOROTEX_de.pdf",
     bereich: "industrieboden",
     zusatzBereiche: ["infrastruktur"],
@@ -1081,35 +1152,98 @@ export const produkte: Produkt[] = [
   // docs/website-migration/zuordnung-industrieboden.md
   // Fehlende Werte bewusst leer (nie erfinden); TDS-Vervollstaendigung folgt.
   {
+    // HE 3 Standard = Mutter/Repräsentant der variantenGruppe (#395).
     id: "neodur-he-3",
     tdsUrl: "/downloads/tds/NEODUR_HE_3_de.pdf",
     name: "NEODUR HE 3",
     kategorie: "estrich",
     bereich: "industrieboden",
     produktgruppe: "hartstoffeinstreuung",
+    variantenGruppe: "neodur-he-3",
+    sku: "1220116S25KG",
+    variantenSchwerpunkt: "Standard (A6)",
     kurzbeschreibung: "Zementgebundener Trockenbaustoff für Industrieböden im Einstreuverfahren",
     beschreibung: "NEODUR HE 3 gem. DIN 18557 (Werkmörtel) und DIN EN 13813, basierend auf Hartstoffen gem. DIN 1100: gebrauchsfertiger, zementgebundener Trockenbaustoff zur Herstellung von Industrieböden im Einstreuverfahren. Auch farbig lieferbar.",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: [
-      "DIN EN 13813",
-      "DIN 1100",
-      "DIN 18560",
-    ],
-    technischeDaten: [
-      { label: "Hartstoffgruppe (DIN 1100)", wert: "A" },
-      { label: "Schleifverschleiß", wert: "≤ 5 cm³/50 cm²" },
-    ],
+    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he3Technik("CT-C70-F9-A6", "70", "9", "A6 (≤ 6 cm³/50 cm²)", "A"),
+    besonderheiten: [...HE3_BESONDERHEITEN, "Umweltproduktdeklaration (Gruppen-EPD) verfügbar"],
+    einsatzbereiche: HE3_EINSATZ,
+    verarbeitungModi: HE3_MODI,
+    verarbeitungMeta: HE3_META("25-kg-Gebinde"),
+    verwandteProdukte: HE3_VERWANDTE,
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-he-3-svs-3",
+    name: "NEODUR HE 3 SVS 3",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffeinstreuung",
+    variantenGruppe: "neodur-he-3",
+    sku: "1220134S30KG",
+    variantenSchwerpunkt: "Höhere Verschleißklasse (A3)",
+    kurzbeschreibung: "Hartstoffeinstreuung, Verschleißklasse A3",
+    beschreibung: "NEODUR HE 3 SVS 3 — Hartstoffeinstreuung im Trockeneinstreuverfahren gem. DIN 18557 / DIN EN 13813, Hartstoffe gem. DIN 1100, mit höherer Verschleißklasse A3. Auch farbig lieferbar.",
+    qualitaetsklasse: "CT-C70-F9-A3",
+    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he3Technik("CT-C70-F9-A3", "70", "9", "A3 (≤ 3 cm³/50 cm²)", "A"),
+    besonderheiten: ["Höhere Verschleißklasse A3 (≤ 3 cm³/50 cm²)", ...HE3_BESONDERHEITEN],
+    einsatzbereiche: HE3_EINSATZ,
+    verarbeitungModi: HE3_MODI,
+    verarbeitungMeta: HE3_META("30-kg-Gebinde"),
+    verwandteProdukte: HE3_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_3_de.pdf",
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-he-3-svs-15",
+    name: "NEODUR HE 3 SVS 1,5",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffeinstreuung",
+    variantenGruppe: "neodur-he-3",
+    sku: "1220117S30KG",
+    variantenSchwerpunkt: "Höchster Abrieb (A1,5)",
+    kurzbeschreibung: "Hartstoffeinstreuung, Verschleißklasse A1,5",
+    beschreibung: "NEODUR HE 3 SVS 1,5 — Hartstoffeinstreuung im Trockeneinstreuverfahren gem. DIN 18557 / DIN EN 13813, Hartstoffe gem. DIN 1100 (Hartstoffgruppe KS), höchste Verschleißklasse A1,5. Auch farbig lieferbar.",
+    qualitaetsklasse: "CT-C70-F9-A1,5",
+    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he3Technik("CT-C70-F9-A1,5", "70", "9", "A1,5 (≤ 1,5 cm³/50 cm²)", "KS"),
+    besonderheiten: ["Höchste Verschleißklasse A1,5 (≤ 1,5 cm³/50 cm², Hartstoffgruppe KS)", ...HE3_BESONDERHEITEN],
+    einsatzbereiche: HE3_EINSATZ,
+    verarbeitungModi: HE3_MODI,
+    verarbeitungMeta: HE3_META("30-kg-Gebinde"),
+    verwandteProdukte: HE3_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_3_de.pdf",
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-he-3-metallisch",
+    name: "NEODUR HE 3 metallisch",
+    kategorie: "estrich",
+    bereich: "industrieboden",
+    produktgruppe: "hartstoffeinstreuung",
+    variantenGruppe: "neodur-he-3",
+    sku: "1220109S40KG",
+    variantenSchwerpunkt: "Metallisch (Gruppe M), C80/F11",
+    kurzbeschreibung: "Metallische Hartstoffeinstreuung (DIN 1100 Gruppe M)",
+    beschreibung: "NEODUR HE 3 metallisch — Hartstoffeinstreuung mit metallischem Zuschlag (KORODUR WH metallisch) gem. DIN 1100 Gruppe M, DIN EN 13813. Extrem schlag- und stoßfest, höhere Festigkeit (C80/F11) für stärkste Beanspruchung.",
+    qualitaetsklasse: "CT-C80-F11-A3",
+    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he3Technik("CT-C80-F11-A3", "80", "11", "A3 (≤ 3 cm³/50 cm²)", "M"),
     besonderheiten: [
-      "Einstreuverfahren (trocken auf frische Estrich-/Betonoberflächen)",
-      "Auch farbig lieferbar",
-      "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
+      "Metallischer Hartstoffzuschlag (DIN 1100 Gruppe M)",
+      "Extrem schlag- und stoßfest",
+      "Höhere Festigkeit (C80/F11)",
+      "Erhöhte Oberflächenhärte",
+      "Für innen und außen geeignet",
     ],
-    varianten: [
-      { name: "NEODUR HE 3 SVS 3", qualitaetsklasse: "CT-C70-F9-A3" },
-      { name: "NEODUR HE 3 SVS 1,5", qualitaetsklasse: "CT-C70-F9-A1,5", hinweis: "Hartstoffgruppe KS" },
-      { name: "NEODUR HE 3 SVS 1,5 extra", qualitaetsklasse: "CT-C70-F9-A1,5" },
-      { name: "NEODUR HE 3 metallisch", qualitaetsklasse: "CT-C80-F11-A3", hinweis: "Hartstoffgruppe M" },
-    ],
+    einsatzbereiche: HE3_EINSATZ,
+    verarbeitungModi: HE3_MODI,
+    verarbeitungMeta: HE3_META("40-kg-Gebinde"),
+    verwandteProdukte: HE3_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_3_metallisch_de.pdf",
     zeitKategorie: "normal",
   },
   {
@@ -1119,27 +1253,28 @@ export const produkte: Produkt[] = [
     kategorie: "estrich",
     bereich: "industrieboden",
     produktgruppe: "hartstoffeinstreuung",
+    variantenGruppe: "neodur-he-3",
+    // green teilt im Alt-XML die Standard-SKU (1220116) — bewusst leer gelassen,
+    // bis Technik die eigene Art.-Nr. bestätigt (keine irreführende Doppel-SKU).
+    variantenSchwerpunkt: "CO₂-reduziert (bis 30 %)",
     kurzbeschreibung: "Ressourcenschonende Variante von NEODUR HE 3 mit bis zu 30 % reduziertem CO₂-Ausstoß",
     beschreibung: "Mit der ressourcenschonenden Variante NEODUR HE 3 green kann der CO₂-Ausstoß in der Herstellung um bis zu 30 Prozent reduziert werden. Für Bauherren, Architekten, Planer und Bauunternehmen stehen entsprechende Umweltproduktdeklarationen (EPD) bereit.",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: [
-      "DIN 1100",
-      "DIN EN 13813",
-    ],
+    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
     technischeDaten: [
-      { label: "Hartstoffgruppe (DIN 1100)", wert: "A" },
-      { label: "Schleifverschleiß", wert: "≤ 5 cm³/50 cm²" },
+      ...he3Technik("CT-C70-F9-A6", "70", "9", "A6 (≤ 6 cm³/50 cm²)", "A"),
       { label: "CO₂-Reduktion", wert: "bis zu 30 %" },
     ],
-    besonderheiten: [
-      "Bis zu 30 % CO₂-Reduktion in der Herstellung",
-      "Produkt-EPD verfügbar",
-      "Einstreuverfahren",
-    ],
+    besonderheiten: ["Bis zu 30 % CO₂-Reduktion in der Herstellung", "Produkt-EPD verfügbar", ...HE3_BESONDERHEITEN],
+    einsatzbereiche: HE3_EINSATZ,
+    verarbeitungModi: HE3_MODI,
+    verarbeitungMeta: HE3_META("25-kg-Gebinde"),
+    verwandteProdukte: HE3_VERWANDTE,
     zeitKategorie: "normal",
   },
   {
     id: "neodur-he-2",
+    sku: "1220118S25KG",
     tdsUrl: "/downloads/tds/NEODUR_HE_2_de.pdf",
     name: "NEODUR HE 2",
     kategorie: "estrich",
@@ -1163,6 +1298,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-0-4",
+    sku: "1120002S25KG",
     tdsUrl: "/downloads/tds/KORODUR_04_de.pdf",
     name: "KORODUR 0/4",
     kategorie: "sonstige",
@@ -1181,6 +1317,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-vs-0-5",
+    sku: "1120005S25KG",
     tdsUrl: "/downloads/tds/KORODUR_VS_05_de.pdf",
     name: "KORODUR VS 0/5",
     kategorie: "sonstige",
@@ -1199,6 +1336,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-wh-spezial",
+    sku: "1120009S25KG",
     tdsUrl: "/downloads/tds/KORODUR_WH_Spezial_de.pdf",
     name: "KORODUR WH-Spezial",
     kategorie: "sonstige",
@@ -1217,6 +1355,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-wh-metallisch",
+    sku: "1516520",
     tdsUrl: "/downloads/tds/KORODUR_WH_metallisch_de.pdf",
     name: "KORODUR WH-metallisch",
     kategorie: "sonstige",
@@ -1235,6 +1374,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-diamantbeton",
+    sku: "1120012S30KG",
     tdsUrl: "/downloads/tds/KORODUR_Diamantbeton_de.pdf",
     name: "KORODUR Diamantbeton",
     kategorie: "sonstige",
@@ -1253,6 +1393,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-fscem",
+    sku: "1220527S25KG",
     tdsUrl: "/downloads/tds/KORODUR_FSCem_de.pdf",
     name: "KORODUR FSCem",
     kategorie: "estrich",
@@ -1263,10 +1404,39 @@ export const produkte: Produkt[] = [
     qualitaetsklasse: "CT-C50-F7 / CT-C40-F6",
     normen: ["DIN 18560", "DIN EN 13813", "DIN 18560-1"],
     technischeDaten: [
-      { label: "Mischungsverhältnis (CT-C50-F7)", wert: "1:4 Gewichtsteile (75 kg FSCem : 300 kg Estrichsand A8–B8), W/Z ca. 0,42" },
-      { label: "Mischungsverhältnis (CT-C40-F6)", wert: "1:5 Gewichtsteile (60 kg FSCem : 300 kg Estrichsand A8–B8), W/Z ca. 0,40" },
-      { label: "Restfeuchte (CM-Messung)", wert: "nach 24 h ca. 5,9 %, nach 3 Tagen ca. 1,9 %, nach 28 Tagen ca. 1,3 %" },
-      { label: "Schwindklasse (DIN 18560-1)", wert: "SW 1, schwindarm (< 0,2 mm/m)" },
+      { label: "Klassifizierung", wert: "CT-C50-F7 (MV 1:4) bis CT-C40-F6 (MV 1:5)", norm: "DIN EN 13813 / DIN 18560" },
+      { label: "Druckfestigkeit (CT-C50-F7, MV 1:4)", wert: "nach 3 Tagen ≥ 35 N/mm², nach 28 Tagen ≥ 50 N/mm²", norm: "DIN EN 13892-2" },
+      { label: "Druckfestigkeit (CT-C40-F6, MV 1:5)", wert: "nach 3 Tagen ≥ 25 N/mm², nach 28 Tagen ≥ 40 N/mm²", norm: "DIN EN 13892-2" },
+      { label: "Biegezugfestigkeit (CT-C50-F7, MV 1:4)", wert: "nach 3 Tagen ≥ 5,0 N/mm², nach 28 Tagen ≥ 7,0 N/mm²", norm: "DIN EN 13892-2" },
+      { label: "Biegezugfestigkeit (CT-C40-F6, MV 1:5)", wert: "nach 3 Tagen ≥ 4,0 N/mm², nach 28 Tagen ≥ 6,0 N/mm²", norm: "DIN EN 13892-2" },
+      { label: "Schwindklasse", wert: "SW 1, schwindarm (< 0,2 mm/m)", norm: "DIN 18560-1" },
+      { label: "Mischungsverhältnis (CT-C50-F7)", wert: "1:4 in Gewichtsteilen (75 kg FSCem : 300 kg Estrichsand A/B 8), W/Z ca. 0,42" },
+      { label: "Mischungsverhältnis (CT-C40-F6)", wert: "1:5 in Gewichtsteilen (60 kg FSCem : 300 kg Estrichsand A/B 8), W/Z ca. 0,40" },
+      { label: "Verarbeitungszeit", wert: "ca. 45-60 Minuten (je nach Verlegeart und W/Z-Wert)" },
+      { label: "Begehbar", wert: "nach ca. 1 Tag (je nach Verlegeart und W/Z-Wert)" },
+      { label: "Restfeuchte (CM-Messung, MV 1:5)", wert: "nach 24 h ca. 5,9 %, nach 7 Tagen ca. 1,9 %, nach 28 Tagen ca. 1,3 %", norm: "DIN 18560-1 (CM-Messung)" },
+      { label: "Schichtstärken (Nenndicken)", wert: "auf Trennschicht ≥ 35 mm, im Verbund (mit Haftschlämme) ≥ 15 mm, auf Dämmschicht ≥ 40 mm, als Heizestrich (ab OK Heizrohr) ≥ 40 mm", norm: "DIN 18560" },
+      { label: "Verarbeitungs-, Umgebungs- und Untergrundtemperatur", wert: "≥ 5 °C" },
+      { label: "Materialbedarf Bindemittel (Estrichsand bauseits)", wert: "MV 1:4 ca. 4,0 kg FSCem, MV 1:5 ca. 3,3 kg FSCem je m² und cm" },
+      { label: "Farbe", wert: "Bindemittel grau" },
+    ],
+    verarbeitungModi: [
+      { titel: "Mischen", schritte: [
+        "KORODUR FSCem mit Estrichsand A/B 8 (gem. EN 13139) und kaltem, sauberem Wasser im Zwangsmischer homogen anmischen; steifplastische Konsistenz einstellen und dabei die Feuchtigkeit des Zuschlags berücksichtigen.",
+        "Bei Verwendung eines Estrich-Druckluftförderers die empfohlenen Füllmengen des jeweiligen Maschinenherstellers beachten.",
+        "Für höheren Verschleißwiderstand im Verbund alternativ KORODUR VS 0/5 Hartstoff als Zuschlag verwenden.",
+      ] },
+      { titel: "Verlegung im Verbund", schritte: [
+        "Untergrund (Tragbeton/Tragestrich) vorbereiten, z. B. durch Fräsen und/oder Kugelstrahlen; Risse, Ausbrüche und schadhafte Fugen fachgerecht instand setzen. Oberflächenzugfestigkeit ≥ 1,5 N/mm² (befahrene) bzw. ≥ 1,0 N/mm² (nicht befahrene Flächen); Untergrund tragfähig, fest, sauber, trocken und frei von losen Teilen, Ölen und Fetten (DIN 18365, DIN 18560-3).",
+        "Tragbeton/Tragestrich mit Universalgrundierung KORODUR uniPrimer vorbehandeln oder alternativ einen Tag vor der Verlegung gründlich vornässen (Pfützenbildung vermeiden).",
+        "Haftbrücke KORODUR HB 5 rapid mit vorgeschriebener Wassermenge anmischen und mit hartem Straßenbesen auf die mattfeuchte Oberfläche als Haftgrund auftragen.",
+        "FSCem-Schnellestrich in gleichmäßiger Schichtdicke zügig einbringen, verdichten, abziehen und glätten; für die maschinelle Bearbeitung nur handgeführte Einscheibenmaschinen verwenden.",
+        "Belegreife ausschließlich per CM-Messung gem. DIN 18560-1 prüfen.",
+      ] },
+      { titel: "Heizestrich / Fußbodenheizung", schritte: [
+        "Als Heizestrich ab Oberkante Heizrohr mindestens 40 mm einbauen.",
+        "Aufheizen ab dem dritten Tag nach Einbau mit einer Vorlauftemperatur von + 25 °C; weiteres Vorgehen gem. einschlägigen Normen und Merkblättern (z. B. BEB-Merkblatt zur Schnittstellenkoordination bei Flächenheizungs- und Flächenkühlungssystemen in Neubauten).",
+      ] },
     ],
     besonderheiten: [
       "Ternäres Bindemittel (Estrichsand bauseits)",
@@ -1277,6 +1447,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-fscem-screed",
+    sku: "1220529S25KG",
     tdsUrl: "/downloads/tds/KORODUR_FSCem_Screed_de.pdf",
     name: "KORODUR FSCem Screed",
     kategorie: "estrich",
@@ -1309,6 +1480,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-level-au",
+    sku: "1220290S25KG",
     tdsUrl: "/downloads/tds/NEODUR_Level_AU_de.pdf",
     name: "NEODUR Level AU",
     kategorie: "estrich",
@@ -1349,11 +1521,41 @@ export const produkte: Produkt[] = [
       "DIN EN 196-3",
     ],
     technischeDaten: [
-      { label: "Verarbeitungszeit", wert: "30 Min." },
-      { label: "Fließzeit", wert: "15 Min." },
-      { label: "Druckfestigkeit (ASTM C-109 mod.)", wert: "nach 25 h ca. 20 N/mm², nach 7 Tagen ca. 24 N/mm², nach 28 Tagen ca. 34 N/mm²" },
-      { label: "Biegezugfestigkeit (ASTM C-348)", wert: "nach 7 Tagen ca. 7,9 N/mm²" },
-      { label: "Deckschicht aufbringbar", wert: "nach 6–16 Stunden (bei +20 °C)" },
+      { label: "Klassifizierung", wert: "CT-C30-F6", norm: "DIN EN 13813 (provisorisch)" },
+      { label: "Körnung", wert: "0–2 mm" },
+      { label: "Farbe", wert: "grau" },
+      { label: "Verarbeitungszeit", wert: "ca. 30 Min. (bei +20 °C und 65 % rel. Luftfeuchtigkeit)" },
+      { label: "Fließzeit", wert: "ca. 15 Min." },
+      { label: "Abbindezeit", wert: "Erstarrungsbeginn ca. 140 Min., Erstarrungsende ca. 200 Min.", norm: "DIN EN 196-3 (Anlehnung)" },
+      { label: "Begehbar nach", wert: "ca. 3–4 Std. (bei +20 °C)" },
+      { label: "Belegreife diffusionsoffene Beläge", wert: "nach ca. 6 Std." },
+      { label: "Belegreife diffusionsdichte Beläge", wert: "nach ca. 16 Std." },
+      { label: "Druckfestigkeit", wert: "nach 24 Std. > 20,0 N/mm², nach 7 Tagen > 24,0 N/mm², nach 28 Tagen > 34,0 N/mm²", norm: "DIN EN 1015-11" },
+      { label: "Biegezugfestigkeit", wert: "nach 7 Tagen > 7,9 N/mm²", norm: "DIN EN 1015-11" },
+      { label: "VOC-Gehalt", wert: "0 g/L" },
+      { label: "Verarbeitungs-, Umgebungs- und Untergrundtemperatur", wert: "≥ 5 °C" },
+      { label: "Wasserzugabe", wert: "ca. 4,75 l je 25 kg Gebinde" },
+      { label: "Materialverbrauch", wert: "ca. 1,7 kg/m² je mm Schichtdicke" },
+      { label: "Schichtdicke", wert: "typisch 2–70 mm, > 70 mm nach Absprache mit der Anwendungstechnik (Einbaudicke bis 120 mm)" },
+    ],
+    verarbeitungModi: [
+      { titel: "Untergrundvorbereitung & Grundierung", schritte: [
+        "Untergrund durch Fräsen und/oder Kugelstrahlen vorbereiten; Risse, Ausbrüche und schadhafte Fugen fachgerecht instand setzen.",
+        "Untergrund muss tragfähig, fest, sauber, trocken, rissfrei und frei von losen Teilen, Ölen, Fetten und haftungsmindernden Verunreinigungen sein.",
+        "Oberflächenzugfestigkeit: ohne Fahrbeanspruchung ≥ 1,0 N/mm², mit Fahrbeanspruchung oder im Außenbereich ≥ 1,5 N/mm² (Anforderungen DIN 18365 und DIN 18560).",
+        "KORODUR PC aufbringen; bei schwierigem Untergrund die zweikomponentige Epoxidharz-Grundierung KORODUR TXPK mit feuergetrocknetem Quarzsand (Körnung 0,4–0,8 mm) satt aufbringen.",
+      ] },
+      { titel: "Anmischen", schritte: [
+        "LevelFlor in ein sauberes, geeignetes Gefäß (z. B. KORODUR 30-Liter-Mischeimer) geben.",
+        "Mit ca. 4,75 l Wasser je 25 kg ca. 3–5 Minuten klumpenfrei und homogen anmischen (Mischquirl ≥ 650 UpM oder Zwangsmischer, z. B. Collmix LevMix oder Hippo-Mixer).",
+        "Richtige Konsistenz über das Ausbreitmaß bestimmen; Verwendung des „FLOW Kits“ empfohlen.",
+      ] },
+      { titel: "Applikation", schritte: [
+        "LevelFlor auf den vorbereiteten und grundierten Untergrund in typischer Schichtdicke 2–70 mm verlegen.",
+        "Material nivelliert sich innerhalb der 15-minütigen Fließzeit; gleichmäßig mit geeignetem Rakel applizieren.",
+        "Lufteinschlüsse aus der noch fließfähigen Oberfläche mit einer Stachelwalze entfernen; für die Sollstärke Höhenmarken setzen.",
+        "Fläche bis zur Begehbarkeit vor zu schneller Austrocknung durch Wind, Zugluft und Sonneneinstrahlung schützen; bei hohen Temperaturen möglichst kaltes Anmachwasser einsetzen, bei niedrigen Temperaturen Material und/oder Anmachwasser aufwärmen.",
+      ] },
     ],
     besonderheiten: [
       "Rapid-Set-Zementtechnologie",
@@ -1365,6 +1567,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-hb-5",
+    sku: "1220277S25KG",
     tdsUrl: "/downloads/tds/KORODUR_HB_5_de.pdf",
     name: "KORODUR HB 5",
     kategorie: "grundierung",
@@ -1387,6 +1590,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-txpk",
+    sku: "1320608",
     tdsUrl: "/downloads/tds/KORODUR_TXPK_de.pdf",
     name: "KORODUR TXPK",
     kategorie: "grundierung",
@@ -1404,6 +1608,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-durop",
+    sku: "8120900S25KG",
     tdsUrl: "/downloads/tds/DUROP_de.pdf",
     name: "KORODUR DUROP",
     kategorie: "sonstige",
@@ -1452,6 +1657,7 @@ export const produkte: Produkt[] = [
   // bewusst NICHT uebernommen — TDS-Klaerung offen (zuordnung-industrieboden.md).
   {
     id: "korodur-easyfinish",
+    sku: "1320570G30KG",
     tdsUrl: "/downloads/tds/KORODUR_easyFinish_de.pdf",
     name: "KORODUR easyFinish",
     kategorie: "nachbehandlung",
@@ -1477,6 +1683,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-nanofinish",
+    sku: "1320567G30KG",
     tdsUrl: "/downloads/tds/KORODUR_nanoFinish_de.pdf",
     name: "KORODUR nanoFinish",
     kategorie: "nachbehandlung",
@@ -1502,6 +1709,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "korodur-uniprimer",
+    sku: "1320606G30KG",
     tdsUrl: "/downloads/tds/KORODUR_uniPrimer_de.pdf",
     name: "KORODUR uniPrimer",
     kategorie: "grundierung",
@@ -1526,6 +1734,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koromineral",
+    sku: "1320893G30KG",
     tdsUrl: "/downloads/tds/KOROMINERAL_de.pdf",
     name: "KOROMINERAL",
     kategorie: "beschichtung",
@@ -1552,6 +1761,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "koromineral-li",
+    sku: "1320589",
     tdsUrl: "/downloads/tds/KOROMINERAL_Li_de.pdf",
     name: "KOROMINERAL Li+",
     kategorie: "beschichtung",
@@ -1619,6 +1829,7 @@ export const produkte: Produkt[] = [
   // Zuordnung: docs/website-migration/zuordnung-sichtestrich-microtop.md
   {
     id: "granidur",
+    sku: "1220218S25KG",
     tdsUrl: "/downloads/tds/GRANIDUR_05_08_de.pdf",
     name: "GRANIDUR",
     kategorie: "estrich",
@@ -1733,6 +1944,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "tru-pc",
+    sku: "1220297",
     tdsUrl: "/downloads/tds/TRU_PC_de.pdf",
     name: "TRU PC",
     kategorie: "estrich",
@@ -1766,6 +1978,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "tru-sp",
+    sku: "1220291",
     tdsUrl: "/downloads/tds/TRU_SP_de.pdf",
     name: "TRU SP",
     kategorie: "estrich",
@@ -1800,6 +2013,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-3",
+    sku: "1220410S25KG",
     tdsUrl: "/downloads/tds/MICROTOP_TW_3_5_8_de.pdf",
     name: "MICROTOP TW 3",
     kategorie: "sonstige",
@@ -1831,6 +2045,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-5",
+    sku: "1220398S25KG",
     tdsUrl: "/downloads/tds/MICROTOP_TW_3_5_8_de.pdf",
     name: "MICROTOP TW 5",
     qualitaetsklasse: "C30/37",
@@ -1857,6 +2072,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-8",
+    sku: "1220405S25KG",
     tdsUrl: "/downloads/tds/MICROTOP_TW_3_5_8_de.pdf",
     name: "MICROTOP TW 8",
     kategorie: "sonstige",
@@ -1888,6 +2104,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-nsm",
+    sku: "1220426S25KG",
     tdsUrl: "/downloads/tds/MICROTOP_TW_NSM_de.pdf",
     name: "MICROTOP TW NSM",
     kategorie: "sonstige",
@@ -1910,6 +2127,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-02",
+    sku: "1220404S25KG",
     tdsUrl: "/downloads/tds/MICROTOP_TW_02_de.pdf",
     name: "MICROTOP TW 02",
     kategorie: "sonstige",
@@ -1935,6 +2153,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-vsm",
+    sku: "1220406S25KG",
     tdsUrl: "/downloads/tds/MICROTOP_TW_VSM_de.pdf",
     name: "MICROTOP TW VSM",
     kategorie: "sonstige",
@@ -1957,6 +2176,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-bm",
+    sku: "1220407S25KG",
     tdsUrl: "/downloads/tds/MICROTOP_TW_BM_de.pdf",
     name: "MICROTOP TW BM",
     kategorie: "beschichtung",
@@ -1983,6 +2203,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "microtop-tw-mineral",
+    sku: "1320892G30KG",
     tdsUrl: "/downloads/tds/MICROTOP_TW_Mineral_de.pdf",
     name: "MICROTOP TW Mineral",
     kategorie: "beschichtung",
@@ -2315,6 +2536,7 @@ export const produkte: Produkt[] = [
   // KOROMINERAL Lasur entfernt (2026-06-23): Produkt gibt es nicht mehr (Steffi).
   {
     id: "neodur-pfm-1k-easyfix",
+    sku: "1220392",
     tdsUrl: "/downloads/tds/NEODUR_PFM_1K_Easyfix_de.pdf",
     name: "NEODUR PFM 1K Easyfix",
     kategorie: "sonstige",
@@ -2344,6 +2566,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-pfm-ze",
+    sku: "2220885S25KG",
     tdsUrl: "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_de.pdf",
     name: "NEODUR PFM-ZE",
     kategorie: "sonstige",
