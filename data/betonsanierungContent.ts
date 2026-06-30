@@ -45,14 +45,6 @@ export interface BetonAnwendung {
   referenzSlug: string;
 }
 
-export interface BetonTechPunkt {
-  icon: BetonIcon;
-  titel: string;
-  text: string;
-  /** true = Wert noch nicht final von Technik freigegeben (Broschüren-Wert). */
-  faktencheck?: boolean;
-}
-
 export interface BetonTrack2Gruppe {
   /** produktgruppe-Key (matcht data/produkte.ts + dict gruppe_<key>). */
   gruppe: string;
@@ -114,17 +106,9 @@ export const BETONSANIERUNG_CONTENT = {
     sub: "Rapid Set. schnell. einfach. einzigartig.",
     chips: ["belastbar nach 1 Stunde", "ein Material, viele Anwendungen", "ohne schwere Maschinerie"],
 
-    // Der ALLES-BESSER-KÖNNER (Taschenmesser-Leitmotiv).
-    leitmotiv: {
-      bild: "/images/bereiche/rapid-set-alles-besser-koenner.png",
-      bildBreite: 1200,
-      bildHoehe: 1421,
-      kicker: "Wenige Produkte für viele Anwendungen",
-      headline: "Ein Material ersetzt den ganzen Werkzeugkasten",
-      text:
-        "Wie ein Schweizer Taschenmesser vereint Rapid Set viele Funktionen in einem Werkzeug: Boden, Wand und Decke, innen und außen, vom Verguss bis zur Verkehrsfläche. Ein Material, das mitdenkt, schnell belastbar, schwundneutral und nachhaltig.",
-    },
-
+    // Teaser-Tiefe: nur die 3 Kernvorteile. Die volle Markengeschichte
+    // (Leitmotiv, BCSA-Technologie, Epoxid-Abgrenzung, Trust) lebt auf der
+    // eigenen Rapid-Set-Marken-Seite /bereiche/rapid-set/ (#320).
     vorteile: [
       {
         icon: "timer",
@@ -149,42 +133,7 @@ export const BETONSANIERUNG_CONTENT = {
       },
     ] satisfies BetonVorteil[],
 
-    technologie: {
-      kicker: "Hochentwickelte Rapid Set Technologie",
-      headline: "Warum Rapid Set anders ist",
-      lead:
-        "Rapid Set basiert auf schnellabbindendem Calcium-Sulfo-Aluminat-Zement (BCSA), nicht auf beschleunigtem Portlandzement. Das Anmachwasser wird nahezu vollständig chemisch gebunden. Daraus folgt die einzigartige Performance.",
-      punkte: [
-        { icon: "timer", titel: "Hohe Frühfestigkeit", text: "Über 20 N/mm² nach 60 Minuten, bis Klasse C55/67 nach 28 Tagen. Hochfest und schnellerhärtend ohne nachträgliche Beschleuniger." },
-        { icon: "layers", titel: "Schwundneutral", text: "Volumenstabiles, schwund- und spannungsarmes Erhärten. Das reduziert Risse und Ablösungen und macht Haftbrücken überflüssig." },
-        { icon: "shield", titel: "Dauerhaft beständig", text: "Sulfatbeständig (Prüfung nach Wittekindt) sowie frost- und tausalzbeständig (CDF-Prüfung). Sehr niedriger Chloridionengehalt." },
-        // CO2- und Lebensdauer-Werte freigegeben (Steffi 2026-06-30).
-        { icon: "leaf", titel: "CO₂-reduziert", text: "Rund 30 % weniger CO₂-Ausstoß als Portlandzement. EPD nach ISO 14025 und EN 15804, third-party verifiziert, LEED-konform." },
-        { icon: "recycle", titel: "Bis 4× langlebiger", text: "Bis zu vierfache Lebensdauer gegenüber Portlandzement. Weniger Instandhaltung, längere Nutzungsdauer, bessere Lebenszykluskosten." },
-        { icon: "droplets", titel: "Konsistenz steuerbar", text: "Über die Concrete-Pharmacy-Additive lassen sich Konsistenz und Verarbeitungszeit gezielt an Witterung und Aufgabe anpassen." },
-      ] satisfies BetonTechPunkt[],
-      epoxid: {
-        // Brandklasse-A1-Aussage freigegeben (Steffi 2026-06-30).
-        headline: "Die mineralische Alternative zu Epoxidharz-Mörtel",
-        punkte: [
-          "Brandklasse A1, nichtbrennbar statt B1",
-          "Rein mineralisch und gesundheitlich unbedenklich",
-          "Entsorgung als Bauschutt statt als Gefahrgut",
-        ],
-      },
-    },
-
-    // Bezug Rapid Set: Baustoff-Fachhandel (Track-1-spezifisch).
-    haendlerHinweis: true,
-
-    // Anonymer Track-1-Beleg (kein Personen-/Logo-Trust).
-    beleg: {
-      kennzahl: "Über 2.500",
-      kennzahlText: "Handwerksbetriebe verarbeiten Rapid Set",
-      lead: "Exklusiver Lizenzpartner für Rapid Set seit 2012.",
-    },
-
-    claim: "Rapid Set changes the game!",
+    mehrErfahren: "Mehr erfahren über Rapid Set",
   },
 
   // =====================================================================

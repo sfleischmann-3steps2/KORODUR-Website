@@ -185,6 +185,7 @@ export type Produktbereich =
   | "sichtestrich"
   | "microtop"
   | "rapid-set"
+  | "betonsanierung"
   | "infrastruktur"
   | "spezialmoertel"
   | "3d-concrete-printing"

@@ -16,13 +16,11 @@ import {
   Recycle,
   Flame,
   Wrench,
-  SprayCan,
-  Anchor,
-  Grid3x3,
   CheckCircle2,
+  Info,
 } from "lucide-react";
 import type { Dictionary, Locale } from "../app/[lang]/dictionaries";
-import { BETONSANIERUNG_CONTENT, type BetonIcon } from "../data/betonsanierungContent";
+import { RAPID_SET_CONTENT, RAPID_SET_PRODUKT_IDS, type RapidSetIcon } from "../data/rapidSetContent";
 import { getBereichBySlug } from "../data/bereiche";
 import { produkte } from "../data/produkte";
 import { referenzen, getReferenzBySlug } from "../data/referenzen";
@@ -30,10 +28,11 @@ import { localizeProdukte, localizeReferenzen } from "../data/i18n/getLocalized"
 import { fachberaterFuerBereich } from "../data/fachberater";
 import { withBasePath } from "../lib/basePath";
 
-const SLUG = "betonsanierung";
-const C = BETONSANIERUNG_CONTENT;
+const SLUG = "rapid-set";
+const C = RAPID_SET_CONTENT;
+const IDS = new Set<string>(RAPID_SET_PRODUKT_IDS);
 
-const ICONS: Record<BetonIcon, typeof Timer> = {
+const ICONS: Record<RapidSetIcon, typeof Timer> = {
   timer: Timer,
   layers: Layers,
   droplets: Droplets,
@@ -42,23 +41,13 @@ const ICONS: Record<BetonIcon, typeof Timer> = {
   recycle: Recycle,
   flame: Flame,
   wrench: Wrench,
-  spray: SprayCan,
-  anchor: Anchor,
-  grid: Grid3x3,
 };
 
-/** Icon je Track-2-Produktgruppe (rein dekorativ). */
-const TRACK2_ICON: Record<string, typeof Timer> = {
-  spritzmoertel: SprayCan,
-  verguss: Anchor,
-  pflasterfugen: Grid3x3,
-};
-
-/** Dedizierte, redaktionell ausgearbeitete Bereichsseite „Betonsanierung" (DE).
- *  Hybrid: markenneutrales Dach + Track 1 (Rapid Set) + Track 2 (NEODUR-
- *  Instandsetzung). Ersetzt für slug=rapid-set & lang=de das generische
- *  Template. Quelle: data/betonsanierungContent.ts + Spec 2026-06-30 (#320). */
-export default async function BetonsanierungBereich({
+/** Dedizierte Rapid-Set-Marken-Seite (DE) an der bestehenden korodur.de-URL
+ *  /bereiche/rapid-set/ (SEO-Erhalt, #320). Produkte über die kuratierte
+ *  RAPID_SET_PRODUKT_IDS-Liste (nicht über das bereich-Feld). Quelle:
+ *  data/rapidSetContent.ts + Spec docs/specs/2026-06-30-bereichsseiten-konzept-rework.md. */
+export default async function RapidSetMarke({
   lang,
   dict,
 }: {
@@ -68,13 +57,10 @@ export default async function BetonsanierungBereich({
   const tb = (k: string) => (dict.bereiche as Record<string, string>)[k] ?? k;
   const bereich = getBereichBySlug(SLUG);
   const heldBild = bereich?.bild;
-  const T1 = C.track1;
-  const T2 = C.track2;
 
-  const gehoertZuBereich = (p: (typeof produkte)[number]) =>
-    p.bereich === SLUG || (p.zusatzBereiche?.includes(SLUG) ?? false);
+  const istRapidSet = (p: (typeof produkte)[number]) => IDS.has(p.id);
 
-  const localizedProdukte = await localizeProdukte(produkte.filter(gehoertZuBereich), lang);
+  const localizedProdukte = await localizeProdukte(produkte.filter(istRapidSet), lang);
   const gruppen = (bereich?.produktgruppen ?? [])
     .map((key) => ({
       key,
@@ -84,8 +70,6 @@ export default async function BetonsanierungBereich({
     }))
     .filter((g) => g.items.length > 0);
 
-  // Szenario-Vorschaubild je Produkt aus einer passenden Referenz; ohne
-  // belegtes Paar bleibt das Bild leer (Kachel rendert ohne Foto statt Platzhalter).
   const szenarioBild = (id: string): string | undefined => {
     const refSlug = C.produktSzenarioReferenz[id];
     return refSlug ? getReferenzBySlug(refSlug)?.bild : undefined;
@@ -103,9 +87,9 @@ export default async function BetonsanierungBereich({
     })),
   }));
 
-  // Referenz-Teaser unten: Projekte, die Bereichs-Produkte einsetzen.
+  // Referenz-Teaser: Projekte, die Rapid-Set-Produkte einsetzen.
   const bereichsProduktNamen = new Set(
-    produkte.filter(gehoertZuBereich).map((p) => p.name.toLowerCase())
+    produkte.filter(istRapidSet).map((p) => p.name.toLowerCase())
   );
   const bereichsReferenzen = await localizeReferenzen(
     referenzen
@@ -127,7 +111,7 @@ export default async function BetonsanierungBereich({
         </div>
       </section>
 
-      {/* 1 — Hero (Dach, markenneutral) ------------------------------- */}
+      {/* 1 — Hero ----------------------------------------------------- */}
       <section className="relative overflow-hidden" style={{ minHeight: 440 }}>
         {heldBild && (
           <Image src={withBasePath(heldBild)} alt="" fill priority sizes="100vw" className="object-cover" />
@@ -185,7 +169,17 @@ export default async function BetonsanierungBereich({
         </div>
       </section>
 
-      {/* 2 — Problem / Nutzenversprechen (Dach) ----------------------- */}
+      {/* Händler-Hinweis ---------------------------------------------- */}
+      <section style={{ padding: "16px 32px 0" }}>
+        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <div className="flex items-start gap-3 bg-white rounded-xl border border-navy/10" style={{ padding: "16px 18px", maxWidth: 820 }}>
+            <AppIcon icon={Info} width={20} height={20} strokeWidth={2} className="text-cyan-text shrink-0 mt-0.5" aria-hidden="true" />
+            <p className="text-navy text-[14px] m-0 leading-[1.6]">{tb("haendler_hinweis")}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2 — Problem / Nutzenversprechen ------------------------------ */}
       <section style={{ padding: "56px 32px 8px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -214,142 +208,67 @@ export default async function BetonsanierungBereich({
               </p>
             </div>
           </div>
-
-          {/* Typische Sanierungsanlässe (Orientierung) */}
-          <div className="mt-10 pt-8 border-t border-bullet-bg">
-            <span className="inline-block text-cyan-text uppercase tracking-[0.12em] text-[12px] mb-1" style={{ fontWeight: 800 }}>
-              {C.anlaesse.kicker}
-            </span>
-            <h3 className="text-navy mb-4" style={{ fontSize: "clamp(18px, 2.6vw, 24px)", fontWeight: 900 }}>
-              {C.anlaesse.headline}
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {C.anlaesse.items.map((a) => (
-                <span
-                  key={a}
-                  className="inline-flex items-center gap-2 bg-white border border-navy/12 text-navy text-[14px] rounded-full"
-                  style={{ padding: "8px 15px", fontWeight: 600 }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan shrink-0" aria-hidden="true" />
-                  {a}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* ============ TRACK 1 — Rapid Set (Teaser → Marken-Seite) ===== */}
-      {/* #320: kondensiert. Volle Markengeschichte auf /bereiche/rapid-set/. */}
+      {/* Leitmotiv — Taschenmesser + drei Kernvorteile + Fazit -------- */}
       <section style={{ padding: "56px 32px 8px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          {/* Track-Header */}
-          <div className="flex flex-col gap-3">
-            <span className="self-start inline-flex items-center gap-2 bg-navy text-white uppercase tracking-[0.12em] text-[12px] rounded-full" style={{ padding: "6px 14px", fontWeight: 800 }}>
-              {T1.badge}
-            </span>
-            <h2 className="text-navy m-0" style={{ fontSize: "clamp(24px, 3.6vw, 34px)", fontWeight: 900, lineHeight: 1.12 }}>
-              {T1.headline}
-            </h2>
-            <p className="text-cyan-text m-0" style={{ fontSize: 17, fontWeight: 800 }}>{T1.sub}</p>
-            <p className="text-navy/75 mt-1 mb-0" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 820 }}>
-              {T1.lead}
-            </p>
-            <div className="flex flex-wrap gap-2 mt-1">
-              {T1.chips.map((chip) => (
-                <span key={chip} className="inline-flex items-center gap-1.5 bg-icon-bg text-navy text-[13px] rounded-full" style={{ padding: "6px 13px", fontWeight: 600 }}>
-                  <AppIcon icon={CheckCircle2} width={14} height={14} strokeWidth={2.25} className="text-cyan-text" aria-hidden="true" />
-                  {chip}
-                </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div className="order-2 lg:order-1">
+              <Image
+                src={withBasePath(C.allesBesserKoenner.bild)}
+                alt="Der ALLES-BESSER-KÖNNER: das Rapid Set Taschenmesser-Prinzip, ein Material für viele Anwendungen"
+                width={C.allesBesserKoenner.bildBreite}
+                height={C.allesBesserKoenner.bildHoehe}
+                className="w-full h-auto"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="order-1 lg:order-2 flex flex-col gap-6">
+              {C.vorteile.map((v) => (
+                <div key={v.titel} className="flex items-start gap-4">
+                  <span className="flex items-center justify-center rounded-xl bg-navy shrink-0" style={{ width: 52, height: 52 }} aria-hidden="true">
+                    <AppIcon icon={ICONS[v.icon]} width={26} height={26} strokeWidth={1.9} className="text-white" />
+                  </span>
+                  <div className="min-w-0">
+                    <span className="text-cyan-text uppercase tracking-[0.1em] text-[11px]" style={{ fontWeight: 800 }}>
+                      {v.kicker}
+                    </span>
+                    <h3 className="text-navy mt-0.5 mb-1" style={{ fontSize: 19, fontWeight: 900, lineHeight: 1.2 }}>
+                      {v.titel}
+                    </h3>
+                    <p className="text-navy/70 text-[14.5px] leading-[1.6] m-0">{v.text}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
-
-          {/* 3 Kernvorteile (kompakt) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            {T1.vorteile.map((v) => (
-              <div key={v.titel} className="bg-white rounded-2xl border border-bullet-bg" style={{ padding: "24px 22px" }}>
-                <span className="flex items-center justify-center rounded-xl bg-navy mb-4" style={{ width: 48, height: 48 }} aria-hidden="true">
-                  <AppIcon icon={ICONS[v.icon]} width={24} height={24} strokeWidth={1.9} className="text-white" />
-                </span>
-                <span className="text-cyan-text uppercase tracking-[0.1em] text-[11px]" style={{ fontWeight: 800 }}>
-                  {v.kicker}
-                </span>
-                <h3 className="text-navy mt-0.5 mb-1" style={{ fontSize: 18, fontWeight: 900, lineHeight: 1.2 }}>
-                  {v.titel}
-                </h3>
-                <p className="text-navy/70 text-[14px] leading-[1.55] m-0">{v.text}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Mehr erfahren → eigene Rapid-Set-Marken-Seite */}
-          <div className="mt-6">
-            <Link
-              href={`/${lang}/bereiche/rapid-set/`}
-              className="inline-flex items-center justify-center gap-2 rounded-[6px] border-2 border-navy text-navy no-underline hover:bg-navy hover:text-white transition-colors duration-200"
-              style={{ padding: "12px 24px", fontWeight: 800, fontSize: 15, minHeight: 48 }}
-            >
-              {T1.mehrErfahren}
-              <AppIcon icon={ArrowRight} width={16} height={16} strokeWidth={2.5} aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ TRACK 2 — NEODUR-Instandsetzung ================= */}
-      <section className="bg-icon-bg" style={{ padding: "56px 32px 60px", marginTop: 48 }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div className="flex flex-col gap-3 mb-8">
-            <span className="self-start inline-flex items-center gap-2 bg-navy text-white uppercase tracking-[0.12em] text-[12px] rounded-full" style={{ padding: "6px 14px", fontWeight: 800 }}>
-              {T2.badge}
+          <div className="text-center mx-auto" style={{ maxWidth: 860, marginTop: 44 }}>
+            <span className="inline-block text-cyan-text uppercase tracking-[0.12em] text-[12px] mb-2" style={{ fontWeight: 800 }}>
+              {C.allesBesserKoenner.kicker}
             </span>
-            <h2 className="text-navy m-0" style={{ fontSize: "clamp(24px, 3.6vw, 34px)", fontWeight: 900, lineHeight: 1.12 }}>
-              {T2.headline}
+            <h2 className="text-navy mb-3" style={{ fontSize: "clamp(22px, 3.2vw, 30px)", fontWeight: 900, lineHeight: 1.2 }}>
+              {C.allesBesserKoenner.headline}
             </h2>
-            <p className="text-navy/75 mt-1 mb-0" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 820 }}>
-              {T2.lead}
+            <p className="text-navy/70 mb-0" style={{ fontSize: 17, lineHeight: 1.7 }}>
+              {C.allesBesserKoenner.text}
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-            {T2.gruppen.map((g) => (
-              <div key={g.gruppe} className="flex flex-col bg-white rounded-2xl border border-navy/10 h-full" style={{ padding: "26px 24px" }}>
-                <span className="flex items-center justify-center rounded-xl bg-navy shrink-0 mb-4" style={{ width: 52, height: 52 }} aria-hidden="true">
-                  <AppIcon icon={TRACK2_ICON[g.gruppe] ?? Wrench} width={26} height={26} strokeWidth={1.9} className="text-white" />
-                </span>
-                <h3 className="text-navy mt-0 mb-2" style={{ fontSize: 20, fontWeight: 900, lineHeight: 1.2 }}>
-                  {g.label}
-                </h3>
-                <p className="text-navy/70 text-[14.5px] leading-[1.6] mt-0 mb-4 flex-1">{g.intro}</p>
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-bullet-bg">
-                  {g.produkte.map((name) => (
-                    <a
-                      key={name}
-                      href="#portfolio"
-                      className="inline-flex items-center bg-icon-bg text-navy text-[12.5px] rounded-full no-underline hover:bg-cyan hover:text-white transition-colors"
-                      style={{ padding: "5px 11px", fontWeight: 700 }}
-                    >
-                      {name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* 3 — Wofür: Anwendungsfälle (beide Linien) -------------------- */}
-      <section style={{ padding: "60px 32px 8px" }}>
+      {/* 4 — Wofür: Anwendungsfälle ----------------------------------- */}
+      <section className="bg-icon-bg" style={{ padding: "60px 32px 64px", marginTop: 48 }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <span className="inline-block text-cyan-text uppercase tracking-[0.12em] text-[12px] mb-2" style={{ fontWeight: 800 }}>
             Wofür
           </span>
           <h2 className="text-navy mb-2" style={{ fontSize: "clamp(20px, 3vw, 30px)", fontWeight: 900 }}>
-            Von der Verkehrsfläche bis zur Pflasterfuge
+            Wenige Produkte für viele Anwendungen
           </h2>
           <p className="text-navy/70 text-[16px] mt-0 mb-7 leading-[1.6]" style={{ maxWidth: 720 }}>
-            Reparatur, Reprofilierung, Verguss und Fugensanierung. Jede Kachel führt zu einem echten Projekt aus unserer Referenzdatenbank.
+            Von der Verkehrsfläche bis zur Sichtbeton-Arbeitsplatte. Jede Kachel führt zu einem echten Projekt aus unserer Referenzdatenbank.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {C.anwendungen.map((a) => {
@@ -387,7 +306,51 @@ export default async function BetonsanierungBereich({
         </div>
       </section>
 
-      {/* 4 — Produkt-Portfolio (beide Linien, gruppiert) -------------- */}
+      {/* 5 — Technologie ---------------------------------------------- */}
+      <section style={{ padding: "60px 32px 8px" }}>
+        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <span className="inline-block text-cyan-text uppercase tracking-[0.12em] text-[12px] mb-2" style={{ fontWeight: 800 }}>
+            {C.technologie.kicker}
+          </span>
+          <h2 className="text-navy mb-3" style={{ fontSize: "clamp(20px, 3vw, 30px)", fontWeight: 900 }}>
+            {C.technologie.headline}
+          </h2>
+          <p className="text-navy/75 mt-0 mb-8" style={{ fontSize: 17, lineHeight: 1.7, maxWidth: 820 }}>
+            {C.technologie.lead}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {C.technologie.punkte.map((p) => (
+              <div key={p.titel} className="flex items-start gap-4 bg-white rounded-xl border border-bullet-bg p-5">
+                <span className="flex items-center justify-center rounded-lg bg-icon-bg shrink-0" style={{ width: 44, height: 44 }} aria-hidden="true">
+                  <AppIcon icon={ICONS[p.icon]} width={22} height={22} strokeWidth={1.9} className="text-cyan-text" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="text-navy text-[16px] mb-1 mt-0" style={{ fontWeight: 800 }}>
+                    {p.titel}
+                  </h3>
+                  <p className="text-navy/65 text-[13.5px] leading-[1.55] m-0">{p.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-2xl bg-navy text-white text-center" style={{ padding: "40px 28px" }}>
+            <h3 className="text-white mt-0 mb-6" style={{ fontSize: "clamp(20px, 2.8vw, 25px)", fontWeight: 900 }}>
+              {C.technologie.epoxid.headline}
+            </h3>
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-10 gap-y-3">
+              {C.technologie.epoxid.punkte.map((p) => (
+                <span key={p} className="inline-flex items-center gap-2 text-white/90" style={{ fontSize: 17 }}>
+                  <AppIcon icon={CheckCircle2} width={18} height={18} strokeWidth={2.25} className="text-cyan shrink-0" aria-hidden="true" />
+                  {p}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6 — Produkt-Portfolio (gruppiert) ---------------------------- */}
       <section id="portfolio" className="scroll-mt-24" style={{ padding: "60px 32px 16px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h2 className="text-navy mb-2" style={{ fontSize: "clamp(20px, 3vw, 30px)", fontWeight: 900 }}>
@@ -407,15 +370,15 @@ export default async function BetonsanierungBereich({
         </div>
       </section>
 
-      {/* 5 — Beweis / Trust (Dach) ------------------------------------ */}
+      {/* 7 — Beweis / Trust ------------------------------------------- */}
       <section className="bg-navy text-white" style={{ padding: "56px 32px 60px", marginTop: 48 }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left lg:border-r lg:border-white/15 lg:pr-12">
-              <div className="text-cyan" style={{ fontSize: "clamp(36px, 6vw, 56px)", fontWeight: 900, lineHeight: 1 }}>
+              <div className="text-cyan" style={{ fontSize: "clamp(40px, 7vw, 64px)", fontWeight: 900, lineHeight: 1 }}>
                 {C.trust.kennzahl}
               </div>
-              <p className="text-white/80 text-[15px] mt-2 mb-0" style={{ maxWidth: 260 }}>
+              <p className="text-white/80 text-[15px] mt-2 mb-0" style={{ maxWidth: 240 }}>
                 {C.trust.kennzahlText}
               </p>
             </div>
@@ -439,7 +402,7 @@ export default async function BetonsanierungBereich({
         </div>
       </section>
 
-      {/* 6 — Fachberatung & Bezug (vor den Referenzen) ---------------- */}
+      {/* 8 — Fachberatung & Bezug ------------------------------------- */}
       {fachberater.length > 0 && (
         <section id="fachberater" className="scroll-mt-24" style={{ padding: "56px 32px 16px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
@@ -458,7 +421,7 @@ export default async function BetonsanierungBereich({
         </section>
       )}
 
-      {/* 7 — Referenzen ----------------------------------------------- */}
+      {/* 9 — Referenzen ----------------------------------------------- */}
       {bereichsReferenzen.length > 0 && (
         <section style={{ padding: "60px 32px 16px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
@@ -484,7 +447,7 @@ export default async function BetonsanierungBereich({
         </section>
       )}
 
-      {/* Abbinder (Dach) ---------------------------------------------- */}
+      {/* Abbinder ----------------------------------------------------- */}
       <section className="text-center" style={{ padding: "64px 32px 72px" }}>
         <div className="mx-auto" style={{ maxWidth: 700 }}>
           <p className="text-cyan-text mb-3" style={{ fontSize: "clamp(22px, 3.5vw, 30px)", fontWeight: 900 }}>
