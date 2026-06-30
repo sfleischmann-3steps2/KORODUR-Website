@@ -12,13 +12,15 @@ import { withBasePath } from "../lib/basePath";
 import type { DokumentTyp } from "../data/produktDokumente";
 import type { KatalogDokument } from "../lib/downloadKatalog";
 
-const TYP_ORDER: DokumentTyp[] = ["tds", "sds", "dop", "anwendung", "reinigung", "service"];
+const TYP_ORDER: DokumentTyp[] = ["tds", "sds", "dop", "epd", "anwendung", "reinigung", "farbkarte", "service"];
 const TYP_KEY: Record<DokumentTyp, string> = {
   tds: "dok_tds",
   sds: "dok_sds",
   dop: "dok_dop",
+  epd: "dok_epd",
   anwendung: "dok_anwendung",
   reinigung: "dok_reinigung",
+  farbkarte: "dok_farbkarte",
   service: "dok_service",
 };
 

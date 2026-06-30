@@ -386,7 +386,7 @@ const header = `// GENERIERT von scripts/generate-produkt-dokumente.mjs — NICH
 //   + data/dokument-funde-2026-06.json (verifizierte Funde WP-Export 2026-06-11, #121).
 // Regenerieren: node scripts/generate-produkt-dokumente.mjs
 
-export type DokumentTyp = "tds" | "sds" | "dop" | "anwendung" | "reinigung" | "service";
+export type DokumentTyp = "tds" | "sds" | "dop" | "epd" | "anwendung" | "reinigung" | "farbkarte" | "service";
 
 export interface ProduktDokument {
   typ: DokumentTyp;
