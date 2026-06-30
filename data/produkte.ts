@@ -298,11 +298,31 @@ export const produkte: Produkt[] = [
       "DIN EN 16516 + AgBB",
     ],
     technischeDaten: [
-      { label: "Druckfestigkeit", wert: "≥ 60 N/mm²" },
-      { label: "Biegezugfestigkeit", wert: "≥ 8 N/mm²" },
-      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)" },
+      { label: "Druckfestigkeit", wert: "≥ 60 N/mm²", norm: "DIN EN 13892-2" },
+      { label: "Biegezugfestigkeit", wert: "≥ 8 N/mm²", norm: "DIN EN 13892-2" },
+      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)", norm: "DIN EN 13892-3" },
       { label: "Begehbar nach", wert: "ca. 3 h" },
       { label: "Voll belastbar nach", wert: "ca. 24 h" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Verbundestrich (einschichtig auf Tragbeton)",
+        schritte: [
+          "Untergrund: Tragbeton mind. C 25/30, Oberflächenzugfestigkeit >= 1,5 N/mm2, vorbereiten z. B. durch Fräsen und Kugelstrahlen.",
+          "Oberfläche muss rissfrei, eben, frei von losen und mürben Bestandteilen und Feinstmörtelanreicherungen sowie rau und offenporig sein; Anforderungen der DIN 18365 und DIN 18560, Ebenheit nach DIN 18202, Tab. 3, Zeile 3.",
+          "Tragbeton einen Tag vor der Verlegung gründlich vornässen, Pfützenbildung vermeiden.",
+          "Auf die mattfeuchte Oberfläche die Haftbrücke KORODUR HB 5 rapid auftragen.",
+          "NEODUR HE 60 rapid mit der vorgegebenen Wassermenge (ca. 2,75 l/25-kg-Gebinde) je nach Verarbeitungsart ca. 2-3 Minuten bis zur aufziehfähigen Konsistenz mischen.",
+          "Frisch auf die noch feuchte Haftbrücke aufbringen und fluchtgerecht abziehen.",
+          "Zeitgerecht mittels Tellerglättmaschine porenschließend abreiben und je nach verlangter Oberflächenstruktur glätten (Flügelglättmaschine).",
+          "Verarbeitungstemperatur (Verarbeitungs-, Umgebungs- und Untergrundtemperatur) >= 5 °C; Verarbeitungszeit ca. 45-60 Minuten.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "NEODUR HE 60 rapid ist vor zu rascher Austrocknung gem. DIN EN 13670 / DIN 1045-3 zu schützen. Zur Nachbehandlung der NEODUR Hartstoffschicht werden KOROMINERAL CURE / Li+ oder KOROTEX empfohlen. Sind eine anschließende Oberflächenvergütung, Beschichtung oder Markierungen vorgesehen, sollte die Nachbehandlung nur mit Folie erfolgen." },
+      { titel: "Fugen", text: "Das Fugenraster ist vom Planer vorzugeben. Alle Fugen im erhärteten Tragbeton sind in der Hartstoffschicht zu übernehmen. Der Hartstoffestrich ist von aufgehenden Bauteilen (Wände, Stützen etc.) zu trennen." },
+      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung (alle Qualitäten) sowie Big-Bag. Trocken lagern wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Hohe Abriebfestigkeit",
@@ -610,13 +630,40 @@ export const produkte: Produkt[] = [
       "DIN EN 12706",
     ],
     technischeDaten: [
-      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
-      { label: "Biegezugfestigkeit", wert: "F8" },
-      { label: "Verschleißwiderstand", wert: "AR 0,5" },
+      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²", norm: "DIN EN 13892-2" },
+      { label: "Biegezugfestigkeit", wert: "F8", norm: "DIN EN 13892-2" },
+      { label: "Verschleißwiderstand", wert: "AR 0,5", norm: "DIN EN 13892-4" },
       { label: "Selbstverlaufend", wert: "Ja" },
       { label: "Ebenheit", wert: "DIN 18202, Zeile 3" },
       { label: "Leicht belastbar nach", wert: "ca. 24 h" },
       { label: "Voll belastbar nach", wert: "ca. 3 Tage" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Zementären Untergrund vor der Verlegung durch Fräsen und/oder Kugelstrahlen vorbereiten.",
+          "Vorhandene Risse, Ausbrüche und schadhafte Fugen fachgerecht instand setzen.",
+          "Untergrund muss tragfähig, fest, sauber, trocken, rissfrei und frei von losen Teilen, Ölen, Fetten oder sonstigen haftungsmindernden Verunreinigungen sein.",
+          "Oberflächenzugfestigkeit: ohne Fahrbeanspruchung >= 1,0 N/mm², mit Fahrbeanspruchung >= 1,5 N/mm². Es gelten die Anforderungen der DIN 18365 sowie der DIN 18560.",
+          "Auf dem vorbereiteten Untergrund KORODUR PC Grundierung aufbringen (Verarbeitung siehe Datenblatt KORODUR PC).",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "NEODUR Level in ein sauberes, geeignetes Gefäß geben und mit ca. 4,5 l bis 5,0 l Wasser mit Mischquirl (mind. 650 UpM) oder Zwangsmischer ca. 3 - 5 Minuten knollenfrei und homogen anmischen.",
+          "Maschinelle Verarbeitung mit handelsüblichen Schneckenpumpen bzw. durchlaufenden Mischpumpen möglich (Ausbreitmaß ca. 130 - 140 mm). Keine Mischtechnik verwenden, die große Mengen Luft einträgt.",
+          "Material gleichmäßig mit geeignetem Rakel applizieren.",
+          "Lufteinschlüsse durch Bearbeiten der noch fließfähigen Oberfläche mit einer geeigneten Stachelwalze entfernen.",
+          "Materialtemperatur >= 10 °C halten; gemischtes NEODUR Level innerhalb 30 Minuten applizieren.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Unterschiedliche Temperaturen beeinflussen den Erstarrungs- bzw. Erhärtungsverlauf. NEODUR Level ist vor zu rascher Austrocknung, Zugluft, direkter Sonnen- und Wärmeeinwirkung gem. DIN EN 13670/DIN 1045-3 zu schützen. Die Luft- und Bodentemperatur muss während der Verarbeitung und eine Woche danach >= 8 °C betragen. Nach Trocknung/Begehbarkeit wird eine geeignete Imprägnierung bzw. Einpflege empfohlen (erhöht die chemische Beständigkeit, wirkt feuchtigkeits- und schmutzabweisend, optimiert die Optik, staubfreie Oberfläche)." },
+      { titel: "Fugen", text: "Alle Fugen im Untergrund sind in der NEODUR Level Nutzschicht zu übernehmen. Der NEODUR Level Estrich ist von aufgehenden Bauteilen (Wände, Stützen, etc.) zu trennen." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 25 kg Papierspezialverpackung, 750 kg Big-Bag. Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 6 Monate." },
     ],
     besonderheiten: [
       "Selbstverlaufend – sehr gute Ebenheit",
@@ -663,13 +710,51 @@ export const produkte: Produkt[] = [
       "DIN EN 13892-3",
     ],
     technischeDaten: [
-      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
-      { label: "Biegezugfestigkeit", wert: "≥ 10 N/mm²" },
+      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²", norm: "DIN EN 13892-2" },
+      { label: "Biegezugfestigkeit", wert: "≥ 10 N/mm²", norm: "ASTM C 307 Mod." },
       { label: "Optik", wert: "Betonähnliche Sichtestrich-Oberfläche" },
       { label: "Verarbeitung", wert: "Selbstverlaufend" },
       { label: "Haftbrücke", wert: "Nicht erforderlich" },
       { label: "Begehbar nach", wert: "ca. 2–3 h" },
       { label: "Schleifbar bis Hochglanz nach", wert: "ca. 24 h" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung & Grundierung",
+        schritte: [
+          "Zementären Untergrund als Tragbeton C25/30 oder Tragestrich mindestens CT-C35-F5 vorbereiten, z. B. durch Fräsen und Kugelstrahlen.",
+          "Vorhandene Risse, Ausbrüche und schadhafte Fugen fachgerecht instand setzen; Fugen im Untergrund übernehmen.",
+          "Untergrund muss tragfähig, fest, sauber, trocken und frei von losen Teilen, Ölen, Fetten oder haftungsmindernden Verunreinigungen sein.",
+          "Oberflächenzugfestigkeit ≥ 1,5 N/mm² für befahrene bzw. ≥ 1,0 N/mm² für nicht befahrene Flächen; es gelten DIN 18365 und DIN 18560-3.",
+          "Als Tragestrich nur zementäre, schwundarme, maschinengeglättete Estriche, Schichtstärke mind. 65 mm, Mindest-Festigkeitsklasse CT-C35-F5 in gefügedichter Konsistenz.",
+          "2-komponentige Epoxidharz-Grundierung KORODUR TXPK aufbringen und mit feuergetrocknetem Quarzsand Körnung 0,4 - 0,8 mm satt absanden.",
+        ],
+      },
+      {
+        titel: "Mischen & Verarbeitung",
+        schritte: [
+          "Geeignete Mischtechnik verwenden (z. B. Hippo Mixer, Collomix-LevMix oder Mischquirl mit mind. 650 UpM); keine Technik, die große Mengen Luft einträgt.",
+          "TRU Self-Leveling mit ca. 3,8 - 4,3 l Wasser je 22,7-kg-Gebinde 3 - 5 Minuten klumpenfrei anmischen; Konsistenz über das Ausbreitmaß (FLOW Kit) bestimmen.",
+          "Auf den vorbereiteten und grundierten Untergrund in Schichtdicke 5 - 35 mm applizieren und mit geeignetem Rakel gleichmäßig verteilen.",
+          "Noch flüssige Oberfläche mit einer Kunststoff-Stachelwalze entlüften.",
+          "Innerhalb ca. 20 Minuten verarbeiten; Umgebungs- und Untergrundtemperatur 10 - 30 °C, Materialtemperatur über 10 °C halten.",
+          "Fläche bis zum Zeitpunkt der Begehbarkeit vor zu schneller Austrocknung, Wind, Zugluft und Sonneneinstrahlung schützen.",
+          "Bei Einbaustärken > 35 mm Material durch Zugabe von Quarzsand modifizieren (Rücksprache mit der Anwendungstechnik).",
+        ],
+      },
+      {
+        titel: "Schleifen & Polieren",
+        schritte: [
+          "TRU Self-Leveling ist bereits 24 Stunden nach Einbau schleifbar und verhält sich beim Schleifen und Polieren ähnlich wie Beton.",
+          "Flächen können bis zur Hochglanzoptik geschliffen werden; eine Schleifanleitung ist auf Anfrage erhältlich.",
+          "Beim Schleifen werden je nach gewünschter Optik bis zu 3 mm der ursprünglichen Einbaustärke heruntergeschliffen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung & Einpflege", text: "Bei 20 °C ist normalerweise keine Nachbehandlung mit Wasser erforderlich. Bei extrem trockenen, windigen, heißen oder sonnigen Bedingungen mit einem feinen Wassernebel auf die ausreichend abgebundene Fläche nachbehandeln. Nach Trocknung/Begehbarkeit wird eine geeignete Imprägnierung bzw. Einpflege empfohlen; sie erhöht die chemische Beständigkeit, wirkt feuchtigkeits- und schmutzabweisend und optimiert die Optik." },
+      { titel: "Fugen", text: "Alle Fugen im erhärteten Tragbeton sind in der Sichtestrichschicht zu übernehmen. Der Sichtestrich ist von aufgehenden Bauteilen (Wände, Stützen etc.) zu trennen." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 22,7 kg Papierspezialverpackung. Trocken lagern wie Zement; Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Designorientierte Betonoptik",
@@ -713,9 +798,34 @@ export const produkte: Produkt[] = [
       "DIN 18202",
     ],
     technischeDaten: [
-      { label: "Untergrund-Anforderung", wert: "Tragbeton mind. C25/30, Oberflächenzugfestigkeit ≥ 1,5 N/mm²" },
+      { label: "Untergrund-Anforderung", wert: "Tragbeton mind. C25/30, Oberflächenzugfestigkeit ≥ 1,5 N/mm²", norm: "DIN 18365, DIN 18560, DIN 18202" },
       { label: "Verarbeitungszeit", wert: "ca. 15 min" },
       { label: "Überarbeitbar nach", wert: "frisch-in-frisch" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Tragbeton mind. C25/30 mit Oberflächenzugfestigkeit ≥ 1,5 N/mm² vorbereiten, z. B. durch Fräsen und Kugelstrahlen.",
+          "Oberfläche muss rissefrei, eben, frei von losen und mürben Bestandteilen sowie Feinstmörtelanreicherungen, rau und offenporig sein.",
+          "Anforderungen der DIN 18365 und DIN 18560 einhalten; Ebenheit gemäß DIN 18202, Tab. 3, Zeile 3.",
+          "Tragbeton einen Tag vor der Verlegung gründlich vornässen, Pfützenbildung vermeiden.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "KORODUR HB 5 rapid mit ca. 5,5 l Wasser je 25-kg-Gebinde mit langsam laufendem Quirl mind. 2 - 3 Minuten zu einer weichbreiigen Schlämme mischen; überwässertes Material nicht verwenden.",
+          "Vor dem Auftrag muss der vorgenässte Tragbeton an der Oberfläche mattfeucht angetrocknet sein.",
+          "Haftbrücke ca. 1 - 2 mm dick mit einem harten Straßenbesen aufbürsten.",
+          "Bereits angetrocknete Haftbrücke (durch Hautbildung erkennbar) nicht überarbeiten, sondern entfernen.",
+          "Schnellestrich NEODUR HE 60 rapid sofort auf die noch frische Haftbrücke verlegen, um vorzeitige Austrocknung zu vermeiden.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Fugen", text: "Alle Fugen im Untergrund sind zu übernehmen. Der Verbundestrich ist von aufgehenden Bauteilen (Wände, Stützen, etc.) zu trennen." },
+      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Schnelle Erhärtung",
@@ -750,6 +860,32 @@ export const produkte: Produkt[] = [
       { label: "Anwendung", wert: "Für NEODUR Level" },
       { label: "Verbrauch", wert: "50–200 g/m²" },
     ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Untergrund vor der Verlegung durch Fräsen und/oder Kugelstrahlen vorbereiten.",
+          "Vorhandene Risse, Ausbrüche und schadhafte Fugen fachgerecht instand setzen.",
+          "Untergrund muss tragfähig, fest, sauber, trocken, rissfrei und frei von losen Teilen, Ölen, Fetten oder sonstigen haftungsmindernden Verunreinigungen sein.",
+          "Oberflächenzugfestigkeit ohne Fahrbeanspruchung ≥ 1,0 N/mm², mit Fahrbeanspruchung und/oder im Außenbereich ≥ 1,5 N/mm².",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "KORODUR PC vor Gebrauch durchrühren.",
+          "Vorstrich entsprechend Einsatzbereich verdünnen: dichte Untergründe 1:1, saugfähige Untergründe 1:3 (KORODUR PC : Wasser).",
+          "Mit Rolle, Pinsel, Besen oder Gummiwischer auf den vorbereiteten Untergrund auftragen, Pfützenbildung vermeiden.",
+          "Bei saugfähigen Untergründen die Grundierung im Verhältnis 1:3 am Tag vor der Beschichtung aufbringen (gegen Blasenbildung).",
+          "Am Tag der Verlegung im Verhältnis 1:1 mit Wasser verdünnt auftragen.",
+          "Verlegung beginnen, sobald die Oberfläche nur noch leicht klebrig erscheint; zum Zeitpunkt der Verlegung von LevelFlor, NEODUR Level oder NEODUR Level AU muss KORODUR PC klebrig angetrocknet sein.",
+          "Verarbeitungs-, Umgebungs- und Untergrundtemperatur ≥ 5 °C.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 5 kg Kunststoffgebinde. Kühl, trocken und frostfrei im Originalgebinde lagern. Haltbarkeitsdauer ca. 12 Monate. Angebrochene Gebinde sofort verschließen." },
+    ],
     besonderheiten: [
       "Speziell für Dünnestrich-Systeme",
       "Polymermodifiziert",
@@ -782,11 +918,38 @@ export const produkte: Produkt[] = [
     ],
     technischeDaten: [
       { label: "Qualität", wert: "C55/67" },
-      { label: "Druckfestigkeit (60 min)", wert: "> 20 N/mm²" },
-      { label: "Druckfestigkeit (28 d)", wert: "> 62 N/mm²" },
+      { label: "Druckfestigkeit (60 min)", wert: "> 20 N/mm²", norm: "DIN EN 1015-11" },
+      { label: "Druckfestigkeit (28 d)", wert: "> 62 N/mm²", norm: "DIN EN 1015-11" },
       { label: "Gängige Einbaudicken", wert: "Boden 10–100 mm; Decke 5–10 mm; Wand 5–15 mm" },
       { label: "Begehbar nach", wert: "ca. 15 min" },
       { label: "Voll belastbar nach", wert: "ca. 1 h" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Untergrund säubern; lose Bestandteile, Zementschlämme, Staub, Säuren, Öl und Fett entfernen.",
+          "Oberfläche muss rissefrei, eben sowie rau und offenporig sein; in den Regelwerken geforderte Oberflächenzugfestigkeiten beachten (1 N/mm² nicht unterschreiten).",
+          "Untergrund vor der Verarbeitung gründlich vornässen; bei stark saugenden Untergründen ggf. mehrmals wiederholen. Wasserfilm bzw. Pfützenbildung vermeiden.",
+          "Bei Bedarf eine Grundierung auf Acrylatbasis integrieren.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "Ausreichend Personal und geeignete Ausrüstung bzw. Werkzeug bereithalten.",
+          "CEMENT ALL mit der vorgegebenen Wassermenge (ca. 3,0 - 4,75 l je 25 kg-Gebinde) je nach Art der Verarbeitung ca. 1 - 3 Minuten im Zwangsmischer oder Rührquirl mischen.",
+          "Zuerst Wasser in den Mischbehälter vorgeben, dann bei laufendem Mischer/Rührquirl CEMENT ALL hinzugeben. Maximale Wasserzugabe nicht überschreiten (geringere Wasserzugabe erhöht die Festigkeiten).",
+          "Einbau in einer kompletten Lage, nicht schichtweise und möglichst gleichmäßig; Luftporen bei der Verdichtung weitgehend verhindern.",
+          "Endbearbeitung so schnell wie möglich; CEMENT ALL kann geglättet, gerieben oder mit Struktur versehen werden.",
+          "Verarbeitungs-, Umgebungs- und Untergrundtemperatur ≥ 5 °C; keine Verlegung auf gefrorenen Untergründen. Bei > 20 °C verkürzt sich die Verarbeitungszeit, bei < 20 °C kann sich die Festigkeitsentwicklung verzögern.",
+          "Zur Verlängerung der Verarbeitungszeit Rapid Set SET CONTROL (Verzögerer), für erhöhte Fließfähigkeit Rapid Set FLOW CONTROL (Plastifizierer) oder zur Beschleunigung der Abbindezeit das Additiv FAST zugeben.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Die Nachbehandlung mit Wasser hat unmittelbar zu erfolgen, sobald die Oberfläche ihren feuchten Glanz verloren hat, und sollte innerhalb einer Stunde wiederholt durchgeführt werden, bis das Produkt ausreichende Festigkeiten erreicht hat. Bei längeren Abbindezeiten, niedrigen Temperaturen oder Verwendung eines Verzögerers können längere Nachbehandlungszeiten erforderlich sein." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 25 kg Papierspezialverpackung, 5 kg Kunststoffgebinde. Lagerung: trocken lagern wie Zement, Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Ultrakurze Aushärtezeit",
@@ -833,11 +996,38 @@ export const produkte: Produkt[] = [
     ],
     technischeDaten: [
       { label: "Qualität", wert: "C45/55" },
-      { label: "Druckfestigkeit (60 min)", wert: "> 17 N/mm²" },
-      { label: "Druckfestigkeit (28 d)", wert: "> 50 N/mm²" },
+      { label: "Druckfestigkeit (60 min)", wert: "> 17 N/mm²", norm: "DIN EN 1015-11" },
+      { label: "Druckfestigkeit (28 d)", wert: "> 50 N/mm²", norm: "DIN EN 1015-11" },
       { label: "Gängige Einbaudicken", wert: "Boden 10–150 mm; Decke i. M. 15 mm; Wand i. M. 20 mm" },
       { label: "Verarbeitbar", wert: "pastös bis plastisch" },
       { label: "Voll belastbar nach", wert: "ca. 1 h" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Untergrund säubern; lose Bestandteile, Zementschlämme, Staub, Säuren, Öl und Fett entfernen.",
+          "Oberfläche muss für einen kraftschlüssigen Verbund rissefrei, eben sowie rau und offenporig sein.",
+          "Geforderte Oberflächenzugfestigkeiten beachten (1 N/mm² nicht unterschreiten).",
+          "Untergrund vor der Verarbeitung gründlich vornässen; bei stark saugenden Untergründen ggf. mehrmals wiederholen. Wasserfilm bzw. Pfützenbildung vermeiden.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "Wasserzugabe je 25-kg-Gebinde ca. 3,0 - 4,5 l; Verarbeitungs-, Umgebungs- und Untergrundtemperatur ≥ 5 °C.",
+          "Zuerst Wasser in den Mischbehälter vorgeben, dann bei laufendem Mischer das Material zugeben; ca. 1 - 3 Minuten im Zwangsmischer oder mit Rührquirl mischen.",
+          "Maximale Wasserzugabe nicht überschreiten; geringere Wasserzugabe erhöht die Festigkeiten.",
+          "Einbau in einer kompletten Lage, nicht schichtweise und möglichst gleichmäßig. Keine Verlegung auf gefrorenen Untergründen.",
+          "Bei der Verdichtung Luftporen weitgehend verhindern. Endbearbeitung schnellstmöglich; glätten, reiben oder strukturieren möglich.",
+          "Bei Temperaturen > 20 °C verkürzt sich die Verarbeitungszeit, bei < 20 °C kann sich die Festigkeitsentwicklung verzögern.",
+          "Zur Verlängerung der Verarbeitungszeit Rapid Set SET CONTROL (Verzögerer), für erhöhte Fließfähigkeit Rapid Set FLOW CONTROL (Plastifizierer) sowie das Additiv FAST zur Beschleunigung zugeben.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Die Nachbehandlung mit Wasser hat unmittelbar zu erfolgen, sobald die Oberfläche ihren feuchten Glanz verloren hat, und sollte innerhalb einer Stunde wiederholt durchgeführt werden, bis das Produkt ausreichende Festigkeiten erreicht hat. Bei längeren Abbindezeiten, zu niedrigen Temperaturen oder Verwendung eines Verzögerungsmittels können längere Nachbehandlungszeiten erforderlich werden." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 25 kg Papierspezialverpackung. Lagerung: trocken lagern wie Zement, Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Schwundneutral",
@@ -914,19 +1104,54 @@ export const produkte: Produkt[] = [
       "DIN EN 1015-11",
     ],
     technischeDaten: [
-      { label: "Druckfestigkeit (30 min)", wert: "ca. 15 N/mm²" },
-      { label: "Druckfestigkeit (1 h)", wert: "ca. 22 N/mm²" },
-      { label: "Druckfestigkeit (28 d)", wert: "ca. 38 N/mm²" },
+      { label: "Druckfestigkeit (30 min)", wert: "ca. 15 N/mm²", norm: "DIN EN 1015-11" },
+      { label: "Druckfestigkeit (1 h)", wert: "ca. 22 N/mm²", norm: "DIN EN 1015-11" },
+      { label: "Druckfestigkeit (28 d)", wert: "ca. 38 N/mm²", norm: "DIN EN 1015-11" },
       { label: "Schichtdicke", wert: "30–600 mm" },
       { label: "Verkehrsfreigabe nach", wert: "ca. 30 min" },
       { label: "Haftbrücke", wert: "Nicht erforderlich" },
-      { label: "Biegezugfestigkeit (28 d)", wert: "ca. 6,4 N/mm²" },
+      { label: "Biegezugfestigkeit (28 d)", wert: "ca. 6,4 N/mm²", norm: "DIN EN 1015-11" },
       { label: "E-Modul", wert: "ca. 22.000 N/mm²" },
       { label: "Körnung", wert: "0–8 mm" },
       { label: "Farbe", wert: "schwarz" },
       { label: "Wasserzugabe", wert: "ca. 3,80 l je 25-kg-Sack" },
       { label: "Materialverbrauch", wert: "ca. 20 kg/m² je cm Schichtstärke" },
       { label: "Verarbeitungstemperatur", wert: "+5 °C bis +30 °C" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Untergrund mit Drahtbürste säubern, lose Bestandteile und Staub mit geeignetem Besen entfernen.",
+          "Applikationsfläche muss sauber, fest und frei von haftungsmindernden Materialien sein.",
+          "Für maximalen Verbund die Oberfläche gründlich mit einem Hochdruckreiniger reinigen, anschließend stehendes Wasser bzw. Pfützen entfernen.",
+          "Bei Reparaturen in der gesamten Tiefe beschädigten Asphalt und losen Schutt entfernen, vertikale Seiten rechtwinklig abschneiden.",
+          "Oberfläche mit Wasser sättigen, bevor ASPHALT REPAIR MIX aufgetragen wird.",
+        ],
+      },
+      {
+        titel: "Mischen",
+        schritte: [
+          "Zunächst Wasser in den Mischbehälter vorgeben, dann bei laufendem Mischer oder Rührquirl ASPHALT REPAIR MIX hinzugeben.",
+          "ca. 1 - 3 Minuten im geeigneten Zwangsmischer oder Rührquirl klumpenfrei und gleichmäßig mischen.",
+          "Bei geringerer Wasserzugabe erhöhen sich die Festigkeiten, die maximale Wasserzugabe darf nicht überschritten werden.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "Einbau nebst Verdichtung zügig durchführen, um maximale Nachbearbeitungszeit zu ermöglichen.",
+          "Kann geglättet, gerieben oder mit Struktur versehen werden (z. B. mit einer Strukturwalze).",
+          "Einbau in einer kompletten Lage, nicht schichtweise und möglichst gleichmäßig.",
+          "Keine Verlegung auf gefrorenen Untergründen.",
+          "Bei der Verdichtung Luftporen weitgehend verhindern.",
+          "Verarbeitbar im Temperaturbereich von 5 °C bis 30 °C; > 20 °C verkürzt sich die Verarbeitungszeit, < 20 °C kann sich die Festigkeitsentwicklung verzögern.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Eine Nachbehandlung ist generell nicht notwendig. Bei hohen Temperaturen und dauerhafter Sonneneinstrahlung wird eine Nachbehandlung mit einem parafinhaltigen Nachbehandlungsmittel empfohlen." },
+      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Für Asphaltflächen geeignet",
@@ -1015,13 +1240,32 @@ export const produkte: Produkt[] = [
     ],
     technischeDaten: [
       { label: "Bindemittel", wert: "KORODUR FSCem (ternär)" },
-      { label: "Qualität", wert: "C35/45 – C50/60" },
+      { label: "Qualität", wert: "C35/45 – C50/60", norm: "DIN EN 206" },
       { label: "Druckfestigkeit (6 h)", wert: "ca. 18 N/mm²" },
       { label: "Druckfestigkeit (8 h)", wert: "ca. 25 N/mm²" },
       { label: "Druckfestigkeit (16 h)", wert: "ca. 35 N/mm²" },
       { label: "Druckfestigkeit (28 d)", wert: "ca. 65 N/mm²" },
       { label: "Nutzung / Verkehrsfreigabe", wert: "wenige Stunden, rezepturabhängig" },
       { label: "Mischung", wert: "volumetrisch vor Ort" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "Verarbeitungs-, Umgebungs- und Untergrundtemperatur ≥ 5 °C einhalten.",
+          "Mischtechnik: volumetrische Misch-LKWs (z. B. Cemen Tech M-Series) favorisieren, die alle Komponenten getrennt bevorraten und auf der Baustelle zu Frischbeton mischen; voll beladen ca. 8 m³ Beton.",
+          "Rezeptur-Konsistenz vor Ort an die Witterung anpassen; für höhere Konsistenzklassen Betonverflüssiger KOROTAN einsetzen.",
+          "Zur Verlängerung der Verarbeitungszeit bzw. gegen hohe Außentemperaturen Betonverzögerer KORODUR B-VZ verwenden.",
+          "KOROCRETE in gleichmäßiger Schichtdicke zügig einbringen, verdichten, abziehen und glätten.",
+          "Für die maschinelle Glättung nur handgeführte Einscheibenglättmaschinen verwenden.",
+          "Nur so viel Fläche vorziehen, wie innerhalb der Verarbeitungszeit (ca. 45 - 60 Minuten) bearbeitet werden kann; höhere Temperaturen verkürzen, niedrigere verlängern die Verarbeitungszeit.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Bei Außenflächen, im Zugluftbereich oder bei geringer Luftfeuchte ist der Schnellbeton vor zu schneller Austrocknung mit Folie zu schützen." },
+      { titel: "Fugen", text: "Generell sind alle Fugen im Tragbeton zu übernehmen. Der Beton ist von aufgehenden Bauteilen (Wände, Stützen, etc.) zu trennen." },
+      { titel: "Lieferform & Lagerung", text: "Bindemittel FSCem: 1.000 kg Big-Bag. Trocken lagern wie Zement. Haltbarkeitsdauer ca. 6 Monate." },
     ],
     besonderheiten: [
       "Volumetrische Mischtechnik vor Ort (Cemen Tech M-Series)",
@@ -1106,6 +1350,25 @@ export const produkte: Produkt[] = [
       { label: "Wirkung", wert: "Feuchtigkeitsretention / Curing" },
       { label: "Anwendung", wert: "Sprüh- oder Rollauftrag" },
     ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung & Verarbeitung",
+        schritte: [
+          "Untergrund: Pfützen und Wasserlachen vor Beginn der Nachbehandlung entfernen.",
+          "Beginn unmittelbar und abschnittsweise nach dem Einbau des Betons; ist die Verdunstung größer als das zu erwartende Bluten oder bei W/Z-Wert < 0,5 so früh wie möglich.",
+          "Bei Einsatz als Grundierung für nachfolgende Hartstoffbeschichtungen unmittelbar nach Begehbarkeit auftragen; kein stehendes Wasser, Oberfläche mattfeucht.",
+          "KOROCURE vor Applikation stets gut durchrühren.",
+          "Gebrauchsfertig und unverdünnt als feiner, dichter Sprühnebel mit geeignetem Sprühgerät flächig auftragen; Pfützenbildung vermeiden.",
+          "Auf einen gleichmäßigen, geschlossenen Film achten (die Wirkung hängt davon ab).",
+          "Vor Applikation der anschließenden KORODUR- bzw. NEODUR-Hartstoffprodukte die behandelte Fläche einmalig aufzutellern.",
+          "Arbeitsgeräte nach Gebrauch mit klarem Wasser gut reinigen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Ergänzender Hinweis", text: "KOROCURE ersetzt nicht die notwendige Nachbehandlung des geglätteten KORODUR Industriebodens." },
+      { titel: "Lieferform & Lagerung", text: "30 kg Kunststoffkanister. Kühl, trocken und frostfrei im Originalgebinde lagern. Haltbarkeitsdauer ca. 12 Monate. Angebrochene Gebinde sofort verschließen." },
+    ],
     besonderheiten: [
       "Kontrollierte Aushärtung",
       "Für Außenflächen geeignet",
@@ -1132,6 +1395,22 @@ export const produkte: Produkt[] = [
       { label: "Wirkung", wert: "Silikatisierung / Imprägnierung" },
       { label: "Anwendung", wert: "Auf frischen Estrich" },
     ],
+    verarbeitungModi: [
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "KOROMINERAL CURE vor der Applikation aufmischen, danach unverzüglich mit der Applikation beginnen.",
+          "Unverdünnt und gleichmäßig deckend als feiner Nebel aufsprühen; die Applikation erfolgt unmittelbar nach dem letzten Glättvorgang beim Eintritt der Mattfeuchte des Industriebodens, Betons oder Zementestrichs.",
+          "Aufsetzbaren Niederdrucksprüher mit permanenter Materialdurchmischung verwenden, um ein Absetzen des Wirkstoffs zu verhindern; nicht verdünnen.",
+          "Gleichmäßig in Bahnen aufbringen, nicht zu viel Material auftragen; Fugen und/oder Fugenprofile als natürliche Begrenzung nutzen.",
+          "KOROMINERAL CURE nur einmalig aufbringen. Blutwasser sowie zu früher oder zu später Einsatz können Nachbehandlungswirkung und Oberflächenoptik beeinträchtigen.",
+          "Überschüssiges Material kann mittels einer Reinigungsmaschine mit schwarzen Pads entfernt werden; Werkzeuge mit handelsüblicher Lauge reinigen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 25 l Kunststoffgebinde (Ergiebigkeit je 25-l-Gebinde ca. 250 - 400 m²). Lagerung: trocken, frostfrei und nicht ≥ 30 °C im verschlossenen Originalgebinde. Angebrochene Gebinde sofort verschließen. Haltbarkeitsdauer ca. 6 Monate." },
+    ],
     besonderheiten: [
       "Erhöht Oberflächenhärte",
       "Reduziert Staubbildung",
@@ -1157,6 +1436,32 @@ export const produkte: Produkt[] = [
     technischeDaten: [
       { label: "Wirkung", wert: "Feuchtigkeitsretention / Curing" },
       { label: "Anwendung", wert: "Sprühauftrag" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Pfützen und Wasserlachen vor Beginn der Nachbehandlung entfernen.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "KOROTEX vor der Applikation stets gut durchrühren.",
+          "Verarbeitungstemperatur 5 °C bis 35 °C.",
+          "Unmittelbar nach dem letzten Glättvorgang beim Eintritt der Mattfeuchte des Industriebodens, Betons oder Zementestrichs unverdünnt und gleichmäßig deckend als feiner Nebel aufsprühen.",
+          "Je früher der Auftrag auf die mattfeuchte oder entschalte Oberfläche erfolgt, umso wirkungsvoller der Schutz.",
+          "Nicht zu viel KOROTEX auf ein und dieselbe Stelle sprühen, um Fleckenbildung zu vermeiden.",
+          "Zum Aufsprühen handelsübliche Spritzgeräte mit entsprechenden Düsen verwenden; nach Gebrauch mit klarem Wasser gut reinigen.",
+          "Keine Spritzgeräte verwenden, die zuvor für Silikon- oder Schalungstrennmittel im Einsatz waren.",
+          "Alternativ ist die Applikation mit einer Lammfellrolle möglich, jedoch mit höherem Verbrauch.",
+          "Materialverbrauch ca. 100 bis 150 g/m² je nach Saugfähigkeit des Untergrundes.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Folgebeschichtung", text: "Bei nachträglichem Anstrich, Markierungen oder einer Beschichtung auf organischer Basis (z. B. Acrylharz, Kunstharzdispersion) sind Vorversuche unumgänglich. Reaktionsharzprodukte (z. B. EP- oder PU-Systeme) sind nicht zu empfehlen." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 1.000 kg Einwegcontainer und 30 kg Kunststoffkanister. Kühl, trocken und frostfrei im Originalgebinde lagern. Haltbarkeitsdauer ca. 12 Monate. Angebrochene Gebinde sofort verschließen." },
     ],
     besonderheiten: [
       "Kontrollierte Aushärtung",
@@ -1492,6 +1797,26 @@ export const produkte: Produkt[] = [
       { label: "Schwindklasse (DIN 18560-1)", wert: "SW 1, schwindarm (< 0,2 mm/m)" },
       { label: "Belegbar", wert: "nach 3 Tagen" },
     ],
+    verarbeitungModi: [
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "Mischen: In einer geeigneten Estrichmaschine oder einem Zwangsmischer mit der vorgegebenen Wassermenge (ca. 2,5-2,75 l/25 kg) homogen anmischen und steifplastische Konsistenz einstellen.",
+          "Bei Verwendung eines Estrich-Druckluftförderers die empfohlenen Füllmengen des jeweiligen Maschinenherstellers beachten.",
+          "Verarbeitungs-, Umgebungs- und Untergrundtemperatur mindestens 5 °C; Verarbeitungszeit ca. 60-80 Minuten.",
+          "Schnellestrich in gleichmäßiger Schichtdicke zügig einbringen, verdichten, abziehen und glätten.",
+          "Für die maschinelle Glättung nur handgeführte Einscheibenglättmaschinen verwenden.",
+          "Nur so viel Fläche vorziehen, wie innerhalb der Verarbeitungszeit bearbeitet werden kann; Rand- und Bewegungsfugen übernehmen.",
+          "Bei Verlegung im Verbund ausschließlich die Systemhaftbrücke KORODUR HB 5 rapid verwenden.",
+          "Bei Außenflächen, im Zugluftbereich oder bei geringer Luftfeuchte vor zu schneller Austrocknung mit Folie schützen; Verlegereife durch CM-Messung der Restfeuchte sicherstellen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Bei Außenflächen, im Zugluftbereich oder bei geringer Luftfeuchte ist der Schnellestrich vor zu schneller Austrocknung mit Folie zu schützen. Bei Fußbodenheizung kann das Aufheizen ab dem dritten Tag nach Einbau mit einer Vorlauftemperatur von +25 °C erfolgen (weiteres Vorgehen siehe Normen und Merkblätter, z. B. BEB-Merkblatt)." },
+      { titel: "Fugen", text: "Bei Verwendung als Verbundestrich sind alle Fugen im Tragbeton zu übernehmen. Der Estrich ist von aufgehenden Bauteilen (Wände, Stützen etc.) zu trennen." },
+      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung sowie Big-Bag. Trocken lagern wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
+    ],
     besonderheiten: [
       "Gebrauchsfertiger Trockenmörtel",
       "Muss grundsätzlich belegt werden",
@@ -1696,6 +2021,25 @@ export const produkte: Produkt[] = [
       { label: "Farbe", wert: "bläulich" },
       { label: "Materialverbrauch", wert: "ca. 150 g/m²" },
     ],
+    verarbeitungModi: [
+      {
+        titel: "Verarbeitung im Sprühverfahren",
+        schritte: [
+          "KORODUR easyFinish vor Gebrauch durchrühren.",
+          "Die Oberfläche muss mattfeucht sein und darf keinen Wasserfilm aufweisen.",
+          "Verarbeitungs- und Oberflächentemperatur >= 5 Grad C einhalten.",
+          "KORODUR easyFinish im Sprühverfahren mit einem geeigneten Sprühgerät flächig auftragen.",
+          "Erstmals nach dem letzten Tellern (vor dem ersten Flügelglätten) aufsprühen und einarbeiten.",
+          "Zweiter und dritter Auftrag erfolgen beim Glätten; Pfützen vermeiden.",
+          "Auf gleichmäßigen, geschlossenen Film achten, da hiervon die Wirkung abhängt.",
+          "Arbeitsgeräte mit klarem Wasser reinigen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "KORODUR easyFinish ist kein Nachbehandlungsmittel und ersetzt nicht die notwendige Nachbehandlung des geglätteten Bodens. Abgestimmt auf die spätere Nutzung und Eignung der Flächen, z. B. mit einer weiteren Beschichtung oder Einpflege, sind objektbezogene Vorversuche durchzuführen." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 1.000 kg Einwegcontainer, 30 kg Kunststoffkanister. Kühl, trocken und frostfrei im Originalgebinde lagern. Haltbarkeitsdauer ca. 12 Monate. Angebrochene Gebinde sofort verschließen." },
+    ],
     besonderheiten: [
       "Lösemittelfrei und gebrauchsfertig",
       "Erleichtert den Glättvorgang",
@@ -1721,6 +2065,23 @@ export const produkte: Produkt[] = [
       { label: "Farbe", wert: "milchig trüb" },
       { label: "pH-Wert", wert: "5" },
       { label: "Materialverbrauch", wert: "ca. 100 g/m²" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "KORODUR nanoFinish vor Gebrauch durchrühren.",
+          "Drei- bis viermal als Verarbeitungshilfe im Sprühverfahren mit einem geeigneten Sprühgerät gleichmäßig auftragen.",
+          "Die Oberfläche darf keinen Wasserfilm aufweisen, sie muss mattfeucht sein.",
+          "Den ersten Auftrag nach dem letzten Tellern applizieren; den zweiten bis vierten Auftrag beim Glätten.",
+          "Pfützen vermeiden. Die Wirkung hängt von der Gleichmäßigkeit und Geschlossenheit des aufgebrachten Films ab.",
+          "Arbeitsgeräte mit klarem Wasser und Seife reinigen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "KORODUR nanoFinish ersetzt nicht die übliche Nachbehandlung des jeweiligen KORODUR Industriebodens, z. B. mit KOROTEX (siehe Datenblatt)." },
+      { titel: "Lieferform & Lagerung", text: "30 kg Kunststoffkanister. Kühl, trocken und frostfrei im Originalgebinde lagern. Haltbarkeitsdauer ca. 12 Monate. Angebrochene Gebinde sofort verschließen." },
     ],
     besonderheiten: [
       "Nano-Silica-Technologie",
@@ -1774,6 +2135,29 @@ export const produkte: Produkt[] = [
       { label: "pH-Wert", wert: "ca. 11,3" },
       { label: "Verarbeitungstemperatur", wert: "+5 °C bis +35 °C" },
       { label: "Verbrauch", wert: "ca. 100–200 g/m² (je nach Saugfähigkeit)" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Untergrund muss trocken, fest, sauber, saugfähig und frei von Öl, Fett und sonstigen als trennmittelwirkenden Verunreinigungen sein.",
+          "Nassreinigung der Oberfläche, z. B. mittels Reinigungsautomaten, unmittelbar vor der Applikation durchführen.",
+          "Imprägnierung von frisch eingebauten Beton- oder Estrichflächen frühestens nach Abtrocknung der Oberfläche.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "KOROMINERAL wird gebrauchsfertig geliefert und unverdünnt in einem Arbeitsgang bis zur Sättigung aufgebracht.",
+          "Verarbeitung z. B. mit einem Gummischieber und nachfolgend Abrollen im Kreuzgang mit einer kurzflorigen Lammfellrolle.",
+          "Überschüssiges Material sorgfältig entfernen, Pfützenbildung vermeiden.",
+          "Zur rückstandslosen Entfernung ca. 30 Minuten nach dem Auftrag eine Nassreinigung des Bodens mit klarem Wasser (Reinigungsautomaten) durchführen.",
+          "Anlegen einer Musterfläche wird empfohlen, um die örtlichen Gegebenheiten zu erfassen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 30 kg Kunststoffgebinde. Trocken und frostfrei im verschlossenen Originalgebinde lagern. Angebrochene Gebinde sofort verschließen. Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Oberflächenverkieselung mineralischer Baustoffe",
@@ -2145,6 +2529,32 @@ export const produkte: Produkt[] = [
       { label: "Farben", wert: "natur, weiß, blau" },
       { label: "Verfahren", wert: "Nassspritzen (Dichtstromförderung, geringe Staubentwicklung)" },
     ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Tragbeton bzw. Altputz muss eine Haftzugfestigkeit von mind. >= 1,5 N/mm2 aufweisen.",
+          "Untergrund grundsaetzlich strahlen, vorzugsweise mit HD-Wasser >= 1.000 bar.",
+          "Oberflaeche muss fuer kraftschluessigen Verbund rissefrei, eben, frei von losen und muerben Bestandteilen und Feinstmoertelanreicherungen sowie rau und offenporig sein.",
+          "Untergrund einen Tag vor der Verarbeitung gruendlich vornaessen.",
+        ],
+      },
+      {
+        titel: "Verarbeitung (Nassspritzverfahren)",
+        schritte: [
+          "MICROTOP TW NSM als komplettes Gebinde mit der vorgeschriebenen Wassermenge ca. 3 Minuten anmischen.",
+          "Wasserzugabe ca. 3,6 l je 25-kg-Gebinde (Wasser/Feststoffwert ca. 0,14 - 0,15).",
+          "Applikation auf die mattfeuchte Oberflaeche per Dichtstromfoerderung mit geeigneter Schneckenpumpe (z. B. m-tec P 20 mit Rotor/Stator D8/2), einschliesslich Treibluft zum Spritzen.",
+          "Schichtstaerke ca. 20 mm, einlagig.",
+          "Verarbeitungs-, Umgebungs- und Untergrundtemperatur >= 5 Grad C.",
+          "Material kann gerieben und geglaettet werden; kleine Arbeiten per Hand in Verbindung mit einer Haftbruecke moeglich.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Klimatisierung der Wasserkammern zur Verhinderung von Kondenswasserbildung muss gewaehrleistet sein, bis das aufgebrachte Material eine ausreichende mechanische Festigkeit erreicht hat. Durch Einsatz von Luftbefeuchtern die relative Luftfeuchte nach der Applikation mind. 10 Tage auf 95 % halten. Der Waermeeintrag darf dabei 20 Grad C nicht uebersteigen. Zugluft und groessere Luftbewegungen sind zu vermeiden." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 25 kg Papierspezialverpackung. Lagerung: Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
+    ],
     varianten: [{ name: "MICROTOP TW NSM blau" }],
     besonderheiten: ["Reib- und glättbar", "Handverarbeitung kleiner Arbeiten mit Haftbrücke möglich"],
     zeitKategorie: "normal",
@@ -2168,6 +2578,28 @@ export const produkte: Produkt[] = [
       { label: "Schichtstärke", wert: "ca. 2–5 mm" },
       { label: "Wasserzugabe", wert: "ca. 5–6,25 l je 25-kg-Gebinde" },
       { label: "Verfahren", wert: "Schleudern, Spritzen, Spachteln, Handauftrag" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Tragbeton bzw. Altputz (Haftzugfestigkeit mind. ≥ 1,5 N/mm²) grundsätzlich strahlen, vorzugsweise mit HD-Wasser ≥ 1.000 bar.",
+          "Oberfläche für einen kraftschlüssigen Verbund rissefrei, eben, frei von losen und mürben Bestandteilen sowie Feinstmörtelanreicherungen, rau und offenporig herstellen.",
+          "Untergrund einen Tag vor der Verarbeitung gründlich vornässen.",
+          "Kiesnester, Lunker usw. mit einer MICROTOP TW 02 Kratzspachtelung egalisieren.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "MICROTOP TW 02 als komplettes Gebinde mit der vorgeschriebenen Wassermenge ca. 3 Minuten mit einem langsam laufenden Quirl anmischen.",
+          "Applikation gem. DIN 18551 per Dichtstromförderung oder Spachteltechnik.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Klimatisierung der Wasserkammern zur Verhinderung von Kondenswasserbildung sicherstellen, bis das Material eine ausreichende mechanische Festigkeit erreicht hat. Durch Luftbefeuchter die relative Luftfeuchte nach der Applikation mind. 10 Tage auf 95 % halten. Wärmeeintrag dabei max. 20 °C; Zugluft und größere Luftbewegungen vermeiden." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 25 kg Papierspezialverpackung. Lagerung: trocken lagern wie Zement, Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Äußerst geringes Porenvolumen",
@@ -2194,6 +2626,28 @@ export const produkte: Produkt[] = [
       { label: "Wasserzugabe", wert: "ca. 3,75 l je 25-kg-Gebinde" },
       { label: "Ergiebigkeit", wert: "ca. 14 l je 25-kg-Gebinde" },
       { label: "Verfahren", wert: "Spritzen, Handauftrag" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Tragfähigen Untergrund vorbereiten.",
+          "Oberfläche muss für einen kraftschlüssigen Verbund rissefrei, eben, frei von losen und mürben Bestandteilen und Feinstmörtelanreicherungen sowie rau und offenporig sein.",
+          "Anschließend vornässen.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "MICROTOP TW VSM als komplettes Gebinde mit der vorgeschriebenen Wassermenge (ca. 3,75 l/25 kg) ca. 3 Minuten mit einem langsam laufenden Quirl anmischen.",
+          "Verarbeitungs-, Umgebungs- und Untergrundtemperatur ≥ 5 °C einhalten.",
+          "Applikation mit allen gängigen Spritzgeräten oder von Hand; gerieben, geglättet, kleine Arbeiten per Hand möglich.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Unterschiedliche Temperaturen beeinflussen den Erstarrungs- bzw. Erhärtungsverlauf. MICROTOP TW VSM ist vor zu rascher Austrocknung gem. DIN EN 13670 / DIN 1045-3 zu schützen." },
+      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: ["Auch für Mauerwerk geeignet", "Reib- und glättbar"],
     zeitKategorie: "normal",
@@ -2522,12 +2976,40 @@ export const produkte: Produkt[] = [
     normen: [],
     technischeDaten: [
       { label: "Körnung", wert: "0–8 mm" },
-      { label: "Erstarrungsbeginn", wert: "nach 15 Min." },
+      { label: "Erstarrungsbeginn", wert: "nach 15 Min.", norm: "DIN EN 196-3" },
       { label: "Belastbar", wert: "nach 60 Min." },
-      { label: "Druckfestigkeit", wert: "nach 60 Min. 19 N/mm², nach 28 Tagen 41 N/mm²" },
-      { label: "Biegezugfestigkeit", wert: "nach 60 Min. 4,5 N/mm², nach 28 Tagen 7 N/mm²" },
+      { label: "Druckfestigkeit", wert: "nach 60 Min. 19 N/mm², nach 28 Tagen 41 N/mm²", norm: "DIN EN 1015-11" },
+      { label: "Biegezugfestigkeit", wert: "nach 60 Min. 4,5 N/mm², nach 28 Tagen 7 N/mm²", norm: "DIN EN 1015-11" },
       { label: "Frost-Tausalzbeständigkeit", wert: "ja" },
-      { label: "Sulfatbeständigkeit", wert: "ja" },
+      { label: "Sulfatbeständigkeit", wert: "ja", norm: "Prüfung nach Wittekindt" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Untergrund säubern; lose Bestandteile, Zementschlämme, Staub, Säuren, Öl und Fett entfernen.",
+          "Oberfläche für einen kraftschlüssigen Verbund rissefrei, eben sowie rau und offenporig herstellen.",
+          "Geforderte Oberflächenzugfestigkeiten beachten (1,0 N/mm² sind nicht zu unterschreiten).",
+          "Untergrund vor der Verarbeitung gründlich vornässen; bei stark saugenden Untergründen das Vornässen mehrmals wiederholen.",
+          "Wasserfilm bzw. Pfützenbildung dabei vermeiden.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "Ausreichend Personal und geeignete Ausrüstung bzw. Werkzeug bereitstellen.",
+          "Wasserzugabe je 25 kg-Gebinde ca. 3,0 - 4,5 l; Verarbeitungs-, Umgebungs- und Untergrundtemperatur ≥ 5 °C.",
+          "Zuerst Wasser in den Mischbehälter vorgeben, dann bei laufendem Mischer CONCRETE MIX hinzugeben.",
+          "Ca. 1 - 3 Minuten im geeigneten Zwangsmischer oder Rührquirl mischen; maximale Wasserzugabe nicht überschreiten (geringere Wasserzugabe erhöht die Festigkeiten).",
+          "Einbau in einer kompletten Lage, nicht schichtweise und möglichst gleichmäßig; keine Verlegung auf gefrorenen Untergründen.",
+          "Bei der Verdichtung Luftporen weitgehend verhindern; Endbearbeitung so schnell wie möglich (glätten, reiben oder mit Struktur versehen).",
+          "Verarbeitungszeit bei Bedarf mit Rapid Set SET CONTROL (Verzögerer) verlängern, mit FLOW CONTROL (Plastifizierer) Fließfähigkeit erhöhen oder mit Additiv FAST die Abbindezeit beschleunigen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Die Nachbehandlung mit Wasser hat unmittelbar zu erfolgen, sobald die Oberfläche ihren feuchten Glanz verloren hat, und sollte innerhalb einer Stunde wiederholt durchgeführt werden, bis das Produkt ausreichende Festigkeiten erreicht hat. Bei längeren Abbindezeiten, zu niedrigen Temperaturen oder der Verwendung eines Verzögerungsmittels können längere Nachbehandlungszeiten erforderlich werden." },
+      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
     ],
     besonderheiten: [
       "Einbaustärken bis 600 mm in einem Arbeitsgang",
@@ -2585,6 +3067,35 @@ export const produkte: Produkt[] = [
       { label: "Temperatur", wert: "Untergrund > 8 °C, Verarbeitung > 10 °C" },
       { label: "Begehbar", wert: "nach 24 Stunden" },
     ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Pflasterflächen so anlegen, dass keine Gefügelockerung und kein Absinken des Belages durch spätere Belastungen entsteht; einschlägige Merkblätter und Vorschriften für Pflasterflächen beachten.",
+          "Der gesamte Aufbau muss wasserdurchlässig sein.",
+          "Fugen mindestens 30 mm tief reinigen, Mindestfugenbreite 5 mm.",
+          "Fläche grundsätzlich von Verschmutzungen jeglicher Art reinigen.",
+          "Angrenzende, nicht zu verfugende Flächen abkleben.",
+          "Fläche vornässen; saugfähige Flächen sowie höhere Untergrundtemperaturen erfordern ein intensiveres Vornässen.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "Eimerdeckel öffnen, Vakuumbeutel entnehmen, aufschneiden und den Pflasterfugenmörtel gleichmäßig und vollständig auf die Fläche schütten.",
+          "Mit grobem Straßenbesen oder Gummischieber tief, fest und verdichtend in die Fugen einarbeiten.",
+          "Zur besseren Verdichtung den frisch eingebrachten Mörtel mit einem Wassersprühstrahl gründlich nachschlämmen.",
+          "Nachgesackte Fugen erneut mit Pflasterfugenmörtel auffüllen.",
+          "Stehendes Wasser in der frischen Verfugung vermeiden, für ausreichendes Gefälle sorgen.",
+          "Fläche vorsichtig mit feinem Haarbesen diagonal zur Fuge abkehren, bis sie von allen Mörtelresten befreit ist; abgekehrtes Material nicht mehr verwenden.",
+          "Restanhaftungen auf der Steinoberfläche lassen sich noch nach 24 Stunden mit einem groben Straßenbesen entfernen.",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung / Regenschutz", text: "Ein Regenschutz bei Nieselregen ist nicht notwendig. Bei Dauer- oder Starkregen ist die frisch verfugte Fläche ca. 24 Stunden vor Regen zu schützen; der Regenschutz (Baufolie/Abdeckplane) darf direkt auf die Fläche aufgelegt werden. Begehbar nach 24 Stunden, Freigabe der Fläche nach 6 Tagen." },
+      { titel: "Lieferform & Lagerung", text: "Lieferform: 25 kg Kunststoffgebinde. Lagerung: frostfrei und trocken im Originalgebinde. Haltbarkeitsdauer im verschlossenen Originalgebinde ca. 12 Monate." },
+    ],
     besonderheiten: [
       "Gebrauchsfertig, 1-komponentig",
       "Fugenbreite ab 5 mm, Fugentiefe ab 30 mm",
@@ -2612,6 +3123,32 @@ export const produkte: Produkt[] = [
       { label: "Verarbeitungstemperatur", wert: "+5 °C bis +25 °C" },
       { label: "Belastbar", wert: "mit Pkw nach 7 Tagen" },
       { label: "Lieferform", wert: "25-kg-Papierspezialverpackung" },
+    ],
+    verarbeitungModi: [
+      {
+        titel: "Untergrundvorbereitung",
+        schritte: [
+          "Der Unterbau muss ausreichend tragfähig und für die vorgesehenen Verkehrslasten hergestellt und überprüft sein.",
+          "Die Pflasterfläche muss frei von Verschmutzungen jeder Art sein, die Steine müssen fest eingebettet werden.",
+          "Die Fuge soll mindestens 2/3 der Steinhöhe und mindestens 8 mm Breite betragen.",
+          "Wasserdurchlässiger Unterbau, Bettung und Steine müssen die Anforderungen der RStO bzw. DNV erfüllen.",
+          "Die zum Verfugen bereitgestellte Fläche gründlich vornässen.",
+        ],
+      },
+      {
+        titel: "Verarbeitung",
+        schritte: [
+          "NEODUR PFM-ZE mit Zwangsmischer oder Doppelquirl mit der jeweiligen Wassermenge (3,5 l je 25 kg) mindestens 3 Minuten mischen.",
+          "Den frisch gemischten Mörtel auf die zu verfugende Fläche aufgießen.",
+          "Mit dem Gummiwischer diagonal hohlraumfrei in die Fuge einarbeiten und nach Bedarf mit dem Fugenrüttler vollständig entlüften.",
+          "Die Steinoberfläche nach leichtem Ansteifen des Mörtels reinigen (z. B. mit einem Schwammreinigungsgerät).",
+        ],
+      },
+    ],
+    verarbeitungMeta: [
+      { titel: "Nachbehandlung", text: "Die gereinigte Pflasterfläche ist sofort mit Folie für mindestens 7 Tage abzudecken. Unterschiedliche Temperaturen beeinflussen den Erstarrungs- bzw. Erhärtungsverlauf." },
+      { titel: "Fugen & Hinweise", text: "Dehnfugen sind einzuplanen und auszuführen. Haarrisse infolge von Temperaturschwankungen beeinträchtigen die Funktionalität der Fuge nicht und stellen keinen Mangel dar. Wir empfehlen, eine Musterfläche zu erstellen." },
+      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 3 Monate." },
     ],
     besonderheiten: [
       "Starre Bauweise, Bauklasse IV bis VI",
