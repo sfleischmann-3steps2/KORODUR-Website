@@ -2135,6 +2135,29 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     }
   ],
+  "neodur-he-3-svs-3": [
+    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_fr.pdf", "sprache": "fr" },
+    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_pl.pdf", "sprache": "pl" },
+    { "typ": "dop", "titel": "NEODUR HE 3 SVS 3", "url": "/downloads/dop/13813_2.7_NEODUR_HE_3_SVS_3_de.pdf", "sprache": "de" },
+    { "typ": "sds", "titel": "NEODUR HE 3", "url": "/downloads/sds/NEODUR_HE_3_SDB_de.pdf", "sprache": "de" }
+  ],
+  "neodur-he-3-svs-15": [
+    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_fr.pdf", "sprache": "fr" },
+    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_pl.pdf", "sprache": "pl" },
+    { "typ": "dop", "titel": "NEODUR HE 3 SVS 1,5", "url": "/downloads/dop/13813_2.8_NEODUR_HE_3_SVS_15_de.pdf", "sprache": "de" },
+    { "typ": "sds", "titel": "NEODUR HE 3", "url": "/downloads/sds/NEODUR_HE_3_SDB_de.pdf", "sprache": "de" }
+  ],
+  "neodur-he-3-metallisch": [
+    { "typ": "tds", "titel": "NEODUR HE 3 metallisch", "url": "/downloads/tds/NEODUR_HE_3_metallisch_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 3 metallisch", "url": "/downloads/tds/NEODUR_HE_3_metallisch_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 3 metallisch", "url": "/downloads/tds/NEODUR_HE_3_metallisch_fr.pdf", "sprache": "fr" },
+    { "typ": "dop", "titel": "NEODUR HE 3 metallisch", "url": "/downloads/dop/13813_2.10_NEODUR_HE_3_metallisch_de.pdf", "sprache": "de" },
+    { "typ": "sds", "titel": "NEODUR HE 3", "url": "/downloads/sds/NEODUR_HE_3_SDB_de.pdf", "sprache": "de" }
+  ],
   "neodur-he-3-green": [
     {
       "typ": "tds",
