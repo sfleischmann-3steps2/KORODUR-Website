@@ -71,13 +71,13 @@ export const bereiche: Bereich[] = [
     ],
   },
   {
-    // Sammelbereich „Betonsanierung" (#306/#308): Rapid Set + NEODUR Schnell-
-    // verguss-/Microsilica-Spritzmörtel (SVM/MSM/MSB) + Spezialmörtel-
-    // Sanierungsanteil (VM 5, PFM als Zweit-Bereich). Interner Slug bleibt
-    // `rapid-set`, Anzeige „Betonsanierung".
-    slug: "rapid-set",
+    // Sammelbereich „Betonsanierung" (#306/#308/#320): Rapid Set + NEODUR
+    // Schnellverguss-/Microsilica-Spritzmörtel (SVM/MSM/MSB) + Spezialmörtel-
+    // Sanierungsanteil (VM 5, PFM). Slug seit #320 `betonsanierung`; der Slug
+    // `rapid-set` ist jetzt die eigene Rapid-Set-Marken-Seite (SEO-Erhalt der
+    // bestehenden korodur.de-URL /bereiche/rapid-set/).
+    slug: "betonsanierung",
     bild: "/images/bereiche/rapid-set.webp",
-    haendlerHinweis: true,
     produktgruppen: [
       "reparaturmoertel",
       "schnellbeton",
@@ -86,6 +86,17 @@ export const bereiche: Bereich[] = [
       "pflasterfugen",
       "additive",
     ],
+  },
+  {
+    // #320: Rapid-Set-Marken-Seite. Behält die bestehende korodur.de-URL
+    // /bereiche/rapid-set/ (SEO-Erhalt). Eigene dedizierte DE-Komponente
+    // (Registry); Produktauswahl kuratiert über RAPID_SET_PRODUKT_IDS
+    // (nicht über das bereich-Feld). Nicht in PORTFOLIO_SLUGS → erscheint
+    // nicht im Use-Case-Bereiche-Grid, erreichbar über „Mehr erfahren".
+    slug: "rapid-set",
+    bild: "/images/bereiche/rapid-set.webp",
+    haendlerHinweis: true,
+    produktgruppen: ["reparaturmoertel", "schnellbeton", "additive"],
   },
   {
     // Bereich „Spezialmörtel" (#306/#308): nur Neubau. Ersetzt den aufgelösten
@@ -125,7 +136,7 @@ export function getBereichBySlug(slug: string): Bereich | undefined {
 // (KOROCRETE als Zweit-Bereich). Schnellbetonsysteme + 3D-Druck bewusst raus.
 export const PORTFOLIO_SLUGS = [
   "industrieboden",
-  "rapid-set",
+  "betonsanierung",
   "infrastruktur",
   "microtop",
   "spezialmoertel",
@@ -159,7 +170,7 @@ export const HOME_PORTFOLIO_KACHELN: PortfolioKachel[] = [
     href: "bereiche/industrieboden/sanierung/",
     bild: "/images/referenzen/antolin-wochenend-sanierung/hero.jpg",
   },
-  { dictKey: "rapid-set", iconSlug: "rapid-set", href: "bereiche/rapid-set/" },
+  { dictKey: "betonsanierung", iconSlug: "betonsanierung", href: "bereiche/betonsanierung/" },
   { dictKey: "infrastruktur", iconSlug: "infrastruktur", href: "bereiche/infrastruktur/" },
   { dictKey: "microtop", iconSlug: "microtop", href: "bereiche/microtop/" },
   { dictKey: "spezialmoertel", iconSlug: "spezialmoertel", href: "bereiche/spezialmoertel/" },

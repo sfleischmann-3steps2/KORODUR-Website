@@ -750,7 +750,7 @@ export const produkte: Produkt[] = [
   // === SCHNELLREPARATURMÖRTEL ===
   {
     id: "rapid-set-cement-all",
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["industrieboden"],
     aussenbereich: true,
     produktgruppe: "reparaturmoertel",
@@ -803,7 +803,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-mortar-mix",
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["industrieboden"],
     aussenbereich: true,
     produktgruppe: "reparaturmoertel",
@@ -845,7 +845,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-mortar-mix-dur",
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["industrieboden"],
     aussenbereich: true,
     produktgruppe: "reparaturmoertel",
@@ -886,7 +886,7 @@ export const produkte: Produkt[] = [
     id: "asphalt-repair-mix",
     sku: "1220542S25KG",
     // #306/#308: Betonsanierung (primär) + zusätzlich Infrastruktur.
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["infrastruktur"],
     aussenbereich: true,
     produktgruppe: "reparaturmoertel",
@@ -938,7 +938,7 @@ export const produkte: Produkt[] = [
   {
     id: "dot-europe-concrete-mix",
     sku: "1220516S25KG",
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["infrastruktur"],
     aussenbereich: true,
     produktgruppe: "reparaturmoertel",
@@ -2322,7 +2322,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Spezialmörtel (Neubau) + Betonsanierung (Sanierungsanteil).
     bereich: "spezialmoertel",
-    zusatzBereiche: ["rapid-set"],
+    zusatzBereiche: ["betonsanierung"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Vergussbeton (C80/95) für Vergussquerschnitte bis 200 mm, geprüft nach DIN EN 1504-3 (R4)",
@@ -2341,7 +2341,7 @@ export const produkte: Produkt[] = [
     // #308/#317: Spezialmörtel (Neubau) + Trinkwasserbehälter-Sanierung
     // (DVGW W 347, Rohrverguss in Trinkwasseranlagen).
     bereich: "spezialmoertel",
-    zusatzBereiche: ["microtop", "rapid-set"],
+    zusatzBereiche: ["microtop", "betonsanierung"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Mineralischer, hochfließfähiger Quellvergussbeton, DVGW-geprüft für Trinkwasserbereiche",
@@ -2367,7 +2367,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Schnellvergussmörtel → Sammelbereich Betonsanierung.
     bereich: "spezialmoertel",
-    zusatzBereiche: ["rapid-set"],
+    zusatzBereiche: ["betonsanierung"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Schnellvergussmörtel für Vergussquerschnitte von 5 bis 20 mm",
@@ -2390,7 +2390,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Schnellvergussmörtel → Sammelbereich Betonsanierung.
     bereich: "spezialmoertel",
-    zusatzBereiche: ["rapid-set"],
+    zusatzBereiche: ["betonsanierung"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Schnellvergussmörtel (Körnung 0–3 mm) für Vergussquerschnitte von 10 bis 50 mm",
@@ -2419,7 +2419,7 @@ export const produkte: Produkt[] = [
     name: "NEODUR MSM 3",
     kategorie: "sonstige",
     // #308: Microsilica-Spritzmörtel → Sammelbereich Betonsanierung.
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["spezialmoertel"],
     aussenbereich: true,
     produktgruppe: "spritzmoertel",
@@ -2442,7 +2442,7 @@ export const produkte: Produkt[] = [
     name: "NEODUR MSM 5",
     kategorie: "sonstige",
     // #308: Microsilica-Spritzmörtel → Sammelbereich Betonsanierung.
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["spezialmoertel"],
     aussenbereich: true,
     produktgruppe: "spritzmoertel",
@@ -2465,7 +2465,7 @@ export const produkte: Produkt[] = [
     name: "NEODUR MSB 8",
     kategorie: "sonstige",
     // #308: Microsilica-Spritzbeton → Sammelbereich Betonsanierung.
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["spezialmoertel"],
     aussenbereich: true,
     produktgruppe: "spritzmoertel",
@@ -2485,7 +2485,7 @@ export const produkte: Produkt[] = [
     tdsUrl: "/downloads/tds/Concrete_Mix_de.pdf",
     name: "Rapid Set CONCRETE MIX",
     kategorie: "schnellzement",
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     zusatzBereiche: ["industrieboden"],
     aussenbereich: true,
     produktgruppe: "reparaturmoertel",
@@ -2517,7 +2517,7 @@ export const produkte: Produkt[] = [
     tdsUrl: "/downloads/tds/Concrete_Pharmacy_de.pdf",
     name: "Rapid Set CONCRETE PHARMACY",
     kategorie: "sonstige",
-    bereich: "rapid-set",
+    bereich: "betonsanierung",
     produktgruppe: "additive",
     kurzbeschreibung: "Additiv-System zur Steuerung der Verarbeitungseigenschaften von Rapid-Set-Produkten",
     beschreibung: "Die CONCRETE PHARMACY umfasst drei Additive zur Steuerung der Verarbeitungseigenschaften von Rapid-Set-Produkten: SET Control verzögert die Abbindezeit und verlängert die Verarbeitungszeit, FLOW Control verbessert die Fließfähigkeit und reduziert den Anmachwasserbedarf um 20 bis 40 Prozent, FAST beschleunigt die Abbindezeit von CEMENT ALL, MORTAR MIX und CONCRETE MIX, ideal bei kalten Temperaturen.",
@@ -2545,7 +2545,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Spezialmörtel (Neubau) + Betonsanierung (Sanierungsanteil).
     bereich: "spezialmoertel",
-    zusatzBereiche: ["rapid-set"],
+    zusatzBereiche: ["betonsanierung"],
     aussenbereich: true,
     produktgruppe: "pflasterfugen",
     kurzbeschreibung: "Fix- und fertiger, 1-komponentiger Pflasterfugenmörtel für Fußgängerbereiche",
@@ -2575,7 +2575,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Spezialmörtel (Neubau) + Betonsanierung (Sanierungsanteil).
     bereich: "spezialmoertel",
-    zusatzBereiche: ["rapid-set"],
+    zusatzBereiche: ["betonsanierung"],
     aussenbereich: true,
     produktgruppe: "pflasterfugen",
     kurzbeschreibung: "Pflasterfugenmörtel auf Zementbasis für Pflaster- und Plattenflächen in starrer Bauweise",

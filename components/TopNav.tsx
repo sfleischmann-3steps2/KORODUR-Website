@@ -154,7 +154,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
         { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/sanierung/`, sub: bt.industrieboden_teaser },
         { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
         { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
-        { label: bt["rapid-set_name"], href: `/${lang}/bereiche/rapid-set/`, sub: bt["rapid-set_teaser"] },
+        { label: bt["betonsanierung_name"], href: `/${lang}/bereiche/betonsanierung/`, sub: bt["betonsanierung_teaser"] },
       ],
     },
     kontakt: {

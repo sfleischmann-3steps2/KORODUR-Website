@@ -21,6 +21,13 @@ import { bereichIcon } from "../../../../components/bereichIcons";
 import Image from "next/image";
 import { withBasePath } from "../../../../lib/basePath";
 import BetonsanierungBereich from "../../../../components/BetonsanierungBereich";
+import RapidSetMarke from "../../../../components/RapidSetMarke";
+import { RAPID_SET_PRODUKT_IDS } from "../../../../data/rapidSetContent";
+
+// #320: Rapid-Set-Marke (Slug `rapid-set`) wählt Produkte kuratiert über diese
+// Liste, da sie am Bereich `betonsanierung` hängen. Greift im generischen
+// Non-DE-Template (DE rendert die dedizierte RapidSetMarke-Komponente).
+const RAPID_SET_IDS = new Set<string>(RAPID_SET_PRODUKT_IDS);
 
 type Params = Promise<{ lang: string; slug: string }>;
 
@@ -28,7 +35,9 @@ type Params = Promise<{ lang: string; slug: string }>;
  *  Registry statt hardcodiertem slug-Branch: jeder Eintrag dockt einen Bereich
  *  an; EN/FR/PL/ES fallen auf das generische Template (i18n-Follow-up → #181). */
 const DEDIZIERTE_BEREICHE: Record<string, typeof BetonsanierungBereich> = {
-  "rapid-set": BetonsanierungBereich,
+  betonsanierung: BetonsanierungBereich,
+  // #320: eigene Rapid-Set-Marken-Seite an der bestehenden URL /bereiche/rapid-set/.
+  "rapid-set": RapidSetMarke,
 };
 
 // Projekttyp-Einordnung je Bereich (Steffi 2026-06-13, #87): macht auf der
@@ -40,17 +49,17 @@ const BEREICH_PROJEKTARTEN: Record<string, Projektart[]> = {
   // #306/#308: Spezialmörtel ist reiner Neubau-Bereich.
   spezialmoertel: ["neubau"],
   microtop: ["sanierung"],
-  "rapid-set": ["sanierung"],
+  betonsanierung: ["sanierung"],
   infrastruktur: ["sanierung"],
 };
 
 // Cross-Selling (Steffi 2026-06-13, #84): kontextuell verwandter Bereich.
 // Industrieboden -> Rapid Set (schnelle Instandsetzung) ist ihr Leitbeispiel.
 const CROSSSELL: Record<string, string> = {
-  industrieboden: "rapid-set",
-  spezialmoertel: "rapid-set",
-  "rapid-set": "industrieboden",
-  infrastruktur: "rapid-set",
+  industrieboden: "betonsanierung",
+  spezialmoertel: "betonsanierung",
+  betonsanierung: "industrieboden",
+  infrastruktur: "betonsanierung",
 };
 
 function ProduktGrid({
@@ -140,7 +149,9 @@ export default async function BereichPage({ params }: { params: Params }) {
   // Multi-Bereich (#215): Produkt gehört zum Bereich über Primär-`bereich`
   // ODER `zusatzBereiche` (z. B. KOROCRETE in Betonsanierung + Infrastruktur).
   const gehoertZuBereich = (p: (typeof produkte)[number]) =>
-    p.bereich === bereich.slug || (p.zusatzBereiche?.includes(bereich.slug) ?? false);
+    bereich.slug === "rapid-set"
+      ? RAPID_SET_IDS.has(p.id)
+      : p.bereich === bereich.slug || (p.zusatzBereiche?.includes(bereich.slug) ?? false);
 
   const dict = await getDictionary(lang);
   const tb = (k: string) => (dict.bereiche as Record<string, string>)[k] ?? k;

@@ -17,6 +17,7 @@ const PRODUKTBEREICH_LABELS: Record<string, Record<string, string>> = {
   sichtestrich: { de: "Sichtestrich", en: "Designer screed", fr: "Chape décorative", pl: "Jastrych dekoracyjny", es: "Solado decorativo" },
   microtop: { de: "Trinkwasser", en: "Potable water", fr: "Eau potable", pl: "Woda pitna", es: "Agua potable" },
   "rapid-set": { de: "Rapid Set", en: "Rapid Set", fr: "Rapid Set", pl: "Rapid Set", es: "Rapid Set" },
+  betonsanierung: { de: "Betonsanierung", en: "Concrete Repair", fr: "Réparation du béton", pl: "Naprawa betonu", es: "Reparación del hormigón" },
   spezialmoertel: { de: "Spezialmörtel", en: "Special mortars", fr: "Mortiers spéciaux", pl: "Zaprawy specjalne", es: "Morteros especiales" },
   katzenstreu: { de: "Katzenstreu", en: "Cat litter", fr: "Litière", pl: "Żwirek", es: "Arena para gatos" },
 };
@@ -46,6 +47,7 @@ const PRODUKTBEREICH_FARBE: Record<string, { bg: string; text: string }> = {
   sichtestrich: { bg: "#6d5bba", text: "#ffffff" },
   microtop: { bg: "#0e9b96", text: "#ffffff" },
   "rapid-set": { bg: "#ffc400", text: "#002d59" },
+  betonsanierung: { bg: "#ffc400", text: "#002d59" },
   spezialmoertel: { bg: "#e8651e", text: "#ffffff" },
   infrastruktur: { bg: "#5a7184", text: "#ffffff" },
   katzenstreu: { bg: "#4caf50", text: "#ffffff" },

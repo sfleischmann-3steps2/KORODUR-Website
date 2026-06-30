@@ -12,7 +12,7 @@ import type { Dictionary } from "../app/[lang]/dictionaries";
 // sich farblich ab. Fehlt ein Bild, fällt die Kachel auf das Icon zurück.
 const BEREICH_KACHELBILD: Record<string, string> = {
   industrieboden: "/images/referenzen/kleemann-produktionshalle/hero.jpg",
-  "rapid-set": "/images/referenzen/dhl-ueberadebruecken/hero.jpg",
+  betonsanierung: "/images/referenzen/dhl-ueberadebruecken/hero.jpg",
   infrastruktur: "/images/referenzen/catania.jpg",
   microtop: "/images/referenzen/trinkwasserturm-budapest/hero.jpg",
   spezialmoertel: "/images/referenzen/hauptbahnhofsvorplatz-landau/hero.jpg",
