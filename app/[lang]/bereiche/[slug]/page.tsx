@@ -22,6 +22,7 @@ import Image from "next/image";
 import { withBasePath } from "../../../../lib/basePath";
 import BetonsanierungBereich from "../../../../components/BetonsanierungBereich";
 import RapidSetMarke from "../../../../components/RapidSetMarke";
+import InfrastrukturBereich from "../../../../components/InfrastrukturBereich";
 import { RAPID_SET_PRODUKT_IDS } from "../../../../data/rapidSetContent";
 
 // #320: Rapid-Set-Marke (Slug `rapid-set`) wählt Produkte kuratiert über diese
@@ -38,6 +39,8 @@ const DEDIZIERTE_BEREICHE: Record<string, typeof BetonsanierungBereich> = {
   betonsanierung: BetonsanierungBereich,
   // #320: eigene Rapid-Set-Marken-Seite an der bestehenden URL /bereiche/rapid-set/.
   "rapid-set": RapidSetMarke,
+  // #376: Infrastruktur (Single-Narrativ, zwei Schnellbeton-Systeme).
+  infrastruktur: InfrastrukturBereich,
 };
 
 // Projekttyp-Einordnung je Bereich (Steffi 2026-06-13, #87): macht auf der

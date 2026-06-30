@@ -60,6 +60,7 @@ export const bereiche: Bereich[] = [
     // ASPHALT REPAIR MIX, DUROP (alle als Zweit-Bereich) + Begleitprodukten
     // (Haftbrücke/Grundierung, Nachbehandlung, Imprägnierung).
     slug: "infrastruktur",
+    bild: "/images/bereiche/schnellbetonsysteme.webp",
     produktgruppen: [
       "schnellbeton",
       "hartstoffestriche",
