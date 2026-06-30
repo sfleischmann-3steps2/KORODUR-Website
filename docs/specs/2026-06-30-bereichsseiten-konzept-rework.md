@@ -108,7 +108,7 @@ Jede Gruppe als Karte mit Intro + Produkt-Chips (Anker → Portfolio). Gruppen-I
 
 ## 6. Offene Punkte / Follow-up
 
-- **Faktencheck (Technik, aus Vorgänger-Spec):** CO₂ ~30 % und Lebensdauer bis 4× (Broschüren-Werte, `faktencheck`-Flag) noch nicht final freigegeben.
+- ~~**Faktencheck (Technik):** CO₂ ~30 %, Lebensdauer bis 4×, Brandklasse A1 noch nicht freigegeben.~~ **Freigegeben (Steffi 2026-06-30)** → `faktencheck`-Flags entfernt; das optionale Feld bleibt als Mechanismus erhalten.
 - **Track-2-Werte:** Kennwerte/Normen je NEODUR-Produkt aus Quellen, nicht erfinden; PDB/Technik-Termin liefert verbindliche Norm-je-Kennwert (vgl. Varianten-PDP).
 - **Trust-Framing im Hybrid** (s. o.).
 - **i18n (#181):** EN/FR/PL/ES bleiben auf generischem Template bis Editorial-Übersetzungsrunde.
