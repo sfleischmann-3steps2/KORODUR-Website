@@ -286,6 +286,8 @@ export const produkte: Produkt[] = [
     name: "NEODUR HE 60 rapid",
     kategorie: "estrich",
     kurzbeschreibung: "Hochbelastbarer Hartstoff-Schnellestrich",
+    beschreibung:
+      "NEODUR HE 60 rapid ist ein gebrauchsfertiger, schnellerhärtender Hartstoff-Verbundestrich auf Basis hochwertiger KORODUR-Hartstoffzuschläge nach DIN 1100 (Gruppe A, M oder KS), mineralisch-hydraulisch gebunden und schwindarm. Für den raschen Einbau und die Sanierung von Verbundestrichen, schnell belast- und belegbar, mit erhöhtem Verschleißwiderstand. Schichtdicke ab 10 mm, z. B. für Fabrikhallen, Werkstätten, Hochregallager und andere stark beanspruchte Industrieböden. Für innen und außen.",
     schichtdicke: "ab 10 mm",
     qualitaetsklasse: "CT-C60-F8-A6",
     normen: [
@@ -528,6 +530,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-he-40",
+    sku: "1220040S25KG",
     bereich: "industrieboden",
     produktgruppe: "hartstoffestriche",
     varianten: [
@@ -536,6 +539,8 @@ export const produkte: Produkt[] = [
     name: "NEODUR HE 40",
     kategorie: "estrich",
     kurzbeschreibung: "Hochbelastbarer Hartstoffestrich",
+    beschreibung:
+      "NEODUR HE 40 ist ein gebrauchsfertiges Trockenmaterial aus harten mineralischen KORODUR-Zuschlägen nach DIN 1100 (Gruppe A), in den Qualitäten NEODUR HE 40 (Estrichdicke bis 35 mm) und NEODUR HE 40/8 (bis 50 mm). Einschichtiger Einbau als Verbundestrich für sehr hohe Beanspruchung. Anwendungsbereiche: hochverschleißbeanspruchte Industrieböden wie Parkhäuser, Industrie- und Montagehallen, Flugzeughallen, Werkstätten und Hochregallager. Für innen und außen.",
     schichtdicke: "8–15 / 15–35 / 25–50 mm",
     qualitaetsklasse: "CT-C40-F6-A6",
     normen: [
@@ -594,6 +599,8 @@ export const produkte: Produkt[] = [
     name: "NEODUR Level",
     kategorie: "estrich",
     kurzbeschreibung: "Selbstverlaufender, schnellerhärtender Dünnestrich",
+    beschreibung:
+      "NEODUR Level ist ein gebrauchsfertiger, zementär gebundener, schnellerhärtender und polymermodifizierter Mineralmörtel für Industrieböden in Dünnschicht von 4 bis 30 mm (CT-C40-F8-AR0,5). Einsatz in Neubau und Sanierung von Produktions- und Lagerhallen im Verbund auf mineralischen Untergründen, auch im Parkhausbereich.",
     schichtdicke: "4–30 mm",
     qualitaetsklasse: "CT-C40-F8-AR0,5",
     normen: [
@@ -696,6 +703,8 @@ export const produkte: Produkt[] = [
     name: "KORODUR HB 5 rapid",
     kategorie: "grundierung",
     kurzbeschreibung: "Schnellerhärtende Haftbrücke für kraftschlüssigen Verbund zum Untergrund",
+    beschreibung:
+      "KORODUR HB 5 rapid ist eine hydraulische Haftbrücke für die optimale Haftung von NEODUR HE 60 rapid auf erhärtetem Beton.",
     normen: [
       "DIN 1048-2",
       "DIN EN 13892-8",
@@ -727,6 +736,8 @@ export const produkte: Produkt[] = [
     name: "KORODUR PC",
     kategorie: "grundierung",
     kurzbeschreibung: "Kunstharzdispersion-Grundierung für Dünnestrich-Systeme",
+    beschreibung:
+      "KORODUR PC ist eine wässrige, einkomponentige und lösemittelfreie Kunstharzdispersion. Sie dient als Grundierung für NEODUR Level und LevelFlor und wird als Haftgrund auf Untergründen wie Beton sowie Zement- oder Anhydritestrichen eingesetzt, glatt und geschlossen oder porös und saugend. Bei äußeren thermischen Beanspruchungen kann KORODUR PC als Mörtelzusatz verwendet werden.",
     normen: [
       "DIN EN 13892-8",
       "DIN 1048-2",
@@ -750,6 +761,7 @@ export const produkte: Produkt[] = [
   // === SCHNELLREPARATURMÖRTEL ===
   {
     id: "rapid-set-cement-all",
+    sku: "1220505S25KG",
     bereich: "rapid-set",
     zusatzBereiche: ["industrieboden"],
     aussenbereich: true,
@@ -803,6 +815,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-mortar-mix",
+    sku: "1220506S25KG",
     bereich: "rapid-set",
     zusatzBereiche: ["industrieboden"],
     aussenbereich: true,
@@ -852,6 +865,8 @@ export const produkte: Produkt[] = [
     name: "Rapid Set MORTAR MIX DUR",
     kategorie: "schnellzement",
     kurzbeschreibung: "Schnellreparaturmörtel mit Hartstoff DIN 1100 A",
+    beschreibung:
+      "Rapid Set MORTAR MIX DUR ist ein schnellerhärtender Reparaturmörtel mit integriertem Verschleißträger nach DIN 1100 (Gruppe A). Pastöse bis plastische, einstellbare Konsistenz, schwundneutral und für Schwerlastfugen geeignet, für hochverschleißbeanspruchte Reparaturstellen. Bereits nach ca. 1 Stunde voll belastbar.",
     schichtdicke: "10–150 mm",
     qualitaetsklasse: "C45/55",
     normen: [
@@ -991,6 +1006,8 @@ export const produkte: Produkt[] = [
     name: "KOROCRETE Schnellbeton",
     kategorie: "schnellzement",
     kurzbeschreibung: "Volumetrisch gemischter Schnellbeton (FSCem-Basis)",
+    beschreibung:
+      "KOROCRETE ist ein schnellerhärtender Beton auf Basis von KORODUR FSCem, einem zementären, maßbeständigen und schnellerhärtenden Estrichbindemittel auf ternärer Basis, für hochbelastbare Betonböden, die schnell nutzbar und früh belegbar sind (Festigkeitsklassen C35/45 bis C50/60 nach DIN EN 206). Durch die hohe Frühfestigkeit sind die Flächen bereits wenige Stunden nach dem Einbau nutzbar und für den Verkehr freigegeben, was Stillstandskosten von Produktion und Lager minimiert.",
     schichtdicke: "projektabhängig",
     qualitaetsklasse: "C35/45 – C50/60",
     normen: [
@@ -1034,6 +1051,8 @@ export const produkte: Produkt[] = [
     name: "Rapid Set Schnellbeton",
     kategorie: "schnellzement",
     kurzbeschreibung: "Volumetrisch gemischter Schnellbeton (Rapid Set), TL BEB-StB",
+    beschreibung:
+      "Rapid Set Concrete ist seit über 25 Jahren in den USA zugelassen und wird weltweit für unterschiedlichste Infrastrukturprojekte eingesetzt. Durch die schnellerhärtenden Eigenschaften lassen sich Reparaturen in verkehrsarmen Zeiten ausführen, etwa nachts. Rapid Set Concrete ist nach den Technischen Lieferbedingungen für Baustoffe und Baustoffgemische zur baulichen Erhaltung von Verkehrsflächenbefestigungen (TL BEB-StB) am Festbeton geprüft; die geforderten Frühfestigkeiten von mindestens 20 MPa nach 5 Stunden werden zuverlässig schon 2 Stunden nach dem Einbau erreicht.",
     schichtdicke: "projektabhängig",
     qualitaetsklasse: "C40/50",
     normen: [
@@ -1106,6 +1125,8 @@ export const produkte: Produkt[] = [
     name: "KOROMINERAL CURE",
     kategorie: "nachbehandlung",
     kurzbeschreibung: "Oberflächenschutz mittels Silikatisierung",
+    beschreibung:
+      "KOROMINERAL CURE ist ein flüssiges, einkomponentiges und filmbildendes Nachbehandlungsmittel, das ein zu schnelles Austrocknen verhindert und die Oberfläche zugleich verdichtet. Es bietet dauerhaften Schutz gegen Feuchtigkeit, Schmutz und Verschleiß. Das Silikat dringt tief in die Betonporen ein, reagiert mit dem freien Calcium und geht eine dauerhafte Verbindung mit dem Beton ein, innen wie außen. Nach dem Auftrag ist die Oberfläche staubfrei und wasserabweisend, KOROMINERAL CURE trocknet transparent auf.",
     normen: [],
     technischeDaten: [
       { label: "Wirkung", wert: "Silikatisierung / Imprägnierung" },
@@ -1507,6 +1528,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-levelflor",
+    sku: "1220288S25KG",
     tdsUrl: "/downloads/tds/Levelflor_de.pdf",
     name: "Rapid Set LevelFlor",
     kategorie: "estrich",
@@ -1770,6 +1792,8 @@ export const produkte: Produkt[] = [
     // #306/#308: Begleitprodukt auch im Infrastruktur-Bereich.
     produktgruppe: "impraegnierung",
     kurzbeschreibung: "Flüssige, transparente Imprägnierung auf Basis Hybrid-Lithiumsilikat mit integriertem Basis-Fleckschutz",
+    beschreibung:
+      "KOROMINERAL Li+ ist eine flüssige, transparente Imprägnierung auf Basis Hybrid-Lithiumsilikat mit integriertem Basis-Fleckschutz. Sie eignet sich für die Imprägnierung mineralischer, zementgebundener Untergründe wie geschliffene oder ungeschliffene Betonböden und Estriche sowie Betonwerkstein und Terrazzo. Eingesetzt wird KOROMINERAL Li+ in gewerblichen Betrieben, Markthallen, Logistikzentren, Lager- und Produktionsräumen, Supermärkten und im privaten Wohnbau, innen und außen.",
     normen: [],
     technischeDaten: [
       { label: "Verbrauch", wert: "ca. 40–100 g/m² (je nach Saugfähigkeit)" },
@@ -2482,6 +2506,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "rapid-set-concrete-mix",
+    sku: "1220507S25KG",
     tdsUrl: "/downloads/tds/Concrete_Mix_de.pdf",
     name: "Rapid Set CONCRETE MIX",
     kategorie: "schnellzement",
