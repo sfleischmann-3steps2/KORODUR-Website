@@ -13,7 +13,7 @@ type Item = {
   /** Optionales Szenario-Vorschaubild (z. B. aus einer Referenz). #E */
   bild?: string;
 };
-type Gruppe = { key: string; label: string; items: Item[] };
+type Gruppe = { key: string; label: string; items: Item[]; text?: string };
 
 const ALLE = "__alle";
 
@@ -117,11 +117,16 @@ export default function BereichProduktFilter({
       {gruppen.map((g) => (
         <div key={g.key} id={g.key} hidden={!sichtbar(g.key)} className="scroll-mt-24 mb-10 last:mb-0">
           <h3
-            className="mb-5"
+            className="mb-2"
             style={{ fontSize: "clamp(17px, 2.4vw, 22px)", fontWeight: 900, lineHeight: 1.2 }}
           >
             {g.label}
           </h3>
+          {g.text && (
+            <p className="text-navy/65 text-[14.5px] leading-[1.6] mt-0 mb-5" style={{ maxWidth: 760 }}>
+              {g.text}
+            </p>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {g.items.map((produkt) => (
               <Link

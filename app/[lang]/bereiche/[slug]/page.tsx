@@ -20,9 +20,16 @@ import { ArrowRight, ChevronRight, Info } from "lucide-react";
 import { bereichIcon } from "../../../../components/bereichIcons";
 import Image from "next/image";
 import { withBasePath } from "../../../../lib/basePath";
-import RapidSetBereich from "../../../../components/RapidSetBereich";
+import BetonsanierungBereich from "../../../../components/BetonsanierungBereich";
 
 type Params = Promise<{ lang: string; slug: string }>;
+
+/** Bereiche mit dedizierter, redaktionell ausgearbeiteter DE-Komponente (#320).
+ *  Registry statt hardcodiertem slug-Branch: jeder Eintrag dockt einen Bereich
+ *  an; EN/FR/PL/ES fallen auf das generische Template (i18n-Follow-up → #181). */
+const DEDIZIERTE_BEREICHE: Record<string, typeof BetonsanierungBereich> = {
+  "rapid-set": BetonsanierungBereich,
+};
 
 // Projekttyp-Einordnung je Bereich (Steffi 2026-06-13, #87): macht auf der
 // Bereich-Detailseite sichtbar, ob der Bereich für Neubau und/oder Sanierung
@@ -121,12 +128,13 @@ export default async function BereichPage({ params }: { params: Params }) {
   const bereich = getBereichBySlug(slug);
   if (!bereich) notFound();
 
-  // Flagship-Bereich Rapid Set: dedizierte, redaktionell ausgearbeitete
-  // DE-Seite (Konzept docs/specs/2026-06-19-rapid-set-bereichsseite-konzept.md).
-  // EN/FR/PL/ES rendern weiter das generische Template (i18n-Follow-up → #181).
-  if (slug === "rapid-set" && lang === "de") {
+  // Dedizierte, redaktionell ausgearbeitete DE-Bereichsseiten (#320, Registry
+  // statt hardcodiertem Branch; Spec docs/specs/2026-06-30-bereichsseiten-
+  // konzept-rework.md). EN/FR/PL/ES → generisches Template (i18n-Follow-up #181).
+  const DedizierterBereich = lang === "de" ? DEDIZIERTE_BEREICHE[slug] : undefined;
+  if (DedizierterBereich) {
     const dict = await getDictionary(lang);
-    return <RapidSetBereich lang={lang} dict={dict} />;
+    return <DedizierterBereich lang={lang} dict={dict} />;
   }
 
   // Multi-Bereich (#215): Produkt gehört zum Bereich über Primär-`bereich`

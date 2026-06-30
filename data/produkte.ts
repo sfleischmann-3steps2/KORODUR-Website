@@ -2322,6 +2322,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Spezialmörtel (Neubau) + Betonsanierung (Sanierungsanteil).
     bereich: "spezialmoertel",
+    zusatzBereiche: ["rapid-set"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Vergussbeton (C80/95) für Vergussquerschnitte bis 200 mm, geprüft nach DIN EN 1504-3 (R4)",
@@ -2366,6 +2367,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Schnellvergussmörtel → Sammelbereich Betonsanierung.
     bereich: "spezialmoertel",
+    zusatzBereiche: ["rapid-set"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Schnellvergussmörtel für Vergussquerschnitte von 5 bis 20 mm",
@@ -2388,6 +2390,7 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Schnellvergussmörtel → Sammelbereich Betonsanierung.
     bereich: "spezialmoertel",
+    zusatzBereiche: ["rapid-set"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Schnellvergussmörtel (Körnung 0–3 mm) für Vergussquerschnitte von 10 bis 50 mm",
