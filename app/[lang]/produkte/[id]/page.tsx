@@ -218,11 +218,24 @@ export default async function ProduktDetailPage({
         </div>
       </section>
 
+      {/* Mitgeltende Normen (Quelle: Notion Kern-Produktdaten, erfüllt+entspricht) — oben links, über "Auf einen Blick". Details je Kennwert stehen in der Tabelle + im TDS. */}
+      {produkt.normen.length > 0 && (
+        <section style={{ padding: "20px 32px 4px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-3 text-navy/60 text-[13px] uppercase tracking-wider" style={{ fontWeight: 700 }}>
+              {dict.produkte.mitgeltende_normen}
+            </h2>
+            <NormenChips normen={produkt.normen} />
+          </div>
+        </section>
+      )}
+
       {/* Auf einen Blick: Vorteile + Einsatzbereiche + Varianten (scannbarer Kopf) */}
       {hatKopfInhalt && (
       <section style={{ padding: "0 32px 8px" }}>
-        <div className="mx-auto flex flex-col gap-12" style={{ maxWidth: 1320 }}>
-          {/* Vorteile / Auf einen Blick */}
+        <div className="mx-auto" style={{ maxWidth: 1320 }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Vorteile / Auf einen Blick (links) */}
           {produkt.besonderheiten.length > 0 && (
           <div>
             <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
@@ -259,10 +272,11 @@ export default async function ProduktDetailPage({
               </div>
             </div>
           )}
+          </div>
 
-          {/* Varianten-Vergleichstabelle (#110) */}
+          {/* Varianten-Vergleichstabelle (#110) — volle Breite unter dem 2-Spalten-Kopf */}
           {varianten.length > 0 && (
-            <div>
+            <div className="mt-12">
               <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
                 {dict.produkte.varianten_title}
               </h2>
@@ -313,10 +327,10 @@ export default async function ProduktDetailPage({
       </section>
       )}
 
-      {/* Technical Data + Norms */}
+      {/* Technische Daten (Norm je Kennwert bleibt dezent in der Tabelle; die mitgeltenden Normen stehen oben) */}
       <section className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div className={produkt.normen.length > 0 ? "grid grid-cols-1 lg:grid-cols-2 gap-12" : "grid grid-cols-1"}>
+          <div>
             {/* Technical Data */}
             <div>
               <h2
@@ -348,19 +362,6 @@ export default async function ProduktDetailPage({
                 ))}
               </div>
             </div>
-
-            {/* Norms (Besonderheiten/Vorteile stehen jetzt im scannbaren Kopf "Auf einen Blick") */}
-            {produkt.normen.length > 0 && (
-              <div>
-                <h2
-                  className="mb-6"
-                  style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
-                >
-                  {dict.detail.norms}
-                </h2>
-                <NormenChips normen={produkt.normen} />
-              </div>
-            )}
           </div>
         </div>
       </section>
