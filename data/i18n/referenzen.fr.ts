@@ -4,29 +4,34 @@ export const referenzenFR: Record<string, {
   untertitel?: string;
   land?: string;
   flaeche?: string;
+  ausgangssituation?: string;
   herausforderungen?: string[];
   loesung?: string;
+  ergebnis?: string | string[];
+  kennwerte?: { value: string; label: string }[];
   vorteile?: string[];
   bildAlt?: string;
 }> = {
   "antolin-wochenend-sanierung": {
-    titel: "Rénovation en un week-end",
-    untertitel: "Production sans interruption",
+    titel: "Rénovation pendant le week-end, Antolin, Autriche",
+    untertitel: "Dans un hall de production du fournisseur automobile Antolin, une surface au sol endommagée d'environ 150 m² devait être réparée dans les plus brefs délais, sans interrompre la production.",
     land: "Autriche",
     herausforderungen: [
-      "Créneau d'exécution très restreint",
-      "Exigences élevées en résistance à l'abrasion",
-      "La chape industrielle doit être praticable rapidement",
-      "Stabilité volumétrique / réduction du retrait",
+      "Ne pas bloquer la production du hall",
+      "Travaux réalisables uniquement le week-end",
+      "Réutilisation rapide du hall exigée par le client",
+      "Haute résistance à l'usure du sol pour les sollicitations les plus fortes",
     ],
-    loesung:
-      "Des surfaces partielles ont été traitées avec le système de chape rapide à haute résistance NEODUR HE 60 rapid sur pont d'adhérence KORODUR HB 5 rapid. Grâce aux propriétés de prise et de durcissement rapides, la surface a pu être pleinement utilisée après seulement 48 heures.",
-    vorteile: [
-      "Temps d'arrêt de production minimal grâce à une planification le week-end",
-      "Remise en service rapide (48 h)",
-      "Haute résistance à l'abrasion et durabilité",
-      "Stabilité volumétrique avec faible retrait",
+    loesung: "En automne 2018, deux sections de sol endommagées de 75 m² chacune ont été réparées. Le produit utilisé était NEODUR HE 60 Rapid, une chape à prise rapide à faible retrait, qui répondait entièrement aux exigences requises : une réutilisation en seulement 48 heures et une résistance à l'usure élevée pour les sollicitations les plus fortes.",
+    kennwerte: [
+      { value: "env. 150 m²", label: "Surface au sol endommagée" },
+      { value: "2 x 75 m²", label: "Sections réparées" },
+      { value: "48 heures", label: "Réutilisation" },
+      { value: "NEODUR HE 60 Rapid", label: "Produit utilisé" },
     ],
+    ergebnis: "NEODUR HE 60 Rapid a permis une réutilisation en seulement 48 heures et une résistance à l'usure élevée pour les sollicitations les plus fortes. Les attentes du client ont été parfaitement satisfaites.",
+    ausgangssituation: "Une surface au sol endommagée d'environ 150 m² devait être réparée dans les brefs délais dans un hall de production pour le fournisseur automobile Antolin. La principale contrainte était de ne pas bloquer la production, si bien que les travaux n'étaient possibles que le week-end. Le client exigeait en outre une réutilisation rapide de son hall et une haute résistance à l'usure du sol.",
+    vorteile: [],
     bildAlt: "Rénovation d'un hall de production chez Antolin à Ebergassing",
   },
   "kleemann-produktionshalle": {
@@ -772,22 +777,23 @@ export const referenzenFR: Record<string, {
   },
 
   "olympiastadion-berlin": {
-    titel: "Olympiastadion Berlin (2023)",
-    untertitel: "Rénovation sous contraintes de protection du patrimoine avec préservation de l'aspect historique. Haute résistance aux sollicitations pour les manifestations sportives et les grands événements.",
+    titel: "Stade Olympique, Berlin",
+    untertitel: "Le stade olympique de Berlin, lieu multifonctionnel sportif en Allemagne, a été construit en tenant compte de l'environnement des monuments historiques.",
     land: "Allemagne",
     herausforderungen: [
-      "Rénovation dans le respect des contraintes de protection du patrimoine et du monument classé",
-      "Équilibre entre le sport moderne, les productions de spectacles à plusieurs millions et la protection du patrimoine",
-      "Adaptation de l'aspect des surfaces de sol du stade construit au début du XXe siècle",
-      "Aménagement intérieur sur une surface de 3 000 m²",
+      "Trouver un accord entre les demandes du sport moderne et des shows pesant des millions d'euros",
+      "Respecter les exigences liées aux monuments historiques",
+      "Tenir compte du respect par rapport à la construction existante",
+      "Adapter l'aspect optique des différentes surfaces réalisées au 20è siècle",
     ],
-    loesung: "Sur une surface de 3 000 m², le sol design GRANIDUR dans le coloris anthracite a été mis en œuvre pour l'aménagement intérieur. GRANIDUR est un sol industriel KORODUR conçu comme sol design à l'aspect granit poli, développé pour des surfaces finies et esthétiquement exigeantes. L'aspect des surfaces de sol a ainsi pu être adapté au stade historique.",
-    vorteile: [
-      "Aspect granit poli, d'une beauté intemporelle",
-      "Surface finie, développée pour des zones esthétiquement exigeantes",
-      "Aspect en harmonie avec l'ensemble bâti classé",
-      "Design homogène sur 3 000 m² dans le coloris anthracite",
+    loesung: "Pour les travaux d'intérieur, sur environ 3.000 m², les responsables ont choisi d'utiliser l'indémodable sol décoratif GRANIDUR couleur anthracite. GRANIDUR est un sol décoratif poncé KORODUR, développé spécialement pour des surfaces exigeantes et indémodables.",
+    kennwerte: [
+      { value: "env. 3.000 m²", label: "Surface intérieure traitée" },
+      { value: "GRANIDUR couleur anthracite", label: "Sol décoratif poncé KORODUR" },
     ],
+    ergebnis: "",
+    ausgangssituation: "L'exigence était telle qu'un accord devait être trouvé entre les demandes du sport moderne et des shows pesant des millions d'euros d'une part, les exigences liées aux monuments historiques et le respect par rapport à la construction. Il fallait par ailleurs adapter l'aspect optique des différentes surfaces du stade réalisées au 20è siècle.",
+    vorteile: [],
     bildAlt: "Olympiastadion Berlin (2023) (photo à venir)",
   },
 
@@ -1013,22 +1019,25 @@ export const referenzenFR: Record<string, {
   },
 
   "decathlon-dortmund": {
-    titel: "Decathlon, Dortmund-Aplerbeck (2023)",
-    untertitel: "Pose d'une chape à granulats durs par technique de silo pour une surface de vente provisoire pendant la transformation du magasin spécialisé. Solution économique pour une exploitation temporaire.",
+    titel: "Rénovation du magasin DECATHLON, Dortmund",
+    untertitel: "Depuis octobre 23, le site de Dortmund-Aplerbeck est en cours de réaménagement, avec une réouverture prévue pour l'été 24. Un sol industriel NEODUR HE 65 a été mis en œuvre à la technique du silo.",
     land: "Allemagne",
     herausforderungen: [
-      "Rénovation du magasin DECATHLON depuis octobre 2023, réouverture prévue pour l'été 2024",
-      "Surface de vente provisoire sur le même site pour l'équipe et les produits saisonniers pendant les travaux",
-      "Sol industriel résistant requis pour l'exploitation commerciale temporaire",
-      "Pose économique et rationnelle exigée",
+      "Réaménagement du site avec réouverture prévue pour l'été 24",
+      "Sol industriel devant résister à une usure importante et aux contraintes les plus élevées",
+      "Mise en œuvre de 25 tonnes à la technique du silo",
+      "Pose en coulis frais sur frais en une épaisseur de couche de 10 mm",
     ],
-    loesung: "En juillet, l'entreprise spécialisée Nieladur a posé environ 25 t de chape à granulats durs NEODUR HE 65 en gris ciment avec le système de silo KORODUR. La mise en œuvre a été réalisée sous forme de chape adhérente frais sur frais en une épaisseur de 10 mm. NEODUR HE 65 est un sol industriel KORODUR prêt à l'emploi, à liant cimentaire et résistant à l'usure pour les charges les plus élevées. Le système de silo avec technique de malaxage et de pompage est une méthode de travail économique, rationnelle et durable.",
-    vorteile: [
-      "Sol industriel résistant à l'usure pour les charges les plus élevées",
-      "Méthode de travail économique, rationnelle et durable grâce au système de silo KORODUR",
-      "Pose rapide sous forme de chape adhérente frais sur frais",
-      "Structure de sol prête à l'emploi pour l'exploitation commerciale temporaire",
+    loesung: "Le sol industriel NEODUR HE 65 en teinte gris ciment a été mis en œuvre par l'applicateur spécialisé Nieladur, 25 tonnes posées avec la technique du silo. NEODUR HE 65 est un matériau sec, prêt à l'emploi, lié au ciment, résistant à l'usure importante et aux contraintes les plus élevées. La mise en œuvre s'est faite en coulis frais sur frais en une épaisseur de couche de 10 mm. Le système de silo KORODUR, technique de mélange et de pompage, est extrêmement économique, rationnel et durable.",
+    kennwerte: [
+      { value: "NEODUR HE 65", label: "Sol industriel" },
+      { value: "25 t", label: "Quantité mise en œuvre (technique silo)" },
+      { value: "10 mm", label: "Épaisseur de couche" },
+      { value: "Gris ciment", label: "Teinte" },
     ],
+    ergebnis: "",
+    ausgangssituation: "Depuis octobre 23, le site DECATHLON de Dortmund-Aplerbeck est en cours de réaménagement, la réouverture étant prévue pour l'été 24. En attendant, toute l'équipe du personnel continue à accueillir les clients dans un autre espace non loin de là. Après la réouverture, l'espace sera utilisé comme magasin de vélos.",
+    vorteile: [],
     bildAlt: "Decathlon, Dortmund-Aplerbeck (2023) (photo à venir)",
   },
 
@@ -2237,23 +2246,27 @@ export const referenzenFR: Record<string, {
     bildAlt: "Égalisation de pavés sans barrières à Crailsheim",
   },
   "flughafen-zagreb": {
-    titel: "Aéroport de Zagreb, Croatie",
-    untertitel: "Dalles de béton endommagées sur les pistes réparées en seulement 4 semaines",
+    titel: "Travaux à l'aéroport de Zagreb",
+    untertitel: "À l'aéroport de Zagreb, une surface de dalles de béton d'env. 1.000 m² a été réparée sur les pistes d'atterrissage en à peine 1 mois grâce à l'utilisation de Rapid Set avec camions malaxeurs à système volumétrique.",
     land: "Croatie",
     herausforderungen: [
-      "La piste devait être rouverte au trafic aérien régulier chaque matin à 6 heures",
-      "Travaux exclusivement de nuit, entre 23 heures et 6 heures du matin",
-      "Exigences élevées en matière de durabilité et de longévité des pistes",
-      "Réparation à grande échelle d'env. 1.000 m² de dalles de béton",
+      "Assurer des temps d'arrêt les plus courts possibles sur une infrastructure très fréquentée",
+      "Maintenir les pistes ouvertes au trafic la journée, ce qui imposait des travaux uniquement la nuit, entre 23 heures et 6 heures du matin",
+      "Réparer une surface de dalles de béton d'env. 1.000 m²",
+      "Atteindre rapidement une résistance suffisante pour rouvrir les pistes au trafic dès 6 heures du matin",
     ],
-    loesung:
-      "Le béton à prise rapide Rapid Set a été utilisé avec des camions malaxeurs à système volumétrique. Ceux-ci stockent séparément tous les composants du béton ; le ciment Rapid Set est mélangé sur place avec les agrégats, l'eau et les additifs pour former le béton frais, immédiatement posé. Cette procédure permet une formulation optimale du béton, répondant aux propriétés exigées et aux conditions météorologiques, ainsi qu'une production de béton sur site sans retard. À chaque nuit, les dalles de béton endommagées étaient coupées, soulevées, enlevées et les surfaces de nouveau bétonnées par système volumétrique. Le bétonnage, le lissage et la finition au balai prenaient env. 20 minutes par dalle, suivis d'un traitement de finition.",
-    vorteile: [
-      "Résistance structurelle > 20 MPa déjà après env. 2 heures",
-      "Réouverture quotidienne de la piste au trafic aérien malgré les travaux en cours",
-      "Production de béton sur site sans retard et parfaitement adaptée grâce aux camions malaxeurs volumétriques",
-      "Durabilité et longévité pour des pistes fortement sollicitées",
+    loesung: "Le béton rapide Rapid Set a été mis en œuvre avec le système de malaxeur volumétrique. Le ciment Rapid Set est mélangé sur place avec des agrégats, de l'eau et des additifs au béton frais, immédiatement posé, ce qui permet une production de béton sur site sans retard et adaptée aux propriétés exigées et aux conditions météorologiques. Les travaux ont été effectués la nuit, entre 23 heures et 6 heures. Une fois les dalles de béton endommagées coupées et enlevées, le béton rapide Rapid Set a pu être coulé avec le système de malaxeur volumétrique. Le bétonnage, le lissage et la finition au balai ont pris env. 20 minutes, suivis d'un traitement de finition. Par nuit, 3 dalles de béton (env. 25 m³) ont pu être réparées.",
+    kennwerte: [
+      { value: "env. 1.000 m²", label: "Surface de dalles de béton réparée" },
+      { value: "4 semaines", label: "Délai de réparation" },
+      { value: "23 h à 6 h", label: "Plage horaire des travaux nocturnes" },
+      { value: "env. 20 minutes", label: "Bétonnage, lissage et finition au balai" },
+      { value: "3 dalles (env. 25 m³)", label: "Réparation par nuit" },
+      { value: "> 20.0 MPa en 2 heures", label: "Résistance structurelle atteinte" },
     ],
+    ergebnis: "En 2 heures, les dalles de béton finies avaient gagné une résistance structurelle > 20.0 MPa et pouvaient être rouvertes au trafic à 6 heures du matin. Grâce au béton rapide Rapid Set, les dalles de béton endommagées ont pu être réparées dans un délai de 4 semaines, sans de longues interruptions de trafic.",
+    ausgangssituation: "Dans les endroits très fréquentés tels que les aéroports, il est nécessaire d'utiliser des matériaux permettant des temps d'arrêt les plus courts possibles. À Zagreb, des dalles de béton endommagées devaient être réparées sur les pistes d'atterrissage, alors que les pistes devaient rester ouvertes au trafic pendant la journée.",
+    vorteile: [],
     bildAlt: "Réparation des dalles de béton sur les pistes de l'aéroport de Zagreb",
   },
   "kopfsteinpflaster-lenningen": {
