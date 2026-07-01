@@ -30,29 +30,33 @@ Spalte `Website` (trägt den alt-korodur.de-Slug, z. B.
 2. **Die RV ist ein Roh-Harvest, nicht publikationsreif.** Qualitätsstufe überwiegend „Rohdaten",
    `Freigabestatus` nur bei 40/163 gesetzt, `Ergebnis/Wirkung` nur bei 36. Die RV wird noch vom
    RV-Team kuratiert (Status → Veröffentlichungsreif → Freigabe).
-3. **EN/FR liegen NICHT im Master.** `Sprachen veröffentlicht` ist durchgehend leer. Die
-   Übersetzungen leben in einer **separaten Übersetzungs-DB** (laut `schema-v1.md` §6: 259 EN/FR-Zeilen),
-   die kein Data-Source des Masters ist (DB-ID noch zu ermitteln, via Notion-Suche „Referenz-Übersetzungen").
+3. **EN/FR liegen in der separaten Übersetzungs-DB** „Referenz-Übersetzungen"
+   (`collection://172a9b0f-3b17-4d9a-8d4b-294d37d48238`, DB `281f7a9d-173a-4792-914d-b73711307406`).
+   Coverage: **EN 131 + FR 128 Zeilen, alle „Muttersprachler-geprüft", Quelle Website-Harvest.**
+   Felder je Sprache: Objekttitel übersetzt, Kurzbeschreibung, Ausgangslage, Aufgabe, Lösung/Ergebnis.
 4. Die dritte Master-Data-Source `collection://2ec670e1…` ist die **Produktdatenbank** (Ziel der
    Relation `🚧 Kern Produktdaten`), nicht die Übersetzungen.
 
-## Konsequenz für das Rückspielen (Reframe der D3-Entscheidung)
+## Finale Richtung (Steffi, 2026-07-01): RV → Website
 
-Die ursprüngliche Annahme „Website ist frischer, also Website→RV" gilt nur eingeschränkt:
+Die RV-Texte sind **gecrawlt, erweitert und von Technik inhaltlich geprüft** (nur für die Refs, die
+schon auf der alten Website waren). Steffi hat diese **130 Referenzen auf Freigabestatus „Öffentlich"**
+gesetzt (bestätigt per Query: Öffentlich = 130, Freigabe offen = 9, ohne = 22). Diese 130 sind das
+**V1-Set**; alle anderen kommen erst zum Launch Mitte September (vorher inhaltliche Prüfung).
 
-- **Pauschales Website→RV wäre schädlich.** Für die 104 nicht-veredelten Refs (und teils sogar für
-  veredelte wie olympiastadion) ist die strukturierte RV-DE reicher als die Website-Triade. Ein
-  automatischer Push würde RV-Inhalt degradieren.
-- **Empfehlung:** Kein automatischer Push. Das DE-Rückspielen auf die **26 veredelten Refs
-  beschränken** und dort **per-Ref vergleichen** (RV-Feld vs. Website-Feld, längeres/strukturierteres
-  gewinnt), als RV-Team-kuratierter Schritt, nicht als Bulk-Write.
-- **Umgekehrte Richtung ist der eigentliche Wert:** Die strukturierte RV-DE
-  (Ausgangssituation/Herausforderung/Ergebnis) ist die natürliche **Quelle für die post-V1
-  Drei-Akt-Anreicherung der Website** (RV→Website), sobald die RV kuratiert ist.
+Damit ist die RV die **autoritative Content-Quelle** für die V1-Referenzen, und die Richtung ist
+**RV → Website** (nicht umgekehrt):
+
+- **DE:** Master-Story-Felder (Technik-geprüft) → Website. Das **ersetzt** die frühere
+  Website-Triade inkl. #327-Veredeln für diese Refs (RV-Inhalt ist geprüft und reicher).
+- **EN/FR:** Übersetzungs-DB (Muttersprachler-geprüft, Harvest) → Website-i18n. Das **ersetzt** die
+  qualitativ schlechten App-i18n-EN/FR.
+- Das #327-Veredeln bleibt Zwischenstand, bis die geprüften RV-Texte gezogen sind.
 
 ## Offen (Entscheidung Steffi)
 
-1. DE-Rückspielen jetzt (nur 26 veredelte, per-Ref-kuratiert) oder erst nach RV-Kuratierung?
-2. EN/FR: Übersetzungs-DB-ID bestätigen, dann Harvest-EN/FR als Website-Qualitätsfix prüfen
-   (RV→Website), separat.
-3. Post-V1: Drei-Akt-Anreicherung der Website aus der kuratierten RV-DE (RV→Website).
+1. **Story-Shape:** Website auf das RV-Drei-Akt-Modell heben (ausgangssituation/herausforderung/
+   loesung/kennwerte/ergebnis, die die Detailseite bereits rendert) oder auf die Legacy-Triade mappen?
+2. **Scope:** V1-Website zeigt nur die 130 Öffentlichen (die übrigen der aktuellen 142 bis September
+   ausblenden)? Reconcile 142 ↔ 130 nötig.
+3. **Vorgehen:** Sample-Import (3-5 Refs RV→Website) zur Ansicht, dann skalieren.
