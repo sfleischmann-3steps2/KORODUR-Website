@@ -322,6 +322,33 @@ const he60rTechnik = (klasse: string, aWert: string) => [
   { label: "Voll belastbar nach", wert: "ca. 24 h" },
 ];
 
+// ===========================================================================
+// NEODUR VM-Familie (#373) — Vergussmörtel VM 1 / VM 3 / VB 8, gemeinsames TDS
+// (NEODUR_VM_1_3_8), variantenGruppe "neodur-vm-1". Unterschied = Vergussquerschnitt/
+// Körnung; Klasse C55/67 für alle. Quelle: TDS + Alt-XML. VM 5 / VM basic eigenständig.
+// ===========================================================================
+const VM13_BESONDERHEITEN = [
+  "Kraftschlüssiger Verbund von Beton und Stahleinbauteilen",
+  "Schwindfrei (Quellmaß >= 0,1 Vol.%), hochfließfähig",
+  "Frost- und tausalzbeständig, wasserundurchlässig, chloridfrei",
+  "Für innen und außen",
+  "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
+];
+const VM13_META = [
+  { titel: "Besonderheiten", text: "Verarbeitungs-, Umgebungs- und Untergrundtemperatur >= 5 Grad C. Schwindfrei, Quellmass >= 0,1 Vol.%. Fliessmass >= 550 mm nach 5 Minuten. Nachbehandlung gegen zu rasche Austrocknung (Wasserspruehnebel, Folie, feuchte Jutebahnen, Thermofolien oder KOROTEX). Frost- und tausalzbestaendig, wasserundurchlaessig, chloridfrei, fuer innen und aussen." },
+];
+const vm13Modi = (auftrag: string) => [
+  {
+    titel: "Verguss auf erhärteten Beton",
+    schritte: [
+      "Untergrund: Untergrund fuer kraftschluessigen Verbund rissefrei, eben und frei von losen Teilen, Staub, Zementschlaemme, Oelen und Fetten. Betonuntergrund ca. 6-24 Stunden bis zur kapillaren Saettigung vornaessen, Pfuetzenbildung vermeiden.",
+      "Mischen: Wasserzugabe ca. 3,0 l je 25 kg. Komplettes Gebinde mit vorgeschriebener Wassermenge ca. 3 Minuten anmischen (Zwangsmischer oder Ruehrquirl ca. 400 U/min). Ergiebigkeit ca. 12-13 l/25 kg.",
+      auftrag,
+      "Aushärtung: Druckfestigkeit nach 24 Std. >= 35 N/mm2, nach 28 Tagen >= 65 N/mm2 (C55/67). Freiliegende Flaechen 3-5 Tage nachbehandeln.",
+    ],
+  },
+];
+
 export const produkte: Produkt[] = [
   // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
@@ -2802,9 +2829,13 @@ export const produkte: Produkt[] = [
     // #178: VM 1 / VM 3 / VB 8 auf einer PDP (gemeinsame TDS NEODUR_VM_1_3_8).
     // Unterscheidung nur über den Vergussquerschnitt -> als Varianten geführt.
     // VM 5 (C80/95, R4) und VM basic (Trinkwasser) bleiben eigene PDPs (eigene TDS).
+    // VM 1 = Mutter der variantenGruppe (#373); VM 3 / VB 8 als eigene PDPs.
     id: "neodur-vm-1",
+    variantenGruppe: "neodur-vm-1",
+    sku: "1220364S25KG",
+    variantenSchwerpunkt: "Vergussquerschnitt 5–20 mm",
     tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
-    name: "NEODUR VM 1 / VM 3 / VB 8",
+    name: "NEODUR VM 1",
     verarbeitungModi: [{"titel": "Schicht auf erhärteten Beton (5-20 mm)", "schritte": ["Untergrund: Untergrund fuer kraftschluessigen Verbund rissefrei, eben und frei von losen Teilen, Staub, Zementschlaemme, Oelen und Fetten. Betonuntergrund ca. 6-24 Stunden bis zur kapillaren Saettigung vornaessen, Pfuetzenbildung vermeiden.", "Mischen: Wasserzugabe ca. 3,0 l je 25 kg. Komplettes Gebinde mit vorgeschriebener Wassermenge ca. 3 Minuten anmischen (Zwangsmischer oder Ruehrquirl ca. 400 U/min). Ergiebigkeit ca. 12-13 l/25 kg.", "Auftrag: NEODUR VM 1 (Koernung 0-1 mm) fuer Untergusshoehe/-breite ca. 5-20 mm. Verguss hohlraumfrei und ohne Arbeitsunterbrechung, auf Entlueftung achten. Auch mit geeigneter Pumptechnik verarbeitbar.", "Aushärtung: Druckfestigkeit nach 24 Std. >= 35 N/mm2, nach 28 Tagen >= 65 N/mm2 (C55/67). Freiliegende Flaechen 3-5 Tage nachbehandeln."]}],
     verarbeitungMeta: [{"titel": "Besonderheiten", "text": "Verarbeitungs-, Umgebungs- und Untergrundtemperatur >= 5 Grad C. Schwindfrei, Quellmass >= 0,1 Vol.%. Fliessmass >= 550 mm nach 5 Minuten. Nachbehandlung gegen zu rasche Austrocknung (Wasserspruehnebel, Folie, feuchte Jutebahnen, Thermofolien oder KOROTEX). Frost- und tausalzbestaendig, wasserundurchlaessig, chloridfrei, fuer innen und aussen."}],
     kategorie: "sonstige",
@@ -2812,17 +2843,68 @@ export const produkte: Produkt[] = [
     bereich: "spezialmoertel",
     aussenbereich: true,
     produktgruppe: "verguss",
-    kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte von 5 bis über 50 mm (Varianten VM 1 / VM 3 / VB 8)",
-    beschreibung: "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen. Die Reihe deckt je nach Vergussquerschnitt drei Varianten ab: NEODUR VM 1 (5 bis 20 mm), NEODUR VM 3 (10 bis 50 mm) und NEODUR VB 8 (über 50 mm). Alle drei teilen ein gemeinsames technisches Datenblatt.",
+    kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte 5–20 mm",
+    beschreibung: "NEODUR VM 1 ist ein gebrauchsfertiger, schwindfreier Montage- und Vergussmörtel für den kraftschlüssigen Verguss von Beton mit Stahleinbauteilen, für Vergussquerschnitte von 5 bis 20 mm (Körnung 0–1 mm). Frost- und tausalzbeständig, wasserundurchlässig, chloridfrei, für innen und außen. Klasse C55/67.",
     qualitaetsklasse: "C55/67",
     normen: ["DAfStb-RL Vergussbeton"],
-    technischeDaten: [{ label: "Vergussquerschnitt", wert: "5 mm bis über 50 mm (je Variante)" }],
-    varianten: [
-      { name: "NEODUR VM 1", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 5–20 mm", sku: "1220364S25KG" },
-      { name: "NEODUR VM 3", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 10–50 mm", sku: "1220358S25KG" },
-      { name: "NEODUR VB 8", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt über 50 mm" },
+    technischeDaten: [
+      { label: "Vergussquerschnitt", wert: "5–20 mm" },
+      { label: "Körnung", wert: "0–1 mm" },
+      { label: "Druckfestigkeit (24 h)", wert: "≥ 35 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "≥ 65 N/mm² (C55/67)" },
     ],
-    besonderheiten: ["Kraftschlüssiger Verbund von Beton und Stahleinbauteilen", "Umweltproduktdeklaration (Gruppen-EPD) verfügbar"],
+    besonderheiten: VM13_BESONDERHEITEN,
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-vm-3",
+    variantenGruppe: "neodur-vm-1",
+    sku: "1220358S25KG",
+    variantenSchwerpunkt: "Vergussquerschnitt 10–50 mm",
+    tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
+    name: "NEODUR VM 3",
+    verarbeitungModi: vm13Modi("Auftrag: NEODUR VM 3 (Koernung 0-3 mm) fuer Vergussquerschnitt ca. 10-50 mm. Verguss hohlraumfrei und ohne Arbeitsunterbrechung ausfuehren, auf Entlueftung achten. Auch mit geeigneter Pumptechnik verarbeitbar."),
+    verarbeitungMeta: VM13_META,
+    kategorie: "sonstige",
+    bereich: "spezialmoertel",
+    aussenbereich: true,
+    produktgruppe: "verguss",
+    kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte 10–50 mm",
+    beschreibung: "NEODUR VM 3 ist ein gebrauchsfertiger, schwindfreier Montage- und Vergussmörtel für den kraftschlüssigen Verguss von Beton mit Stahleinbauteilen, für Vergussquerschnitte von 10 bis 50 mm (Körnung 0–3 mm). Frost- und tausalzbeständig, wasserundurchlässig, chloridfrei, für innen und außen. Klasse C55/67.",
+    qualitaetsklasse: "C55/67",
+    normen: ["DAfStb-RL Vergussbeton"],
+    technischeDaten: [
+      { label: "Vergussquerschnitt", wert: "10–50 mm" },
+      { label: "Körnung", wert: "0–3 mm" },
+      { label: "Druckfestigkeit (24 h)", wert: "≥ 35 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "≥ 65 N/mm² (C55/67)" },
+    ],
+    besonderheiten: VM13_BESONDERHEITEN,
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-vb-8",
+    variantenGruppe: "neodur-vm-1",
+    variantenSchwerpunkt: "Vergussquerschnitt über 50 mm",
+    tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
+    name: "NEODUR VB 8",
+    verarbeitungModi: vm13Modi("Auftrag: NEODUR VB 8 (Koernung 0-8 mm) fuer Vergussquerschnitt ueber 50 mm. Verguss hohlraumfrei und ohne Arbeitsunterbrechung ausfuehren, auf Entlueftung achten. Auch mit geeigneter Pumptechnik verarbeitbar."),
+    verarbeitungMeta: VM13_META,
+    kategorie: "sonstige",
+    bereich: "spezialmoertel",
+    aussenbereich: true,
+    produktgruppe: "verguss",
+    kurzbeschreibung: "Verguss- und Montagebeton für Vergussquerschnitte über 50 mm",
+    beschreibung: "NEODUR VB 8 ist ein gebrauchsfertiger, schwindfreier Montage- und Vergussbeton für große Vergussquerschnitte über 50 mm (Körnung 0–8 mm). Kraftschlüssiger Verbund von Beton und Stahleinbauteilen, frost- und tausalzbeständig, für innen und außen. Klasse C55/67.",
+    qualitaetsklasse: "C55/67",
+    normen: ["DAfStb-RL Vergussbeton"],
+    technischeDaten: [
+      { label: "Vergussquerschnitt", wert: "über 50 mm" },
+      { label: "Körnung", wert: "0–8 mm" },
+      { label: "Druckfestigkeit (24 h)", wert: "≥ 35 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "≥ 65 N/mm² (C55/67)" },
+    ],
+    besonderheiten: VM13_BESONDERHEITEN,
     zeitKategorie: "normal",
   },
   {
