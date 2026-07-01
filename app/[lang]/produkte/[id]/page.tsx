@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import Breadcrumb from "../../../../components/Breadcrumb";
 import ReferenceCard from "../../../../components/ReferenceCard";
 import TileGrid from "../../../../components/TileGrid";
@@ -12,12 +11,13 @@ import { fachberaterFuerBereich } from "../../../../data/fachberater";
 import BeraterCard from "../../../../components/BeraterCard";
 import DokumentListe, { dokumenteNachSprache } from "../../../../components/DokumentListe";
 import NormenChips from "../../../../components/NormenChips";
+import ProduktGalerie from "../../../../components/ProduktGalerie";
+import { thumbSrc } from "../../../../lib/images";
 import { referenzen } from "../../../../data/referenzen";
 import { getDictionary, hasLocale } from "../../dictionaries";
 import { LOCALES } from "../../../../lib/i18n";
 import { notFound } from "next/navigation";
 import { localizeProdukt, localizeReferenzen } from "../../../../data/i18n/getLocalized";
-import { withBasePath } from "../../../../lib/basePath";
 import { alternatesFor } from "../../../../lib/seo";
 import { kontaktPath } from "../../../../lib/kontakt";
 import { AppIcon } from "@/components/ui/icon";
@@ -70,9 +70,22 @@ export default async function ProduktDetailPage({
     )
   );
   const relatedRefs = await localizeReferenzen(baseRelatedRefs, lang);
+  // Kopf-Galerie (#408, F1/F2): Packshot + Szenariofotos aus verknüpften Referenzen.
+  const galerieBilder = [
+    ...(produkt.bild ? [{ src: produkt.bild, thumb: produkt.bild, alt: produkt.name, contain: true }] : []),
+    ...relatedRefs
+      .filter((r) => r.bild && !r.bild.includes("_placeholder"))
+      .slice(0, 4)
+      .map((r) => ({ src: r.bild, thumb: thumbSrc(r.bild), alt: r.bildAlt ?? r.titel, contain: false })),
+  ];
   const dokumente = PRODUKT_DOKUMENTE[produkt.id] ?? [];
   // Sprachgefiltert (aktuelle Sprache → EN → DE) — steuert auch die Section-Sichtbarkeit (#120).
   const sichtbareDokumente = dokumenteNachSprache(dokumente, lang);
+  // Dokument-Aufteilung (#409, F6/F7/F8): Kern-Dokumente (Technik/Konformität)
+  // neben die Datenbox, Verarbeitungs-/Pflege-Dokumente unter die Verarbeitung.
+  const KERN_DOK_TYPEN = new Set(["tds", "sds", "dop", "epd"]);
+  const kernDokumente = dokumente.filter((d) => KERN_DOK_TYPEN.has(d.typ));
+  const verarbeitungsDokumente = dokumente.filter((d) => !KERN_DOK_TYPEN.has(d.typ));
   // LV-Deeplink (#136): produktspezifischer Ausschreibungstext oder generischer Katalog-Fallback.
   const lvUrlSpezifisch = PRODUKT_LV_LINKS[produkt.id];
   const lvUrl = lvUrlSpezifisch ?? AUSSCHREIBEN_URL;
@@ -128,7 +141,7 @@ export default async function ProduktDetailPage({
 
       {/* Header — Text-Header-Standard (#297): Top 16px bei Seiten mit Breadcrumb. */}
       <section style={{ padding: "16px 32px 56px" }}>
-        <div className="mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8" style={{ maxWidth: 1320 }}>
+        <div className="mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10" style={{ maxWidth: 1320 }}>
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <span
@@ -206,33 +219,24 @@ export default async function ProduktDetailPage({
                 </p>
               </div>
             )}
+
+            {/* Mitgeltende Normen (#408, F4): oben links in der Kopfspalte, blau + Badges */}
+            {produkt.normen.length > 0 && (
+              <div className="mt-6">
+                <h2 className="text-cyan-text text-[15px] mb-2.5" style={{ fontWeight: 800 }}>
+                  {dict.produkte.mitgeltende_normen}
+                </h2>
+                <NormenChips normen={produkt.normen} />
+              </div>
+            )}
           </div>
-          {produkt.bild && (
-            <div className="shrink-0 flex justify-center">
-              <Image
-                src={withBasePath(produkt.bild)}
-                alt={produkt.name}
-                width={180}
-                height={240}
-                priority
-                className="object-contain drop-shadow-lg"
-              />
+          {galerieBilder.length > 0 && (
+            <div className="shrink-0 w-full md:w-auto flex justify-center">
+              <ProduktGalerie bilder={galerieBilder} />
             </div>
           )}
         </div>
       </section>
-
-      {/* Mitgeltende Normen (Quelle: Notion Kern-Produktdaten, erfüllt+entspricht) — oben links, über "Auf einen Blick". Details je Kennwert stehen in der Tabelle + im TDS. */}
-      {produkt.normen.length > 0 && (
-        <section style={{ padding: "20px 32px 4px" }}>
-          <div className="mx-auto" style={{ maxWidth: 1320 }}>
-            <h2 className="mb-3 text-navy/60 text-[13px] uppercase tracking-wider" style={{ fontWeight: 700 }}>
-              {dict.produkte.mitgeltende_normen}
-            </h2>
-            <NormenChips normen={produkt.normen} />
-          </div>
-        </section>
-      )}
 
       {/* Auf einen Blick: Vorteile + Einsatzbereiche + Varianten (scannbarer Kopf) */}
       {hatKopfInhalt && (
@@ -245,7 +249,7 @@ export default async function ProduktDetailPage({
             <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
               {dict.produkte.highlights_title}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+            <div className="grid grid-cols-1 gap-y-3">
               {produkt.besonderheiten.map((b, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="flex-shrink-0 text-cyan-text mt-0.5">
@@ -264,7 +268,7 @@ export default async function ProduktDetailPage({
               <h2 className="mb-5" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
                 {dict.produkte.einsatzbereiche_title}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+              <div className="grid grid-cols-1 gap-y-3">
                 {produkt.einsatzbereiche.map((e, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="flex-shrink-0 text-cyan-text mt-0.5">
@@ -339,11 +343,12 @@ export default async function ProduktDetailPage({
       </section>
       )}
 
-      {/* Technische Daten (Norm je Kennwert bleibt dezent in der Tabelle; die mitgeltenden Normen stehen oben) */}
-      <section className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
+      {/* Technische Daten + wichtige Dokumente (#409, F6/F7): schmale Datenbox links,
+          variantenreine Kern-Dokumente rechts. id="dokumente" = Sprungziel Header-Link. */}
+      <section id="dokumente" className="bg-icon-bg" style={{ padding: "64px 32px 72px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <div>
-            {/* Technical Data */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Technische Daten (schmal) */}
             <div>
               <h2
                 className="mb-6"
@@ -358,7 +363,7 @@ export default async function ProduktDetailPage({
                 {produkt.technischeDaten.map((td, i) => (
                   <div
                     key={i}
-                    className="flex justify-between items-baseline gap-4 px-6 py-4"
+                    className="flex justify-between items-baseline gap-6 px-6 py-4"
                     style={i < produkt.technischeDaten.length - 1 ? { borderBottom: "1px solid var(--icon-bg)" } : {}}
                   >
                     <span className="text-navy opacity-60 text-[14px]">{td.label}</span>
@@ -374,12 +379,56 @@ export default async function ProduktDetailPage({
                 ))}
               </div>
             </div>
+
+            {/* Wichtige Dokumente für diese Qualität (#409, F6/F7) */}
+            <div>
+              <h2
+                className="mb-6"
+                style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
+              >
+                {dict.produkte.downloads_title}
+              </h2>
+              {kernDokumente.length > 0 && (
+                <DokumentListe
+                  dokumente={kernDokumente}
+                  lang={lang}
+                  labels={dict.produkte as Record<string, string>}
+                  sprachDedup
+                />
+              )}
+              <a
+                href={lvUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-white no-underline mt-3 group hover:shadow-md transition-shadow"
+                style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.06)", padding: "16px 20px" }}
+              >
+                <AppIcon icon={FileText} width={20} height={20} strokeWidth={2} className="text-cyan-text shrink-0" aria-hidden="true" />
+                <span className="flex flex-col">
+                  <span className="text-navy text-[15px] group-hover:text-cyan-text transition-colors" style={{ fontWeight: 700 }}>
+                    {dict.produkte.lv_titel}
+                  </span>
+                  <span className="text-navy/60 text-[13px]">
+                    {lvUrlSpezifisch ? dict.produkte.lv_produkt : dict.produkte.lv_katalog}
+                  </span>
+                </span>
+              </a>
+              {dokumente.length > 0 && (
+                <Link
+                  href={`/${lang}/downloads/?produkt=${produkt.id}`}
+                  className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] no-underline hover:underline mt-4"
+                  style={{ fontWeight: 700 }}
+                >
+                  {dict.downloads.alle_produkt} →
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Verarbeitungshinweise */}
-      {(produkt.verarbeitungModi?.length || produkt.verarbeitung || produkt.verarbeitungMeta?.length) && (
+      {(produkt.verarbeitungModi?.length || produkt.verarbeitung || produkt.verarbeitungMeta?.length || verarbeitungsDokumente.length > 0) && (
         <section style={{ padding: "64px 32px 72px" }}>
           <div className="mx-auto" style={{ maxWidth: 1320 }}>
             <h2 className="mb-6" style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}>
@@ -437,6 +486,21 @@ export default async function ProduktDetailPage({
                     <div className="text-navy text-[14px] leading-[1.6]">{m.text}</div>
                   </div>
                 ))}
+              </div>
+            )}
+
+            {/* Dokumente zur Verarbeitung & Pflege (#409, F8) */}
+            {verarbeitungsDokumente.length > 0 && (
+              <div className="mt-8" style={{ maxWidth: 760 }}>
+                <h3 className="text-navy text-[15px] mb-3" style={{ fontWeight: 900 }}>
+                  {dict.produkte.dok_gruppe_anwendung}
+                </h3>
+                <DokumentListe
+                  dokumente={verarbeitungsDokumente}
+                  lang={lang}
+                  labels={dict.produkte as Record<string, string>}
+                  sprachDedup
+                />
               </div>
             )}
           </div>
@@ -507,57 +571,6 @@ export default async function ProduktDetailPage({
           </div>
         </section>
       )}
-
-      {/* Downloads & Dokumente: TDS/SDS/DoP/Anwendung/Pflege je Produkt + Ausschreibungstext
-          (Launch-Plan M3 — "alle wichtigen Dokumente auf der Produktseite"; LV-Deeplink #136).
-          id="dokumente": Sprungziel des Header-Links (#369). */}
-      <section id="dokumente" style={{ padding: "56px 32px 64px" }}>
-        <div className="mx-auto" style={{ maxWidth: 1320 }}>
-          <h2
-            className="mb-6"
-            style={{ fontSize: "clamp(22px, 3vw, 32px)", fontWeight: 900, lineHeight: 1.15 }}
-          >
-            {dict.produkte.downloads_title}
-          </h2>
-          <div style={{ maxWidth: 760 }}>
-            {sichtbareDokumente.length > 0 && (
-              <DokumentListe
-                dokumente={dokumente}
-                lang={lang}
-                labels={dict.produkte as Record<string, string>}
-                sprachDedup
-                gruppieren
-              />
-            )}
-            {dokumente.length > 0 && (
-              <Link
-                href={`/${lang}/downloads/?produkt=${produkt.id}`}
-                className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] no-underline hover:underline mt-4"
-                style={{ fontWeight: 700 }}
-              >
-                {dict.downloads.alle_produkt} →
-              </Link>
-            )}
-            <a
-              href={lvUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-white no-underline mt-4 group hover:shadow-md transition-shadow"
-              style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.06)", padding: "16px 20px" }}
-            >
-              <AppIcon icon={FileText} width={20} height={20} strokeWidth={2} className="text-cyan-text shrink-0" aria-hidden="true" />
-              <span className="flex flex-col">
-                <span className="text-navy text-[15px] group-hover:text-cyan-text transition-colors" style={{ fontWeight: 700 }}>
-                  {dict.produkte.lv_titel}
-                </span>
-                <span className="text-navy/60 text-[13px]">
-                  {lvUrlSpezifisch ? dict.produkte.lv_produkt : dict.produkte.lv_katalog}
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* Systemkomponenten / Cross-Sell (#369) — verwandteProdukte als Karten, leer-safe */}
       {verwandte.length > 0 && (
