@@ -23,6 +23,8 @@ export type ProduktKarte = {
   szenarioBild?: string;
   /** Bereiche (primär + zusatz), in denen das Produkt geführt wird (#307-Filter). */
   bereiche: string[];
+  /** Marke für den eingerückten Marken-Unterfilter (#306): "rapid-set" | "microtop". */
+  marke?: string;
 };
 export type RollenGruppe = { key: string; label: string; items: ProduktKarte[] };
 export type BereichsGruppe = {
@@ -86,7 +88,7 @@ export default function ProdukteListe({
   filterReset,
 }: {
   gruppen: BereichsGruppe[];
-  bereichOptionen: { slug: string; label: string }[];
+  bereichOptionen: { slug: string; label: string; indent?: boolean }[];
   lang: string;
   layerThicknessLabel: string;
   suchePlaceholder: string;
@@ -125,9 +127,14 @@ export default function ProdukteListe({
       .map((g) => ({ ...g, items: g.items.filter((p) => matcht(p, terme)) }))
       .filter((g) => g.items.length > 0);
 
+    // Stufe 1 filtert nach Bereich — oder, bei value „marke:<id>", nach Marke
+    // (eingerückter Unterpunkt Rapid Set / MICROTOP, #306).
+    const filterFn = bereich.startsWith("marke:")
+      ? (p: ProduktKarte) => p.marke === bereich.slice("marke:".length)
+      : (p: ProduktKarte) => p.bereiche.includes(bereich);
     const nachBereich = bereich
       ? nachSuche
-          .map((g) => ({ ...g, items: g.items.filter((p) => p.bereiche.includes(bereich)) }))
+          .map((g) => ({ ...g, items: g.items.filter(filterFn) }))
           .filter((g) => g.items.length > 0)
       : nachSuche;
 
@@ -257,7 +264,7 @@ export default function ProdukteListe({
                 <option value="">{bereichAlleLabel}</option>
                 {bereichOptionen.map((b) => (
                   <option key={b.slug} value={b.slug}>
-                    {b.label}
+                    {b.indent ? `   ↳ ${b.label}` : b.label}
                   </option>
                 ))}
               </select>

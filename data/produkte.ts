@@ -1061,8 +1061,7 @@ export const produkte: Produkt[] = [
     id: "asphalt-repair-mix",
     sku: "1220542S25KG",
     // #306/#308: Betonsanierung (primär) + zusätzlich Infrastruktur.
-    bereich: "betonsanierung",
-    zusatzBereiche: ["infrastruktur"],
+    bereich: "infrastruktur",
     aussenbereich: true,
     produktgruppe: "reparaturmoertel",
     name: "ASPHALT REPAIR MIX",
@@ -1147,7 +1146,7 @@ export const produkte: Produkt[] = [
     id: "dot-europe-concrete-mix",
     sku: "1220516S25KG",
     bereich: "betonsanierung",
-    zusatzBereiche: ["infrastruktur"],
+    zusatzBereiche: ["infrastruktur", "industrieboden"],
     aussenbereich: true,
     produktgruppe: "reparaturmoertel",
     beschreibung: "DOT Europe CONCRETE MIX ist ein leistungsstarker, polymermodifizierter, schnellabbindender, faserverstärkter Schnellbeton für innen und außen. Er ist gemäß DIN EN 1504-3 sowohl für statisch als auch nicht statisch relevante Instandsetzungen einsetzbar, ideal wo schnelle Festigkeiten, Dauerhaftigkeit und schwindarmes Aushärten gefordert sind. Verarbeitbar in Stärken von 50–600 mm, bereits nach 1 Stunde belastbar; auch in Nassbereichen einsetzbar.",
@@ -2740,7 +2739,6 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Spezialmörtel (Neubau) + Betonsanierung (Sanierungsanteil).
     bereich: "spezialmoertel",
-    zusatzBereiche: ["betonsanierung"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Vergussbeton (C80/95) für Vergussquerschnitte bis 200 mm, geprüft nach DIN EN 1504-3 (R4)",
@@ -2790,7 +2788,6 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Schnellvergussmörtel → Sammelbereich Betonsanierung.
     bereich: "spezialmoertel",
-    zusatzBereiche: ["betonsanierung"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Schnellvergussmörtel für Vergussquerschnitte von 5 bis 20 mm",
@@ -2814,7 +2811,6 @@ export const produkte: Produkt[] = [
     kategorie: "sonstige",
     // #308: Schnellvergussmörtel → Sammelbereich Betonsanierung.
     bereich: "spezialmoertel",
-    zusatzBereiche: ["betonsanierung"],
     aussenbereich: true,
     produktgruppe: "verguss",
     kurzbeschreibung: "Schnellvergussmörtel (Körnung 0–3 mm) für Vergussquerschnitte von 10 bis 50 mm",
@@ -3098,6 +3094,39 @@ export const produkte: Produkt[] = [
       { name: "NEODUR PFM-ZE", hinweis: "Pflasterflächen · grau/hellgrau · Druckfestigkeit ≥ 50 N/mm²" },
       { name: "NEODUR PFM-ZE Flex", hinweis: "Plattenflächen · grau · Druckfestigkeit ≥ 40 N/mm²" },
     ],
+    zeitKategorie: "normal",
+  },
+
+  // === NEODUR USM (Unterstopfmörtel) — Notion-88er-Set, Website-Status „fehlt" (#306) ===
+  // Genuin im Code fehlend (nicht als Inline-Variante abgedeckt). Zuordnung aus der
+  // Kern-Produktdatenbank: Bereich Betonsanierung, Produktart Unterstopfmörtel.
+  // Kennwerte/TDS folgen über die Technik — bewusst leer statt geraten (Standing Rule).
+  {
+    id: "neodur-usm-3",
+    name: "NEODUR USM 3",
+    kategorie: "sonstige",
+    bereich: "betonsanierung",
+    produktgruppe: "unterstopf",
+    kurzbeschreibung:
+      "Mineralischer Unterstopfmörtel für das kraftschlüssige, hohlraumfreie Unterstopfen und Verfüllen von Fundamenten und Bauteilfugen im Zuge der Betoninstandsetzung.",
+    aussenbereich: true,
+    normen: [],
+    technischeDaten: [],
+    besonderheiten: [],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-usm-5",
+    name: "NEODUR USM 5",
+    kategorie: "sonstige",
+    bereich: "betonsanierung",
+    produktgruppe: "unterstopf",
+    kurzbeschreibung:
+      "Mineralischer Unterstopfmörtel mit gröberer Körnung für größere Schichtstärken beim kraftschlüssigen Unterstopfen und Verfüllen in der Betoninstandsetzung.",
+    aussenbereich: true,
+    normen: [],
+    technischeDaten: [],
+    besonderheiten: [],
     zeitKategorie: "normal",
   },
 ];
