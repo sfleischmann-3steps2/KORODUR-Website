@@ -12,8 +12,9 @@ import { localizeProdukte } from "../../../data/i18n/getLocalized";
 import { alternatesFor } from "../../../lib/seo";
 import {
   PRODUKTART_REIHENFOLGE,
-  produktartVonProdukt,
+  produktartenVonProdukt,
 } from "../../../data/produktart";
+import { RAPID_SET_PRODUKT_IDS } from "../../../data/rapidSetContent";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -41,6 +42,12 @@ export default async function ProduktePage({
   type LP = (typeof localizedProdukte)[number];
   // Bereiche je Produkt (primär + zusatz) für den Bereich-Filter (#307, Stufe 1).
   const bereicheVon = (p: LP): string[] => [p.bereich, ...(p.zusatzBereiche ?? [])];
+  // Marke je Produkt (#306): nur Rapid Set (kuratierte Marken-Liste) bekommt einen
+  // eingerückten Marken-Unterfilter. MICROTOP NICHT: TW-Behältersanierung IST
+  // MICROTOP (bis auf NEODUR VM basic), da lohnt kein Marken-Split (Steffi 07-01).
+  const rapidSetIdSet = new Set<string>(RAPID_SET_PRODUKT_IDS);
+  const markeVon = (p: LP): string | undefined =>
+    rapidSetIdSet.has(p.id) ? "rapid-set" : undefined;
   // Kachel-Szenario (#356) aus dem BASIS-Produkt auflösen — die Referenzen führen
   // deutsche Produktnamen, ein Match gegen den lokalisierten Namen ginge fehl.
   const szenarioById = new Map(produkte.map((p) => [p.id, produktSzenarioBild(p)]));
@@ -54,6 +61,7 @@ export default async function ProduktePage({
     bild: p.bild,
     szenarioBild: szenarioById.get(p.id) ?? undefined,
     bereiche: bereicheVon(p),
+    marke: markeVon(p),
   });
 
   // Zweistufiger Filter (#307): Stufe 1 Bereich → Stufe 2 Produktart. Bereich-
@@ -67,16 +75,26 @@ export default async function ProduktePage({
     "spezialmoertel",
   ];
   const bereicheMitProduktart = new Set(
-    localizedProdukte.flatMap((p) => (produktartVonProdukt(p) ? bereicheVon(p) : []))
+    localizedProdukte.flatMap((p) => (produktartenVonProdukt(p).length ? bereicheVon(p) : []))
   );
-  const bereichOptionen = BEREICH_FILTER_ORDER.filter((s) =>
-    bereicheMitProduktart.has(s)
-  ).map((slug) => ({
-    slug,
-    // Bereich „microtop" als Use-Case „TW-Behältersanierung" labeln (Steffi):
-    // der Bereich umfasst auch Nicht-MICROTOP-Produkte für Trinkwasser-Sanierung.
-    label: slug === "microtop" ? bt.microtop_menu : bt[`${slug}_name`] ?? slug,
-  }));
+  // Marken-Unterpunkt (Steffi #306): nur unter Betonsanierung erscheint die Marke
+  // Rapid Set als eingerückter Sub-Filter, weil sie dort eine Marke unter mehreren
+  // ist (neben NEODUR). Value „marke:<id>" filtert in ProdukteListe nach Marke statt
+  // Bereich. KEIN MICROTOP-Split: die TW-Behältersanierung IST MICROTOP (bis auf
+  // NEODUR VM basic), ein Split lohnt hier nicht (Steffi 2026-07-01).
+  const MARKE_UNTER: Record<string, { slug: string; label: string }> = {
+    betonsanierung: { slug: "marke:rapid-set", label: "Rapid Set" },
+  };
+  // Bereich-Label ohne Marken-Klammer (die Marke steht als eigener Unterpunkt).
+  const ohneMarke = (s: string) => s.replace(/\s*\((?:Rapid Set|MICROTOP)\)\s*$/u, "");
+  const bereichOptionen: { slug: string; label: string; indent?: boolean }[] = [];
+  for (const slug of BEREICH_FILTER_ORDER.filter((s) => bereicheMitProduktart.has(s))) {
+    // Der Bereich heißt „TW-Behältersanierung"; im Portfolio (Produktarten-Achse)
+    // heißt er „Trinkwasserbeschichtungsmörtel" (Steffi #306).
+    const roh = slug === "microtop" ? paTexte["produktart_tw-beschichtungsmoertel"] ?? slug : bt[`${slug}_name`] ?? slug;
+    bereichOptionen.push({ slug, label: ohneMarke(roh) });
+    if (MARKE_UNTER[slug]) bereichOptionen.push({ ...MARKE_UNTER[slug], indent: true });
+  }
 
   // Achse A „Portfolio" (#306/#307): Gruppierung nach Katalog-Produktart in
   // Lieferkatalog-Reihenfolge. Anker-Slug = Produktart-Wert (Deep-Links aus dem
@@ -84,7 +102,10 @@ export default async function ProduktePage({
   // Katzenstreu) landen in einer „Weitere"-Sammelgruppe, damit nichts verschwindet.
   const gruppen: BereichsGruppe[] = PRODUKTART_REIHENFOLGE.map(
     (art): BereichsGruppe | null => {
-      const items = localizedProdukte.filter((p) => produktartVonProdukt(p) === art);
+      // Multi-Produktart (#306, Notion-SoT): ein Produkt kann in mehreren
+      // Produktart-Gruppen erscheinen (z. B. MICROTOP TW als Spritzmörtel UND
+      // TW-Beschichtungsmörtel). Es taucht dann in jeder passenden Sektion auf.
+      const items = localizedProdukte.filter((p) => produktartenVonProdukt(p).includes(art));
       if (items.length === 0) return null;
       return {
         slug: art,
@@ -94,7 +115,7 @@ export default async function ProduktePage({
     }
   ).filter((g): g is BereichsGruppe => g !== null);
 
-  const ohneProduktart = localizedProdukte.filter((p) => !produktartVonProdukt(p));
+  const ohneProduktart = localizedProdukte.filter((p) => !produktartenVonProdukt(p).length);
   if (ohneProduktart.length > 0) {
     gruppen.push({
       slug: "weitere",

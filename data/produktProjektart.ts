@@ -31,6 +31,9 @@ export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
   "korodur-diamantbeton": NS,
   "korodur-robust": NS,
   "neodur-he-65": NS,
+  "neodur-he-65-svs-3": NS,
+  "neodur-he-65-svs-15": NS,
+  "neodur-he-65-metallisch": NS,
   "neodur-he-40": NS,
   "korodur-fscem": NS,
   "korodur-fscem-screed": NS,
@@ -66,6 +69,9 @@ export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
   // --- Notion: nur Neubau ---
   "neodur-he-3": N,
   "neodur-he-3-green": N,
+  "neodur-he-3-svs-3": N,
+  "neodur-he-3-svs-15": N,
+  "neodur-he-3-metallisch": N,
   "neodur-he-2": N,
   "granidur": N,
   "granidur-bianco-nero": N,
@@ -79,6 +85,7 @@ export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
   // --- Notion: nur Sanierung ---
   "neodur-he-60-rapid": S,
   "neodur-he-65-plus": S,
+  "neodur-he-65-plus-svs-3": S,
   "neodur-level": S,
   "neodur-level-au": S,
   "korodur-hb-5": S,
@@ -93,6 +100,9 @@ export const PRODUKT_PROJEKTART_OVERRIDES: Record<string, Projektart[]> = {
   "microtop-tw-8": S,
   "microtop-tw-nsm": S,
   "microtop-tw-mineral": S,
+  // NEODUR USM (Unterstopfmörtel) — Notion-88er-Set (#306)
+  "neodur-usm-3": S,
+  "neodur-usm-5": S,
 
   // --- Nicht in der Notion-View: bestehende Einordnung ---
 };

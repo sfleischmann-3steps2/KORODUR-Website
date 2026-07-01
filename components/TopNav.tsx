@@ -131,6 +131,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             { label: pa["produktart_spritzbeton"], href: paHref("spritzbeton") },
             { label: pa["produktart_vergussmoertel"], href: paHref("vergussmoertel") },
             { label: pa["produktart_vergussbeton"], href: paHref("vergussbeton") },
+            { label: pa["produktart_unterstopfmoertel"], href: paHref("unterstopfmoertel") },
             { label: pa["produktart_pflasterfugenmoertel"], href: paHref("pflasterfugenmoertel") },
             { label: pa["produktart_tw-beschichtungsmoertel"], href: paHref("tw-beschichtungsmoertel") },
           ],
@@ -148,8 +149,10 @@ export default function TopNav({ lang, dict }: TopNavProps) {
       ],
     },
     sanierung: {
-      // Final (Steffi 2026-06-22): Industrieboden · Sichtestrich · Infrastruktur ·
-      // TW-Behältersanierung · Betonsanierung. KEIN Spezialmörtel (→ Betonsanierung).
+      // Final (Steffi 2026-06-22/#306): Industrieboden · Infrastruktur ·
+      // TW-Behältersanierung (MICROTOP) · Betonsanierung (Rapid Set). KEIN
+      // Spezialmörtel (→ Betonsanierung), kein Sichtestrich (in Industrieboden
+      // aufgegangen, #331).
       items: [
         { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/sanierung/`, sub: bt.industrieboden_teaser },
         { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
