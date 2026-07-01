@@ -42,11 +42,12 @@ export default async function ProduktePage({
   type LP = (typeof localizedProdukte)[number];
   // Bereiche je Produkt (primär + zusatz) für den Bereich-Filter (#307, Stufe 1).
   const bereicheVon = (p: LP): string[] => [p.bereich, ...(p.zusatzBereiche ?? [])];
-  // Marke je Produkt (#306): Rapid Set (kuratierte Marken-Liste) bzw. MICROTOP
-  // (id-basiert, locale-sicher) für den eingerückten Marken-Unterfilter.
+  // Marke je Produkt (#306): nur Rapid Set (kuratierte Marken-Liste) bekommt einen
+  // eingerückten Marken-Unterfilter. MICROTOP NICHT: TW-Behältersanierung IST
+  // MICROTOP (bis auf NEODUR VM basic), da lohnt kein Marken-Split (Steffi 07-01).
   const rapidSetIdSet = new Set<string>(RAPID_SET_PRODUKT_IDS);
   const markeVon = (p: LP): string | undefined =>
-    rapidSetIdSet.has(p.id) ? "rapid-set" : p.id.startsWith("microtop-") ? "microtop" : undefined;
+    rapidSetIdSet.has(p.id) ? "rapid-set" : undefined;
   // Kachel-Szenario (#356) aus dem BASIS-Produkt auflösen — die Referenzen führen
   // deutsche Produktnamen, ein Match gegen den lokalisierten Namen ginge fehl.
   const szenarioById = new Map(produkte.map((p) => [p.id, produktSzenarioBild(p)]));
@@ -76,21 +77,20 @@ export default async function ProduktePage({
   const bereicheMitProduktart = new Set(
     localizedProdukte.flatMap((p) => (produktartenVonProdukt(p).length ? bereicheVon(p) : []))
   );
-  // Marken-Unterpunkte (Steffi #306): unter dem Bereich erscheint die Marke als
-  // eingerückter Sub-Filter (Rapid Set unter Betonsanierung, MICROTOP unter der
-  // TW-Behältersanierung). Value „marke:<id>" filtert in ProdukteListe nach Marke
-  // statt nach Bereich → Klick zeigt genau die Marken-Produkte.
+  // Marken-Unterpunkt (Steffi #306): nur unter Betonsanierung erscheint die Marke
+  // Rapid Set als eingerückter Sub-Filter, weil sie dort eine Marke unter mehreren
+  // ist (neben NEODUR). Value „marke:<id>" filtert in ProdukteListe nach Marke statt
+  // Bereich. KEIN MICROTOP-Split: die TW-Behältersanierung IST MICROTOP (bis auf
+  // NEODUR VM basic), ein Split lohnt hier nicht (Steffi 2026-07-01).
   const MARKE_UNTER: Record<string, { slug: string; label: string }> = {
     betonsanierung: { slug: "marke:rapid-set", label: "Rapid Set" },
-    microtop: { slug: "marke:microtop", label: "MICROTOP" },
   };
   // Bereich-Label ohne Marken-Klammer (die Marke steht als eigener Unterpunkt).
   const ohneMarke = (s: string) => s.replace(/\s*\((?:Rapid Set|MICROTOP)\)\s*$/u, "");
   const bereichOptionen: { slug: string; label: string; indent?: boolean }[] = [];
   for (const slug of BEREICH_FILTER_ORDER.filter((s) => bereicheMitProduktart.has(s))) {
     // Der Bereich heißt „TW-Behältersanierung"; im Portfolio (Produktarten-Achse)
-    // heißt er „Trinkwasserbeschichtungsmörtel" (Steffi #306). Marke MICROTOP
-    // darunter eingerückt.
+    // heißt er „Trinkwasserbeschichtungsmörtel" (Steffi #306).
     const roh = slug === "microtop" ? paTexte["produktart_tw-beschichtungsmoertel"] ?? slug : bt[`${slug}_name`] ?? slug;
     bereichOptionen.push({ slug, label: ohneMarke(roh) });
     if (MARKE_UNTER[slug]) bereichOptionen.push({ ...MARKE_UNTER[slug], indent: true });
