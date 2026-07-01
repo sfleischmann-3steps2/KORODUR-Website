@@ -182,13 +182,11 @@ export default async function SubBereichPage({ params }: { params: Params }) {
           <h2 className="mb-3" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}>
             {tb(`${slug}_produkte_heading`)}
           </h2>
-          {/* #250: Produkte tragen noch keine Projektart-Klassifizierung
-              (#240/#83/#103). Bis dahin alle Bereichsprodukte + sichtbarer
-              Platzhalter-Hinweis. */}
-          <p className="mb-6 inline-block rounded-md bg-white/70 px-3 py-2 text-[13px] italic text-navy/55">
-            {tb("klassifizierung_folgt")}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/* #306: Produkte sind jetzt projektart-klassifiziert (Notion-Kern-DB-
+              SoT über produktProjektart.ts / PRODUKT_PROJEKTART_OVERRIDES). Der
+              Filter oben (produktHatProjektart) zeigt nur die für die jeweilige
+              Projektart relevanten Produkte — Platzhalter entfällt (#240/#83). */}
+          <div className="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {localizedProdukte.map((produkt) => (
               <Link key={produkt.id} href={`/${lang}/produkte/${produkt.id}`} className="no-underline group block">
                 <div className="bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg" style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}>
