@@ -6,8 +6,10 @@ import { alternatesFor } from "../../../lib/seo";
 import {
   buildDownloadKatalog,
   katalogBereiche,
+  katalogProduktarten,
   UEBERGREIFEND,
 } from "../../../lib/downloadKatalog";
+import { PRODUKTART_REIHENFOLGE } from "../../../data/produktart";
 import DownloadCenter from "../../../components/DownloadCenter";
 
 // Download-Center (#301): filterbarer Katalog aller lokal vorliegenden
@@ -50,10 +52,13 @@ export default async function DownloadsPage({ params }: { params: Params }) {
   const katalog = buildDownloadKatalog();
   const vorhanden = new Set(katalogBereiche(katalog));
   const bereichOptionen = BEREICH_ORDER.filter((b) => vorhanden.has(b));
+  const produktartVorhanden = katalogProduktarten(katalog);
+  const produktartOptionen = PRODUKTART_REIHENFOLGE.filter((a) => produktartVorhanden.has(a));
   const bereichLabels = {
     ...(dict.bereiche as Record<string, string>),
     uebergreifend_name: dict.downloads.uebergreifend,
   };
+  const produkteTexte = dict.produkte as Record<string, string>;
   const strings = {
     alle: dict.downloads.alle,
     suchePlaceholder: dict.downloads.suche_placeholder,
@@ -61,6 +66,7 @@ export default async function DownloadsPage({ params }: { params: Params }) {
     keineTreffer: dict.downloads.keine_treffer,
     filterTyp: dict.downloads.filter_typ,
     filterBereich: dict.downloads.filter_bereich,
+    filterProduktart: produkteTexte.filter_produktart_label ?? "Produktart",
     reset: dict.downloads.reset,
     produktLabel: dict.downloads.produkt_label,
     uebergreifend: dict.downloads.uebergreifend,
@@ -78,9 +84,11 @@ export default async function DownloadsPage({ params }: { params: Params }) {
         <DownloadCenter
           katalog={katalog}
           bereichOptionen={bereichOptionen}
+          produktartOptionen={produktartOptionen}
           lang={lang}
           bereichLabels={bereichLabels}
-          typLabels={dict.produkte as Record<string, string>}
+          typLabels={produkteTexte}
+          produktartLabels={produkteTexte}
           strings={strings}
         />
       </div>

@@ -14,6 +14,7 @@ import {
   type ProduktDokument,
 } from "../data/produktDokumente";
 import { produkte } from "../data/produkte";
+import { produktartVonProdukt, type Produktart } from "../data/produktart";
 
 export const UEBERGREIFEND = "uebergreifend";
 
@@ -28,6 +29,8 @@ export interface KatalogDokument {
   produkte: { id: string; name: string }[];
   /** Bereich-Slugs (aus den Produkten) bzw. [UEBERGREIFEND]. */
   bereiche: string[];
+  /** Produktarten (Achse A, aus den Produkten). Leer = keine (uebergreifend). */
+  produktarten: Produktart[];
 }
 
 const prodById = new Map(produkte.map((p) => [p.id, p]));
@@ -43,7 +46,7 @@ export function buildDownloadKatalog(): KatalogDokument[] {
     const key = `${d.typ}|${d.titel.toLowerCase()}`;
     let e = map.get(key);
     if (!e) {
-      e = { id: key, typ: d.typ, titel: d.titel, dateien: [], produkte: [], bereiche: [] };
+      e = { id: key, typ: d.typ, titel: d.titel, dateien: [], produkte: [], bereiche: [], produktarten: [] };
       map.set(key, e);
     }
     if (!e.dateien.some((x) => x.url === d.url)) e.dateien.push({ sprache: d.sprache, url: d.url });
@@ -52,6 +55,8 @@ export function buildDownloadKatalog(): KatalogDokument[] {
       for (const b of [prod.bereich, ...(prod.zusatzBereiche ?? [])]) {
         if (b && !e.bereiche.includes(b)) e.bereiche.push(b);
       }
+      const art = produktartVonProdukt({ id: prod.id });
+      if (art && !e.produktarten.includes(art)) e.produktarten.push(art);
     }
   };
 
@@ -82,4 +87,11 @@ export function katalogBereiche(katalog: KatalogDokument[]): string[] {
   const s = new Set<string>();
   for (const d of katalog) for (const b of d.bereiche) s.add(b);
   return [...s];
+}
+
+/** Produktarten, die im Katalog tatsaechlich vorkommen (fuer die Filter-Chips). */
+export function katalogProduktarten(katalog: KatalogDokument[]): Set<Produktart> {
+  const s = new Set<Produktart>();
+  for (const d of katalog) for (const a of d.produktarten) s.add(a);
+  return s;
 }
