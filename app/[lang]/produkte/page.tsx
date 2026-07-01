@@ -14,6 +14,7 @@ import {
   PRODUKTART_REIHENFOLGE,
   produktartenVonProdukt,
 } from "../../../data/produktart";
+import { RAPID_SET_PRODUKT_IDS } from "../../../data/rapidSetContent";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -41,6 +42,11 @@ export default async function ProduktePage({
   type LP = (typeof localizedProdukte)[number];
   // Bereiche je Produkt (primär + zusatz) für den Bereich-Filter (#307, Stufe 1).
   const bereicheVon = (p: LP): string[] => [p.bereich, ...(p.zusatzBereiche ?? [])];
+  // Marke je Produkt (#306): Rapid Set (kuratierte Marken-Liste) bzw. MICROTOP
+  // (id-basiert, locale-sicher) für den eingerückten Marken-Unterfilter.
+  const rapidSetIdSet = new Set<string>(RAPID_SET_PRODUKT_IDS);
+  const markeVon = (p: LP): string | undefined =>
+    rapidSetIdSet.has(p.id) ? "rapid-set" : p.id.startsWith("microtop-") ? "microtop" : undefined;
   // Kachel-Szenario (#356) aus dem BASIS-Produkt auflösen — die Referenzen führen
   // deutsche Produktnamen, ein Match gegen den lokalisierten Namen ginge fehl.
   const szenarioById = new Map(produkte.map((p) => [p.id, produktSzenarioBild(p)]));
@@ -54,6 +60,7 @@ export default async function ProduktePage({
     bild: p.bild,
     szenarioBild: szenarioById.get(p.id) ?? undefined,
     bereiche: bereicheVon(p),
+    marke: markeVon(p),
   });
 
   // Zweistufiger Filter (#307): Stufe 1 Bereich → Stufe 2 Produktart. Bereich-
@@ -69,14 +76,24 @@ export default async function ProduktePage({
   const bereicheMitProduktart = new Set(
     localizedProdukte.flatMap((p) => (produktartenVonProdukt(p).length ? bereicheVon(p) : []))
   );
-  const bereichOptionen = BEREICH_FILTER_ORDER.filter((s) =>
-    bereicheMitProduktart.has(s)
-  ).map((slug) => ({
-    slug,
-    // Bereich „microtop" als Use-Case „TW-Behältersanierung" labeln (Steffi):
-    // der Bereich umfasst auch Nicht-MICROTOP-Produkte für Trinkwasser-Sanierung.
-    label: slug === "microtop" ? bt.microtop_menu : bt[`${slug}_name`] ?? slug,
-  }));
+  // Marken-Unterpunkte (Steffi #306): unter dem Bereich erscheint die Marke als
+  // eingerückter Sub-Filter (Rapid Set unter Betonsanierung, MICROTOP unter der
+  // TW-Behältersanierung). Value „marke:<id>" filtert in ProdukteListe nach Marke
+  // statt nach Bereich → Klick zeigt genau die Marken-Produkte.
+  const MARKE_UNTER: Record<string, { slug: string; label: string }> = {
+    betonsanierung: { slug: "marke:rapid-set", label: "Rapid Set" },
+    microtop: { slug: "marke:microtop", label: "MICROTOP" },
+  };
+  // Bereich-Label ohne Marken-Klammer (die Marke steht als eigener Unterpunkt).
+  const ohneMarke = (s: string) => s.replace(/\s*\((?:Rapid Set|MICROTOP)\)\s*$/u, "");
+  const bereichOptionen: { slug: string; label: string; indent?: boolean }[] = [];
+  for (const slug of BEREICH_FILTER_ORDER.filter((s) => bereicheMitProduktart.has(s))) {
+    // „microtop" trägt als Bereich den Use-Case-Namen (TW-Behältersanierung);
+    // die Marke MICROTOP wird darunter eingerückt.
+    const roh = slug === "microtop" ? bt.microtop_menu : bt[`${slug}_name`] ?? slug;
+    bereichOptionen.push({ slug, label: ohneMarke(roh) });
+    if (MARKE_UNTER[slug]) bereichOptionen.push({ ...MARKE_UNTER[slug], indent: true });
+  }
 
   // Achse A „Portfolio" (#306/#307): Gruppierung nach Katalog-Produktart in
   // Lieferkatalog-Reihenfolge. Anker-Slug = Produktart-Wert (Deep-Links aus dem
