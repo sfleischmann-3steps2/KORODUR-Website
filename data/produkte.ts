@@ -57,7 +57,7 @@ export interface Produkt {
    *  gleichrangige Produkte mit gemeinsamem `variantenGruppe` (eigene PDP je
    *  Ausführung, keine Basis-PDP). Dieses Feld bleibt für unmigrierte/einfache
    *  Fälle erhalten. */
-  varianten?: { name: string; qualitaetsklasse?: string; hinweis?: string }[];
+  varianten?: { name: string; qualitaetsklasse?: string; hinweis?: string; sku?: string }[];
   /** Artikelnummer/SKU der konkreten Ausführung (Alt-Site-XML). Nicht
    *  übersetzt. V1-Varianten-PDP (#368). */
   sku?: string;
@@ -2238,8 +2238,8 @@ export const produkte: Produkt[] = [
       "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
     ],
     varianten: [
-      { name: "GRANIDUR BIANCO" },
-      { name: "GRANIDUR NERO" },
+      { name: "GRANIDUR BIANCO", sku: "1220261S25KG" },
+      { name: "GRANIDUR NERO", sku: "1220237S25KG" },
     ],
     systemBegleitprodukte: ["korodur-hb-5"],
     sichtestrich: true,
@@ -2270,8 +2270,8 @@ export const produkte: Produkt[] = [
       "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
     ],
     varianten: [
-      { name: "KCF 05", qualitaetsklasse: "CT-C45-F6-A5", hinweis: "Körnung 0–5 mm, Schichtstärke 15–25 mm" },
-      { name: "KCF 08", qualitaetsklasse: "CT-C35-F5-A5", hinweis: "Körnung 0–8 mm, Schichtstärke 25–50 mm" },
+      { name: "KCF 05", qualitaetsklasse: "CT-C45-F6-A5", hinweis: "Körnung 0–5 mm, Schichtstärke 15–25 mm", sku: "1220217S25KG" },
+      { name: "KCF 08", qualitaetsklasse: "CT-C35-F5-A5", hinweis: "Körnung 0–8 mm, Schichtstärke 25–50 mm", sku: "1220215S25KG" },
       { name: "KCF 05 rapid", hinweis: "schnellerhärtend, volumenstabiles Bindemittel auf ternärer Basis" },
     ],
     systemBegleitprodukte: ["korodur-hb-5", "koroclean"],
@@ -2681,8 +2681,8 @@ export const produkte: Produkt[] = [
     normen: ["DAfStb-RL Vergussbeton"],
     technischeDaten: [{ label: "Vergussquerschnitt", wert: "5 mm bis über 50 mm (je Variante)" }],
     varianten: [
-      { name: "NEODUR VM 1", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 5–20 mm" },
-      { name: "NEODUR VM 3", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 10–50 mm" },
+      { name: "NEODUR VM 1", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 5–20 mm", sku: "1220364S25KG" },
+      { name: "NEODUR VM 3", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 10–50 mm", sku: "1220358S25KG" },
       { name: "NEODUR VB 8", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt über 50 mm" },
     ],
     besonderheiten: ["Kraftschlüssiger Verbund von Beton und Stahleinbauteilen", "Umweltproduktdeklaration (Gruppen-EPD) verfügbar"],
@@ -2708,6 +2708,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-vm-basic",
+    sku: "1220370S25KG",
     tdsUrl: "/downloads/tds/NEODUR_VM_basic_de.pdf",
     name: "NEODUR VM basic",
     kategorie: "sonstige",
@@ -2788,6 +2789,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-msm-3",
+    sku: "1220427S25KG",
     tdsUrl: "/downloads/tds/NEODUR_MSM_3_5_MSB_8_de.pdf",
     name: "NEODUR MSM 3",
     kategorie: "sonstige",
@@ -2806,6 +2808,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-msm-5",
+    sku: "1220428S25KG",
     tdsUrl: "/downloads/tds/NEODUR_MSM_3_5_MSB_8_de.pdf",
     name: "NEODUR MSM 5",
     kategorie: "sonstige",
@@ -2824,6 +2827,7 @@ export const produkte: Produkt[] = [
   },
   {
     id: "neodur-msb-8",
+    sku: "1220429S25KG",
     tdsUrl: "/downloads/tds/NEODUR_MSM_3_5_MSB_8_de.pdf",
     name: "NEODUR MSB 8",
     kategorie: "sonstige",
@@ -2917,9 +2921,9 @@ export const produkte: Produkt[] = [
       "FLOW Control: 20–40 % weniger Anmachwasser bei gleichem Ausbreitmaß",
     ],
     varianten: [
-      { name: "SET Control", hinweis: "Verzögerer für längere Verarbeitungszeit" },
-      { name: "FLOW Control", hinweis: "Verflüssiger, erhöht Festigkeiten" },
-      { name: "FAST Control", hinweis: "Beschleuniger für kalte Temperaturen" },
+      { name: "SET Control", hinweis: "Verzögerer für längere Verarbeitungszeit", sku: "1320611" },
+      { name: "FLOW Control", hinweis: "Verflüssiger, erhöht Festigkeiten", sku: "1320610" },
+      { name: "FAST Control", hinweis: "Beschleuniger für kalte Temperaturen", sku: "1320612" },
     ],
     zeitKategorie: "normal",
   },

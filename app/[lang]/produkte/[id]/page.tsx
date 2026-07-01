@@ -81,6 +81,7 @@ export default async function ProduktDetailPage({
   const varianten = produkt.varianten ?? [];
   const varHatKlasse = varianten.some((v) => v.qualitaetsklasse);
   const varHatHinweis = varianten.some((v) => v.hinweis);
+  const varHatSku = varianten.some((v) => v.sku);
   // Scannbarer Kopf nur rendern, wenn er Inhalt hat (#176).
   const hatKopfInhalt =
     produkt.besonderheiten.length > 0 ||
@@ -304,6 +305,11 @@ export default async function ProduktDetailPage({
                           {dict.produkte.variante_col_hinweis}
                         </th>
                       )}
+                      {varHatSku && (
+                        <th scope="col" className="text-left text-navy/60 text-[12px] uppercase tracking-wider px-6 py-3" style={{ fontWeight: 700 }}>
+                          {dict.produkte.variante_col_sku}
+                        </th>
+                      )}
                     </tr>
                   </thead>
                   <tbody>
@@ -315,6 +321,9 @@ export default async function ProduktDetailPage({
                         )}
                         {varHatHinweis && (
                           <td className="text-navy/80 text-[14px] px-6 py-3.5">{v.hinweis ?? "–"}</td>
+                        )}
+                        {varHatSku && (
+                          <td className="text-navy/70 text-[13px] px-6 py-3.5 tabular-nums whitespace-nowrap">{v.sku ?? "–"}</td>
                         )}
                       </tr>
                     ))}
