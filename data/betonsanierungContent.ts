@@ -157,7 +157,7 @@ export const BETONSANIERUNG_CONTENT = {
         label: "Montage- & Vergusssystem",
         intro:
           "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen und Fertigteilen. Hochfließfähige Vergussmörtel vergießen Anker, Bolzen, Pfeiler, Schienen und Maschinenfundamente hohlraumfrei, sodass die Kräfte direkt ins Fundament abgeleitet werden. Vom Schnellverguss bis zum hochfesten Vergussbeton für große Querschnitte, schrumpfarm, frost- und tausalzbeständig.",
-        produkte: ["NEODUR SVM 03", "NEODUR SVM 4", "NEODUR VM basic", "NEODUR VM 5"],
+        produkte: ["NEODUR VM basic", "NEODUR USM 3", "NEODUR USM 5"],
       },
       {
         gruppe: "pflasterfugen",
