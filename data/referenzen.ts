@@ -11,6 +11,7 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Schwerlast ===
   {
     id: "antolin-wochenend-sanierung",
+    releaseStatus: "oeffentlich",
     slug: "antolin-wochenend-sanierung",
     projekttyp: "sanierung",
     titel: "Sanierung übers Wochenende",
@@ -43,6 +44,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "kleemann-produktionshalle",
+    releaseStatus: "oeffentlich",
     slug: "kleemann-produktionshalle",
     projekttyp: "sanierung",
     titel: "Produktionshalle Kleemann",
@@ -74,6 +76,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "monheim-produktionsflaeche",
+    releaseStatus: "oeffentlich",
     slug: "monheim-produktionsflaeche",
     projekttyp: "sanierung",
     titel: "Produktionsfläche Monheim",
@@ -106,6 +109,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "weag-entsorgungsbetrieb",
+    releaseStatus: "oeffentlich",
     slug: "weag-entsorgungsbetrieb",
     projekttyp: "sanierung",
     titel: "WEAG Entsorgungsbetrieb",
@@ -139,6 +143,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "wochenend-sanierung-werkstatt",
+    releaseStatus: "oeffentlich",
     slug: "wochenend-sanierung-werkstatt",
     projekttyp: "sanierung",
     titel: "Wochenend-Sanierung Werkstatt",
@@ -171,6 +176,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "strandkorbhalle-sylt",
+    releaseStatus: "oeffentlich",
     slug: "strandkorbhalle-sylt",
     projekttyp: "sanierung",
     titel: "Strandkorbhalle Sylt",
@@ -203,6 +209,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "loosen-werkzeug-klausen",
+    releaseStatus: "oeffentlich",
     slug: "loosen-werkzeug-klausen",
     projekttyp: "sanierung",
     titel: "Sanierung im laufenden Betrieb – Loosen",
@@ -235,6 +242,7 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Dünnschicht ===
   {
     id: "guben-produktionshalle",
+    releaseStatus: "oeffentlich",
     slug: "guben-produktionshalle",
     projekttyp: "sanierung",
     titel: "Produktionshalle Guben",
@@ -267,6 +275,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "nike-store-polen",
+    releaseStatus: "oeffentlich",
     slug: "nike-store-polen",
     projekttyp: "sanierung",
     titel: "Nike Store Polen",
@@ -298,6 +307,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "obstplantage-ibbenbueren",
+    releaseStatus: "freigabe-offen",
     slug: "obstplantage-ibbenbueren",
     projekttyp: "sanierung",
     titel: "Obstplantage Ibbenbüren",
@@ -329,6 +339,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "sanierung-einer-sanierung",
+    releaseStatus: "freigabe-offen",
     slug: "sanierung-einer-sanierung",
     projekttyp: "sanierung",
     titel: "Sanierung einer Sanierung",
@@ -360,6 +371,7 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Schnelle Reparaturen ===
   {
     id: "dhl-ueberadebruecken",
+    releaseStatus: "oeffentlich",
     slug: "dhl-ueberadebruecken",
     projekttyp: "sanierung",
     titel: "DHL Überladebrücken",
@@ -389,6 +401,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "lkw-waschstrasse",
+    releaseStatus: "freigabe-offen",
     slug: "lkw-waschstrasse",
     projekttyp: "sanierung",
     titel: "LKW Waschstraße",
@@ -421,6 +434,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "helipad-sanierung-polen",
+    releaseStatus: "freigabe-offen",
     slug: "helipad-sanierung-polen",
     projekttyp: "sanierung",
     titel: "Helipad Sanierung Polen",
@@ -454,6 +468,7 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBAU ===
   {
     id: "fugensanierung-lyreco",
+    releaseStatus: "oeffentlich",
     slug: "fugensanierung-lyreco",
     projekttyp: "sanierung",
     titel: "Fugensanierung Lyreco",
@@ -486,6 +501,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "treppenstufen-sanierung",
+    releaseStatus: "oeffentlich",
     slug: "treppenstufen-sanierung",
     projekttyp: "sanierung",
     titel: "Treppenstufen Sanierung",
@@ -516,6 +532,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "sinusfugen-sanierung",
+    releaseStatus: "oeffentlich",
     slug: "sinusfugen-sanierung",
     projekttyp: "sanierung",
     titel: "Sinusfugen Sanierung",
@@ -545,6 +562,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "trennfugen-bohnenkamp",
+    releaseStatus: "oeffentlich",
     slug: "trennfugen-bohnenkamp",
     projekttyp: "sanierung",
     titel: "Trennfugen Sanierung Bohnenkamp",
@@ -576,6 +594,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "absenksteine-tankstelle",
+    releaseStatus: "oeffentlich",
     slug: "absenksteine-tankstelle",
     projekttyp: "sanierung",
     titel: "Absenksteine schnell verlegt",
@@ -606,6 +625,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "lkw-einstellplatz-berlin",
+    releaseStatus: "oeffentlich",
     slug: "lkw-einstellplatz-berlin",
     projekttyp: "sanierung",
     titel: "LKW Einstellplatz Berlin",
@@ -638,6 +658,7 @@ export const referenzen: Referenz[] = [
   // === INFRASTRUKTUR – Verkehr ===
   {
     id: "hafen-catania",
+    releaseStatus: "oeffentlich",
     slug: "hafen-catania",
     projekttyp: "sanierung",
     titel: "Hafen Catania",
@@ -670,6 +691,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "parkhaus-flughafen-zuerich",
+    releaseStatus: "freigabe-offen",
     slug: "parkhaus-flughafen-zuerich",
     projekttyp: "sanierung",
     titel: "Parkhaus Flughafen Zürich",
@@ -703,6 +725,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "theodor-heuss-bruecke",
+    releaseStatus: "freigabe-offen",
     slug: "theodor-heuss-bruecke",
     projekttyp: "sanierung",
     titel: "Theodor-Heuss-Brücke",
@@ -734,6 +757,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "autohaus-versmold",
+    releaseStatus: "oeffentlich",
     slug: "autohaus-versmold",
     projekttyp: "sanierung",
     titel: "Autohaus Versmold",
@@ -765,6 +789,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "hubschrauber-landeplatz-finnland",
+    releaseStatus: "oeffentlich",
     slug: "hubschrauber-landeplatz-finnland",
     projekttyp: "sanierung",
     titel: "Hubschrauber-Landeplatz Finnland",
@@ -794,6 +819,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "lkw-umfahrt-darmstadt",
+    releaseStatus: "freigabe-offen",
     slug: "lkw-umfahrt-darmstadt",
     projekttyp: "sanierung",
     titel: "LKW-Umfahrt Darmstadt",
@@ -831,6 +857,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/34a670e19e1a810d8eb9f2e07a01e391
     id: "sanierung-lkw-zufahrt-logistikzentrum-sankt",
+    releaseStatus: "freigabe-offen",
     slug: "sanierung-lkw-zufahrt-logistikzentrum-sankt",
     projekttyp: "sanierung",
     titel: "Sanierung LKW-Zufahrt Logistikzentrum Spedition Brummer, Sankt Marienkirchen (Österreich)",
@@ -855,6 +882,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81a18e0effd937d2d879
     id: "texaco-tankflache-arnheim",
+    releaseStatus: "oeffentlich",
     slug: "texaco-tankflache-arnheim",
     projekttyp: "sanierung",
     titel: "TEXACO Tankfläche, Arnheim (2018)",
@@ -878,6 +906,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8131b141f84d83456258
     id: "naturex-burgdorf",
+    releaseStatus: "oeffentlich",
     slug: "naturex-burgdorf",
     projekttyp: "sanierung",
     titel: "Naturex, Burgdorf (2013)",
@@ -902,6 +931,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81259c78d8d7cf5818f3
     id: "torschwelle-lagerhalle",
+    releaseStatus: "oeffentlich",
     slug: "torschwelle-lagerhalle",
     projekttyp: "sanierung",
     titel: "Torschwelle Lagerhalle (unbekannter Ort) (2017)",
@@ -925,6 +955,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8166ba97c81eb08e5b39
     id: "wellpappenfabrik-gross-versmold",
+    releaseStatus: "oeffentlich",
     slug: "wellpappenfabrik-gross-versmold",
     projekttyp: "sanierung",
     titel: "Wellpappenfabrik Gross, Versmold (2013)",
@@ -948,6 +979,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8180812bd193e55102c8
     id: "korodur-demo-bochum",
+    releaseStatus: "freigabe-offen",
     slug: "korodur-demo-bochum",
     projekttyp: "sanierung",
     titel: "KORODUR Demo, Bochum-Wattenscheid (2012)",
@@ -971,6 +1003,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8110a72fe9a31fb80151
     id: "kreisverkehr-goppingen",
+    releaseStatus: "oeffentlich",
     slug: "kreisverkehr-goppingen",
     projekttyp: "sanierung",
     titel: "Kreisverkehr, Göppingen (2021)",
@@ -994,6 +1027,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81a593ecc8eb30ccf827
     id: "barmenia-parkhaus-wuppertal",
+    releaseStatus: "oeffentlich",
     slug: "barmenia-parkhaus-wuppertal",
     projekttyp: "sanierung",
     titel: "Barmenia Parkhaus, Wuppertal (2015)",
@@ -1017,6 +1051,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a813c927cd09d15918039
     id: "john-lewis-lager-stevenage",
+    releaseStatus: "oeffentlich",
     slug: "john-lewis-lager-stevenage",
     projekttyp: "sanierung",
     titel: "John Lewis Lager, Stevenage (2013)",
@@ -1041,6 +1076,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81af9ce3d9f5b97662bf
     id: "fraport-frankfurt",
+    releaseStatus: "oeffentlich",
     slug: "fraport-frankfurt",
     projekttyp: "sanierung",
     titel: "Fraport, Frankfurt/Main (2012)",
@@ -1065,6 +1101,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a816ba98fe5dd42fd8c25
     id: "sncf-bordeaux",
+    releaseStatus: "oeffentlich",
     slug: "sncf-bordeaux",
     projekttyp: "sanierung",
     titel: "SNCF, Bordeaux (2016)",
@@ -1088,6 +1125,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81d49377cd41cb2324ef
     id: "parkhaus-freiburger-munster-freiburg",
+    releaseStatus: "oeffentlich",
     slug: "parkhaus-freiburger-munster-freiburg",
     projekttyp: "sanierung",
     titel: "Parkhaus Freiburger Münster, Freiburg",
@@ -1112,6 +1150,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8107894ed05098f58578
     id: "olympiastadion-berlin",
+    releaseStatus: "oeffentlich",
     slug: "olympiastadion-berlin",
     projekttyp: "sanierung",
     titel: "Olympiastadion Berlin (2023)",
@@ -1136,6 +1175,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a811589bcf83314237222
     id: "wirtgen-produktionshallen-weltweit",
+    releaseStatus: "oeffentlich",
     slug: "wirtgen-produktionshallen-weltweit",
     projekttyp: "sanierung",
     titel: "WIRTGEN Produktionshallen, weltweit",
@@ -1160,6 +1200,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81768522e12227517411
     id: "fh-lichtschacht-nurnberg",
+    releaseStatus: "oeffentlich",
     slug: "fh-lichtschacht-nurnberg",
     projekttyp: "sanierung",
     titel: "FH Lichtschacht, Nürnberg (2012)",
@@ -1183,6 +1224,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81cf9ab2ea684bc90b4c
     id: "klaranlage-nako",
+    releaseStatus: "oeffentlich",
     slug: "klaranlage-nako",
     projekttyp: "sanierung",
     titel: "Kläranlage, Nakło (2014)",
@@ -1207,6 +1249,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8140a6cee026aaf876ff
     id: "bruckensanierung-amberg",
+    releaseStatus: "oeffentlich",
     slug: "bruckensanierung-amberg",
     projekttyp: "sanierung",
     titel: "Brückensanierung, Amberg (2012)",
@@ -1230,6 +1273,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a817ba2fadc78e865ab24
     id: "parkplatzsanierung-metzingen",
+    releaseStatus: "oeffentlich",
     slug: "parkplatzsanierung-metzingen",
     projekttyp: "sanierung",
     titel: "Parkplatzsanierung, Metzingen (2017)",
@@ -1253,6 +1297,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a816aaeb0e9b81f27d87f
     id: "schachtregulierung-fahrbahn-nittenau",
+    releaseStatus: "oeffentlich",
     slug: "schachtregulierung-fahrbahn-nittenau",
     projekttyp: "sanierung",
     titel: "Schachtregulierung Fahrbahn, Nittenau (2019)",
@@ -1276,6 +1321,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81a8a68ae079fb0b6103
     id: "treppensanierung-gehweg-esslingen",
+    releaseStatus: "oeffentlich",
     slug: "treppensanierung-gehweg-esslingen",
     projekttyp: "sanierung",
     titel: "Treppensanierung Gehweg, Esslingen (2015)",
@@ -1299,6 +1345,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a815aa2a5e1893c5fb99b
     id: "burger-king-munster",
+    releaseStatus: "oeffentlich",
     slug: "burger-king-munster",
     projekttyp: "sanierung",
     titel: "Burger King, Münster-Hiltrup (2021)",
@@ -1322,6 +1369,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81618631db99661ecf9b
     id: "kraftwerk-bergamo",
+    releaseStatus: "oeffentlich",
     slug: "kraftwerk-bergamo",
     projekttyp: "sanierung",
     titel: "Kraftwerk, Bergamo (2011)",
@@ -1346,6 +1394,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8198a3c7e38a9af81bcb
     id: "fahrbahnsanierung-wien",
+    releaseStatus: "oeffentlich",
     slug: "fahrbahnsanierung-wien",
     projekttyp: "sanierung",
     titel: "Fahrbahnsanierung, Wien (2020)",
@@ -1370,6 +1419,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a811da7ddf459b49a543e
     id: "oelie-saur-saint",
+    releaseStatus: "oeffentlich",
     slug: "oelie-saur-saint",
     projekttyp: "sanierung",
     titel: "Oélie/Saur, Saint-Étienne (2024)",
@@ -1392,6 +1442,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8130a61afc2d883ff34c
     id: "decathlon-dortmund",
+    releaseStatus: "oeffentlich",
     slug: "decathlon-dortmund",
     projekttyp: "sanierung",
     titel: "Decathlon, Dortmund-Aplerbeck (2023)",
@@ -1470,6 +1521,7 @@ export const referenzen: Referenz[] = [
   // docs/reviews/referenz-review.md §56, App-Texte V1 aus Git-Historie 92522ba^) ===
   {
     id: "trinkwasserbehaelter-haidberg",
+    releaseStatus: "oeffentlich",
     slug: "trinkwasserbehaelter-haidberg",
     projekttyp: "sanierung",
     titel: "Trinkwasser-Hochbehälter Haidberg",
@@ -1505,6 +1557,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "trinkwasserbehaelter-bad-nauheim",
+    releaseStatus: "oeffentlich",
     slug: "trinkwasserbehaelter-bad-nauheim",
     projekttyp: "sanierung",
     titel: "Trinkwasserbehälter Bad Nauheim",
@@ -1539,6 +1592,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "trinkwasserturm-budapest",
+    releaseStatus: "oeffentlich",
     slug: "trinkwasserturm-budapest",
     projekttyp: "sanierung",
     titel: "Trinkwasserturm Budapest",
