@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDP-Redesign — NEODUR HE 65 (Mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#002d59; --cyan:#009ee3; --cyan-text:#0077ab; --cyan-hover:#0090d0;
+    --icon-bg:#f5f5f6; --bullet-bg:#e8edf5; --soft:#e6f4fb; --line:#e3e6ec;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Gabarito,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--navy);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 32px}
+  a{color:var(--cyan-text);text-decoration:none}
+  h1,h2,h3{margin:0;font-weight:900;line-height:1.1}
+  h2{font-size:26px;margin-bottom:20px}
+  h3{font-size:17px;font-weight:800}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .muted{opacity:.7}
+
+  /* --- annotation system --- */
+  .anno-legend{background:var(--navy);color:#fff;padding:22px 0}
+  .anno-legend .wrap{display:grid;grid-template-columns:1fr;gap:14px}
+  .anno-legend h2{color:#fff;font-size:20px;margin:0 0 4px}
+  .anno-legend p{margin:0;opacity:.85;font-size:14px}
+  .chglist{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 28px;font-size:13.5px;margin-top:6px}
+  .chglist div{display:flex;gap:8px;align-items:flex-start}
+  .num{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:50%;background:var(--cyan);color:#fff;font-size:11px;font-weight:800;flex-shrink:0;margin-top:1px}
+  .mk{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;border-radius:50%;background:var(--cyan);color:#fff;font-size:11px;font-weight:800;vertical-align:middle;margin-left:6px;box-shadow:0 0 0 3px rgba(0,158,227,.18)}
+  .note{background:#fff8e6;border:1px solid #f0d98a;border-radius:8px;padding:8px 12px;font-size:12.5px;color:#7a5c00;margin-top:10px}
+  .note b{color:#5a4400}
+
+  /* --- badges --- */
+  .badges{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+  .badge{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:5px}
+  .badge.cat{background:var(--cyan);color:#fff}
+  .badge.ct{background:var(--bullet-bg);color:var(--navy)}
+  .badge.sku{background:var(--icon-bg);color:rgba(0,45,89,.7)}
+
+  /* --- header --- */
+  .crumb{font-size:13px;opacity:.6;padding:22px 0 0}
+  .head{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start;padding-top:20px}
+  .head h1{font-size:clamp(30px,4.4vw,46px)}
+  .subline{font-size:20px;opacity:.72;margin-top:10px;max-width:560px}
+  .desc{font-size:15.5px;opacity:.72;line-height:1.7;margin-top:18px;max-width:560px}
+  .doclink{display:inline-flex;gap:6px;align-items:center;color:var(--cyan-text);font-size:14px;font-weight:600;margin-top:16px}
+
+  /* F4 norms */
+  .norms{margin-top:26px}
+  .norms .lbl{color:var(--cyan-text);font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .normbadges{display:flex;flex-wrap:wrap;gap:8px}
+  .normbadge{background:var(--bullet-bg);color:var(--navy);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:6px}
+  .normbadge.tip{text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px;cursor:help}
+
+  /* F1/F2 image + F3 bullets */
+  .media{display:flex;flex-direction:column;gap:16px}
+  .imgmain{background:linear-gradient(160deg,#f7f9fc,#eef2f7);border:1px solid var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;padding:26px;min-height:340px}
+  .imgmain img{max-width:100%;max-height:340px;object-fit:contain;filter:drop-shadow(0 12px 22px rgba(0,45,89,.18))}
+  .thumbs{display:flex;gap:10px;flex-wrap:wrap}
+  .thumbs img{width:78px;height:64px;object-fit:cover;border-radius:9px;border:2px solid var(--line);cursor:pointer}
+  .thumbs img.active{border-color:var(--cyan)}
+  .thumbs .pack{object-fit:contain;background:#f7f9fc;padding:4px}
+  .selvals{margin-top:8px}
+  .selvals .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;opacity:.55;font-weight:700;margin-bottom:10px}
+  .selvals ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  .selvals li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
+  .selvals li .ico{color:var(--cyan);font-weight:900;margin-top:1px}
+  .selvals li b{font-weight:700}
+
+  /* F5 two blocks each single column */
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .blk .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;opacity:.55;font-weight:700;margin-bottom:14px}
+  .blk ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
+  .blk li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+  .blk li .ico{color:var(--cyan);flex-shrink:0;margin-top:2px}
+
+  /* F6 technik schmal + docs */
+  .datarow{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .datatbl{display:grid}
+  .datatbl .r{display:grid;grid-template-columns:minmax(150px,44%) 1fr;gap:16px;padding:13px 20px;border-bottom:1px solid var(--line);align-items:baseline}
+  .datatbl .r:last-child{border-bottom:none}
+  .datatbl .k{font-size:13.5px;opacity:.6}
+  .datatbl .v{font-size:14px;font-weight:700;text-align:right}
+  .datatbl .v small{display:block;font-size:10.5px;font-weight:600;opacity:.5;text-transform:uppercase;letter-spacing:.03em;margin-top:2px}
+  .doclist{padding:6px 8px}
+  .doc{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:10px}
+  .doc:hover{background:var(--icon-bg)}
+  .doc .di{width:34px;height:34px;border-radius:8px;background:var(--bullet-bg);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+  .doc .dt{font-size:14.5px;font-weight:600}
+  .doc .ds{font-size:12px;opacity:.55}
+  .doc.off{opacity:.45}
+  .boxhead{padding:16px 20px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:800;opacity:.55}
+  .sec-icon-bg{background:var(--icon-bg);border-radius:20px;padding:36px 34px}
+
+  /* verarbeitung */
+  .procgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .proc{background:var(--icon-bg);border-radius:14px;padding:24px}
+  .proc h3{margin-bottom:16px}
+  .proc ol{margin:0;padding:0;list-style:none;display:grid;gap:14px;counter-reset:s}
+  .proc li{display:flex;gap:13px;font-size:14px;line-height:1.6}
+  .proc li .n{counter-increment:s;flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--cyan);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .proc li .n::before{content:counter(s)}
+  .metagrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+  .meta{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  .meta h3{font-size:14px;margin-bottom:7px}
+  .meta p{margin:0;font-size:13px;opacity:.7;line-height:1.55}
+  .procdocs{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
+  .procdocs .pd{display:inline-flex;gap:9px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 15px;font-size:14px;font-weight:600}
+
+  /* qualitäten tabelle */
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  th,td{text-align:left;padding:13px 16px;font-size:13.5px;border-bottom:1px solid var(--line)}
+  th{background:#fbfcfe;font-size:11px;text-transform:uppercase;letter-spacing:.04em;opacity:.6;font-weight:800}
+  tr:last-child td{border-bottom:none}
+  tr.active td{background:var(--soft)}
+  td .dot{color:var(--cyan);font-weight:900;margin-right:6px}
+  td.name{font-weight:700}
+  .flagcol{color:#b46b00;font-weight:700}
+
+  /* cards grids */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pcard{border:1px solid var(--line);border-radius:12px;padding:16px}
+  .pcard h3{font-size:15px}
+  .pcard p{margin:6px 0 0;font-size:13px;opacity:.65}
+  .refcard{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .refcard img{width:100%;height:150px;object-fit:cover;display:block}
+  .refcard .rc{padding:14px}
+  .refcard .chip{display:inline-block;background:var(--bullet-bg);color:var(--navy);font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;margin-bottom:8px}
+  .refcard h3{font-size:15px}
+  .refcard p{margin:4px 0 0;font-size:12.5px;opacity:.6}
+
+  /* fachberater */
+  .subhead{font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:800;opacity:.55;margin:6px 0 14px}
+  .beraters{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .berater{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;align-items:center}
+  .berater img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
+  .berater .bn{font-size:15px;font-weight:800}
+  .berater .br{font-size:12.5px;opacity:.65}
+  .berater .bg{font-size:12px;color:var(--cyan-text);margin-top:3px}
+  .intlrow{margin-top:22px}
+
+  .cta{background:var(--navy);color:#fff;border-radius:18px;padding:40px;text-align:center;max-width:760px;margin:0 auto}
+  .cta h2{color:#fff}
+  .cta .btn{display:inline-block;background:var(--cyan);color:#fff;font-weight:700;padding:13px 26px;border-radius:10px;margin-top:14px}
+
+  @media(max-width:900px){
+    .head,.twocol,.datarow,.procgrid,.cards3,.beraters,.metagrid,.chglist{grid-template-columns:1fr}
+    .head{gap:32px}
+    .metagrid{gap:14px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ LEGENDE ============ -->
+<div class="anno-legend">
+  <div class="wrap">
+    <div>
+      <h2>PDP-Redesign · NEODUR HE 65 — Mockup zur Abstimmung</h2>
+      <p>Neuer Aufbau der Produkt-Detailseite mit echten HE-65-Daten und echten Fotos. Die <span class="mk" style="margin-left:0">n</span>-Marker im Layout zeigen die 11 Änderungen ggü. der aktuellen Live-Seite. Kopfbereich (Titel, „Was ist es", Beschreibung, Doc-Link) bleibt inhaltlich unverändert.</p>
+    </div>
+    <div class="chglist">
+      <div><span class="num">1</span> Produktbild min. 2× so groß</div>
+      <div><span class="num">2</span> Galerie: Packshot + Szenariobilder aus verlinkten Referenzen</div>
+      <div><span class="num">4</span> Normen oben unter Headline, Überschrift blau, als Badges</div>
+      <div><span class="num">5</span> „Auf einen Blick" + „Einsatzbereiche" nebeneinander, je 1 Spalte</div>
+      <div><span class="num">6</span> Technikbox schmaler + wichtige Dokumente rechts daneben</div>
+      <div><span class="num">7</span> Nur variantenreine Dokumente (kein metallisch/SVS-Leak)</div>
+      <div><span class="num">8</span> Verarbeitungs-Dokumente unter „Verarbeitung"</div>
+      <div><span class="num">9</span> Tabelle „Qualitäten im Vergleich", aktive Zeile oben</div>
+      <div><span class="num">10</span> Basis-Hartstoff überall „KORODUR Hartstoff" ⚑</div>
+      <div><span class="num">11</span> Kontakte: DE + International (Alexander + Mirko)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="wrap"><div class="crumb">Portfolio › Industrieboden › NEODUR HE 65</div></div>
+
+<!-- ============ HEADER ============ -->
+<div class="wrap">
+  <div class="head">
+    <!-- LEFT: text + norms -->
+    <div>
+      <div class="badges">
+        <span class="badge cat">Estrich</span>
+        <span class="badge ct">CT-C70-F9-A6</span>
+        <span class="badge sku">Art.-Nr. 1220024S25KG</span>
+      </div>
+      <h1>NEODUR HE 65</h1>
+      <div class="subline">Hochbelastbarer Hartstoffestrich</div>
+      <p class="desc">NEODUR HE 65 ist ein gebrauchsfertiger, zementgebundener Hartstoffestrich auf Basis von KORODUR VS 0/5. Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7, auch farbig lieferbar. Für hochbeanspruchbare Industrieböden mit stärkster Beanspruchung.</p>
+      <a class="doclink" href="#dokumente">Technische Dokumente →</a>
+
+      <!-- F4 -->
+      <div class="norms">
+        <div class="lbl">Mit geltenden Normen <span class="mk">4</span></div>
+        <div class="normbadges">
+          <span class="normbadge tip" title="Estriche aus Zement, Calciumsulfat, Kunstharz u. a. — Anforderungen &amp; Prüfverfahren.">DIN EN 13813</span>
+          <span class="normbadge tip" title="Estriche im Bauwesen — Hartstoffestriche.">DIN 18560-7</span>
+          <span class="normbadge tip" title="Prüfverfahren — Druck- und Biegezugfestigkeit.">DIN EN 13892-2</span>
+          <span class="normbadge tip" title="Prüfverfahren — Verschleißwiderstand nach Böhme.">DIN EN 13892-3</span>
+        </div>
+        <div class="note"><b>Beibehalten:</b> Fragezeichen/gepunktete Linie = Tooltip mit Normerklärung (unverändert, funktioniert bereits).</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: F1/F2 image + F3 selected values -->
+    <div class="media">
+      <div class="imgmain">
+        <img id="mainimg" src="../../public/images/produkte/neodur-he-65.webp" alt="NEODUR HE 65">
+      </div>
+      <div class="thumbs">
+        <img class="pack active" src="../../public/images/produkte/neodur-he-65.webp" title="Produkt (Packshot)" onclick="swap(this,'../../public/images/produkte/neodur-he-65.webp')">
+        <img src="../../public/images/referenzen/airbus-a-380-hamburg-finkenwerder/hero.thumb.jpg" title="Airbus A380 Hangar" onclick="swap(this,'../../public/images/referenzen/airbus-a-380-hamburg-finkenwerder/hero.jpg')">
+        <img src="../../public/images/referenzen/jura-werkstaetten-amberg/g1.thumb.jpg" title="Jura-Werkstätten Amberg" onclick="swap(this,'../../public/images/referenzen/jura-werkstaetten-amberg/g1.jpg')">
+        <img src="../../public/images/referenzen/ropa-montagezentrum-herrngiersdorf/g1.thumb.jpg" title="ROPA Montagezentrum" onclick="swap(this,'../../public/images/referenzen/ropa-montagezentrum-herrngiersdorf/g1.jpg')">
+        <img src="../../public/images/referenzen/strandkorbhalle-sylt/g1.thumb.jpg" title="Strandkorbhalle Sylt" onclick="swap(this,'../../public/images/referenzen/strandkorbhalle-sylt/g1.jpg')">
+      </div>
+      <div class="note" style="margin-top:2px"><span class="mk" style="margin-left:0">1</span><span class="mk" style="margin-left:4px">2</span> &nbsp;Bild ~2× größer; Szenario-Thumbnails automatisch aus den mit HE 65 verknüpften Referenzen (Reihenfolge Packshot → Szenarien konfigurierbar).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ AUF EINEN BLICK / EINSATZBEREICHE (F5) ============ -->
+<section>
+  <div class="wrap">
+    <div class="twocol">
+      <div class="blk">
+        <div class="lbl">Auf einen Blick <span class="mk">5</span></div>
+        <ul>
+          <li><span class="ico">✓</span>Hochverschleißfest auch bei schwerster Beanspruchung</li>
+          <li><span class="ico">✓</span>Hohe Oberflächendichtigkeit</li>
+          <li><span class="ico">✓</span>Beständig gegen Benzin, Mineralöl, Lösemittel</li>
+          <li><span class="ico">✓</span>Hubladerfest</li>
+          <li><span class="ico">✓</span>Wasserfest, nassraumtauglich</li>
+          <li><span class="ico">✓</span>Rutschfest, gleitsicher</li>
+          <li><span class="ico">✓</span>Frostbeständig</li>
+          <li><span class="ico">✓</span>Chloridfrei</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <div class="lbl">Einsatzbereiche</div>
+        <ul>
+          <li><span class="ico">📍</span>Fabrikhallen</li>
+          <li><span class="ico">📍</span>Werkstätten</li>
+          <li><span class="ico">📍</span>Hochregallager</li>
+          <li><span class="ico">📍</span>Industrieflächen mit stärkster Beanspruchung</li>
+        </ul>
+        <div class="note">Inhalte je Block jetzt <b>einspaltig</b> (vorher 2-spaltig innerhalb des Blocks). Blöcke stehen nebeneinander.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNIK + DOKUMENTE (F6/F7) ============ -->
+<section id="dokumente" style="border:none">
+  <div class="wrap">
+    <div class="sec-icon-bg">
+      <div class="datarow">
+        <!-- Technik schmal -->
+        <div>
+          <h2 style="font-size:20px;margin-bottom:16px">Technische Daten <span class="mk">6</span></h2>
+          <div class="card datatbl">
+            <div class="r"><div class="k">Klassifizierung</div><div class="v">CT-C70-F9-A6<small>DIN EN 13813</small></div></div>
+            <div class="r"><div class="k">Druckfestigkeit</div><div class="v">≥ 70 N/mm²<small>DIN EN 13892-2</small></div></div>
+            <div class="r"><div class="k">Biegezugfestigkeit</div><div class="v">≥ 9 N/mm²<small>DIN EN 13892-2</small></div></div>
+            <div class="r"><div class="k">Verschleiß (Böhme)</div><div class="v">A6 (≤ 6 cm³/50 cm²)<small>DIN EN 13892-3</small></div></div>
+            <div class="r"><div class="k">Körnung</div><div class="v">0–5 mm</div></div>
+            <div class="r"><div class="k">Farbe</div><div class="v">zementgrau</div></div>
+          </div>
+          <div class="note">Box <b>schmaler + kompakter</b> (Label/Wert nicht mehr auf volle Breite auseinandergezogen).</div>
+        </div>
+
+        <!-- Dokumente -->
+        <div>
+          <h2 style="font-size:20px;margin-bottom:16px">Dokumente <span class="mk">7</span></h2>
+          <div class="card">
+            <div class="boxhead">Für diese Qualität (NEODUR HE 65)</div>
+            <div class="doclist">
+              <a class="doc"><span class="di">📄</span><span><span class="dt">Technisches Datenblatt (TDS)</span><br><span class="ds">PDF · Deutsch</span></span></a>
+              <a class="doc"><span class="di">🛡️</span><span><span class="dt">Sicherheitsdatenblatt (SDB)</span><br><span class="ds">PDF · Deutsch</span></span></a>
+              <a class="doc"><span class="di">✅</span><span><span class="dt">Leistungserklärung (DoP) 13813-2.1</span><br><span class="ds">PDF · Deutsch · qualitätsspezifisch</span></span></a>
+              <a class="doc"><span class="di">📝</span><span><span class="dt">Ausschreibungstext (LV)</span><br><span class="ds">→ ausschreiben.de</span></span></a>
+              <a class="doc off"><span class="di">🌱</span><span><span class="dt">EPD (Umwelt-Produktdeklaration)</span><br><span class="ds">in Vorbereitung</span></span></a>
+            </div>
+          </div>
+          <div class="note"><b>Kern-Fix (F7):</b> nur die zur Qualität passenden Dokumente. TDS/SDB werden in der Familie geteilt, <b>DoP je Qualität</b> (hier 13813-2.1). Fremd-Dokumente (metallisch-TDS, SVS-DoPs) erscheinen hier <b>nicht mehr</b>. Verarbeitungshinweise → Abschnitt Verarbeitung.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERARBEITUNG (F8) ============ -->
+<section>
+  <div class="wrap">
+    <h2>Verarbeitung</h2>
+    <div class="procgrid">
+      <div class="proc">
+        <h3>Frisch auf frisch</h3>
+        <ol>
+          <li><span class="n"></span><span><b>Untergrund:</b> Tragbeton mind. C 25/30 (kein Luftporenbeton), höhengerecht nach DIN 18202. Zwischen-Nachbehandlung mit KOROCURE. Frischen, begehbaren Tragbeton mit Tellerglättmaschine abreiben.</span></li>
+          <li><span class="n"></span><span><b>Verarbeitung:</b> HE 65 mit vorgegebener Wassermenge ca. 3 Min. mischen, auf die abgetellerte Fläche aufbringen, über Lehren abziehen, porenschließend abreiben und je nach Oberfläche glätten.</span></li>
+        </ol>
+      </div>
+      <div class="proc">
+        <h3>Auf erhärtetem Tragbeton</h3>
+        <ol>
+          <li><span class="n"></span><span><b>Untergrund:</b> Erhärteter Tragbeton (C 25/30, Oberflächenzugfestigkeit ≥ 1,5 N/mm²) fräsen/kugelstrahlen — rissefrei, rau, offenporig. Einen Tag vorher vornässen. Haftbrücke KORODUR HB 5 auftragen.</span></li>
+          <li><span class="n"></span><span><b>Verarbeitung:</b> Verlegung analog „frisch auf frisch" in i. M. 15 mm Schichtdicke (siehe Datenblatt KORODUR-KOROTAN).</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="metagrid">
+      <div class="meta"><h3>Nachbehandlung</h3><p>Vor zu rascher Austrocknung schützen (DIN EN 13670 / DIN 1045-3). Empfehlung: KOROMINERAL CURE oder KOROTEX.</p></div>
+      <div class="meta"><h3>Fugen</h3><p>Fugenraster vom Planer. Alle Fugen des Tragbetons übernehmen; von aufgehenden Bauteilen trennen.</p></div>
+      <div class="meta"><h3>Lieferform / Lagerung</h3><p>25-kg-Papierspezialverpackung, lose als Silo- und Big-Bag-Ware. Trocken lagern, ca. 12 Monate.</p></div>
+    </div>
+
+    <!-- F8 -->
+    <div class="procdocs">
+      <span class="mk" style="margin-left:0;align-self:center">8</span>
+      <a class="pd">📄 Verarbeitung: Frisch auf frisch (PDF)</a>
+      <a class="pd">📄 Verarbeitung: auf erhärteten Tragbeton (PDF)</a>
+    </div>
+    <div class="note">Verarbeitungsanleitungen/-hinweise sitzen jetzt <b>hier</b> statt im allgemeinen Dokumentblock.</div>
+  </div>
+</section>
+
+<!-- ============ QUALITÄTEN IM VERGLEICH (F9/F10) ============ -->
+<section>
+  <div class="wrap">
+    <h2>Qualitäten im Vergleich <span class="mk">9</span></h2>
+    <table>
+      <thead>
+        <tr><th>Qualität</th><th>Basis-Hartstoff</th><th>Klasse</th><th>Schwerpunkt</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr class="active"><td class="name"><span class="dot">●</span>NEODUR HE 65 <span style="font-weight:600;opacity:.6">(aktuell)</span></td><td>KORODUR Hartstoff</td><td>CT-C70-F9-A6</td><td>Standard, höchste Belastung</td><td></td></tr>
+        <tr><td class="name">NEODUR HE 65 Plus</td><td>KORODUR Hartstoff</td><td>CT-C70-F9-A6</td><td>Ohne Haftbrücke, frost-/tausalzbeständig, WHG</td><td><a href="#">öffnen →</a></td></tr>
+        <tr><td class="name">NEODUR HE 65 SVS 3</td><td>KORODUR Hartstoff</td><td>CT-C70-F9-A3</td><td>Höhere Verschleißklasse (A3)</td><td><a href="#">öffnen →</a></td></tr>
+        <tr><td class="name">NEODUR HE 65 SVS 1,5</td><td>KORODUR Hartstoff</td><td>CT-C70-F9-A1,5</td><td>Höchster Abrieb (A1,5)</td><td><a href="#">öffnen →</a></td></tr>
+        <tr><td class="name">NEODUR HE 65 metallisch</td><td>KORODUR Hartstoff</td><td>CT-C80-F11-A3</td><td>Panzerestrich, Eisenräderverkehr</td><td><a href="#">öffnen →</a></td></tr>
+        <tr><td class="name">NEODUR HE 65 Plus SVS 3</td><td>KORODUR Hartstoff</td><td>CT-C70-F9-A3</td><td>Plus + Verschleißklasse A3</td><td><a href="#">öffnen →</a></td></tr>
+      </tbody>
+    </table>
+    <div class="note"><span class="mk" style="margin-left:0">10</span> <b>Basis-Hartstoff = „KORODUR Hartstoff" für alle</b> (wie gewünscht gesetzt). <span class="flagcol">⚑ Technik-Review:</span> Spalte ist damit einheitlich — bitte prüfen, ob zusätzlich eine Spalte „Zuschlag/Typ" (VS 0/5 · WH-Spezial · Diamantbeton · WH-metallisch) den Vergleichswert erhalten soll. <span class="mk" style="margin-left:0">9</span> Aktive Qualität steht jetzt in der obersten Zeile.</div>
+  </div>
+</section>
+
+<!-- ============ SYSTEMKOMPONENTEN ============ -->
+<section>
+  <div class="wrap">
+    <h2>Passende Systemkomponenten</h2>
+    <div class="cards3">
+      <div class="pcard"><h3>KORODUR HB 5</h3><p>Mineralische Haftbrücke für den Verbund auf erhärtetem Tragbeton.</p></div>
+      <div class="pcard"><h3>KOROCURE</h3><p>Nachbehandlungsmittel zur kontrollierten Aushärtung.</p></div>
+      <div class="pcard"><h3>KOROMINERAL Cure</h3><p>Nachbehandlung / Oberflächenverkieselung.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REFERENZEN ============ -->
+<section>
+  <div class="wrap">
+    <h2>Dieses Produkt im Einsatz</h2>
+    <div class="cards3">
+      <div class="refcard"><img src="../../public/images/referenzen/airbus-a-380-hamburg-finkenwerder/hero.jpg"><div class="rc"><span class="chip">Industrieboden</span><h3>Airbus A380 Hangar</h3><p>Hamburg-Finkenwerder · 20.000 m²</p></div></div>
+      <div class="refcard"><img src="../../public/images/referenzen/ropa-montagezentrum-herrngiersdorf/g1.jpg"><div class="rc"><span class="chip">Industrieboden</span><h3>ROPA Montagezentrum</h3><p>Herrngiersdorf</p></div></div>
+      <div class="refcard"><img src="../../public/images/referenzen/jura-werkstaetten-amberg/g1.jpg"><div class="rc"><span class="chip">Industrieboden</span><h3>Jura-Werkstätten Amberg</h3><p>Amberg · ~4.500 m²</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACHBERATER (F11) ============ -->
+<section>
+  <div class="wrap sec-icon-bg" style="max-width:none">
+    <div class="wrap" style="padding:0">
+      <h2>Technische Fachberatung <span class="mk">11</span></h2>
+      <div class="subhead">Deutschland — Ihre Ansprechpartner für Industrieboden</div>
+      <div class="beraters">
+        <div class="berater"><img src="../../public/images/fachberater/j-doering.webp"><div><div class="bn">Jens Döring</div><div class="br">Technische Fachberatung</div><div class="bg">PLZ 01–19, 38–39, 98–99</div></div></div>
+        <div class="berater"><img src="../../public/images/fachberater/andreas-mohr.webp"><div><div class="bn">Andreas Mohr</div><div class="br">Technische Fachberatung</div><div class="bg">Industrieboden</div></div></div>
+        <div class="berater"><img src="../../public/images/fachberater/erik-schumacher.webp"><div><div class="bn">Erik Schumacher</div><div class="br">Technische Fachberatung</div><div class="bg">Industrieboden</div></div></div>
+      </div>
+
+      <div class="intlrow">
+        <div class="subhead">International — Österreich, Schweiz &amp; Export</div>
+        <div class="beraters">
+          <div class="berater"><img src="../../public/images/fachberater/alexander-proels.webp"><div><div class="bn">Alexander Pröls</div><div class="br">Director of Export</div><div class="bg">export@korodur.de</div></div></div>
+          <div class="berater"><img src="../../public/images/fachberater/mirko-schlicht.webp"><div><div class="bn">Mirko Schlicht</div><div class="br">Key Account Manager International</div><div class="bg">export@korodur.de</div></div></div>
+        </div>
+      </div>
+      <div class="note"><b>Neu (F11):</b> Auf DE-Seiten erscheinen jetzt zusätzlich Alexander + Mirko als internationale Kontakte (AT/CH deutschsprachige Exportländer) — in allen Bereichen.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section style="border:none">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Fragen zu NEODUR HE 65?</h2>
+      <p style="opacity:.85;margin-top:10px">Unsere Technik berät Sie zu Aufbau, Verarbeitung und passender Qualität.</p>
+      <a class="btn">Kontakt aufnehmen</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  function swap(el,src){
+    document.getElementById('mainimg').src=src;
+    document.querySelectorAll('.thumbs img').forEach(function(t){t.classList.remove('active')});
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>
