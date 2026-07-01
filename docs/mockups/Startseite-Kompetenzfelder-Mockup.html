@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup: Startseite Kompetenzfelder — KORODUR (#427/#428/#430)</title>
+<style>
+  :root {
+    --navy: #002d59;
+    --cyan: #009ee3;
+    --cyan-text: #0077ab;
+    --cyan-hover: #0090d0;
+    --white: #ffffff;
+    --icon-bg: #f5f5f6;
+    --bullet-bg: #e8edf5;
+    --light-gray: #ececed;
+    --mid-gray: #d9dada;
+    --footer-dark: #001a35;
+    --note: #fff7d6;
+    --note-border: #e6c200;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Gabarito', -apple-system, 'Segoe UI', sans-serif; color: var(--navy); background: #fff; line-height: 1.5; }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  /* Annotations */
+  .note { background: var(--note); border-left: 4px solid var(--note-border); padding: 10px 14px; font-size: 13px; margin: 0; }
+  .note b { color: #7a6400; }
+  .note-badge { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--note-border); color: #fff; font-size: 12px; font-weight: 700; margin-right: 8px; flex-shrink: 0; }
+  .intro-panel { background: var(--note); border: 2px solid var(--note-border); border-radius: 8px; padding: 20px 24px; margin: 24px auto; max-width: 1140px; font-size: 14px; }
+  .intro-panel h1 { font-size: 18px; margin-bottom: 8px; }
+  .intro-panel ol { margin: 8px 0 0 20px; }
+  .intro-panel li { margin-bottom: 4px; }
+
+  /* Header / Nav */
+  header { background: var(--navy); color: #fff; position: relative; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .logo { font-size: 26px; font-weight: 800; letter-spacing: 1px; }
+  .logo span { color: var(--cyan); }
+  nav ul { display: flex; gap: 26px; list-style: none; font-size: 15px; align-items: center; }
+  nav a { color: #fff; text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--cyan); }
+  .caret { font-size: 10px; opacity: .7; }
+  .nav-meta { display: flex; gap: 18px; font-size: 13px; opacity: .85; align-items: center; }
+  .dropdown-hint { position: absolute; top: 64px; left: 50%; transform: translateX(-50%); background: #fff; color: var(--navy); border: 1px solid var(--mid-gray); border-radius: 8px; box-shadow: 0 8px 30px rgba(0,45,89,.18); display: flex; gap: 40px; padding: 20px 28px; font-size: 13px; z-index: 5; }
+  .dropdown-hint h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--cyan-text); margin-bottom: 8px; }
+  .dropdown-hint ul { display: block; }
+  .dropdown-hint li { margin-bottom: 5px; }
+  .dropdown-hint a { color: var(--navy); }
+
+  /* Hero */
+  .hero { background: linear-gradient(105deg, var(--navy) 55%, #004a86 100%); color: #fff; padding: 64px 0 72px; }
+  .hero .kicker { color: var(--cyan); font-weight: 700; font-size: 15px; letter-spacing: .04em; margin-bottom: 12px; }
+  .hero h2 { font-size: 42px; line-height: 1.15; max-width: 720px; margin-bottom: 18px; font-weight: 800; }
+  .hero p { max-width: 640px; font-size: 17px; opacity: .92; margin-bottom: 10px; }
+  .hero .ctas { margin-top: 28px; display: flex; gap: 14px; }
+  .btn { display: inline-block; padding: 13px 26px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; }
+  .btn-primary { background: var(--cyan); color: #fff; }
+  .btn-ghost { border: 2px solid rgba(255,255,255,.7); color: #fff; }
+  .hero .stats { display: flex; gap: 42px; margin-top: 40px; }
+  .hero .stat b { display: block; font-size: 26px; color: var(--cyan); }
+  .hero .stat span { font-size: 13px; opacity: .8; }
+
+  /* Kompetenzfelder */
+  section { padding: 56px 0; }
+  .section-head { margin-bottom: 28px; }
+  .section-head h3 { font-size: 30px; font-weight: 800; }
+  .section-head p { color: #4b5b70; margin-top: 6px; max-width: 640px; }
+  .feld { border: 1px solid var(--mid-gray); border-radius: 10px; overflow: hidden; margin-bottom: 26px; }
+  .feld-head { display: flex; justify-content: space-between; align-items: baseline; padding: 22px 26px 0; }
+  .feld-head h4 { font-size: 22px; font-weight: 800; }
+  .feld-head .alle { font-size: 14px; color: var(--cyan-text); text-decoration: none; font-weight: 600; }
+  .feld-sub { padding: 4px 26px 0; color: #4b5b70; font-size: 15px; max-width: 720px; }
+  .tiles { display: grid; gap: 16px; padding: 18px 26px 26px; }
+  .tiles.two { grid-template-columns: 1fr 1fr; }
+  .tiles.four { grid-template-columns: repeat(4, 1fr); }
+  .tile { border: 1px solid var(--light-gray); background: var(--icon-bg); border-radius: 8px; padding: 18px; position: relative; min-height: 128px; }
+  .tile .img { height: 84px; background: linear-gradient(135deg, #b8c6d8, #8fa3bc); border-radius: 6px; margin-bottom: 12px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; letter-spacing:.05em; }
+  .tile h5 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .tile p { font-size: 13px; color: #4b5b70; }
+  .tile a { color: var(--cyan-text); font-size: 13px; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 8px; }
+  .quicklinks { padding: 0 26px 22px; font-size: 14px; }
+  .quicklinks a { color: var(--cyan-text); text-decoration: none; font-weight: 600; margin-right: 22px; }
+
+  /* Katzenstreu strip */
+  .katzenstreu { background: var(--bullet-bg); border: 1px solid var(--mid-gray); border-radius: 10px; padding: 26px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+  .katzenstreu .label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; background: var(--navy); color: #fff; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+  .katzenstreu h4 { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+  .katzenstreu p { font-size: 14px; color: #4b5b70; max-width: 560px; }
+  .katzenstreu .btn { white-space: nowrap; background: var(--navy); color: #fff; }
+
+  /* Referenzen */
+  .refs { background: var(--icon-bg); }
+  .ref-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .ref-card { background: #fff; border: 1px solid var(--light-gray); border-radius: 8px; overflow: hidden; }
+  .ref-card .img { height: 110px; background: linear-gradient(135deg, #9db0c6, #6d84a3); display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; }
+  .ref-card .body { padding: 14px; }
+  .ref-card .chip { font-size: 11px; background: var(--bullet-bg); color: var(--navy); border-radius: 4px; padding: 2px 8px; display: inline-block; margin-bottom: 8px; font-weight: 600; }
+  .ref-card h5 { font-size: 15px; margin-bottom: 4px; }
+  .ref-card p { font-size: 12px; color: #4b5b70; }
+
+  /* Loesungsfinder teaser */
+  .finder { background: var(--navy); color: #fff; border-radius: 10px; padding: 36px; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+  .finder h4 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+  .finder p { opacity: .85; font-size: 15px; max-width: 560px; }
+
+  footer { background: var(--footer-dark); color: #b9c6d6; padding: 40px 0; font-size: 13px; margin-top: 56px; }
+  footer .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  footer h6 { color: #fff; font-size: 13px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .05em; }
+  footer li { list-style: none; margin-bottom: 6px; }
+
+  @media (max-width: 900px) {
+    .tiles.four, .ref-grid, footer .cols { grid-template-columns: 1fr 1fr; }
+    .tiles.two { grid-template-columns: 1fr; }
+    nav ul { flex-wrap: wrap; gap: 12px; }
+    .hero h2 { font-size: 30px; }
+    .katzenstreu, .finder { flex-direction: column; align-items: flex-start; }
+    .dropdown-hint { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="intro-panel">
+  <h1>Mockup: Startseite „3 Kompetenzfelder" + Sparten-Navigation</h1>
+  <p><b>Zweck:</b> GF-Abstimmung 02.07.2026 · Issues <a href="https://github.com/sfleischmann-3steps2/KORODUR-Website/issues/427">#427</a> (Hero), <a href="https://github.com/sfleischmann-3steps2/KORODUR-Website/issues/428">#428</a> (Kompetenzfelder), <a href="https://github.com/sfleischmann-3steps2/KORODUR-Website/issues/430">#430</a> (Navigation). Bilder sind Platzhalter (echte Referenzfotos wie heute). Gelbe Kästen = Erläuterung, nicht Teil der Seite.</p>
+  <ol>
+    <li><b>Hero:</b> Headline auf Portfolio-Breite, Industrieboden bleibt Lead über die Kennzahlen.</li>
+    <li><b>Navigation:</b> Sparten statt Mischlogik; Neubau/Sanierung wandern als Funnels in die Sparte Industrieboden.</li>
+    <li><b>Kompetenzfelder:</b> gewichtete Struktur statt 8 gleichförmiger Kacheln.</li>
+    <li><b>Katzenstreu:</b> eigener Geschäftsbereichs-Streifen mit Export-Kontakt.</li>
+    <li><b>Referenzen:</b> kuratierte Mischung über alle Sparten.</li>
+  </ol>
+</div>
+
+<header>
+  <div class="container topbar">
+    <div class="logo">KORODUR<span>.</span></div>
+    <nav>
+      <ul>
+        <li><a href="#">Industrieboden <span class="caret">▼</span></a></li>
+        <li><a href="#">Betonsanierung &amp; Infrastruktur <span class="caret">▼</span></a></li>
+        <li><a href="#">Produkte</a></li>
+        <li><a href="#">Referenzen</a></li>
+        <li><a href="#">Katzenstreu</a></li>
+        <li><a href="#">Unternehmen</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="nav-meta"><span>🔍</span><span>+49 9621 4759-0</span><span>DE ▾</span></div>
+  </div>
+  <div class="dropdown-hint">
+    <div>
+      <h4>Industrieboden ▼</h4>
+      <ul>
+        <li><a href="#">Neubau — geführter Einstieg</a></li>
+        <li><a href="#">Sanierung — geführter Einstieg</a></li>
+        <li><a href="#">Produktgruppen</a></li>
+        <li><a href="#">Anwendungsmatrix</a></li>
+        <li><a href="#">Lösungsfinder</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Betonsanierung &amp; Infrastruktur ▼</h4>
+      <ul>
+        <li><a href="#">Betonsanierung (Rapid Set)</a></li>
+        <li><a href="#">Infrastruktur</a></li>
+        <li><a href="#">TW-Behältersanierung</a></li>
+        <li><a href="#">Spezialmörtel</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div style="height:150px"></div>
+<p class="note container"><span class="note-badge">2</span><b>Navigation:</b> Zwei Sparten-Dropdowns tragen das Baugeschäft. „Neubau" und „Sanierung" bleiben als Funnels erhalten (eine Ebene tiefer). „Produkte" = Gesamtkatalog bleibt Top-Level (Händler-Pfad, 2 Klicks). Katzenstreu bekommt einen eigenen Menüpunkt (Alternative: nur Home-Streifen + Footer — Entscheidung GF).</p>
+
+<div class="hero">
+  <div class="container">
+    <div class="kicker">KORODUR. Seit 1936.</div>
+    <h2>Mineralische Baustoffe für Boden, Beton und Infrastruktur.</h2>
+    <p>Wir entwickeln und produzieren mineralische Hartstoffe und zementäre Systeme — vom Industrieboden über die Betoninstandsetzung bis zum Trinkwasserbehälter.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#">Lösungsfinder starten</a>
+      <a class="btn btn-ghost" href="#">Produkte entdecken</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>750 Mio. m²</b><span>verlegte Industrieböden weltweit</span></div>
+      <div class="stat"><b>90 Jahre</b><span>Erfahrung seit 1936</span></div>
+      <div class="stat"><b>40+ Länder</b><span>Geschäftsbeziehungen</span></div>
+    </div>
+  </div>
+</div>
+<p class="note container"><span class="note-badge">1</span><b>Hero:</b> Headline nennt die Firmenbreite, die Subline erklärt die Spannweite. Industrieboden bleibt über die 750-Mio.-m²-Kennzahl die Lead-Botschaft. Wording = Vorschlag, GF-Freigabe nötig (#427).</p>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h3>Drei Kompetenzfelder. Ein Anspruch.</h3>
+      <p>Mineralische Qualität für Generationen — im Boden, im Bauwerk und darüber hinaus.</p>
+    </div>
+
+    <!-- Feld 1: Industrieboden -->
+    <div class="feld">
+      <div class="feld-head"><h4>Industrieboden</h4><a class="alle" href="#">Zum Bereich →</a></div>
+      <p class="feld-sub">Hartstoffböden und zementäre Systeme für höchste Beanspruchung — über 750 Mio. m² weltweit.</p>
+      <div class="tiles two">
+        <div class="tile">
+          <div class="img">Referenzfoto Neubau</div>
+          <h5>Neubau</h5>
+          <p>Hartstoffböden im Verbund mit frischem Beton — von der Hochleistungshalle bis zum Sichtboden.</p>
+          <a href="#">Neubau-Lösungen →</a>
+        </div>
+        <div class="tile">
+          <div class="img">Referenzfoto Sanierung</div>
+          <h5>Sanierung</h5>
+          <p>Bestehende Böden sanieren — schnell wieder belastbar, planbare Sperrzeiten ab 24 h.</p>
+          <a href="#">Sanierungs-Lösungen →</a>
+        </div>
+      </div>
+      <div class="quicklinks"><a href="#">Produktgruppen</a><a href="#">Anwendungsmatrix</a><a href="#">Lösungsfinder</a></div>
+    </div>
+
+    <!-- Feld 2: Betonsanierung & Infrastruktur -->
+    <div class="feld">
+      <div class="feld-head"><h4>Betonsanierung &amp; Infrastruktur</h4><a class="alle" href="#">Zum Bereich →</a></div>
+      <p class="feld-sub">Mineralische Instandsetzung und Schnellsysteme — vom Parkdeck bis zum Trinkwasserbehälter.</p>
+      <div class="tiles four">
+        <div class="tile">
+          <h5>Betonsanierung</h5>
+          <p>Rapid-Set-Reparatur- und Spritzmörtel nach EN 1504-3.</p>
+          <a href="#">Mehr →</a>
+        </div>
+        <div class="tile">
+          <h5>Infrastruktur</h5>
+          <p>Schnellsysteme für Verkehrsflächen — Freigabe in Stunden.</p>
+          <a href="#">Mehr →</a>
+        </div>
+        <div class="tile">
+          <h5>TW-Behältersanierung</h5>
+          <p>MICROTOP Spritzmörtel mit DVGW-Zulassung.</p>
+          <a href="#">Mehr →</a>
+        </div>
+        <div class="tile">
+          <h5>Spezialmörtel</h5>
+          <p>Verguss-, Montage- und Pflasterfugenmörtel.</p>
+          <a href="#">Mehr →</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="note"><span class="note-badge">3</span><b>Kompetenzfelder:</b> Industrieboden bekommt das größte Feld (2 Einstiege Neubau/Sanierung = die bewährten Funnels). Sparte 2 bündelt die vier Beton-/Infrastruktur-Bereiche und bekommt eine eigene Hub-Seite (#430). 3D-Betondruck erscheint bewusst nicht auf der Startseite („in Vorbereitung", vgl. V1-Scope) — bleibt über Portfolio/Footer erreichbar.</p>
+
+    <!-- Feld 3: Katzenstreu -->
+    <div class="katzenstreu" style="margin-top:26px">
+      <div>
+        <span class="label">Eigener Geschäftsbereich</span>
+        <h4>Katzenstreu</h4>
+        <p>Bentonit-Hygienestreu für Handel und Private Label — drei Qualitätsstufen, zertifizierte Produktion (ISO 9001, ISO 14001, BRC), weltweiter Export.</p>
+      </div>
+      <a class="btn" href="#">Private-Label-Anfrage →</a>
+    </div>
+    <p class="note" style="margin-top:10px"><span class="note-badge">4</span><b>Katzenstreu:</b> abgesetzter Streifen statt achte Kachel — eigenständig, aber klar als zweites Standbein erkennbar. CTA geht an export@ (#432). Inhalte der Bereichsseite (3 Qualitätsstufen, B2B-Factbox) folgen nach Zulieferung (#386).</p>
+  </div>
+</section>
+
+<section class="refs">
+  <div class="container">
+    <div class="section-head">
+      <h3>Bewährte Lösungen aus der Praxis</h3>
+      <p>142 dokumentierte Projekte — quer durch alle Kompetenzfelder.</p>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card"><div class="img">Foto</div><div class="body"><span class="chip">Industrieboden · Neubau</span><h5>Logistikzentrum</h5><p>Hartstoffestrich, hochbelastet</p></div></div>
+      <div class="ref-card"><div class="img">Foto</div><div class="body"><span class="chip">Industrieboden · Sanierung</span><h5>Wochenend-Sanierung</h5><p>Belastbar nach 24 h</p></div></div>
+      <div class="ref-card"><div class="img">Foto</div><div class="body"><span class="chip">TW-Behälter</span><h5>Hochbehälter</h5><p>MICROTOP, DVGW-konform</p></div></div>
+      <div class="ref-card"><div class="img">Foto</div><div class="body"><span class="chip">Infrastruktur</span><h5>Flughafen Zagreb</h5><p>Freigabe nach 2 h</p></div></div>
+    </div>
+    <p class="note" style="margin-top:16px"><span class="note-badge">5</span><b>Referenzen:</b> kuratierte Mischung über die Sparten statt 5/6 Industrieboden (heute). Konkrete Auswahl bei Umsetzung (#428).</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="finder">
+      <div>
+        <h4>In vier Schritten zur passenden Lösung</h4>
+        <p>Der Lösungsfinder führt Sie von Ihrer Aufgabe — Neubau oder Sanierung — zu Produktempfehlung und passenden Referenzen.</p>
+      </div>
+      <a class="btn btn-primary" href="#">Lösungsfinder starten</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container cols">
+    <div><h6>Industrieboden</h6><ul><li>Neubau</li><li>Sanierung</li><li>Produktgruppen</li><li>Anwendungsmatrix</li></ul></div>
+    <div><h6>Betonsanierung &amp; Infrastruktur</h6><ul><li>Betonsanierung</li><li>Infrastruktur</li><li>TW-Behältersanierung</li><li>Spezialmörtel</li></ul></div>
+    <div><h6>Weitere Bereiche</h6><ul><li>Katzenstreu</li><li>3D-Betondruck (in Vorbereitung)</li><li>Alle Produkte A–Z</li><li>Downloads</li></ul></div>
+    <div><h6>Unternehmen</h6><ul><li>Über KORODUR</li><li>Fachberater-Finder</li><li>Kontakt</li><li>Impressum · Datenschutz</li></ul></div>
+  </div>
+</footer>
+
+</body>
+</html>
