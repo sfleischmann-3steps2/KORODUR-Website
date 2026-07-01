@@ -554,10 +554,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation en béton étanche aux liquides d'une station-service selon la recommandation CUR 63 pour les installations LAU. Remise en état sur l'autoroute A50.",
     land: "Pays-Bas",
     herausforderungen: [
-      "Le béton utilisé doit présenter une étanchéité aux liquides élevée afin de répondre aux exigences des installations LAU et de garantir une résistance conforme à la recommandation CUR 63.",
+      "Station-service en tant qu'installation LAU (stockage, remplissage, transbordement) : le béton des aires doit prouver son étanchéité aux liquides",
+      "Remise en état des aires de ravitaillement à la station-service TEXACO sur l'A50 près d'Arnhem",
+      "Preuve de la durabilité selon la recommandation CUR 63 par l'essai d'absorption capillaire (144 heures au n-heptane)",
+      "Les nouvelles aires devaient être remises en service rapidement",
     ],
-    loesung:
-      "Le béton rapide Rapid Set a été choisi car il a livré d'excellents résultats aux essais d'étanchéité aux liquides et présentait des résistances initiales élevées, permettant une remise en service des nouvelles pistes de ravitaillement à court terme.",
+    loesung: "Les aires de ravitaillement ont été entièrement remplacées par du Rapid Set Schnellbeton, chaque aire mesurant env. 5 x 15 x 0,2 m. Les 15 m³ de béton nécessaires par aire ont été malaxés sur place à l'aide de deux camions malaxeurs volumétriques entièrement chargés et mis en œuvre à la pompe à béton. La surface a ensuite été traitée avec des truelles mécaniques à pales et à disque, la cure étant réalisée uniquement à l'eau et sous film. Lors de l'essai d'absorption capillaire selon la recommandation CUR 63 (144 heures d'exposition au n-heptane), le Rapid Set Schnellbeton a obtenu d'excellents résultats et a été agréé sans restriction pour une utilisation dans les stations-service.",
+    vorteile: [
+      "Étanchéité aux liquides prouvée selon la recommandation CUR 63, agrément sans restriction pour les stations-service",
+      "Résistance initiale élevée : 24,8 MPa après 1 heure, 32,5 MPa après 2 heures",
+      "Remise en service rapide des aires grâce au développement rapide de la résistance",
+      "5 aires remises en état de façon étanche aux liquides en 5 semaines",
+    ],
     bildAlt: "Piste de ravitaillement TEXACO, Arnhem (2018) (photo à venir)",
   },
 
@@ -566,10 +574,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation complète d'une tour de refroidissement par pulvérisation en seulement trois semaines. Revêtement résistant aux denrées alimentaires pour l'industrie des boissons.",
     land: "Suisse",
     herausforderungen: [
-      "La rénovation complète devait être achevée en seulement trois semaines. Le sol de la tour, d'environ 200 m², devait être démoli et reposé en une semaine, avec un revêtement PU résistant aux denrées alimentaires.",
+      "Tour de refroidissement par pulvérisation de 80 mètres de haut sur le site de Burgdorf, Suisse, à rénover entièrement",
+      "Seulement trois semaines au total pour la rénovation complète",
+      "Environ 200 m² de sol de la tour à démolir et reposer en une semaine, un seul jour pour la chape intermédiaire",
+      "Revêtement PU final résistant aux denrées alimentaires et apte au contact alimentaire exigé, à des températures supérieures à 30 °C dans la tour",
     ],
-    loesung:
-      "Le béton rapide à haute résistance CONCRETE MIX a été utilisé pour la rénovation ; il peut recevoir le revêtement PU après seulement 16 heures. Par températures supérieures à 30 °C, le retardateur SET Control a été ajouté afin de prolonger le temps de mise en oeuvre.",
+    loesung: "Comme chape intermédiaire, nous avons mis en œuvre le béton rapide à haute résistance Rapid Set CONCRETE MIX, qui peut recevoir le revêtement PU exigé après seulement 16 heures. À des températures supérieures à 30 °C, nous avons ajouté le retardateur CONCRETE PHARMACY SET Control et prolongé le temps de mise en œuvre d'environ une demi-heure. Comme il ne restait qu'une journée pour la pose, le matériau a été livré en big bags, préparé dans une installation de malaxage et transporté vers la surface à rénover à l'aide de petits dumpers.",
+    vorteile: [
+      "Tour de refroidissement centrale remise en service après seulement trois semaines",
+      "Prête à recevoir le revêtement PU après seulement 16 heures",
+      "Temps de mise en œuvre prolongé malgré des températures supérieures à 30 °C grâce à SET Control",
+      "L'applicateur SIB et le maître d'ouvrage Naturex convaincus par la performance et la rapidité",
+    ],
     bildAlt: "Naturex, Burgdorf (2013) (photo à venir)",
   },
 
@@ -578,10 +594,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation d'une zone de seuil fortement usée avec armature apparente. Réparation rapide sans perturber le trafic de l'entrepôt.",
     land: "Allemagne",
     herausforderungen: [
-      "Réparation rapide et durable de la couche de béton endommagée, sans perturber le trafic vers l'entrepôt.",
+      "Zone du seuil de l'entrepot fortement usee par le trafic permanent de camions et de chariots elevateurs",
+      "Armature deja apparente",
+      "Couche de beton endommagee a reparer rapidement et durablement",
+      "Le trafic vers l'entrepot ne devait pas etre perturbe",
     ],
-    loesung:
-      "Mise en oeuvre du mortier rapide MORTAR MIX, appliqué sur un support fraisé et portant ; les travaux ont été achevés en 4 heures.",
+    loesung: "Nous avons utilise le mortier a prise rapide Rapid Set MORTAR MIX. Nous avons fraise le support endommage afin d'obtenir une surface porteuse, a pores ouverts et rugueuse, puis applique MORTAR MIX en une epaisseur de 20 a 50 mm. Apres quatre heures au total, tous les travaux etaient termines et l'entrepot a pu reprendre son activite.",
+    vorteile: [
+      "Ensemble des travaux acheve en quatre heures",
+      "Entrepot remis en service immediatement apres",
+      "Trafic vers l'entrepot jamais perturbe",
+      "Support fraise et porteur pour une reparation durable",
+    ],
     bildAlt: "Seuil de porte d'un entrepôt (lieu non précisé) (2017) (photo à venir)",
   },
 
@@ -590,10 +614,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Réparation de surfaces en asphalte et en béton affaissées à la transition vers le hall de production. Les ondulations compromettaient la sécurité de transport des emballages.",
     land: "Allemagne",
     herausforderungen: [
-      "La zone était fortement sollicitée par les chariots de manutention, provoquant des ondulations qui compromettaient la sécurité de transport des emballages.",
+      "La transition entre la surface extérieure en asphalte et le hall de production s'était affaissée et fissurée",
+      "Fortes charges dues aux chariots élévateurs",
+      "Épaisseurs de couche jusqu'à 200 mm à réparer",
+      "Le trafic des chariots élévateurs devait reprendre le plus vite possible",
     ],
-    loesung:
-      "L'utilisation de Rapid Set CONCRETE MIX a permis une rénovation rapide des surfaces avec des épaisseurs de couche jusqu'à 200 mm, et le trafic a pu reprendre après seulement une heure.",
+    loesung: "Pour la remise en état, seul Rapid Set CONCRETE MIX pouvait convenir, car il fallait réparer des épaisseurs de couche jusqu'à 200 mm et le trafic des chariots élévateurs devait reprendre le plus vite possible. Nous avons d'abord dégagé les surfaces d'asphalte et de béton endommagées jusqu'à la couche de gravier, puis mélangé CONCRETE MIX à l'aide d'un malaxeur à double arbre. En raison des températures atteignant +30 °C, nous avons ajouté le retardateur SET Control et le fluidifiant FLOW Control. Les travaux ont été achevés au bout de deux heures.",
+    vorteile: [
+      "Travaux achevés au bout de deux heures",
+      "Trafic à nouveau possible une heure plus tard",
+      "Mise en œuvre possible même à des températures allant jusqu'à +30 °C",
+      "Surface de transition sans ondulations et porteuse rétablie",
+    ],
     bildAlt: "Wellpappenfabrik Gross, Versmold (2013) (photo à venir)",
   },
 
@@ -602,10 +634,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Réparation rapide de dalles Stelcon endommagées sous trafic quotidien de poids lourds et de chariots élévateurs. Sollicitations extrêmes sur le propre site de l'usine.",
     land: "Allemagne",
     herausforderungen: [
-      "Les dommages aux dalles en béton causés par le trafic de poids lourds et de chariots élévateurs exigent un remplacement rapide, car l'approvisionnement et l'échange d'une nouvelle dalle prennent plusieurs jours.",
+      "Dalles Stelcon sur le site de l'usine soumises quotidiennement au trafic de camions et de chariots elevateurs, sollicitation permanente extreme",
+      "Une dalle s'etait rompue sous la charge constante et devait etre remplacee le plus rapidement possible",
+      "L'approvisionnement et le remplacement d'une nouvelle dalle en beton auraient pris plusieurs jours",
+      "Le trafic de livraison et d'enlevement de l'usine devait se poursuivre sans interruption",
     ],
-    loesung:
-      "L'utilisation du béton de réparation rapide Rapid Set CONCRETE MIX permet une réparation rapide des dalles endommagées en quelques heures afin de maintenir l'exploitation.",
+    loesung: "Nous avons repare la dalle rompue avec le beton de reparation rapide multifonctionnel Rapid Set CONCRETE MIX. Apres avoir retire la dalle endommagee, nous avons pose un film puis applique le CONCRETE MIX en une couche de 250 mm, dresse la surface et realise une finition balayee. Nous avons ensuite maintenu la surface humide avec de l'eau pendant environ une heure. Les travaux ont commence a 09h30 et, des 12h30, le trafic a pleine charge circulait de nouveau normalement.",
+    vorteile: [
+      "Reparation realisee en quelques heures au lieu de plusieurs jours",
+      "Durcissement rapide et haute resistance",
+      "Sans retrait et durable",
+      "Resistant aux sulfates, epaisseurs de couche jusqu'a 600 mm",
+    ],
     bildAlt: "KORODUR Demo, Bochum-Wattenscheid (2012) (photo à venir)",
   },
 
@@ -614,10 +654,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Réaménagement d'un carrefour giratoire à deux voies pour améliorer la sécurité routière. Les gros pavés n'étaient pas perçus comme une voie de circulation.",
     land: "Allemagne",
     herausforderungen: [
-      "Le pavage accentuait la perception de la voie de circulation et entraînait des situations de trafic exiguës et dangereuses, en particulier aux entrées et sorties.",
+      "Rond-point à deux voies de la Hohenstaufenstraße : voie extérieure en asphalte, voie intérieure en gros pavés",
+      "L'aspect surélevé du pavage faisait que de nombreux usagers ne le percevaient pas comme une voie de circulation",
+      "Notamment aux entrées et sorties, cela provoquait des situations de circulation étroites et dangereuses",
+      "Objectif : améliorer la sécurité routière en ajustant le pavage au niveau de l'asphalte",
     ],
-    loesung:
-      "Le service municipal des travaux publics a chargé la société Blessing GmbH d'ajuster le pavage au niveau de l'asphalte à l'aide d'un procédé de rénovation spécial, afin d'améliorer la sécurité routière. Le mortier de réparation rapide MORTAR MIX a été utilisé ; il peut être travaillé et fraisé en 2 heures environ.",
+    loesung: "Le Tiefbauamt Stadt Göppingen a chargé Blessing GmbH d'ajuster la zone pavée au niveau de l'asphalte à l'aide du procédé de réparation spécialement développé par Blessing et KORODUR. Le pavage existant est rejointoyé avec le mortier de réparation rapide Rapid Set MORTAR MIX. Le mortier multifonctionnel à haute résistance peut être fraisé à la machine après environ 2 heures seulement.",
+    vorteile: [
+      "Rétablissement de la sécurité de la circulation routière",
+      "Exécution rapide : fraisage mécanique possible après environ 2 heures",
+      "Élimination des inégalités et blocage des déplacements",
+      "Émissions sonores nettement réduites et longue durée d'utilisation",
+    ],
     bildAlt: "Carrefour giratoire, Göppingen (2021) (photo à venir)",
   },
 
@@ -626,10 +674,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation rapide d'éléments en béton coulé en place et préfabriqués endommagés, avec armature partiellement apparente. Rétablissement de la stabilité structurelle du parking de la compagnie d'assurance.",
     land: "Allemagne",
     herausforderungen: [
-      "Zones endommagées dans des éléments en béton coulé en place et préfabriqués, parfois avec armature apparente, nécessitant une rénovation rapide.",
+      "Zones endommagees dans le beton coule en place et les elements prefabriques du parking des assurances Barmenia",
+      "Armature partiellement a nu",
+      "Reparation realisee presque exclusivement en application verticale",
+      "Delai serre, le nouveau revetement devait suivre quelques jours plus tard",
     ],
-    loesung:
-      "Rapid Set CEMENT ALL et MORTAR MIX ont été utilisés pour une rénovation rapide et efficace des zones endommagées, suivie d'une nouvelle mise en peinture du parking.",
+    loesung: "L'entreprise Zarges a utilise Rapid Set Cement All et Rapid Set Mortar Mix pour reparer les zones endommagees, en travaillant presque exclusivement en application verticale. De nombreuses zones ont ete rouvertes, nettoyees et abondamment pre-humidifiees, puis refermees avec Cement All ou Mortar Mix selon l'epaisseur d'application et re-humidifiees. Quelques jours plus tard, le parking a recu un nouveau revetement.",
+    vorteile: [
+      "Resultat de reparation rapide et efficace",
+      "Nouveau revetement possible quelques jours seulement apres la reparation",
+      "Choix flexible du produit selon l'epaisseur d'application (Cement All ou Mortar Mix)",
+      "Maitre d'ouvrage et entreprise tres satisfaits du resultat",
+    ],
     bildAlt: "Parking Barmenia, Wuppertal (2015) (photo à venir)",
   },
 
@@ -639,10 +695,18 @@ export const referenzenFR: Record<string, {
     land: "Royaume-Uni",
     flaeche: "1 000 mètres linéaires",
     herausforderungen: [
-      "Les chariots élévateurs pour rayonnages de grande hauteur empruntaient la même trajectoire depuis plus de 20 ans, ce qui a conduit à la formation d'une ornière profonde gênant la circulation.",
+      "Entrepôt à rayonnages hauts utilisé depuis plus de 20 ans, avec des chariots élévateurs circulant sur la même voie",
+      "L'utilisation continue a creusé une ornière profonde dans le sol",
+      "L'ornière gênait la circulation sans restriction des chariots élévateurs",
+      "Une solution de rénovation rapide était requise",
     ],
-    loesung:
-      "Pour la rénovation, les rayonnages ont été démontés et le mortier de réparation multi-usages Rapid Set CEMENT ALL a été choisi pour combler l'ornière. Une équipe de 3 personnes réparait 50 à 100 mètres linéaires par jour, aboutissant à une rénovation rapide et satisfaisante.",
+    loesung: "Pour la rénovation, tous les rayonnages ont été retirés et le mortier de réparation Rapid Set CEMENT ALL a été choisi pour combler l'ornière, dont la longueur dépassait 1 000 mètres linéaires. CEMENT ALL a été mélangé avec 4 l d'eau et appliqué dans l'ornière à la truelle, avec une finition de surface lisse. Une équipe de 3 personnes a réparé entre 50 et 100 mètres linéaires par jour.",
+    vorteile: [
+      "Avancement rapide des travaux : 50 à 100 mètres linéaires par jour avec une équipe de 3 personnes",
+      "Finition de surface lisse après application à la truelle",
+      "Circulation des chariots élévateurs rétablie et sans restriction",
+      "Rénovation réalisée à l'entière satisfaction du client",
+    ],
     bildAlt: "Entrepôt John Lewis, Stevenage (2013) (photo à venir)",
   },
 
@@ -651,10 +715,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation éclair d'une aire de stationnement de conteneurs endommagée à l'aéroport, avec revêtement conforme WHG. Remise en service la plus rapide possible pour l'exploitation aéroportuaire.",
     land: "Allemagne",
     herausforderungen: [
-      "La rénovation devait être réalisée dans les plus brefs délais, y compris le revêtement WHG exigé.",
+      "Une aire de stationnement de conteneurs endommagée à l'aéroport de Francfort Main devait être réparée.",
+      "La remise en état, y compris le revêtement WHG requis, devait être réalisée dans les plus brefs délais.",
+      "Surface d'environ 100 m².",
+      "Une pente définie était exigée pour l'utilisation ultérieure.",
     ],
-    loesung:
-      "La société Wiedemann und Sohn GmbH a mis en oeuvre la technologie de ciment Rapid Set pour résoudre le problème plus rapidement et plus simplement, en utilisant le mortier de réparation CEMENT ALL pour la rénovation.",
+    loesung: "Le mortier de réparation à prise rapide Rapid Set CEMENT ALL a été utilisé. Wiedemann und Sohn GmbH a d'abord posé des guides de mortier pour obtenir la pente requise, puis a mis en place le CEMENT ALL sur toute la surface en le tirant le long des guides. Aucune couche d'accrochage ni primaire distinct n'était nécessaire. Le CEMENT ALL a développé des résistances extrêmement élevées après seulement une heure et, au bout de 16 heures, il était prêt à recevoir le revêtement, si bien que le revêtement WHG étanche à la vapeur a pu être appliqué immédiatement.",
+    vorteile: [
+      "Résistances extrêmement élevées après seulement une heure.",
+      "Prêt à recevoir le revêtement après 16 heures, revêtement WHG applicable directement.",
+      "Aucune couche d'accrochage ni primaire distinct nécessaire.",
+      "Utilisation prévue des places de stationnement rétablie dans les plus brefs délais.",
+    ],
     bildAlt: "Fraport, Frankfurt/Main (2012) (photo à venir)",
   },
 
@@ -663,10 +735,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Élimination d'inégalités dangereuses dans les accès au métro lors de travaux de nuit. Préparation à la nouvelle ligne à grande vitesse Tours-Bordeaux.",
     land: "France",
     herausforderungen: [
-      "Pendant les travaux, des affaissements se sont produits dans les couloirs d'accès aux stations de métro, provoquant de nombreuses inégalités et un risque de blessure pour les voyageurs. Les réparations devaient être effectuées pendant la nuit (de 0 h 00 à 5 h 00).",
+      "Affaissement des passages vers les stations de métro pendant les travaux, nombreux trous dans le béton",
+      "Risque de blessure pour les voyageurs dû aux inégalités, réparation rapide nécessaire",
+      "Travaux possibles uniquement de nuit pendant les heures de fermeture de la gare (0h00 à 05h00)",
+      "Préparation de la gare Saint-Jean à la ligne à grande vitesse Tours-Bordeaux",
     ],
-    loesung:
-      "La SNCF a opté pour le mortier de réparation Rapid Set CEMENT ALL, à durcissement rapide, à faible retrait et durable. Les travaux de réparation ont pu être achevés en deux semaines, à la satisfaction du maître d'ouvrage.",
+    loesung: "La SNCF a choisi le mortier de réparation Rapid Set CEMENT ALL, qui durcit rapidement, présente un faible retrait, est durable et facile à mettre en œuvre. Les nombreux travaux de réparation ont été réalisés en deux semaines.",
+    vorteile: [
+      "Durcissement rapide, utilisable pendant de courtes périodes de fermeture",
+      "Faible retrait et durable",
+      "Facile à mettre en œuvre",
+      "Réparations achevées en seulement deux semaines, maître d'ouvrage très satisfait",
+    ],
     bildAlt: "SNCF, Bordeaux (2016) (photo à venir)",
   },
 
@@ -676,10 +756,18 @@ export const referenzenFR: Record<string, {
     land: "Allemagne",
     flaeche: "env. 5 000 m²",
     herausforderungen: [
-      "La forte fréquentation a causé des dommages massifs au revêtement en asphalte coulé et à la structure en béton armé. Les agents agressifs (huile, chlorures) et les sollicitations mécaniques rendaient urgente la rénovation des quelque 5 000 m² de surface de circulation.",
+      "Parking apprécié près de la cathédrale de Fribourg, 670 places sur 3 niveaux, en service 24 heures sur 24",
+      "Forte fréquentation et sollicitation mécanique du parking souterrain",
+      "Des agents agressifs comme l'huile et les chlorures ont endommagé la chape en asphalte coulé et la structure en béton armé",
+      "La surface de roulement d'environ 5 000 m² devait être rénovée d'urgence",
     ],
-    loesung:
-      "Triflex ProPark avec revêtement DUROP : système d'étanchéité carrossable à résistance à l'usure améliorée. DUROP offre des propriétés antidérapantes et résistantes au polissage – éprouvées depuis des décennies. Exécution rapide en cours d'exploitation.",
+    loesung: "Pour la rénovation, le système d'étanchéité circulable Triflex ProPark a été mis en œuvre en combinaison avec le matériau de remplissage et de saupoudrage DUROP. Après le prétraitement du support, les travaux de primaire, de réparation, de ragréage et d'étanchéité ont été réalisés avec les composants du système Triflex. Le revêtement DUROP, composé de Triflex DeckFloor et de DUROP granulométrie 1-2 mm, a été appliqué sur la couche d'étanchéité. L'exécution a été confiée à l'entreprise R.S.I.",
+    vorteile: [
+      "Exécution rapide de la rénovation",
+      "Protection durable de l'ouvrage grâce à la résistance à l'usure améliorée de la surface de roulement",
+      "Surface antidérapante et résistante au polissage grâce à DUROP",
+      "Environnement clair et accueillant pour les visiteurs",
+    ],
     bildAlt: "Parking de la cathédrale de Freiburg, Freiburg (photo à venir)",
   },
 
@@ -688,10 +776,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation sous contraintes de protection du patrimoine avec préservation de l'aspect historique. Haute résistance aux sollicitations pour les manifestations sportives et les grands événements.",
     land: "Allemagne",
     herausforderungen: [
-      "Préservation de l'aspect historique sous contraintes de protection des monuments, fortes sollicitations mécaniques dues aux manifestations sportives et aux grands événements, intégration d'exigences techniques modernes dans un ensemble architectural à caractère historique.",
+      "Rénovation dans le respect des contraintes de protection du patrimoine et du monument classé",
+      "Équilibre entre le sport moderne, les productions de spectacles à plusieurs millions et la protection du patrimoine",
+      "Adaptation de l'aspect des surfaces de sol du stade construit au début du XXe siècle",
+      "Aménagement intérieur sur une surface de 3 000 m²",
     ],
-    loesung:
-      "Pour la rénovation, une chape décorative spécialement développée a été mise en oeuvre, esthétique et offrant une haute résistance à l'abrasion. L'application a été réalisée en couches, sans pont d'adhérence supplémentaire, avec une cure ciblée pour optimiser les propriétés de surface.",
+    loesung: "Sur une surface de 3 000 m², le sol design GRANIDUR dans le coloris anthracite a été mis en œuvre pour l'aménagement intérieur. GRANIDUR est un sol industriel KORODUR conçu comme sol design à l'aspect granit poli, développé pour des surfaces finies et esthétiquement exigeantes. L'aspect des surfaces de sol a ainsi pu être adapté au stade historique.",
+    vorteile: [
+      "Aspect granit poli, d'une beauté intemporelle",
+      "Surface finie, développée pour des zones esthétiquement exigeantes",
+      "Aspect en harmonie avec l'ensemble bâti classé",
+      "Design homogène sur 3 000 m² dans le coloris anthracite",
+    ],
     bildAlt: "Olympiastadion Berlin (2023) (photo à venir)",
   },
 
@@ -700,10 +796,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Plus de 150 000 m² de sols industriels à granulats durs dans des sites de production du monde entier pour des machines de construction routière jusqu'à 500 tonnes. Une solution éprouvée depuis des décennies.",
     land: "Andorre",
     herausforderungen: [
-      "Sollicitations mécaniques extrêmes par des machines à chenilles jusqu'à 500 tonnes. Résistance à l'usure maximale combinée à une haute résistance à la flexion. Utilisation à long terme sous sollicitation continue.",
+      "Machines de construction routière, en partie sur chenilles, pesant jusqu'à 500 tonnes",
+      "Sollicitation mécanique considérable des sols des halls due aux charges lourdes",
+      "Exigence de résistance maximale à l'usure combinée à une résistance élevée à la flexion",
+      "Sites de production dans le monde entier avec plus de 150 000 m² de surface",
     ],
-    loesung:
-      "Dans le cadre de la rénovation, des sols industriels à granulats durs KORODUR ont été mis en oeuvre. Conformément à la norme DIN 18560-7, une couche de granulats durs de 10 à 15 mm a été posée, et pour les zones particulièrement sollicitées, une chape à granulats durs avec agrégats métalliques selon DIN 1100-M a été utilisée afin de garantir une résistance à la flexion et une résistance à l'usure maximales.",
+    loesung: "Depuis des décennies, le groupe Wirtgen fait confiance aux sols industriels minéraux à granulats durs KORODUR. Selon la norme allemande, nous mettons généralement en œuvre une couche à granulats durs KORODUR de 10 à 15 mm conformément à la DIN 18560-7. Pour les machines sur chenilles, nous choisissons délibérément la chape à granulats métalliques conformément à la DIN 1100-M (KORODUR WH-metallisch, NEODUR HE 65), qui offre la plus haute résistance à la flexion avec une résistance maximale à l'usure.",
+    vorteile: [
+      "Résistance maximale à l'usure sous sollicitation mécanique extrême",
+      "Résistance élevée à la flexion pour des charges jusqu'à 500 tonnes",
+      "Éprouvé depuis des décennies dans les usines du groupe Wirtgen dans le monde entier",
+      "Sol industriel minéral et robuste pour une exploitation continue",
+    ],
     bildAlt: "Halls de production WIRTGEN, monde entier (photo à venir)",
   },
 
@@ -712,10 +816,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation d'un encadrement en béton fortement sollicité le dernier jour de cours avant les vacances d'été. Réparation rapide sous contraintes climatiques et de trafic lourd.",
     land: "Allemagne",
     herausforderungen: [
-      "Fortes sollicitations mécaniques par le trafic lourd, exposition aux intempéries et aux polluants, et délais très serrés pour la rénovation le dernier jour de cours avant les vacances d'été.",
+      "Encadrement en béton d'un puits de lumière grillagé à l'entrée du restaurant universitaire, forte sollicitation par les poids lourds",
+      "Déjà réparé à plusieurs reprises sans solution durable",
+      "Charges mécaniques, intempéries et polluants marquant le béton",
+      "Fenêtre de temps réduite : réparation le dernier jour de cours avant les vacances d'été",
     ],
-    loesung:
-      "Le mortier de réparation multi-usages Rapid Set CEMENT ALL a été utilisé, choisi pour sa formule à durcissement rapide et haute résistance. CEMENT ALL ne nécessite ni primaire ni pont d'adhérence, seulement une humidification préalable à l'eau, et a permis la remise en service de l'entrée après seulement trois heures.",
+    loesung: "Nous avons utilisé le mortier de réparation multifonction Rapid Set CEMENT ALL, à durcissement rapide, sans retrait, durable et à haute résistance. Aucun primaire ni couche d'accrochage particulier n'était nécessaire, l'humidification préalable et la cure se font uniquement à l'eau. Les travaux ont commencé à 14h00 et, trois heures plus tard seulement, les véhicules de livraison du restaurant universitaire pouvaient de nouveau circuler sur l'encadrement du puits de lumière réparé.",
+    vorteile: [
+      "Durcissement rapide, de nouveau circulable après environ trois heures",
+      "Sans retrait, durable et à haute résistance",
+      "Ni primaire ni couche d'accrochage, humidification et cure à l'eau uniquement",
+      "Solution durable après plusieurs réparations antérieures infructueuses",
+    ],
     bildAlt: "Puits de lumière FH, Nürnberg (2012) (photo à venir)",
   },
 
@@ -725,10 +837,18 @@ export const referenzenFR: Record<string, {
     land: "Pologne",
     flaeche: "env. 180 m²",
     herausforderungen: [
-      "Exposition permanente à des eaux fécales agressives. Dispositif d'aération hors service. Réparation rapide nécessaire pour éviter les temps d'arrêt.",
+      "Exposition permanente à des eaux usées agressives qui attaquent les surfaces non protégées en béton et en ciment",
+      "Les acides dissolvent la laitance de ciment et provoquent un sablage pouvant aller jusqu'à la perte complète de l'élément",
+      "Couronne du bassin de la station d'épuration si endommagée que le système d'aération ne fonctionnait plus correctement",
+      "Réparation rapide nécessaire pour éviter les arrêts inutiles de l'installation",
     ],
-    loesung:
-      "CEMENT ALL a été choisi pour son durcissement rapide et sa haute résistance aux acides agressifs et aux eaux fécales, permettant une réparation de la crête du bassin en quelques heures. La mise en oeuvre avec des techniques spéciales a assuré une adhérence optimale sur ce support difficile.",
+    loesung: "Nous avons réhabilité la couronne du bassin endommagée, d'environ 180 m², avec Rapid Set CEMENT ALL, un ciment à prise rapide. La réparation a été réalisée avec succès en quelques heures, évitant ainsi des arrêts inutiles. Des mesures simples ont permis d'obtenir une solution rapide et durable.",
+    vorteile: [
+      "Réparation achevée en quelques heures",
+      "Arrêts inutiles de la station d'épuration évités",
+      "Solution rapide et durable avec des mesures simples",
+      "Système d'aération de nouveau opérationnel",
+    ],
     bildAlt: "Station d'épuration, Nakło (2014) (photo à venir)",
   },
 
@@ -737,10 +857,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation de pont avec compensation de différences de pente jusqu'à 100 mm sur les cheminements piétons. Achèvement en neuf mois, avant les fêtes de Noël.",
     land: "Allemagne",
     herausforderungen: [
-      "Respect d'un calendrier serré de neuf mois, compensation de différences de pente de 0 à 100 mm sur les cheminements piétons, modelage précis des plinthes le long du garde-corps du pont dans des conditions de chantier exigeantes.",
+      "Rénovation complète du pont Nabburger Tor en environ 9 mois",
+      "Délai serré : réouverture à temps avant les fêtes de Noël",
+      "Compensation de dénivelés de 0 à 100 mm sur les trottoirs",
+      "Modelage des plinthes du garde-corps du pont",
     ],
-    loesung:
-      "Le mortier de réparation multifonctionnel Rapid Set CEMENT ALL a été utilisé pour la rénovation ; grâce à son durcissement rapide et à ses propriétés performantes, il a servi aussi bien au nivellement des cheminements piétons qu'au modelage des plinthes. Le choix s'est porté sur CEMENT ALL en raison de ses caractéristiques techniques, qui ont permis une mise en oeuvre efficace et précise des exigences constructives.",
+    loesung: "Pour la rénovation, nous avons utilisé le mortier de réparation multifonctionnel Rapid Set CEMENT ALL, qui a résolu deux problèmes de chantier à la fois : comme couche de compensation de dénivelés de 0 à 100 mm pour les trottoirs et pour le modelage des plinthes du garde-corps du pont. Grâce à la prise rapide du mortier Rapid Set, le pont a pu être rouvert en environ 9 mois, à temps avant les fêtes de Noël.",
+    vorteile: [
+      "Réouverture dans les délais, à temps avant les fêtes de Noël, grâce à la prise rapide",
+      "Un seul mortier multifonctionnel pour deux tâches : compensation des dénivelés et modelage des plinthes",
+      "Des propriétés techniques exceptionnelles ont convaincu le maître d'ouvrage, l'entreprise de construction et les planificateurs",
+      "« Un nouveau pont dans son habit ancien » : rénovation réussie préservant l'aspect historique",
+    ],
     bildAlt: "Rénovation de pont, Amberg (2012) (photo à venir)",
   },
 
@@ -749,10 +877,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation d'un parking fortement usé présentant des fissures de surface et des épaufrures. Remise en état rapide pour une répartition uniforme des charges.",
     land: "Allemagne",
     herausforderungen: [
-      "Fortes sollicitations mécaniques par le trafic quotidien de voitures et de livraisons, nécessité d'une rénovation rapide, compensation des fissures de surface et des inégalités pour une répartition uniforme des charges.",
+      "Parking d'entreprise fortement endommagé avec éclats de béton",
+      "Risque de blessure accru en raison des éclats",
+      "Réparation rapide et durable de la couche de béton endommagée requise",
+      "Reprofilage avec des épaisseurs de couche de 7 à 10 cm",
     ],
-    loesung:
-      "Avec Rapid Set MORTAR MIX, une solution de rénovation très performante a été choisie, qui se distingue par un temps de prise rapide et une excellente adhérence. La surface a été préparée par élimination des éléments non adhérents, puis MORTAR MIX a été appliqué en épaisseur définie pour compenser les inégalités. Le mortier rapide a permis une remise en service rapide du parking.",
+    loesung: "Le Rapid Set MORTAR MIX a été utilisé. Les surfaces endommagées ont été piquées jusqu'au support porteur, soigneusement nettoyées, humidifiées au préalable, puis reconstituées durablement avec MORTAR MIX en une épaisseur de couche de 7 à 10 cm. Le mortier de réparation couvre des épaisseurs de 1,5 à 15 cm et répond à toutes les exigences du reprofilage avec un seul produit, sans couche d'accrochage supplémentaire ni ragréage fin. Les travaux ont été achevés au bout de 4 heures au total et le parking a pu être de nouveau utilisé sans restrictions.",
+    vorteile: [
+      "Réparation achevée en seulement 4 heures",
+      "Parking de nouveau utilisable sans restrictions",
+      "Un seul produit pour l'ensemble du reprofilage, sans couche d'accrochage ni ragréage fin",
+      "Large domaine d'application avec des épaisseurs de couche de 1,5 à 15 cm",
+    ],
     bildAlt: "Rénovation de parking, Metzingen (2017) (photo à venir)",
   },
 
@@ -761,10 +897,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Mise à niveau de 28 regards d'assainissement au nouveau niveau de la chaussée lors d'une rénovation routière. Mortier de réparation à durcissement rapide pour une pose d'asphalte sans délai.",
     land: "Allemagne",
     herausforderungen: [
-      "Mise à niveau de 28 regards d'assainissement à un niveau de chaussée rehaussé, nécessité d'un mortier de réparation à durcissement rapide et stable en volume, contrainte de temps pour la pose rapide du nouvel asphalte.",
+      "Rénovation routière à Nittenau/Opf. : adaptation de 28 regards existants au nouveau niveau de l'enrobé",
+      "Pose des cadres de regard à la hauteur correcte requise",
+      "Nécessité d'un mortier de réparation à prise rapide et stable en volume pour une mise en œuvre rapide de l'enrobé",
+      "Première utilisation de MORTAR MIX pour l'ajustement de regards par l'entreprise Rädlinger",
     ],
-    loesung:
-      "Le mortier de réparation MORTAR MIX a été utilisé pour la première fois par l'entreprise de construction Rädlinger, gâché sur place et appliqué manuellement pour poser le cadre du regard à la bonne hauteur. Une heure après la mise en oeuvre, un camion lourdement chargé pouvait rouler sur le tampon, et la couche de roulement en asphalte a complété la solution.",
+    loesung: "Les 28 cônes de regard ont été entièrement recouverts avec le mortier de réparation à prise rapide et stable en volume Rapid Set MORTAR MIX, puis les cadres de regard ont été posés à la hauteur correcte. Le mortier a été gâché sur place dans un malaxeur conventionnel et appliqué à la main à la truelle. Une heure seulement après la pose, un camion lourdement chargé pouvait franchir le tampon de regard sans problème. Le lendemain, l'entreprise Rädlinger a appliqué la couche de roulement finale en enrobé d'environ 10 mm d'épaisseur.",
+    vorteile: [
+      "À prise rapide et stable en volume, pose des cadres de regard à la hauteur exacte",
+      "Circulable après une heure seulement, même pour les camions lourdement chargés",
+      "Gâchage sur place dans un malaxeur conventionnel, application à la main à la truelle",
+      "Mise en œuvre rapide de l'enrobé directement dans la foulée",
+    ],
     bildAlt: "Mise à niveau de regards de chaussée, Nittenau (2019) (photo à venir)",
   },
 
@@ -773,10 +917,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation de marches d'escalier isolées présentant des dégâts dus au gel et aux sels de déverglaçage sur un trottoir public. Rétablissement rapide de l'usage du trottoir.",
     land: "Allemagne",
     herausforderungen: [
-      "Fortes sollicitations par le gel et les sels de déverglaçage, rénovation de marches isolées dans un espace public, et exécution des travaux sous contrainte de temps pour rétablir rapidement l'usage du trottoir.",
+      "Gel et sel de déneigement, principal facteur de contrainte pour les surfaces cimentaires en hiver",
+      "Dommages marqués sur les surfaces de certaines marches d'escalier d'un trottoir public",
+      "Acier d'armature mis à nu",
+      "Contrainte de temps : rétablir rapidement l'usage du trottoir",
     ],
-    loesung:
-      "CEMENT ALL a été utilisé pour protéger les armatures apparentes, suivi de MORTAR MIX pour adapter la surface à son environnement. Cette combinaison a permis une rénovation rapide et durable sans travaux préparatoires importants.",
+    loesung: "Pour enrober l'acier d'armature mis à nu, les agents du service technique municipal ont appliqué Rapid Set CEMENT ALL, immédiatement suivi de Rapid Set MORTAR MIX afin d'harmoniser la surface avec son environnement. La rénovation des différentes marches a été réalisée avec des moyens des plus simples et en un temps très court. Après seulement deux heures, l'escalier était de nouveau prêt à l'usage du public.",
+    vorteile: [
+      "De nouveau prêt à l'usage du public après seulement deux heures",
+      "Réparation durable et pérenne",
+      "Mise en œuvre avec des moyens des plus simples",
+      "Protection de l'acier d'armature mis à nu par enrobage",
+    ],
     bildAlt: "Rénovation d'escalier sur trottoir, Esslingen (2015) (photo à venir)",
   },
 
@@ -785,10 +937,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation de la zone très sollicitée du guichet de retrait en cours d'exploitation du restaurant. Réparation des dégâts d'asphalte sous les plaques d'acier.",
     land: "Allemagne",
     herausforderungen: [
-      "Fortes sollicitations mécaniques par les véhicules, travaux à réaliser en cours d'exploitation, traitement spécial de l'asphalte requis.",
+      "Zone du guichet de retrait tres sollicitee dans le drive, les pneus des vehicules tournent en permanence sur place au moment de repartir",
+      "Les plaques d'acier encastrees dans le sol ne resistaient pas aux charges",
+      "Reparation en exploitation continue du restaurant, creneau de temps tres court",
+      "Support en asphalte, le materiau doit etre rapidement porteur et durable",
     ],
-    loesung:
-      "Dépose des plaques métalliques endommagées, enlèvement de l'asphalte, stabilisation du support avec KORODUR PC, puis application de Rapid Set DOT Europe CONCRETE MIX ; rénovation en épaisseur de couche de 70-80 mm, travaux achevés en seulement deux heures et demie.",
+    loesung: "Des 07h00, nous avons retire les plaques metalliques endommagees, pique l'asphalte situe en dessous et nettoye le support. Le support etant en asphalte, nous l'avons traite par precaution avec KORODUR PC. Nous avons ensuite mis en place Rapid Set DOT Europe CONCRETE MIX en une seule couche d'environ 70 a 80 mm d'epaisseur, lisse la surface et l'avons humidifiee plusieurs fois jusqu'a saturation. Des 09h30, les surfaces etaient de nouveau entierement circulables.",
+    vorteile: [
+      "Surfaces de nouveau entierement circulables des 09h30, renovation sans interruption de l'exploitation",
+      "DOT Europe CONCRETE MIX est un beton rapide sans retrait, porteur apres 1 heure seulement",
+      "Utilisable conformement a la norme DIN EN 1504-3, applicable en epaisseurs de 50 a 600 mm",
+      "KORODUR PC assure l'adherence sur le support en asphalte",
+    ],
     bildAlt: "Burger King, Münster-Hiltrup (2021) (photo à venir)",
   },
 
@@ -797,10 +957,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation dans le respect du patrimoine avec restitution de l'aspect historique des dalles de petit format des années 60 à 80. Modernisation tout en préservant le caractère d'origine.",
     land: "Italie",
     herausforderungen: [
-      "Préservation de l'aspect historique avec modernisation simultanée de la technologie de sol ; restitution de l'aspect des dalles de petit format (30 cm x 30 cm) ; garantie d'une haute résistance à l'usure en exploitation industrielle.",
+      "Renovation du sol de la centrale electrique historique de Bergame (printemps 2011)",
+      "Le caractere historique de la centrale devait etre preserve",
+      "Restauration selon les standards de l'epoque avec des dalles de petit format au format 30 cm x 30 cm",
+      "Haute resistance a l'usure exigee en exploitation continue de la centrale",
     ],
-    loesung:
-      "Mise en oeuvre de dalles de petit format KORODUR conformes aux standards des années 60 à 80. Des dalles de 38 mm d'épaisseur avec une couche de granulats durs KORODUR de 12 mm en anthracite (NEODUR HE 65 anthrazit) ont été posées dans les règles de l'art afin de concilier caractère historique et exigences techniques.",
+    loesung: "Pour la renovation, des dalles de petit format KORODUR au format 30 cm x 30 cm ont ete posees sur environ 500 m2. Les dalles ont une epaisseur de 38 mm avec une couche de granulats durs KORODUR de 12 mm dans le coloris anthrazit (NEODUR HE 65 anthrazit) et ont ete poncees en aspect GRANIDUR. Une entreprise specialisee de Nuremberg a fabrique les dalles, une entreprise specialisee italienne les a posees.",
+    vorteile: [
+      "Preservation de l'aspect historique de la centrale",
+      "Aspect des dalles de petit format restaure au format 30 cm x 30 cm, ponce en aspect GRANIDUR",
+      "Haute resistance a l'usure en exploitation de la centrale",
+      "Maitre d'ouvrage tres satisfait, autres surfaces de renovation prevues",
+    ],
     bildAlt: "Centrale électrique, Bergamo (2011) (photo à venir)",
   },
 
@@ -810,10 +978,18 @@ export const referenzenFR: Record<string, {
     land: "Autriche",
     flaeche: "15 réparations ponctuelles sur env. 500–700 m de chaussée",
     herausforderungen: [
-      "Rénovation d'un axe principal à quatre voies sous circulation. Les réparations doivent être réalisées de nuit et la chaussée rouverte à la circulation en quelques heures. 15 zones endommagées sur 500–700 m de longueur en une seule nuit.",
+      "Donaukanalstraße à quatre voies, très fréquentée, sous une sollicitation intense du trafic",
+      "Fenêtre de temps réduite : réparation de nuit, remise à la circulation quelques heures plus tard",
+      "15 réparations ponctuelles sur env. 500 à 700 m de chaussée en une seule nuit",
+      "Épaisseurs de couche entre 5 et 10 cm",
     ],
-    loesung:
-      "Une surface témoin de mai 2019 ne présentait aucun dommage après un an malgré une charge de trafic intensive. DOT Europe CONCRETE MIX : à prise rapide, renforcé de fibres, modifié aux polymères, à CO2 réduit. Une équipe de 7 personnes a réparé les 15 zones endommagées en une nuit.",
+    loesung: "Après une surface d'essai réalisée en mai 2019 qui, un an plus tard, ne présentait aucune fissure, éclat ni décollement malgré une circulation intense, DOT Europe CONCRETE MIX a été mis en œuvre pour la réparation partielle de la chaussée, un béton rapide polymère, à prise rapide et renforcé de fibres, basé sur une technologie cimentaire spéciale. Une équipe de 7 personnes a comblé 15 réparations en une nuit, sur des épaisseurs de 5 à 10 cm : quatre ont fraisé, dégagé et nettoyé les zones, trois ont mélangé et mis en place le matériau. Un fin brouillard d'eau a servi au lissage, la cure a été réalisée uniquement à l'eau. Quelques heures plus tard, la chaussée était de nouveau ouverte à la circulation.",
+    vorteile: [
+      "À prise rapide, remise à la circulation quelques heures après la mise en œuvre",
+      "Rapide et simple à mettre en œuvre",
+      "Durablement sans fissures : surface d'essai sans fissures, éclats ni décollements après un an",
+      "À teneur réduite en CO2",
+    ],
     bildAlt: "Rénovation de chaussée, Vienne (2020) (photo à venir)",
   },
 
@@ -822,10 +998,17 @@ export const referenzenFR: Record<string, {
     untertitel: "Rénovation de trottoirs urbains avec un mortier de réparation rapide. Surface antidérapante et visuellement intégrée – de nouveau praticable après 30 minutes.",
     land: "France",
     herausforderungen: [
-      "Réouverture rapide aux piétons et à la circulation requise. Surface antidérapante exigée. Intégration visuelle au revêtement de trottoir existant souhaitée.",
+      "Rénovation de trottoirs urbains à Saint-Étienne",
+      "La solution de réparation devait répondre aux exigences de l'infrastructure urbaine",
+      "Oélie/Saur a testé au préalable plusieurs systèmes de réparation",
     ],
-    loesung:
-      "Le Rapid Set Asphalt Repair Mix (ARM) a été mis en oeuvre avec Set Control, après avoir été évalué comme la solution supérieure lors d'essais. Le mélange a été gâché au malaxeur à double hélice et posé avec précision par l'entreprise Trema. Le choix s'est porté sur ce produit pour sa facilité de mise en oeuvre et sa remise en service rapide.",
+    loesung: "Après avoir testé différents systèmes de réparation, Oélie/Saur a choisi le Rapid Set Asphalt Repair Mix® (ARM) avec Set Control pour ses propriétés supérieures. Le matériau a été mélangé à l'aide d'un malaxeur à double fouet et mis en œuvre dans les règles de l'art par l'applicateur Trema.",
+    vorteile: [
+      "Facile à mettre en œuvre, mélange au malaxeur à double fouet",
+      "Mise en service rapide",
+      "Surface antidérapante",
+      "Adaptation visuelle au revêtement existant",
+    ],
     bildAlt: "Oélie/Saur, Saint-Étienne (2024) (photo à venir)",
   },
 
@@ -834,10 +1017,18 @@ export const referenzenFR: Record<string, {
     untertitel: "Pose d'une chape à granulats durs par technique de silo pour une surface de vente provisoire pendant la transformation du magasin spécialisé. Solution économique pour une exploitation temporaire.",
     land: "Allemagne",
     herausforderungen: [
-      "Délais serrés pour l'achèvement. Sol industriel résistant nécessaire pour une exploitation commerciale temporaire sur une surface déjà utilisée.",
+      "Rénovation du magasin DECATHLON depuis octobre 2023, réouverture prévue pour l'été 2024",
+      "Surface de vente provisoire sur le même site pour l'équipe et les produits saisonniers pendant les travaux",
+      "Sol industriel résistant requis pour l'exploitation commerciale temporaire",
+      "Pose économique et rationnelle exigée",
     ],
-    loesung:
-      "Mise en oeuvre de NEODUR HE 65, une chape à granulats durs à liant ciment, en épaisseur de couche de 10 mm, appliquée avec le système de silo KORODUR moderne.",
+    loesung: "En juillet, l'entreprise spécialisée Nieladur a posé environ 25 t de chape à granulats durs NEODUR HE 65 en gris ciment avec le système de silo KORODUR. La mise en œuvre a été réalisée sous forme de chape adhérente frais sur frais en une épaisseur de 10 mm. NEODUR HE 65 est un sol industriel KORODUR prêt à l'emploi, à liant cimentaire et résistant à l'usure pour les charges les plus élevées. Le système de silo avec technique de malaxage et de pompage est une méthode de travail économique, rationnelle et durable.",
+    vorteile: [
+      "Sol industriel résistant à l'usure pour les charges les plus élevées",
+      "Méthode de travail économique, rationnelle et durable grâce au système de silo KORODUR",
+      "Pose rapide sous forme de chape adhérente frais sur frais",
+      "Structure de sol prête à l'emploi pour l'exploitation commerciale temporaire",
+    ],
     bildAlt: "Decathlon, Dortmund-Aplerbeck (2023) (photo à venir)",
   },
 
@@ -1117,16 +1308,17 @@ export const referenzenFR: Record<string, {
     untertitel: "Chape décorative en terrazzo blanc GRANIDUR BIANCO sur chape de base à prise rapide FSCem",
     land: "Allemagne",
     herausforderungen: [
-      "Respecter un calendrier de construction ambitieux sur un immeuble de bureau prestigieux",
-      "Disposer d'une chape de base à prise rapide et à faible retrait",
-      "Installer une chape décorative de qualité supérieure sur neuf niveaux",
+      "Nouveau bâtiment de bureaux exclusif à Cologne, un point fort architectural",
+      "Chape apparente représentative et de haute qualité requise pour l'ensemble du bâtiment",
+      "Calendrier de construction ambitieux à respecter",
+      "Pose sur neuf niveaux, 700 m² au total",
     ],
-    loesung:
-      "L'entreprise a choisi la chape à prise rapide KORODUR FSCem comme chape de base pour sa prise rapide et son faible retrait, puis a appliqué la chape décorative en terrazzo blanc de qualité supérieure GRANIDUR BIANCO sur neuf niveaux, soit 700 m² au total.",
+    loesung: "Pour respecter le calendrier ambitieux, la chape rapide KORODUR FSCem a été utilisée comme chape support, principalement pour sa mise en service précoce et sa stabilité volumique. L'entreprise spécialisée Günter Schlag GmbH de Föhren a ensuite posé la chape apparente en terrazzo blanc de haute qualité GRANIDUR BIANCO sur neuf niveaux totalisant 700 m².",
     vorteile: [
-      "Chape de base à prise rapide pour respecter le calendrier ambitieux",
-      "Faible retrait garantissant une base stable en volume",
-      "Sol brillant et poli qui se fond parfaitement dans l'architecture intemporelle",
+      "Mise en service précoce du KORODUR FSCem accélère le déroulement du chantier",
+      "Chape support à stabilité volumique comme base de la chape apparente",
+      "Chape apparente claire et poncée qui s'intègre parfaitement dans l'architecture intemporelle",
+      "Caractère unique grâce à la composition cimentaire-minérale",
     ],
     bildAlt: "Chape décorative en terrazzo blanc poli GRANIDUR BIANCO dans l'immeuble de bureau Kaiserhof à Cologne",
   },
@@ -1464,18 +1656,17 @@ export const referenzenFR: Record<string, {
     untertitel: "Sol décoratif blanc poncé GRANIDUR BIANCO, aspect granit",
     land: "Finlande",
     herausforderungen: [
-      "Sol décoratif en harmonie avec l'architecture moderne en acier et béton",
-      "Aspect homogène dans les couloirs des 6 étages (1.500 m²)",
-      "Aspect granit blanc nécessitant un primaire d'accrochage teinté en blanc",
-      "Obtention de l'aspect unique par plusieurs phases de ponçage",
+      "Sol design représentatif pour le nouveau bâtiment administratif de l'un des plus grands groupes d'assurance de Finlande",
+      "1 500 m² sur 6 niveaux, dans les couloirs de chaque niveau",
+      "Architecture postmoderne en éléments d'acier et de béton, dans laquelle le sol devait s'intégrer",
+      "Exigence de durabilité écologique grâce à une mise en œuvre purement minérale",
     ],
-    loesung:
-      "Selon les conseils de KORODUR, le sol décoratif blanc GRANIDUR BIANCO a été posé avec une épaisseur moyenne de 15 mm sur un primaire d'accrochage KORODUR HB 5. S'agissant d'un sol décoratif blanc, le primaire a lui aussi été teinté en blanc. Après plusieurs phases de ponçage, l'aspect granit exceptionnel devient visible.",
+    loesung: "Fin 2009, nous avons posé le sol design KORODUR GRANIDUR BIANCO, un sol blanc poli à base de ciment présentant un aspect granit. Il a été appliqué en une épaisseur moyenne de 15 mm sur le pont d'adhérence KORODUR HB 5, teinté en blanc pour s'accorder au sol design blanc. Les travaux ont été réalisés par l'applicateur Neliskulma Oy. Après plusieurs passes de ponçage, l'aspect granit caractéristique est apparu.",
     vorteile: [
-      "Sol décoratif minéral répondant aux exigences écologiques d'une gestion durable",
-      "Aspect granit poncé exceptionnel",
-      "S'intègre parfaitement à l'architecture moderne",
-      "Chape décorative durable pour les couloirs fréquentés",
+      "Aspect granit blanc obtenu après plusieurs passes de ponçage, haut de gamme et représentatif",
+      "Sol design purement minéral à base de ciment, écologiquement durable",
+      "Surface de chape décorative s'intégrant au bâtiment postmoderne en acier et béton",
+      "Réalisé sur une grande surface de 1 500 m² répartie sur 6 niveaux",
     ],
     bildAlt: "Sol décoratif blanc GRANIDUR BIANCO aspect granit dans les couloirs du bâtiment administratif LÄHITAPIOLA à Espoo",
   },
