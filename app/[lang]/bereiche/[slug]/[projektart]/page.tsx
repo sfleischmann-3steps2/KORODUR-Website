@@ -16,6 +16,8 @@ import { withBasePath } from "../../../../../lib/basePath";
 import { alternatesFor } from "../../../../../lib/seo";
 import { projektartBucket, projektartLabel, type Projektart } from "../../../../../data/einsatzbereichMapping";
 import { produktHatProjektart } from "../../../../../data/produktProjektart";
+import BereichEditorialSektion from "../../../../../components/BereichEditorialSektion";
+import { bereichEditorial } from "../../../../../data/bereichEditorial";
 
 type Params = Promise<{ lang: string; slug: string; projektart: string }>;
 
@@ -79,6 +81,7 @@ export default async function SubBereichPage({ params }: { params: Params }) {
   const localizedProdukte = await localizeProdukte(artProdukte, lang);
   const localizedRefs = await localizeReferenzen(artRefs.slice(0, 6), lang);
   const refLink = `/${lang}/referenzen/?projektart=${art}`;
+  const ed = bereichEditorial(slug);
 
   return (
     <>
@@ -145,6 +148,10 @@ export default async function SubBereichPage({ params }: { params: Params }) {
           </Link>
         </div>
       </section>
+
+      {/* Editorial (datengetrieben, #377): projektart-spezifische Absätze +
+          übergreifender Bereichs-Kontext. */}
+      {lang === "de" && ed && <BereichEditorialSektion editorial={ed} projektart={art} />}
 
       {/* #250: Lösungsfinder + Anwendungsmatrix hier verorten (F1, aus /sanierung
           herausgelöst). Der Projektart-Einstieg wird als Kontext mitgegeben. */}
