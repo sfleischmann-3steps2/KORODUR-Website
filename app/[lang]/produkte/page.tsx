@@ -12,7 +12,7 @@ import { localizeProdukte } from "../../../data/i18n/getLocalized";
 import { alternatesFor } from "../../../lib/seo";
 import {
   PRODUKTART_REIHENFOLGE,
-  produktartVonProdukt,
+  produktartenVonProdukt,
 } from "../../../data/produktart";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -67,7 +67,7 @@ export default async function ProduktePage({
     "spezialmoertel",
   ];
   const bereicheMitProduktart = new Set(
-    localizedProdukte.flatMap((p) => (produktartVonProdukt(p) ? bereicheVon(p) : []))
+    localizedProdukte.flatMap((p) => (produktartenVonProdukt(p).length ? bereicheVon(p) : []))
   );
   const bereichOptionen = BEREICH_FILTER_ORDER.filter((s) =>
     bereicheMitProduktart.has(s)
@@ -84,7 +84,10 @@ export default async function ProduktePage({
   // Katzenstreu) landen in einer „Weitere"-Sammelgruppe, damit nichts verschwindet.
   const gruppen: BereichsGruppe[] = PRODUKTART_REIHENFOLGE.map(
     (art): BereichsGruppe | null => {
-      const items = localizedProdukte.filter((p) => produktartVonProdukt(p) === art);
+      // Multi-Produktart (#306, Notion-SoT): ein Produkt kann in mehreren
+      // Produktart-Gruppen erscheinen (z. B. MICROTOP TW als Spritzmörtel UND
+      // TW-Beschichtungsmörtel). Es taucht dann in jeder passenden Sektion auf.
+      const items = localizedProdukte.filter((p) => produktartenVonProdukt(p).includes(art));
       if (items.length === 0) return null;
       return {
         slug: art,
@@ -94,7 +97,7 @@ export default async function ProduktePage({
     }
   ).filter((g): g is BereichsGruppe => g !== null);
 
-  const ohneProduktart = localizedProdukte.filter((p) => !produktartVonProdukt(p));
+  const ohneProduktart = localizedProdukte.filter((p) => !produktartenVonProdukt(p).length);
   if (ohneProduktart.length > 0) {
     gruppen.push({
       slug: "weitere",
