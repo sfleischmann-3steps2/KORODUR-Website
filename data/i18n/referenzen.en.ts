@@ -3,29 +3,32 @@ export const referenzenEN: Record<string, {
   titel?: string;
   untertitel?: string;
   land?: string;
+  ausgangssituation?: string;
   herausforderungen?: string[];
   loesung?: string;
+  ergebnis?: string | string[];
+  kennwerte?: { value: string; label: string }[];
   vorteile?: string[];
   bildAlt?: string;
 }> = {
   "antolin-wochenend-sanierung": {
-    titel: "Weekend Renovation",
-    untertitel: "Production Without Pause",
+    titel: "Renovation over the weekend, Antolin, Austria",
+    untertitel: "At the global automotive supplier Antolin in Austria, a damaged flooring area of around 150 m² in a production hall needed to be repaired within shortest time.",
     land: "Austria",
     herausforderungen: [
-      "Tight time window for execution",
-      "High demands on abrasion resistance",
-      "Industrial screed must be load-bearing early",
-      "Volume stability / shrinkage reduction",
+      "The ongoing production could not be blocked for long, so the repair works could only be carried out on weekends",
+      "The client requested a rapidly reusable floor",
+      "At the same time the floor had to be highly wear-resistant",
     ],
-    loesung:
-      "Partial areas were applied with the hard aggregate rapid screed system NEODUR HE 60 rapid on KORODUR HB 5 rapid bonding agent. Thanks to rapid setting and hardening properties, the surface was fully operational after just 48 hours.",
-    vorteile: [
-      "Minimal production downtime through weekend scheduling",
-      "Rapid recommissioning (48 h)",
-      "High abrasion resistance and durability",
-      "Volume stability with low shrinkage",
+    loesung: "In summer/autumn of 2018 two damaged flooring areas of each 75 m² were repaired. For the repair the fast-setting, low-shrink, highly wear-resistant screed NEODUR HE 60 rapid was used. NEODUR HE 60 rapid features full usability in just 48 hours and high wear-resistance, also for heaviest stress.",
+    kennwerte: [
+      { value: "150 m²", label: "Damaged flooring area" },
+      { value: "2 × 75 m²", label: "Areas repaired" },
+      { value: "48 hours", label: "Full usability" },
     ],
+    ergebnis: "The client saw his expectations met and was highly satisfied with the result.",
+    ausgangssituation: "At the global automotive supplier Antolin from Austria, a damaged flooring area of around 150 m² in a production hall needed to be repaired within shortest time.",
+    vorteile: [],
     bildAlt: "Renovation of a production hall at Antolin in Ebergassing",
   },
 
@@ -773,22 +776,22 @@ export const referenzenEN: Record<string, {
   },
 
   "olympiastadion-berlin": {
-    titel: "Olympiastadion Berlin (2023)",
-    untertitel: "Renovation under heritage protection requirements while preserving the historic appearance. High load-bearing capacity for sporting and major events.",
+    titel: "Olympic Stadium, Berlin",
+    untertitel: "The Berlin Olympic Stadium, a first-class address for multifunctional sport arenas in Germany, was refurbished under the aspect of monument preservation issues.",
     land: "Germany",
     herausforderungen: [
-      "Renovation under heritage protection requirements and respect for the listed building",
-      "Balancing act between modern sports, multi-million show productions and monument protection",
-      "Adapting the appearance of floor areas in the stadium dating from the early 20th century",
-      "Interior fit-out over an area of 3,000 m²",
+      "Balancing the requirements of a modern sports arena and big money show productions with architectural conservation",
+      "Meeting the monument preservation requirements of the historical monument",
+      "Adapting the optics of several flooring areas of the stadium, constructed at the beginning of the 20th century",
+      "Refurbishing a large interior surface of approx. 3,000 m²",
     ],
-    loesung: "Over an area of 3,000 m², the GRANIDUR design floor in the shade anthracite was used for the interior fit-out. GRANIDUR is a KORODUR industrial floor as a design floor with a ground granite look, developed for visually demanding, ready-to-use surfaces. This made it possible to match the appearance of the floor areas to the historic stadium.",
-    vorteile: [
-      "Timelessly beautiful, ground granite look",
-      "Ready-to-use surface, developed for visually demanding areas",
-      "Appearance in keeping with the listed building ensemble",
-      "Uniform design across 3,000 m² in the shade anthracite",
+    loesung: "To adapt the optics of several flooring areas, the responsible parties decided for the interior refurbishment to install the timelessly beautiful GRANIDUR design floor in anthracite colour tone on a surface of approx. 3,000 m². GRANIDUR design floor is a KORODUR industrial floor in polished granite optics, developed for superior flooring areas.",
+    kennwerte: [
+      { value: "approx. 3,000 m²", label: "Interior floor area" },
     ],
+    ergebnis: "",
+    ausgangssituation: "The Berlin Olympic Stadium, a first-class address for multifunctional sport arenas in Germany, was refurbished under the aspect of monument preservation issues. Demanded was a split between the requirements of a modern sports arena and big money involving show productions on the one side and, on the other, the requirements of architectural conservation in respect of the historical monument.",
+    vorteile: [],
     bildAlt: "Olympiastadion Berlin (2023) (image to follow)",
   },
 
@@ -1012,22 +1015,23 @@ export const referenzenEN: Record<string, {
   },
 
   "decathlon-dortmund": {
-    titel: "Decathlon, Dortmund-Aplerbeck (2023)",
-    untertitel: "Installation of hard aggregate screed via silo technology for an interim sales area during the retail store conversion. Economical solution for temporary operation.",
+    titel: "Renovation of the DECATHLON Store, Dortmund-Aplerbeck",
+    untertitel: "The DECATHLON location in Dortmund-Aplerbeck has been undergoing renovation since October 23 and is scheduled to reopen in summer 2024, with the team continuing to serve customers throughout.",
     land: "Germany",
     herausforderungen: [
-      "Renovation of the DECATHLON store since October 2023, reopening planned by summer 2024",
-      "Interim sales area on the same site for the team and seasonal products during the renovation",
-      "Durable industrial floor required for the temporary retail operation",
-      "Economical and efficient installation needed",
+      "Renovation carried out while the store stays open and the team continues to serve customers",
+      "Flooring required to withstand severest stress and highest loads",
+      "25 tons of material installed via the KORODUR silo technology",
+      "Area repurposed as a bicycle store after reopening",
     ],
-    loesung: "In July the specialist company Nieladur laid approx. 25 t of NEODUR HE 65 hard aggregate screed in cement grey using the KORODUR silo system. It was applied as a bonded screed fresh on fresh in a layer thickness of 10 mm. NEODUR HE 65 is a ready-to-use, cement-bound, wear-resistant KORODUR industrial floor for the highest loads. The silo system with mixing and pumping technology is an economical, efficient and sustainable working method.",
-    vorteile: [
-      "Wear-resistant industrial floor for the highest loads",
-      "Economical, efficient and sustainable working method thanks to the KORODUR silo system",
-      "Fast installation as a bonded screed fresh on fresh",
-      "Ready-to-use floor build-up for the temporary retail operation",
+    loesung: "NEODUR HE 65 industrial flooring in cement grey was laid by specialist installer Nieladur, with 25 tons installed using the silo technology. NEODUR HE 65 is a dry, ready-to-use, cementitious material that withstands severest stress and highest loads. It was processed fresh on fresh in a layer thickness of 10 mm. The KORODUR silo system with its mixing and pumping technology is extremely economical, efficient and sustainable.",
+    kennwerte: [
+      { value: "25 t", label: "NEODUR HE 65 installed" },
+      { value: "10 mm", label: "Layer thickness" },
     ],
+    ergebnis: "",
+    ausgangssituation: "The DECATHLON store in Dortmund-Aplerbeck has been under renovation since October 23 and is scheduled to reopen in summer 2024. Until then, the entire team continues to welcome customers and offer all seasonal products in a nearby area on the same premises. After reopening, the renovated area will be used as a bicycle store.",
+    vorteile: [],
     bildAlt: "Decathlon, Dortmund-Aplerbeck (2023) (image to follow)",
   },
 
@@ -2333,23 +2337,26 @@ export const referenzenEN: Record<string, {
     bildAlt: "Barrier-free pavement leveling in Crailsheim",
   },
   "flughafen-zagreb": {
-    titel: "Zagreb Airport, Croatia",
-    untertitel: "Damaged concrete slabs on runways and landing strips repaired in only 4 weeks",
+    titel: "Repair Works, Zagreb Airport",
+    untertitel: "At Zagreb airport, an area of around 1,000 m² of concrete slabs on the runways was repaired within 4 weeks thanks to the use of Rapid Set fast-setting concrete and volumetric mixing trucks.",
     land: "Croatia",
     herausforderungen: [
-      "The runway had to be reopened for regular air traffic every morning at 6 a.m.",
-      "Work exclusively in night shifts between 11.00 pm and 6.00 am",
-      "High demands on durability and longevity of the flight operation areas",
-      "Large-scale repair of approx. 1,000 m² of concrete slabs",
+      "Highly frequented infrastructure requiring the shortest possible downtimes",
+      "Runways had to be opened every morning for regular air traffic, so repairs were done in night shifts between 11.00 pm and 6.00 am",
+      "Durability and longevity of the repaired concrete slabs",
+      "Delay-free on site concrete production coping with weather effects",
     ],
-    loesung:
-      "Rapid Set fast-setting concrete was used in combination with volumetric mixing trucks. These hold all concrete components separately; the Rapid Set cement is mixed on site with aggregates, water and additives to fresh concrete which is installed immediately. This allows an optimal concrete formulation tailored to the demanded properties and weather effects and a delay-free on-site concrete production. In each night shift the damaged concrete slabs were cut out, lifted, removed and the areas re-cast in the volumetric system. Concreting, smoothing and broom finish took about 20 minutes per slab, followed by after-treatment.",
-    vorteile: [
-      "Structural strength of > 20 MPa already after approx. 2 hours",
-      "Daily release of the runway for air traffic despite ongoing construction work",
-      "Delay-free, optimally on-site tailored concrete production thanks to volumetric mixing trucks",
-      "Durability and longevity for highly stressed flight operation areas",
+    loesung: "The damaged concrete slabs were cut out and removed, then these areas were cast with Rapid Set fast-setting concrete in the volumetric system. Volumetric mixing trucks hold all concrete components separately, and the Rapid Set cement is mixed on site with aggregates, water and additives to fresh concrete which is immediately installed. Concreting, smoothing and broom finish took about 20 minutes, followed by after-treatment.",
+    kennwerte: [
+      { value: "approx. 1,000 m²", label: "Repaired concrete slab area" },
+      { value: "4 weeks", label: "Total repair duration" },
+      { value: "> 20.0 MPa", label: "Structural strength after 2 hours" },
+      { value: "up to 3 slabs (approx. 25 m³)", label: "Repaired per night shift" },
+      { value: "approx. 20 minutes", label: "Concreting, smoothing and broom finish" },
     ],
+    ergebnis: "Per night shift up to 3 concrete slabs (approx. 25 m³) could be repaired. In 2 hours, the finished concrete slabs had gained structural strength of > 20.0 MPa and could be released for air traffic at 6.00 am. With the use of Rapid Set fast-setting concrete in volumetric processing, the damaged concrete slabs could be repaired within 4 weeks at only short blocking times of the flight operations.",
+    ausgangssituation: "Repair measures in highly frequented large-scale infrastructures like airports require building materials that allow shortest possible downtimes, with durability and longevity as important aspects. Despite the ongoing construction work, the runways at Zagreb airport had to be opened every morning for regular air traffic.",
+    vorteile: [],
     bildAlt: "Repair of concrete slabs on the runways at Zagreb Airport",
   },
   "strassensanierung-wien": {
