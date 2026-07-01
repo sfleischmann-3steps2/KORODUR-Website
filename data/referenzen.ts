@@ -11,6 +11,7 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Schwerlast ===
   {
     id: "antolin-wochenend-sanierung",
+    jahr: 2018,
     releaseStatus: "oeffentlich",
     slug: "antolin-wochenend-sanierung",
     projekttyp: "sanierung",
@@ -44,6 +45,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "kleemann-produktionshalle",
+    jahr: 2010,
     releaseStatus: "oeffentlich",
     slug: "kleemann-produktionshalle",
     projekttyp: "sanierung",
@@ -76,6 +78,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "monheim-produktionsflaeche",
+    jahr: 2021,
     releaseStatus: "oeffentlich",
     slug: "monheim-produktionsflaeche",
     projekttyp: "sanierung",
@@ -109,6 +112,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "weag-entsorgungsbetrieb",
+    jahr: 2020,
     releaseStatus: "oeffentlich",
     slug: "weag-entsorgungsbetrieb",
     projekttyp: "sanierung",
@@ -143,6 +147,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "wochenend-sanierung-werkstatt",
+    jahr: 2022,
     releaseStatus: "oeffentlich",
     slug: "wochenend-sanierung-werkstatt",
     projekttyp: "sanierung",
@@ -176,6 +181,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "strandkorbhalle-sylt",
+    jahr: 2015,
     releaseStatus: "oeffentlich",
     slug: "strandkorbhalle-sylt",
     projekttyp: "sanierung",
@@ -209,6 +215,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "loosen-werkzeug-klausen",
+    flaeche: "70 m²",
+    jahr: 2021,
     releaseStatus: "oeffentlich",
     slug: "loosen-werkzeug-klausen",
     projekttyp: "sanierung",
@@ -242,6 +250,7 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Dünnschicht ===
   {
     id: "guben-produktionshalle",
+    jahr: 2020,
     releaseStatus: "oeffentlich",
     slug: "guben-produktionshalle",
     projekttyp: "sanierung",
@@ -275,6 +284,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "nike-store-polen",
+    flaeche: "ca. 300 m²",
+    jahr: 2018,
     releaseStatus: "oeffentlich",
     slug: "nike-store-polen",
     projekttyp: "sanierung",
@@ -371,6 +382,7 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Schnelle Reparaturen ===
   {
     id: "dhl-ueberadebruecken",
+    jahr: 2017,
     releaseStatus: "oeffentlich",
     slug: "dhl-ueberadebruecken",
     projekttyp: "sanierung",
@@ -468,6 +480,7 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBAU ===
   {
     id: "fugensanierung-lyreco",
+    jahr: 2016,
     releaseStatus: "oeffentlich",
     slug: "fugensanierung-lyreco",
     projekttyp: "sanierung",
@@ -501,6 +514,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "treppenstufen-sanierung",
+    jahr: 2016,
     releaseStatus: "oeffentlich",
     slug: "treppenstufen-sanierung",
     projekttyp: "sanierung",
@@ -532,6 +546,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "sinusfugen-sanierung",
+    jahr: 2021,
     releaseStatus: "oeffentlich",
     slug: "sinusfugen-sanierung",
     projekttyp: "sanierung",
@@ -562,6 +577,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "trennfugen-bohnenkamp",
+    jahr: 2019,
     releaseStatus: "oeffentlich",
     slug: "trennfugen-bohnenkamp",
     projekttyp: "sanierung",
@@ -594,6 +610,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "absenksteine-tankstelle",
+    jahr: 2021,
     releaseStatus: "oeffentlich",
     slug: "absenksteine-tankstelle",
     projekttyp: "sanierung",
@@ -625,6 +642,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "lkw-einstellplatz-berlin",
+    jahr: 2018,
     releaseStatus: "oeffentlich",
     slug: "lkw-einstellplatz-berlin",
     projekttyp: "sanierung",
@@ -658,6 +676,7 @@ export const referenzen: Referenz[] = [
   // === INFRASTRUKTUR – Verkehr ===
   {
     id: "hafen-catania",
+    jahr: 2024,
     releaseStatus: "oeffentlich",
     slug: "hafen-catania",
     projekttyp: "sanierung",
@@ -757,6 +776,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "autohaus-versmold",
+    jahr: 2024,
     releaseStatus: "oeffentlich",
     slug: "autohaus-versmold",
     projekttyp: "sanierung",
@@ -789,6 +809,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "hubschrauber-landeplatz-finnland",
+    jahr: 2018,
     releaseStatus: "oeffentlich",
     slug: "hubschrauber-landeplatz-finnland",
     projekttyp: "sanierung",
@@ -882,6 +903,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81a18e0effd937d2d879
     id: "texaco-tankflache-arnheim",
+    jahr: 2018,
     releaseStatus: "oeffentlich",
     slug: "texaco-tankflache-arnheim",
     projekttyp: "sanierung",
@@ -906,6 +928,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8131b141f84d83456258
     id: "naturex-burgdorf",
+    jahr: 2013,
     releaseStatus: "oeffentlich",
     slug: "naturex-burgdorf",
     projekttyp: "sanierung",
@@ -931,6 +954,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81259c78d8d7cf5818f3
     id: "torschwelle-lagerhalle",
+    jahr: 2017,
     releaseStatus: "oeffentlich",
     slug: "torschwelle-lagerhalle",
     projekttyp: "sanierung",
@@ -955,6 +979,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8166ba97c81eb08e5b39
     id: "wellpappenfabrik-gross-versmold",
+    jahr: 2013,
     releaseStatus: "oeffentlich",
     slug: "wellpappenfabrik-gross-versmold",
     projekttyp: "sanierung",
@@ -1003,6 +1028,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8110a72fe9a31fb80151
     id: "kreisverkehr-goppingen",
+    jahr: 2021,
     releaseStatus: "oeffentlich",
     slug: "kreisverkehr-goppingen",
     projekttyp: "sanierung",
@@ -1027,6 +1053,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81a593ecc8eb30ccf827
     id: "barmenia-parkhaus-wuppertal",
+    jahr: 2015,
     releaseStatus: "oeffentlich",
     slug: "barmenia-parkhaus-wuppertal",
     projekttyp: "sanierung",
@@ -1051,6 +1078,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a813c927cd09d15918039
     id: "john-lewis-lager-stevenage",
+    jahr: 2013,
     releaseStatus: "oeffentlich",
     slug: "john-lewis-lager-stevenage",
     projekttyp: "sanierung",
@@ -1076,6 +1104,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81af9ce3d9f5b97662bf
     id: "fraport-frankfurt",
+    jahr: 2012,
     releaseStatus: "oeffentlich",
     slug: "fraport-frankfurt",
     projekttyp: "sanierung",
@@ -1101,6 +1130,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a816ba98fe5dd42fd8c25
     id: "sncf-bordeaux",
+    jahr: 2016,
     releaseStatus: "oeffentlich",
     slug: "sncf-bordeaux",
     projekttyp: "sanierung",
@@ -1125,6 +1155,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81d49377cd41cb2324ef
     id: "parkhaus-freiburger-munster-freiburg",
+    jahr: 2012,
     releaseStatus: "oeffentlich",
     slug: "parkhaus-freiburger-munster-freiburg",
     projekttyp: "sanierung",
@@ -1150,6 +1181,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8107894ed05098f58578
     id: "olympiastadion-berlin",
+    jahr: 2005,
     releaseStatus: "oeffentlich",
     slug: "olympiastadion-berlin",
     projekttyp: "sanierung",
@@ -1200,6 +1232,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81768522e12227517411
     id: "fh-lichtschacht-nurnberg",
+    jahr: 2012,
     releaseStatus: "oeffentlich",
     slug: "fh-lichtschacht-nurnberg",
     projekttyp: "sanierung",
@@ -1224,6 +1257,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81cf9ab2ea684bc90b4c
     id: "klaranlage-nako",
+    jahr: 2014,
     releaseStatus: "oeffentlich",
     slug: "klaranlage-nako",
     projekttyp: "sanierung",
@@ -1249,6 +1283,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8140a6cee026aaf876ff
     id: "bruckensanierung-amberg",
+    jahr: 2012,
     releaseStatus: "oeffentlich",
     slug: "bruckensanierung-amberg",
     projekttyp: "sanierung",
@@ -1273,6 +1308,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a817ba2fadc78e865ab24
     id: "parkplatzsanierung-metzingen",
+    jahr: 2017,
     releaseStatus: "oeffentlich",
     slug: "parkplatzsanierung-metzingen",
     projekttyp: "sanierung",
@@ -1297,6 +1333,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a816aaeb0e9b81f27d87f
     id: "schachtregulierung-fahrbahn-nittenau",
+    jahr: 2019,
     releaseStatus: "oeffentlich",
     slug: "schachtregulierung-fahrbahn-nittenau",
     projekttyp: "sanierung",
@@ -1321,6 +1358,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81a8a68ae079fb0b6103
     id: "treppensanierung-gehweg-esslingen",
+    jahr: 2015,
     releaseStatus: "oeffentlich",
     slug: "treppensanierung-gehweg-esslingen",
     projekttyp: "sanierung",
@@ -1345,6 +1383,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a815aa2a5e1893c5fb99b
     id: "burger-king-munster",
+    jahr: 2021,
     releaseStatus: "oeffentlich",
     slug: "burger-king-munster",
     projekttyp: "sanierung",
@@ -1369,6 +1408,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81618631db99661ecf9b
     id: "kraftwerk-bergamo",
+    jahr: 2011,
     releaseStatus: "oeffentlich",
     slug: "kraftwerk-bergamo",
     projekttyp: "sanierung",
@@ -1394,6 +1434,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8198a3c7e38a9af81bcb
     id: "fahrbahnsanierung-wien",
+    jahr: 2020,
     releaseStatus: "oeffentlich",
     slug: "fahrbahnsanierung-wien",
     projekttyp: "sanierung",
@@ -1419,6 +1460,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a811da7ddf459b49a543e
     id: "oelie-saur-saint",
+    jahr: 2024,
     releaseStatus: "oeffentlich",
     slug: "oelie-saur-saint",
     projekttyp: "sanierung",
@@ -1442,6 +1484,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8130a61afc2d883ff34c
     id: "decathlon-dortmund",
+    jahr: 2023,
     releaseStatus: "oeffentlich",
     slug: "decathlon-dortmund",
     projekttyp: "sanierung",
@@ -1950,7 +1993,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Dekorativer KORODUR-Designboden für eine gläserne Schokoladen-Manufaktur",
     ort: "Schwarzach und Wertheim",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2010,
     flaeche: "400 m² und 2.000 m²",
     produkte: ["KORODUR COPETTI FLOOR KCF", "KOROCLEAN"],
     ausgangssituation:
@@ -2070,7 +2113,7 @@ export const referenzen: Referenz[] = [
     untertitel: "TRUazzo Sichtestrich in Terrazzooptik fuer das neue Besucherzentrum",
     ort: "Humpolec",
     land: "Tschechien",
-    jahr: undefined,
+    jahr: 2021,
     flaeche: "ca. 500 m²",
     produkte: ["TRU PC"],
     ausgangssituation:
@@ -2112,7 +2155,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Selbstverlaufender Designboden mit Schmuckkörnung für das Foyer eines Luxus-Modehauses",
     ort: "München",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2008,
     flaeche: "500 m²",
     produkte: ["TRU Self-Leveling"],
     ausgangssituation:
@@ -2275,7 +2318,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Geschliffener KORODUR-Hartstoffestrich in Anthrazit als repräsentativer Foyerboden",
     ort: "Schloss Holte-Stukenbrock",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2007,
     flaeche: "ca. 100 m²",
     produkte: ["NEODUR HE 65"],
     ausgangssituation:
@@ -2402,7 +2445,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Zeitlos-eleganter, geschliffener Sichtestrich für ein hochmodernes Firmengelände",
     ort: "Wetzlar",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2014,
     flaeche: "3.000 m²",
     produkte: ["GRANIDUR BIANCO/NERO"],
     ausgangssituation:
@@ -2443,7 +2486,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Mineralischer Designboden für das Empfangsgebäude einer Architektur-Ikone",
     ort: "Datteln",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2009,
     flaeche: "170 m²",
     produkte: ["KORODUR COPETTI FLOOR KCF"],
     ausgangssituation:
@@ -2696,7 +2739,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Dekorativer GRANIDUR NERO-Designboden für einen historischen Gastronomie-Treffpunkt",
     ort: "Mülligen",
     land: "Schweiz",
-    jahr: undefined,
+    jahr: 2011,
     flaeche: "190 m²",
     produkte: ["GRANIDUR BIANCO/NERO"],
     ausgangssituation:
@@ -2901,7 +2944,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Mineralischer Designboden im Betonambiente eines Strandhauses",
     ort: "Bahia de Kino",
     land: "Mexico",
-    jahr: undefined,
+    jahr: 2018,
     flaeche: "6.500 m² Areal",
     produkte: ["TRU Self-Leveling"],
     ausgangssituation:
@@ -2941,7 +2984,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Dekorativer Sichtestrich TRUazzo im Foyer der Hotelanlage",
     ort: "Świnice",
     land: "Polen",
-    jahr: undefined,
+    jahr: 2020,
     flaeche: "200 m²",
     produkte: ["TRU PC"],
     ausgangssituation:
@@ -2983,7 +3026,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Individuell gestaltbarer Designboden fuer den Monobrand Store",
     ort: "Wien",
     land: "Österreich",
-    jahr: undefined,
+    jahr: 2021,
     flaeche: "50 m²",
     produkte: ["TRU Self-Leveling"],
     ausgangssituation:
@@ -3023,7 +3066,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Verschleißfester GRANIDUR Designboden für eine hochfrequentierte U-Bahn-Station",
     ort: "Köln",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2011,
     flaeche: "rd. 4.800 m²",
     produkte: ["GRANIDUR", "KORODUR VS 0/5"],
     ausgangssituation:
@@ -3065,7 +3108,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Selbstverlaufender Designboden in geschliffener Betonoptik fuer ein einzigartiges Store-Ambiente",
     ort: "Wisconsin",
     land: "USA",
-    jahr: undefined,
+    jahr: 2016,
     produkte: ["TRU PC", "KORODUR TXPK"],
     ausgangssituation:
       "Fuer den neuen Under Armour Store in Wisconsin sollte ein einzigartiger, hochwertiger Bodenbelag eingebaut werden, der zur innovativen Markenwelt des Sportbekleidungsherstellers passt.",
@@ -3105,7 +3148,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Designboden im Farbton Anthrazit für ein repräsentatives Foyer",
     ort: "Amberg",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2009,
     flaeche: "rd. 400 m²",
     produkte: ["KORODUR COPETTI FLOOR KCF", "KOROCLEAN"],
     ausgangssituation:
@@ -3394,7 +3437,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Hochverschleißfeste Betonpflastersteine mit KORODUR Hartstoff für höchste Belastungen",
     ort: "Rheda-Wiedenbrück",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2011,
     flaeche: "2.000 m²",
     produkte: ["KORODUR 0/4"],
     ausgangssituation:
@@ -3515,7 +3558,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Hochbelastbarer Industrieboden für schwerstes Caterpillar-Gerät",
     ort: "Abu Dhabi",
     land: "Vereinigte Arabische Emirate",
-    jahr: undefined,
+    jahr: 2010,
     flaeche: "1.500 m²",
     produkte: ["NEODUR HE 65"],
     ausgangssituation:
@@ -3595,7 +3638,7 @@ export const referenzen: Referenz[] = [
     untertitel: "KORODUR-Hartstoffschicht für hohen Publikumsverkehr und Palettenverkehr im Baumarkt",
     ort: "Brünn",
     land: "Tschechien",
-    jahr: undefined,
+    jahr: 1999,
     flaeche: "5.600 m²",
     produkte: ["KORODUR 0/4"],
     ausgangssituation:
@@ -3764,7 +3807,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Heller, hochbelastbarer Hartstoffboden fuer das Mercedes-Benz-Ersatzteillager in China",
     ort: "Guangzhou",
     land: "China",
-    jahr: undefined,
+    jahr: 2014,
     flaeche: "36.000 m²",
     produkte: ["NEODUR HE 65"],
     ausgangssituation:
@@ -3847,7 +3890,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Sichtestrich mit Industriebodencharakter für das Industrial-Chic-Design der Hotelfoyers",
     ort: "Eschborn, Ludwigshafen, Frankfurt am Main, Berlin",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2017,
     flaeche: "400 m² bis 1.200 m²",
     produkte: ["NEODUR HE 3"],
     ausgangssituation:
@@ -4094,7 +4137,7 @@ export const referenzen: Referenz[] = [
     untertitel: "24.000 m² hochverschleißfester Hartstoffindustrieboden für dauerhaften Produktionsfluss",
     ort: "Minden",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2014,
     flaeche: "24.000 m²",
     produkte: ["NEODUR HE 65"],
     ausgangssituation:
@@ -4411,7 +4454,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Neues Gefälle für freien Wasserablauf — Tankstelle nach 4 Stunden wieder freigegeben",
     ort: "Schneeberg",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2016,
     produkte: ["Rapid Set MORTAR MIX", "Rapid Set CONCRETE PHARMACY"],
     ausgangssituation:
       "Vor dem Sockel einer Zapfsäule war das Gefälle zu gering ausgebildet. Regen- und Tauwasser konnten nicht ausreichend ablaufen und stauten sich im Tankstellenbereich.",
@@ -4448,7 +4491,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Schachtkopf saniert und nach 1–2 Stunden wieder verkehrsfrei gegeben",
     ort: "München",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2013,
     produkte: ["Rapid Set MORTAR MIX"],
     ausgangssituation:
       "Im Schlosspark des Schlosses Nymphenburg mussten nach dem langen Winter erneut Kanalarbeiten an einem Abwasserkanal durchgeführt werden. Für das Heben und Montieren der neuen Schachtringe und den exakten Höhenausgleich wurde ein Spezialmörtel gesucht, der standfest, hoch belastbar, schwundneutral und schnellerhärtend ist.",
@@ -4488,7 +4531,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Schnellreparaturmörtel als gestaltbare Betonarbeitsplatte mit purem Betoncharakter",
     ort: "Berlin-Moabit",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2016,
     produkte: ["Rapid Set MORTAR MIX"],
     ausgangssituation:
       "Für ein Loft in Berlin-Moabit sollte eine Küchenarbeitsplatte mit purem, ungeschliffenem Betoncharakter entstehen. Rapid Set MORTAR MIX kam dabei nicht als Reparaturmörtel, sondern als gießbares Gestaltungsmaterial in einer Schalung zum Einsatz.",
@@ -4528,7 +4571,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Maroder Fliesenboden in fünf Tagen erneuert – Belegreife nach zwei Stunden",
     ort: "Leinfelden-Echterdingen",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2019,
     produkte: ["Rapid Set MORTAR MIX", "KOROMINERAL Li+"],
     ausgangssituation:
       "Der Fliesenboden der Restaurantküche war durch permanente Belastung mit Feuchtigkeit, Reinigungsmitteln und mechanischer Beanspruchung so marode, dass er komplett erneuert werden musste. Notwendige Reparaturarbeiten waren im laufenden Betrieb immer wieder verschoben worden.",
@@ -4646,7 +4689,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Glatte, geruchsneutrale Futtertischfläche mit CO2-reduziertem Rapid Set Schnellreparaturmörtel",
     ort: "Beeskow",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2019,
     flaeche: "ca. 70 m²",
     produkte: ["Rapid Set MORTAR MIX", "Rapid Set CONCRETE MIX"],
     ausgangssituation:
