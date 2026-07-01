@@ -3,8 +3,9 @@
 import { Tooltip as TooltipPrimitive } from "radix-ui";
 import { getNormBeschreibung } from "@/data/normenGlossar";
 
-const CHIP_CLASS = "text-[13px] text-navy px-4 py-2 rounded-[8px] bg-white";
-const CHIP_STYLE = { fontWeight: 600, boxShadow: "0 2px 8px rgba(0,45,89,0.06)" } as const;
+// Badge-Stil analog der Kopf-Badges (#408, F4): gefüllt statt weiße Karte.
+const CHIP_CLASS = "text-[12.5px] text-navy px-3 py-1.5 rounded-[6px] bg-[var(--bullet-bg)]";
+const CHIP_STYLE = { fontWeight: 600 } as const;
 
 /**
  * Normen-Chips mit Glossar-Tooltip (#97). Normen mit SoT-Glossar-Eintrag
