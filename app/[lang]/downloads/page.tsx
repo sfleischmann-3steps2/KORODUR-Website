@@ -18,7 +18,7 @@ type Params = Promise<{ lang: string }>;
 
 const BEREICH_ORDER = [
   "industrieboden",
-  "rapid-set",
+  "betonsanierung",
   "infrastruktur",
   "microtop",
   "spezialmoertel",

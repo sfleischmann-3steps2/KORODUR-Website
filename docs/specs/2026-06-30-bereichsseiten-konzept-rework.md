@@ -106,9 +106,24 @@ Jede Gruppe als Karte mit Intro + Produkt-Chips (Anker → Portfolio). Gruppen-I
 
 **Trust (entschieden):** „Über 2.500 Handwerksbetriebe" + Lizenzpartner-seit-2012 ist Rapid-Set-spezifisch → wandert als anonymer **Track-1-Beleg** in die Rapid-Set-Sektion. Der **Bereichs-Trust** (Dach) stellt auf KORODUR-Historie („Seit 1936") + Normen (EN 1504-3, EPD, ISO 9001, DGNB, Sulfat-/CDF-Prüfung).
 
+## 5b. Rapid Set als eigene Marken-Seite (Nachtrag Steffi 2026-06-30)
+
+**Strategische Korrektur:** Rapid Set ist eine **Marke/Produktlinie**, kein Use-Case-Bereich. Es bekommt eine **eigene Seite**, auf die die Betonsanierungs-Seite per „Mehr erfahren" verlinkt. NEODUR braucht das nicht.
+
+**SEO-getriebene Slug-Strategie** (Steffi: „Domain analog zur bestehenden"). Beleg aus dem korodur.de-Scrape (`docs/content-quellen/scrape-extrakt/00-bereiche-hauptseiten.md`): die Live-URL `/bereiche/rapid-set/` war schon immer die **Rapid-Set-Seite**; ein `/bereiche/betonsanierung/` gab es nie. Also gehört die Link-Equity von `/bereiche/rapid-set/` zu Rapid Set:
+
+- **`/bereiche/rapid-set/`** → Rapid-Set-**Marken-Seite** (volle Markengeschichte, alte Seite wiederbelebt). SEO-Erhalt der bestehenden URL.
+- **`/bereiche/betonsanierung/`** → Sammelbereich Betonsanierung (die Hybrid-Seite zog auf den neuen Slug um). Neue URL, kein SEO-Verlust (Relaunch noch nicht live).
+- Betonsanierungs-**Track 1** ist zum Teaser kondensiert (Header + 3 Vorteile + „Mehr erfahren"); die Tiefe (Leitmotiv/BCSA-Technologie/Trust) lebt auf der Marken-Seite → keine Doppelung.
+
+**Umsetzung:**
+- Bereich-Slug `rapid-set`→`betonsanierung` durchgezogen: `data/produkte.ts` (16 bereich/zusatzBereiche-Refs), `bereiche.ts` (Eintrag + PORTFOLIO_SLUGS + Home-Grid), `types.ts` (Produktbereich-Union +`betonsanierung`), `fachberater.ts` (Alias `betonsanierung→rapid-set`, Berater-Daten unverändert), `referenzProduktbereich.ts` (Label+Farbe), Routing (`page.tsx` Registry/Projektarten/Cross-Sell), `produkte`/`downloads`-Filter, `PortfolioGrid`, `bereichIcons`, `TopNav`, 5 Dicts (`betonsanierung_*` neu, `rapid-set_name`→„Rapid Set").
+- Neue Marken-Seite: `data/rapidSetContent.ts` (wiederbelebt) + `components/RapidSetMarke.tsx`. Produktauswahl kuratiert über `RAPID_SET_PRODUKT_IDS` (8 Rapid-Set-Produkte), NICHT über das bereich-Feld. Registry-Eintrag `rapid-set`→RapidSetMarke.
+- **Bekannte i18n-Lücke:** EN/FR/PL/ES der Marken-Seite (`/xx/bereiche/rapid-set/`) zeigen das generische Template mit leerer Produktliste (Produkte hängen am Bereich `betonsanierung`, nicht `rapid-set`). DE ist vollständig. → #181.
+
 ## 6. Offene Punkte / Follow-up
 
-- **Faktencheck (Technik, aus Vorgänger-Spec):** CO₂ ~30 % und Lebensdauer bis 4× (Broschüren-Werte, `faktencheck`-Flag) noch nicht final freigegeben.
+- ~~**Faktencheck (Technik):** CO₂ ~30 %, Lebensdauer bis 4×, Brandklasse A1 noch nicht freigegeben.~~ **Freigegeben (Steffi 2026-06-30)** → `faktencheck`-Flags entfernt; das optionale Feld bleibt als Mechanismus erhalten.
 - **Track-2-Werte:** Kennwerte/Normen je NEODUR-Produkt aus Quellen, nicht erfinden; PDB/Technik-Termin liefert verbindliche Norm-je-Kennwert (vgl. Varianten-PDP).
 - **Trust-Framing im Hybrid** (s. o.).
 - **i18n (#181):** EN/FR/PL/ES bleiben auf generischem Template bis Editorial-Übersetzungsrunde.

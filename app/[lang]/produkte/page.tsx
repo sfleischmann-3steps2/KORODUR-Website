@@ -61,7 +61,7 @@ export default async function ProduktePage({
   // das eine Katalog-Produktart trägt (sonst liefe der Produktart-Filter leer).
   const BEREICH_FILTER_ORDER = [
     "industrieboden",
-    "rapid-set",
+    "betonsanierung",
     "infrastruktur",
     "microtop",
     "spezialmoertel",

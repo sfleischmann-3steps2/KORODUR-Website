@@ -17,6 +17,7 @@ export const BEREICH_ICONS: Record<string, LucideIcon> = {
   sichtestrich: Sparkles,
   microtop: Droplets,
   "rapid-set": Timer,
+  betonsanierung: Timer,
   spezialmoertel: Package,
   katzenstreu: PawPrint,
   infrastruktur: Route,
