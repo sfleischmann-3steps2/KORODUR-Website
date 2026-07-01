@@ -895,7 +895,7 @@ export const referenzen: Referenz[] = [
     vorteile: [],
     bild: "/images/referenzen/_placeholder.jpg",
     bildAlt: "Sanierung LKW-Zufahrt Logistikzentrum Spedition Brummer, Sankt Marienkirchen (Österreich) (Bild folgt)",
-    sanierungsart: "grossflaechig",
+    sanierungsart: "punktuell",
     einsatzbereiche: ["lager-logistik", "infrastruktur-zufahrten"],
     zeitDringlichkeit: "schnell",
     zusatzfunktionen: ["chemikalienbestaendigkeit", "tausalzbestaendigkeit"],
