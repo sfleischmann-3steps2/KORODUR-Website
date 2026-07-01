@@ -11,6 +11,8 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Schwerlast ===
   {
     id: "antolin-wochenend-sanierung",
+    jahr: 2018,
+    releaseStatus: "oeffentlich",
     slug: "antolin-wochenend-sanierung",
     projekttyp: "sanierung",
     titel: "Sanierung übers Wochenende",
@@ -43,6 +45,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "kleemann-produktionshalle",
+    jahr: 2010,
+    releaseStatus: "oeffentlich",
     slug: "kleemann-produktionshalle",
     projekttyp: "sanierung",
     titel: "Produktionshalle Kleemann",
@@ -74,6 +78,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "monheim-produktionsflaeche",
+    jahr: 2021,
+    releaseStatus: "oeffentlich",
     slug: "monheim-produktionsflaeche",
     projekttyp: "sanierung",
     titel: "Produktionsfläche Monheim",
@@ -106,6 +112,8 @@ export const referenzen: Referenz[] = [
 
   {
     id: "weag-entsorgungsbetrieb",
+    jahr: 2020,
+    releaseStatus: "oeffentlich",
     slug: "weag-entsorgungsbetrieb",
     projekttyp: "sanierung",
     titel: "WEAG Entsorgungsbetrieb",
@@ -139,6 +147,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "wochenend-sanierung-werkstatt",
+    jahr: 2022,
+    releaseStatus: "oeffentlich",
     slug: "wochenend-sanierung-werkstatt",
     projekttyp: "sanierung",
     titel: "Wochenend-Sanierung Werkstatt",
@@ -171,6 +181,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "strandkorbhalle-sylt",
+    jahr: 2015,
+    releaseStatus: "oeffentlich",
     slug: "strandkorbhalle-sylt",
     projekttyp: "sanierung",
     titel: "Strandkorbhalle Sylt",
@@ -203,6 +215,9 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "loosen-werkzeug-klausen",
+    flaeche: "70 m²",
+    jahr: 2021,
+    releaseStatus: "oeffentlich",
     slug: "loosen-werkzeug-klausen",
     projekttyp: "sanierung",
     titel: "Sanierung im laufenden Betrieb – Loosen",
@@ -235,6 +250,8 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Dünnschicht ===
   {
     id: "guben-produktionshalle",
+    jahr: 2020,
+    releaseStatus: "oeffentlich",
     slug: "guben-produktionshalle",
     projekttyp: "sanierung",
     titel: "Produktionshalle Guben",
@@ -267,6 +284,9 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "nike-store-polen",
+    flaeche: "ca. 300 m²",
+    jahr: 2018,
+    releaseStatus: "oeffentlich",
     slug: "nike-store-polen",
     projekttyp: "sanierung",
     titel: "Nike Store Polen",
@@ -298,6 +318,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "obstplantage-ibbenbueren",
+    releaseStatus: "freigabe-offen",
     slug: "obstplantage-ibbenbueren",
     projekttyp: "sanierung",
     titel: "Obstplantage Ibbenbüren",
@@ -329,6 +350,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "sanierung-einer-sanierung",
+    releaseStatus: "freigabe-offen",
     slug: "sanierung-einer-sanierung",
     projekttyp: "sanierung",
     titel: "Sanierung einer Sanierung",
@@ -360,6 +382,8 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBODEN – Schnelle Reparaturen ===
   {
     id: "dhl-ueberadebruecken",
+    jahr: 2017,
+    releaseStatus: "oeffentlich",
     slug: "dhl-ueberadebruecken",
     projekttyp: "sanierung",
     titel: "DHL Überladebrücken",
@@ -389,6 +413,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "lkw-waschstrasse",
+    releaseStatus: "freigabe-offen",
     slug: "lkw-waschstrasse",
     projekttyp: "sanierung",
     titel: "LKW Waschstraße",
@@ -421,6 +446,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "helipad-sanierung-polen",
+    releaseStatus: "freigabe-offen",
     slug: "helipad-sanierung-polen",
     projekttyp: "sanierung",
     titel: "Helipad Sanierung Polen",
@@ -454,6 +480,8 @@ export const referenzen: Referenz[] = [
   // === INDUSTRIEBAU ===
   {
     id: "fugensanierung-lyreco",
+    jahr: 2016,
+    releaseStatus: "oeffentlich",
     slug: "fugensanierung-lyreco",
     projekttyp: "sanierung",
     titel: "Fugensanierung Lyreco",
@@ -486,6 +514,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "treppenstufen-sanierung",
+    jahr: 2016,
+    releaseStatus: "oeffentlich",
     slug: "treppenstufen-sanierung",
     projekttyp: "sanierung",
     titel: "Treppenstufen Sanierung",
@@ -516,6 +546,8 @@ export const referenzen: Referenz[] = [
 
   {
     id: "sinusfugen-sanierung",
+    jahr: 2021,
+    releaseStatus: "oeffentlich",
     slug: "sinusfugen-sanierung",
     projekttyp: "sanierung",
     titel: "Sinusfugen Sanierung",
@@ -545,6 +577,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "trennfugen-bohnenkamp",
+    jahr: 2019,
+    releaseStatus: "oeffentlich",
     slug: "trennfugen-bohnenkamp",
     projekttyp: "sanierung",
     titel: "Trennfugen Sanierung Bohnenkamp",
@@ -576,6 +610,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "absenksteine-tankstelle",
+    jahr: 2021,
+    releaseStatus: "oeffentlich",
     slug: "absenksteine-tankstelle",
     projekttyp: "sanierung",
     titel: "Absenksteine schnell verlegt",
@@ -606,6 +642,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "lkw-einstellplatz-berlin",
+    jahr: 2018,
+    releaseStatus: "oeffentlich",
     slug: "lkw-einstellplatz-berlin",
     projekttyp: "sanierung",
     titel: "LKW Einstellplatz Berlin",
@@ -638,6 +676,8 @@ export const referenzen: Referenz[] = [
   // === INFRASTRUKTUR – Verkehr ===
   {
     id: "hafen-catania",
+    jahr: 2024,
+    releaseStatus: "oeffentlich",
     slug: "hafen-catania",
     projekttyp: "sanierung",
     titel: "Hafen Catania",
@@ -670,6 +710,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "parkhaus-flughafen-zuerich",
+    releaseStatus: "freigabe-offen",
     slug: "parkhaus-flughafen-zuerich",
     projekttyp: "sanierung",
     titel: "Parkhaus Flughafen Zürich",
@@ -703,6 +744,7 @@ export const referenzen: Referenz[] = [
 
   {
     id: "theodor-heuss-bruecke",
+    releaseStatus: "freigabe-offen",
     slug: "theodor-heuss-bruecke",
     projekttyp: "sanierung",
     titel: "Theodor-Heuss-Brücke",
@@ -734,6 +776,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "autohaus-versmold",
+    jahr: 2024,
+    releaseStatus: "oeffentlich",
     slug: "autohaus-versmold",
     projekttyp: "sanierung",
     titel: "Autohaus Versmold",
@@ -765,6 +809,8 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "hubschrauber-landeplatz-finnland",
+    jahr: 2018,
+    releaseStatus: "oeffentlich",
     slug: "hubschrauber-landeplatz-finnland",
     projekttyp: "sanierung",
     titel: "Hubschrauber-Landeplatz Finnland",
@@ -794,6 +840,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "lkw-umfahrt-darmstadt",
+    releaseStatus: "freigabe-offen",
     slug: "lkw-umfahrt-darmstadt",
     projekttyp: "sanierung",
     titel: "LKW-Umfahrt Darmstadt",
@@ -831,6 +878,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/34a670e19e1a810d8eb9f2e07a01e391
     id: "sanierung-lkw-zufahrt-logistikzentrum-sankt",
+    releaseStatus: "freigabe-offen",
     slug: "sanierung-lkw-zufahrt-logistikzentrum-sankt",
     projekttyp: "sanierung",
     titel: "Sanierung LKW-Zufahrt Logistikzentrum Spedition Brummer, Sankt Marienkirchen (Österreich)",
@@ -855,6 +903,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81a18e0effd937d2d879
     id: "texaco-tankflache-arnheim",
+    jahr: 2018,
+    releaseStatus: "oeffentlich",
     slug: "texaco-tankflache-arnheim",
     projekttyp: "sanierung",
     titel: "TEXACO Tankfläche, Arnheim (2018)",
@@ -878,6 +928,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8131b141f84d83456258
     id: "naturex-burgdorf",
+    jahr: 2013,
+    releaseStatus: "oeffentlich",
     slug: "naturex-burgdorf",
     projekttyp: "sanierung",
     titel: "Naturex, Burgdorf (2013)",
@@ -902,6 +954,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81259c78d8d7cf5818f3
     id: "torschwelle-lagerhalle",
+    jahr: 2017,
+    releaseStatus: "oeffentlich",
     slug: "torschwelle-lagerhalle",
     projekttyp: "sanierung",
     titel: "Torschwelle Lagerhalle (unbekannter Ort) (2017)",
@@ -925,6 +979,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8166ba97c81eb08e5b39
     id: "wellpappenfabrik-gross-versmold",
+    jahr: 2013,
+    releaseStatus: "oeffentlich",
     slug: "wellpappenfabrik-gross-versmold",
     projekttyp: "sanierung",
     titel: "Wellpappenfabrik Gross, Versmold (2013)",
@@ -948,6 +1004,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8180812bd193e55102c8
     id: "korodur-demo-bochum",
+    releaseStatus: "freigabe-offen",
     slug: "korodur-demo-bochum",
     projekttyp: "sanierung",
     titel: "KORODUR Demo, Bochum-Wattenscheid (2012)",
@@ -971,6 +1028,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a8110a72fe9a31fb80151
     id: "kreisverkehr-goppingen",
+    jahr: 2021,
+    releaseStatus: "oeffentlich",
     slug: "kreisverkehr-goppingen",
     projekttyp: "sanierung",
     titel: "Kreisverkehr, Göppingen (2021)",
@@ -994,6 +1053,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81a593ecc8eb30ccf827
     id: "barmenia-parkhaus-wuppertal",
+    jahr: 2015,
+    releaseStatus: "oeffentlich",
     slug: "barmenia-parkhaus-wuppertal",
     projekttyp: "sanierung",
     titel: "Barmenia Parkhaus, Wuppertal (2015)",
@@ -1017,6 +1078,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a813c927cd09d15918039
     id: "john-lewis-lager-stevenage",
+    jahr: 2013,
+    releaseStatus: "oeffentlich",
     slug: "john-lewis-lager-stevenage",
     projekttyp: "sanierung",
     titel: "John Lewis Lager, Stevenage (2013)",
@@ -1041,6 +1104,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81af9ce3d9f5b97662bf
     id: "fraport-frankfurt",
+    jahr: 2012,
+    releaseStatus: "oeffentlich",
     slug: "fraport-frankfurt",
     projekttyp: "sanierung",
     titel: "Fraport, Frankfurt/Main (2012)",
@@ -1065,6 +1130,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a816ba98fe5dd42fd8c25
     id: "sncf-bordeaux",
+    jahr: 2016,
+    releaseStatus: "oeffentlich",
     slug: "sncf-bordeaux",
     projekttyp: "sanierung",
     titel: "SNCF, Bordeaux (2016)",
@@ -1088,6 +1155,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e9670e19e1a81d49377cd41cb2324ef
     id: "parkhaus-freiburger-munster-freiburg",
+    jahr: 2012,
+    releaseStatus: "oeffentlich",
     slug: "parkhaus-freiburger-munster-freiburg",
     projekttyp: "sanierung",
     titel: "Parkhaus Freiburger Münster, Freiburg",
@@ -1112,6 +1181,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8107894ed05098f58578
     id: "olympiastadion-berlin",
+    jahr: 2005,
+    releaseStatus: "oeffentlich",
     slug: "olympiastadion-berlin",
     projekttyp: "sanierung",
     titel: "Olympiastadion Berlin (2023)",
@@ -1136,6 +1207,7 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a811589bcf83314237222
     id: "wirtgen-produktionshallen-weltweit",
+    releaseStatus: "oeffentlich",
     slug: "wirtgen-produktionshallen-weltweit",
     projekttyp: "sanierung",
     titel: "WIRTGEN Produktionshallen, weltweit",
@@ -1160,6 +1232,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81768522e12227517411
     id: "fh-lichtschacht-nurnberg",
+    jahr: 2012,
+    releaseStatus: "oeffentlich",
     slug: "fh-lichtschacht-nurnberg",
     projekttyp: "sanierung",
     titel: "FH Lichtschacht, Nürnberg (2012)",
@@ -1183,6 +1257,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81cf9ab2ea684bc90b4c
     id: "klaranlage-nako",
+    jahr: 2014,
+    releaseStatus: "oeffentlich",
     slug: "klaranlage-nako",
     projekttyp: "sanierung",
     titel: "Kläranlage, Nakło (2014)",
@@ -1207,6 +1283,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8140a6cee026aaf876ff
     id: "bruckensanierung-amberg",
+    jahr: 2012,
+    releaseStatus: "oeffentlich",
     slug: "bruckensanierung-amberg",
     projekttyp: "sanierung",
     titel: "Brückensanierung, Amberg (2012)",
@@ -1230,6 +1308,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a817ba2fadc78e865ab24
     id: "parkplatzsanierung-metzingen",
+    jahr: 2017,
+    releaseStatus: "oeffentlich",
     slug: "parkplatzsanierung-metzingen",
     projekttyp: "sanierung",
     titel: "Parkplatzsanierung, Metzingen (2017)",
@@ -1253,6 +1333,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a816aaeb0e9b81f27d87f
     id: "schachtregulierung-fahrbahn-nittenau",
+    jahr: 2019,
+    releaseStatus: "oeffentlich",
     slug: "schachtregulierung-fahrbahn-nittenau",
     projekttyp: "sanierung",
     titel: "Schachtregulierung Fahrbahn, Nittenau (2019)",
@@ -1276,6 +1358,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81a8a68ae079fb0b6103
     id: "treppensanierung-gehweg-esslingen",
+    jahr: 2015,
+    releaseStatus: "oeffentlich",
     slug: "treppensanierung-gehweg-esslingen",
     projekttyp: "sanierung",
     titel: "Treppensanierung Gehweg, Esslingen (2015)",
@@ -1299,6 +1383,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a815aa2a5e1893c5fb99b
     id: "burger-king-munster",
+    jahr: 2021,
+    releaseStatus: "oeffentlich",
     slug: "burger-king-munster",
     projekttyp: "sanierung",
     titel: "Burger King, Münster-Hiltrup (2021)",
@@ -1322,6 +1408,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a81618631db99661ecf9b
     id: "kraftwerk-bergamo",
+    jahr: 2011,
+    releaseStatus: "oeffentlich",
     slug: "kraftwerk-bergamo",
     projekttyp: "sanierung",
     titel: "Kraftwerk, Bergamo (2011)",
@@ -1346,6 +1434,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8198a3c7e38a9af81bcb
     id: "fahrbahnsanierung-wien",
+    jahr: 2020,
+    releaseStatus: "oeffentlich",
     slug: "fahrbahnsanierung-wien",
     projekttyp: "sanierung",
     titel: "Fahrbahnsanierung, Wien (2020)",
@@ -1370,6 +1460,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a811da7ddf459b49a543e
     id: "oelie-saur-saint",
+    jahr: 2024,
+    releaseStatus: "oeffentlich",
     slug: "oelie-saur-saint",
     projekttyp: "sanierung",
     titel: "Oélie/Saur, Saint-Étienne (2024)",
@@ -1392,6 +1484,8 @@ export const referenzen: Referenz[] = [
   {
     // notion: https://www.notion.so/2e8670e19e1a8130a61afc2d883ff34c
     id: "decathlon-dortmund",
+    jahr: 2023,
+    releaseStatus: "oeffentlich",
     slug: "decathlon-dortmund",
     projekttyp: "sanierung",
     titel: "Decathlon, Dortmund-Aplerbeck (2023)",
@@ -1470,6 +1564,7 @@ export const referenzen: Referenz[] = [
   // docs/reviews/referenz-review.md §56, App-Texte V1 aus Git-Historie 92522ba^) ===
   {
     id: "trinkwasserbehaelter-haidberg",
+    releaseStatus: "oeffentlich",
     slug: "trinkwasserbehaelter-haidberg",
     projekttyp: "sanierung",
     titel: "Trinkwasser-Hochbehälter Haidberg",
@@ -1505,6 +1600,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "trinkwasserbehaelter-bad-nauheim",
+    releaseStatus: "oeffentlich",
     slug: "trinkwasserbehaelter-bad-nauheim",
     projekttyp: "sanierung",
     titel: "Trinkwasserbehälter Bad Nauheim",
@@ -1539,6 +1635,7 @@ export const referenzen: Referenz[] = [
   },
   {
     id: "trinkwasserturm-budapest",
+    releaseStatus: "oeffentlich",
     slug: "trinkwasserturm-budapest",
     projekttyp: "sanierung",
     titel: "Trinkwasserturm Budapest",
@@ -1896,7 +1993,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Dekorativer KORODUR-Designboden für eine gläserne Schokoladen-Manufaktur",
     ort: "Schwarzach und Wertheim",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2010,
     flaeche: "400 m² und 2.000 m²",
     produkte: ["KORODUR COPETTI FLOOR KCF", "KOROCLEAN"],
     ausgangssituation:
@@ -2016,7 +2113,7 @@ export const referenzen: Referenz[] = [
     untertitel: "TRUazzo Sichtestrich in Terrazzooptik fuer das neue Besucherzentrum",
     ort: "Humpolec",
     land: "Tschechien",
-    jahr: undefined,
+    jahr: 2021,
     flaeche: "ca. 500 m²",
     produkte: ["TRU PC"],
     ausgangssituation:
@@ -2058,7 +2155,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Selbstverlaufender Designboden mit Schmuckkörnung für das Foyer eines Luxus-Modehauses",
     ort: "München",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2008,
     flaeche: "500 m²",
     produkte: ["TRU Self-Leveling"],
     ausgangssituation:
@@ -2221,7 +2318,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Geschliffener KORODUR-Hartstoffestrich in Anthrazit als repräsentativer Foyerboden",
     ort: "Schloss Holte-Stukenbrock",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2007,
     flaeche: "ca. 100 m²",
     produkte: ["NEODUR HE 65"],
     ausgangssituation:
@@ -2348,7 +2445,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Zeitlos-eleganter, geschliffener Sichtestrich für ein hochmodernes Firmengelände",
     ort: "Wetzlar",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2014,
     flaeche: "3.000 m²",
     produkte: ["GRANIDUR BIANCO/NERO"],
     ausgangssituation:
@@ -2389,7 +2486,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Mineralischer Designboden für das Empfangsgebäude einer Architektur-Ikone",
     ort: "Datteln",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2009,
     flaeche: "170 m²",
     produkte: ["KORODUR COPETTI FLOOR KCF"],
     ausgangssituation:
@@ -2642,7 +2739,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Dekorativer GRANIDUR NERO-Designboden für einen historischen Gastronomie-Treffpunkt",
     ort: "Mülligen",
     land: "Schweiz",
-    jahr: undefined,
+    jahr: 2011,
     flaeche: "190 m²",
     produkte: ["GRANIDUR BIANCO/NERO"],
     ausgangssituation:
@@ -2847,7 +2944,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Mineralischer Designboden im Betonambiente eines Strandhauses",
     ort: "Bahia de Kino",
     land: "Mexico",
-    jahr: undefined,
+    jahr: 2018,
     flaeche: "6.500 m² Areal",
     produkte: ["TRU Self-Leveling"],
     ausgangssituation:
@@ -2887,7 +2984,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Dekorativer Sichtestrich TRUazzo im Foyer der Hotelanlage",
     ort: "Świnice",
     land: "Polen",
-    jahr: undefined,
+    jahr: 2020,
     flaeche: "200 m²",
     produkte: ["TRU PC"],
     ausgangssituation:
@@ -2929,7 +3026,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Individuell gestaltbarer Designboden fuer den Monobrand Store",
     ort: "Wien",
     land: "Österreich",
-    jahr: undefined,
+    jahr: 2021,
     flaeche: "50 m²",
     produkte: ["TRU Self-Leveling"],
     ausgangssituation:
@@ -2969,7 +3066,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Verschleißfester GRANIDUR Designboden für eine hochfrequentierte U-Bahn-Station",
     ort: "Köln",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2011,
     flaeche: "rd. 4.800 m²",
     produkte: ["GRANIDUR", "KORODUR VS 0/5"],
     ausgangssituation:
@@ -3011,7 +3108,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Selbstverlaufender Designboden in geschliffener Betonoptik fuer ein einzigartiges Store-Ambiente",
     ort: "Wisconsin",
     land: "USA",
-    jahr: undefined,
+    jahr: 2016,
     produkte: ["TRU PC", "KORODUR TXPK"],
     ausgangssituation:
       "Fuer den neuen Under Armour Store in Wisconsin sollte ein einzigartiger, hochwertiger Bodenbelag eingebaut werden, der zur innovativen Markenwelt des Sportbekleidungsherstellers passt.",
@@ -3051,7 +3148,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Designboden im Farbton Anthrazit für ein repräsentatives Foyer",
     ort: "Amberg",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2009,
     flaeche: "rd. 400 m²",
     produkte: ["KORODUR COPETTI FLOOR KCF", "KOROCLEAN"],
     ausgangssituation:
@@ -3340,7 +3437,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Hochverschleißfeste Betonpflastersteine mit KORODUR Hartstoff für höchste Belastungen",
     ort: "Rheda-Wiedenbrück",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2011,
     flaeche: "2.000 m²",
     produkte: ["KORODUR 0/4"],
     ausgangssituation:
@@ -3461,7 +3558,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Hochbelastbarer Industrieboden für schwerstes Caterpillar-Gerät",
     ort: "Abu Dhabi",
     land: "Vereinigte Arabische Emirate",
-    jahr: undefined,
+    jahr: 2010,
     flaeche: "1.500 m²",
     produkte: ["NEODUR HE 65"],
     ausgangssituation:
@@ -3541,7 +3638,7 @@ export const referenzen: Referenz[] = [
     untertitel: "KORODUR-Hartstoffschicht für hohen Publikumsverkehr und Palettenverkehr im Baumarkt",
     ort: "Brünn",
     land: "Tschechien",
-    jahr: undefined,
+    jahr: 1999,
     flaeche: "5.600 m²",
     produkte: ["KORODUR 0/4"],
     ausgangssituation:
@@ -3710,7 +3807,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Heller, hochbelastbarer Hartstoffboden fuer das Mercedes-Benz-Ersatzteillager in China",
     ort: "Guangzhou",
     land: "China",
-    jahr: undefined,
+    jahr: 2014,
     flaeche: "36.000 m²",
     produkte: ["NEODUR HE 65"],
     ausgangssituation:
@@ -3793,7 +3890,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Sichtestrich mit Industriebodencharakter für das Industrial-Chic-Design der Hotelfoyers",
     ort: "Eschborn, Ludwigshafen, Frankfurt am Main, Berlin",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2017,
     flaeche: "400 m² bis 1.200 m²",
     produkte: ["NEODUR HE 3"],
     ausgangssituation:
@@ -4040,7 +4137,7 @@ export const referenzen: Referenz[] = [
     untertitel: "24.000 m² hochverschleißfester Hartstoffindustrieboden für dauerhaften Produktionsfluss",
     ort: "Minden",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2014,
     flaeche: "24.000 m²",
     produkte: ["NEODUR HE 65"],
     ausgangssituation:
@@ -4357,7 +4454,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Neues Gefälle für freien Wasserablauf — Tankstelle nach 4 Stunden wieder freigegeben",
     ort: "Schneeberg",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2016,
     produkte: ["Rapid Set MORTAR MIX", "Rapid Set CONCRETE PHARMACY"],
     ausgangssituation:
       "Vor dem Sockel einer Zapfsäule war das Gefälle zu gering ausgebildet. Regen- und Tauwasser konnten nicht ausreichend ablaufen und stauten sich im Tankstellenbereich.",
@@ -4394,7 +4491,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Schachtkopf saniert und nach 1–2 Stunden wieder verkehrsfrei gegeben",
     ort: "München",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2013,
     produkte: ["Rapid Set MORTAR MIX"],
     ausgangssituation:
       "Im Schlosspark des Schlosses Nymphenburg mussten nach dem langen Winter erneut Kanalarbeiten an einem Abwasserkanal durchgeführt werden. Für das Heben und Montieren der neuen Schachtringe und den exakten Höhenausgleich wurde ein Spezialmörtel gesucht, der standfest, hoch belastbar, schwundneutral und schnellerhärtend ist.",
@@ -4434,7 +4531,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Schnellreparaturmörtel als gestaltbare Betonarbeitsplatte mit purem Betoncharakter",
     ort: "Berlin-Moabit",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2016,
     produkte: ["Rapid Set MORTAR MIX"],
     ausgangssituation:
       "Für ein Loft in Berlin-Moabit sollte eine Küchenarbeitsplatte mit purem, ungeschliffenem Betoncharakter entstehen. Rapid Set MORTAR MIX kam dabei nicht als Reparaturmörtel, sondern als gießbares Gestaltungsmaterial in einer Schalung zum Einsatz.",
@@ -4474,7 +4571,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Maroder Fliesenboden in fünf Tagen erneuert – Belegreife nach zwei Stunden",
     ort: "Leinfelden-Echterdingen",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2019,
     produkte: ["Rapid Set MORTAR MIX", "KOROMINERAL Li+"],
     ausgangssituation:
       "Der Fliesenboden der Restaurantküche war durch permanente Belastung mit Feuchtigkeit, Reinigungsmitteln und mechanischer Beanspruchung so marode, dass er komplett erneuert werden musste. Notwendige Reparaturarbeiten waren im laufenden Betrieb immer wieder verschoben worden.",
@@ -4592,7 +4689,7 @@ export const referenzen: Referenz[] = [
     untertitel: "Glatte, geruchsneutrale Futtertischfläche mit CO2-reduziertem Rapid Set Schnellreparaturmörtel",
     ort: "Beeskow",
     land: "Deutschland",
-    jahr: undefined,
+    jahr: 2019,
     flaeche: "ca. 70 m²",
     produkte: ["Rapid Set MORTAR MIX", "Rapid Set CONCRETE MIX"],
     ausgangssituation:
@@ -4695,6 +4792,325 @@ export const referenzen: Referenz[] = [
     sanierungsart: "punktuell",
     einsatzbereiche: ["infrastruktur-zufahrten"],
     zeitDringlichkeit: "schnell",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "3d-gedrucktes-haus-in-paremoremo",
+    slug: "3d-gedrucktes-haus-in-paremoremo",
+    projekttyp: "neubau",
+    releaseStatus: "oeffentlich",
+    titel: "3D-gedrucktes Haus in Paremoremo",
+    untertitel: "Neuseelands erstes vollständig 3D-gedrucktes Wohnhaus mit Betonwandpaneelen",
+    ort: "Paremoremo",
+    land: "Neuseeland",
+    jahr: 2023,
+    flaeche: "252 m²",
+    produkte: [],
+    herausforderungen: [
+      "Premiere: erstes vollständig 3D-gedrucktes Wohnhaus Neuseelands",
+      "Einbindung des Baukörpers in die natürlichen Geländekonturen",
+      "252 m² Einfamilienhaus für eine vierköpfige Familie",
+    ],
+    loesung:
+      "Im Aucklander Vorort Paremoremo entstand das erste vollständig 3D-gedruckte Wohnhaus Neuseelands. Das 252 m² große Einfamilienhaus verfügt über 3D-gedruckte Betonwandpaneele und fügt sich in die natürlichen Konturen der ruhigen Umgebung ein.",
+    vorteile: [
+      "Erstes vollständig 3D-gedrucktes Wohnhaus Neuseelands",
+      "Betonwandpaneele direkt aus dem 3D-Druck",
+      "Harmonische Einbindung in die natürliche Umgebung",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "3D-gedrucktes Wohnhaus in Paremoremo, Neuseeland",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: ["industrie-produktion"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "baufachhaendler-linnenbecker-aussenlager-bad-oeynhausen",
+    slug: "baufachhaendler-linnenbecker-aussenlager-bad-oeynhausen",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "Baufachhändler Linnenbecker, Außenlager Bad Oeynhausen",
+    untertitel: "Probefläche mit ASPHALT REPAIR MIX unter Dauer-LKW- und Staplerverkehr",
+    ort: "Bad Oeynhausen",
+    land: "Deutschland",
+    jahr: 2022,
+    produkte: ["ASPHALT REPAIR MIX"],
+    herausforderungen: [
+      "Beschädigte Asphaltfläche mit Schlaglöchern und Rissen",
+      "Kontinuierlicher LKW- und Staplerverkehr im Außenlager",
+      "Hohe Dauerbelastung des Belags",
+    ],
+    loesung:
+      "Im Mai 2022 legten wir im ARM-Außenlager des Baufachhändlers Linnenbecker eine Probefläche mit ASPHALT REPAIR MIX an, einem zementgebundenen Schnellreparaturmörtel für beschädigte Asphaltflächen. Trotz Dauerbelastung durch LKW und Stapler bewies der Belag seine Robustheit und Haltbarkeit.",
+    vorteile: [
+      "Schnelle Aushärtung und hohe Belastbarkeit",
+      "Robuste, dauerhafte Instandsetzung von Asphaltschäden",
+      "Einfache Anwendung, auch in stark frequentierten Bereichen",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Probefläche mit ASPHALT REPAIR MIX im Außenlager Linnenbecker, Bad Oeynhausen",
+    sanierungsart: "punktuell",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "betriebszufahrt-lackiererei-schmidt-versmold",
+    slug: "betriebszufahrt-lackiererei-schmidt-versmold",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "Betriebszufahrt Lackiererei Schmidt, Versmold",
+    untertitel: "Asphaltsanierung einer stark befahrenen Zufahrt mit ASPHALT REPAIR MIX",
+    ort: "Versmold",
+    land: "Deutschland",
+    jahr: 2022,
+    produkte: ["ASPHALT REPAIR MIX"],
+    beteiligte: [
+      { role: "Verarbeiter", name: "Grothues & Solfrian Garten- und Landschaftsbau GmbH, Versmold" },
+    ],
+    herausforderungen: [
+      "Starke Belastung durch LKW- und PKW-Verkehr",
+      "Tragfähigkeit und Langlebigkeit der Zufahrt sicherstellen",
+      "Instandsetzung der täglich genutzten Betriebszufahrt",
+    ],
+    loesung:
+      "Im Mai 2022 sanierten wir die Betriebszufahrt der Lackiererei Schmidt mit ASPHALT REPAIR MIX. Insgesamt zwei Paletten wurden eingebaut, ausgeführt vom erfahrenen Gala-Bau Grothues & Solfrian aus Versmold.",
+    vorteile: [
+      "Hohe Belastbarkeit für täglichen LKW- und PKW-Verkehr",
+      "Einfache, effiziente Anwendung",
+      "Dauerhafte, wirtschaftliche Lösung",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Sanierte Betriebszufahrt der Lackiererei Schmidt in Versmold",
+    sanierungsart: "punktuell",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "farbiger-beton-fuer-feinbrennerei",
+    slug: "farbiger-beton-fuer-feinbrennerei",
+    projekttyp: "neubau",
+    releaseStatus: "oeffentlich",
+    titel: "Farbiger Beton für die Feinbrennerei Sasse",
+    untertitel: "Roter NEODUR HE 3 Industrieboden im Refugium der Feinbrennerei",
+    ort: "Schöppingen",
+    land: "Deutschland",
+    jahr: 2021,
+    produkte: ["NEODUR HE 3"],
+    beteiligte: [{ role: "Verarbeiter", name: "BD Bau GmbH" }],
+    herausforderungen: [
+      "Betonboden im Refugium, zugleich WU-Platte der Weißen Wanne",
+      "Regelmäßiger Umgang mit Flüssigkeit im Reifelager",
+      "Rote Einfärbung passend zum architektonischen Konzept",
+      "Verschleiß-, rutsch- und wasserfeste Oberfläche gefordert",
+    ],
+    loesung:
+      "Die BD Bau GmbH versah den Betonboden mit einem KORODUR-Industriebodensystem. Der mineralische Trockenbaustoff NEODUR HE 3 in Rot wurde mit dem Einstreuwagen gleichmäßig auf den getellerten Beton aufgebracht, danach gerieben und mit der Tellerglättmaschine geglättet.",
+    vorteile: [
+      "Verschleiß-, rutsch- und wasserfester Hallenboden",
+      "Rote Einfärbung passend zum ästhetischen Konzept",
+      "Warme Atmosphäre im Zusammenspiel mit den ockergelben Betonwänden",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Roter Industrieboden im Refugium der Feinbrennerei Sasse in Schöppingen",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: ["lebensmittel"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: ["rutschhemmung"],
+  },
+  {
+    id: "lagerflaeche-strassenbau-dieckmann-versmold",
+    slug: "lagerflaeche-strassenbau-dieckmann-versmold",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "Lagerfläche Straßenbau Dieckmann, Versmold",
+    untertitel: "Muster-Referenzsanierung einer Hoffläche unter LKW- und Baggerlast",
+    ort: "Versmold",
+    land: "Deutschland",
+    jahr: 2021,
+    produkte: ["ASPHALT REPAIR MIX"],
+    herausforderungen: [
+      "Maximale Belastung durch LKW und Bagger",
+      "Beständige Lösung für die stark befahrene Hoffläche",
+      "Fachgerechte Ausführung in Eigenleistung mit KORODUR-Assistenz",
+    ],
+    loesung:
+      "Am 19.07.2021 führten wir gemeinsam mit dem Team von Straßenbau Dieckmann eine Muster-Referenzsanierung der Hoffläche mit ASPHALT REPAIR MIX durch. Das Material ist speziell für stark befahrene Flächen entwickelt und hält schwerem Verkehr stand.",
+    vorteile: [
+      "Außergewöhnliche Beständigkeit gegenüber schwerem Verkehr",
+      "Effiziente Ausführung in Zusammenarbeit mit KORODUR",
+      "Hochwertige, langlebige Lösung",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Sanierte Lagerfläche bei Straßenbau Dieckmann in Versmold",
+    sanierungsart: "punktuell",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "lkw-ausfahrt-wueseke-baustoffwerke-gmbh",
+    slug: "lkw-ausfahrt-wueseke-baustoffwerke-gmbh",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "LKW-Ausfahrt Wüseke Baustoffwerke GmbH",
+    untertitel: "Schnelle Instandsetzung einer stark beanspruchten LKW-Ausfahrt mit minimaler Ausfallzeit",
+    ort: "Sassenberg-Füchtorf",
+    land: "Deutschland",
+    jahr: 2022,
+    produkte: ["ASPHALT REPAIR MIX"],
+    beteiligte: [{ role: "Verarbeiter", name: "Knappheide GmbH, Glandorf" }],
+    herausforderungen: [
+      "Stark beanspruchte LKW-Ausfahrt am KS-Werk",
+      "Hohe Widerstandsfähigkeit gegenüber schweren Fahrzeugen",
+      "Minimale Ausfallzeiten gefordert",
+    ],
+    loesung:
+      "Im Mai 2022 sanierten wir die LKW-Ausfahrt des KS-Werks Wüseke mit ASPHALT REPAIR MIX. Zwei Paletten wurden eingebaut, ausgeführt vom Tiefbauunternehmen Knappheide aus Glandorf. Dank schneller Aushärtung ging die Ausfahrt zügig wieder in Betrieb.",
+    vorteile: [
+      "Schnelle Aushärtung, minimale Ausfallzeiten",
+      "Hohe Belastbarkeit unter Schwerlastverkehr",
+      "Einfache Anwendung, nachhaltige Instandhaltung",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Sanierte LKW-Ausfahrt am Wüseke Baustoffwerk in Sassenberg",
+    sanierungsart: "punktuell",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "schnell",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "produktionsstaette-fiorini",
+    slug: "produktionsstaette-fiorini",
+    projekttyp: "neubau",
+    releaseStatus: "oeffentlich",
+    titel: "Neue Produktionsstätte Fiorini in Italien",
+    untertitel: "28.000 m² CO₂-reduzierter Hartstoffboden mit NEODUR HE 3 green",
+    ort: "Trecastelli (AN)",
+    land: "Italien",
+    jahr: 2025,
+    flaeche: "28.000 m²",
+    produkte: ["NEODUR HE 3 green"],
+    beteiligte: [
+      { role: "Bauherr", name: "Fiorini International" },
+      { role: "Verarbeiter", name: "ITS (Italien)" },
+    ],
+    herausforderungen: [
+      "Hohe mechanische Belastbarkeit: Gabelstaplerverkehr, schwere Produktionsmaschinen, intensive Logistik",
+      "Nachweisbare CO₂-Reduzierung für die angestrebte LEED-Zertifizierung",
+      "Verifizierte Umweltdaten statt Branchen-Durchschnittswerte",
+      "Lange Lebensdauer und Verschleißfestigkeit im Dauerbetrieb",
+    ],
+    loesung:
+      "Die gesamte Bodenfläche von 28.000 m² wurde mit NEODUR HE 3 green ausgestattet, einem CO₂-reduzierten Hartstoff. Der CO₂-Fußabdruck des Bindemittels liegt 50 bis 60 Prozent unter herkömmlichen Trockenstreu-Produkten. NEODUR HE 3 green ist der weltweit erste Hartstoff mit produktspezifischer Umweltproduktdeklaration (EPD), deren verifizierte Daten direkt in die LEED-Bewertung einfließen. Der Einbau erfolgte durch ITS im Standard-Trockenstreuverfahren.",
+    vorteile: [
+      "Hohe mechanische Belastbarkeit: Druckfestigkeit C 70, Biegefestigkeit F 9, Verschleiß ≤ 5,0 cm³/50 cm² (Böhme)",
+      "CO₂-Einsparung entspricht rund 240.000 km Benzinverbrauch eines Pkw",
+      "Weltweit erstes Trockenstreumaterial mit produktspezifischer EPD, gelistet im DGNB Navigator",
+      "EPD-Daten unterstützen direkt die LEED-Gebäudezertifizierung",
+      "Bewährtes Standard-Trockenstreuverfahren, keine besonderen Vorkehrungen",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Industrieboden mit NEODUR HE 3 green in der neuen Produktionsstätte Fiorini in Trecastelli",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: ["industrie-produktion"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "sanierung-der-fugen-wurstttaegerbrunnen-versmold",
+    slug: "sanierung-der-fugen-wurstttaegerbrunnen-versmold",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "Sanierung der Fugen am Wurstträgerbrunnen, Versmold",
+    untertitel: "Denkmalgerechte Verfugung des Versmolder Wahrzeichens mit Rapid Set MORTAR MIX",
+    ort: "Versmold",
+    land: "Deutschland",
+    jahr: 2024,
+    produkte: ["Rapid Set MORTAR MIX"],
+    beteiligte: [{ role: "Verarbeiter", name: "Bau-Team GmbH, Versmold" }],
+    herausforderungen: [
+      "Denkmalgerechte Sanierung des Versmolder Wahrzeichens",
+      "Verfugung der Pflasterflächen am Brunnen",
+      "Erhalt von Ästhetik und struktureller Integrität",
+    ],
+    loesung:
+      "Die Bau-Team GmbH sanierte die Fugen des Wurstträgerbrunnens mit Rapid Set MORTAR MIX. Das Material eignet sich hervorragend für die Verfugung von Pflasterflächen, mit ausgezeichneter Haftung und hoher Beständigkeit.",
+    vorteile: [
+      "Ausgezeichnete Haftung und hohe Beständigkeit",
+      "Schnelle Aushärtung, denkmalgerechte Reparatur",
+      "Wiederhergestellte Ästhetik und Langlebigkeit",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Sanierte Fugen am Wurstträgerbrunnen in Versmold",
+    sanierungsart: "punktuell",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: [],
+  },
+  {
+    id: "treppensanierung-check-up-6-jahre-spater",
+    slug: "treppensanierung-check-up-6-jahre-spater",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "Treppensanierung Esslingen, Check-up nach 6 Jahren",
+    untertitel: "Langzeit-Check-up: sechs Jahre nach der Rapid-Set-Sanierung wie am ersten Tag",
+    ort: "Esslingen am Neckar",
+    land: "Deutschland",
+    jahr: 2015,
+    produkte: ["Rapid Set CEMENT ALL", "Rapid Set MORTAR MIX"],
+    herausforderungen: [
+      "Treppen als stark beanspruchte Verkehrswege mit dynamischen Lasten",
+      "Schmirgelnde Belastung durch Schmutz und Streugut im Außenbereich",
+      "Höchste mechanische Beanspruchung an der Treppenkante",
+      "Frost- und Tausalzeinwirkung im Winter",
+    ],
+    loesung:
+      "2015 setzten wir eine beschädigte Betontreppe in Esslingen am Neckar mit den multifunktionalen Rapid Set Reparaturmörteln CEMENT ALL und MORTAR MIX instand. Der Check-up sechs Jahre später zeigt: Die Treppe sieht betontechnisch aus wie am ersten Tag der Sanierung.",
+    vorteile: [
+      "Auch nach sechs Jahren wie am ersten Tag",
+      "Widerstandsfähig gegen dynamische Last, Frost und Tausalz",
+      "Nachhaltig: Rapid Set Zement benötigt rund 30 Prozent weniger CO₂ als Portlandzement",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Betontreppe in Esslingen, Check-up sechs Jahre nach der Sanierung mit Rapid Set",
+    sanierungsart: "punktuell",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "normal",
+    zusatzfunktionen: ["tausalzbestaendigkeit"],
+  },
+  {
+    id: "verfugung-von-natursteinplatten",
+    slug: "verfugung-von-natursteinplatten",
+    projekttyp: "sanierung",
+    releaseStatus: "oeffentlich",
+    titel: "Verfugung von Natursteinplatten am Hotel Das Weitblick Allgäu",
+    untertitel: "Terrassenplatten aus Naturstein, verfugt mit NEODUR PFM-EP",
+    ort: "Marktoberdorf",
+    land: "Deutschland",
+    jahr: 2018,
+    flaeche: "ca. 250 m²",
+    produkte: ["NEODUR PFM-EP"],
+    beteiligte: [{ role: "Bauherr", name: "Familie Lerch, Marktoberdorf" }],
+    herausforderungen: [
+      "Beton- und Natursteinplatten der Terrasse fachgerecht verfugen",
+      "Dauerhafte, witterungsbeständige Fugen im Außenbereich",
+      "Hochwertige Optik passend zum 4-Sterne-Hotel",
+    ],
+    loesung:
+      "Die Terrasse des Wellness- und Tagungshotels Das Weitblick wurde mit Beton- und Natursteinplatten (Lucerna Gneis Piemont, Travertin) belegt und mit dem KORODUR Pflasterfugenmörtel NEODUR PFM-EP verfugt. Verlegung und Verfugung übernahm eine regionale Fachfirma, geliefert aus einer Hand über die Firma Rössle.",
+    vorteile: [
+      "Dauerhafte, witterungsbeständige Verfugung",
+      "Hochwertige Optik für die Terrassenfläche",
+      "Lieferung aus einer Hand über Partner Rössle",
+    ],
+    bild: "/images/_placeholder.jpg",
+    bildAlt: "Mit NEODUR PFM-EP verfugte Natursteinterrasse am Hotel Das Weitblick in Marktoberdorf",
+    sanierungsart: "grossflaechig",
+    einsatzbereiche: ["infrastruktur-zufahrten"],
+    zeitDringlichkeit: "normal",
     zusatzfunktionen: [],
   },
 ];

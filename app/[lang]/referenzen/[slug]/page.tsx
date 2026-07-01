@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { AppIcon } from "@/components/ui/icon";
 import { referenzen, getReferenzBySlug } from "../../../../data/referenzen";
 import { getProdukteByNames } from "../../../../data/produkte";
+import { referenzProduktbereich, produktbereichLabel } from "../../../../data/referenzProduktbereich";
 import { bereichLabel } from "../../../../data/einsatzbereichMapping";
 import { isPublicReference, selectRelatedReferences } from "../../../../data/referenceDetail";
 import type { Referenz } from "../../../../data/types";
@@ -244,12 +245,26 @@ export default async function ReferenzDetailPage({
       ? { left: referenz.bilder.einbau, leftLabel: detail.einbau, right: referenz.bilder.ergebnis, rightLabel: detail.ergebnis }
       : null;
 
+  // #380: Eckdaten-Block — Bereich + Beteiligte (Bauherr/Auftragnehmer) in die
+  // scanbare Fakten-Leiste heben. Bereich wie bei den Referenz-Karten aus dem
+  // Produktbereich abgeleitet (referenzProduktbereich).
+  const produktbereich = referenzProduktbereich(referenz);
+  const bereichEckdaten = produktbereich ? produktbereichLabel(produktbereich, lang) : "";
+  const alleBeteiligte = (referenz.beteiligte ?? []).filter((p) => p.name);
+  const bauherr = alleBeteiligte.find((p) => /bauherr|betreiber|auftraggeber/i.test(p.role));
+  const auftragnehmer = alleBeteiligte.find((p) =>
+    /verarbeiter|auftragnehmer|ausführ|verleger/i.test(p.role)
+  );
+
   const facts = [
+    { label: detail.fakt_bereich, value: bereichEckdaten },
+    { label: detail.fakt_projekttyp, value: projectLabel },
     { label: detail.fakt_ort, value: `${referenz.ort}${referenz.land ? `, ${referenz.land}` : ""}` },
     { label: detail.fakt_baujahr, value: referenz.jahr?.toString() },
     { label: detail.fakt_flaeche, value: referenz.flaeche },
     { label: detail.fakt_menge, value: referenz.menge },
-    { label: detail.fakt_projekttyp, value: projectLabel },
+    { label: detail.fakt_bauherr, value: bauherr?.name },
+    { label: detail.fakt_auftragnehmer, value: auftragnehmer?.name },
   ].filter((row): row is { label: string; value: string } => Boolean(row.value));
 
   const installationRows = [
@@ -262,7 +277,9 @@ export default async function ReferenzDetailPage({
   ].filter((row): row is { label: string; value: string } => Boolean(row.value));
 
   const solutionImage = referenz.bilder?.loesung ?? referenz.bilder?.einbau;
-  const parties = (referenz.beteiligte ?? []).filter((party) => party.name || party.role);
+  // Restliche Beteiligte (z.B. Architekt): Bauherr/Auftragnehmer stehen bereits
+  // oben in den Eckdaten, hier nicht doppeln.
+  const parties = alleBeteiligte.filter((p) => p !== bauherr && p !== auftragnehmer);
   const showSituation = Boolean(referenz.ausgangssituation || referenz.herausforderungen.length > 0);
   const showResult = Boolean(referenz.ergebnis || referenz.vorteile.length > 0 || referenz.langzeit);
   // #252: Produkte + PDF sind nach oben gewandert. Die Fakten-Karte bleibt nur
@@ -532,13 +549,18 @@ export default async function ReferenzDetailPage({
                     <p className="mb-4 mt-0 text-[15px] leading-[1.7] text-navy">
                       {referenz.loesung}
                     </p>
-                    {produktDetails[0] && (
-                      <Link
-                        href={`/${lang}/produkte/${produktDetails[0].id}/`}
-                        className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
-                      >
-                        {detail.produktdetails_ansehen.replace("{produkt}", produktDetails[0].name)}
-                      </Link>
+                    {produktDetails.length > 0 && (
+                      <div className="flex flex-col gap-1">
+                        {produktDetails.map((p) => (
+                          <Link
+                            key={p.id}
+                            href={`/${lang}/produkte/${p.id}/`}
+                            className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
+                          >
+                            {detail.produktdetails_ansehen.replace("{produkt}", p.name)}
+                          </Link>
+                        ))}
+                      </div>
                     )}
                     {solutionImage && (
                       <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-lg bg-icon-bg">
@@ -560,13 +582,18 @@ export default async function ReferenzDetailPage({
           <div className={solutionImage ? "grid grid-cols-1 items-start gap-5 md:grid-cols-2" : ""}>
             <div>
               <p className="mb-4 mt-0 text-[15px] leading-[1.7] text-navy">{referenz.loesung}</p>
-              {produktDetails[0] && (
-                <Link
-                  href={`/${lang}/produkte/${produktDetails[0].id}/`}
-                  className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
-                >
-                  {detail.produktdetails_ansehen.replace("{produkt}", produktDetails[0].name)}
-                </Link>
+              {produktDetails.length > 0 && (
+                <div className="flex flex-col gap-1">
+                  {produktDetails.map((p) => (
+                    <Link
+                      key={p.id}
+                      href={`/${lang}/produkte/${p.id}/`}
+                      className="inline-flex min-h-11 items-center text-sm font-extrabold text-cyan-text no-underline hover:underline"
+                    >
+                      {detail.produktdetails_ansehen.replace("{produkt}", p.name)}
+                    </Link>
+                  ))}
+                </div>
               )}
             </div>
             {solutionImage && (

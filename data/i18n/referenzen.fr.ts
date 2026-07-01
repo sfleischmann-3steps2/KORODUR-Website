@@ -2242,4 +2242,168 @@ export const referenzenFR: Record<string, {
     ],
     bildAlt: "Seuil de garage réparé à Göppingen-Jebenhausen avec Rapid Set CEMENT ALL et MORTAR MIX",
   },
+  "3d-gedrucktes-haus-in-paremoremo": {
+    titel: "Maison imprimée en 3D à Paremoremo",
+    untertitel: "La première maison entièrement imprimée en 3D de Nouvelle-Zélande, avec panneaux muraux en béton",
+    land: "Nouvelle-Zélande",
+    herausforderungen: [
+      "Première maison entièrement imprimée en 3D de Nouvelle-Zélande",
+      "Intégration du bâtiment aux contours naturels du terrain",
+      "Maison familiale de 252 m² pour une famille de quatre personnes",
+    ],
+    loesung:
+      "Dans la banlieue d'Auckland, à Paremoremo, la première maison entièrement imprimée en 3D de Nouvelle-Zélande a été achevée. Cette maison familiale de 252 m² comporte des panneaux muraux en béton imprimé en 3D et s'intègre aux contours naturels de son environnement paisible.",
+    vorteile: [
+      "Première maison entièrement imprimée en 3D de Nouvelle-Zélande",
+      "Panneaux muraux en béton directement issus de l'impression 3D",
+      "Intégration harmonieuse à l'environnement naturel",
+    ],
+    bildAlt: "Maison résidentielle imprimée en 3D à Paremoremo, Nouvelle-Zélande",
+  },
+  "baufachhaendler-linnenbecker-aussenlager-bad-oeynhausen": {
+    titel: "Négociant en matériaux Linnenbecker, entrepôt extérieur Bad Oeynhausen",
+    untertitel: "Surface d'essai avec ASPHALT REPAIR MIX sous trafic permanent de camions et de chariots élévateurs",
+    land: "Allemagne",
+    herausforderungen: [
+      "Surface d'asphalte endommagée avec nids-de-poule et fissures",
+      "Trafic permanent de camions et de chariots élévateurs dans l'entrepôt extérieur",
+      "Fortes contraintes permanentes sur le revêtement",
+    ],
+    loesung:
+      "En mai 2022, nous avons réalisé une surface d'essai avec ASPHALT REPAIR MIX dans l'entrepôt extérieur ARM du négociant Linnenbecker, un matériau de réparation à prise rapide à base de ciment pour surfaces d'asphalte endommagées. Même sous un trafic permanent de camions et de chariots, le revêtement a prouvé sa résistance et sa durabilité.",
+    vorteile: [
+      "Prise rapide et grande capacité de charge",
+      "Réparation robuste et durable des dommages de l'asphalte",
+      "Application facile, même dans les zones à fort trafic",
+    ],
+    bildAlt: "Surface d'essai avec ASPHALT REPAIR MIX dans l'entrepôt extérieur Linnenbecker, Bad Oeynhausen",
+  },
+  "betriebszufahrt-lackiererei-schmidt-versmold": {
+    titel: "Route d'accès de l'atelier de peinture Schmidt, Versmold",
+    untertitel: "Réparation d'asphalte d'une route d'accès très fréquentée avec ASPHALT REPAIR MIX",
+    land: "Allemagne",
+    herausforderungen: [
+      "Fortes charges dues à la circulation des camions et des voitures",
+      "Garantir la capacité de résistance et la durabilité de la route d'accès",
+      "Réparation de la route d'accès utilisée quotidiennement",
+    ],
+    loesung:
+      "En mai 2022, nous avons recouvert la route d'accès à l'atelier de peinture Schmidt avec ASPHALT REPAIR MIX. Au total, deux palettes ont été mises en œuvre par l'entreprise expérimentée de travaux paysagers Grothues & Solfrian de Versmold.",
+    vorteile: [
+      "Grande capacité de charge pour la circulation quotidienne des camions et des voitures",
+      "Application simple et efficace",
+      "Solution durable et économique",
+    ],
+    bildAlt: "Route d'accès réparée de l'atelier de peinture Schmidt à Versmold",
+  },
+  "farbiger-beton-fuer-feinbrennerei": {
+    titel: "Béton coloré pour la distillerie Sasse",
+    untertitel: "Sol industriel rouge NEODUR HE 3 dans le hall de maturation de la distillerie",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sol en béton du hall de maturation, également dalle imperméable de la cuve blanche",
+      "Manipulation régulière de liquides dans le hall de maturation",
+      "Coloration rouge assortie au concept architectural",
+      "Surface résistante à l'usure, antidérapante et imperméable exigée",
+    ],
+    loesung:
+      "BD Bau GmbH a recouvert le sol en béton d'un système de sol industriel KORODUR. Le mortier sec minéral NEODUR HE 3 en couleur rouge a été saupoudré uniformément sur le béton taloché à l'aide d'un épandeur, puis taloché et lissé à la lisseuse à disque.",
+    vorteile: [
+      "Sol de hall résistant à l'usure, antidérapant et imperméable",
+      "Couleur rouge assortie au concept esthétique",
+      "Atmosphère chaleureuse en interaction avec les murs en béton ocre jaune",
+    ],
+    bildAlt: "Sol industriel rouge dans le hall de maturation de la distillerie Sasse à Schöppingen",
+  },
+  "lagerflaeche-strassenbau-dieckmann-versmold": {
+    titel: "Surface de stockage, Straßenbau Dieckmann, Versmold",
+    untertitel: "Rénovation de référence d'une surface de cour sous charges de camions et d'excavateurs",
+    land: "Allemagne",
+    herausforderungen: [
+      "Charge maximale due aux camions et aux excavateurs",
+      "Solution durable pour la surface de cour très fréquentée",
+      "Mise en œuvre professionnelle en interne avec l'assistance de KORODUR",
+    ],
+    loesung:
+      "Le 19 juillet 2021, en collaboration avec l'équipe de Dieckmann, nous avons réalisé une rénovation de référence de la surface de stockage avec ASPHALT REPAIR MIX. Le matériau est spécialement conçu pour les surfaces soumises à fort trafic et résiste au trafic lourd.",
+    vorteile: [
+      "Résistance exceptionnelle au trafic lourd",
+      "Mise en œuvre efficace en coopération avec KORODUR",
+      "Solution de haute qualité et durable",
+    ],
+    bildAlt: "Surface de stockage rénovée chez Straßenbau Dieckmann à Versmold",
+  },
+  "lkw-ausfahrt-wueseke-baustoffwerke-gmbh": {
+    titel: "Sortie des camions, Wüseke Baustoffwerke GmbH",
+    untertitel: "Réparation rapide d'une sortie de camions fortement sollicitée avec un temps d'arrêt minimal",
+    land: "Allemagne",
+    herausforderungen: [
+      "Sortie des camions fortement sollicitée à l'usine KS",
+      "Grande résistance à la circulation des véhicules lourds",
+      "Temps d'arrêt minimal requis",
+    ],
+    loesung:
+      "En mai 2022, nous avons réparé la sortie des camions de l'usine KS Wüseke avec ASPHALT REPAIR MIX. Deux palettes ont été mises en œuvre par l'entreprise de génie civil Knappheide de Glandorf. Grâce à la prise rapide, la sortie a pu être rapidement remise en service.",
+    vorteile: [
+      "Prise rapide, temps d'arrêt minimal",
+      "Grande capacité de charge sous le trafic lourd",
+      "Application facile, entretien durable",
+    ],
+    bildAlt: "Sortie des camions réparée à l'usine Wüseke à Sassenberg",
+  },
+  "sanierung-der-fugen-wurstttaegerbrunnen-versmold": {
+    titel: "Rénovation des joints de la fontaine Wurstträgerbrunnen, Versmold",
+    untertitel: "Jointoiement respectueux du patrimoine de l'emblème de Versmold avec Rapid Set MORTAR MIX",
+    land: "Allemagne",
+    herausforderungen: [
+      "Rénovation respectueuse du patrimoine de l'emblème de Versmold",
+      "Jointoiement des surfaces pavées autour de la fontaine",
+      "Préservation de l'esthétique et de l'intégrité structurelle",
+    ],
+    loesung:
+      "Bau-Team GmbH a rénové les joints de la Wurstträgerbrunnen avec Rapid Set MORTAR MIX. Le matériau convient parfaitement au jointoiement de surfaces pavées, avec une excellente adhérence et une grande durabilité.",
+    vorteile: [
+      "Excellente adhérence et grande durabilité",
+      "Prise rapide, réparation respectueuse du patrimoine",
+      "Esthétique restaurée et longévité",
+    ],
+    bildAlt: "Joints rénovés de la fontaine Wurstträgerbrunnen à Versmold",
+  },
+  "treppensanierung-check-up-6-jahre-spater": {
+    titel: "Rénovation d'escalier Esslingen, contrôle après 6 ans",
+    untertitel: "Contrôle à long terme : six ans après la réparation Rapid Set, comme au premier jour",
+    land: "Allemagne",
+    herausforderungen: [
+      "Escaliers, voies de circulation soumises à de fortes contraintes dynamiques",
+      "Contraintes abrasives dues à la saleté et aux gravillons à l'extérieur",
+      "Plus grandes charges mécaniques sur le nez de marche",
+      "Effets du gel et du sel de déneigement en hiver",
+    ],
+    loesung:
+      "En 2015, nous avons réparé un escalier en béton endommagé à Esslingen avec les mortiers de réparation polyvalents à prise rapide Rapid Set CEMENT ALL et MORTAR MIX. Le contrôle six ans plus tard le montre : l'escalier a toujours le même aspect qu'au premier jour de sa réparation.",
+    vorteile: [
+      "Toujours comme neuf même après six ans",
+      "Résistant aux charges dynamiques, au gel et au sel de déneigement",
+      "Durable : le ciment Rapid Set génère environ 30 pour cent d'émissions de CO₂ en moins que le ciment Portland",
+    ],
+    bildAlt: "Escalier en béton à Esslingen, contrôle six ans après la réparation avec Rapid Set",
+  },
+  "verfugung-von-natursteinplatten": {
+    titel: "Jointoiement de dalles en pierre naturelle à l'hôtel Das Weitblick Allgäu",
+    untertitel: "Dalles de terrasse en pierre naturelle jointoyées avec NEODUR PFM-EP",
+    land: "Allemagne",
+    herausforderungen: [
+      "Jointoiement professionnel des dalles en béton et en pierre naturelle de la terrasse",
+      "Joints durables et résistants aux intempéries à l'extérieur",
+      "Aspect de haute qualité assorti à l'hôtel 4 étoiles",
+    ],
+    loesung:
+      "La terrasse de l'hôtel de bien-être et de conférence Das Weitblick a été revêtue de dalles en béton et en pierre naturelle (Lucerna Gneis Piemont, Travertin) et jointoyée avec le mortier de pavage KORODUR NEODUR PFM-EP. La pose et le jointoiement ont été réalisés par une entreprise régionale spécialisée, livrés d'une seule source via la société Rössle.",
+    vorteile: [
+      "Jointoiement durable et résistant aux intempéries",
+      "Aspect de haute qualité pour la surface de la terrasse",
+      "Livraison d'une seule source via le partenaire Rössle",
+    ],
+    bildAlt: "Terrasse en pierre naturelle jointoyée avec NEODUR PFM-EP à l'hôtel Das Weitblick à Marktoberdorf",
+  },
 };
