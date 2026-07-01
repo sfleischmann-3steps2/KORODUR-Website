@@ -12,7 +12,7 @@ interface ProduktInfo {
   name: string;
   kurzbeschreibung: string;
   besonderheiten: string[];
-  verarbeitung?: { besonderheiten: string };
+  verarbeitung?: { besonderheiten?: string };
 }
 
 interface ReferenzPdfProps {

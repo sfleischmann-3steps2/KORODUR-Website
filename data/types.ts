@@ -79,12 +79,14 @@ export interface Referenz {
 }
 
 export interface Verarbeitung {
-  untergrundvorbereitung: string;
-  mischverhaeltnis: string;
-  schichtaufbau: string;
-  verarbeitungszeit: string;
-  aushaertezeit: string;
-  besonderheiten: string;
+  // Alle Felder optional (#394): TDS liefern je Produkt unterschiedliche Angaben;
+  // die PDP filtert leere Felder ohnehin heraus.
+  untergrundvorbereitung?: string;
+  mischverhaeltnis?: string;
+  schichtaufbau?: string;
+  verarbeitungszeit?: string;
+  aushaertezeit?: string;
+  besonderheiten?: string;
 }
 
 // === V2.5-Lösungsfinder-Taxonomie (2026-06-01) ===
