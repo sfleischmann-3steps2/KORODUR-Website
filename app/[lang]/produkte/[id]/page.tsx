@@ -91,9 +91,12 @@ export default async function ProduktDetailPage({
   // V1-Varianten-PDP (#369): Geschwister derselben variantenGruppe (inkl. self
   // für die hervorgehobene Zeile der Vergleichstabelle) + System-Begleitprodukte
   // (Cross-Sell). Alles leer-safe — Produkte ohne variantenGruppe rendern nichts.
-  const geschwister = produkt.variantenGruppe
+  // Aktive Qualität als oberste Zeile der Vergleichstabelle (#410, F9); stabile
+  // Sortierung erhält die Deklarationsreihenfolge der übrigen Ausführungen.
+  const geschwister = (produkt.variantenGruppe
     ? produkte.filter((p) => p.variantenGruppe === produkt.variantenGruppe)
-    : [];
+    : []
+  ).sort((a, b) => (a.id === produkt.id ? -1 : b.id === produkt.id ? 1 : 0));
   const andereAusfuehrungen = geschwister.filter((p) => p.id !== produkt.id);
   const grpHatKlasse = geschwister.some((p) => p.qualitaetsklasse);
   const grpHatBasis = geschwister.some((p) => p.basisHartstoff);
