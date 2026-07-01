@@ -322,6 +322,70 @@ const he60rTechnik = (klasse: string, aWert: string) => [
   { label: "Voll belastbar nach", wert: "ca. 24 h" },
 ];
 
+// ===========================================================================
+// NEODUR VM-Familie (#373) — Vergussmörtel VM 1 / VM 3 / VB 8, gemeinsames TDS
+// (NEODUR_VM_1_3_8), variantenGruppe "neodur-vm-1". Unterschied = Vergussquerschnitt/
+// Körnung; Klasse C55/67 für alle. Quelle: TDS + Alt-XML. VM 5 / VM basic eigenständig.
+// ===========================================================================
+const VM13_BESONDERHEITEN = [
+  "Kraftschlüssiger Verbund von Beton und Stahleinbauteilen",
+  "Schwindfrei (Quellmaß >= 0,1 Vol.%), hochfließfähig",
+  "Frost- und tausalzbeständig, wasserundurchlässig, chloridfrei",
+  "Für innen und außen",
+  "Umweltproduktdeklaration (Gruppen-EPD) verfügbar",
+];
+const VM13_META = [
+  { titel: "Besonderheiten", text: "Verarbeitungs-, Umgebungs- und Untergrundtemperatur >= 5 Grad C. Schwindfrei, Quellmass >= 0,1 Vol.%. Fliessmass >= 550 mm nach 5 Minuten. Nachbehandlung gegen zu rasche Austrocknung (Wasserspruehnebel, Folie, feuchte Jutebahnen, Thermofolien oder KOROTEX). Frost- und tausalzbestaendig, wasserundurchlaessig, chloridfrei, fuer innen und aussen." },
+];
+const vm13Modi = (auftrag: string) => [
+  {
+    titel: "Verguss auf erhärteten Beton",
+    schritte: [
+      "Untergrund: Untergrund fuer kraftschluessigen Verbund rissefrei, eben und frei von losen Teilen, Staub, Zementschlaemme, Oelen und Fetten. Betonuntergrund ca. 6-24 Stunden bis zur kapillaren Saettigung vornaessen, Pfuetzenbildung vermeiden.",
+      "Mischen: Wasserzugabe ca. 3,0 l je 25 kg. Komplettes Gebinde mit vorgeschriebener Wassermenge ca. 3 Minuten anmischen (Zwangsmischer oder Ruehrquirl ca. 400 U/min). Ergiebigkeit ca. 12-13 l/25 kg.",
+      auftrag,
+      "Aushärtung: Druckfestigkeit nach 24 Std. >= 35 N/mm2, nach 28 Tagen >= 65 N/mm2 (C55/67). Freiliegende Flaechen 3-5 Tage nachbehandeln.",
+    ],
+  },
+];
+
+// ===========================================================================
+// NEODUR PFM-ZE (#373) — Pflasterfugenmörtel, variantenGruppe "neodur-pfm-ze".
+// PFM-ZE (Pflasterflächen, starr) + PFM-ZE Flex (Plattenflächen, flexibler);
+// gemeinsames TDS (NEODUR_PFM_ZE_PFM_ZE_Flex). Quelle: TDS + Alt-XML.
+// ===========================================================================
+const PFMZE_BESONDERHEITEN = [
+  "Starre Bauweise, Bauklasse IV bis VI",
+  "Fugenbreite mind. 8 mm bzw. 2/3 der Steinhöhe",
+  "Nachbehandlung: 7 Tage Folienabdeckung",
+];
+const PFMZE_MODI = [
+  {
+    titel: "Untergrundvorbereitung",
+    schritte: [
+      "Der Unterbau muss ausreichend tragfähig und für die vorgesehenen Verkehrslasten hergestellt und überprüft sein.",
+      "Die Pflasterfläche muss frei von Verschmutzungen jeder Art sein, die Steine müssen fest eingebettet werden.",
+      "Die Fuge soll mindestens 2/3 der Steinhöhe und mindestens 8 mm Breite betragen.",
+      "Wasserdurchlässiger Unterbau, Bettung und Steine müssen die Anforderungen der RStO bzw. DNV erfüllen.",
+      "Die zum Verfugen bereitgestellte Fläche gründlich vornässen.",
+    ],
+  },
+  {
+    titel: "Verarbeitung",
+    schritte: [
+      "Den Mörtel mit Zwangsmischer oder Doppelquirl mit der vorgegebenen Wassermenge (3,5 l je 25 kg) mindestens 3 Minuten mischen.",
+      "Den frisch gemischten Mörtel auf die zu verfugende Fläche aufgießen.",
+      "Mit dem Gummiwischer diagonal hohlraumfrei in die Fuge einarbeiten und nach Bedarf mit dem Fugenrüttler vollständig entlüften.",
+      "Die Steinoberfläche nach leichtem Ansteifen des Mörtels reinigen (z. B. mit einem Schwammreinigungsgerät).",
+    ],
+  },
+];
+const PFMZE_META = [
+  { titel: "Nachbehandlung", text: "Die gereinigte Pflasterfläche ist sofort mit Folie für mindestens 7 Tage abzudecken. Unterschiedliche Temperaturen beeinflussen den Erstarrungs- bzw. Erhärtungsverlauf." },
+  { titel: "Fugen & Hinweise", text: "Dehnfugen sind einzuplanen und auszuführen. Haarrisse infolge von Temperaturschwankungen beeinträchtigen die Funktionalität der Fuge nicht und stellen keinen Mangel dar. Wir empfehlen, eine Musterfläche zu erstellen." },
+  { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 3 Monate." },
+];
+
 export const produkte: Produkt[] = [
   // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
@@ -2801,9 +2865,13 @@ export const produkte: Produkt[] = [
     // #178: VM 1 / VM 3 / VB 8 auf einer PDP (gemeinsame TDS NEODUR_VM_1_3_8).
     // Unterscheidung nur über den Vergussquerschnitt -> als Varianten geführt.
     // VM 5 (C80/95, R4) und VM basic (Trinkwasser) bleiben eigene PDPs (eigene TDS).
+    // VM 1 = Mutter der variantenGruppe (#373); VM 3 / VB 8 als eigene PDPs.
     id: "neodur-vm-1",
+    variantenGruppe: "neodur-vm-1",
+    sku: "1220364S25KG",
+    variantenSchwerpunkt: "Vergussquerschnitt 5–20 mm",
     tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
-    name: "NEODUR VM 1 / VM 3 / VB 8",
+    name: "NEODUR VM 1",
     verarbeitungModi: [{"titel": "Schicht auf erhärteten Beton (5-20 mm)", "schritte": ["Untergrund: Untergrund fuer kraftschluessigen Verbund rissefrei, eben und frei von losen Teilen, Staub, Zementschlaemme, Oelen und Fetten. Betonuntergrund ca. 6-24 Stunden bis zur kapillaren Saettigung vornaessen, Pfuetzenbildung vermeiden.", "Mischen: Wasserzugabe ca. 3,0 l je 25 kg. Komplettes Gebinde mit vorgeschriebener Wassermenge ca. 3 Minuten anmischen (Zwangsmischer oder Ruehrquirl ca. 400 U/min). Ergiebigkeit ca. 12-13 l/25 kg.", "Auftrag: NEODUR VM 1 (Koernung 0-1 mm) fuer Untergusshoehe/-breite ca. 5-20 mm. Verguss hohlraumfrei und ohne Arbeitsunterbrechung, auf Entlueftung achten. Auch mit geeigneter Pumptechnik verarbeitbar.", "Aushärtung: Druckfestigkeit nach 24 Std. >= 35 N/mm2, nach 28 Tagen >= 65 N/mm2 (C55/67). Freiliegende Flaechen 3-5 Tage nachbehandeln."]}],
     verarbeitungMeta: [{"titel": "Besonderheiten", "text": "Verarbeitungs-, Umgebungs- und Untergrundtemperatur >= 5 Grad C. Schwindfrei, Quellmass >= 0,1 Vol.%. Fliessmass >= 550 mm nach 5 Minuten. Nachbehandlung gegen zu rasche Austrocknung (Wasserspruehnebel, Folie, feuchte Jutebahnen, Thermofolien oder KOROTEX). Frost- und tausalzbestaendig, wasserundurchlaessig, chloridfrei, fuer innen und aussen."}],
     kategorie: "sonstige",
@@ -2811,17 +2879,68 @@ export const produkte: Produkt[] = [
     bereich: "spezialmoertel",
     aussenbereich: true,
     produktgruppe: "verguss",
-    kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte von 5 bis über 50 mm (Varianten VM 1 / VM 3 / VB 8)",
-    beschreibung: "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen. Die Reihe deckt je nach Vergussquerschnitt drei Varianten ab: NEODUR VM 1 (5 bis 20 mm), NEODUR VM 3 (10 bis 50 mm) und NEODUR VB 8 (über 50 mm). Alle drei teilen ein gemeinsames technisches Datenblatt.",
+    kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte 5–20 mm",
+    beschreibung: "NEODUR VM 1 ist ein gebrauchsfertiger, schwindfreier Montage- und Vergussmörtel für den kraftschlüssigen Verguss von Beton mit Stahleinbauteilen, für Vergussquerschnitte von 5 bis 20 mm (Körnung 0–1 mm). Frost- und tausalzbeständig, wasserundurchlässig, chloridfrei, für innen und außen. Klasse C55/67.",
     qualitaetsklasse: "C55/67",
     normen: ["DAfStb-RL Vergussbeton"],
-    technischeDaten: [{ label: "Vergussquerschnitt", wert: "5 mm bis über 50 mm (je Variante)" }],
-    varianten: [
-      { name: "NEODUR VM 1", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 5–20 mm", sku: "1220364S25KG" },
-      { name: "NEODUR VM 3", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 10–50 mm", sku: "1220358S25KG" },
-      { name: "NEODUR VB 8", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt über 50 mm" },
+    technischeDaten: [
+      { label: "Vergussquerschnitt", wert: "5–20 mm" },
+      { label: "Körnung", wert: "0–1 mm" },
+      { label: "Druckfestigkeit (24 h)", wert: "≥ 35 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "≥ 65 N/mm² (C55/67)" },
     ],
-    besonderheiten: ["Kraftschlüssiger Verbund von Beton und Stahleinbauteilen", "Umweltproduktdeklaration (Gruppen-EPD) verfügbar"],
+    besonderheiten: VM13_BESONDERHEITEN,
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-vm-3",
+    variantenGruppe: "neodur-vm-1",
+    sku: "1220358S25KG",
+    variantenSchwerpunkt: "Vergussquerschnitt 10–50 mm",
+    tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
+    name: "NEODUR VM 3",
+    verarbeitungModi: vm13Modi("Auftrag: NEODUR VM 3 (Koernung 0-3 mm) fuer Vergussquerschnitt ca. 10-50 mm. Verguss hohlraumfrei und ohne Arbeitsunterbrechung ausfuehren, auf Entlueftung achten. Auch mit geeigneter Pumptechnik verarbeitbar."),
+    verarbeitungMeta: VM13_META,
+    kategorie: "sonstige",
+    bereich: "spezialmoertel",
+    aussenbereich: true,
+    produktgruppe: "verguss",
+    kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte 10–50 mm",
+    beschreibung: "NEODUR VM 3 ist ein gebrauchsfertiger, schwindfreier Montage- und Vergussmörtel für den kraftschlüssigen Verguss von Beton mit Stahleinbauteilen, für Vergussquerschnitte von 10 bis 50 mm (Körnung 0–3 mm). Frost- und tausalzbeständig, wasserundurchlässig, chloridfrei, für innen und außen. Klasse C55/67.",
+    qualitaetsklasse: "C55/67",
+    normen: ["DAfStb-RL Vergussbeton"],
+    technischeDaten: [
+      { label: "Vergussquerschnitt", wert: "10–50 mm" },
+      { label: "Körnung", wert: "0–3 mm" },
+      { label: "Druckfestigkeit (24 h)", wert: "≥ 35 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "≥ 65 N/mm² (C55/67)" },
+    ],
+    besonderheiten: VM13_BESONDERHEITEN,
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-vb-8",
+    variantenGruppe: "neodur-vm-1",
+    variantenSchwerpunkt: "Vergussquerschnitt über 50 mm",
+    tdsUrl: "/downloads/tds/NEODUR_VM_1_3_8_de.pdf",
+    name: "NEODUR VB 8",
+    verarbeitungModi: vm13Modi("Auftrag: NEODUR VB 8 (Koernung 0-8 mm) fuer Vergussquerschnitt ueber 50 mm. Verguss hohlraumfrei und ohne Arbeitsunterbrechung ausfuehren, auf Entlueftung achten. Auch mit geeigneter Pumptechnik verarbeitbar."),
+    verarbeitungMeta: VM13_META,
+    kategorie: "sonstige",
+    bereich: "spezialmoertel",
+    aussenbereich: true,
+    produktgruppe: "verguss",
+    kurzbeschreibung: "Verguss- und Montagebeton für Vergussquerschnitte über 50 mm",
+    beschreibung: "NEODUR VB 8 ist ein gebrauchsfertiger, schwindfreier Montage- und Vergussbeton für große Vergussquerschnitte über 50 mm (Körnung 0–8 mm). Kraftschlüssiger Verbund von Beton und Stahleinbauteilen, frost- und tausalzbeständig, für innen und außen. Klasse C55/67.",
+    qualitaetsklasse: "C55/67",
+    normen: ["DAfStb-RL Vergussbeton"],
+    technischeDaten: [
+      { label: "Vergussquerschnitt", wert: "über 50 mm" },
+      { label: "Körnung", wert: "0–8 mm" },
+      { label: "Druckfestigkeit (24 h)", wert: "≥ 35 N/mm²" },
+      { label: "Druckfestigkeit (28 d)", wert: "≥ 65 N/mm² (C55/67)" },
+    ],
+    besonderheiten: VM13_BESONDERHEITEN,
     zeitKategorie: "normal",
   },
   {
@@ -3134,8 +3253,11 @@ export const produkte: Produkt[] = [
     zeitKategorie: "normal",
   },
   {
+    // PFM-ZE = Mutter der variantenGruppe (#373); PFM-ZE Flex als eigene PDP.
     id: "neodur-pfm-ze",
     sku: "2220885S25KG",
+    variantenGruppe: "neodur-pfm-ze",
+    variantenSchwerpunkt: "Pflasterflächen (starr), ≥ 50 N/mm²",
     tdsUrl: "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_de.pdf",
     name: "NEODUR PFM-ZE",
     kategorie: "sonstige",
@@ -3145,49 +3267,46 @@ export const produkte: Produkt[] = [
     aussenbereich: true,
     produktgruppe: "pflasterfugen",
     kurzbeschreibung: "Pflasterfugenmörtel auf Zementbasis für Pflaster- und Plattenflächen in starrer Bauweise",
-    beschreibung: "NEODUR PFM-ZE und PFM-ZE Flex sind werksmäßig hergestellte Trockenmörtel auf Zement- und Natursandbasis (0–2 mm) für die Neuverfugung von Natur- und Betonpflaster bzw. Betonplatten in starrer Bauweise, Bauklasse IV bis VI. Die Fugenbreite sollte mindestens 8 mm betragen.",
+    beschreibung: "NEODUR PFM-ZE ist ein werksmäßig hergestellter Trockenmörtel auf Zement- und Natursandbasis (0–2 mm) für die Neuverfugung von Natur- und Betonpflaster in starrer Bauweise, Bauklasse IV bis VI. Für Pflasterflächen (grau/hellgrau), Druckfestigkeit ≥ 50 N/mm². Die Fugenbreite sollte mindestens 8 mm betragen.",
     normen: [],
     technischeDaten: [
       { label: "Basis", wert: "Zement- und Natursandbasis, Körnung 0–2 mm" },
+      { label: "Druckfestigkeit", wert: "≥ 50 N/mm²" },
       { label: "Verarbeitungszeit", wert: "ca. 40 Minuten" },
       { label: "Verarbeitungstemperatur", wert: "+5 °C bis +25 °C" },
       { label: "Belastbar", wert: "mit Pkw nach 7 Tagen" },
       { label: "Lieferform", wert: "25-kg-Papierspezialverpackung" },
     ],
-    verarbeitungModi: [
-      {
-        titel: "Untergrundvorbereitung",
-        schritte: [
-          "Der Unterbau muss ausreichend tragfähig und für die vorgesehenen Verkehrslasten hergestellt und überprüft sein.",
-          "Die Pflasterfläche muss frei von Verschmutzungen jeder Art sein, die Steine müssen fest eingebettet werden.",
-          "Die Fuge soll mindestens 2/3 der Steinhöhe und mindestens 8 mm Breite betragen.",
-          "Wasserdurchlässiger Unterbau, Bettung und Steine müssen die Anforderungen der RStO bzw. DNV erfüllen.",
-          "Die zum Verfugen bereitgestellte Fläche gründlich vornässen.",
-        ],
-      },
-      {
-        titel: "Verarbeitung",
-        schritte: [
-          "NEODUR PFM-ZE mit Zwangsmischer oder Doppelquirl mit der jeweiligen Wassermenge (3,5 l je 25 kg) mindestens 3 Minuten mischen.",
-          "Den frisch gemischten Mörtel auf die zu verfugende Fläche aufgießen.",
-          "Mit dem Gummiwischer diagonal hohlraumfrei in die Fuge einarbeiten und nach Bedarf mit dem Fugenrüttler vollständig entlüften.",
-          "Die Steinoberfläche nach leichtem Ansteifen des Mörtels reinigen (z. B. mit einem Schwammreinigungsgerät).",
-        ],
-      },
+    verarbeitungModi: PFMZE_MODI,
+    verarbeitungMeta: PFMZE_META,
+    besonderheiten: PFMZE_BESONDERHEITEN,
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-pfm-ze-flex",
+    variantenGruppe: "neodur-pfm-ze",
+    variantenSchwerpunkt: "Plattenflächen, flexibler, ≥ 40 N/mm²",
+    tdsUrl: "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_de.pdf",
+    name: "NEODUR PFM-ZE Flex",
+    kategorie: "sonstige",
+    bereich: "spezialmoertel",
+    zusatzBereiche: ["betonsanierung"],
+    aussenbereich: true,
+    produktgruppe: "pflasterfugen",
+    kurzbeschreibung: "Flexibler Pflasterfugenmörtel für Plattenflächen in starrer Bauweise",
+    beschreibung: "NEODUR PFM-ZE Flex ist ein werksmäßig hergestellter, flexibler Trockenmörtel auf Zement- und Natursandbasis (0–2 mm) für die Neuverfugung von Betonplatten in starrer Bauweise, Bauklasse IV bis VI. Für Plattenflächen (grau), Druckfestigkeit ≥ 40 N/mm². Die Fugenbreite sollte mindestens 8 mm betragen.",
+    normen: [],
+    technischeDaten: [
+      { label: "Basis", wert: "Zement- und Natursandbasis, Körnung 0–2 mm" },
+      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
+      { label: "Verarbeitungszeit", wert: "ca. 40 Minuten" },
+      { label: "Verarbeitungstemperatur", wert: "+5 °C bis +25 °C" },
+      { label: "Belastbar", wert: "mit Pkw nach 7 Tagen" },
+      { label: "Lieferform", wert: "25-kg-Papierspezialverpackung" },
     ],
-    verarbeitungMeta: [
-      { titel: "Nachbehandlung", text: "Die gereinigte Pflasterfläche ist sofort mit Folie für mindestens 7 Tage abzudecken. Unterschiedliche Temperaturen beeinflussen den Erstarrungs- bzw. Erhärtungsverlauf." },
-      { titel: "Fugen & Hinweise", text: "Dehnfugen sind einzuplanen und auszuführen. Haarrisse infolge von Temperaturschwankungen beeinträchtigen die Funktionalität der Fuge nicht und stellen keinen Mangel dar. Wir empfehlen, eine Musterfläche zu erstellen." },
-      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 3 Monate." },
-    ],
-    besonderheiten: [
-      "Starre Bauweise, Bauklasse IV bis VI",
-      "Nachbehandlung: 7 Tage Folienabdeckung",
-    ],
-    varianten: [
-      { name: "NEODUR PFM-ZE", hinweis: "Pflasterflächen · grau/hellgrau · Druckfestigkeit ≥ 50 N/mm²" },
-      { name: "NEODUR PFM-ZE Flex", hinweis: "Plattenflächen · grau · Druckfestigkeit ≥ 40 N/mm²" },
-    ],
+    verarbeitungModi: PFMZE_MODI,
+    verarbeitungMeta: PFMZE_META,
+    besonderheiten: PFMZE_BESONDERHEITEN,
     zeitKategorie: "normal",
   },
 

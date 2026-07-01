@@ -2667,6 +2667,11 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     }
   ],
+  "neodur-pfm-ze-flex": [
+    { "typ": "tds", "titel": "NEODUR PFM ZE PFM ZE Flex", "url": "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR PFM ZE PFM ZE Flex", "url": "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_en.pdf", "sprache": "en" },
+    { "typ": "sds", "titel": "KORODUR NEODUR Pflasterfugenmoertel", "url": "/downloads/sds/KORODUR_NEODUR_Pflasterfugenmoertel_SDB_de.pdf", "sprache": "de" }
+  ],
   "neodur-vm-1": [
     {
       "typ": "tds",
