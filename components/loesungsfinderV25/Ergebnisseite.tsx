@@ -177,18 +177,28 @@ export default function Ergebnisseite({ lang, state, onZurueck, onNeustart }: Er
 
       {/* Fachberater zur Empfehlung (Funnel-Karten, Korb 2): persönlicher
           Ansprechpartner mit Durchwahl direkt am Ergebnis */}
-      {topProduktAnzeige && fachberaterFuerBereich(topProduktAnzeige.bereich, lang).length > 0 && (
-        <div className="mb-4">
-          <div className="mb-2 text-[15px] font-semibold text-navy">
-            {dict.kontakt.fachberater_title}
+      {topProduktAnzeige && (() => {
+        const alle = fachberaterFuerBereich(topProduktAnzeige.bereich, lang);
+        if (alle.length === 0) return null;
+        // DE: bis zu 2 regionale Berater + garantiert die Export-Kontakte
+        // (Alexander + Mirko, ohne PLZ-gebiet); sonst wie gehabt (#412).
+        const anzeige =
+          lang === "de"
+            ? [...alle.filter((b) => b.gebiet).slice(0, 2), ...alle.filter((b) => !b.gebiet)]
+            : alle.slice(0, 2);
+        return (
+          <div className="mb-4">
+            <div className="mb-2 text-[15px] font-semibold text-navy">
+              {dict.kontakt.fachberater_title}
+            </div>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {anzeige.map((b) => (
+                <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {fachberaterFuerBereich(topProduktAnzeige.bereich, lang).slice(0, 2).map((b) => (
-              <BeraterCard key={`${b.name}-${b.email}`} berater={b} plzLabel={dict.kontakt.fachberater_plz} />
-            ))}
-          </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Allgemeiner Berater-CTA (ergebnis-unabhängig) */}
       <div className="flex flex-col gap-4 rounded-[10px] bg-navy px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-[18px]">

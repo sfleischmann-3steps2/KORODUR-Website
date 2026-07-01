@@ -203,7 +203,14 @@ export function fachberaterFuerBereich(
 ): Fachberater[] {
   const effektiverBereich = BEREICH_BERATER_ALIAS[bereich] ?? bereich;
   if (lang === "de") {
-    return FACHBERATER_DE.filter((b) => b.bereiche.includes(effektiverBereich));
+    // DE: bereichsspezifische Berater + immer die internationalen Export-Kontakte
+    // (Alexander + Mirko) für AT/CH & Export — in allen Bereichen (#412).
+    const out: Fachberater[] = FACHBERATER_DE.filter((b) => b.bereiche.includes(effektiverBereich));
+    for (const name of EXPORT_ALLGEMEIN) {
+      const b = FACHBERATER_INTERNATIONAL.find((x) => x.name === name);
+      if (b && !out.some((x) => x.name === b.name)) out.push(b);
+    }
+    return out;
   }
   const namen = [...(EXPORT_NACH_SPRACHE[lang] ?? []), ...EXPORT_ALLGEMEIN];
   const out: Fachberater[] = [];
