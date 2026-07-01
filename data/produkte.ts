@@ -271,18 +271,68 @@ const he3Technik = (klasse: string, c: string, f: string, aWert: string, gruppe:
   { label: "Hartstoffgruppe (DIN 1100)", wert: gruppe },
 ];
 
+// ===========================================================================
+// NEODUR HE 60 rapid — Familie (#373). Hartstoff-Schnellestrich, je Ausführung
+// eigenständiges Produkt, variantenGruppe "neodur-he-60-rapid" (Mutter = Standard).
+// Inhalte aus Alt-XML + HE-60-rapid-TDS, quellenbelegt. Basis-Hartstoff einheitlich
+// "KORODUR Hartstoff" (Steffi 2026-07-01); Zuschlag über die Qualität differenziert.
+// ===========================================================================
+const HE60R_BESONDERHEITEN = [
+  "Schnell belast- und belegbar",
+  "Hohe Abriebfestigkeit",
+  "Chemikalienbeständig",
+  "Schwindarm (SW 1 gem. DIN 18560-1)",
+  "Für innen und außen",
+];
+const HE60R_EINSATZ = [
+  "Fabrikhallen",
+  "Werkstätten",
+  "Hochregallager",
+  "Schnelle Herstellung + Sanierung von Verbundestrichen",
+  "Industrieflächen mit stärkster Beanspruchung",
+];
+const HE60R_VERWANDTE = ["korodur-hb-5-rapid", "korotex", "koromineral-cure", "koromineral-li", "korodur-easyfinish", "koroclean"];
+const HE60R_VERARBEITUNG_MODI = [
+  {
+    titel: "Verbundestrich (einschichtig auf Tragbeton)",
+    schritte: [
+      "Untergrund: Tragbeton mind. C 25/30, Oberflächenzugfestigkeit >= 1,5 N/mm2, vorbereiten z. B. durch Fräsen und Kugelstrahlen.",
+      "Oberfläche muss rissfrei, eben, frei von losen und mürben Bestandteilen und Feinstmörtelanreicherungen sowie rau und offenporig sein; Anforderungen der DIN 18365 und DIN 18560, Ebenheit nach DIN 18202, Tab. 3, Zeile 3.",
+      "Tragbeton einen Tag vor der Verlegung gründlich vornässen, Pfützenbildung vermeiden.",
+      "Auf die mattfeuchte Oberfläche die Haftbrücke KORODUR HB 5 rapid auftragen.",
+      "NEODUR HE 60 rapid mit der vorgegebenen Wassermenge (ca. 2,75 l/25-kg-Gebinde) je nach Verarbeitungsart ca. 2-3 Minuten bis zur aufziehfähigen Konsistenz mischen.",
+      "Frisch auf die noch feuchte Haftbrücke aufbringen und fluchtgerecht abziehen.",
+      "Zeitgerecht mittels Tellerglättmaschine porenschließend abreiben und je nach verlangter Oberflächenstruktur glätten (Flügelglättmaschine).",
+      "Verarbeitungstemperatur (Verarbeitungs-, Umgebungs- und Untergrundtemperatur) >= 5 °C; Verarbeitungszeit ca. 45-60 Minuten.",
+    ],
+  },
+];
+const HE60R_META = [
+  { titel: "Nachbehandlung", text: "NEODUR HE 60 rapid ist vor zu rascher Austrocknung gem. DIN EN 13670 / DIN 1045-3 zu schützen. Zur Nachbehandlung der NEODUR Hartstoffschicht werden KOROMINERAL CURE / Li+ oder KOROTEX empfohlen. Sind eine anschließende Oberflächenvergütung, Beschichtung oder Markierungen vorgesehen, sollte die Nachbehandlung nur mit Folie erfolgen." },
+  { titel: "Fugen", text: "Das Fugenraster ist vom Planer vorzugeben. Alle Fugen im erhärteten Tragbeton sind in der Hartstoffschicht zu übernehmen. Der Hartstoffestrich ist von aufgehenden Bauteilen (Wände, Stützen etc.) zu trennen." },
+  { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung (alle Qualitäten) sowie Big-Bag. Trocken lagern wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
+];
+// Kennwerte je HE-60-rapid-Qualität (Klasse + Verschleißklasse variieren).
+const he60rTechnik = (klasse: string, aWert: string) => [
+  { label: "Klassifizierung", wert: klasse, norm: "DIN EN 13813" },
+  { label: "Druckfestigkeit", wert: "≥ 60 N/mm²", norm: "DIN EN 13892-2" },
+  { label: "Biegezugfestigkeit", wert: "≥ 8 N/mm²", norm: "DIN EN 13892-2" },
+  { label: "Verschleißwiderstand (Böhme)", wert: aWert, norm: "DIN EN 13892-3" },
+  { label: "Begehbar nach", wert: "ca. 3 h" },
+  { label: "Voll belastbar nach", wert: "ca. 24 h" },
+];
+
 export const produkte: Produkt[] = [
   // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
+    // HE 60 rapid Standard = Mutter/Repräsentant der variantenGruppe (#373).
     id: "neodur-he-60-rapid",
     sku: "1220049S25KG",
     bereich: "industrieboden",
     produktgruppe: "schnellestrich",
-    varianten: [
-      { name: "NEODUR HE 60 rapid SVS 3", qualitaetsklasse: "CT-C60-F8-A3" },
-      { name: "NEODUR HE 60 rapid SVS 1,5", qualitaetsklasse: "CT-C60-F8-A1,5" },
-      { name: "NEODUR HE 60 rapid metallisch", qualitaetsklasse: "CT-C60-F8-A3", hinweis: "Hartstoffgruppe M" },
-    ],
+    variantenGruppe: "neodur-he-60-rapid",
+    basisHartstoff: "KORODUR Hartstoff",
+    variantenSchwerpunkt: "Standard, höchste Belastung",
     name: "NEODUR HE 60 rapid",
     kategorie: "estrich",
     kurzbeschreibung: "Hochbelastbarer Hartstoff-Schnellestrich",
@@ -290,48 +340,13 @@ export const produkte: Produkt[] = [
       "NEODUR HE 60 rapid ist ein gebrauchsfertiger, schnellerhärtender Hartstoff-Verbundestrich auf Basis hochwertiger KORODUR-Hartstoffzuschläge nach DIN 1100 (Gruppe A, M oder KS), mineralisch-hydraulisch gebunden und schwindarm. Für den raschen Einbau und die Sanierung von Verbundestrichen, schnell belast- und belegbar, mit erhöhtem Verschleißwiderstand. Schichtdicke ab 10 mm, z. B. für Fabrikhallen, Werkstätten, Hochregallager und andere stark beanspruchte Industrieböden. Für innen und außen.",
     schichtdicke: "ab 10 mm",
     qualitaetsklasse: "CT-C60-F8-A6",
-    normen: ["DIN EN 13813", "DIN 18560-7"],
-    technischeDaten: [
-      { label: "Druckfestigkeit", wert: "≥ 60 N/mm²", norm: "DIN EN 13892-2" },
-      { label: "Biegezugfestigkeit", wert: "≥ 8 N/mm²", norm: "DIN EN 13892-2" },
-      { label: "Verschleißwiderstand", wert: "A6 (≤ 6 cm³/50 cm²)", norm: "DIN EN 13892-3" },
-      { label: "Begehbar nach", wert: "ca. 3 h" },
-      { label: "Voll belastbar nach", wert: "ca. 24 h" },
-    ],
-    verarbeitungModi: [
-      {
-        titel: "Verbundestrich (einschichtig auf Tragbeton)",
-        schritte: [
-          "Untergrund: Tragbeton mind. C 25/30, Oberflächenzugfestigkeit >= 1,5 N/mm2, vorbereiten z. B. durch Fräsen und Kugelstrahlen.",
-          "Oberfläche muss rissfrei, eben, frei von losen und mürben Bestandteilen und Feinstmörtelanreicherungen sowie rau und offenporig sein; Anforderungen der DIN 18365 und DIN 18560, Ebenheit nach DIN 18202, Tab. 3, Zeile 3.",
-          "Tragbeton einen Tag vor der Verlegung gründlich vornässen, Pfützenbildung vermeiden.",
-          "Auf die mattfeuchte Oberfläche die Haftbrücke KORODUR HB 5 rapid auftragen.",
-          "NEODUR HE 60 rapid mit der vorgegebenen Wassermenge (ca. 2,75 l/25-kg-Gebinde) je nach Verarbeitungsart ca. 2-3 Minuten bis zur aufziehfähigen Konsistenz mischen.",
-          "Frisch auf die noch feuchte Haftbrücke aufbringen und fluchtgerecht abziehen.",
-          "Zeitgerecht mittels Tellerglättmaschine porenschließend abreiben und je nach verlangter Oberflächenstruktur glätten (Flügelglättmaschine).",
-          "Verarbeitungstemperatur (Verarbeitungs-, Umgebungs- und Untergrundtemperatur) >= 5 °C; Verarbeitungszeit ca. 45-60 Minuten.",
-        ],
-      },
-    ],
-    verarbeitungMeta: [
-      { titel: "Nachbehandlung", text: "NEODUR HE 60 rapid ist vor zu rascher Austrocknung gem. DIN EN 13670 / DIN 1045-3 zu schützen. Zur Nachbehandlung der NEODUR Hartstoffschicht werden KOROMINERAL CURE / Li+ oder KOROTEX empfohlen. Sind eine anschließende Oberflächenvergütung, Beschichtung oder Markierungen vorgesehen, sollte die Nachbehandlung nur mit Folie erfolgen." },
-      { titel: "Fugen", text: "Das Fugenraster ist vom Planer vorzugeben. Alle Fugen im erhärteten Tragbeton sind in der Hartstoffschicht zu übernehmen. Der Hartstoffestrich ist von aufgehenden Bauteilen (Wände, Stützen etc.) zu trennen." },
-      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung (alle Qualitäten) sowie Big-Bag. Trocken lagern wie Zement. Haltbarkeitsdauer ca. 12 Monate." },
-    ],
-    besonderheiten: [
-      "Hohe Abriebfestigkeit",
-      "Chemikalienbeständig",
-      "Schnelle Erhärtung",
-      "Schwindarm",
-    ],
-    verarbeitung: {
-      untergrundvorbereitung: "Tragfähiger, sauberer, rauer Betonuntergrund. Kugelstrahlen oder Fräsen empfohlen. Grundierung mit KORODUR HB 5 rapid.",
-      mischverhaeltnis: "25 kg Pulver auf ca. 3,0–3,25 l Wasser. Mischzeit: 3 Minuten mit Zwangsmischer.",
-      schichtaufbau: "Einschichtig ab 10 mm auf Haftbrücke KORODUR HB 5 rapid.",
-      verarbeitungszeit: "Ca. 20–30 Minuten bei 20 °C.",
-      aushaertezeit: "Begehbar nach ca. 3 h. Nutzbar nach ca. 24 h.",
-      besonderheiten: "Verarbeitungstemperatur: +5 °C bis +30 °C. Nicht auf gefrorenem Untergrund verarbeiten.",
-    },
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3", "DIN 18560-1"],
+    technischeDaten: he60rTechnik("CT-C60-F8-A6", "A6 (≤ 6 cm³/50 cm²)"),
+    besonderheiten: HE60R_BESONDERHEITEN,
+    einsatzbereiche: HE60R_EINSATZ,
+    verarbeitungModi: HE60R_VERARBEITUNG_MODI,
+    verarbeitungMeta: HE60R_META,
+    verwandteProdukte: HE60R_VERWANDTE,
     tdsUrl: "/downloads/tds/NEODUR_HE_60_rapid_de.pdf",
     eignungen: ["grossflaechige-sanierung", "schwerlast", "rollende-lasten", "chemikalien", "kurze-sperrzeit"],
     bild: "/images/produkte/neodur-he-60-rapid.webp",
@@ -345,6 +360,85 @@ export const produkte: Produkt[] = [
     belastbarNachZusatz: "begehbar ca. 3 h",
     belastungenAbgedeckt: ["schwerlast", "verschleiss", "chemie-treibstoff", "frost-tausalz", "staplerverkehr"],
     systemBegleitprodukte: ["korodur-hb-5-rapid"],
+  },
+  {
+    id: "neodur-he-60-rapid-svs-3",
+    bereich: "industrieboden",
+    produktgruppe: "schnellestrich",
+    variantenGruppe: "neodur-he-60-rapid",
+    basisHartstoff: "KORODUR Hartstoff",
+    variantenSchwerpunkt: "Höhere Verschleißklasse (A3)",
+    name: "NEODUR HE 60 rapid SVS 3",
+    kategorie: "estrich",
+    kurzbeschreibung: "Hartstoff-Schnellestrich, Verschleißklasse A3",
+    beschreibung:
+      "NEODUR HE 60 rapid SVS 3 ist ein gebrauchsfertiger, schnellerhärtender Hartstoff-Verbundestrich mit erhöhtem Verschleißwiderstand (Klasse A3). Schnell belast- und belegbar, schwindarm, für innen und außen. Schichtdicke ab 10 mm für hochbeanspruchte Industrieböden.",
+    schichtdicke: "ab 10 mm",
+    qualitaetsklasse: "CT-C60-F8-A3",
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3", "DIN 18560-1"],
+    technischeDaten: he60rTechnik("CT-C60-F8-A3", "A3 (≤ 3 cm³/50 cm²)"),
+    besonderheiten: HE60R_BESONDERHEITEN,
+    einsatzbereiche: HE60R_EINSATZ,
+    verarbeitungModi: HE60R_VERARBEITUNG_MODI,
+    verarbeitungMeta: HE60R_META,
+    verwandteProdukte: HE60R_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_60_rapid_de.pdf",
+    zeitKategorie: "schnell",
+  },
+  {
+    id: "neodur-he-60-rapid-svs-15",
+    bereich: "industrieboden",
+    produktgruppe: "schnellestrich",
+    variantenGruppe: "neodur-he-60-rapid",
+    basisHartstoff: "KORODUR Hartstoff",
+    variantenSchwerpunkt: "Höchster Abrieb (A1,5)",
+    name: "NEODUR HE 60 rapid SVS 1,5",
+    kategorie: "estrich",
+    kurzbeschreibung: "Hartstoff-Schnellestrich, Verschleißklasse A1,5",
+    beschreibung:
+      "NEODUR HE 60 rapid SVS 1,5 ist ein gebrauchsfertiger, schnellerhärtender Hartstoff-Verbundestrich mit höchstem Abriebwiderstand (Klasse A1,5, Hartstoffgruppe KS). Schnell belast- und belegbar, schwindarm, für innen und außen. Schichtdicke ab 10 mm für höchstbeanspruchte Industrieböden.",
+    schichtdicke: "ab 10 mm",
+    qualitaetsklasse: "CT-C60-F8-A1,5",
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3", "DIN 18560-1"],
+    technischeDaten: he60rTechnik("CT-C60-F8-A1,5", "A1,5 (≤ 1,5 cm³/50 cm²)"),
+    besonderheiten: HE60R_BESONDERHEITEN,
+    einsatzbereiche: HE60R_EINSATZ,
+    verarbeitungModi: HE60R_VERARBEITUNG_MODI,
+    verarbeitungMeta: HE60R_META,
+    verwandteProdukte: HE60R_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_60_rapid_de.pdf",
+    zeitKategorie: "schnell",
+  },
+  {
+    id: "neodur-he-60-rapid-metallisch",
+    bereich: "industrieboden",
+    produktgruppe: "schnellestrich",
+    variantenGruppe: "neodur-he-60-rapid",
+    basisHartstoff: "KORODUR Hartstoff",
+    variantenSchwerpunkt: "Panzerestrich, metallischer Zuschlag",
+    name: "NEODUR HE 60 rapid metallisch",
+    kategorie: "estrich",
+    kurzbeschreibung: "Metallischer Hartstoff-Schnellestrich (Panzerestrich)",
+    beschreibung:
+      "NEODUR HE 60 rapid metallisch ist ein schnellerhärtender Hartstoff-Verbundestrich mit metallischem Hartstoffzuschlag gem. DIN 1100 (Gruppe M). Extrem widerstandsfähig gegen schlagende und stoßende Beanspruchung, zur Herstellung schnell belastbarer Panzerestriche. Schwindarm, für innen und außen, Schichtdicke ab 10 mm.",
+    schichtdicke: "ab 10 mm",
+    qualitaetsklasse: "CT-C60-F8-A3",
+    normen: ["DIN EN 13813", "DIN 18560-7", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    technischeDaten: he60rTechnik("CT-C60-F8-A3", "A3 (≤ 3 cm³/50 cm²)"),
+    besonderheiten: [
+      "Metallischer Hartstoffzuschlag (DIN 1100 Gruppe M)",
+      "Extrem schlag- und stoßfest (Panzerestrich)",
+      "Schnell belast- und belegbar",
+      "Chemikalienbeständig",
+      "Schwindarm",
+      "Für innen und außen",
+    ],
+    einsatzbereiche: ["Schwerer Eisenräderverkehr", "Kettenfahrzeuge", "Panzerestriche", "Rampen und Stellflächen mit Stoßbelastung"],
+    verarbeitungModi: HE60R_VERARBEITUNG_MODI,
+    verarbeitungMeta: HE60R_META,
+    verwandteProdukte: HE60R_VERWANDTE,
+    tdsUrl: "/downloads/tds/NEODUR_HE_60_rapid_de.pdf",
+    zeitKategorie: "schnell",
   },
   {
     // HE 65 Standard = Mutter/Repräsentant der variantenGruppe (#372).
