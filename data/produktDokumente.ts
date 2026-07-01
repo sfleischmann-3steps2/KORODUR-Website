@@ -2261,25 +2261,7 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "dop",
-      "titel": "NEODUR HE 60 rapid metallisch",
-      "url": "/downloads/dop/13813_3.4_NEODUR_HE_60_rapid_metallisch_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "dop",
-      "titel": "NEODUR HE 60 rapid SVS 1.5",
-      "url": "/downloads/dop/13813_3.3_NEODUR_HE_60_rapid_SVS_1.5_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "dop",
-      "titel": "NEODUR HE 60 rapid SVS 3",
-      "url": "/downloads/dop/13813_3.2_NEODUR_HE_60_rapid_SVS_3_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "dop",
-      "titel": "NEODUR HE 60 rapid SVS 5",
+      "titel": "NEODUR HE 60 rapid",
       "url": "/downloads/dop/13813_3.1_NEODUR_HE_60_rapid_SVS_5_de.pdf",
       "sprache": "de"
     },
@@ -2295,6 +2277,30 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf",
       "sprache": "de"
     }
+  ],
+  "neodur-he-60-rapid-svs-3": [
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_fr.pdf", "sprache": "fr" },
+    { "typ": "sds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/sds/NEODUR_HE_60_rapid_SDB_de.pdf", "sprache": "de" },
+    { "typ": "dop", "titel": "NEODUR HE 60 rapid SVS 3", "url": "/downloads/dop/13813_3.2_NEODUR_HE_60_rapid_SVS_3_de.pdf", "sprache": "de" },
+    { "typ": "reinigung", "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke", "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf", "sprache": "de" }
+  ],
+  "neodur-he-60-rapid-svs-15": [
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_fr.pdf", "sprache": "fr" },
+    { "typ": "sds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/sds/NEODUR_HE_60_rapid_SDB_de.pdf", "sprache": "de" },
+    { "typ": "dop", "titel": "NEODUR HE 60 rapid SVS 1,5", "url": "/downloads/dop/13813_3.3_NEODUR_HE_60_rapid_SVS_1.5_de.pdf", "sprache": "de" },
+    { "typ": "reinigung", "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke", "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf", "sprache": "de" }
+  ],
+  "neodur-he-60-rapid-metallisch": [
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_de.pdf", "sprache": "de" },
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_en.pdf", "sprache": "en" },
+    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_fr.pdf", "sprache": "fr" },
+    { "typ": "sds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/sds/NEODUR_HE_60_rapid_SDB_de.pdf", "sprache": "de" },
+    { "typ": "dop", "titel": "NEODUR HE 60 rapid metallisch", "url": "/downloads/dop/13813_3.4_NEODUR_HE_60_rapid_metallisch_de.pdf", "sprache": "de" },
+    { "typ": "reinigung", "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke", "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf", "sprache": "de" }
   ],
   "neodur-he-65": [
     {
