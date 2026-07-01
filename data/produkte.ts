@@ -349,6 +349,43 @@ const vm13Modi = (auftrag: string) => [
   },
 ];
 
+// ===========================================================================
+// NEODUR PFM-ZE (#373) — Pflasterfugenmörtel, variantenGruppe "neodur-pfm-ze".
+// PFM-ZE (Pflasterflächen, starr) + PFM-ZE Flex (Plattenflächen, flexibler);
+// gemeinsames TDS (NEODUR_PFM_ZE_PFM_ZE_Flex). Quelle: TDS + Alt-XML.
+// ===========================================================================
+const PFMZE_BESONDERHEITEN = [
+  "Starre Bauweise, Bauklasse IV bis VI",
+  "Fugenbreite mind. 8 mm bzw. 2/3 der Steinhöhe",
+  "Nachbehandlung: 7 Tage Folienabdeckung",
+];
+const PFMZE_MODI = [
+  {
+    titel: "Untergrundvorbereitung",
+    schritte: [
+      "Der Unterbau muss ausreichend tragfähig und für die vorgesehenen Verkehrslasten hergestellt und überprüft sein.",
+      "Die Pflasterfläche muss frei von Verschmutzungen jeder Art sein, die Steine müssen fest eingebettet werden.",
+      "Die Fuge soll mindestens 2/3 der Steinhöhe und mindestens 8 mm Breite betragen.",
+      "Wasserdurchlässiger Unterbau, Bettung und Steine müssen die Anforderungen der RStO bzw. DNV erfüllen.",
+      "Die zum Verfugen bereitgestellte Fläche gründlich vornässen.",
+    ],
+  },
+  {
+    titel: "Verarbeitung",
+    schritte: [
+      "Den Mörtel mit Zwangsmischer oder Doppelquirl mit der vorgegebenen Wassermenge (3,5 l je 25 kg) mindestens 3 Minuten mischen.",
+      "Den frisch gemischten Mörtel auf die zu verfugende Fläche aufgießen.",
+      "Mit dem Gummiwischer diagonal hohlraumfrei in die Fuge einarbeiten und nach Bedarf mit dem Fugenrüttler vollständig entlüften.",
+      "Die Steinoberfläche nach leichtem Ansteifen des Mörtels reinigen (z. B. mit einem Schwammreinigungsgerät).",
+    ],
+  },
+];
+const PFMZE_META = [
+  { titel: "Nachbehandlung", text: "Die gereinigte Pflasterfläche ist sofort mit Folie für mindestens 7 Tage abzudecken. Unterschiedliche Temperaturen beeinflussen den Erstarrungs- bzw. Erhärtungsverlauf." },
+  { titel: "Fugen & Hinweise", text: "Dehnfugen sind einzuplanen und auszuführen. Haarrisse infolge von Temperaturschwankungen beeinträchtigen die Funktionalität der Fuge nicht und stellen keinen Mangel dar. Wir empfehlen, eine Musterfläche zu erstellen." },
+  { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 3 Monate." },
+];
+
 export const produkte: Produkt[] = [
   // === ESTRICHE / INDUSTRIEESTRICHE ===
   {
@@ -3220,8 +3257,11 @@ export const produkte: Produkt[] = [
     zeitKategorie: "normal",
   },
   {
+    // PFM-ZE = Mutter der variantenGruppe (#373); PFM-ZE Flex als eigene PDP.
     id: "neodur-pfm-ze",
     sku: "2220885S25KG",
+    variantenGruppe: "neodur-pfm-ze",
+    variantenSchwerpunkt: "Pflasterflächen (starr), ≥ 50 N/mm²",
     tdsUrl: "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_de.pdf",
     name: "NEODUR PFM-ZE",
     kategorie: "sonstige",
@@ -3231,49 +3271,46 @@ export const produkte: Produkt[] = [
     aussenbereich: true,
     produktgruppe: "pflasterfugen",
     kurzbeschreibung: "Pflasterfugenmörtel auf Zementbasis für Pflaster- und Plattenflächen in starrer Bauweise",
-    beschreibung: "NEODUR PFM-ZE und PFM-ZE Flex sind werksmäßig hergestellte Trockenmörtel auf Zement- und Natursandbasis (0–2 mm) für die Neuverfugung von Natur- und Betonpflaster bzw. Betonplatten in starrer Bauweise, Bauklasse IV bis VI. Die Fugenbreite sollte mindestens 8 mm betragen.",
+    beschreibung: "NEODUR PFM-ZE ist ein werksmäßig hergestellter Trockenmörtel auf Zement- und Natursandbasis (0–2 mm) für die Neuverfugung von Natur- und Betonpflaster in starrer Bauweise, Bauklasse IV bis VI. Für Pflasterflächen (grau/hellgrau), Druckfestigkeit ≥ 50 N/mm². Die Fugenbreite sollte mindestens 8 mm betragen.",
     normen: [],
     technischeDaten: [
       { label: "Basis", wert: "Zement- und Natursandbasis, Körnung 0–2 mm" },
+      { label: "Druckfestigkeit", wert: "≥ 50 N/mm²" },
       { label: "Verarbeitungszeit", wert: "ca. 40 Minuten" },
       { label: "Verarbeitungstemperatur", wert: "+5 °C bis +25 °C" },
       { label: "Belastbar", wert: "mit Pkw nach 7 Tagen" },
       { label: "Lieferform", wert: "25-kg-Papierspezialverpackung" },
     ],
-    verarbeitungModi: [
-      {
-        titel: "Untergrundvorbereitung",
-        schritte: [
-          "Der Unterbau muss ausreichend tragfähig und für die vorgesehenen Verkehrslasten hergestellt und überprüft sein.",
-          "Die Pflasterfläche muss frei von Verschmutzungen jeder Art sein, die Steine müssen fest eingebettet werden.",
-          "Die Fuge soll mindestens 2/3 der Steinhöhe und mindestens 8 mm Breite betragen.",
-          "Wasserdurchlässiger Unterbau, Bettung und Steine müssen die Anforderungen der RStO bzw. DNV erfüllen.",
-          "Die zum Verfugen bereitgestellte Fläche gründlich vornässen.",
-        ],
-      },
-      {
-        titel: "Verarbeitung",
-        schritte: [
-          "NEODUR PFM-ZE mit Zwangsmischer oder Doppelquirl mit der jeweiligen Wassermenge (3,5 l je 25 kg) mindestens 3 Minuten mischen.",
-          "Den frisch gemischten Mörtel auf die zu verfugende Fläche aufgießen.",
-          "Mit dem Gummiwischer diagonal hohlraumfrei in die Fuge einarbeiten und nach Bedarf mit dem Fugenrüttler vollständig entlüften.",
-          "Die Steinoberfläche nach leichtem Ansteifen des Mörtels reinigen (z. B. mit einem Schwammreinigungsgerät).",
-        ],
-      },
+    verarbeitungModi: PFMZE_MODI,
+    verarbeitungMeta: PFMZE_META,
+    besonderheiten: PFMZE_BESONDERHEITEN,
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-pfm-ze-flex",
+    variantenGruppe: "neodur-pfm-ze",
+    variantenSchwerpunkt: "Plattenflächen, flexibler, ≥ 40 N/mm²",
+    tdsUrl: "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_de.pdf",
+    name: "NEODUR PFM-ZE Flex",
+    kategorie: "sonstige",
+    bereich: "spezialmoertel",
+    zusatzBereiche: ["betonsanierung"],
+    aussenbereich: true,
+    produktgruppe: "pflasterfugen",
+    kurzbeschreibung: "Flexibler Pflasterfugenmörtel für Plattenflächen in starrer Bauweise",
+    beschreibung: "NEODUR PFM-ZE Flex ist ein werksmäßig hergestellter, flexibler Trockenmörtel auf Zement- und Natursandbasis (0–2 mm) für die Neuverfugung von Betonplatten in starrer Bauweise, Bauklasse IV bis VI. Für Plattenflächen (grau), Druckfestigkeit ≥ 40 N/mm². Die Fugenbreite sollte mindestens 8 mm betragen.",
+    normen: [],
+    technischeDaten: [
+      { label: "Basis", wert: "Zement- und Natursandbasis, Körnung 0–2 mm" },
+      { label: "Druckfestigkeit", wert: "≥ 40 N/mm²" },
+      { label: "Verarbeitungszeit", wert: "ca. 40 Minuten" },
+      { label: "Verarbeitungstemperatur", wert: "+5 °C bis +25 °C" },
+      { label: "Belastbar", wert: "mit Pkw nach 7 Tagen" },
+      { label: "Lieferform", wert: "25-kg-Papierspezialverpackung" },
     ],
-    verarbeitungMeta: [
-      { titel: "Nachbehandlung", text: "Die gereinigte Pflasterfläche ist sofort mit Folie für mindestens 7 Tage abzudecken. Unterschiedliche Temperaturen beeinflussen den Erstarrungs- bzw. Erhärtungsverlauf." },
-      { titel: "Fugen & Hinweise", text: "Dehnfugen sind einzuplanen und auszuführen. Haarrisse infolge von Temperaturschwankungen beeinträchtigen die Funktionalität der Fuge nicht und stellen keinen Mangel dar. Wir empfehlen, eine Musterfläche zu erstellen." },
-      { titel: "Lieferform & Lagerung", text: "25 kg Papierspezialverpackung. Trocken lagern, wie Zement. Haltbarkeitsdauer ca. 3 Monate." },
-    ],
-    besonderheiten: [
-      "Starre Bauweise, Bauklasse IV bis VI",
-      "Nachbehandlung: 7 Tage Folienabdeckung",
-    ],
-    varianten: [
-      { name: "NEODUR PFM-ZE", hinweis: "Pflasterflächen · grau/hellgrau · Druckfestigkeit ≥ 50 N/mm²" },
-      { name: "NEODUR PFM-ZE Flex", hinweis: "Plattenflächen · grau · Druckfestigkeit ≥ 40 N/mm²" },
-    ],
+    verarbeitungModi: PFMZE_MODI,
+    verarbeitungMeta: PFMZE_META,
+    besonderheiten: PFMZE_BESONDERHEITEN,
     zeitKategorie: "normal",
   },
 ];
