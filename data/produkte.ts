@@ -3042,6 +3042,39 @@ export const produkte: Produkt[] = [
     ],
     zeitKategorie: "normal",
   },
+
+  // === NEODUR USM (Unterstopfmörtel) — Notion-88er-Set, Website-Status „fehlt" (#306) ===
+  // Genuin im Code fehlend (nicht als Inline-Variante abgedeckt). Zuordnung aus der
+  // Kern-Produktdatenbank: Bereich Betonsanierung, Produktart Unterstopfmörtel.
+  // Kennwerte/TDS folgen über die Technik — bewusst leer statt geraten (Standing Rule).
+  {
+    id: "neodur-usm-3",
+    name: "NEODUR USM 3",
+    kategorie: "sonstige",
+    bereich: "betonsanierung",
+    produktgruppe: "verguss",
+    kurzbeschreibung:
+      "Mineralischer Unterstopfmörtel für das kraftschlüssige, hohlraumfreie Unterstopfen und Verfüllen von Fundamenten und Bauteilfugen im Zuge der Betoninstandsetzung.",
+    aussenbereich: true,
+    normen: [],
+    technischeDaten: [],
+    besonderheiten: [],
+    zeitKategorie: "normal",
+  },
+  {
+    id: "neodur-usm-5",
+    name: "NEODUR USM 5",
+    kategorie: "sonstige",
+    bereich: "betonsanierung",
+    produktgruppe: "verguss",
+    kurzbeschreibung:
+      "Mineralischer Unterstopfmörtel mit gröberer Körnung für größere Schichtstärken beim kraftschlüssigen Unterstopfen und Verfüllen in der Betoninstandsetzung.",
+    aussenbereich: true,
+    normen: [],
+    technischeDaten: [],
+    besonderheiten: [],
+    zeitKategorie: "normal",
+  },
 ];
 
 // ===========================================================================

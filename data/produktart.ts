@@ -134,18 +134,8 @@ const ID_ZU_PRODUKTART: Record<string, Produktart[]> = {
   "microtop-tw-nsm": ["spritzmoertel", "tw-beschichtungsmoertel"],
   "rapid-set-concrete-pharmacy": ["additive"],
   "korodur-durop": ["sonstiges"],
-  "neodur-he-40-8": ["hartstoffschicht"],
-  "neodur-he-60-rapid-svs-1-5": ["hartstoffschicht", "schnellestrich"],
-  "neodur-he-60-rapid-svs-3": ["hartstoffschicht", "schnellestrich"],
-  "neodur-he-60-rapid-metallisch": ["hartstoffschicht", "schnellestrich"],
   "neodur-usm-3": ["unterstopfmoertel"],
   "neodur-usm-5": ["unterstopfmoertel"],
-  "neodur-vb-8": ["vergussbeton"],
-  "neodur-vm-3": ["vergussmoertel"],
-  "rapid-set-cement-all-plus": ["reparaturmoertel"],
-  "rapid-set-fast": ["additive"],
-  "rapid-set-flow-control": ["additive"],
-  "rapid-set-set-control": ["additive"],
 };
 
 /** Alle Produktarten eines Produkts (Notion-View, Multi). Produkte ohne Eintrag
