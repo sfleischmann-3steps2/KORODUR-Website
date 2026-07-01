@@ -131,6 +131,7 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             { label: pa["produktart_spritzbeton"], href: paHref("spritzbeton") },
             { label: pa["produktart_vergussmoertel"], href: paHref("vergussmoertel") },
             { label: pa["produktart_vergussbeton"], href: paHref("vergussbeton") },
+            { label: pa["produktart_unterstopfmoertel"], href: paHref("unterstopfmoertel") },
             { label: pa["produktart_pflasterfugenmoertel"], href: paHref("pflasterfugenmoertel") },
             { label: pa["produktart_tw-beschichtungsmoertel"], href: paHref("tw-beschichtungsmoertel") },
           ],

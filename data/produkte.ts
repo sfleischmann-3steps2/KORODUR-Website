@@ -3052,7 +3052,7 @@ export const produkte: Produkt[] = [
     name: "NEODUR USM 3",
     kategorie: "sonstige",
     bereich: "betonsanierung",
-    produktgruppe: "verguss",
+    produktgruppe: "unterstopf",
     kurzbeschreibung:
       "Mineralischer Unterstopfmörtel für das kraftschlüssige, hohlraumfreie Unterstopfen und Verfüllen von Fundamenten und Bauteilfugen im Zuge der Betoninstandsetzung.",
     aussenbereich: true,
@@ -3066,7 +3066,7 @@ export const produkte: Produkt[] = [
     name: "NEODUR USM 5",
     kategorie: "sonstige",
     bereich: "betonsanierung",
-    produktgruppe: "verguss",
+    produktgruppe: "unterstopf",
     kurzbeschreibung:
       "Mineralischer Unterstopfmörtel mit gröberer Körnung für größere Schichtstärken beim kraftschlüssigen Unterstopfen und Verfüllen in der Betoninstandsetzung.",
     aussenbereich: true,

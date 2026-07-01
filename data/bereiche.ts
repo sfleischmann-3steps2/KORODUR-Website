@@ -83,6 +83,9 @@ export const bereiche: Bereich[] = [
       "reparaturmoertel",
       "schnellbeton",
       "verguss",
+      // #306: eigene Gruppe „Unterstopfmörtel" (NEODUR USM), Produktart
+      // unterstopfmoertel — nicht mit dem Vergusssystem vermengen.
+      "unterstopf",
       "spritzmoertel",
       "pflasterfugen",
       "additive",

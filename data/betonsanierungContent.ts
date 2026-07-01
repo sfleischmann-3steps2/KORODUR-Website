@@ -157,7 +157,7 @@ export const BETONSANIERUNG_CONTENT = {
         label: "Montage- & Vergusssystem",
         intro:
           "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen und Fertigteilen. Hochfließfähige Vergussmörtel vergießen Anker, Bolzen, Pfeiler, Schienen und Maschinenfundamente hohlraumfrei, sodass die Kräfte direkt ins Fundament abgeleitet werden. Vom Schnellverguss bis zum hochfesten Vergussbeton für große Querschnitte, schrumpfarm, frost- und tausalzbeständig.",
-        produkte: ["NEODUR VM basic", "NEODUR USM 3", "NEODUR USM 5"],
+        produkte: ["NEODUR VM basic"],
       },
       {
         gruppe: "pflasterfugen",
@@ -193,6 +193,8 @@ export const BETONSANIERUNG_CONTENT = {
       "Baustellengemischter Schnellbeton für große Flächen und Verkehrswege. Volumetrisch vor Ort gemischt, pumpfähig, ohne Restbeton.",
     verguss:
       "Montage- und Vergussmörtel für den kraftschlüssigen, hohlraumfreien Verbund von Beton mit Stahleinbauteilen — vom Schnellverguss bis zum hochfesten Vergussbeton für große Querschnitte.",
+    unterstopf:
+      "Mineralischer Unterstopfmörtel für das kraftschlüssige Unterstopfen und Verfüllen von Fundamenten und Bauteilfugen im Zuge der Betoninstandsetzung.",
     spritzmoertel:
       "Mineralischer Spritzmörtel und Spritzbeton für die Reprofilierung von Fehlstellen und die flächige Betoninstandsetzung im Nass- oder Trockenspritzverfahren, gestaffelt nach Körnung.",
     pflasterfugen:

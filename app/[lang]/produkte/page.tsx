@@ -88,9 +88,10 @@ export default async function ProduktePage({
   const ohneMarke = (s: string) => s.replace(/\s*\((?:Rapid Set|MICROTOP)\)\s*$/u, "");
   const bereichOptionen: { slug: string; label: string; indent?: boolean }[] = [];
   for (const slug of BEREICH_FILTER_ORDER.filter((s) => bereicheMitProduktart.has(s))) {
-    // „microtop" trägt als Bereich den Use-Case-Namen (TW-Behältersanierung);
-    // die Marke MICROTOP wird darunter eingerückt.
-    const roh = slug === "microtop" ? bt.microtop_menu : bt[`${slug}_name`] ?? slug;
+    // Der Bereich heißt „TW-Behältersanierung"; im Portfolio (Produktarten-Achse)
+    // heißt er „Trinkwasserbeschichtungsmörtel" (Steffi #306). Marke MICROTOP
+    // darunter eingerückt.
+    const roh = slug === "microtop" ? paTexte["produktart_tw-beschichtungsmoertel"] ?? slug : bt[`${slug}_name`] ?? slug;
     bereichOptionen.push({ slug, label: ohneMarke(roh) });
     if (MARKE_UNTER[slug]) bereichOptionen.push({ ...MARKE_UNTER[slug], indent: true });
   }
