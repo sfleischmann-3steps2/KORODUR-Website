@@ -22,6 +22,7 @@ import { withBasePath } from "../../../../lib/basePath";
 import BetonsanierungBereich from "../../../../components/BetonsanierungBereich";
 import RapidSetMarke from "../../../../components/RapidSetMarke";
 import InfrastrukturBereich from "../../../../components/InfrastrukturBereich";
+import MicrotopBereich from "../../../../components/MicrotopBereich";
 import { RAPID_SET_PRODUKT_IDS } from "../../../../data/rapidSetContent";
 import BereichEditorialSektion from "../../../../components/BereichEditorialSektion";
 import { bereichEditorial } from "../../../../data/bereichEditorial";
@@ -42,6 +43,8 @@ const DEDIZIERTE_BEREICHE: Record<string, typeof BetonsanierungBereich> = {
   "rapid-set": RapidSetMarke,
   // #376: Infrastruktur (Single-Narrativ, zwei Schnellbeton-Systeme).
   infrastruktur: InfrastrukturBereich,
+  // #375: MICROTOP TW-Behältersanierung (Rich-Seite aus abgenommener LP).
+  microtop: MicrotopBereich,
 };
 
 // Cross-Selling (Steffi 2026-06-13, #84): kontextuell verwandter Bereich.
