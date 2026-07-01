@@ -2393,4 +2393,189 @@ export const referenzenEN: Record<string, {
     ],
     bildAlt: "Concrete repair of an earth-contacting pipe with Rapid Set CEMENT ALL",
   },
+  "3d-gedrucktes-haus-in-paremoremo": {
+    titel: "3D-printed house in Paremoremo",
+    untertitel: "New Zealand's first fully 3D-printed residential home with concrete wall panels",
+    land: "New Zealand",
+    herausforderungen: [
+      "First fully 3D-printed residential home in New Zealand",
+      "Integrating the building into the site's natural contours",
+      "252 m² family home for a family of four",
+    ],
+    loesung:
+      "In the Auckland suburb of Paremoremo, New Zealand's first fully 3D-printed residential home was completed. The 252 m² family home features 3D-printed concrete wall panels and complements the natural contours of its peaceful setting.",
+    vorteile: [
+      "First fully 3D-printed residential home in New Zealand",
+      "Concrete wall panels straight from 3D printing",
+      "Harmonious integration into the natural surroundings",
+    ],
+    bildAlt: "3D-printed residential home in Paremoremo, New Zealand",
+  },
+  "baufachhaendler-linnenbecker-aussenlager-bad-oeynhausen": {
+    titel: "Linnenbecker builders' merchant, outdoor warehouse Bad Oeynhausen",
+    untertitel: "Test area with ASPHALT REPAIR MIX under constant truck and forklift traffic",
+    land: "Germany",
+    herausforderungen: [
+      "Damaged asphalt surface with potholes and cracks",
+      "Constant truck and forklift traffic in the outdoor warehouse",
+      "High permanent load on the surface",
+    ],
+    loesung:
+      "In May 2022, we created a test area with ASPHALT REPAIR MIX in the ARM outdoor warehouse of the Linnenbecker builders' merchant, a fast-setting, cement-based repair material for damaged asphalt surfaces. Even under constant truck and forklift traffic, the surface proved its resistance and durability.",
+    vorteile: [
+      "Rapid setting and high load-bearing capacity",
+      "Robust, durable repair of asphalt damage",
+      "Easy application, even in high-traffic areas",
+    ],
+    bildAlt: "Test area with ASPHALT REPAIR MIX in the Linnenbecker outdoor warehouse, Bad Oeynhausen",
+  },
+  "betriebszufahrt-lackiererei-schmidt-versmold": {
+    titel: "Access road, Schmidt paintshop, Versmold",
+    untertitel: "Asphalt repair of a heavily trafficked access road with ASPHALT REPAIR MIX",
+    land: "Germany",
+    herausforderungen: [
+      "Heavy loads from truck and car traffic",
+      "Ensuring the load-bearing capacity and durability of the access road",
+      "Repair of the daily-used access road",
+    ],
+    loesung:
+      "In May 2022, we resurfaced the access road to the Schmidt paintshop with ASPHALT REPAIR MIX. A total of two pallets were installed by the experienced landscaping company Grothues & Solfrian from Versmold.",
+    vorteile: [
+      "High load-bearing capacity for daily truck and car traffic",
+      "Simple, efficient application",
+      "Durable, economical solution",
+    ],
+    bildAlt: "Repaired access road at the Schmidt paintshop in Versmold",
+  },
+  "farbiger-beton-fuer-feinbrennerei": {
+    titel: "Coloured concrete for the Sasse fine distillery",
+    untertitel: "Red NEODUR HE 3 industrial floor in the distillery's Refugium",
+    land: "Germany",
+    herausforderungen: [
+      "Concrete floor in the Refugium, also the waterproof slab of the white tank",
+      "Regular handling of liquids in the maturing hall",
+      "Red colouring to match the architectural concept",
+      "Wear-, slip- and water-resistant surface required",
+    ],
+    loesung:
+      "BD Bau GmbH finished the concrete floor with a KORODUR industrial flooring system. The mineral dry mortar NEODUR HE 3 in red was uniformly broadcast onto the disc-trowelled concrete using a spreader, then trowelled and smoothed with a disc trowelling machine.",
+    vorteile: [
+      "Wear-, slip- and water-resistant hall floor",
+      "Red colour matching the aesthetic concept",
+      "Warm atmosphere interacting with the ochre-yellow concrete walls",
+    ],
+    bildAlt: "Red industrial floor in the Refugium of the Sasse fine distillery in Schöppingen",
+  },
+  "lagerflaeche-strassenbau-dieckmann-versmold": {
+    titel: "Storage area, Dieckmann road construction, Versmold",
+    untertitel: "Reference test renovation of a yard surface under truck and excavator loads",
+    land: "Germany",
+    herausforderungen: [
+      "Maximum load from trucks and excavators",
+      "Durable solution for the heavily trafficked yard surface",
+      "Professional application in-house with KORODUR assistance",
+    ],
+    loesung:
+      "On 19 July 2021, together with the Dieckmann team, we carried out a reference test renovation of the yard surface with ASPHALT REPAIR MIX. The material is specially designed for high-traffic areas and withstands heavy-duty traffic.",
+    vorteile: [
+      "Exceptional resistance to heavy-duty traffic",
+      "Efficient application in cooperation with KORODUR",
+      "High-quality, long-lasting solution",
+    ],
+    bildAlt: "Renovated storage area at Dieckmann road construction in Versmold",
+  },
+  "lkw-ausfahrt-wueseke-baustoffwerke-gmbh": {
+    titel: "Truck exit road, Wüseke Baustoffwerke GmbH",
+    untertitel: "Fast repair of a heavily stressed truck exit road with minimal downtime",
+    land: "Germany",
+    herausforderungen: [
+      "Heavily stressed truck exit road at the KS plant",
+      "High resistance to heavy vehicles",
+      "Minimal downtime required",
+    ],
+    loesung:
+      "In May 2022, we repaired the truck exit road at the KS Wüseke plant with ASPHALT REPAIR MIX. Two pallets were installed by the civil engineering company Knappheide from Glandorf. Thanks to rapid setting, the exit road was quickly returned to service.",
+    vorteile: [
+      "Rapid setting, minimal downtime",
+      "High load-bearing capacity under heavy traffic",
+      "Easy application, sustainable maintenance",
+    ],
+    bildAlt: "Repaired truck exit road at the Wüseke plant in Sassenberg",
+  },
+  "produktionsstaette-fiorini": {
+    titel: "New Fiorini production facility in Italy",
+    untertitel: "28,000 m² CO₂-reduced hard aggregate floor with NEODUR HE 3 green",
+    land: "Italy",
+    herausforderungen: [
+      "High mechanical load capacity: forklift traffic, heavy production machinery, intensive logistics",
+      "Verifiable CO₂ reduction for the targeted LEED certification",
+      "Verified environmental data rather than industry averages",
+      "Long service life and wear resistance for continuous operation",
+    ],
+    loesung:
+      "The entire 28,000 m² floor area was installed with NEODUR HE 3 green, a CO₂-reduced hard aggregate dry-shake material. The binder's CO₂ footprint is 50 to 60 percent below conventional dry-shake products. NEODUR HE 3 green is the world's first hard aggregate with a product-specific Environmental Product Declaration (EPD), whose verified data feed directly into the LEED assessment. Installation was carried out by ITS using the standard dry-shake method.",
+    vorteile: [
+      "High mechanical load capacity: compressive strength C 70, flexural strength F 9, wear resistance ≤ 5.0 cm³/50 cm² (Böhme)",
+      "CO₂ savings equivalent to approx. 240,000 km of car fuel consumption",
+      "World's first dry-shake material with a product-specific EPD, listed in the DGNB Navigator",
+      "EPD data directly support the LEED building certification",
+      "Proven standard dry-shake method, no special procedures required",
+    ],
+    bildAlt: "Industrial floor with NEODUR HE 3 green in the new Fiorini production facility in Trecastelli",
+  },
+  "sanierung-der-fugen-wurstttaegerbrunnen-versmold": {
+    titel: "Joint repair at the Wurstträgerbrunnen fountain, Versmold",
+    untertitel: "Heritage-appropriate jointing of the Versmold landmark with Rapid Set MORTAR MIX",
+    land: "Germany",
+    herausforderungen: [
+      "Heritage-appropriate renovation of the Versmold landmark",
+      "Jointing of the paved surfaces around the fountain",
+      "Preserving aesthetics and structural integrity",
+    ],
+    loesung:
+      "Bau-Team GmbH repaired the joints of the Wurstträgerbrunnen with Rapid Set MORTAR MIX. The material is ideal for jointing paved surfaces, offering excellent adhesion and high durability.",
+    vorteile: [
+      "Excellent adhesion and high durability",
+      "Fast setting, heritage-appropriate repair",
+      "Restored aesthetics and longevity",
+    ],
+    bildAlt: "Repaired joints at the Wurstträgerbrunnen fountain in Versmold",
+  },
+  "treppensanierung-check-up-6-jahre-spater": {
+    titel: "Stairway repair Esslingen, check-up after 6 years",
+    untertitel: "Long-term check-up: six years after the Rapid Set repair, as good as new",
+    land: "Germany",
+    herausforderungen: [
+      "Stairs as heavily stressed traffic ways with dynamic loads",
+      "Abrasive stress from dirt and grit in outdoor areas",
+      "Greatest mechanical loads on the stair nosing",
+      "Frost and de-icing salt in winter",
+    ],
+    loesung:
+      "In 2015, we repaired a damaged concrete stairway in Esslingen with the multipurpose Rapid Set repair mortars CEMENT ALL and MORTAR MIX. The check-up six years later shows: the stairs still look the same as on the first day of their repair.",
+    vorteile: [
+      "Still like new even after six years",
+      "Resistant to dynamic loads, frost and de-icing salt",
+      "Sustainable: Rapid Set cement generates around 30 percent less CO₂ than Portland cement",
+    ],
+    bildAlt: "Concrete stairway in Esslingen, check-up six years after repair with Rapid Set",
+  },
+  "verfugung-von-natursteinplatten": {
+    titel: "Grouting of natural stone slabs at Hotel Das Weitblick Allgäu",
+    untertitel: "Natural stone terrace slabs grouted with NEODUR PFM-EP",
+    land: "Germany",
+    herausforderungen: [
+      "Professional grouting of the terrace's concrete and natural stone slabs",
+      "Durable, weather-resistant joints outdoors",
+      "High-quality appearance to match the 4-star hotel",
+    ],
+    loesung:
+      "The terrace of the Das Weitblick wellness and conference hotel was paved with concrete and natural stone slabs (Lucerna Gneiss Piemont, Travertine) and grouted with KORODUR NEODUR PFM-EP paving mortar. Laying and grouting were carried out by a regional specialist company, supplied from a single source via the Rössle company.",
+    vorteile: [
+      "Durable, weather-resistant grouting",
+      "High-quality appearance for the terrace surface",
+      "Supplied from a single source via partner Rössle",
+    ],
+    bildAlt: "Natural stone terrace grouted with NEODUR PFM-EP at Hotel Das Weitblick in Marktoberdorf",
+  },
 };
