@@ -290,13 +290,7 @@ export const produkte: Produkt[] = [
       "NEODUR HE 60 rapid ist ein gebrauchsfertiger, schnellerhärtender Hartstoff-Verbundestrich auf Basis hochwertiger KORODUR-Hartstoffzuschläge nach DIN 1100 (Gruppe A, M oder KS), mineralisch-hydraulisch gebunden und schwindarm. Für den raschen Einbau und die Sanierung von Verbundestrichen, schnell belast- und belegbar, mit erhöhtem Verschleißwiderstand. Schichtdicke ab 10 mm, z. B. für Fabrikhallen, Werkstätten, Hochregallager und andere stark beanspruchte Industrieböden. Für innen und außen.",
     schichtdicke: "ab 10 mm",
     qualitaetsklasse: "CT-C60-F8-A6",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560",
-      "DIN 18202 (Ebenheit)",
-      "DIN 18560-1",
-      "DIN EN 16516 + AgBB",
-    ],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: [
       { label: "Druckfestigkeit", wert: "≥ 60 N/mm²", norm: "DIN EN 13892-2" },
       { label: "Biegezugfestigkeit", wert: "≥ 8 N/mm²", norm: "DIN EN 13892-2" },
@@ -368,7 +362,7 @@ export const produkte: Produkt[] = [
       "NEODUR HE 65 ist ein gebrauchsfertiger, zementgebundener Hartstoffestrich auf Basis von KORODUR VS 0/5. Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7, auch farbig lieferbar. Für hochbeanspruchbare Industrieböden mit stärkster Beanspruchung.",
     schichtdicke: "A: 15/10/8 mm · KS: 6/5/4 mm",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: he65Technik("CT-C70-F9-A6", "70", "9", "A6 (≤ 6 cm³/50 cm²)"),
     besonderheiten: HE65_BESONDERHEITEN,
     einsatzbereiche: HE65_EINSATZ,
@@ -403,7 +397,7 @@ export const produkte: Produkt[] = [
       "NEODUR HE 65 Plus ist ein gebrauchsfertiger, zementgebundener, kunststoffmodifizierter Hartstoffestrich. Einschichtig als Verbundestrich auf erhärtetem Tragbeton (15–30 mm) ohne zusätzliche Haftbrücke. Frost- und tausalzbeständig, WHG-tauglich — auch für Außenbereiche.",
     schichtdicke: "15–30 mm",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: [
       ...he65Technik("CT-C70-F9-A6", "70", "9", "A6 (≤ 6 cm³/50 cm²)"),
       { label: "Frost-/Tausalzbeständig", wert: "Ja" },
@@ -443,7 +437,7 @@ export const produkte: Produkt[] = [
       "NEODUR HE 65 SVS 3 ist ein gebrauchsfertiger, zementgebundener Hartstoffestrich auf Basis von KORODUR WH-Spezial. Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7, höhere Verschleißklasse A3. Auch farbig lieferbar.",
     schichtdicke: "A: 15/10/8 mm · KS: 6/5/4 mm",
     qualitaetsklasse: "CT-C70-F9-A3",
-    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: he65Technik("CT-C70-F9-A3", "70", "9", "A3 (≤ 3 cm³/50 cm²)"),
     besonderheiten: HE65_BESONDERHEITEN,
     einsatzbereiche: HE65_EINSATZ,
@@ -468,7 +462,7 @@ export const produkte: Produkt[] = [
       "NEODUR HE 65 SVS 1,5 ist ein gebrauchsfertiger, zementgebundener Hartstoffestrich auf Basis von KORODUR Diamantbeton. Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7, höchster Abriebwiderstand (Hartstoffgruppe KS). Auch farbig lieferbar.",
     schichtdicke: "KS: 6/5/4 mm",
     qualitaetsklasse: "CT-C70-F9-A1,5",
-    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: he65Technik("CT-C70-F9-A1,5", "70", "9", "A1,5 (≤ 1,5 cm³/50 cm²)"),
     besonderheiten: HE65_BESONDERHEITEN,
     einsatzbereiche: HE65_EINSATZ,
@@ -493,7 +487,7 @@ export const produkte: Produkt[] = [
       "NEODUR HE 65 metallisch ist ein zementgebundener Hartstoffestrich mit metallischem Hartstoffzuschlag (KORODUR WH-metallisch) gem. DIN 1100 (Gruppe M). Einschichtig als Verbundestrich für höchste Belastungen gem. DIN 18560-7. Extrem widerstandsfähig gegen schlagende und stoßende Beanspruchung — zur Herstellung von Panzerestrichen.",
     schichtdicke: "A: 15/10/8 mm",
     qualitaetsklasse: "CT-C80-F11-A3",
-    normen: ["DIN EN 13813", "DIN 18560-7", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: he65Technik("CT-C80-F11-A3", "80", "11", "A3 (≤ 3 cm³/50 cm²)"),
     besonderheiten: [
       "Metallischer Hartstoffzuschlag (DIN 1100 Gruppe M)",
@@ -534,7 +528,7 @@ export const produkte: Produkt[] = [
       "NEODUR HE 65 Plus SVS 3 ist ein gebrauchsfertiger, zementgebundener, kunststoffmodifizierter Hartstoffestrich auf Basis von KORODUR WH-Spezial. Einschichtig als Verbundestrich auf erhärtetem Tragbeton ohne zusätzliche Haftbrücke, höhere Verschleißklasse A3. Frost- und tausalzbeständig.",
     schichtdicke: "15–30 mm",
     qualitaetsklasse: "CT-C70-F9-A3",
-    normen: ["DIN EN 13813", "DIN 18560-7", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: [
       ...he65Technik("CT-C70-F9-A3", "70", "9", "A3 (≤ 3 cm³/50 cm²)"),
       { label: "Frost-/Tausalzbeständig", wert: "Ja" },
@@ -563,10 +557,7 @@ export const produkte: Produkt[] = [
       "NEODUR HE 40 ist ein gebrauchsfertiges Trockenmaterial aus harten mineralischen KORODUR-Zuschlägen nach DIN 1100 (Gruppe A), in den Qualitäten NEODUR HE 40 (Estrichdicke bis 35 mm) und NEODUR HE 40/8 (bis 50 mm). Einschichtiger Einbau als Verbundestrich für sehr hohe Beanspruchung. Anwendungsbereiche: hochverschleißbeanspruchte Industrieböden wie Parkhäuser, Industrie- und Montagehallen, Flugzeughallen, Werkstätten und Hochregallager. Für innen und außen.",
     schichtdicke: "8–15 / 15–35 / 25–50 mm",
     qualitaetsklasse: "CT-C40-F6-A6",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560-7",
-    ],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: [
       { label: "Klassifizierung", wert: "CT-C40-F6-A6 (HE 40) / CT-C40-F7-A6 (HE 40/8)", norm: "DIN EN 13813" },
       { label: "Druckfestigkeit", wert: "C40 (≥ 40 N/mm²) nach 28 Tagen", norm: "DIN EN 13892-2" },
@@ -623,12 +614,7 @@ export const produkte: Produkt[] = [
       "NEODUR Level ist ein gebrauchsfertiger, zementär gebundener, schnellerhärtender und polymermodifizierter Mineralmörtel für Industrieböden in Dünnschicht von 4 bis 30 mm (CT-C40-F8-AR0,5). Einsatz in Neubau und Sanierung von Produktions- und Lagerhallen im Verbund auf mineralischen Untergründen, auch im Parkhausbereich.",
     schichtdicke: "4–30 mm",
     qualitaetsklasse: "CT-C40-F8-AR0,5",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560",
-      "DIN 18202 Zeile 3 (erhöhte Ebenheit)",
-      "DIN EN 12706",
-    ],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: [
       { label: "Druckfestigkeit", wert: "≥ 40 N/mm²", norm: "DIN EN 13892-2" },
       { label: "Biegezugfestigkeit", wert: "F8", norm: "DIN EN 13892-2" },
@@ -703,12 +689,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Selbstverlaufender, geschliffener dekorativer Sichtestrich",
     schichtdicke: "5–35 mm",
     qualitaetsklasse: "CT-C40-F10",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560",
-      "DIN EN 13892-2",
-      "DIN EN 13892-3",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Druckfestigkeit", wert: "≥ 40 N/mm²", norm: "DIN EN 13892-2" },
       { label: "Biegezugfestigkeit", wert: "≥ 10 N/mm²", norm: "ASTM C 307 Mod." },
@@ -911,11 +892,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Universeller Schnellreparaturmörtel",
     schichtdicke: "Boden 10–100 mm",
     qualitaetsklasse: "C55/67",
-    normen: [
-      "ASTM C928",
-      "DIN EN 1015-11",
-      "DIN EN 196-3",
-    ],
+    normen: ["DIN EN 13813", "DIN EN 998-1"],
     technischeDaten: [
       { label: "Qualität", wert: "C55/67" },
       { label: "Druckfestigkeit (60 min)", wert: "> 20 N/mm²", norm: "DIN EN 1015-11" },
@@ -989,11 +966,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Universeller Schnellreparaturmörtel",
     schichtdicke: "10–150 mm",
     qualitaetsklasse: "C45/55",
-    normen: [
-      "ASTM C928",
-      "DIN EN 1015-11",
-      "DIN EN 196-3",
-    ],
+    normen: ["DIN EN 13813", "DIN EN 998-1"],
     technischeDaten: [
       { label: "Qualität", wert: "C45/55" },
       { label: "Druckfestigkeit (60 min)", wert: "> 17 N/mm²", norm: "DIN EN 1015-11" },
@@ -1059,11 +1032,7 @@ export const produkte: Produkt[] = [
       "Rapid Set MORTAR MIX DUR ist ein schnellerhärtender Reparaturmörtel mit integriertem Verschleißträger nach DIN 1100 (Gruppe A). Pastöse bis plastische, einstellbare Konsistenz, schwundneutral und für Schwerlastfugen geeignet, für hochverschleißbeanspruchte Reparaturstellen. Bereits nach ca. 1 Stunde voll belastbar.",
     schichtdicke: "10–150 mm",
     qualitaetsklasse: "C45/55",
-    normen: [
-      "ASTM C928",
-      "DIN EN 1504-3",
-      "DIN 1100 A (Hartstoff)",
-    ],
+    normen: ["DIN EN 13813", "DIN 1100"],
     technischeDaten: [
       { label: "Qualität", wert: "C45/55 + DIN 1100 A" },
       { label: "Druckfestigkeit (1 h)", wert: "≥ 21 N/mm²" },
@@ -1100,9 +1069,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Schnellreparaturmaterial für Asphaltflächen",
     beschreibung: "Rapid Set ASPHALT REPAIR MIX ist ein zementbasiertes, polymervergütetes Reparaturmaterial: hochfest, spannungsarm und schnellerhärtend. Es vereint die Geschwindigkeit von Kaltmischgut mit der Dauerhaftigkeit von Heißasphalt: Sack öffnen, Wasser zugeben, mischen, einbauen. Ohne Fräse, ohne Walze, ohne Haftbrücke; nach ca. 30 Minuten belastbar, nach ca. 1 Stunde voll belastbar, auch unter Schwerlastverkehr.",
     schichtdicke: "30–600 mm",
-    normen: [
-      "DIN EN 1015-11",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Druckfestigkeit (30 min)", wert: "ca. 15 N/mm²", norm: "DIN EN 1015-11" },
       { label: "Druckfestigkeit (1 h)", wert: "ca. 22 N/mm²", norm: "DIN EN 1015-11" },
@@ -1188,10 +1155,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Universeller Schnellreparaturbeton, DIN EN 1504-3",
     schichtdicke: "50–600 mm",
     qualitaetsklasse: "C35/45",
-    normen: [
-      "DIN EN 1504-3",
-      "DIN EN 1015-11",
-    ],
+    normen: ["DIN EN 1504-3"],
     technischeDaten: [
       { label: "Qualität", wert: "C35/45" },
       { label: "Körnung", wert: "0–8 mm" },
@@ -1491,7 +1455,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Zementgebundener Trockenbaustoff für Industrieböden im Einstreuverfahren",
     beschreibung: "NEODUR HE 3 gem. DIN 18557 (Werkmörtel) und DIN EN 13813, basierend auf Hartstoffen gem. DIN 1100: gebrauchsfertiger, zementgebundener Trockenbaustoff zur Herstellung von Industrieböden im Einstreuverfahren. Auch farbig lieferbar.",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: he3Technik("CT-C70-F9-A6", "70", "9", "A6 (≤ 6 cm³/50 cm²)", "A"),
     besonderheiten: [...HE3_BESONDERHEITEN, "Umweltproduktdeklaration (Gruppen-EPD) verfügbar"],
     einsatzbereiche: HE3_EINSATZ,
@@ -1512,7 +1476,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Hartstoffeinstreuung, Verschleißklasse A3",
     beschreibung: "NEODUR HE 3 SVS 3 — Hartstoffeinstreuung im Trockeneinstreuverfahren gem. DIN 18557 / DIN EN 13813, Hartstoffe gem. DIN 1100, mit höherer Verschleißklasse A3. Auch farbig lieferbar.",
     qualitaetsklasse: "CT-C70-F9-A3",
-    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: he3Technik("CT-C70-F9-A3", "70", "9", "A3 (≤ 3 cm³/50 cm²)", "A"),
     besonderheiten: ["Höhere Verschleißklasse A3 (≤ 3 cm³/50 cm²)", ...HE3_BESONDERHEITEN],
     einsatzbereiche: HE3_EINSATZ,
@@ -1534,7 +1498,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Hartstoffeinstreuung, Verschleißklasse A1,5",
     beschreibung: "NEODUR HE 3 SVS 1,5 — Hartstoffeinstreuung im Trockeneinstreuverfahren gem. DIN 18557 / DIN EN 13813, Hartstoffe gem. DIN 1100 (Hartstoffgruppe KS), höchste Verschleißklasse A1,5. Auch farbig lieferbar.",
     qualitaetsklasse: "CT-C70-F9-A1,5",
-    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: he3Technik("CT-C70-F9-A1,5", "70", "9", "A1,5 (≤ 1,5 cm³/50 cm²)", "KS"),
     besonderheiten: ["Höchste Verschleißklasse A1,5 (≤ 1,5 cm³/50 cm², Hartstoffgruppe KS)", ...HE3_BESONDERHEITEN],
     einsatzbereiche: HE3_EINSATZ,
@@ -1556,7 +1520,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Metallische Hartstoffeinstreuung (DIN 1100 Gruppe M)",
     beschreibung: "NEODUR HE 3 metallisch — Hartstoffeinstreuung mit metallischem Zuschlag (KORODUR WH metallisch) gem. DIN 1100 Gruppe M, DIN EN 13813. Extrem schlag- und stoßfest, höhere Festigkeit (C80/F11) für stärkste Beanspruchung.",
     qualitaetsklasse: "CT-C80-F11-A3",
-    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: he3Technik("CT-C80-F11-A3", "80", "11", "A3 (≤ 3 cm³/50 cm²)", "M"),
     besonderheiten: [
       "Metallischer Hartstoffzuschlag (DIN 1100 Gruppe M)",
@@ -1586,7 +1550,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Ressourcenschonende Variante von NEODUR HE 3 mit bis zu 30 % reduziertem CO₂-Ausstoß",
     beschreibung: "Mit der ressourcenschonenden Variante NEODUR HE 3 green kann der CO₂-Ausstoß in der Herstellung um bis zu 30 Prozent reduziert werden. Für Bauherren, Architekten, Planer und Bauunternehmen stehen entsprechende Umweltproduktdeklarationen (EPD) bereit.",
     qualitaetsklasse: "CT-C70-F9-A6",
-    normen: ["DIN 18557", "DIN EN 13813", "DIN 1100", "DIN EN 13892-2", "DIN EN 13892-3"],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: [
       ...he3Technik("CT-C70-F9-A6", "70", "9", "A6 (≤ 6 cm³/50 cm²)", "A"),
       { label: "CO₂-Reduktion", wert: "bis zu 30 %" },
@@ -1609,10 +1573,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Zementgebundener Trockenbaustoff für Industrieböden im Einstreuverfahren",
     beschreibung: "NEODUR HE 2 gem. DIN 18557 (Werkmörtel) und DIN EN 13813: gebrauchsfertiger, zementgebundener Trockenbaustoff zur Herstellung von Industrieböden im Einstreuverfahren. Auch farbig lieferbar.",
     qualitaetsklasse: "CT-C70-F9-A8",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560",
-    ],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: [
       { label: "Korngröße", wert: "0–3 mm" },
       { label: "Druckfestigkeit", wert: "70 N/mm²" },
@@ -1728,7 +1689,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Zementäres, volumenstabiles, schwindarmes Schnellestrich-Bindemittel auf ternärer Basis",
     beschreibung: "KORODUR FSCem ist ein zementäres, volumenstabiles, schwindarmes Schnellestrich-Bindemittel auf ternärer Basis zur Herstellung hochbelastbarer, schnell nutzbarer und verlegereifer Estriche gem. DIN 18560 und EN 13813. Für schnell belegbare Zementestriche im Verbund, auf Trennschicht, auf Dämmschicht und als Heizestrich, innen und außen. Auch zum Ausbessern und Sanieren alter Betonböden geeignet.",
     qualitaetsklasse: "CT-C50-F7 / CT-C40-F6",
-    normen: ["DIN 18560", "DIN EN 13813", "DIN 18560-1"],
+    normen: ["DIN EN 13813", "DIN 18560"],
     technischeDaten: [
       { label: "Klassifizierung", wert: "CT-C50-F7 (MV 1:4) bis CT-C40-F6 (MV 1:5)", norm: "DIN EN 13813 / DIN 18560" },
       { label: "Druckfestigkeit (CT-C50-F7, MV 1:4)", wert: "nach 3 Tagen ≥ 35 N/mm², nach 28 Tagen ≥ 50 N/mm²", norm: "DIN EN 13892-2" },
@@ -1784,12 +1745,7 @@ export const produkte: Produkt[] = [
     beschreibung: "KORODUR FSCem Screed ist ein volumenstabiler, schwindarmer Schnellestrich-Trockenmörtel auf ternärer Basis zur Herstellung schnell verlegereifer Estriche für Schichtdicken bis 120 mm gem. DIN 18560 und DIN EN 13813. Bereits nach 3 Tagen belegbar, muss grundsätzlich belegt werden. Auch zum Ausbessern und Sanieren alter Betonböden geeignet.",
     schichtdicke: "bis 120 mm",
     qualitaetsklasse: "CT-C40-F6",
-    normen: [
-      "DIN 18560",
-      "DIN EN 13813",
-      "DIN EN 13892-2",
-      "DIN 18560-1",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Körnung", wert: "0–6 mm" },
       { label: "Druckfestigkeit (DIN EN 13892-2)", wert: "nach 1 Tag ca. 20 N/mm², nach 28 Tagen ca. 40 N/mm²" },
@@ -1836,11 +1792,7 @@ export const produkte: Produkt[] = [
     beschreibung: "NEODUR Level AU ist eine zementgebundene, mineralische, schnellerhärtende, polymermodifizierte, dünnschichtige Bodenausgleichsmasse für Schichtdicken von 5 bis 50 mm. Im Verbund auf zementärem Untergrund, idealer Untergrund für Linoleum, Textil- und PVC-Beläge, Laminat, Keramik und Naturstein.",
     schichtdicke: "5–50 mm",
     qualitaetsklasse: "CT-C30-F5",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560",
-      "DIN EN 12706",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Verarbeitungszeit", wert: "bei +20 °C ca. 30 Minuten" },
       { label: "Begehbar", wert: "nach ca. 3–4 Stunden" },
@@ -1863,10 +1815,7 @@ export const produkte: Produkt[] = [
     beschreibung: "Rapid Set LevelFlor ist eine auf spezieller Zementtechnologie basierende, selbstverlaufende Ausgleichsmasse für innen und außen im Wohnungs- und Industriebau. Eine finale Deckschicht kann nach 6 bis 16 Stunden (bei +20 °C) aufgebracht werden. Für Neubau und Sanierung geeignet, muss grundsätzlich belegt werden.",
     schichtdicke: "bis 70 mm",
     qualitaetsklasse: "CT-C30-F6",
-    normen: [
-      "DIN EN 1015-11",
-      "DIN EN 196-3",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Klassifizierung", wert: "CT-C30-F6", norm: "DIN EN 13813 (provisorisch)" },
       { label: "Körnung", wert: "0–2 mm" },
@@ -1986,7 +1935,7 @@ export const produkte: Produkt[] = [
     produktgruppe: "kunstharz-hartstoffe",
     kurzbeschreibung: "Synthetischer Hartstoff (Körnung 0–3 mm) als Füll- und Abstreumaterial für Kunstharzsysteme",
     beschreibung: "Mit den Produktsystemen KORODUR DUROP und KORODUR Robust stehen für hochwertige Kunstharzbeschichtungen und -estriche passende Füll- und Abstreumaterialien bereit.",
-    normen: [],
+    normen: ["DIN 1100"],
     technischeDaten: [
       { label: "Körnung", wert: "0–3 mm" },
       { label: "Härte nach Mohs", wert: "7" },
@@ -2247,13 +2196,7 @@ export const produkte: Produkt[] = [
     beschreibung: "GRANIDUR 05 und GRANIDUR 08 sind werksmäßig hergestellte, gebrauchsfertige, farbige Trockenbaustoffe zur Herstellung geschliffener, dekorativer Estriche in einer Schichtdicke von 15 bis max. 70 mm, je nach Konstruktion. Die finale Granit- bzw. Terrazzooptik kann von matt bis glänzend reichen. Verlegung ein- oder zweischichtig gem. DIN 18560-2, -3 (Verbund mit Haftbrücke KORODUR HB 5) und -4.",
     schichtdicke: "15 bis max. 70 mm",
     qualitaetsklasse: "CT-C45-F6 / CT-C35-F5",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560-2",
-      "DIN 18560-3",
-      "DIN 18560-4",
-      "DIN EN 13892-2",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Druckfestigkeit (GRANIDUR 05)", wert: "45 N/mm²" },
       { label: "Biegezugfestigkeit (GRANIDUR 05)", wert: "6 N/mm²" },
@@ -2284,13 +2227,7 @@ export const produkte: Produkt[] = [
     beschreibung: "GRANIDUR BIANCO und GRANIDUR NERO sind werksmäßig hergestellte, gebrauchsfertige Trockenbaustoffe zur Herstellung geschliffener, dekorativer Estriche in einer mittleren Schichtdicke von 15 mm. Verlegung einschichtig gem. DIN 18560-3 als Verbundestrich mit KORODUR HB 5 Haftbrücke.",
     schichtdicke: "i. M. 15 mm",
     qualitaetsklasse: "CT-C45-F6",
-    normen: [
-      "DIN EN 13813",
-      "DIN 18560-2",
-      "DIN 18560-3",
-      "DIN 18560-4",
-      "DIN EN 13892-2",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Korngröße", wert: "0–5 mm" },
       { label: "Druckfestigkeit", wert: "45 N/mm²" },
@@ -2319,16 +2256,7 @@ export const produkte: Produkt[] = [
     beschreibung: "KCF 05 und KCF 08 sind werksmäßig hergestellte, gebrauchsfertige, farbige Trockenbaustoffe zur Herstellung geglätteter, dekorativer Estriche in einer Schichtdicke von 15 bis max. 70 mm, je nach Konstruktion. Der zementgebundene, geglättete Sichtestrich wurde Ende der 1990er Jahre gemeinsam mit dem italienischen Architekten und Designer Alessandro Copetti entwickelt. Verlegung ein- oder zweischichtig gem. DIN 18560-2, -3 (Verbund mit Haftbrücke KORODUR HB 5) und -4.",
     schichtdicke: "15 bis max. 70 mm",
     qualitaetsklasse: "CT-C45-F6-A5 / CT-C35-F5-A5",
-    normen: [
-      "DIN EN 13813",
-      "DIN 1100",
-      "DIN 18560-2",
-      "DIN 18560-3",
-      "DIN 18560-4",
-      "DIN EN 13892-2",
-      "DIN EN 13892-3",
-      "DIN EN 13501-1",
-    ],
+    normen: ["DIN EN 13813", "DIN 18560-7"],
     technischeDaten: [
       { label: "Schleifverschleiß", wert: "≤ 5 cm³/50 cm²" },
       { label: "Druckfestigkeit (KCF 05)", wert: "45 N/mm²" },
@@ -2362,12 +2290,7 @@ export const produkte: Produkt[] = [
     beschreibung: "Rapid Set TRU PC ist ein auf spezieller Zementtechnologie basierender, selbstverlaufender, mineralischer Sichtestrich, entwickelt um die Optik von geschliffenem Beton zu simulieren. Ideal, wenn Frühfestigkeit, Dauerhaftigkeit und schwindarmes Aushärten gefordert sind: bis zu 20 Minuten verarbeitbar, nach 2 bis 3 Stunden begehbar. Die Dekorkörnung (bis 2,5 mm) ist bereits enthalten.",
     schichtdicke: "10–35 mm",
     qualitaetsklasse: "CT-C40-F10",
-    normen: [
-      "DIN 18560",
-      "DIN EN 13813",
-      "DIN EN 13892-2",
-      "DIN EN 13892-3",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Druckfestigkeit (ASTM C-109 mod.)", wert: "nach 4 h ca. 19 N/mm², nach 1 Tag ca. 34 N/mm², nach 28 Tagen ca. 48 N/mm²" },
       { label: "Verarbeitungszeit", wert: "ca. 20 Minuten" },
@@ -2396,13 +2319,7 @@ export const produkte: Produkt[] = [
     beschreibung: "Rapid Set TRU SP ist ein auf spezieller Zementtechnologie basierender, selbstverlaufender, mineralischer Sichtestrich, entwickelt um die Optik von geschliffenem Beton in Salz-Pfeffer-Optik zu simulieren. Ideal, wenn Frühfestigkeit, Dauerhaftigkeit und schwindarmes Aushärten gefordert sind: bis zu 20 Minuten verarbeitbar, nach 2 bis 3 Stunden begehbar.",
     schichtdicke: "10–35 mm",
     qualitaetsklasse: "CT-C40-F10",
-    normen: [
-      "DIN 18560",
-      "DIN EN 13813",
-      "DIN EN 13892-2",
-      "DIN EN 13892-3",
-      "DIN 18365",
-    ],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Druckfestigkeit (ASTM C-109 mod.)", wert: "nach 4 h ca. 13 N/mm², nach 1 Tag ca. 27 N/mm², nach 28 Tagen ca. 44 N/mm²" },
       { label: "Verarbeitungszeit", wert: "ca. 20 Minuten" },
@@ -2431,12 +2348,7 @@ export const produkte: Produkt[] = [
     beschreibung: "MICROTOP TW 3 wird im Trockenspritzverfahren verarbeitet und dient der Reprofilierung und Beschichtung von Flächen sowie der Erhöhung der Betondeckung und dem Finish im Trinkwasserbereich. Die Materialien werden einlagig verarbeitet und können problemlos gerieben und geglättet werden; kleine Arbeiten sind per Hand möglich.",
     schichtdicke: "9–20 mm",
     qualitaetsklasse: "C30/37",
-    normen: [
-      "DVGW W 300",
-      "DVGW W 347",
-      "DIN 18551",
-      "DIN EN 14487",
-    ],
+    normen: ["DIN EN 206", "DIN 1045-3", "DIN 18551", "DIN EN 14487", "DIN EN 1504-3", "DAfStb Trockenbetonrichtlinie"],
     technischeDaten: [
       { label: "Körnung", wert: "0–3 mm" },
       { label: "Druckfestigkeit (28 d)", wert: "≥ 45 N/mm²" },
@@ -2463,7 +2375,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Microsilica-vergüteter Zementspritzmörtel im Trockenspritzverfahren für Trinkwasserbehälter",
     beschreibung: "MICROTOP TW 5 ist ein rein mineralischer, hydraulisch abbindender, microsilicavergüteter Zementspritzmörtel zur Reprofilierung, Egalisierung und Beschichtung von Flächen im Trinkwasserbehälter. Verarbeitung im Trockenspritzverfahren (Dünnstromverfahren), auch zur Erhöhung der Betondeckung und für das Finish. Entspricht den DVGW Arbeitsblättern W 270, W 300 und W 347.",
     schichtdicke: "14–30 mm",
-    normen: ["DVGW W 270", "DVGW W 300", "DVGW W 347"],
+    normen: ["DIN EN 206", "DIN 1045-3", "DIN 18551", "DIN EN 14487", "DIN EN 1504-3", "DAfStb Trockenbetonrichtlinie"],
     technischeDaten: [
       { label: "Korngröße", wert: "0–5 mm" },
       { label: "Druckfestigkeit", wert: "≥ 45 N/mm²" },
@@ -2490,12 +2402,7 @@ export const produkte: Produkt[] = [
     beschreibung: "MICROTOP TW 8 ist ein hydraulisch abbindender, microsilicavergüteter Zementspritzbeton für den Trinkwasserbereich, Verarbeitung gemäß DIN 18551. Der Beton der Festigkeitsklasse C30/37 wird zur Herstellung von Spritzbeton im Trockenspritzverfahren, zur Reprofilierung von Ausbrüchen und zur Erhöhung der Betondeckung verwendet. Entspricht den DVGW Arbeitsblättern W 270, W 300 und W 347.",
     schichtdicke: "ab 25 mm",
     qualitaetsklasse: "C30/37",
-    normen: [
-      "DVGW W 300",
-      "DVGW W 347",
-      "DIN 18551",
-      "DIN EN 14487",
-    ],
+    normen: ["DIN EN 206", "DIN 1045-3", "DIN 18551", "DIN EN 14487", "DAfStb Trockenbetonrichtlinie"],
     technischeDaten: [
       { label: "Korngröße", wert: "0–8 mm" },
       { label: "Druckfestigkeit", wert: "≥ 45 N/mm²" },
@@ -2521,7 +2428,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Spritzmörtel im Nassspritzverfahren für Reprofilierung und Beschichtung im Trinkwasserbereich",
     beschreibung: "MICROTOP TW NSM wird im Nassspritzverfahren verarbeitet und dient der Reprofilierung und Beschichtung von Flächen sowie der Erhöhung der Betondeckung und dem Finish im Trinkwasserbereich. Die Materialien können problemlos gerieben und geglättet werden; kleine Arbeiten sind per Hand in Verbindung mit einer Haftbrücke möglich.",
     schichtdicke: "ca. 20 mm",
-    normen: ["DVGW W 300", "DVGW W 347"],
+    normen: ["DIN EN 206", "DIN 1045-3", "DIN 18551", "DIN EN 14487", "DAfStb Trockenbetonrichtlinie"],
     technischeDaten: [
       { label: "Körnung", wert: "0–3 mm" },
       { label: "Schichtstärke", wert: "ca. 20 mm, einlagig" },
@@ -2572,7 +2479,7 @@ export const produkte: Produkt[] = [
     beschreibung: "MICROTOP TW 02 wird im Nassspritzdichtstromverfahren verarbeitet und dient der Beschichtung von Flächen sowie der Erhöhung der Betondeckung und dem Finish im Trinkwasserbereich. Das Produkt hat ein äußerst geringes Porenvolumen und kann auch als Korrosionsschutz und Haftbrücke eingesetzt werden.",
     schichtdicke: "ca. 2–5 mm",
     qualitaetsklasse: "C30/37",
-    normen: ["DVGW W 300", "DVGW W 347"],
+    normen: ["DIN EN 206", "DIN 1045-3", "DIN 18551", "DAfStb Trockenbetonrichtlinie"],
     technischeDaten: [
       { label: "Körnung", wert: "0–0,2 mm" },
       { label: "Schichtstärke", wert: "ca. 2–5 mm" },
@@ -2619,7 +2526,7 @@ export const produkte: Produkt[] = [
     beschreibung: "MICROTOP TW VSM dient der Innenauskleidung und Instandsetzung von neuen wie auch alten Trinkwasserbehältern sowie Mauerwerk. Durch seine spezielle Zusammensetzung hat er hervorragende Verarbeitungs- und Gebrauchseigenschaften und kann problemlos gerieben und geglättet werden.",
     schichtdicke: "15–20 mm",
     qualitaetsklasse: "C12/15",
-    normen: ["DVGW W 347"],
+    normen: ["DIN EN 998-1"],
     technischeDaten: [
       { label: "Körnung", wert: "0–2 mm" },
       { label: "Schichtstärke", wert: "ca. 15–20 mm" },
@@ -2662,7 +2569,7 @@ export const produkte: Produkt[] = [
     produktgruppe: "beschichtung-schutz",
     kurzbeschreibung: "Spezialmörtel für die Innenbeschichtung von Trinkwasserrohren und -behältern, auch als Haftbrücke",
     beschreibung: "MICROTOP TW BM ist ein werksmäßig hergestellter, gebrauchsfertiger Spezialmörtel zur Innenbeschichtung von Trinkwasserrohren und -behältern sowie anderen Gewerken. Er kann problemlos im Schleuder-, Spritz- und Handauftrag verarbeitet werden, ist auch als Haftbrücke für Bodenbeschichtungen und als Korrosionsschutz verwendbar und wird in natur und weiß geliefert. Entspricht den DVGW Arbeitsblättern W 270, W 300 und W 347.",
-    normen: ["DVGW W 270", "DVGW W 300", "DVGW W 347"],
+    normen: ["DIN EN 206", "DIN 1045-3", "DIN EN 1504-3", "DAfStb Trockenbetonrichtlinie"],
     technischeDaten: [
       { label: "Korngröße", wert: "0–1 mm" },
       { label: "Druckfestigkeit", wert: "35 N/mm²" },
@@ -2725,13 +2632,7 @@ export const produkte: Produkt[] = [
     druckfestigkeit: "70 N/mm²",
     belastbarNach: "12–24 h",
     belastbarNachZusatz: "Verkehrsfreigabe",
-    normen: [
-      "DIN EN 1015-11",
-      "DIN EN 13286-41",
-      "DIN EN 12697-26",
-      "DIN EN 13670",
-      "DIN 1045-3",
-    ],
+    normen: ["FGSV M HD"],
     technischeDaten: [
       { label: "Druckfestigkeit (28 d)", wert: "ca. 70 N/mm²" },
       { label: "Druckfestigkeit (24 h)", wert: "ca. 40 N/mm²" },
@@ -2777,13 +2678,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Verguss- und Montagemörtel für Vergussquerschnitte von 5 bis über 50 mm (Varianten VM 1 / VM 3 / VB 8)",
     beschreibung: "Montage- und Vergussmörtel verbinden Beton kraftschlüssig mit Stahleinbauteilen. Die Reihe deckt je nach Vergussquerschnitt drei Varianten ab: NEODUR VM 1 (5 bis 20 mm), NEODUR VM 3 (10 bis 50 mm) und NEODUR VB 8 (über 50 mm). Alle drei teilen ein gemeinsames technisches Datenblatt.",
     qualitaetsklasse: "C55/67",
-    normen: [
-      "DIN EN 13395-2",
-      "DIN EN 445",
-      "DIN EN 13670",
-      "DIN 1045-3",
-      "DIN EN 13892-2",
-    ],
+    normen: ["DAfStb-RL Vergussbeton"],
     technischeDaten: [{ label: "Vergussquerschnitt", wert: "5 mm bis über 50 mm (je Variante)" }],
     varianten: [
       { name: "NEODUR VM 1", qualitaetsklasse: "C55/67", hinweis: "Vergussquerschnitt 5–20 mm" },
@@ -2806,7 +2701,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Vergussbeton (C80/95) für Vergussquerschnitte bis 200 mm, geprüft nach DIN EN 1504-3 (R4)",
     beschreibung: "Montage- und Vergussbeton für große Vergussquerschnitte bis 200 mm. Geprüft nach DIN EN 1504-3 (Klasse R4) und der DAfStb-Richtlinie für zementgebundenen Vergussbeton und Vergussmörtel.",
     qualitaetsklasse: "C80/95",
-    normen: ["DIN EN 1504-3 (R4)", "DAfStb-Richtlinie", "DIN EN 206-1", "DIN 1045-2"],
+    normen: ["DAfStb-RL Vergussbeton"],
     technischeDaten: [{ label: "Vergussquerschnitt", wert: "bis 200 mm" }],
     besonderheiten: ["Für statisch relevante Anwendungen (R4)", "DAfStb-Richtlinie (SKVB I)"],
     zeitKategorie: "normal",
@@ -2824,7 +2719,7 @@ export const produkte: Produkt[] = [
     produktgruppe: "verguss",
     kurzbeschreibung: "Mineralischer, hochfließfähiger Quellvergussbeton, DVGW-geprüft für Trinkwasserbereiche",
     beschreibung: "NEODUR VM basic ist ein mineralischer, hochfließfähiger Quellvergussbeton für kraftschlüssige Vergussarbeiten und Montagen aller Art, z. B. Rohrverguss in Trinkwasseranlagen. Geprüft gem. DVGW-Arbeitsblatt W 347 für hygienische Anforderungen in Trinkwasserbereichen.",
-    normen: ["DVGW W 347", "DIN EN 1504-3 (R4)", "DAfStb-Richtlinie", "DIN EN 12620"],
+    normen: ["DAfStb-RL Vergussbeton", "DVGW W 347"],
     technischeDaten: [
       { label: "Körnung", wert: "0–5 mm" },
       { label: "Verarbeitung", wert: "Mischen + Pumpen / Gießen" },
@@ -2904,12 +2799,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Spritzmörtel für die Betoninstandsetzung, Körnung 0 bis 3 mm",
     beschreibung: "Die Betoninstandsetzung umfasst Technologien zur Wiederherstellung von Bauteilen aus Beton. NEODUR MSM 3 ist ein mineralischer Spritzmörtel mit Körnung 0 bis 3 mm, Verarbeitung gem. DIN 18551 in Verbindung mit DIN EN 14487.",
     qualitaetsklasse: "C35/45",
-    normen: [
-      "DIN 18551",
-      "DIN EN 14487",
-      "DIN EN 13670",
-      "DIN 1045-3",
-    ],
+    normen: ["DIN 1045-3", "DIN EN 13670", "DIN 18551"],
     technischeDaten: [{ label: "Körnung", wert: "0–3 mm" }],
     besonderheiten: ["Umweltproduktdeklaration (Gruppen-EPD) verfügbar"],
     zeitKategorie: "normal",
@@ -2927,12 +2817,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Spritzmörtel für die Betoninstandsetzung, Körnung 0 bis 5 mm",
     beschreibung: "Die Betoninstandsetzung umfasst Technologien zur Wiederherstellung von Bauteilen aus Beton. NEODUR MSM 5 ist ein mineralischer Spritzmörtel mit Körnung 0 bis 5 mm.",
     qualitaetsklasse: "C35/45",
-    normen: [
-      "DIN 18551",
-      "DIN EN 14487",
-      "DIN EN 13670",
-      "DIN 1045-3",
-    ],
+    normen: ["DIN EN 206", "DIN 1045-3", "DIN 18551", "DIN EN 14487", "DIN EN 1504-3", "DAfStb Trockenbetonrichtlinie"],
     technischeDaten: [{ label: "Körnung", wert: "0–5 mm" }],
     besonderheiten: [],
     zeitKategorie: "normal",
@@ -2950,10 +2835,7 @@ export const produkte: Produkt[] = [
     kurzbeschreibung: "Spritzbeton für die Betoninstandsetzung, Körnung 0 bis 8 mm",
     beschreibung: "Die Betoninstandsetzung umfasst Technologien zur Wiederherstellung von Bauteilen aus Beton. NEODUR MSB 8 ist ein mineralischer Spritzbeton mit Körnung 0 bis 8 mm.",
     qualitaetsklasse: "C35/45",
-    normen: [
-      "DIN 18551",
-      "DIN EN 14487",
-    ],
+    normen: ["DIN EN 206", "DIN 1045-3", "DIN 18551", "DIN EN 14487", "DIN EN 1504-3", "DAfStb Trockenbetonrichtlinie"],
     technischeDaten: [{ label: "Körnung", wert: "0–8 mm" }],
     besonderheiten: [],
     zeitKategorie: "normal",
@@ -2973,7 +2855,7 @@ export const produkte: Produkt[] = [
     beschreibung: "CONCRETE MIX ist ein schnellerhärtender, gut zu verarbeitender Reparaturmörtel auf Basis Rapid-Set-Zement mit speziell ausgewählten mineralischen Zuschlagstoffen. Ideal, wo schnelle Festigkeiten, Dauerhaftigkeit und schwindarmes Aushärten gefordert sind. Verarbeitbar in Stärken von 50 bis 600 mm, auch in Nassräumen; nicht-metallisch und ohne Chlorid-Zusätze.",
     schichtdicke: "50–600 mm",
     qualitaetsklasse: "C35/45",
-    normen: [],
+    normen: ["DIN EN 13813"],
     technischeDaten: [
       { label: "Körnung", wert: "0–8 mm" },
       { label: "Erstarrungsbeginn", wert: "nach 15 Min.", norm: "DIN EN 196-3" },
