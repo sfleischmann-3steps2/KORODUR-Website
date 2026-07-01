@@ -1,8 +1,9 @@
 "use client";
 
 // Filterbares Download-Center (#301): Katalog der lokal vorliegenden Produkt-
-// dokumente, gefiltert nach Typ + Bereich + Freitext. Deep-Link ueber
-// ?typ=/?bereich=/?produkt= (Produkt-/Bereichsseiten verlinken vorgefiltert).
+// dokumente, gefiltert nach Typ + Bereich + Produktart + Freitext. Bereich →
+// Produktart kaskadiert wie im Portfolio. Deep-Link ueber
+// ?typ=/?bereich=/?produktart=/?produkt= (Seiten verlinken vorgefiltert).
 
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -34,20 +35,21 @@ function normalisiere(s: string): string {
 function DownloadDeepLink({
   onApply,
 }: {
-  onApply: (f: { typ: string; bereich: string; produkt: string }) => void;
+  onApply: (f: { typ: string; bereich: string; produktart: string; produkt: string }) => void;
 }) {
   const params = useSearchParams();
   const typ = params.get("typ") ?? "";
   const bereich = params.get("bereich") ?? "";
+  const produktart = params.get("produktart") ?? "";
   const produkt = params.get("produkt") ?? "";
   const last = useRef<string | null>(null);
   useEffect(() => {
-    const k = `${typ}|${bereich}|${produkt}`;
+    const k = `${typ}|${bereich}|${produktart}|${produkt}`;
     if (k !== last.current) {
       last.current = k;
-      onApply({ typ, bereich, produkt });
+      onApply({ typ, bereich, produktart, produkt });
     }
-  }, [typ, bereich, produkt, onApply]);
+  }, [typ, bereich, produktart, produkt, onApply]);
   return null;
 }
 
@@ -58,6 +60,7 @@ export interface DownloadCenterStrings {
   keineTreffer: string;
   filterTyp: string;
   filterBereich: string;
+  filterProduktart: string;
   reset: string;
   produktLabel: string; // "Produkt: {name}"
   uebergreifend: string;
@@ -66,28 +69,37 @@ export interface DownloadCenterStrings {
 export default function DownloadCenter({
   katalog,
   bereichOptionen,
+  produktartOptionen,
   lang,
   bereichLabels,
   typLabels,
+  produktartLabels,
   strings,
 }: {
   katalog: KatalogDokument[];
   bereichOptionen: string[];
+  produktartOptionen: string[];
   lang: string;
   bereichLabels: Record<string, string>;
   typLabels: Record<string, string>;
+  produktartLabels: Record<string, string>;
   strings: DownloadCenterStrings;
 }) {
   const [suche, setSuche] = useState("");
   const [typFilter, setTypFilter] = useState("");
   const [bereichFilter, setBereichFilter] = useState("");
+  const [produktartFilter, setProduktartFilter] = useState("");
   const [produktFilter, setProduktFilter] = useState("");
 
-  const applyDeepLink = useCallback((f: { typ: string; bereich: string; produkt: string }) => {
-    setTypFilter(f.typ);
-    setBereichFilter(f.bereich);
-    setProduktFilter(f.produkt);
-  }, []);
+  const applyDeepLink = useCallback(
+    (f: { typ: string; bereich: string; produktart: string; produkt: string }) => {
+      setTypFilter(f.typ);
+      setBereichFilter(f.bereich);
+      setProduktartFilter(f.produktart);
+      setProduktFilter(f.produkt);
+    },
+    [],
+  );
 
   const produktName = useMemo(() => {
     if (!produktFilter) return "";
@@ -103,10 +115,30 @@ export default function DownloadCenter({
     [suche],
   );
 
+  // Bereich → Produktart kaskadiert wie im Portfolio: nur Produktarten anbieten,
+  // die im aktuell gewaehlten Bereich vorkommen.
+  const sichtbareProduktarten = useMemo(() => {
+    const basis = bereichFilter
+      ? katalog.filter((d) => d.bereiche.includes(bereichFilter))
+      : katalog;
+    const vorhanden = new Set<string>();
+    for (const d of basis) for (const a of d.produktarten) vorhanden.add(a);
+    return produktartOptionen.filter((a) => vorhanden.has(a));
+  }, [katalog, bereichFilter, produktartOptionen]);
+
+  // Waehlt man einen Bereich, in dem die aktive Produktart nicht vorkommt,
+  // faellt der Produktart-Filter zurueck auf „alle".
+  useEffect(() => {
+    if (produktartFilter && !sichtbareProduktarten.includes(produktartFilter)) {
+      setProduktartFilter("");
+    }
+  }, [sichtbareProduktarten, produktartFilter]);
+
   const gefiltert = useMemo(() => {
     return katalog.filter((d) => {
       if (typFilter && d.typ !== typFilter) return false;
       if (bereichFilter && !d.bereiche.includes(bereichFilter)) return false;
+      if (produktartFilter && !d.produktarten.some((a) => a === produktartFilter)) return false;
       if (produktFilter && !d.produkte.some((p) => p.id === produktFilter)) return false;
       if (terme.length) {
         const hay = normalisiere(`${d.titel} ${d.produkte.map((p) => p.name).join(" ")}`);
@@ -114,7 +146,7 @@ export default function DownloadCenter({
       }
       return true;
     });
-  }, [katalog, typFilter, bereichFilter, produktFilter, terme]);
+  }, [katalog, typFilter, bereichFilter, produktartFilter, produktFilter, terme]);
 
   const gruppen = useMemo(
     () =>
@@ -124,7 +156,7 @@ export default function DownloadCenter({
     [gefiltert],
   );
 
-  const hatFilter = Boolean(typFilter || bereichFilter || produktFilter || suche);
+  const hatFilter = Boolean(typFilter || bereichFilter || produktartFilter || produktFilter || suche);
   const chip = (aktiv: boolean) =>
     `inline-flex items-center rounded-full px-3.5 py-1.5 text-[13px] no-underline transition-colors duration-150 border ${
       aktiv
@@ -166,7 +198,7 @@ export default function DownloadCenter({
       </div>
 
       {/* Bereich-Filter */}
-      <div className="mb-4">
+      <div className="mb-3">
         <span className="block text-navy/55 text-[12px] uppercase tracking-wider mb-2" style={{ fontWeight: 700 }}>
           {strings.filterBereich}
         </span>
@@ -182,6 +214,25 @@ export default function DownloadCenter({
         </div>
       </div>
 
+      {/* Produktart-Filter (kaskadiert aus Bereich, wie Portfolio) */}
+      {sichtbareProduktarten.length > 0 && (
+        <div className="mb-4">
+          <span className="block text-navy/55 text-[12px] uppercase tracking-wider mb-2" style={{ fontWeight: 700 }}>
+            {strings.filterProduktart}
+          </span>
+          <div className="flex flex-wrap gap-2">
+            <button type="button" onClick={() => setProduktartFilter("")} className={chip(!produktartFilter)} style={{ fontWeight: 700 }}>
+              {strings.alle}
+            </button>
+            {sichtbareProduktarten.map((art) => (
+              <button key={art} type="button" onClick={() => setProduktartFilter(art)} className={chip(produktartFilter === art)} style={{ fontWeight: 700 }}>
+                {produktartLabels[`produktart_${art}`] ?? art}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Aktiver Produkt-Deep-Link + Reset */}
       <div className="flex flex-wrap items-center gap-3 mb-6" style={{ minHeight: 28 }}>
         {produktFilter && (
@@ -196,7 +247,7 @@ export default function DownloadCenter({
         {hatFilter && (
           <button
             type="button"
-            onClick={() => { setSuche(""); setTypFilter(""); setBereichFilter(""); setProduktFilter(""); }}
+            onClick={() => { setSuche(""); setTypFilter(""); setBereichFilter(""); setProduktartFilter(""); setProduktFilter(""); }}
             className="text-cyan-text text-[13px] hover:underline"
             style={{ fontWeight: 700 }}
           >
