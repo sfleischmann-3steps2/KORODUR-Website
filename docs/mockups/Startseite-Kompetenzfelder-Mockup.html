@@ -139,10 +139,9 @@
     <nav>
       <ul>
         <li><a href="#">Industrieboden <span class="caret">▼</span></a></li>
-        <li><a href="#">Betonsanierung &amp; Infrastruktur <span class="caret">▼</span></a></li>
-        <li><a href="#">Produkte</a></li>
+        <li><a href="#">Betonsanierung <span class="caret">▼</span></a></li>
+        <li><a href="#">Produkte <span class="caret">▼</span></a></li>
         <li><a href="#">Referenzen</a></li>
-        <li><a href="#">Unternehmen</a></li>
         <li><a href="#">Kontakt</a></li>
       </ul>
     </nav>
@@ -152,27 +151,42 @@
     <div>
       <h4>Industrieboden ▼</h4>
       <ul>
-        <li><a href="#">Neubau — geführter Einstieg</a></li>
-        <li><a href="#">Sanierung — geführter Einstieg</a></li>
-        <li><a href="#">Produktgruppen</a></li>
-        <li><a href="#">Anwendungsmatrix</a></li>
+        <li><a href="#">Neubau</a></li>
+        <li><a href="#">Sanierung</a></li>
         <li><a href="#">Lösungsfinder</a></li>
       </ul>
     </div>
     <div>
-      <h4>Betonsanierung &amp; Infrastruktur ▼</h4>
+      <h4>Betonsanierung ▼</h4>
       <ul>
-        <li><a href="#">Betonsanierung (Rapid Set)</a></li>
+        <li><a href="#">Instandsetzung (Rapid Set)</a></li>
+        <li><a href="#">TW-Behältersanierung (MICROTOP)</a></li>
         <li><a href="#">Infrastruktur</a></li>
-        <li><a href="#">TW-Behältersanierung</a></li>
         <li><a href="#">Spezialmörtel</a></li>
       </ul>
+    </div>
+    <div>
+      <h4>Produkte ▼</h4>
+      <ul>
+        <li><a href="#">Alle Produkte A–Z</a></li>
+        <li><a href="#">Produktgruppen nach Bereich</a></li>
+        <li><a href="#">Anwendungsmatrix</a></li>
+        <li><a href="#">Downloads (TDS · SDB · DoP)</a></li>
+      </ul>
+    </div>
+    <div style="border-left:1px solid var(--mid-gray); padding-left:28px;">
+      <h4>Weitere Geschäftsbereiche</h4>
+      <ul>
+        <li><a href="#">Katzenstreu →</a></li>
+        <li><a href="#">3D-Betondruck →</a></li>
+      </ul>
+      <p style="font-size:11px; color:#6b7280; margin-top:8px; max-width:150px;">führen auf die Bereichsseiten, nicht in den Katalog</p>
     </div>
   </div>
 </header>
 
 <div style="height:150px"></div>
-<p class="note container"><span class="note-badge">2</span><b>Navigation:</b> Zwei Sparten-Dropdowns tragen das Baugeschäft. „Neubau" und „Sanierung" bleiben als Funnels erhalten (eine Ebene tiefer). „Produkte" = Gesamtkatalog bleibt Top-Level (Händler-Pfad, 2 Klicks). Katzenstreu bewusst <b>nicht</b> in der Top-Nav (Entscheidung 01.07.: zu prominent für die Besucher-Mehrheit) — Zugang über den Geschäftsbereichs-Streifen auf der Startseite + Footer + eigene URL.</p>
+<p class="note container"><span class="note-badge">2</span><b>Navigation (Stand 01.07., Steffi):</b> 5 Punkte. Industrieboden ▾ (Neubau · Sanierung · Lösungsfinder) und Betonsanierung ▾ (Instandsetzung · TW-Behälter · Infrastruktur · Spezialmörtel) tragen das Baugeschäft. „Unternehmen" wandert in den Footer. „Produkte" ▾ = Gesamtkatalog-Mega-Menü, darin rechts abgesetzt die Spalte <b>„Weitere Geschäftsbereiche"</b> (Katzenstreu, 3D-Betondruck → Bereichsseiten, nicht Katalog) — so sind beide über die Nav auffindbar, ohne Top-Level-Prominenz. Das Dropdown ist hier dauerhaft eingeblendet (nur zur Ansicht); live öffnet es per Hover je Menüpunkt.</p>
 
 <div class="hero">
   <div class="container">
@@ -222,22 +236,22 @@
 
     <!-- Feld 2: Betonsanierung & Infrastruktur -->
     <div class="feld">
-      <div class="feld-head"><h4>Betonsanierung &amp; Infrastruktur</h4><a class="alle" href="#">Zum Bereich →</a></div>
+      <div class="feld-head"><h4>Betonsanierung</h4><a class="alle" href="#">Zum Bereich →</a></div>
       <p class="feld-sub">Mineralische Instandsetzung und Schnellsysteme — vom Parkdeck bis zum Trinkwasserbehälter.</p>
       <div class="tiles four">
         <div class="tile">
-          <h5>Betonsanierung</h5>
-          <p>Rapid-Set-Reparatur- und Spritzmörtel nach EN 1504-3.</p>
-          <a href="#">Mehr →</a>
-        </div>
-        <div class="tile">
-          <h5>Infrastruktur</h5>
-          <p>Schnellsysteme für Verkehrsflächen — Freigabe in Stunden.</p>
+          <h5>Instandsetzung (Rapid Set)</h5>
+          <p>Reparatur- und Spritzmörtel nach EN 1504-3.</p>
           <a href="#">Mehr →</a>
         </div>
         <div class="tile">
           <h5>TW-Behältersanierung</h5>
           <p>MICROTOP Spritzmörtel mit DVGW-Zulassung.</p>
+          <a href="#">Mehr →</a>
+        </div>
+        <div class="tile">
+          <h5>Infrastruktur</h5>
+          <p>Schnellsysteme für Verkehrsflächen — Freigabe in Stunden.</p>
           <a href="#">Mehr →</a>
         </div>
         <div class="tile">
@@ -248,18 +262,26 @@
       </div>
     </div>
 
-    <p class="note"><span class="note-badge">3</span><b>Kompetenzfelder:</b> Industrieboden bekommt das größte Feld (2 Einstiege Neubau/Sanierung = die bewährten Funnels). Sparte 2 bündelt die vier Beton-/Infrastruktur-Bereiche und bekommt eine eigene Hub-Seite (#430). 3D-Betondruck erscheint bewusst nicht auf der Startseite („in Vorbereitung", vgl. V1-Scope) — bleibt über Portfolio/Footer erreichbar.</p>
+    <p class="note"><span class="note-badge">3</span><b>Kompetenzfelder:</b> Industrieboden bekommt das größte Feld (2 Einstiege Neubau/Sanierung = die bewährten Funnels). Sparte 2 „Betonsanierung" bündelt die vier Bereiche (Reihenfolge nach Relevanz: Instandsetzung · TW-Behälter · Infrastruktur · Spezialmörtel) und bekommt eine eigene Hub-Seite (#430).</p>
 
-    <!-- Feld 3: Katzenstreu -->
+    <!-- Feld 3: Weitere Geschäftsbereiche -->
     <div class="katzenstreu" style="margin-top:26px">
       <div>
         <span class="label">Eigener Geschäftsbereich</span>
         <h4>Katzenstreu</h4>
-        <p>Bentonit-Hygienestreu für Handel und Private Label — drei Qualitätsstufen, zertifizierte Produktion (ISO 9001, ISO 14001, BRC), weltweiter Export.</p>
+        <p>Mineralische Kompetenz seit 1936 — vom Industrieboden bis zur Hygienestreu: Bentonit-Katzenstreu für Handel und Private Label. Drei Qualitätsstufen, zertifizierte Produktion (ISO 9001, ISO 14001, BRC), weltweiter Export.</p>
       </div>
       <a class="btn" href="#">Private-Label-Anfrage →</a>
     </div>
-    <p class="note" style="margin-top:10px"><span class="note-badge">4</span><b>Katzenstreu:</b> abgesetzter Streifen statt achte Kachel — eigenständig, aber klar als zweites Standbein erkennbar. CTA geht an export@ (#432). Inhalte der Bereichsseite (3 Qualitätsstufen, B2B-Factbox) folgen nach Zulieferung (#386).</p>
+    <div class="katzenstreu" style="margin-top:14px; padding:18px 26px;">
+      <div>
+        <span class="label" style="background:#4b5b70">In Vorbereitung</span>
+        <h4 style="font-size:17px">3D-Betondruck</h4>
+        <p>Materialtechnologie für den 3D-Betondruck — Bereich im Aufbau.</p>
+      </div>
+      <a class="btn" href="#" style="background:transparent; color:var(--navy); border:2px solid var(--navy);">Zum Bereich →</a>
+    </div>
+    <p class="note" style="margin-top:10px"><span class="note-badge">4</span><b>Weitere Geschäftsbereiche:</b> Katzenstreu als abgesetzter Streifen — eigenständig, mit „Mineralische Kompetenz"-Klammer zum Baugeschäft. CTA geht an export@ (#432); Inhalte der Bereichsseite (3 Qualitätsstufen, B2B-Factbox) folgen nach Zulieferung (#386). 3D-Betondruck als schmale Zeile mit ehrlichem „In Vorbereitung"-Status. Beide zusätzlich im Produkte-Mega-Menü + Footer.</p>
   </div>
 </section>
 
@@ -293,8 +315,8 @@
 
 <footer>
   <div class="container cols">
-    <div><h6>Industrieboden</h6><ul><li>Neubau</li><li>Sanierung</li><li>Produktgruppen</li><li>Anwendungsmatrix</li></ul></div>
-    <div><h6>Betonsanierung &amp; Infrastruktur</h6><ul><li>Betonsanierung</li><li>Infrastruktur</li><li>TW-Behältersanierung</li><li>Spezialmörtel</li></ul></div>
+    <div><h6>Industrieboden</h6><ul><li>Neubau</li><li>Sanierung</li><li>Lösungsfinder</li><li>Anwendungsmatrix</li></ul></div>
+    <div><h6>Betonsanierung</h6><ul><li>Instandsetzung (Rapid Set)</li><li>TW-Behältersanierung</li><li>Infrastruktur</li><li>Spezialmörtel</li></ul></div>
     <div><h6>Weitere Bereiche</h6><ul><li>Katzenstreu</li><li>3D-Betondruck (in Vorbereitung)</li><li>Alle Produkte A–Z</li><li>Downloads</li></ul></div>
     <div><h6>Unternehmen</h6><ul><li>Über KORODUR</li><li>Fachberater-Finder</li><li>Kontakt</li><li>Impressum · Datenschutz</li></ul></div>
   </div>
