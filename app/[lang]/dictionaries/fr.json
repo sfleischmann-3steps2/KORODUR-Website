@@ -226,6 +226,7 @@
     "weitere_ausfuehrungen_title": "Autres variantes",
     "dok_farbkarte": "Nuancier",
     "dok_epd": "EPD",
+    "dok_broschuere": "Brochure",
     "systemkomponenten_title": "Composants système associés"
   },
   "sanierung": {
@@ -415,6 +416,7 @@
     "col_service": "Service"
   },
   "bereiche": {
+    "downloads_title": "Brochures et téléchargements",
     "breadcrumb_home": "Accueil",
     "produkte_title": "Produits de ce domaine",
     "alle_produkte_name": "Tous les produits",

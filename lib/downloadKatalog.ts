@@ -8,6 +8,7 @@
 // migrierte Altlasten und dient der Lueckenanalyse, nicht dem Live-Download.
 
 import {
+  BEREICH_DOKUMENTE,
   PRODUKT_DOKUMENTE,
   ZENTRALE_DOKUMENTE,
   type DokumentTyp,
@@ -68,13 +69,22 @@ export function buildDownloadKatalog(): KatalogDokument[] {
   }
   for (const d of ZENTRALE_DOKUMENTE) add(d, undefined);
 
-  const SPRACH_ORDER = ["de", "en", "fr", "pl"];
+  // Bereichs-Dokumente (#442): zentrale Broschüren, die redaktionell einem
+  // Bereich zugeordnet sind, sollen auch der Bereich-Filter finden.
+  for (const [slug, docs] of Object.entries(BEREICH_DOKUMENTE)) {
+    for (const d of docs) {
+      const e = map.get(`${d.typ}|${d.titel.toLowerCase()}`);
+      if (e && !e.bereiche.includes(slug)) e.bereiche.push(slug);
+    }
+  }
+
+  const SPRACH_ORDER = ["de", "en", "fr", "pl", "es"];
   const liste = [...map.values()];
   for (const e of liste) {
     if (e.bereiche.length === 0) e.bereiche.push(UEBERGREIFEND);
     e.dateien.sort((a, b) => SPRACH_ORDER.indexOf(a.sprache) - SPRACH_ORDER.indexOf(b.sprache));
   }
-  const TYP_ORDER: DokumentTyp[] = ["tds", "sds", "dop", "anwendung", "reinigung", "service"];
+  const TYP_ORDER: DokumentTyp[] = ["tds", "sds", "dop", "epd", "anwendung", "reinigung", "farbkarte", "broschuere", "service"];
   liste.sort(
     (a, b) =>
       TYP_ORDER.indexOf(a.typ) - TYP_ORDER.indexOf(b.typ) || a.titel.localeCompare(b.titel),

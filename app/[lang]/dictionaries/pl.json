@@ -226,6 +226,7 @@
     "weitere_ausfuehrungen_title": "Inne warianty",
     "dok_farbkarte": "Wzornik kolorów",
     "dok_epd": "EPD",
+    "dok_broschuere": "Broszura",
     "systemkomponenten_title": "Pasujące komponenty systemu"
   },
   "sanierung": {
@@ -415,6 +416,7 @@
     "col_service": "Serwis"
   },
   "bereiche": {
+    "downloads_title": "Broszury i pliki do pobrania",
     "breadcrumb_home": "Start",
     "produkte_title": "Produkty w tym obszarze",
     "alle_produkte_name": "Wszystkie produkty",

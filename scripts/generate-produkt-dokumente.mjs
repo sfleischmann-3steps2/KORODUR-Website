@@ -50,7 +50,18 @@ function downloadPdf(url, zielAbs) {
   });
 }
 
-const ARCHIV = "../KORODUR-website/05_wp-content-archiv";
+// Archiv-Auflösung: das wp-content-Archiv ist aus dem Schwester-Repo in
+// Steffis Archiv-Ordner umgezogen; env KORODUR_ARCHIV übersteuert.
+const ARCHIV_KANDIDATEN = [
+  process.env.KORODUR_ARCHIV,
+  "../KORODUR-website/05_wp-content-archiv",
+  `${process.env.HOME}/KORODUR/archive/KORODUR-website, archiviert/05_wp-content-archiv`,
+].filter(Boolean);
+const ARCHIV = ARCHIV_KANDIDATEN.find((p) => fs.existsSync(path.join(p, "inventar.csv")));
+if (!ARCHIV) {
+  console.error("wp-content-Archiv nicht gefunden. Kandidaten:\n  " + ARCHIV_KANDIDATEN.join("\n  "));
+  process.exit(1);
+}
 const SNAP = path.join(ARCHIV, "provenienz/service-seiten-snapshots");
 const INVENTAR = path.join(ARCHIV, "inventar.csv");
 
@@ -138,7 +149,11 @@ const MANUAL_MAP = {
   "Farbkarte_de_en_fr.pdf": ["granidur", "granidur-bianco-nero", "kcf", ...TRU_FAMILIE],
   "Glossprofi_de.pdf": "zentral",
   "Inotec_Mietservice_de.pdf": "zentral",
-  "KOROPHALT_02_de.pdf": "zentral", // kein Produkt in der App (Alt-Sortiment)
+  "KOROPHALT_02_de.pdf": ["korophalt-02"], // seit Portfolio-Umbau eigenes Produkt
+  "KORODUR_Silosystem_de.pdf": "zentral", // Silosystem ist Service, kein Katalog-Produkt
+  "KOROPOX_de_2023.pdf": "zentral", // KOROPOX ersetzt (LI Plus) — TDS für Bestandsware zentral
+  "MICROTOP_TW_NSD_de.pdf": null, // TW NSD eingestellt (V3.6) — entfällt
+  "KORODUR_Korotan_SDB_de.pdf": ["system-korodur-korotan"],
   "OBTEGO_P_20_de.pdf": "zentral", // OBTEGO-Pflegesystem: kein App-Produkt
   "OBTEGO_R_400_de.pdf": "zentral",
   "OBTEGO_P-20_SDB_de.pdf": "zentral",
@@ -152,8 +167,9 @@ const MANUAL_MAP = {
   // Sammel-TDS über mehrere Produkte
   "NEODUR_VM_1_3_8_de.pdf": ["neodur-vm-1", "neodur-vm-3", "neodur-vb-8"],
   "NEODUR_MSM_3_5_MSB_8_de.pdf": ["neodur-msm-3", "neodur-msm-5", "neodur-msb-8"],
-  "NEODUR_AM_Super_AM_Plus_de.pdf": ["neodur-am-super", "neodur-am-plus"],
-  "KORODUR_KOROTAN_de.pdf": ["korotan", "system-korodur-korotan"],
+  // NEODUR AM Super/Plus: nicht mehr im Sortiment (#271) — TDS entfällt
+  "NEODUR_AM_Super_AM_Plus_de.pdf": null,
+  "KORODUR_KOROTAN_de.pdf": ["system-korodur-korotan"],
 
   // --- SDS über Produktfamilien (Klärung Steffi 2026-06-12: das sind die
   // Produkt-Datenblätter inkl. Varianten, keine "Gruppen"-Blätter) ---
@@ -169,7 +185,7 @@ const MANUAL_MAP = {
   "KORODUR_Designboeden_SDB_de.pdf": ["granidur", "granidur-bianco-nero", "kcf"],
   "KORODUR_MICROTOP_SDB_de.pdf": [
     "microtop-tw-3", "microtop-tw-5", "microtop-tw-8", "microtop-tw-nsm",
-    "microtop-tw-02", "microtop-tw-vsm", "microtop-tw-nsd",
+    "microtop-tw-02", "microtop-tw-vsm",
   ],
   "KORODUR_Rapid_Set_SDB_de.pdf": [
     "rapid-set-cement-all", "rapid-set-mortar-mix", "rapid-set-mortar-mix-dur",
@@ -186,10 +202,12 @@ const MANUAL_MAP = {
   "KORODUR_Rapid_Set_FAST_SDB_de.pdf": ["rapid-set-concrete-pharmacy"],
   "KORODUR_Rapid_Set_FLOW_Control_SDB_de.pdf": ["rapid-set-concrete-pharmacy"],
   "KORODUR_Rapid_Set_SET_Control_SDB_de.pdf": ["rapid-set-concrete-pharmacy"],
-  "KORODUR_KOROMINERAL_Lasur_Komponente_A_SDB_de.pdf": ["koromineral-lasur"],
-  "KORODUR_KOROMINERAL_Lasur_Komponente_B_SDB_de.pdf": ["koromineral-lasur"],
-  "KORODUR_KOROPOX_Komponente_A_SDB_de.pdf": ["koropox"],
-  "KORODUR_KOROPOX_Komponente_B_SDB_de.pdf": ["koropox"],
+  // KOROMINERAL Lasur (entfernt 2026-06-23) + KOROPOX (ersetzt): Produkte sind
+  // raus, SDBs bleiben für Bestandsware zentral im Download-Center.
+  "KORODUR_KOROMINERAL_Lasur_Komponente_A_SDB_de.pdf": "zentral",
+  "KORODUR_KOROMINERAL_Lasur_Komponente_B_SDB_de.pdf": "zentral",
+  "KORODUR_KOROPOX_Komponente_A_SDB_de.pdf": "zentral",
+  "KORODUR_KOROPOX_Komponente_B_SDB_de.pdf": "zentral",
   "KORODUR_TXPK_Komponente_A_SDB_de.pdf": ["korodur-txpk"],
   "KORODUR_TXPK_Komponente_B_SDB_de.pdf": ["korodur-txpk"],
   "KORODUR_HB_5_60_rapid_SDB_de.pdf": ["korodur-hb-5-rapid", "neodur-he-60-rapid"],
@@ -231,7 +249,7 @@ const MANUAL_MAP = {
 // ---- Zusatz-TDS aus docs/tds-quellen (von Steffi geliefert, nicht auf der
 // Alt-Site-Datenblätterseite — z. B. neue Produkte) -------------------------
 const ZUSATZ_TDS_QUELLEN = {
-  "KOROMINERAL_Lasur_de_.pdf": ["koromineral-lasur"],
+  // KOROMINERAL_Lasur_de_.pdf entfernt: Produkt existiert nicht mehr (2026-06-23)
 };
 
 // ---- Service-Seiten parsen --------------------------------------------------
@@ -270,7 +288,17 @@ function titelAusDatei(datei, typ) {
 
 const produktDokumente = {}; // id -> [{typ,titel,datei,sprache}]
 const zentraleDokumente = [];
+const bereichDokumente = {}; // bereich-slug -> [{typ,titel,url,sprache}] (#442, Broschüren-Teaser)
 const unzugeordnet = [];
+
+// Produkt-IDs, die es wirklich gibt — Zuordnungen auf entfernte Produkte
+// (z. B. eingestellte Altprodukte) sollen auffallen statt still zu verwaisen.
+const bekannteIds = new Set(namenJeProdukt.keys());
+function pruefeIds(ids, quelle) {
+  for (const id of ids) {
+    if (!bekannteIds.has(id)) unzugeordnet.push(`UNBEKANNTE PRODUKT-ID "${id}" (${quelle})`);
+  }
+}
 
 let waybackAusgeliefert = 0;
 
@@ -294,7 +322,10 @@ function ablegen(ziel, typ, url, sprache) {
   fs.copyFileSync(path.join(ARCHIV, inv.lokaler_pfad), zielAbs);
   const eintrag = { typ: typ === "zentraldoc" ? "service" : typ, titel: titelAusDatei(datei, typ), url: zielRel, sprache };
   if (ziel === "zentral") zentraleDokumente.push(eintrag);
-  else for (const id of ziel) (produktDokumente[id] ??= []).push(eintrag);
+  else {
+    pruefeIds(ziel, datei);
+    for (const id of ziel) (produktDokumente[id] ??= []).push(eintrag);
+  }
 }
 
 for (const [snapDatei, typ] of SEITEN) {
@@ -303,7 +334,8 @@ for (const [snapDatei, typ] of SEITEN) {
   for (const url of urls) {
     const datei = path.basename(url);
     let ziel;
-    if (MANUAL_MAP[datei]) {
+    if (datei in MANUAL_MAP) {
+      if (MANUAL_MAP[datei] === null) continue; // bewusst nicht ausliefern (Stale-Produkt)
       ziel = MANUAL_MAP[datei] === "zentral" ? "zentral" : MANUAL_MAP[datei];
     } else {
       const id = autoMatch(datei);
@@ -371,28 +403,77 @@ for (const [datei, ziel] of Object.entries(ZUSATZ_TDS_QUELLEN)) {
   );
 }
 
-// ---- Ausgabe -----------------------------------------------------------------
-for (const id of Object.keys(produktDokumente)) {
-  // sortiert: tds, sds, dop, anwendung, reinigung; innerhalb: de, en, fr
-  const ordnung = { tds: 0, sds: 1, dop: 2, anwendung: 3, reinigung: 4, service: 5 };
-  const sprachOrd = { de: 0, en: 1, fr: 2, pl: 3 };
-  produktDokumente[id].sort(
-    (a, b) => ordnung[a.typ] - ordnung[b.typ] || sprachOrd[a.sprache] - sprachOrd[b.sprache] || a.titel.localeCompare(b.titel)
+// ---- Overlay 2: kuratierte Alt-Site-Übernahme (#442) ------------------------
+// Quelle: data/dokument-funde-2026-07.json (erzeugt von
+// scripts/build-dokument-uebernahme-442.py — verknüpfte Alt-Site-Downloads,
+// die auf der neuen Site noch fehlten: Broschüren, EN/FR/PL/ES-Pendants,
+// Service-Dokumente). PDFs kommen aus dem lokalen wp-content-Archiv;
+// fehlt eine Datei im Spiegel, wird sie PDF-validiert von korodur.de geladen.
+{
+  const { dokumente: funde } = JSON.parse(
+    fs.readFileSync("data/dokument-funde-2026-07.json", "utf-8")
   );
+  let kopiert = 0;
+  let geladen = 0;
+  for (const f of funde) {
+    for (const d of f.dateien) {
+      const datei = path.basename(new URL(d.url).pathname);
+      const zielRel = `/downloads/${f.typ}/${datei}`;
+      const zielAbs = path.join("public", zielRel);
+      if (!fs.existsSync(zielAbs)) {
+        if (d.lokal && fs.existsSync(path.join(ARCHIV, d.lokal))) {
+          fs.mkdirSync(path.dirname(zielAbs), { recursive: true });
+          fs.copyFileSync(path.join(ARCHIV, d.lokal), zielAbs);
+          kopiert++;
+        } else {
+          await downloadPdf(d.url, zielAbs);
+          geladen++;
+        }
+      }
+      const eintrag = { typ: f.typ, titel: f.titel, url: zielRel, sprache: d.sprache };
+      if (f.ziel === "zentral") {
+        if (!zentraleDokumente.some((x) => x.url === zielRel)) zentraleDokumente.push(eintrag);
+      } else {
+        pruefeIds(f.ziel, f.stamm);
+        for (const id of f.ziel) {
+          const liste = (produktDokumente[id] ??= []);
+          if (!liste.some((x) => x.url === zielRel)) liste.push(eintrag);
+        }
+      }
+      for (const slug of f.bereiche ?? []) {
+        const liste = (bereichDokumente[slug] ??= []);
+        if (!liste.some((x) => x.url === zielRel)) liste.push(eintrag);
+      }
+    }
+  }
+  console.log(`Overlay (#442): ${kopiert} PDFs aus dem Archiv kopiert, ${geladen} geladen, ${funde.length} Stämme.`);
 }
 
+// ---- Ausgabe -----------------------------------------------------------------
+const ordnung = { tds: 0, sds: 1, dop: 2, anwendung: 3, reinigung: 4, farbkarte: 5, broschuere: 6, service: 7 };
+const sprachOrd = { de: 0, en: 1, fr: 2, pl: 3, es: 4 };
+const dokSort = (a, b) =>
+  ordnung[a.typ] - ordnung[b.typ] || sprachOrd[a.sprache] - sprachOrd[b.sprache] || a.titel.localeCompare(b.titel);
+for (const id of Object.keys(produktDokumente)) produktDokumente[id].sort(dokSort);
+for (const slug of Object.keys(bereichDokumente)) bereichDokumente[slug].sort(dokSort);
+zentraleDokumente.sort(dokSort);
+
 const header = `// GENERIERT von scripts/generate-produkt-dokumente.mjs — NICHT von Hand editieren.
-// Quellen: KORODUR-website/05_wp-content-archiv (Service-Seiten-Stand Okt/Nov 2025)
-//   + data/dokument-funde-2026-06.json (verifizierte Funde WP-Export 2026-06-11, #121).
+// Quellen: wp-content-Archiv der Alt-Site (Service-Seiten-Stand Okt/Nov 2025)
+//   + data/dokument-funde-2026-06.json (verifizierte Funde WP-Export 2026-06-11, #121)
+//   + data/dokument-funde-2026-07.json (kuratierte Alt-Site-Übernahme, #442).
 // Regenerieren: node scripts/generate-produkt-dokumente.mjs
 
-export type DokumentTyp = "tds" | "sds" | "dop" | "epd" | "anwendung" | "reinigung" | "farbkarte" | "service";
+// \`farbkarte\` (#368): eigener Dokumenttyp für Farbkarten (bisher als "tds"
+// fehl-typisiert). \`epd\` reserviert (Render sobald Datei vorliegt, V1-Slot).
+// \`broschuere\` (#442): Bereichs-/Produktbroschüren und Flyer der Alt-Site.
+export type DokumentTyp = "tds" | "sds" | "dop" | "epd" | "anwendung" | "reinigung" | "farbkarte" | "broschuere" | "service";
 
 export interface ProduktDokument {
   typ: DokumentTyp;
   titel: string;
   url: string; // relativ unter public/, ohne basePath
-  sprache: "de" | "en" | "fr" | "pl";
+  sprache: "de" | "en" | "fr" | "pl" | "es";
 }
 `;
 
@@ -403,6 +484,10 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = ${JSON.strin
 
 /** Dokumente ohne (freigegebene) Produkt-Zuordnung — nur im Download-Center. */
 export const ZENTRALE_DOKUMENTE: ProduktDokument[] = ${JSON.stringify(zentraleDokumente, null, 2)};
+
+/** Bereichs-Downloads (#442): Broschüren/Flyer je Bereichs-Slug für den
+ *  Download-Teaser auf Bereichsseiten. */
+export const BEREICH_DOKUMENTE: Record<string, ProduktDokument[]> = ${JSON.stringify(bereichDokumente, null, 2)};
 `
 );
 

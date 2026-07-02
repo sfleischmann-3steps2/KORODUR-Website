@@ -226,6 +226,7 @@
     "weitere_ausfuehrungen_title": "Otras variantes",
     "dok_farbkarte": "Carta de colores",
     "dok_epd": "EPD",
+    "dok_broschuere": "Folleto",
     "systemkomponenten_title": "Componentes del sistema"
   },
   "sanierung": {
@@ -415,6 +416,7 @@
     "col_service": "Servicio"
   },
   "bereiche": {
+    "downloads_title": "Folletos y descargas",
     "breadcrumb_home": "Inicio",
     "produkte_title": "Productos de esta área",
     "alle_produkte_name": "Todos los productos",

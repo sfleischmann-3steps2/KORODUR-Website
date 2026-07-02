@@ -13,11 +13,12 @@ const TYP_KEY: Record<DokumentTyp, string> = {
   anwendung: "dok_anwendung",
   reinigung: "dok_reinigung",
   farbkarte: "dok_farbkarte",
+  broschuere: "dok_broschuere",
   service: "dok_service",
 };
 
 /** Reihenfolge der Dokumenttypen innerhalb einer Gruppe. */
-const TYP_ORDER: DokumentTyp[] = ["tds", "sds", "dop", "epd", "anwendung", "reinigung", "farbkarte", "service"];
+const TYP_ORDER: DokumentTyp[] = ["tds", "sds", "dop", "epd", "anwendung", "reinigung", "farbkarte", "broschuere", "service"];
 
 /** Zwei kundentaugliche Gruppen (Steffi 2026-06-14, #120):
  *  Technische/Konformitäts-Dokumente vs. Anwendung & Pflege. */
@@ -30,6 +31,7 @@ const TYP_GRUPPE: Record<DokumentTyp, Gruppe> = {
   anwendung: "anwendung",
   reinigung: "anwendung",
   farbkarte: "anwendung",
+  broschuere: "anwendung",
   service: "anwendung",
 };
 const GRUPPEN_ORDER: Gruppe[] = ["technik", "anwendung"];

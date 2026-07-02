@@ -1,17 +1,19 @@
 // GENERIERT von scripts/generate-produkt-dokumente.mjs — NICHT von Hand editieren.
-// Quellen: KORODUR-website/05_wp-content-archiv (Service-Seiten-Stand Okt/Nov 2025)
-//   + data/dokument-funde-2026-06.json (verifizierte Funde WP-Export 2026-06-11, #121).
+// Quellen: wp-content-Archiv der Alt-Site (Service-Seiten-Stand Okt/Nov 2025)
+//   + data/dokument-funde-2026-06.json (verifizierte Funde WP-Export 2026-06-11, #121)
+//   + data/dokument-funde-2026-07.json (kuratierte Alt-Site-Übernahme, #442).
 // Regenerieren: node scripts/generate-produkt-dokumente.mjs
 
 // `farbkarte` (#368): eigener Dokumenttyp für Farbkarten (bisher als "tds"
 // fehl-typisiert). `epd` reserviert (Render sobald Datei vorliegt, V1-Slot).
-export type DokumentTyp = "tds" | "sds" | "dop" | "epd" | "anwendung" | "reinigung" | "farbkarte" | "service";
+// `broschuere` (#442): Bereichs-/Produktbroschüren und Flyer der Alt-Site.
+export type DokumentTyp = "tds" | "sds" | "dop" | "epd" | "anwendung" | "reinigung" | "farbkarte" | "broschuere" | "service";
 
 export interface ProduktDokument {
   typ: DokumentTyp;
   titel: string;
   url: string; // relativ unter public/, ohne basePath
-  sprache: "de" | "en" | "fr" | "pl";
+  sprache: "de" | "en" | "fr" | "pl" | "es";
 }
 
 export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
@@ -53,6 +55,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Designfloor Sdb",
+      "url": "/downloads/sds/Designfloor_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Sols Decoratifs Mineraux Sdb",
+      "url": "/downloads/sds/Sols_decoratifs_mineraux_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "dop",
       "titel": "GRANIDUR 03",
       "url": "/downloads/dop/13813_5.3_GRANIDUR_03_de.pdf",
@@ -84,14 +98,68 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Aufheizen Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Aufheizen_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Sichtestrich_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "Sichtestriche KCF und Granidur",
       "url": "/downloads/anwendung/5.-Sichtestriche-KCF-und-Granidur.pdf",
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_Granidur_KCF_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "5. Decorative Screeds Kcf And Granidur",
+      "url": "/downloads/anwendung/5.-Decorative-screeds-KCF-and-Granidur_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Sichtestriche_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_GRANIDUR_KCF_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Designestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Designestriche_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_GRANIDUR_KCF_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "Pflegehinweis GRANIDUR MKS Funke",
       "url": "/downloads/reinigung/Pflegehinweis_GRANIDUR_MKS_Funke_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "service",
+      "titel": "Designboden: alte und neue Bezeichnungen",
+      "url": "/downloads/service/Designboden_Alte-Neue-Bezeichnung_de.pdf",
       "sprache": "de"
     }
   ],
@@ -133,6 +201,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Designfloor Sdb",
+      "url": "/downloads/sds/Designfloor_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Sols Decoratifs Mineraux Sdb",
+      "url": "/downloads/sds/Sols_decoratifs_mineraux_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "dop",
       "titel": "GRANIDUR BIANCO",
       "url": "/downloads/dop/13813_5.6_GRANIDUR_BIANCO_de.pdf",
@@ -158,14 +238,68 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Aufheizen Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Aufheizen_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Sichtestrich_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "Sichtestriche KCF und Granidur",
       "url": "/downloads/anwendung/5.-Sichtestriche-KCF-und-Granidur.pdf",
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_Granidur_KCF_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "5. Decorative Screeds Kcf And Granidur",
+      "url": "/downloads/anwendung/5.-Decorative-screeds-KCF-and-Granidur_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Sichtestriche_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_GRANIDUR_KCF_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Designestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Designestriche_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_GRANIDUR_KCF_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "Pflegehinweis GRANIDUR MKS Funke",
       "url": "/downloads/reinigung/Pflegehinweis_GRANIDUR_MKS_Funke_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "service",
+      "titel": "Designboden: alte und neue Bezeichnungen",
+      "url": "/downloads/service/Designboden_Alte-Neue-Bezeichnung_de.pdf",
       "sprache": "de"
     }
   ],
@@ -201,6 +335,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Designfloor Sdb",
+      "url": "/downloads/sds/Designfloor_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Sols Decoratifs Mineraux Sdb",
+      "url": "/downloads/sds/Sols_decoratifs_mineraux_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "dop",
       "titel": "Copetti Floor KCF 05",
       "url": "/downloads/dop/13813_5.1_Copetti_Floor_KCF_05_de.pdf",
@@ -226,14 +372,74 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Aufheizen Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Aufheizen_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Sichtestrich_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "Sichtestriche KCF und Granidur",
       "url": "/downloads/anwendung/5.-Sichtestriche-KCF-und-Granidur.pdf",
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_Granidur_KCF_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "5. Decorative Screeds Kcf And Granidur",
+      "url": "/downloads/anwendung/5.-Decorative-screeds-KCF-and-Granidur_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Sichtestriche_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_GRANIDUR_KCF_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Designestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Designestriche_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Konstruktionsbeispiel KCF 05/08",
+      "url": "/downloads/anwendung/Konstruktionsbeispiel_KCF_05-08_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "url": "/downloads/anwendung/Werkzeugliste_GRANIDUR_KCF_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "Pflegehinweis KORODUR COPETTI FLOOR OBTEGO",
       "url": "/downloads/reinigung/Pflegehinweis_KORODUR_COPETTI_FLOOR_OBTEGO_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "service",
+      "titel": "Designboden: alte und neue Bezeichnungen",
+      "url": "/downloads/service/Designboden_Alte-Neue-Bezeichnung_de.pdf",
       "sprache": "de"
     }
   ],
@@ -288,14 +494,74 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Aufheizen Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Aufheizen_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Sichtestrich_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "MKS Hippo Mixer TRU Mischtechnik",
+      "url": "/downloads/anwendung/MKS_Hippo_Mixer_TRU_Mischtechnik.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Schleifanleitung TRU",
+      "url": "/downloads/anwendung/Schleifanleitung_TRU.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "TRU Sichtestriche",
       "url": "/downloads/anwendung/7.-TRU-Sichtestriche.pdf",
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste TRU Self-Leveling",
+      "url": "/downloads/anwendung/Werkzeugliste_TRU_Self-Leveling_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "7. Tru Decorative Screeds",
+      "url": "/downloads/anwendung/7.-TRU-Decorative-screeds_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Sichtestriche_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste TRU Self-Leveling",
+      "url": "/downloads/anwendung/Werkzeugliste_TRU_Self-Leveling_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "TRU Sichtestriche",
       "url": "/downloads/reinigung/7._TRU_Sichtestriche.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "reinigung",
+      "titel": "Pflegehinweis Tru Self Leveling Tru Gray Tru Pc Obtego",
+      "url": "/downloads/reinigung/Pflegehinweis_TRU_Self-Leveling_TRU_Gray_TRU_PC_OBTEGO_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "farbkarte",
+      "titel": "MIXOL Farbkarte",
+      "url": "/downloads/farbkarte/MIXOL_Farbkarte.pdf",
       "sprache": "de"
     }
   ],
@@ -317,6 +583,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "TRU PC",
       "url": "/downloads/tds/TRU_PC_en.pdf",
       "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "Tru Pc",
+      "url": "/downloads/tds/TRU-PC_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "tds",
@@ -350,14 +622,74 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Aufheizen Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Aufheizen_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Sichtestrich_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "MKS Hippo Mixer TRU Mischtechnik",
+      "url": "/downloads/anwendung/MKS_Hippo_Mixer_TRU_Mischtechnik.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Schleifanleitung TRU",
+      "url": "/downloads/anwendung/Schleifanleitung_TRU.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "TRU Sichtestriche",
       "url": "/downloads/anwendung/7.-TRU-Sichtestriche.pdf",
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste TRU Self-Leveling",
+      "url": "/downloads/anwendung/Werkzeugliste_TRU_Self-Leveling_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "7. Tru Decorative Screeds",
+      "url": "/downloads/anwendung/7.-TRU-Decorative-screeds_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Sichtestriche_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste TRU Self-Leveling",
+      "url": "/downloads/anwendung/Werkzeugliste_TRU_Self-Leveling_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "TRU Sichtestriche",
       "url": "/downloads/reinigung/7._TRU_Sichtestriche.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "reinigung",
+      "titel": "Pflegehinweis Tru Self Leveling Tru Gray Tru Pc Obtego",
+      "url": "/downloads/reinigung/Pflegehinweis_TRU_Self-Leveling_TRU_Gray_TRU_PC_OBTEGO_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "farbkarte",
+      "titel": "MIXOL Farbkarte",
+      "url": "/downloads/farbkarte/MIXOL_Farbkarte.pdf",
       "sprache": "de"
     }
   ],
@@ -394,14 +726,74 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Aufheizen Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Aufheizen_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Verarbeitungshinweise_allgemeine_Hinweise_Sichtestrich_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "MKS Hippo Mixer TRU Mischtechnik",
+      "url": "/downloads/anwendung/MKS_Hippo_Mixer_TRU_Mischtechnik.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Schleifanleitung TRU",
+      "url": "/downloads/anwendung/Schleifanleitung_TRU.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "TRU Sichtestriche",
       "url": "/downloads/anwendung/7.-TRU-Sichtestriche.pdf",
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste TRU Self-Leveling",
+      "url": "/downloads/anwendung/Werkzeugliste_TRU_Self-Leveling_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "7. Tru Decorative Screeds",
+      "url": "/downloads/anwendung/7.-TRU-Decorative-screeds_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "url": "/downloads/anwendung/Allgemeine_Hinweise_Sichtestriche_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Werkzeugliste TRU Self-Leveling",
+      "url": "/downloads/anwendung/Werkzeugliste_TRU_Self-Leveling_fr.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "TRU Sichtestriche",
       "url": "/downloads/reinigung/7._TRU_Sichtestriche.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "reinigung",
+      "titel": "Pflegehinweis Tru Self Leveling Tru Gray Tru Pc Obtego",
+      "url": "/downloads/reinigung/Pflegehinweis_TRU_Self-Leveling_TRU_Gray_TRU_PC_OBTEGO_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "farbkarte",
+      "titel": "MIXOL Farbkarte",
+      "url": "/downloads/farbkarte/MIXOL_Farbkarte.pdf",
       "sprache": "de"
     }
   ],
@@ -415,7 +807,19 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     {
       "typ": "tds",
       "titel": "Asphalt Repair Mix",
+      "url": "/downloads/tds/Asphalt-Repair-Mix_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "Asphalt Repair Mix",
       "url": "/downloads/tds/Asphalt_Repair_Mix_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "Asphalt Repair Mix",
+      "url": "/downloads/tds/Asphalt-Repair-Mix_EN.pdf",
       "sprache": "en"
     },
     {
@@ -443,9 +847,27 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "sds",
+      "titel": "Sdb Korodur Asphalt Repair Mix",
+      "url": "/downloads/sds/SDB_KORODUR_Asphalt_Repair_Mix_en.pdf",
+      "sprache": "en"
+    },
+    {
       "typ": "dop",
       "titel": "DOP Asphalt Repair Mix",
       "url": "/downloads/dop/DOP_Asphalt_Repair_Mix_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Asphalt Repair Mix Flyer",
+      "url": "/downloads/broschuere/Asphalt_Repair_Mix_Flyer_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Asphalt Repair Mix Flyer",
+      "url": "/downloads/broschuere/Asphalt_Repair_Mix_Flyer_en.pdf",
       "sprache": "en"
     }
   ],
@@ -478,6 +900,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "typ": "tds",
       "titel": "Cement All",
       "url": "/downloads/tds/Cement_All_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "Cement All",
+      "url": "/downloads/tds/CEMENT-_All_fr.pdf",
       "sprache": "fr"
     },
     {
@@ -524,6 +952,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "dop",
+      "titel": "DoP Cement All Plus",
+      "url": "/downloads/dop/DOP-Cement-All-Plus.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
       "titel": "Rapid Set CEMENT ALL",
       "url": "/downloads/dop/1001_1_998-1_Rapid_Set_CEMENT_ALL_en.pdf",
       "sprache": "en"
@@ -536,6 +970,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "url": "/downloads/anwendung/Mischtechnik_Rapid_Set_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "Rapid Set Reparaturmoertel",
       "url": "/downloads/anwendung/8.-Rapid-Set-Reparaturmoertel.pdf",
       "sprache": "de"
@@ -545,6 +985,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set Reparaturmoertel Sannierungsarbeiten",
       "url": "/downloads/anwendung/13-Rapid-Set-Reparaturmoertel_Sannierungsarbeiten.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "8. Rapid Set Repair Mortar",
+      "url": "/downloads/anwendung/8.-Rapid-Set-Repair-Mortar_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "url": "/downloads/anwendung/Mixing_technique_Rapid_Set_en.pdf",
+      "sprache": "en"
     }
   ],
   "rapid-set-concrete-mix": [
@@ -610,6 +1062,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "url": "/downloads/anwendung/Mischtechnik_Rapid_Set_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "Rapid Set Reparaturmoertel",
       "url": "/downloads/anwendung/8.-Rapid-Set-Reparaturmoertel.pdf",
       "sprache": "de"
@@ -619,6 +1077,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set Reparaturmoertel Sannierungsarbeiten",
       "url": "/downloads/anwendung/13-Rapid-Set-Reparaturmoertel_Sannierungsarbeiten.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "8. Rapid Set Repair Mortar",
+      "url": "/downloads/anwendung/8.-Rapid-Set-Repair-Mortar_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "url": "/downloads/anwendung/Mixing_technique_Rapid_Set_en.pdf",
+      "sprache": "en"
     }
   ],
   "rapid-set-concrete-pharmacy": [
@@ -663,6 +1133,36 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Rapid Set SET Control",
       "url": "/downloads/sds/KORODUR_Rapid_Set_SET_Control_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set Fast Sdb",
+      "url": "/downloads/sds/Rapid_Set_FAST_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set Flow Control Sdb",
+      "url": "/downloads/sds/Rapid_Set_FLOW_Control_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set Set Control Sdb",
+      "url": "/downloads/sds/Rapid_Set_SET_Control_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set Flow Control Sdb",
+      "url": "/downloads/sds/Rapid_Set_FLOW_Control_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "sds",
+      "titel": "Rapid Set Set Control Sdb",
+      "url": "/downloads/sds/Rapid_Set_SET_Control_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "dot-europe-concrete-mix": [
@@ -695,6 +1195,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set Reparaturmoertel DOT fuer Verkehrsflaechen",
       "url": "/downloads/anwendung/10.-Rapid-Set-Reparaturmoertel_DOT-fuer-Verkehrsflaechen.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "10 Rapid Set Repair Mortar Dot For Concrete Roads",
+      "url": "/downloads/anwendung/10-Rapid-Set-Repair-mortar_DOT-for-concrete-roads_EN.pdf",
+      "sprache": "en"
     }
   ],
   "korodur-durop": [
@@ -785,6 +1291,24 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KOROCRETE Schnellbeton",
       "url": "/downloads/tds/KOROCRETE_Schnellbeton_pl.pdf",
       "sprache": "pl"
+    },
+    {
+      "typ": "service",
+      "titel": "KORODUR Schnellbetonsysteme",
+      "url": "/downloads/service/KORODUR-Schnellbetonsysteme.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "service",
+      "titel": "KORODUR Schnellbetonsysteme",
+      "url": "/downloads/service/KORODUR_Schnellbetonsysteme_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "service",
+      "titel": "KORODUR Schnellbetonsysteme",
+      "url": "/downloads/service/KORODUR_Schnellbetonsysteme_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korocure": [
@@ -875,6 +1399,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Hartstoffe",
       "url": "/downloads/sds/KORODUR_Hartstoffe_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Hard Aggregates Sdb",
+      "url": "/downloads/sds/KORODUR_hard_aggregates_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Durcisseur Sdb",
+      "url": "/downloads/sds/KORODUR_Durcisseur_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-easyfinish": [
@@ -912,6 +1448,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "Korodur Fscem",
+      "url": "/downloads/tds/KORODUR-FSCem_en_2023-08.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
       "titel": "KORODUR FSCem",
       "url": "/downloads/tds/KORODUR_FSCem_en.pdf",
       "sprache": "en"
@@ -927,6 +1469,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Industrieboden Trockenmoertel",
       "url": "/downloads/sds/KORODUR_Industrieboden_Trockenmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Industrial Floor Dry Mortars Sdb",
+      "url": "/downloads/sds/Industrial_floor_dry_mortars_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Neodur Sols Industriels Sdb",
+      "url": "/downloads/sds/NEODUR_sols_industriels_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-fscem-screed": [
@@ -953,6 +1507,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Industrieboden Trockenmoertel",
       "url": "/downloads/sds/KORODUR_Industrieboden_Trockenmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Industrial Floor Dry Mortars Sdb",
+      "url": "/downloads/sds/Industrial_floor_dry_mortars_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Neodur Sols Industriels Sdb",
+      "url": "/downloads/sds/NEODUR_sols_industriels_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-hb-5": [
@@ -1040,6 +1606,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "Korodur Nanofinish",
+      "url": "/downloads/tds/KORODUR-nanoFinish_FR_2023.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
       "titel": "KORODUR nanoFinish fr 1",
       "url": "/downloads/tds/KORODUR_nanoFinish_fr-1.pdf",
       "sprache": "fr"
@@ -1051,6 +1623,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR PC",
       "url": "/downloads/tds/KORODUR_PC_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "Korodur Pc",
+      "url": "/downloads/tds/KORODUR-PC_en_2023.pdf",
+      "sprache": "en"
     },
     {
       "typ": "tds",
@@ -1101,14 +1679,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Hartstoffe",
       "url": "/downloads/sds/KORODUR_Hartstoffe_SDB_de.pdf",
       "sprache": "de"
-    }
-  ],
-  "korodur-silosystem": [
+    },
     {
-      "typ": "tds",
-      "titel": "KORODUR Silosystem",
-      "url": "/downloads/tds/KORODUR_Silosystem_de.pdf",
-      "sprache": "de"
+      "typ": "sds",
+      "titel": "Korodur Hard Aggregates Sdb",
+      "url": "/downloads/sds/KORODUR_hard_aggregates_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Durcisseur Sdb",
+      "url": "/downloads/sds/KORODUR_Durcisseur_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-txpk": [
@@ -1150,9 +1732,21 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "sds",
+      "titel": "Korodur Txpk Component A Sdb",
+      "url": "/downloads/sds/KORODUR_TXPK_component_A_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
       "titel": "KORODUR TXPK component B",
       "url": "/downloads/sds/KORODUR_TXPK_component_B_SDB_en.pdf",
       "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Txpk Comp A Sdb",
+      "url": "/downloads/sds/KORODUR_TXPK_comp_A_SDB_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "sds",
@@ -1205,6 +1799,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Hartstoffe",
       "url": "/downloads/sds/KORODUR_Hartstoffe_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Hard Aggregates Sdb",
+      "url": "/downloads/sds/KORODUR_hard_aggregates_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Durcisseur Sdb",
+      "url": "/downloads/sds/KORODUR_Durcisseur_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-wh-metallisch": [
@@ -1237,6 +1843,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Hartstoffe",
       "url": "/downloads/sds/KORODUR_Hartstoffe_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Hard Aggregates Sdb",
+      "url": "/downloads/sds/KORODUR_hard_aggregates_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Durcisseur Sdb",
+      "url": "/downloads/sds/KORODUR_Durcisseur_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "korodur-wh-spezial": [
@@ -1263,6 +1881,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Hartstoffe",
       "url": "/downloads/sds/KORODUR_Hartstoffe_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Hard Aggregates Sdb",
+      "url": "/downloads/sds/KORODUR_hard_aggregates_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Korodur Durcisseur Sdb",
+      "url": "/downloads/sds/KORODUR_Durcisseur_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "koromineral-cure": [
@@ -1282,6 +1912,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "typ": "tds",
       "titel": "KOROMINERAL CURE fr 1",
       "url": "/downloads/tds/KOROMINERAL_CURE_fr-1.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "Koromineral Cure Fr 2023",
+      "url": "/downloads/tds/KOROMINERAL-CURE_fr__2023.pdf",
       "sprache": "fr"
     },
     {
@@ -1350,6 +1986,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "Koromineral Li",
+      "url": "/downloads/tds/KOROMINERAL_Li_en_2023.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
       "titel": "KOROMINERAL Li",
       "url": "/downloads/tds/KOROMINERAL_Li_en.pdf",
       "sprache": "en"
@@ -1379,6 +2021,26 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     }
   ],
+  "korophalt-02": [
+    {
+      "typ": "tds",
+      "titel": "KOROPHALT 02",
+      "url": "/downloads/tds/KOROPHALT_02_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "KOROPHALT 02",
+      "url": "/downloads/tds/KOROPHALT_02_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "KOROPHALT 02",
+      "url": "/downloads/tds/KOROPHALT_02_fr.pdf",
+      "sprache": "fr"
+    }
+  ],
   "system-korodur-korotan": [
     {
       "typ": "tds",
@@ -1391,6 +2053,24 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR KOROTAN",
       "url": "/downloads/tds/KORODUR_KOROTAN_fr.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR Korotan",
+      "url": "/downloads/sds/KORODUR_Korotan_SDB_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "service",
+      "titel": "System KORODUR-KOROTAN",
+      "url": "/downloads/service/KORODUR_KOROTAN_Industrieboden_System_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "service",
+      "titel": "System KORODUR-KOROTAN",
+      "url": "/downloads/service/KORODUR_KOROTAN_Industrieboden_System_en.pdf",
+      "sprache": "en"
     }
   ],
   "korotex": [
@@ -1555,6 +2235,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "MICROTOP",
       "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "url": "/downloads/broschuere/MICROTOP_4-seitig_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "url": "/downloads/broschuere/MICROTOP_4-seitig_en.pdf",
+      "sprache": "en"
     }
   ],
   "microtop-tw-5": [
@@ -1599,6 +2291,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "MICROTOP",
       "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "url": "/downloads/broschuere/MICROTOP_4-seitig_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "url": "/downloads/broschuere/MICROTOP_4-seitig_en.pdf",
+      "sprache": "en"
     }
   ],
   "microtop-tw-8": [
@@ -1643,6 +2347,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "MICROTOP",
       "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
       "sprache": "fr"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "url": "/downloads/broschuere/MICROTOP_4-seitig_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "url": "/downloads/broschuere/MICROTOP_4-seitig_en.pdf",
+      "sprache": "en"
     }
   ],
   "microtop-tw-bm": [
@@ -1724,6 +2440,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "typ": "sds",
       "titel": "MICROTOP",
       "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Microtop Tw Mineral Sdb",
+      "url": "/downloads/sds/MICROTOP_TW_Mineral_SDB_en.pdf",
       "sprache": "en"
     },
     {
@@ -1878,6 +2600,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "url": "/downloads/anwendung/Mischtechnik_Rapid_Set_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "Mortar Mix Pflasterverfugung",
       "url": "/downloads/anwendung/9.-Mortar-Mix-Pflasterverfugung.pdf",
       "sprache": "de"
@@ -1893,6 +2621,24 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set Reparaturmoertel Sannierungsarbeiten",
       "url": "/downloads/anwendung/13-Rapid-Set-Reparaturmoertel_Sannierungsarbeiten.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "8. Rapid Set Repair Mortar",
+      "url": "/downloads/anwendung/8.-Rapid-Set-Repair-Mortar_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "9. Mortar Mix Restoration Paved Surfaces",
+      "url": "/downloads/anwendung/9.-Mortar-Mix-restoration-paved-surfaces_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "url": "/downloads/anwendung/Mixing_technique_Rapid_Set_en.pdf",
+      "sprache": "en"
     }
   ],
   "rapid-set-mortar-mix-dur": [
@@ -1934,6 +2680,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "url": "/downloads/anwendung/Mischtechnik_Rapid_Set_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "Rapid Set Reparaturmoertel",
       "url": "/downloads/anwendung/8.-Rapid-Set-Reparaturmoertel.pdf",
       "sprache": "de"
@@ -1943,6 +2695,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set Reparaturmoertel Sannierungsarbeiten",
       "url": "/downloads/anwendung/13-Rapid-Set-Reparaturmoertel_Sannierungsarbeiten.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "8. Rapid Set Repair Mortar",
+      "url": "/downloads/anwendung/8.-Rapid-Set-Repair-Mortar_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "url": "/downloads/anwendung/Mixing_technique_Rapid_Set_en.pdf",
+      "sprache": "en"
     }
   ],
   "neodur-he-2": [
@@ -1960,8 +2724,20 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "Neodur He 2",
+      "url": "/downloads/tds/NEODUR-HE-2_fr_2023-06.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
       "titel": "NEODUR HE 2",
       "url": "/downloads/tds/NEODUR_HE_2_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "Neodur He 2F",
+      "url": "/downloads/tds/NEODUR_HE_2F_fr.pdf",
       "sprache": "fr"
     },
     {
@@ -1978,8 +2754,20 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "sds",
+      "titel": "Industrial Floor Dry Mortars Sdb",
+      "url": "/downloads/sds/Industrial_floor_dry_mortars_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
       "titel": "KORODUR Neodur HE 2",
       "url": "/downloads/sds/KORODUR_Neodur_HE_2_SDB_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "sds",
+      "titel": "Neodur Sols Industriels Sdb",
+      "url": "/downloads/sds/NEODUR_sols_industriels_SDB_fr.pdf",
       "sprache": "fr"
     },
     {
@@ -2002,6 +2790,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "dop",
+      "titel": "13813 2.21 Neodur He 2 F",
+      "url": "/downloads/dop/13813_2.21_NEODUR_HE_2_F_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "dop",
       "titel": "NEODUR HE 2",
       "url": "/downloads/dop/13813_2.11_NEODUR_HE_2_fr.pdf",
       "sprache": "fr"
@@ -2011,6 +2805,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Hartstoffeinstreuung 1",
       "url": "/downloads/anwendung/3.-Hartstoffeinstreuung-1.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "3. Hard Aggregate Dry Shake Applicatio",
+      "url": "/downloads/anwendung/3.-Hard-aggregate-dry-shake-applicatio_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Conseils De Mise En Oeuvre Kor Neo",
+      "url": "/downloads/anwendung/Conseils-de-mise-en-oeuvre-KOR-NEO_FR.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "reinigung",
@@ -2024,6 +2830,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "typ": "tds",
       "titel": "NEODUR HE 3",
       "url": "/downloads/tds/NEODUR_HE_3_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 3 spezial",
+      "url": "/downloads/tds/NEODUR_HE_3_spezial_de.pdf",
       "sprache": "de"
     },
     {
@@ -2081,34 +2893,23 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "3. Hard Aggregate Dry Shake Applicatio",
+      "url": "/downloads/anwendung/3.-Hard-aggregate-dry-shake-applicatio_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Conseils De Mise En Oeuvre Kor Neo",
+      "url": "/downloads/anwendung/Conseils-de-mise-en-oeuvre-KOR-NEO_FR.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke",
       "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf",
       "sprache": "de"
     }
-  ],
-  "neodur-he-3-svs-3": [
-    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_fr.pdf", "sprache": "fr" },
-    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_pl.pdf", "sprache": "pl" },
-    { "typ": "dop", "titel": "NEODUR HE 3 SVS 3", "url": "/downloads/dop/13813_2.7_NEODUR_HE_3_SVS_3_de.pdf", "sprache": "de" },
-    { "typ": "sds", "titel": "NEODUR HE 3", "url": "/downloads/sds/NEODUR_HE_3_SDB_de.pdf", "sprache": "de" }
-  ],
-  "neodur-he-3-svs-15": [
-    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_fr.pdf", "sprache": "fr" },
-    { "typ": "tds", "titel": "NEODUR HE 3", "url": "/downloads/tds/NEODUR_HE_3_pl.pdf", "sprache": "pl" },
-    { "typ": "dop", "titel": "NEODUR HE 3 SVS 1,5", "url": "/downloads/dop/13813_2.8_NEODUR_HE_3_SVS_15_de.pdf", "sprache": "de" },
-    { "typ": "sds", "titel": "NEODUR HE 3", "url": "/downloads/sds/NEODUR_HE_3_SDB_de.pdf", "sprache": "de" }
-  ],
-  "neodur-he-3-metallisch": [
-    { "typ": "tds", "titel": "NEODUR HE 3 metallisch", "url": "/downloads/tds/NEODUR_HE_3_metallisch_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 3 metallisch", "url": "/downloads/tds/NEODUR_HE_3_metallisch_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 3 metallisch", "url": "/downloads/tds/NEODUR_HE_3_metallisch_fr.pdf", "sprache": "fr" },
-    { "typ": "dop", "titel": "NEODUR HE 3 metallisch", "url": "/downloads/dop/13813_2.10_NEODUR_HE_3_metallisch_de.pdf", "sprache": "de" },
-    { "typ": "sds", "titel": "NEODUR HE 3", "url": "/downloads/sds/NEODUR_HE_3_SDB_de.pdf", "sprache": "de" }
   ],
   "neodur-he-3-green": [
     {
@@ -2137,6 +2938,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "dop",
+      "titel": "2.3 Dop Neodur He 3 Green En 1",
+      "url": "/downloads/dop/2.3-DOP-NEODUR-HE-3-green-en-1.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "dop",
       "titel": "DOP NEODUR HE 3 green en",
       "url": "/downloads/dop/2.3-DOP-NEODUR-HE-3-green-en.pdf",
       "sprache": "en"
@@ -2148,10 +2955,54 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "3. Hard Aggregate Dry Shake Applicatio",
+      "url": "/downloads/anwendung/3.-Hard-aggregate-dry-shake-applicatio_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Conseils De Mise En Oeuvre Kor Neo",
+      "url": "/downloads/anwendung/Conseils-de-mise-en-oeuvre-KOR-NEO_FR.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke",
       "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf",
       "sprache": "de"
+    }
+  ],
+  "neodur-he-3-metallisch": [
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 3 metallisch",
+      "url": "/downloads/tds/NEODUR_HE_3_metallisch_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 3 metallisch",
+      "url": "/downloads/tds/NEODUR_HE_3_metallisch_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 3 metallisch",
+      "url": "/downloads/tds/NEODUR_HE_3_metallisch_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 3 metallisch",
+      "url": "/downloads/dop/13813_2.10_NEODUR_HE_3_metallisch_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "13813 2.10 Neodur He 3 Metallic",
+      "url": "/downloads/dop/13813_2.10_NEODUR_HE_3_metallic_en.pdf",
+      "sprache": "en"
     }
   ],
   "neodur-he-40": [
@@ -2184,6 +3035,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR Industrieboden Trockenmoertel",
       "url": "/downloads/sds/KORODUR_Industrieboden_Trockenmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Industrial Floor Dry Mortars Sdb",
+      "url": "/downloads/sds/Industrial_floor_dry_mortars_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Neodur Sols Industriels Sdb",
+      "url": "/downloads/sds/NEODUR_sols_industriels_SDB_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "dop",
@@ -2220,6 +3083,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Schicht Frisch auf Frisch",
       "url": "/downloads/anwendung/1.-Schicht-Frisch-auf-Frisch.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "1. Layer Fresh On Fresh Application",
+      "url": "/downloads/anwendung/1.-Layer-fresh-on-fresh-application_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Conseils De Mise En Oeuvre Kor Neo",
+      "url": "/downloads/anwendung/Conseils-de-mise-en-oeuvre-KOR-NEO_FR.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "reinigung",
@@ -2261,7 +3136,7 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "dop",
-      "titel": "NEODUR HE 60 rapid",
+      "titel": "NEODUR HE 60 rapid SVS 5",
       "url": "/downloads/dop/13813_3.1_NEODUR_HE_60_rapid_SVS_5_de.pdf",
       "sprache": "de"
     },
@@ -2272,35 +3147,17 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "en"
     },
     {
+      "typ": "anwendung",
+      "titel": "Anwendungsempfehlung He60 Rapid",
+      "url": "/downloads/anwendung/Anwendungsempfehlung_HE60_rapid_en.pdf",
+      "sprache": "en"
+    },
+    {
       "typ": "reinigung",
       "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke",
       "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf",
       "sprache": "de"
     }
-  ],
-  "neodur-he-60-rapid-svs-3": [
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_fr.pdf", "sprache": "fr" },
-    { "typ": "sds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/sds/NEODUR_HE_60_rapid_SDB_de.pdf", "sprache": "de" },
-    { "typ": "dop", "titel": "NEODUR HE 60 rapid SVS 3", "url": "/downloads/dop/13813_3.2_NEODUR_HE_60_rapid_SVS_3_de.pdf", "sprache": "de" },
-    { "typ": "reinigung", "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke", "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf", "sprache": "de" }
-  ],
-  "neodur-he-60-rapid-svs-15": [
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_fr.pdf", "sprache": "fr" },
-    { "typ": "sds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/sds/NEODUR_HE_60_rapid_SDB_de.pdf", "sprache": "de" },
-    { "typ": "dop", "titel": "NEODUR HE 60 rapid SVS 1,5", "url": "/downloads/dop/13813_3.3_NEODUR_HE_60_rapid_SVS_1.5_de.pdf", "sprache": "de" },
-    { "typ": "reinigung", "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke", "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf", "sprache": "de" }
-  ],
-  "neodur-he-60-rapid-metallisch": [
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/tds/NEODUR_HE_60_rapid_fr.pdf", "sprache": "fr" },
-    { "typ": "sds", "titel": "NEODUR HE 60 rapid", "url": "/downloads/sds/NEODUR_HE_60_rapid_SDB_de.pdf", "sprache": "de" },
-    { "typ": "dop", "titel": "NEODUR HE 60 rapid metallisch", "url": "/downloads/dop/13813_3.4_NEODUR_HE_60_rapid_metallisch_de.pdf", "sprache": "de" },
-    { "typ": "reinigung", "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke", "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf", "sprache": "de" }
   ],
   "neodur-he-65": [
     {
@@ -2353,6 +3210,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "anwendung",
+      "titel": "HE 65 metallisch auf erhaerteten Tragbeton 1",
+      "url": "/downloads/anwendung/6.-HE-65-metallisch-auf-erhaerteten-Tragbeton-1.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
       "titel": "Schicht auf erhaerteten Tragbeton",
       "url": "/downloads/anwendung/2.-Schicht-auf-erhaerteten-Tragbeton.pdf",
       "sprache": "de"
@@ -2364,46 +3227,61 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "anwendung",
+      "titel": "1. Layer Fresh On Fresh Application",
+      "url": "/downloads/anwendung/1.-Layer-fresh-on-fresh-application_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Conseils De Mise En Oeuvre Kor Neo",
+      "url": "/downloads/anwendung/Conseils-de-mise-en-oeuvre-KOR-NEO_FR.pdf",
+      "sprache": "fr"
+    },
+    {
       "typ": "reinigung",
       "titel": "Pflegehinweis KORODUR Hartstoff Industrieboeden MKS Funke",
       "url": "/downloads/reinigung/Pflegehinweis_KORODUR_Hartstoff_Industrieboeden_MKS_Funke_de.pdf",
       "sprache": "de"
     }
   ],
-  // #372 hand-ergänzt: Doku-Einträge der neuen HE-65-Ausführungen. Zeigen auf
-  // lokal vorhandene PDFs; ein späterer Generator-Lauf (mit wp-content-Spiegel)
-  // reproduziert sie automatisch (Namens-/DoP-Match, Varianten routen exakt).
-  // #411: Standard-Block "neodur-he-65" von metallisch/SVS-Docs bereinigt —
-  // Mutter zeigt nur noch die Standard-Qualität (TDS/SDS/DoP 13813-2.1).
-  "neodur-he-65-svs-3": [
-    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_fr.pdf", "sprache": "fr" },
-    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_pl.pdf", "sprache": "pl" },
-    { "typ": "dop", "titel": "NEODUR HE 65 SVS 3", "url": "/downloads/dop/13813_2.2_NEODUR_HE_65_SVS_3_de.pdf", "sprache": "de" },
-    { "typ": "sds", "titel": "NEODUR HE 65", "url": "/downloads/sds/NEODUR_HE_65_SDB_de.pdf", "sprache": "de" }
-  ],
-  "neodur-he-65-svs-15": [
-    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_fr.pdf", "sprache": "fr" },
-    { "typ": "tds", "titel": "NEODUR HE 65", "url": "/downloads/tds/NEODUR_HE_65_pl.pdf", "sprache": "pl" },
-    { "typ": "dop", "titel": "NEODUR HE 65 SVS 1,5", "url": "/downloads/dop/13813_2.3_NEODUR_HE_65_SVS_15_de.pdf", "sprache": "de" },
-    { "typ": "sds", "titel": "NEODUR HE 65", "url": "/downloads/sds/NEODUR_HE_65_SDB_de.pdf", "sprache": "de" }
-  ],
   "neodur-he-65-metallisch": [
-    { "typ": "tds", "titel": "NEODUR HE 65 metallisch", "url": "/downloads/tds/NEODUR_HE_65_metallisch_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 65 metallisch", "url": "/downloads/tds/NEODUR_HE_65_metallisch_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 65 metallisch", "url": "/downloads/tds/NEODUR_HE_65_metallisch_fr.pdf", "sprache": "fr" },
-    { "typ": "dop", "titel": "NEODUR HE 65 metallisch", "url": "/downloads/dop/13813_2.5_NEODUR_HE_65_metallisch_de.pdf", "sprache": "de" },
-    { "typ": "sds", "titel": "NEODUR HE 65", "url": "/downloads/sds/NEODUR_HE_65_SDB_de.pdf", "sprache": "de" },
-    { "typ": "anwendung", "titel": "HE 65 metallisch auf erhärteten Tragbeton", "url": "/downloads/anwendung/6.-HE-65-metallisch-auf-erhaerteten-Tragbeton-1.pdf", "sprache": "de" }
-  ],
-  "neodur-he-65-plus-svs-3": [
-    { "typ": "tds", "titel": "NEODUR HE 65 Plus", "url": "/downloads/tds/NEODUR_HE_65_Plus_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR HE 65 Plus", "url": "/downloads/tds/NEODUR_HE_65_plus_en.pdf", "sprache": "en" },
-    { "typ": "tds", "titel": "NEODUR HE 65 Plus", "url": "/downloads/tds/NEODUR_HE_65_plus_fr.pdf", "sprache": "fr" },
-    { "typ": "sds", "titel": "NEODUR HE 65 Plus", "url": "/downloads/sds/NEODUR_HE_65_plus_SDB_de.pdf", "sprache": "de" }
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 65 metallisch",
+      "url": "/downloads/tds/NEODUR_HE_65_metallisch_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 65 metallisch",
+      "url": "/downloads/tds/NEODUR_HE_65_metallisch_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR HE 65 metallisch",
+      "url": "/downloads/tds/NEODUR_HE_65_metallisch_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 65 metallisch",
+      "url": "/downloads/dop/13813_2.5_NEODUR_HE_65_metallisch_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "13813 2.5 Neodur He 65 Metallic",
+      "url": "/downloads/dop/13813_2.5_NEODUR_HE_65_metallic_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "6. He 65 Metallic Application On Set Base Concrete",
+      "url": "/downloads/anwendung/6.-HE-65-metallic-application-on-set-base-concrete_EN.pdf",
+      "sprache": "en"
+    }
   ],
   "neodur-he-65-plus": [
     {
@@ -2431,6 +3309,12 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     },
     {
+      "typ": "sds",
+      "titel": "Sdb Korodur Neodur He 65 Plus.En",
+      "url": "/downloads/sds/SDB_KORODUR_Neodur_HE-65_Plus.en_.pdf",
+      "sprache": "en"
+    },
+    {
       "typ": "anwendung",
       "titel": "Schicht auf erhaerteten Tragbeton",
       "url": "/downloads/anwendung/2.-Schicht-auf-erhaerteten-Tragbeton.pdf",
@@ -2441,6 +3325,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Schicht Frisch auf Frisch",
       "url": "/downloads/anwendung/1.-Schicht-Frisch-auf-Frisch.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "1. Layer Fresh On Fresh Application",
+      "url": "/downloads/anwendung/1.-Layer-fresh-on-fresh-application_EN.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "anwendung",
+      "titel": "Conseils De Mise En Oeuvre Kor Neo",
+      "url": "/downloads/anwendung/Conseils-de-mise-en-oeuvre-KOR-NEO_FR.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "reinigung",
@@ -2490,9 +3386,21 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "Neodur Level",
+      "url": "/downloads/tds/NEODUR_Level_en_2023-10.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
       "titel": "NEODUR Level",
       "url": "/downloads/tds/NEODUR_Level_en.pdf",
       "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "Neodur Level",
+      "url": "/downloads/tds/NEODUR_Level_fr_2023-10.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "tds",
@@ -2639,6 +3547,18 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR NEODUR Pflasterfugenmoertel",
       "url": "/downloads/sds/KORODUR_NEODUR_Pflasterfugenmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Pavement Joint Mortar Sdb",
+      "url": "/downloads/sds/Pavement_Joint_mortar_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Neodur Mortier De Joint Sdb",
+      "url": "/downloads/sds/NEODUR_Mortier_de_joint_SDB_fr.pdf",
+      "sprache": "fr"
     }
   ],
   "neodur-pfm-ze": [
@@ -2665,12 +3585,19 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "KORODUR NEODUR Pflasterfugenmoertel",
       "url": "/downloads/sds/KORODUR_NEODUR_Pflasterfugenmoertel_SDB_de.pdf",
       "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "Pavement Joint Mortar Sdb",
+      "url": "/downloads/sds/Pavement_Joint_mortar_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Neodur Mortier De Joint Sdb",
+      "url": "/downloads/sds/NEODUR_Mortier_de_joint_SDB_fr.pdf",
+      "sprache": "fr"
     }
-  ],
-  "neodur-pfm-ze-flex": [
-    { "typ": "tds", "titel": "NEODUR PFM ZE PFM ZE Flex", "url": "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_de.pdf", "sprache": "de" },
-    { "typ": "tds", "titel": "NEODUR PFM ZE PFM ZE Flex", "url": "/downloads/tds/NEODUR_PFM_ZE_PFM_ZE_Flex_en.pdf", "sprache": "en" },
-    { "typ": "sds", "titel": "KORODUR NEODUR Pflasterfugenmoertel", "url": "/downloads/sds/KORODUR_NEODUR_Pflasterfugenmoertel_SDB_de.pdf", "sprache": "de" }
   ],
   "neodur-vm-1": [
     {
@@ -2681,9 +3608,21 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "Neodur Grouting Mortar Concrete",
+      "url": "/downloads/tds/NEODUR_Grouting_mortar_concrete_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
       "titel": "NEODUR VM 1 3 8",
       "url": "/downloads/tds/NEODUR_VM_1-3-8_en.pdf",
       "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "Neodur Mortier De Scellement Vm Vb",
+      "url": "/downloads/tds/NEODUR_mortier_de_scellement_VM_VB_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "tds",
@@ -2719,9 +3658,21 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "Neodur Grouting Mortar Concrete",
+      "url": "/downloads/tds/NEODUR_Grouting_mortar_concrete_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
       "titel": "NEODUR VM 1 3 5",
       "url": "/downloads/tds/NEODUR_VM_1_3_5_en.pdf",
       "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "Neodur Mortier De Scellement Vm Vb",
+      "url": "/downloads/tds/NEODUR_mortier_de_scellement_VM_VB_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "tds",
@@ -2757,9 +3708,21 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
     },
     {
       "typ": "tds",
+      "titel": "Neodur Grouting Mortar Concrete",
+      "url": "/downloads/tds/NEODUR_Grouting_mortar_concrete_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
       "titel": "NEODUR VB 8",
       "url": "/downloads/tds/NEODUR_VB_8_en.pdf",
       "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "Neodur Mortier De Scellement Vm Vb",
+      "url": "/downloads/tds/NEODUR_mortier_de_scellement_VM_VB_fr.pdf",
+      "sprache": "fr"
     },
     {
       "typ": "tds",
@@ -2874,32 +3837,24 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "titel": "Rapid Set",
       "url": "/downloads/sds/Rapid_Set_SDB_fr.pdf",
       "sprache": "fr"
-    }
-  ],
-  "koromineral-lasur": [
+    },
     {
-      "typ": "tds",
-      "titel": "KOROMINERAL Lasur de",
-      "url": "/downloads/tds/KOROMINERAL_Lasur_de_.pdf",
+      "typ": "service",
+      "titel": "KORODUR Schnellbetonsysteme",
+      "url": "/downloads/service/KORODUR-Schnellbetonsysteme.pdf",
       "sprache": "de"
     },
     {
-      "typ": "tds",
-      "titel": "KOROMINERAL Lasure",
-      "url": "/downloads/tds/KOROMINERAL_Lasure_fr.pdf",
+      "typ": "service",
+      "titel": "KORODUR Schnellbetonsysteme",
+      "url": "/downloads/service/KORODUR_Schnellbetonsysteme_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "service",
+      "titel": "KORODUR Schnellbetonsysteme",
+      "url": "/downloads/service/KORODUR_Schnellbetonsysteme_fr.pdf",
       "sprache": "fr"
-    },
-    {
-      "typ": "sds",
-      "titel": "KORODUR KOROMINERAL Lasur Komponente A",
-      "url": "/downloads/sds/KORODUR_KOROMINERAL_Lasur_Komponente_A_SDB_de.pdf",
-      "sprache": "de"
-    },
-    {
-      "typ": "sds",
-      "titel": "KORODUR KOROMINERAL Lasur Komponente B",
-      "url": "/downloads/sds/KORODUR_KOROMINERAL_Lasur_Komponente_B_SDB_de.pdf",
-      "sprache": "de"
     }
   ],
   "neodur-svm-03": [
@@ -2922,6 +3877,192 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "sprache": "de"
     }
   ],
+  "neodur-he-65-svs-3": [
+    {
+      "typ": "tds",
+      "titel": "Neodur He 65 Svs 3",
+      "url": "/downloads/tds/NEODUR_HE_65_SVS_3_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "Neodur He 65 Svs 3",
+      "url": "/downloads/tds/NEODUR_HE_65_SVS_3_pl.pdf",
+      "sprache": "pl"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 65 SVS 3",
+      "url": "/downloads/dop/13813_2.2_NEODUR_HE_65_SVS_3_de.pdf",
+      "sprache": "de"
+    }
+  ],
+  "neodur-he-65-svs-15": [
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 65 SVS 15",
+      "url": "/downloads/dop/13813_2.3_NEODUR_HE_65_SVS_15_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 65 SVS 15 Extra",
+      "url": "/downloads/dop/13813_2.4_NEODUR_HE_65_SVS_15_Extra_de.pdf",
+      "sprache": "de"
+    }
+  ],
+  "neodur-he-3-svs-3": [
+    {
+      "typ": "tds",
+      "titel": "Neodur He 3 Svs 3",
+      "url": "/downloads/tds/NEODUR_HE_3_SVS_3_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "tds",
+      "titel": "Neodur He 3 Svs 3",
+      "url": "/downloads/tds/NEODUR_HE_3_SVS_3_pl.pdf",
+      "sprache": "pl"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 3 SVS 3",
+      "url": "/downloads/dop/13813_2.7_NEODUR_HE_3_SVS_3_de.pdf",
+      "sprache": "de"
+    }
+  ],
+  "neodur-he-3-svs-15": [
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 3 SVS 15",
+      "url": "/downloads/dop/13813_2.8_NEODUR_HE_3_SVS_15_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 3 SVS 15 extra",
+      "url": "/downloads/dop/13813_2.9_NEODUR_HE_3_SVS_15_extra_de.pdf",
+      "sprache": "de"
+    }
+  ],
+  "neodur-he-60-rapid-svs-3": [
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 60 rapid SVS 3",
+      "url": "/downloads/dop/13813_3.2_NEODUR_HE_60_rapid_SVS_3_de.pdf",
+      "sprache": "de"
+    }
+  ],
+  "neodur-he-60-rapid-svs-15": [
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 60 rapid SVS 1.5",
+      "url": "/downloads/dop/13813_3.3_NEODUR_HE_60_rapid_SVS_1.5_de.pdf",
+      "sprache": "de"
+    }
+  ],
+  "neodur-he-60-rapid-metallisch": [
+    {
+      "typ": "dop",
+      "titel": "NEODUR HE 60 rapid metallisch",
+      "url": "/downloads/dop/13813_3.4_NEODUR_HE_60_rapid_metallisch_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "dop",
+      "titel": "13813 3.4 Neodur He 60 Rapid Metallic",
+      "url": "/downloads/dop/13813_3.4_NEODUR_HE_60_rapid_metallic_en.pdf",
+      "sprache": "en"
+    }
+  ],
+  "koromineral-lasur": [
+    {
+      "typ": "tds",
+      "titel": "KOROMINERAL Lasure",
+      "url": "/downloads/tds/KOROMINERAL_Lasure_fr.pdf",
+      "sprache": "fr"
+    }
+  ],
+  "koropox": [
+    {
+      "typ": "tds",
+      "titel": "KOROPOX",
+      "url": "/downloads/tds/KOROPOX_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "sds",
+      "titel": "Koropox component B",
+      "url": "/downloads/sds/Koropox_component_B_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Koropox comp B",
+      "url": "/downloads/sds/Koropox_comp_B_SDB_fr.pdf",
+      "sprache": "fr"
+    }
+  ],
+  "korotan": [
+    {
+      "typ": "tds",
+      "titel": "KOROTAN",
+      "url": "/downloads/tds/KOROTAN_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROTAN",
+      "url": "/downloads/sds/KOROTAN_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KOROTAN",
+      "url": "/downloads/sds/KOROTAN_SDB_fr.pdf",
+      "sprache": "fr"
+    }
+  ],
+  "microtop-tw-nsd": [
+    {
+      "typ": "tds",
+      "titel": "MICROTOP TW NSD",
+      "url": "/downloads/tds/MICROTOP_TW_NSD_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "KORODUR MICROTOP",
+      "url": "/downloads/sds/KORODUR_MICROTOP_SDB_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "MICROTOP",
+      "url": "/downloads/sds/MICROTOP_SDB_fr.pdf",
+      "sprache": "fr"
+    }
+  ],
+  "neodur-am-plus": [
+    {
+      "typ": "tds",
+      "titel": "NEODUR AM Super AM Plus",
+      "url": "/downloads/tds/NEODUR_AM_Super_AM_Plus_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "tds",
+      "titel": "NEODUR AM super AM Plus",
+      "url": "/downloads/tds/NEODUR_AM_super_AM_Plus_fr.pdf",
+      "sprache": "fr"
+    }
+  ],
   "neodur-svm-4": [
     {
       "typ": "tds",
@@ -2935,11 +4076,31 @@ export const PRODUKT_DOKUMENTE: Record<string, ProduktDokument[]> = {
       "url": "/downloads/tds/NEODUR_SVM_03_SVM_4_fr.pdf",
       "sprache": "fr"
     }
+  ],
+  "neodur-pfm-ze-flex": [
+    {
+      "typ": "sds",
+      "titel": "Pavement Joint Mortar Sdb",
+      "url": "/downloads/sds/Pavement_Joint_mortar_SDB_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "sds",
+      "titel": "Neodur Mortier De Joint Sdb",
+      "url": "/downloads/sds/NEODUR_Mortier_de_joint_SDB_fr.pdf",
+      "sprache": "fr"
+    }
   ]
 };
 
 /** Dokumente ohne (freigegebene) Produkt-Zuordnung — nur im Download-Center. */
 export const ZENTRALE_DOKUMENTE: ProduktDokument[] = [
+  {
+    "typ": "tds",
+    "titel": "Bestellformular MICROTOP 2024",
+    "url": "/downloads/tds/Bestellformular_MICROTOP_2024.pdf",
+    "sprache": "de"
+  },
   {
     "typ": "tds",
     "titel": "Bestellformular Sackware 2024",
@@ -2950,12 +4111,6 @@ export const ZENTRALE_DOKUMENTE: ProduktDokument[] = [
     "typ": "tds",
     "titel": "Bestellformular Siloware",
     "url": "/downloads/tds/Bestellformular_Siloware.pdf",
-    "sprache": "de"
-  },
-  {
-    "typ": "tds",
-    "titel": "Bestellformular MICROTOP 2024",
-    "url": "/downloads/tds/Bestellformular_MICROTOP_2024.pdf",
     "sprache": "de"
   },
   {
@@ -2972,27 +4127,45 @@ export const ZENTRALE_DOKUMENTE: ProduktDokument[] = [
   },
   {
     "typ": "tds",
-    "titel": "KOROPHALT 02",
-    "url": "/downloads/tds/KOROPHALT_02_de.pdf",
+    "titel": "KORODUR Silosystem",
+    "url": "/downloads/tds/KORODUR_Silosystem_de.pdf",
     "sprache": "de"
   },
   {
     "typ": "tds",
-    "titel": "KOROPHALT 02",
-    "url": "/downloads/tds/KOROPHALT_02_en.pdf",
-    "sprache": "en"
-  },
-  {
-    "typ": "tds",
-    "titel": "KOROPHALT 02",
-    "url": "/downloads/tds/KOROPHALT_02_fr.pdf",
-    "sprache": "fr"
+    "titel": "KOROPOX",
+    "url": "/downloads/tds/KOROPOX_de_2023.pdf",
+    "sprache": "de"
   },
   {
     "typ": "tds",
     "titel": "OBTEGO P 20",
     "url": "/downloads/tds/OBTEGO_P_20_de.pdf",
     "sprache": "de"
+  },
+  {
+    "typ": "tds",
+    "titel": "OBTEGO R 400",
+    "url": "/downloads/tds/OBTEGO_R_400_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "tds",
+    "titel": "Thilos dunnflussig",
+    "url": "/downloads/tds/Thilos_dunnflussig_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "tds",
+    "titel": "KOROACTIVE",
+    "url": "/downloads/tds/KOROACTIVE_en.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "tds",
+    "titel": "KOROPOX",
+    "url": "/downloads/tds/KOROPOX_en_2023.pdf",
+    "sprache": "en"
   },
   {
     "typ": "tds",
@@ -3003,25 +4176,73 @@ export const ZENTRALE_DOKUMENTE: ProduktDokument[] = [
   {
     "typ": "tds",
     "titel": "OBTEGO R 400",
-    "url": "/downloads/tds/OBTEGO_R_400_de.pdf",
-    "sprache": "de"
-  },
-  {
-    "typ": "tds",
-    "titel": "OBTEGO R 400",
     "url": "/downloads/tds/OBTEGO_R_400_en.pdf",
     "sprache": "en"
   },
   {
     "typ": "tds",
-    "titel": "Thilos dunnflussig",
-    "url": "/downloads/tds/Thilos_dunnflussig_de.pdf",
+    "titel": "KOROACTIVE",
+    "url": "/downloads/tds/KOROACTIVE_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "tds",
+    "titel": "KOROFLUID",
+    "url": "/downloads/tds/KOROFLUID_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "tds",
+    "titel": "KOROPLAN PC",
+    "url": "/downloads/tds/KOROPLAN_PC_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "tds",
+    "titel": "KOROSOL",
+    "url": "/downloads/tds/KOROSOL_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "sds",
+    "titel": "KORODUR KOROMINERAL Lasur Komponente A",
+    "url": "/downloads/sds/KORODUR_KOROMINERAL_Lasur_Komponente_A_SDB_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "sds",
+    "titel": "KORODUR KOROMINERAL Lasur Komponente B",
+    "url": "/downloads/sds/KORODUR_KOROMINERAL_Lasur_Komponente_B_SDB_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "sds",
+    "titel": "KORODUR KOROPOX Komponente A",
+    "url": "/downloads/sds/KORODUR_KOROPOX_Komponente_A_SDB_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "sds",
+    "titel": "KORODUR KOROPOX Komponente B",
+    "url": "/downloads/sds/KORODUR_KOROPOX_Komponente_B_SDB_de.pdf",
     "sprache": "de"
   },
   {
     "typ": "sds",
     "titel": "KORODUR KOROSEAL",
     "url": "/downloads/sds/KORODUR_KOROSEAL_SDB_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "sds",
+    "titel": "KORODUR Pflasterfugenmoertel Haerterkomponente",
+    "url": "/downloads/sds/KORODUR_Pflasterfugenmoertel_Haerterkomponente_SDB_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "sds",
+    "titel": "KORODUR Pflasterfugenmoertel Harzkomponente",
+    "url": "/downloads/sds/KORODUR_Pflasterfugenmoertel_Harzkomponente_SDB_de.pdf",
     "sprache": "de"
   },
   {
@@ -3038,14 +4259,224 @@ export const ZENTRALE_DOKUMENTE: ProduktDokument[] = [
   },
   {
     "typ": "sds",
-    "titel": "KORODUR Pflasterfugenmoertel Haerterkomponente",
-    "url": "/downloads/sds/KORODUR_Pflasterfugenmoertel_Haerterkomponente_SDB_de.pdf",
-    "sprache": "de"
+    "titel": "KOROPOX Komponente A SDB",
+    "url": "/downloads/sds/Koropox_component_A_SDB_en.pdf",
+    "sprache": "en"
   },
   {
     "typ": "sds",
-    "titel": "KORODUR Pflasterfugenmoertel Harzkomponente",
-    "url": "/downloads/sds/KORODUR_Pflasterfugenmoertel_Harzkomponente_SDB_de.pdf",
+    "titel": "KOROSEAL SDB",
+    "url": "/downloads/sds/KOROSEAL_SDB_en.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "sds",
+    "titel": "Pavement Fixing Hardener Component SDB",
+    "url": "/downloads/sds/Pavement_fixing_hardener_component_SDB_en.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "sds",
+    "titel": "Pavement Fixing Resin Component SDB",
+    "url": "/downloads/sds/Pavement_fixing_resin_component_SDB_en.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "sds",
+    "titel": "KOROPOX Komponente A SDB",
+    "url": "/downloads/sds/KOROPOX_comp_A_SDB_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "sds",
+    "titel": "KOROSEAL SDB",
+    "url": "/downloads/sds/KOROSEAL_SDB_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "sds",
+    "titel": "KOROSOL SDB",
+    "url": "/downloads/sds/KOROSOL_SDB_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "anwendung",
+    "titel": "Anwendung OBTEGO R-400",
+    "url": "/downloads/anwendung/Anwendung_OBTEGO_R-400_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "anwendung",
+    "titel": "Application OBTEGO R-400 (TRU floors)",
+    "url": "/downloads/anwendung/Application_OBTEGO_R-400_grinded_polished_TRU_floors.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "reinigung",
+    "titel": "Einpflegesysteme für KORODUR-Böden",
+    "url": "/downloads/reinigung/Einpflegesysteme-fuer-KORODUR-Boeden.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "reinigung",
+    "titel": "Übersicht Pflegesysteme für KORODUR-Böden",
+    "url": "/downloads/reinigung/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_de_2018_28.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "reinigung",
+    "titel": "Einpflegesysteme für KORODUR-Böden",
+    "url": "/downloads/reinigung/Einpflegesysteme-fuer-KORODUR-Boeden_EN_KORR-003.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "reinigung",
+    "titel": "Übersicht Pflegesysteme für KORODUR-Böden",
+    "url": "/downloads/reinigung/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_en_2018_28.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "reinigung",
+    "titel": "Übersicht Pflegesysteme für KORODUR-Böden",
+    "url": "/downloads/reinigung/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_fr_2018_28.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Industrieboden-Broschüre",
+    "url": "/downloads/broschuere/Industrieboden-Broschuere_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Inotec Pumptechnik Flyer",
+    "url": "/downloads/broschuere/Inotec_Flyer_DIN_A4_6seiter_DE_FINAL.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "KORODUR Flyer Bodensanierung",
+    "url": "/downloads/broschuere/KORODUR_Flyer_Bodensanierung_de_2020_08.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "KORODUR Flyer Industriebodensanierung",
+    "url": "/downloads/broschuere/Sanierung-KORODUR-Flyer-fuer-WEB.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "KORODUR Unternehmensbroschüre",
+    "url": "/downloads/broschuere/Unternehmensbroschuere_2019.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "MICROTOP Flyer",
+    "url": "/downloads/broschuere/Microtop_Flyer_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set Broschüre",
+    "url": "/downloads/broschuere/Rapid-Set-Broschuere-neu.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set Flyer",
+    "url": "/downloads/broschuere/Rapid_Set_Flyer_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set Flyer Landwirtschaft",
+    "url": "/downloads/broschuere/Rapid_Set_Flyer_Landwirtschaft_de_2017_17.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set vs. Epoxidharz Flyer",
+    "url": "/downloads/broschuere/RapidSetFlyer_Epoxy.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Industrieboden-Broschüre",
+    "url": "/downloads/broschuere/Industrieboden-Broschuere_en.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Inotec Pumptechnik Flyer",
+    "url": "/downloads/broschuere/Inotec_Flyer_DIN_A4_6seiter_EN_FINAL.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set Broschüre",
+    "url": "/downloads/broschuere/Rapid_Set_Broschuere_en-1.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set Flyer",
+    "url": "/downloads/broschuere/Rapid_Set_Flyer_en.pdf",
+    "sprache": "en"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Inotec Pumptechnik Flyer",
+    "url": "/downloads/broschuere/Inotec_Flyer_DIN_A4_6seiter_FR_FINAL.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set Broschüre",
+    "url": "/downloads/broschuere/Rapid_Set_Broschuere_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set vs. Epoxidharz",
+    "url": "/downloads/broschuere/Rapid_Set_vs._Epoxidharz_fr.pdf",
+    "sprache": "fr"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set Broschüre (6-seitig)",
+    "url": "/downloads/broschuere/Rapid_Set_6-seitig_pl.pdf",
+    "sprache": "pl"
+  },
+  {
+    "typ": "broschuere",
+    "titel": "Rapid Set Broschüre (6-seitig)",
+    "url": "/downloads/broschuere/Rapid_Set_6-seitig_es.pdf",
+    "sprache": "es"
+  },
+  {
+    "typ": "service",
+    "titel": "Gütesiegel Innovativ durch Forschung",
+    "url": "/downloads/service/Guetesiegel_Innovativ_durch_Forschung_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "service",
+    "titel": "InoCOMB Cabrio Checkliste Baustelleneinsatz",
+    "url": "/downloads/service/inoComb_Cabrio_Checkliste_Baustelleneinsatz.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "service",
+    "titel": "InoCOMB Cabrio Fragebogen",
+    "url": "/downloads/service/inoComb_Cabrio_Fragebogen_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "service",
+    "titel": "InoCOMB Cabrio Silotechnik",
+    "url": "/downloads/service/inoCom_Cabrio_Silotechnik_de.pdf",
     "sprache": "de"
   },
   {
@@ -3053,5 +4484,176 @@ export const ZENTRALE_DOKUMENTE: ProduktDokument[] = [
     "titel": "KORODUR Lieferprogramm",
     "url": "/downloads/service/KORODUR_Lieferprogramm_de_2025.pdf",
     "sprache": "de"
+  },
+  {
+    "typ": "service",
+    "titel": "Siloaufstellbedingungen",
+    "url": "/downloads/service/Siloaufstellbedingungen_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "service",
+    "titel": "Standsilo Aufnahmebeschläge",
+    "url": "/downloads/service/Standsilo_Aufnahmebeschlaege_de.pdf",
+    "sprache": "de"
+  },
+  {
+    "typ": "service",
+    "titel": "KORODUR Lieferprogramm 2025",
+    "url": "/downloads/service/KORODUR_Lieferprogramm_en_2025.pdf",
+    "sprache": "en"
   }
 ];
+
+/** Bereichs-Downloads (#442): Broschüren/Flyer je Bereichs-Slug für den
+ *  Download-Teaser auf Bereichsseiten. */
+export const BEREICH_DOKUMENTE: Record<string, ProduktDokument[]> = {
+  "infrastruktur": [
+    {
+      "typ": "broschuere",
+      "titel": "Asphalt Repair Mix Flyer",
+      "url": "/downloads/broschuere/Asphalt_Repair_Mix_Flyer_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Asphalt Repair Mix Flyer",
+      "url": "/downloads/broschuere/Asphalt_Repair_Mix_Flyer_en.pdf",
+      "sprache": "en"
+    }
+  ],
+  "industrieboden": [
+    {
+      "typ": "broschuere",
+      "titel": "Industrieboden-Broschüre",
+      "url": "/downloads/broschuere/Industrieboden-Broschuere_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "KORODUR Flyer Bodensanierung",
+      "url": "/downloads/broschuere/KORODUR_Flyer_Bodensanierung_de_2020_08.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "KORODUR Flyer Industriebodensanierung",
+      "url": "/downloads/broschuere/Sanierung-KORODUR-Flyer-fuer-WEB.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Industrieboden-Broschüre",
+      "url": "/downloads/broschuere/Industrieboden-Broschuere_en.pdf",
+      "sprache": "en"
+    }
+  ],
+  "microtop": [
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "url": "/downloads/broschuere/MICROTOP_4-seitig_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Flyer",
+      "url": "/downloads/broschuere/Microtop_Flyer_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "url": "/downloads/broschuere/MICROTOP_4-seitig_en.pdf",
+      "sprache": "en"
+    }
+  ],
+  "rapid-set": [
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "url": "/downloads/broschuere/Rapid-Set-Broschuere-neu.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Flyer",
+      "url": "/downloads/broschuere/Rapid_Set_Flyer_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set vs. Epoxidharz Flyer",
+      "url": "/downloads/broschuere/RapidSetFlyer_Epoxy.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "url": "/downloads/broschuere/Rapid_Set_Broschuere_en-1.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Flyer",
+      "url": "/downloads/broschuere/Rapid_Set_Flyer_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "url": "/downloads/broschuere/Rapid_Set_Broschuere_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set vs. Epoxidharz",
+      "url": "/downloads/broschuere/Rapid_Set_vs._Epoxidharz_fr.pdf",
+      "sprache": "fr"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre (6-seitig)",
+      "url": "/downloads/broschuere/Rapid_Set_6-seitig_pl.pdf",
+      "sprache": "pl"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre (6-seitig)",
+      "url": "/downloads/broschuere/Rapid_Set_6-seitig_es.pdf",
+      "sprache": "es"
+    }
+  ],
+  "betonsanierung": [
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "url": "/downloads/broschuere/Rapid-Set-Broschuere-neu.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Flyer",
+      "url": "/downloads/broschuere/Rapid_Set_Flyer_de.pdf",
+      "sprache": "de"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "url": "/downloads/broschuere/Rapid_Set_Broschuere_en-1.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Flyer",
+      "url": "/downloads/broschuere/Rapid_Set_Flyer_en.pdf",
+      "sprache": "en"
+    },
+    {
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "url": "/downloads/broschuere/Rapid_Set_Broschuere_fr.pdf",
+      "sprache": "fr"
+    }
+  ]
+};
