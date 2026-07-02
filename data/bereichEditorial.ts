@@ -82,13 +82,93 @@ export const BEREICH_EDITORIAL: Record<string, BereichEditorial> = {
         text: "Ein Hartstoffindustrieboden besitzt eine enorme Langlebigkeit. Seine Lebensdauer liegt um ein Vielfaches höher als bei einem reinen Betonboden oder alternativen Systemen. Über die gesamten Lebenszykluskosten eines Industriegebäudes betrachtet steigern hochwertige Produkte die Energie- und Ressourceneffizienz und schonen natürliche Ressourcen.",
       },
     ],
+    // --- Neubau (#439): Rich-Ausbau analog Sanierung. Prosa verbatim-nah aus
+    // den Alt-Site-Unterseiten Hartstoffschicht/Hartstoffeinstreuung/Sichtestrich
+    // (docs/content-quellen/scrape-extrakt/industrieboden-1.md + bereich-prosa/
+    // industrieboden.de.md). CO2-Claim HE 3 green = produkte.ts-gedeckt.
+    // Anwendungsmatrix bewusst NICHT eingebettet (erst wenn Neubau-Variante
+    // existiert, Steffi 01.07.). Hartstoffsystem-Matrix aus der Broschüre folgt
+    // als eigener Baustein (#350). ---
     neubau: {
       abschnitte: [
         {
           titel: "Industrieboden im Neubau",
           text: "Im Neubau planen wir den Bodenaufbau von Anfang an auf die spätere Beanspruchung. Ob als eingestreuter KORODUR Hartstoff oder als NEODUR Hartstoff-Verbundestrich, unsere Systeme sind in allen industriellen Bereichen und Branchen einsetzbar: Fabrikations- und Lagerhallen, Hochregallager, Distributionszentren, Werkstätten, Kühlhäuser, Parkhäuser und Rampen, innen und außen.",
         },
+        {
+          titel: "Bauweisen im Überblick",
+          text: "Von der Hartstoffeinstreuung nach DIN 18560-3 und -4 über die Hartstoffschicht nach DIN 18560-7 bis zum Schnellestrich und zum selbstverlaufenden System: Die Bauweise richtet sich nach Beanspruchung, Terminplan und Untergrund. Hartstoffschichten werden frisch-auf-frisch auf den jungen Tragbeton eingebaut oder nachträglich im Verbund auf erhärteten Tragbeton (KORODUR KOROTAN-Verfahren).",
+        },
+        {
+          titel: "Nachhaltig von Anfang an",
+          text: "Nachhaltigkeit prägt alle Aspekte des Bauens dauerhaft. Wir erweitern unser Sortiment deshalb um Produkte, deren Herstellung deutlich weniger CO₂-Emissionen mit sich bringt, etwa die ressourcenschonende Einstreuvariante NEODUR HE 3 green mit rund 30 % weniger CO₂ als herkömmlicher Portlandzement.",
+        },
       ],
+      useCases: {
+        titel: "Wofür bauen Sie?",
+        items: [
+          {
+            titel: "Hochleistungshalle & Logistik",
+            system: "NEODUR Hartstoff-Verbundestrich",
+            text: "Hartstoffböden im Verbund mit frischem Beton für Fabrikations- und Lagerhallen, Hochregallager und Distributionszentren. Verschleißschicht nach DIN 18560-7 mit Hartstoffen gemäß DIN 1100 für überdurchschnittliche Biegezug- und Druckfestigkeiten.",
+            href: "produkte/neodur-he-65",
+          },
+          {
+            titel: "Sichtboden & Design",
+            system: "KORODUR Sichtestrich",
+            text: "Der mineralische Industrieboden als Sichtestrich: zementär, robust, kreativ und elegant. Geglättet als COPETTI FLOOR, geschliffen als GRANIDUR oder selbstverlaufend als TRUazzo mit Rapid Set Technologie.",
+            href: "produkte/granidur",
+          },
+          {
+            titel: "Außenflächen & Rampen",
+            system: "KORODUR Hartstoffschicht",
+            text: "Frost- und tausalzbeständige, wasserfeste Hartstoffsysteme für Parkhäuser, Rampen und Außenflächen, hochverschleißfest auch bei schwerster Beanspruchung, rutschfest und gleitsicher in Nassräumen.",
+            href: "produkte/korodur-vs-0-5",
+          },
+        ],
+      },
+      normen: {
+        titel: "Normkompetenz: die Grundlagen unserer Systeme",
+        intro: "Jede KORODUR Bauweise ist in den einschlägigen Normen zu Hause. Die wichtigsten im Überblick:",
+        items: [
+          {
+            norm: "DIN 18560-7",
+            text: "Hochbelastbare Industrieböden bestehen nach DIN 18560-7 aus einer definierten Verschleißschicht mit mineralischen Hartstoffen. Beanspruchungsgruppen und Nenndicken legt die Norm fest.",
+          },
+          {
+            norm: "DIN 18560-3/-4",
+            text: "Regeln die Hartstoffeinstreuung als Oberflächenvergütung frischer Estrich- und Betonflächen zur Erhöhung von Verschleißwiderstand und Oberflächenhärte.",
+          },
+          {
+            norm: "DIN 1100",
+            text: "Regelt die mineralischen Hartstoffe der Gruppen A, M und KS, die Basis für Verschleißwiderstand und Oberflächenhärte unserer Böden.",
+          },
+          {
+            norm: "DIN EN 13813",
+            text: "Die Materialnorm für Estrichmörtel: Druckfestigkeit (C), Biegezugfestigkeit (F) und Verschleißwiderstand (A) klassifizieren jedes unserer Estrichsysteme.",
+          },
+        ],
+      },
+      ratgeber: {
+        titel: "Neubau planen: Ratgeber",
+        items: [
+          {
+            href: "ratgeber/neubau-systemwahl",
+            titel: "Das passende System wählen",
+            text: "Welche Bauweise zu Beanspruchung, Terminplan und Budget passt.",
+          },
+          {
+            href: "ratgeber/einstreuung-vs-schicht",
+            titel: "Einstreuung oder Hartstoffschicht?",
+            text: "Der technische Vergleich der beiden Wege zur Verschleißschicht.",
+          },
+          {
+            href: "ratgeber/neubau-normen-klassen",
+            titel: "Normen und Klassen",
+            text: "EN 13813, Böhme-Verfahren und DIN 18560-7 verständlich erklärt.",
+          },
+        ],
+      },
     },
     // --- Sanierung (#438): Rich-Ausbau. Prosa verbatim-nah aus der Alt-Site-
     // Unterseite Industriebodensanierung (docs/content-quellen/scrape-extrakt/
