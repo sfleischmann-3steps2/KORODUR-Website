@@ -14,7 +14,7 @@ export default function BereichEditorialSektion({
   editorial: BereichEditorial;
   projektart?: "neubau" | "sanierung";
 }) {
-  const projektAbschnitte = projektart ? editorial[projektart] ?? [] : [];
+  const projektAbschnitte = projektart ? editorial[projektart]?.abschnitte ?? [] : [];
   const abschnitte = [...projektAbschnitte, ...(editorial.abschnitte ?? [])];
   const { einsatzbereiche, kategorien, inVorbereitung } = editorial;
 
