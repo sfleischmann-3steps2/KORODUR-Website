@@ -4,8 +4,7 @@ import ReferenceCard from "../../components/ReferenceCard";
 import { getReferenzBySlug } from "../../data/referenzen";
 import { localizeReferenzen } from "../../data/i18n/getLocalized";
 import { FEATURED_SLUGS } from "../../data/featured";
-import PortfolioGrid from "../../components/PortfolioGrid";
-import { HOME_PORTFOLIO_KACHELN } from "../../data/bereiche";
+import KompetenzfelderSektion from "../../components/KompetenzfelderSektion";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 import { withBasePath } from "../../lib/basePath";
@@ -134,23 +133,25 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Section 1b: Bereichs-Grid */}
+      {/* Section 1b: Drei Kompetenzfelder (#428, ersetzt das 8-Kacheln-Grid;
+          Mockup: docs/mockups/Startseite-Kompetenzfelder-Mockup.html).
+          id="bereiche" bleibt — der Footer verlinkt /#bereiche. */}
       <section id="bereiche" className="bg-white scroll-mt-24" style={{ padding: "56px 32px 80px" }}>
         <div className="mx-auto" style={{ maxWidth: 1320 }}>
           <h2
             className="text-center mb-4"
             style={{ fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 900, lineHeight: 1.12 }}
           >
-            {dict.home.bereiche_title}
+            {dict.home.kompetenz_title}
           </h2>
           <p
             className="text-center text-navy opacity-60 mb-12 mx-auto"
             // #295: Breite erhöht (600→880), damit die Subline auf Desktop einzeilig bleibt.
             style={{ maxWidth: 880, fontSize: 18 }}
           >
-            {dict.home.bereiche_subtitle}
+            {dict.home.kompetenz_subtitle}
           </p>
-          <PortfolioGrid lang={lang} dict={dict} tiles={HOME_PORTFOLIO_KACHELN} />
+          <KompetenzfelderSektion lang={lang} dict={dict} />
         </div>
       </section>
 
