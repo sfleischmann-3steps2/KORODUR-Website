@@ -18,6 +18,8 @@ import { projektartBucket, projektartLabel, type Projektart } from "../../../../
 import { produktHatProjektart } from "../../../../../data/produktProjektart";
 import BereichEditorialSektion from "../../../../../components/BereichEditorialSektion";
 import { bereichEditorial } from "../../../../../data/bereichEditorial";
+import Anwendungsmatrix from "../../../../../components/Anwendungsmatrix";
+import type { Locale } from "../../../../../lib/i18n";
 
 type Params = Promise<{ lang: string; slug: string; projektart: string }>;
 
@@ -82,6 +84,12 @@ export default async function SubBereichPage({ params }: { params: Params }) {
   const localizedRefs = await localizeReferenzen(artRefs.slice(0, 6), lang);
   const refLink = `/${lang}/referenzen/?projektart=${art}`;
   const ed = bereichEditorial(slug);
+  // #438: Rich-Bausteine der Projektart. Editorial-Content ist DE-only (#181),
+  // die Anwendungsmatrix selbst ist i18n-fähig und rendert in allen Sprachen.
+  const pe = ed?.[art];
+  const richDE = lang === "de" ? pe : undefined;
+  const zeigeMatrix = pe?.anwendungsmatrix ?? false;
+  const dictAm = (dict as unknown as { anwendungsmatrix?: Record<string, string> }).anwendungsmatrix;
 
   return (
     <>
@@ -160,7 +168,9 @@ export default async function SubBereichPage({ params }: { params: Params }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               { href: `/${lang}/loesungsfinder/?projektart=${art}`, icon: Compass, title: sh.card_loesungsfinder_title, text: sh.card_loesungsfinder_text },
-              { href: `/${lang}/anwendungsmatrix/`, icon: Grid3x3, title: sh.card_matrix_title, text: sh.card_matrix_text },
+              // #438: Matrix wohnt jetzt auf dieser Seite — Karte springt zum
+              // eingebetteten Block statt auf die Standalone-Route.
+              { href: zeigeMatrix ? "#anwendungsmatrix" : `/${lang}/anwendungsmatrix/`, icon: Grid3x3, title: sh.card_matrix_title, text: sh.card_matrix_text },
             ].map((card) => (
               <Link key={card.href} href={card.href} className="no-underline group block">
                 <div
@@ -182,6 +192,38 @@ export default async function SubBereichPage({ params }: { params: Params }) {
           </div>
         </div>
       </section>
+
+      {/* #438: Use-Case-Vorsortierung VOR den Produkten — kuratierte Systemwege
+          statt Rohkatalog (Alt-Site-Prosa verbatim-nah, DE-only wie Editorial). */}
+      {richDE?.useCases && (
+        <section style={{ padding: "40px 32px 48px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-6" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {richDE.useCases.titel}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {richDE.useCases.items.map((uc) => (
+                <Link key={uc.titel} href={`/${lang}/${uc.href}`} className="no-underline group block">
+                  <div
+                    className="bg-white border border-bullet-bg p-7 flex flex-col gap-3 h-full transition-all duration-200 group-hover:border-cyan group-hover:-translate-y-1 group-hover:shadow-lg"
+                    style={{ borderRadius: 14 }}
+                  >
+                    <span className="text-cyan-text uppercase tracking-[0.08em] text-[12px]" style={{ fontWeight: 800 }}>
+                      {uc.titel}
+                    </span>
+                    <h3 className="text-navy text-[19px] m-0" style={{ fontWeight: 900 }}>{uc.system}</h3>
+                    <p className="text-navy/60 text-[14px] m-0 leading-[1.6]">{uc.text}</p>
+                    <span className="inline-flex items-center gap-1.5 text-cyan-text text-[14px] mt-auto" style={{ fontWeight: 700 }}>
+                      {sh.cta}
+                      <AppIcon icon={ArrowRight} width={15} height={15} strokeWidth={2.5} aria-hidden="true" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Produkte (ref-getrieben auf die Projektart) */}
       <section className="bg-icon-bg" style={{ padding: "48px 32px 56px" }}>
@@ -213,6 +255,48 @@ export default async function SubBereichPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* #438: Anwendungsmatrix eingebettet — ihr Zuhause ist die Industrieboden-
+          Sanierung (Steffi 01.07.). Die Komponente ist i18n-fähig (alle Sprachen). */}
+      {zeigeMatrix && (
+        <section id="anwendungsmatrix" className="scroll-mt-24 bg-white" style={{ padding: "48px 32px 56px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-3" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {sh.card_matrix_title}
+            </h2>
+            <p className="text-navy/60 text-[15px] mt-0 mb-8 leading-[1.6]" style={{ maxWidth: 720 }}>
+              {sh.card_matrix_text}
+            </p>
+            <Anwendungsmatrix lang={lang as Locale} dict={dictAm} />
+          </div>
+        </section>
+      )}
+
+      {/* #438: Normen-Kompetenzblock (produktclaim-frei, DE-only wie Editorial) */}
+      {richDE?.normen && (
+        <section className="bg-icon-bg" style={{ padding: "48px 32px 56px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-3" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {richDE.normen.titel}
+            </h2>
+            {richDE.normen.intro && (
+              <p className="text-navy/60 text-[15px] mt-0 mb-8 leading-[1.6]" style={{ maxWidth: 720 }}>
+                {richDE.normen.intro}
+              </p>
+            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {richDE.normen.items.map((n) => (
+                <div key={n.norm} className="bg-white p-6 flex flex-col gap-3 h-full" style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}>
+                  <span className="self-start bg-navy text-white text-[13px] rounded px-2.5 py-1" style={{ fontWeight: 800 }}>
+                    {n.norm}
+                  </span>
+                  <p className="text-navy/70 text-[14px] m-0 leading-[1.6]">{n.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Referenzen dieser Projektart */}
       {localizedRefs.length > 0 && (
         <section className="bg-white" style={{ padding: "48px 32px 56px" }}>
@@ -230,6 +314,31 @@ export default async function SubBereichPage({ params }: { params: Params }) {
                 {dict.nav.referenzen} · {artLabel}
                 <AppIcon icon={ChevronRight} width={16} height={16} strokeWidth={2} aria-hidden="true" />
               </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* #438: Ratgeber-Teaser (Sperrzeit-Framing aus /sanierung verlängert;
+          Fachartikel DE-only, #181) */}
+      {richDE?.ratgeber && (
+        <section className="bg-icon-bg" style={{ padding: "48px 32px 56px" }}>
+          <div className="mx-auto" style={{ maxWidth: 1320 }}>
+            <h2 className="mb-6" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 900, lineHeight: 1.15 }}>
+              {richDE.ratgeber.titel}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {richDE.ratgeber.items.map((k) => (
+                <Link key={k.href} href={`/${lang}/${k.href}`} className="no-underline group block">
+                  <div
+                    className="bg-white border border-bullet-bg h-full transition-all duration-200 group-hover:border-cyan group-hover:shadow-lg"
+                    style={{ borderRadius: 14, padding: "20px 22px" }}
+                  >
+                    <span className="block text-navy text-[16px]" style={{ fontWeight: 800 }}>{k.titel}</span>
+                    <span className="block text-navy/60 text-[13px] leading-snug mt-1">{k.text}</span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

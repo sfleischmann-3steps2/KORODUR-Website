@@ -21,6 +21,40 @@ export interface EditorialListe {
   items: string[];
 }
 
+/** Use-Case-Vorsortierung (#438): kuratierte Einstiege VOR den Produktgruppen.
+ *  `system` = der Systemweg (Alt-Site-Terminologie), `href` = Pfad nach /<lang>/. */
+export interface EditorialUseCase {
+  titel: string;
+  system: string;
+  text: string;
+  href: string;
+}
+
+/** Normen-Kompetenzblock (#438): kurze, produktclaim-freie Norm-Profile. */
+export interface EditorialNormen {
+  titel: string;
+  intro?: string;
+  items: { norm: string; text: string }[];
+}
+
+/** Ratgeber-Teaser (DE-only wie die Fachartikel selbst, #181). */
+export interface EditorialRatgeberLink {
+  href: string;
+  titel: string;
+  text: string;
+}
+
+/** Projektart-Editorial (#438/#439): Rich-Bausteine je Neubau/Sanierung-Unterseite. */
+export interface ProjektartEditorial {
+  abschnitte?: EditorialAbschnitt[];
+  useCases?: { titel: string; items: EditorialUseCase[] };
+  normen?: EditorialNormen;
+  ratgeber?: { titel: string; items: EditorialRatgeberLink[] };
+  /** Anwendungsmatrix auf dieser Unterseite einbetten (Steffi 01.07.:
+   *  Zuhause der Matrix = Industrieboden-Sanierung; Neubau-Variante folgt). */
+  anwendungsmatrix?: boolean;
+}
+
 export interface BereichEditorial {
   /** Übergreifende Editorial-Absätze (Dachseite + beide Projektart-Unterseiten). */
   abschnitte?: EditorialAbschnitt[];
@@ -28,9 +62,9 @@ export interface BereichEditorial {
   einsatzbereiche?: EditorialListe;
   /** Produktkategorien-Kurzprofile (Titel + Satz). */
   kategorien?: EditorialAbschnitt[];
-  /** Projektart-spezifische Absätze (nur Bereiche mit Neubau/Sanierung-Unterseiten). */
-  neubau?: EditorialAbschnitt[];
-  sanierung?: EditorialAbschnitt[];
+  /** Projektart-spezifische Rich-Bausteine (nur Bereiche mit Neubau/Sanierung-Unterseiten). */
+  neubau?: ProjektartEditorial;
+  sanierung?: ProjektartEditorial;
   /** „In Vorbereitung": zeigt einen ehrlichen Emerging-Status statt Produktkatalog. */
   inVorbereitung?: { kicker: string; text: string };
 }
@@ -48,18 +82,181 @@ export const BEREICH_EDITORIAL: Record<string, BereichEditorial> = {
         text: "Ein Hartstoffindustrieboden besitzt eine enorme Langlebigkeit. Seine Lebensdauer liegt um ein Vielfaches höher als bei einem reinen Betonboden oder alternativen Systemen. Über die gesamten Lebenszykluskosten eines Industriegebäudes betrachtet steigern hochwertige Produkte die Energie- und Ressourceneffizienz und schonen natürliche Ressourcen.",
       },
     ],
-    neubau: [
-      {
-        titel: "Industrieboden im Neubau",
-        text: "Im Neubau planen wir den Bodenaufbau von Anfang an auf die spätere Beanspruchung. Ob als eingestreuter KORODUR Hartstoff oder als NEODUR Hartstoff-Verbundestrich, unsere Systeme sind in allen industriellen Bereichen und Branchen einsetzbar: Fabrikations- und Lagerhallen, Hochregallager, Distributionszentren, Werkstätten, Kühlhäuser, Parkhäuser und Rampen, innen und außen.",
+    // --- Neubau (#439): Rich-Ausbau analog Sanierung. Prosa verbatim-nah aus
+    // den Alt-Site-Unterseiten Hartstoffschicht/Hartstoffeinstreuung/Sichtestrich
+    // (docs/content-quellen/scrape-extrakt/industrieboden-1.md + bereich-prosa/
+    // industrieboden.de.md). CO2-Claim HE 3 green = produkte.ts-gedeckt.
+    // Anwendungsmatrix bewusst NICHT eingebettet (erst wenn Neubau-Variante
+    // existiert, Steffi 01.07.). Hartstoffsystem-Matrix aus der Broschüre folgt
+    // als eigener Baustein (#350). ---
+    neubau: {
+      abschnitte: [
+        {
+          titel: "Industrieboden im Neubau",
+          text: "Im Neubau planen wir den Bodenaufbau von Anfang an auf die spätere Beanspruchung. Ob als eingestreuter KORODUR Hartstoff oder als NEODUR Hartstoff-Verbundestrich, unsere Systeme sind in allen industriellen Bereichen und Branchen einsetzbar: Fabrikations- und Lagerhallen, Hochregallager, Distributionszentren, Werkstätten, Kühlhäuser, Parkhäuser und Rampen, innen und außen.",
+        },
+        {
+          titel: "Bauweisen im Überblick",
+          text: "Von der Hartstoffeinstreuung nach DIN 18560-3 und -4 über die Hartstoffschicht nach DIN 18560-7 bis zum Schnellestrich und zum selbstverlaufenden System: Die Bauweise richtet sich nach Beanspruchung, Terminplan und Untergrund. Hartstoffschichten werden frisch-auf-frisch auf den jungen Tragbeton eingebaut oder nachträglich im Verbund auf erhärteten Tragbeton (KORODUR KOROTAN-Verfahren).",
+        },
+        {
+          titel: "Nachhaltig von Anfang an",
+          text: "Nachhaltigkeit prägt alle Aspekte des Bauens dauerhaft. Wir erweitern unser Sortiment deshalb um Produkte, deren Herstellung deutlich weniger CO₂-Emissionen mit sich bringt, etwa die ressourcenschonende Einstreuvariante NEODUR HE 3 green mit rund 30 % weniger CO₂ als herkömmlicher Portlandzement.",
+        },
+      ],
+      useCases: {
+        titel: "Wofür bauen Sie?",
+        items: [
+          {
+            titel: "Hochleistungshalle & Logistik",
+            system: "NEODUR Hartstoff-Verbundestrich",
+            text: "Hartstoffböden im Verbund mit frischem Beton für Fabrikations- und Lagerhallen, Hochregallager und Distributionszentren. Verschleißschicht nach DIN 18560-7 mit Hartstoffen gemäß DIN 1100 für überdurchschnittliche Biegezug- und Druckfestigkeiten.",
+            href: "produkte/neodur-he-65",
+          },
+          {
+            titel: "Sichtboden & Design",
+            system: "KORODUR Sichtestrich",
+            text: "Der mineralische Industrieboden als Sichtestrich: zementär, robust, kreativ und elegant. Geglättet als COPETTI FLOOR, geschliffen als GRANIDUR oder selbstverlaufend als TRUazzo mit Rapid Set Technologie.",
+            href: "produkte/granidur",
+          },
+          {
+            titel: "Außenflächen & Rampen",
+            system: "KORODUR Hartstoffschicht",
+            text: "Frost- und tausalzbeständige, wasserfeste Hartstoffsysteme für Parkhäuser, Rampen und Außenflächen, hochverschleißfest auch bei schwerster Beanspruchung, rutschfest und gleitsicher in Nassräumen.",
+            href: "produkte/korodur-vs-0-5",
+          },
+        ],
       },
-    ],
-    sanierung: [
-      {
-        titel: "Industrieboden in der Sanierung",
-        text: "Bestehende Industrieböden setzen wir dauerhaft instand, oft im laufenden Betrieb. Schnell belastbare Hartstoff-Verbundestriche und selbstverlaufende Systeme stellen die geforderte Verschleißfestigkeit wieder her, ohne dass die Fläche lange gesperrt bleibt.",
+      normen: {
+        titel: "Normkompetenz: die Grundlagen unserer Systeme",
+        intro: "Jede KORODUR Bauweise ist in den einschlägigen Normen zu Hause. Die wichtigsten im Überblick:",
+        items: [
+          {
+            norm: "DIN 18560-7",
+            text: "Hochbelastbare Industrieböden bestehen nach DIN 18560-7 aus einer definierten Verschleißschicht mit mineralischen Hartstoffen. Beanspruchungsgruppen und Nenndicken legt die Norm fest.",
+          },
+          {
+            norm: "DIN 18560-3/-4",
+            text: "Regeln die Hartstoffeinstreuung als Oberflächenvergütung frischer Estrich- und Betonflächen zur Erhöhung von Verschleißwiderstand und Oberflächenhärte.",
+          },
+          {
+            norm: "DIN 1100",
+            text: "Regelt die mineralischen Hartstoffe der Gruppen A, M und KS, die Basis für Verschleißwiderstand und Oberflächenhärte unserer Böden.",
+          },
+          {
+            norm: "DIN EN 13813",
+            text: "Die Materialnorm für Estrichmörtel: Druckfestigkeit (C), Biegezugfestigkeit (F) und Verschleißwiderstand (A) klassifizieren jedes unserer Estrichsysteme.",
+          },
+        ],
       },
-    ],
+      ratgeber: {
+        titel: "Neubau planen: Ratgeber",
+        items: [
+          {
+            href: "ratgeber/neubau-systemwahl",
+            titel: "Das passende System wählen",
+            text: "Welche Bauweise zu Beanspruchung, Terminplan und Budget passt.",
+          },
+          {
+            href: "ratgeber/einstreuung-vs-schicht",
+            titel: "Einstreuung oder Hartstoffschicht?",
+            text: "Der technische Vergleich der beiden Wege zur Verschleißschicht.",
+          },
+          {
+            href: "ratgeber/neubau-normen-klassen",
+            titel: "Normen und Klassen",
+            text: "EN 13813, Böhme-Verfahren und DIN 18560-7 verständlich erklärt.",
+          },
+        ],
+      },
+    },
+    // --- Sanierung (#438): Rich-Ausbau. Prosa verbatim-nah aus der Alt-Site-
+    // Unterseite Industriebodensanierung (docs/content-quellen/scrape-extrakt/
+    // industrieboden-1.md, Reuse-Governance V1-Scope §10). Zeitangaben HE 60
+    // rapid = Alt-Site + produkte.ts konsistent („3 h begehbar / 24 h nutzbar");
+    // der offene 48-h-Referenzkonflikt liegt bei Frank (Konzept-Doc §C1). ---
+    sanierung: {
+      abschnitte: [
+        {
+          titel: "Industrieboden in der Sanierung",
+          text: "Bestehende Industrieböden setzen wir dauerhaft instand, oft im laufenden Betrieb. Schnell belastbare Hartstoff-Verbundestriche und selbstverlaufende Systeme stellen die geforderte Verschleißfestigkeit wieder her, ohne dass die Fläche lange gesperrt bleibt.",
+        },
+        {
+          titel: "Erneuerung nach Jahren härtester Beanspruchung",
+          text: "Industrieböden sind tagtäglich enormen Belastungen ausgesetzt und zählen zu den am stärksten beanspruchten Bauteilen eines Industriebaus. Nach jahrelanger intensiver mechanischer Beanspruchung braucht auch der beste Industrieboden eine Erneuerung. Unternehmer und Bauherren fordern nicht nur beim Neubau, sondern auch bei Umbau und Sanierung langfristiges und wirtschaftliches Planen.",
+        },
+        {
+          titel: "Planbare Sperrzeit statt Stillstand",
+          text: "Zeitlicher Rahmen, wirtschaftliche Bedingungen, Belastungsprofil und bauseitige Rahmenbedingungen variieren von Projekt zu Projekt. Deshalb reichen unsere Sanierungswege vom klassischen Hartstoffestrich im Verbund bis zum Schnellestrich, der nach 3 Stunden begehbar und nach 24 Stunden nutzbar ist. So bleibt die Sperrzeit planbar, oft über ein Wochenende.",
+        },
+      ],
+      useCases: {
+        titel: "Welcher Sanierungsweg passt?",
+        items: [
+          {
+            titel: "Höchste Beanspruchung, dauerhaft",
+            system: "System KORODUR-KOROTAN",
+            text: "Zementgebundener KORODUR Hartstoffestrich, einschichtig im Verbund mit Haftbrücke auf erhärtetem Tragbeton, Nenndicke 15 mm, weitgehend fugenlos. Die wirtschaftliche Lösung für dauerhafte, nachhaltige Nutzung.",
+            href: "produkte/system-korodur-korotan",
+          },
+          {
+            titel: "Schnelle Wiederinbetriebnahme",
+            system: "System NEODUR HE 60 rapid",
+            text: "Volumenstabiler Schnellestrich mit KORODUR Hartstoffen gemäß DIN 1100, Einbaudicke ab 10 mm, für höchste Beanspruchung innen und außen. Nach 3 Stunden begehbar, nach 24 Stunden nutzbar.",
+            href: "produkte/neodur-he-60-rapid",
+          },
+          {
+            titel: "Dünnschichtig ausgleichen und beschichten",
+            system: "System NEODUR Level",
+            text: "Selbstverlaufender, polymermodifizierter, schnellerhärtender Industriebodenbelag für Schichtdicken von 4 bis 30 mm. Höchst fließfähig, pumpbar, früh begehbar und hoch belastbar.",
+            href: "produkte/neodur-level",
+          },
+        ],
+      },
+      normen: {
+        titel: "Normkompetenz: die Grundlagen unserer Systeme",
+        intro: "Jeder KORODUR Sanierungsweg ist in den einschlägigen Normen zu Hause. Die wichtigsten im Überblick:",
+        items: [
+          {
+            norm: "DIN 18560-7",
+            text: "Hochbelastbare Industrieböden bestehen nach DIN 18560-7 aus einer definierten Verschleißschicht mit mineralischen Hartstoffen. Beanspruchungsgruppen und Nenndicken legt die Norm fest.",
+          },
+          {
+            norm: "DIN 1100",
+            text: "Regelt die mineralischen Hartstoffe der Gruppen A, M und KS, die Basis für Verschleißwiderstand und Oberflächenhärte unserer Böden.",
+          },
+          {
+            norm: "DIN EN 13813",
+            text: "Die Materialnorm für Estrichmörtel: Druckfestigkeit (C), Biegezugfestigkeit (F) und Verschleißwiderstand (A) klassifizieren jedes unserer Estrichsysteme.",
+          },
+          {
+            norm: "DIN EN 1504-3",
+            text: "Instandsetzung von Betontragwerken mit Reparaturmörteln der Klassen R2 bis R4, relevant, wenn der Untergrund vor der Bodensanierung reprofiliert werden muss.",
+          },
+        ],
+      },
+      ratgeber: {
+        titel: "Sanierung planen: Ratgeber",
+        items: [
+          {
+            href: "ratgeber/sperrzeit-belastbarkeit",
+            titel: "Sperrzeit und Wiederinbetriebnahme",
+            text: "Wie lange Ihre Fläche steht, planbar gemacht.",
+          },
+          {
+            href: "schadensbilder",
+            titel: "Schadensbild erkennen",
+            text: "Fünf typische Schadensbilder und die passende Sanierung.",
+          },
+          {
+            href: "ratgeber/betreiber-faq",
+            titel: "Häufige Fragen",
+            text: "Antworten rund um die Industriebodensanierung.",
+          },
+        ],
+      },
+      anwendungsmatrix: true,
+    },
   },
 
   // --- Spezialmörtel (#378): Intro ausbauen + Produktkategorien. ---
