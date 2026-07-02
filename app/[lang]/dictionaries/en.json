@@ -225,6 +225,7 @@
     "weitere_ausfuehrungen_title": "Other variants",
     "dok_farbkarte": "Colour chart",
     "dok_epd": "EPD",
+    "dok_broschuere": "Brochure",
     "systemkomponenten_title": "Matching system components"
   },
   "sanierung": {
@@ -414,6 +415,7 @@
     "col_service": "Service"
   },
   "bereiche": {
+    "downloads_title": "Brochures & downloads",
     "breadcrumb_home": "Home",
     "produkte_title": "Products in this area",
     "alle_produkte_name": "All products",

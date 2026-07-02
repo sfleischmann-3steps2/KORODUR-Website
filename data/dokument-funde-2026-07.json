@@ -1,0 +1,1959 @@
+{
+  "quelle": "dokumente-stamm.json / #442, kuratiert 2026-07-02",
+  "dokumente": [
+    {
+      "stamm": "1.-layer-fresh-on-fresh-application",
+      "typ": "anwendung",
+      "titel": "1. Layer Fresh On Fresh Application",
+      "ziel": [
+        "neodur-he-65",
+        "neodur-he-65-plus",
+        "neodur-he-40"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/1.-Layer-fresh-on-fresh-application_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/1.-Layer-fresh-on-fresh-application_EN.pdf",
+          "kb": 488
+        }
+      ]
+    },
+    {
+      "stamm": "10-rapid-set-repair-mortar_dot-for-concrete-roads",
+      "typ": "anwendung",
+      "titel": "10 Rapid Set Repair Mortar Dot For Concrete Roads",
+      "ziel": [
+        "dot-europe-concrete-mix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/10-Rapid-Set-Repair-mortar_DOT-for-concrete-roads_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/10-Rapid-Set-Repair-mortar_DOT-for-concrete-roads_EN.pdf",
+          "kb": 692
+        }
+      ]
+    },
+    {
+      "stamm": "13813_2.10_neodur_he_3_metallic",
+      "typ": "dop",
+      "titel": "13813 2.10 Neodur He 3 Metallic",
+      "ziel": [
+        "neodur-he-3-metallisch"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.10_NEODUR_HE_3_metallic_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/13813_2.10_NEODUR_HE_3_metallic_en.pdf",
+          "kb": 721
+        }
+      ]
+    },
+    {
+      "stamm": "13813_2.21_neodur_he_2_f",
+      "typ": "dop",
+      "titel": "13813 2.21 Neodur He 2 F",
+      "ziel": [
+        "neodur-he-2"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.21_NEODUR_HE_2_F_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/13813_2.21_NEODUR_HE_2_F_fr.pdf",
+          "kb": 750
+        }
+      ]
+    },
+    {
+      "stamm": "13813_2.5_neodur_he_65_metallic",
+      "typ": "dop",
+      "titel": "13813 2.5 Neodur He 65 Metallic",
+      "ziel": [
+        "neodur-he-65-metallisch"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_2.5_NEODUR_HE_65_metallic_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/13813_2.5_NEODUR_HE_65_metallic_en.pdf",
+          "kb": 715
+        }
+      ]
+    },
+    {
+      "stamm": "13813_3.4_neodur_he_60_rapid_metallic",
+      "typ": "dop",
+      "titel": "13813 3.4 Neodur He 60 Rapid Metallic",
+      "ziel": [
+        "neodur-he-60-rapid-metallisch"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/13813_3.4_NEODUR_HE_60_rapid_metallic_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/13813_3.4_NEODUR_HE_60_rapid_metallic_en.pdf",
+          "kb": 1622
+        }
+      ]
+    },
+    {
+      "stamm": "2.3-dop-neodur-he-3-green-en-1",
+      "typ": "dop",
+      "titel": "2.3 Dop Neodur He 3 Green En 1",
+      "ziel": [
+        "neodur-he-3-green"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/07/2.3-DOP-NEODUR-HE-3-green-en-1.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/07/2.3-DOP-NEODUR-HE-3-green-en-1.pdf",
+          "kb": 85
+        }
+      ]
+    },
+    {
+      "stamm": "3.-hard-aggregate-dry-shake-applicatio",
+      "typ": "anwendung",
+      "titel": "3. Hard Aggregate Dry Shake Applicatio",
+      "ziel": [
+        "neodur-he-3",
+        "neodur-he-3-green",
+        "neodur-he-2"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/3.-Hard-aggregate-dry-shake-applicatio_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/3.-Hard-aggregate-dry-shake-applicatio_EN.pdf",
+          "kb": 477
+        }
+      ]
+    },
+    {
+      "stamm": "5.-decorative-screeds-kcf-and-granidur",
+      "typ": "anwendung",
+      "titel": "5. Decorative Screeds Kcf And Granidur",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/5.-Decorative-screeds-KCF-and-Granidur_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/5.-Decorative-screeds-KCF-and-Granidur_EN.pdf",
+          "kb": 503
+        }
+      ]
+    },
+    {
+      "stamm": "6.-he-65-metallic-application-on-set-base-concrete",
+      "typ": "anwendung",
+      "titel": "6. He 65 Metallic Application On Set Base Concrete",
+      "ziel": [
+        "neodur-he-65-metallisch"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/6.-HE-65-metallic-application-on-set-base-concrete_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/6.-HE-65-metallic-application-on-set-base-concrete_EN.pdf",
+          "kb": 556
+        }
+      ]
+    },
+    {
+      "stamm": "7.-tru-decorative-screeds",
+      "typ": "anwendung",
+      "titel": "7. Tru Decorative Screeds",
+      "ziel": [
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/7.-TRU-Decorative-screeds_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/7.-TRU-Decorative-screeds_EN.pdf",
+          "kb": 526
+        }
+      ]
+    },
+    {
+      "stamm": "8.-rapid-set-repair-mortar",
+      "typ": "anwendung",
+      "titel": "8. Rapid Set Repair Mortar",
+      "ziel": [
+        "rapid-set-cement-all",
+        "rapid-set-mortar-mix",
+        "rapid-set-mortar-mix-dur",
+        "rapid-set-concrete-mix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/8.-Rapid-Set-Repair-Mortar_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/8.-Rapid-Set-Repair-Mortar_EN.pdf",
+          "kb": 699
+        }
+      ]
+    },
+    {
+      "stamm": "9.-mortar-mix-restoration-paved-surfaces",
+      "typ": "anwendung",
+      "titel": "9. Mortar Mix Restoration Paved Surfaces",
+      "ziel": [
+        "rapid-set-mortar-mix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/9.-Mortar-Mix-restoration-paved-surfaces_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/9.-Mortar-Mix-restoration-paved-surfaces_EN.pdf",
+          "kb": 381
+        }
+      ]
+    },
+    {
+      "stamm": "allgemeine_hinweise_designestriche",
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Designestriche",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/08/Allgemeine_Hinweise_Designestriche_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/08/Allgemeine_Hinweise_Designestriche_fr.pdf",
+          "kb": 136
+        }
+      ]
+    },
+    {
+      "stamm": "allgemeine_hinweise_sichtestriche",
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf",
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/05/Allgemeine_Hinweise_Sichtestriche_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/05/Allgemeine_Hinweise_Sichtestriche_en.pdf",
+          "kb": 210
+        }
+      ]
+    },
+    {
+      "stamm": "anwendung_obtego_r-400",
+      "typ": "anwendung",
+      "titel": "Anwendung OBTEGO R-400",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Anwendung_OBTEGO_R-400_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Anwendung_OBTEGO_R-400_de.pdf",
+          "kb": 414
+        }
+      ]
+    },
+    {
+      "stamm": "anwendungsempfehlung_he60_rapid",
+      "typ": "anwendung",
+      "titel": "Anwendungsempfehlung He60 Rapid",
+      "ziel": [
+        "neodur-he-60-rapid"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/Anwendungsempfehlung_HE60_rapid_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "application_obtego_r-400_grinded_polished_tru_floors",
+      "typ": "anwendung",
+      "titel": "Application OBTEGO R-400 (TRU floors)",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/08/Application_OBTEGO_R-400_grinded_polished_TRU_floors.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/08/Application_OBTEGO_R-400_grinded_polished_TRU_floors.pdf",
+          "kb": 416
+        }
+      ]
+    },
+    {
+      "stamm": "asphalt-repair-mix",
+      "typ": "tds",
+      "titel": "Asphalt Repair Mix",
+      "ziel": [
+        "asphalt-repair-mix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/Asphalt-Repair-Mix_de.pdf",
+          "lokal": "mirror/wp-content/uploads/Asphalt-Repair-Mix_de.pdf",
+          "kb": 235
+        },
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/03/Asphalt-Repair-Mix_EN.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/03/Asphalt-Repair-Mix_EN.pdf",
+          "kb": 279
+        }
+      ]
+    },
+    {
+      "stamm": "asphalt_repair_mix_flyer",
+      "typ": "broschuere",
+      "titel": "Asphalt Repair Mix Flyer",
+      "ziel": [
+        "asphalt-repair-mix"
+      ],
+      "bereiche": [
+        "infrastruktur"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/Asphalt_Repair_Mix_Flyer_de.pdf",
+          "lokal": null,
+          "kb": null
+        },
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/09/Asphalt_Repair_Mix_Flyer_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/09/Asphalt_Repair_Mix_Flyer_en.pdf",
+          "kb": 631
+        }
+      ]
+    },
+    {
+      "stamm": "cement-_all",
+      "typ": "tds",
+      "titel": "Cement All",
+      "ziel": [
+        "rapid-set-cement-all"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/09/CEMENT-_All_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/09/CEMENT-_All_fr.pdf",
+          "kb": 289
+        }
+      ]
+    },
+    {
+      "stamm": "conseils-de-mise-en-oeuvre-kor-neo",
+      "typ": "anwendung",
+      "titel": "Conseils De Mise En Oeuvre Kor Neo",
+      "ziel": [
+        "neodur-he-65",
+        "neodur-he-65-plus",
+        "neodur-he-40",
+        "neodur-he-3",
+        "neodur-he-3-green",
+        "neodur-he-2"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/09/Conseils-de-mise-en-oeuvre-KOR-NEO_FR.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/09/Conseils-de-mise-en-oeuvre-KOR-NEO_FR.pdf",
+          "kb": 503
+        }
+      ]
+    },
+    {
+      "stamm": "designboden_alte-neue-bezeichnung",
+      "typ": "service",
+      "titel": "Designboden: alte und neue Bezeichnungen",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Designboden_Alte-Neue-Bezeichnung_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Designboden_Alte-Neue-Bezeichnung_de.pdf",
+          "kb": 95
+        }
+      ]
+    },
+    {
+      "stamm": "designfloor_sdb",
+      "typ": "sds",
+      "titel": "Designfloor Sdb",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Designfloor_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "dop-cement-all-plus",
+      "typ": "dop",
+      "titel": "DoP Cement All Plus",
+      "ziel": [
+        "rapid-set-cement-all"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/03/DOP-Cement-All-Plus.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/03/DOP-Cement-All-Plus.pdf",
+          "kb": 94
+        }
+      ]
+    },
+    {
+      "stamm": "einpflegesysteme-fuer-korodur-boeden",
+      "typ": "reinigung",
+      "titel": "Einpflegesysteme für KORODUR-Böden",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/07/Einpflegesysteme-fuer-KORODUR-Boeden.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/07/Einpflegesysteme-fuer-KORODUR-Boeden.pdf",
+          "kb": 386
+        }
+      ]
+    },
+    {
+      "stamm": "einpflegesysteme-fuer-korodur-boeden_en_korr-003",
+      "typ": "reinigung",
+      "titel": "Einpflegesysteme für KORODUR-Böden",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/Einpflegesysteme-fuer-KORODUR-Boeden_EN_KORR-003.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/Einpflegesysteme-fuer-KORODUR-Boeden_EN_KORR-003.pdf",
+          "kb": 246
+        }
+      ]
+    },
+    {
+      "stamm": "guetesiegel_innovativ_durch_forschung",
+      "typ": "service",
+      "titel": "Gütesiegel Innovativ durch Forschung",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Guetesiegel_Innovativ_durch_Forschung_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Guetesiegel_Innovativ_durch_Forschung_de.pdf",
+          "kb": 128
+        }
+      ]
+    },
+    {
+      "stamm": "industrial_floor_dry_mortars_sdb",
+      "typ": "sds",
+      "titel": "Industrial Floor Dry Mortars Sdb",
+      "ziel": [
+        "neodur-he-2",
+        "neodur-he-40",
+        "korodur-fscem",
+        "korodur-fscem-screed"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Industrial_floor_dry_mortars_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "industrieboden-broschuere",
+      "typ": "broschuere",
+      "titel": "Industrieboden-Broschüre",
+      "ziel": "zentral",
+      "bereiche": [
+        "industrieboden"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2025/08/Industrieboden-Broschuere_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2025/08/Industrieboden-Broschuere_de.pdf",
+          "kb": 13178
+        },
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/Industrieboden-Broschuere_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "inocom_cabrio_silotechnik",
+      "typ": "service",
+      "titel": "InoCOMB Cabrio Silotechnik",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/inoCom_Cabrio_Silotechnik_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/inoCom_Cabrio_Silotechnik_de.pdf",
+          "kb": 1065
+        }
+      ]
+    },
+    {
+      "stamm": "inocomb_cabrio_checkliste_baustelleneinsatz",
+      "typ": "service",
+      "titel": "InoCOMB Cabrio Checkliste Baustelleneinsatz",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/inoComb_Cabrio_Checkliste_Baustelleneinsatz.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/inoComb_Cabrio_Checkliste_Baustelleneinsatz.pdf",
+          "kb": 61
+        }
+      ]
+    },
+    {
+      "stamm": "inocomb_cabrio_fragebogen",
+      "typ": "service",
+      "titel": "InoCOMB Cabrio Fragebogen",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/inoComb_Cabrio_Fragebogen_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/inoComb_Cabrio_Fragebogen_de.pdf",
+          "kb": 55
+        }
+      ]
+    },
+    {
+      "stamm": "inotec_flyer_din_a4_6seiter_de_final",
+      "typ": "broschuere",
+      "titel": "Inotec Pumptechnik Flyer",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/12/Inotec_Flyer_DIN_A4_6seiter_DE_FINAL.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/12/Inotec_Flyer_DIN_A4_6seiter_DE_FINAL.pdf",
+          "kb": 585
+        }
+      ]
+    },
+    {
+      "stamm": "inotec_flyer_din_a4_6seiter_en_final",
+      "typ": "broschuere",
+      "titel": "Inotec Pumptechnik Flyer",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/12/Inotec_Flyer_DIN_A4_6seiter_EN_FINAL.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/12/Inotec_Flyer_DIN_A4_6seiter_EN_FINAL.pdf",
+          "kb": 584
+        }
+      ]
+    },
+    {
+      "stamm": "inotec_flyer_din_a4_6seiter_fr_final",
+      "typ": "broschuere",
+      "titel": "Inotec Pumptechnik Flyer",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/12/Inotec_Flyer_DIN_A4_6seiter_FR_FINAL.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/12/Inotec_Flyer_DIN_A4_6seiter_FR_FINAL.pdf",
+          "kb": 587
+        }
+      ]
+    },
+    {
+      "stamm": "konstruktionsbeispiel_kcf_05-08",
+      "typ": "anwendung",
+      "titel": "Konstruktionsbeispiel KCF 05/08",
+      "ziel": [
+        "kcf"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/08/Konstruktionsbeispiel_KCF_05-08_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/08/Konstruktionsbeispiel_KCF_05-08_fr.pdf",
+          "kb": 1043
+        }
+      ]
+    },
+    {
+      "stamm": "koroactive",
+      "typ": "tds",
+      "titel": "KOROACTIVE",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROACTIVE_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/KOROACTIVE_en.pdf",
+          "kb": 185
+        },
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2025/07/KOROACTIVE_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "korodur-fscem_en_2023-08",
+      "typ": "tds",
+      "titel": "Korodur Fscem",
+      "ziel": [
+        "korodur-fscem"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/09/KORODUR-FSCem_en_2023-08.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/09/KORODUR-FSCem_en_2023-08.pdf",
+          "kb": 270
+        }
+      ]
+    },
+    {
+      "stamm": "korodur-nanofinish_fr_2023",
+      "typ": "tds",
+      "titel": "Korodur Nanofinish",
+      "ziel": [
+        "korodur-nanofinish"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/09/KORODUR-nanoFinish_FR_2023.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/09/KORODUR-nanoFinish_FR_2023.pdf",
+          "kb": 183
+        }
+      ]
+    },
+    {
+      "stamm": "korodur-pc_en_2023",
+      "typ": "tds",
+      "titel": "Korodur Pc",
+      "ziel": [
+        "korodur-pc"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/KORODUR-PC_en_2023.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/KORODUR-PC_en_2023.pdf",
+          "kb": 158
+        }
+      ]
+    },
+    {
+      "stamm": "korodur-schnellbetonsysteme",
+      "typ": "service",
+      "titel": "KORODUR Schnellbetonsysteme",
+      "ziel": [
+        "korocrete",
+        "rapid-set-schnellbeton"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/KORODUR-Schnellbetonsysteme.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/KORODUR-Schnellbetonsysteme.pdf",
+          "kb": 1289
+        }
+      ]
+    },
+    {
+      "stamm": "korodur_durcisseur_sdb",
+      "typ": "sds",
+      "titel": "Korodur Durcisseur Sdb",
+      "ziel": [
+        "korodur-vs-0-5",
+        "korodur-wh-spezial",
+        "korodur-wh-metallisch",
+        "korodur-diamantbeton",
+        "korodur-robust"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_Durcisseur_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "korodur_flyer_bodensanierung_de_2020_08",
+      "typ": "broschuere",
+      "titel": "KORODUR Flyer Bodensanierung",
+      "ziel": "zentral",
+      "bereiche": [
+        "industrieboden"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_Flyer_Bodensanierung_de_2020_08.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/KORODUR_Flyer_Bodensanierung_de_2020_08.pdf",
+          "kb": 343
+        }
+      ]
+    },
+    {
+      "stamm": "korodur_hard_aggregates_sdb",
+      "typ": "sds",
+      "titel": "Korodur Hard Aggregates Sdb",
+      "ziel": [
+        "korodur-vs-0-5",
+        "korodur-wh-spezial",
+        "korodur-wh-metallisch",
+        "korodur-diamantbeton",
+        "korodur-robust"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_hard_aggregates_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "korodur_korotan_industrieboden_system",
+      "typ": "service",
+      "titel": "System KORODUR-KOROTAN",
+      "ziel": [
+        "system-korodur-korotan"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_KOROTAN_Industrieboden_System_de.pdf",
+          "lokal": null,
+          "kb": null
+        },
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/KORODUR_KOROTAN_Industrieboden_System_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/KORODUR_KOROTAN_Industrieboden_System_en.pdf",
+          "kb": 186
+        }
+      ]
+    },
+    {
+      "stamm": "korodur_lieferprogramm_en_2025",
+      "typ": "service",
+      "titel": "KORODUR Lieferprogramm 2025",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2025/07/KORODUR_Lieferprogramm_en_2025.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "korodur_schnellbetonsysteme",
+      "typ": "service",
+      "titel": "KORODUR Schnellbetonsysteme",
+      "ziel": [
+        "korocrete",
+        "rapid-set-schnellbeton"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/08/KORODUR_Schnellbetonsysteme_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/08/KORODUR_Schnellbetonsysteme_en.pdf",
+          "kb": 1337
+        },
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/09/KORODUR_Schnellbetonsysteme_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "korodur_txpk_comp_a_sdb",
+      "typ": "sds",
+      "titel": "Korodur Txpk Comp A Sdb",
+      "ziel": [
+        "korodur-txpk"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_TXPK_comp_A_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "korodur_txpk_component_a_sdb",
+      "typ": "sds",
+      "titel": "Korodur Txpk Component A Sdb",
+      "ziel": [
+        "korodur-txpk"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/KORODUR_TXPK_component_A_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "korofluid",
+      "typ": "tds",
+      "titel": "KOROFLUID",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROFLUID_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/KOROFLUID_fr.pdf",
+          "kb": 529
+        }
+      ]
+    },
+    {
+      "stamm": "koromineral-cure_fr__2023",
+      "typ": "tds",
+      "titel": "Koromineral Cure Fr 2023",
+      "ziel": [
+        "koromineral-cure"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/KOROMINERAL-CURE_fr__2023.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/KOROMINERAL-CURE_fr__2023.pdf",
+          "kb": 183
+        }
+      ]
+    },
+    {
+      "stamm": "koromineral_li_en_2023",
+      "typ": "tds",
+      "titel": "Koromineral Li",
+      "ziel": [
+        "koromineral-li"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/KOROMINERAL_Li_en_2023.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/KOROMINERAL_Li_en_2023.pdf",
+          "kb": 183
+        }
+      ]
+    },
+    {
+      "stamm": "koroplan_pc",
+      "typ": "tds",
+      "titel": "KOROPLAN PC",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/KOROPLAN_PC_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/KOROPLAN_PC_fr.pdf",
+          "kb": 285
+        }
+      ]
+    },
+    {
+      "stamm": "koropox_comp_a_sdb",
+      "typ": "sds",
+      "titel": "KOROPOX Komponente A SDB",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROPOX_comp_A_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "koropox_component_a_sdb",
+      "typ": "sds",
+      "titel": "KOROPOX Komponente A SDB",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Koropox_component_A_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "koroseal_sdb",
+      "typ": "sds",
+      "titel": "KOROSEAL SDB",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROSEAL_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        },
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/KOROSEAL_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "korosol",
+      "typ": "tds",
+      "titel": "KOROSOL",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/KOROSOL_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/KOROSOL_fr.pdf",
+          "kb": 174
+        }
+      ]
+    },
+    {
+      "stamm": "korosol_sdb",
+      "typ": "sds",
+      "titel": "KOROSOL SDB",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/KOROSOL_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "microtop_4-seitig",
+      "typ": "broschuere",
+      "titel": "MICROTOP Broschüre",
+      "ziel": [
+        "microtop-tw-3",
+        "microtop-tw-5",
+        "microtop-tw-8"
+      ],
+      "bereiche": [
+        "microtop"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_4-seitig_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/MICROTOP_4-seitig_de.pdf",
+          "kb": 1315
+        },
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/MICROTOP_4-seitig_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/MICROTOP_4-seitig_en.pdf",
+          "kb": 841
+        }
+      ]
+    },
+    {
+      "stamm": "microtop_flyer",
+      "typ": "broschuere",
+      "titel": "MICROTOP Flyer",
+      "ziel": "zentral",
+      "bereiche": [
+        "microtop"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2025/08/Microtop_Flyer_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2025/08/Microtop_Flyer_de.pdf",
+          "kb": 512
+        }
+      ]
+    },
+    {
+      "stamm": "microtop_tw_mineral_sdb",
+      "typ": "sds",
+      "titel": "Microtop Tw Mineral Sdb",
+      "ziel": [
+        "microtop-tw-mineral"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/MICROTOP_TW_Mineral_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "mischtechnik_rapid_set",
+      "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "ziel": [
+        "rapid-set-cement-all",
+        "rapid-set-mortar-mix",
+        "rapid-set-mortar-mix-dur",
+        "rapid-set-concrete-mix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Mischtechnik_Rapid_Set_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Mischtechnik_Rapid_Set_de.pdf",
+          "kb": 239
+        }
+      ]
+    },
+    {
+      "stamm": "mixing_technique_rapid_set",
+      "typ": "anwendung",
+      "titel": "Mischtechnik Rapid Set",
+      "ziel": [
+        "rapid-set-cement-all",
+        "rapid-set-mortar-mix",
+        "rapid-set-mortar-mix-dur",
+        "rapid-set-concrete-mix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Mixing_technique_Rapid_Set_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Mixing_technique_Rapid_Set_en.pdf",
+          "kb": 276
+        }
+      ]
+    },
+    {
+      "stamm": "mixol_farbkarte",
+      "typ": "farbkarte",
+      "titel": "MIXOL Farbkarte",
+      "ziel": [
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/MIXOL_Farbkarte.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/MIXOL_Farbkarte.pdf",
+          "kb": 866
+        }
+      ]
+    },
+    {
+      "stamm": "mks_hippo_mixer_tru_mischtechnik",
+      "typ": "anwendung",
+      "titel": "MKS Hippo Mixer TRU Mischtechnik",
+      "ziel": [
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/MKS_Hippo_Mixer_TRU_Mischtechnik.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/MKS_Hippo_Mixer_TRU_Mischtechnik.pdf",
+          "kb": 1601
+        }
+      ]
+    },
+    {
+      "stamm": "neodur-he-2_fr_2023-06",
+      "typ": "tds",
+      "titel": "Neodur He 2",
+      "ziel": [
+        "neodur-he-2"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/11/NEODUR-HE-2_fr_2023-06.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/11/NEODUR-HE-2_fr_2023-06.pdf",
+          "kb": 231
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_grouting_mortar_concrete",
+      "typ": "tds",
+      "titel": "Neodur Grouting Mortar Concrete",
+      "ziel": [
+        "neodur-vm-1",
+        "neodur-vm-3",
+        "neodur-vb-8"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/NEODUR_Grouting_mortar_concrete_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/NEODUR_Grouting_mortar_concrete_en.pdf",
+          "kb": 151
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_he_2f",
+      "typ": "tds",
+      "titel": "Neodur He 2F",
+      "ziel": [
+        "neodur-he-2"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_2F_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_he_3_svs_3",
+      "typ": "tds",
+      "titel": "Neodur He 3 Svs 3",
+      "ziel": [
+        "neodur-he-3-svs-3"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_3_SVS_3_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/NEODUR_HE_3_SVS_3_fr.pdf",
+          "kb": 310
+        },
+        {
+          "sprache": "pl",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_3_SVS_3_pl.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_he_65_svs_3",
+      "typ": "tds",
+      "titel": "Neodur He 65 Svs 3",
+      "ziel": [
+        "neodur-he-65-svs-3"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/NEODUR_HE_65_SVS_3_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/NEODUR_HE_65_SVS_3_fr.pdf",
+          "kb": 191
+        },
+        {
+          "sprache": "pl",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/NEODUR_HE_65_SVS_3_pl.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_level_en_2023-10",
+      "typ": "tds",
+      "titel": "Neodur Level",
+      "ziel": [
+        "neodur-level"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/10/NEODUR_Level_en_2023-10.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/10/NEODUR_Level_en_2023-10.pdf",
+          "kb": 214
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_level_fr_2023-10",
+      "typ": "tds",
+      "titel": "Neodur Level",
+      "ziel": [
+        "neodur-level"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/10/NEODUR_Level_fr_2023-10.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/10/NEODUR_Level_fr_2023-10.pdf",
+          "kb": 219
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_mortier_de_joint_sdb",
+      "typ": "sds",
+      "titel": "Neodur Mortier De Joint Sdb",
+      "ziel": [
+        "neodur-pfm-ze",
+        "neodur-pfm-ze-flex",
+        "neodur-pfm-1k-easyfix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/NEODUR_Mortier_de_joint_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_mortier_de_scellement_vm_vb",
+      "typ": "tds",
+      "titel": "Neodur Mortier De Scellement Vm Vb",
+      "ziel": [
+        "neodur-vm-1",
+        "neodur-vm-3",
+        "neodur-vb-8"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/NEODUR_mortier_de_scellement_VM_VB_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/NEODUR_mortier_de_scellement_VM_VB_fr.pdf",
+          "kb": 153
+        }
+      ]
+    },
+    {
+      "stamm": "neodur_sols_industriels_sdb",
+      "typ": "sds",
+      "titel": "Neodur Sols Industriels Sdb",
+      "ziel": [
+        "neodur-he-2",
+        "neodur-he-40",
+        "korodur-fscem",
+        "korodur-fscem-screed"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/NEODUR_sols_industriels_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "pavement_fixing_hardener_component_sdb",
+      "typ": "sds",
+      "titel": "Pavement Fixing Hardener Component SDB",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Pavement_fixing_hardener_component_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "pavement_fixing_resin_component_sdb",
+      "typ": "sds",
+      "titel": "Pavement Fixing Resin Component SDB",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Pavement_fixing_resin_component_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "pavement_joint_mortar_sdb",
+      "typ": "sds",
+      "titel": "Pavement Joint Mortar Sdb",
+      "ziel": [
+        "neodur-pfm-ze",
+        "neodur-pfm-ze-flex",
+        "neodur-pfm-1k-easyfix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Pavement_Joint_mortar_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "pflegehinweis_tru_self-leveling_tru_gray_tru_pc_obtego",
+      "typ": "reinigung",
+      "titel": "Pflegehinweis Tru Self Leveling Tru Gray Tru Pc Obtego",
+      "ziel": [
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/Pflegehinweis_TRU_Self-Leveling_TRU_Gray_TRU_PC_OBTEGO_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/Pflegehinweis_TRU_Self-Leveling_TRU_Gray_TRU_PC_OBTEGO_en.pdf",
+          "kb": 211
+        }
+      ]
+    },
+    {
+      "stamm": "rapid-set-broschuere-neu",
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "ziel": "zentral",
+      "bereiche": [
+        "rapid-set",
+        "betonsanierung"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/02/Rapid-Set-Broschuere-neu.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/02/Rapid-Set-Broschuere-neu.pdf",
+          "kb": 3422
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_6-seitig",
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre (6-seitig)",
+      "ziel": "zentral",
+      "bereiche": [
+        "rapid-set"
+      ],
+      "dateien": [
+        {
+          "sprache": "es",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Rapid_Set_6-seitig_es.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Rapid_Set_6-seitig_es.pdf",
+          "kb": 894
+        },
+        {
+          "sprache": "pl",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Rapid_Set_6-seitig_pl.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Rapid_Set_6-seitig_pl.pdf",
+          "kb": 3285
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_broschuere",
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "ziel": "zentral",
+      "bereiche": [
+        "rapid-set",
+        "betonsanierung"
+      ],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Rapid_Set_Broschuere_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Rapid_Set_Broschuere_fr.pdf",
+          "kb": 897
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_broschuere_en-1",
+      "typ": "broschuere",
+      "titel": "Rapid Set Broschüre",
+      "ziel": "zentral",
+      "bereiche": [
+        "rapid-set",
+        "betonsanierung"
+      ],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/11/Rapid_Set_Broschuere_en-1.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_fast_sdb",
+      "typ": "sds",
+      "titel": "Rapid Set Fast Sdb",
+      "ziel": [
+        "rapid-set-concrete-pharmacy"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Rapid_Set_FAST_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_flow_control_sdb",
+      "typ": "sds",
+      "titel": "Rapid Set Flow Control Sdb",
+      "ziel": [
+        "rapid-set-concrete-pharmacy"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Rapid_Set_FLOW_Control_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        },
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Rapid_Set_FLOW_Control_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_flyer",
+      "typ": "broschuere",
+      "titel": "Rapid Set Flyer",
+      "ziel": "zentral",
+      "bereiche": [
+        "rapid-set",
+        "betonsanierung"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/04/Rapid_Set_Flyer_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/04/Rapid_Set_Flyer_de.pdf",
+          "kb": 10542
+        },
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/09/Rapid_Set_Flyer_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/09/Rapid_Set_Flyer_en.pdf",
+          "kb": 9688
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_flyer_landwirtschaft_de_2017_17",
+      "typ": "broschuere",
+      "titel": "Rapid Set Flyer Landwirtschaft",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/02/Rapid_Set_Flyer_Landwirtschaft_de_2017_17.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/02/Rapid_Set_Flyer_Landwirtschaft_de_2017_17.pdf",
+          "kb": 731
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_set_control_sdb",
+      "typ": "sds",
+      "titel": "Rapid Set Set Control Sdb",
+      "ziel": [
+        "rapid-set-concrete-pharmacy"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Rapid_Set_SET_Control_SDB_en.pdf",
+          "lokal": null,
+          "kb": null
+        },
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Rapid_Set_SET_Control_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "rapid_set_vs._epoxidharz",
+      "typ": "broschuere",
+      "titel": "Rapid Set vs. Epoxidharz",
+      "ziel": "zentral",
+      "bereiche": [
+        "rapid-set"
+      ],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/09/Rapid_Set_vs._Epoxidharz_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/09/Rapid_Set_vs._Epoxidharz_fr.pdf",
+          "kb": 2361
+        }
+      ]
+    },
+    {
+      "stamm": "rapidsetflyer_epoxy",
+      "typ": "broschuere",
+      "titel": "Rapid Set vs. Epoxidharz Flyer",
+      "ziel": "zentral",
+      "bereiche": [
+        "rapid-set"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/09/RapidSetFlyer_Epoxy.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/09/RapidSetFlyer_Epoxy.pdf",
+          "kb": 1875
+        }
+      ]
+    },
+    {
+      "stamm": "sanierung-korodur-flyer-fuer-web",
+      "typ": "broschuere",
+      "titel": "KORODUR Flyer Industriebodensanierung",
+      "ziel": "zentral",
+      "bereiche": [
+        "industrieboden"
+      ],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/09/Sanierung-KORODUR-Flyer-fuer-WEB.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/09/Sanierung-KORODUR-Flyer-fuer-WEB.pdf",
+          "kb": 3152
+        }
+      ]
+    },
+    {
+      "stamm": "schleifanleitung_tru",
+      "typ": "anwendung",
+      "titel": "Schleifanleitung TRU",
+      "ziel": [
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Schleifanleitung_TRU.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Schleifanleitung_TRU.pdf",
+          "kb": 5195
+        }
+      ]
+    },
+    {
+      "stamm": "sdb_korodur_asphalt_repair_mix",
+      "typ": "sds",
+      "titel": "Sdb Korodur Asphalt Repair Mix",
+      "ziel": [
+        "asphalt-repair-mix"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/02/SDB_KORODUR_Asphalt_Repair_Mix_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/02/SDB_KORODUR_Asphalt_Repair_Mix_en.pdf",
+          "kb": 291
+        }
+      ]
+    },
+    {
+      "stamm": "sdb_korodur_neodur_he-65_plus.en_",
+      "typ": "sds",
+      "titel": "Sdb Korodur Neodur He 65 Plus.En",
+      "ziel": [
+        "neodur-he-65-plus"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/04/SDB_KORODUR_Neodur_HE-65_Plus.en_.pdf",
+          "lokal": "mirror/wp-content/uploads/2024/04/SDB_KORODUR_Neodur_HE-65_Plus.en_.pdf",
+          "kb": 289
+        }
+      ]
+    },
+    {
+      "stamm": "siloaufstellbedingungen",
+      "typ": "service",
+      "titel": "Siloaufstellbedingungen",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Siloaufstellbedingungen_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Siloaufstellbedingungen_de.pdf",
+          "kb": 278
+        }
+      ]
+    },
+    {
+      "stamm": "sols_decoratifs_mineraux_sdb",
+      "typ": "sds",
+      "titel": "Sols Decoratifs Mineraux Sdb",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/06/Sols_decoratifs_mineraux_SDB_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "standsilo_aufnahmebeschlaege",
+      "typ": "service",
+      "titel": "Standsilo Aufnahmebeschläge",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Standsilo_Aufnahmebeschlaege_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Standsilo_Aufnahmebeschlaege_de.pdf",
+          "kb": 87
+        }
+      ]
+    },
+    {
+      "stamm": "tru-pc",
+      "typ": "tds",
+      "titel": "Tru Pc",
+      "ziel": [
+        "tru-pc"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2024/09/TRU-PC_fr.pdf",
+          "lokal": null,
+          "kb": null
+        }
+      ]
+    },
+    {
+      "stamm": "uebersicht_pflegesysteme_fuer_korodur-boeden_de_2018_28",
+      "typ": "reinigung",
+      "titel": "Übersicht Pflegesysteme für KORODUR-Böden",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_de_2018_28.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_de_2018_28.pdf",
+          "kb": 176
+        }
+      ]
+    },
+    {
+      "stamm": "uebersicht_pflegesysteme_fuer_korodur-boeden_en_2018_28",
+      "typ": "reinigung",
+      "titel": "Übersicht Pflegesysteme für KORODUR-Böden",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_en_2018_28.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_en_2018_28.pdf",
+          "kb": 169
+        }
+      ]
+    },
+    {
+      "stamm": "uebersicht_pflegesysteme_fuer_korodur-boeden_fr_2018_28",
+      "typ": "reinigung",
+      "titel": "Übersicht Pflegesysteme für KORODUR-Böden",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_fr_2018_28.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Uebersicht_Pflegesysteme_fuer_Korodur-Boeden_fr_2018_28.pdf",
+          "kb": 169
+        }
+      ]
+    },
+    {
+      "stamm": "unternehmensbroschuere_2019",
+      "typ": "broschuere",
+      "titel": "KORODUR Unternehmensbroschüre",
+      "ziel": "zentral",
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Unternehmensbroschuere_2019.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Unternehmensbroschuere_2019.pdf",
+          "kb": 7176
+        }
+      ]
+    },
+    {
+      "stamm": "verarbeitungshinweise_allgemeine_hinweise_aufheizen",
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Aufheizen Sichtestriche",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf",
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Verarbeitungshinweise_allgemeine_Hinweise_Aufheizen_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Verarbeitungshinweise_allgemeine_Hinweise_Aufheizen_de.pdf",
+          "kb": 206
+        }
+      ]
+    },
+    {
+      "stamm": "verarbeitungshinweise_allgemeine_hinweise_sichtestrich",
+      "typ": "anwendung",
+      "titel": "Allgemeine Hinweise Sichtestriche",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf",
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Verarbeitungshinweise_allgemeine_Hinweise_Sichtestrich_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Verarbeitungshinweise_allgemeine_Hinweise_Sichtestrich_de.pdf",
+          "kb": 410
+        }
+      ]
+    },
+    {
+      "stamm": "werkzeugliste_granidur_kcf",
+      "typ": "anwendung",
+      "titel": "Werkzeugliste GRANIDUR/KCF",
+      "ziel": [
+        "granidur",
+        "granidur-bianco-nero",
+        "kcf"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Werkzeugliste_Granidur_KCF_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Werkzeugliste_Granidur_KCF_de.pdf",
+          "kb": 1050
+        },
+        {
+          "sprache": "en",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/05/Werkzeugliste_GRANIDUR_KCF_en.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/05/Werkzeugliste_GRANIDUR_KCF_en.pdf",
+          "kb": 1036
+        },
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/08/Werkzeugliste_GRANIDUR_KCF_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/08/Werkzeugliste_GRANIDUR_KCF_fr.pdf",
+          "kb": 923
+        }
+      ]
+    },
+    {
+      "stamm": "werkzeugliste_tru_self-leveling",
+      "typ": "anwendung",
+      "titel": "Werkzeugliste TRU Self-Leveling",
+      "ziel": [
+        "tru-self-leveling",
+        "tru-pc",
+        "tru-sp"
+      ],
+      "bereiche": [],
+      "dateien": [
+        {
+          "sprache": "de",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/03/Werkzeugliste_TRU_Self-Leveling_de.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/03/Werkzeugliste_TRU_Self-Leveling_de.pdf",
+          "kb": 218
+        },
+        {
+          "sprache": "fr",
+          "url": "https://www.korodur.de/wp-content/uploads/2023/08/Werkzeugliste_TRU_Self-Leveling_fr.pdf",
+          "lokal": "mirror/wp-content/uploads/2023/08/Werkzeugliste_TRU_Self-Leveling_fr.pdf",
+          "kb": 217
+        }
+      ]
+    }
+  ]
+}

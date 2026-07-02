@@ -1,6 +1,8 @@
 # Dokumenten-Inventar Website — Bestand + Lücken
 
-**Issue #300** (Epic #80) · Stand 2026-07-01 · mechanisch abgeleitet aus Repo-Stand `feature/betonsanierung-bereich-320`.
+**Issue #300** (Epic #80) · Stand 2026-07-02 (nach Alt-Site-Übernahme #442) · mechanisch abgeleitet aus dem Repo-Stand.
+
+> **Update 2026-07-02 (#442):** Die verknüpften Alt-Site-Downloads wurden kuratiert übernommen (107 Stämme / 124 Dateien: Broschüren, EN/FR/PL/ES-Pendants, Service-Dokumente). Entscheidungsliste inkl. aller Auslassungen mit Grund: `dokumente-uebernahme-442.md`. §1/§6/§7 unten sind auf den neuen Stand gezogen.
 
 **Zweck.** Beschaffungs-Grundlage: welche Dokumente liegen für die Website vor (Broschüren, technische Datenblätter, System-/Service-Infos, SDB, DoP), wo sind Lücken. Voraussetzung für das Download-Center (#301).
 
@@ -16,17 +18,18 @@
 
 | Typ | Dateien im Repo | Sprachen (Dateizahl) | Quelle/Pfad | Status |
 |---|---:|---|---|---|
-| TDS (technische Datenblätter) | 245 | DE 73 · EN 69 · FR 63 · PL 32 · **ES 0** | `public/downloads/tds/` | Bestand hoch, ES fehlt komplett |
-| DoP (Leistungserklärungen) | 56 | DE 31 · EN 12 · FR 11 · **PL 0 · ES 0** | `public/downloads/dop/` | nur EU-Kernsprachen, PL/ES **Lücke** |
-| SDB / SDS (Sicherheitsdatenblätter) | 81 | DE 46 · EN 19 · FR 16 · **PL 0 · ES 0** | `public/downloads/sds/` | DE gut, EN/FR partiell, PL/ES **Lücke** |
-| Anwendung / Verarbeitung | 11 | DE (nur) | `public/downloads/anwendung/` | DE-only |
-| Reinigung / Pflege | 6 | DE (nur) | `public/downloads/reinigung/` | DE-only |
-| System-/Service-Info | 1 | DE | `public/downloads/service/` | nur Lieferprogramm 2025 |
-| Broschüren (Bereichs-/Produkt) | 0 als PDF im Repo | — | Google Drive `KORODUR/KORODUR Assets/` (t.b.d. Steffi) | **Lücke** — nur Extrakte, s. §4 |
+| TDS (technische Datenblätter) | 266 | DE 75 · EN 77 · FR 76 · PL 34 · **ES 0** | `public/downloads/tds/` | Bestand hoch, ES fehlt weiter |
+| DoP (Leistungserklärungen) | 62 | DE 31 · EN 18 · FR 12 · **PL 0 · ES 0** | `public/downloads/dop/` | nur EU-Kernsprachen, PL/ES **Lücke** |
+| SDB / SDS (Sicherheitsdatenblätter) | 106 | DE 48 · EN 33 · FR 24 · **PL 0 · ES 0** | `public/downloads/sds/` | DE gut, EN/FR deutlich verbessert, PL/ES **Lücke** |
+| Anwendung / Verarbeitung | 37 | DE + EN 12 · FR 4 | `public/downloads/anwendung/` | EN/FR-Pendants übernommen (#442) |
+| Reinigung / Pflege | 12 | DE + EN 3 · FR 1 | `public/downloads/reinigung/` | Pflegesystem-Übersichten DE/EN/FR |
+| System-/Service-Info | 14 | überwiegend DE, EN 3, FR 1 | `public/downloads/service/` | Lieferprogramm DE+EN, Silo/Inotec/Systeme |
+| Broschüren (Bereichs-/Produkt) | 23 | DE 8 · EN 6 · FR 3 · PL 1 · ES 1 | `public/downloads/broschuere/` | Alt-Site-Broschüren übernommen (#442); Original-Quelldateien weiter bei Steffi |
+| Farbkarte | 1 (+1 unter tds/) | DE | `public/downloads/farbkarte/` | MIXOL (TRU) + Farbkarte de/en/fr |
 | EPD (Umweltproduktdeklaration) | **0** | — | — | **Lücke** — Typ-Slot reserviert, s. §6/L2 |
 | Referenz-PDF | 0 statisch | DE/EN/FR/PL/ES zur Laufzeit | `components/ReferenzPdf.tsx`, `lib/pdf.ts` | wird pro Referenz generiert, s. §5 |
 
-**Wiring-Stand (`data/produktDokumente.ts`, generiert):** 80 Produkte verlinkt; Dokument-Verlinkungen gezählt: TDS 288, SDS 137, DoP 54, Anwendung 27, Reinigung 18, Service 1. (Zahlen inkl. Sprach- und Mehrfach-Zuordnungen; treiben das Download-Center #301.)
+**Wiring-Stand (`data/produktDokumente.ts`, generiert):** 84 Produkte verlinkt; 651 Dokument-Verknüpfungen + 68 zentrale Download-Center-Dokumente + Bereichs-Downloads (`BEREICH_DOKUMENTE`, Broschüren-Teaser auf Bereichsseiten). (Zahlen inkl. Sprach- und Mehrfach-Zuordnungen; treiben das Download-Center #301.)
 
 ---
 
@@ -134,7 +137,7 @@
 | MICROTOP 4-seitig | Produkt-Broschüre (Evidenz) | Microtop | ja (DE) | `docs/tds-quellen/KORODUR_MICROTOP_4_seitig_de.pdf` |
 | easyFinish / nanoFinish / KOROMINERAL / KOROMINERAL Lasur | Produkt-Info (Evidenz) | Industrieboden | ja (DE) | `docs/tds-quellen/KORODUR_easyFinish_de.pdf` u. a. |
 
-**Lücke — vollständiger Broschüren-Ordner:** Der zentrale Ablageort aller Broschüren (Bereichs- und Produktbroschüren, Imagebroschüre, mehrsprachig) ist noch nicht bereitgestellt. **Pfad t.b.d. Steffi.** Im Repo liegt nur die Industrieboden-Broschüre 2023 als faktentreuer Text-Extrakt (kein rendernder PDF-Download) plus einzelne Produkt-Evidenz-PDFs unter `docs/tds-quellen/`. Für das Download-Center fehlen Broschüren als downloadbare Assets nahezu vollständig. Der Alt-Site-Export (§7) kennt 45 Dokumente vom Typ Broschüre/Katalog als Import-Kandidaten.
+**Stand nach #442 (02.07.):** Die auf der Alt-Site verlinkten Broschüren/Flyer sind übernommen (`public/downloads/broschuere/`, 23 Dateien: Industrieboden-Broschüre 2025 DE/EN, Rapid-Set-Broschüre DE/EN/FR + 6-seitig ES/PL, MICROTOP, Sanierungs-/Bodensanierungs-Flyer, Inotec DE/EN/FR, Unternehmensbroschüre, Lieferprogramm EN). Bewusst NICHT übernommen (Gründe in `dokumente-uebernahme-442.md`): Sichtestrich-/Design-Kataloge, KORODUR-Report-Magazine, alter Katzenstreu-Prospekt, alte Revisionen. **Rest-Lücke:** druckfrische Quelldateien/Neuauflagen liegen weiterhin nur bei Steffi (Google Drive `KORODUR/KORODUR Assets/`) — der Import spiegelt den Alt-Site-Stand.
 
 ---
 
@@ -152,7 +155,7 @@ Keine statischen Referenz-PDFs im Repo. Der Download je Referenz wird clientseit
 
 | # | Lücke | Umfang | Nächster Schritt |
 |---|---|---|---|
-| L1 | **Broschüren-Ordner** komplett | fast alle Bereichs-/Produktbroschüren fehlen als downloadbares PDF | Ablageort/Pfad von Steffi, dann Import nach `public/downloads/broschueren/` |
+| L1 | ~~Broschüren-Ordner~~ **erledigt via #442** (Alt-Site-Stand) | 23 Broschüren/Flyer unter `public/downloads/broschuere/` | offen nur: Neuauflagen/Quelldateien von Steffi (Drive) |
 | L2 | **EPD** | **0 vorhanden** | Typ-Slot in `produktDokumente.ts` reserviert; Broschüre S1 nennt „EPD / klimaneutral 2030" als Anspruch. EPD beschaffen sobald ausgestellt |
 | L3 | **ES-Sprachpass** | 0 Dokumente in ES über alle Typen | trotz 5. Site-Sprache; TDS/SDB/DoP-Übersetzungen offen |
 | L4 | **DoP PL/ES** | PL 0, ES 0 (DE 31 / EN 12 / FR 11) | PL/ES-Leistungserklärungen fehlen |
@@ -160,7 +163,7 @@ Keine statischen Referenz-PDFs im Repo. Der Download je Referenz wird clientseit
 | L6 | **Fehlende TDS** | NEODUR USM 3, NEODUR USM 5 | 2 TDS beschaffen (aktuell ohne `tdsUrl`) |
 | L7 | **System KOROCRETE Schnellbeton DE** | nur FR-Fassung vorhanden | DE-System-TDS ergänzen |
 | L8 | **SDB/DoP-Aktualität** | Bestand liegt vor + ist verlinkt, aber Vollständigkeit/Aktualität je Produkt nicht gegen Technik bestätigt | Freigabe/Versions-Check vor Cutover |
-| L9 | **Alt-Site-Überführung** | 774 von 1162 Export-Dokumenten (§7) noch nicht auf der neuen Site referenziert | priorisiert sichten (Broschüren/Service zuerst), Rest als „nur Mediathek" prüfen |
+| L9 | **Alt-Site-Überführung** | nach #442: 652 von 1162 Export-Dokumenten nicht referenziert — davon sind aber alle verknüpften Site-Sprachen-Dokumente übernommen oder mit Grund ausgelassen (103 Stämme, s. `dokumente-uebernahme-442.md`); Rest = nur-Mediathek/Nicht-Site-Sprachen/Alt-Revisionen | erledigt bis auf bewusste Auslassungen; nur-Mediathek bleibt Default „nicht übernehmen" |
 
 **Nicht Teil dieses Tickets:** Beschaffung der Dokumente selbst. Dieses Inventar liefert nur Bestand + Lücken.
 
@@ -187,6 +190,6 @@ _„TDS (vermutet)" = alles, was nicht eindeutig Zertifikat/DoP/SDB/Broschüre i
 
 **Zuordnung:** verknüpft (Seite/Produkt) 621 · nur Mediathek 541 (Kandidaten für veraltet/ungenutzt, manuell prüfen).
 
-**Abgleich neue Website:** referenziert 388 · nicht referenziert 774.
+**Abgleich neue Website (Stand 02.07., nach #442):** referenziert 510 · nicht referenziert 652.
 
-**Lücke:** 774 von 1162 Export-Dokumenten sind auf der neuen Site noch nicht referenziert (s. L9). Die Alt-Site führt Sprachen (ru/it/nl/tr u. a.), die die neue Site nicht abbildet — kein Gap für den V1-Scope (DE/EN/FR/PL/ES), aber als Bestand dokumentiert.
+**Rest-Delta:** Die 652 nicht referenzierten Export-Dokumente bestehen aus: nur-Mediathek-Altlasten (Default „nicht übernehmen"), Nicht-Site-Sprachen (ru/it/nl/tr u. a. — kein Gap für den V1-Scope), alten Revisionen sowie 103 bewusst ausgelassenen verknüpften Stämmen (Presse, KORODUR-Report, Sichtestrich-Marketing, eingestellte Produkte — Gründe in `dokumente-uebernahme-442.md`).

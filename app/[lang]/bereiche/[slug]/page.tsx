@@ -24,6 +24,7 @@ import RapidSetMarke from "../../../../components/RapidSetMarke";
 import InfrastrukturBereich from "../../../../components/InfrastrukturBereich";
 import MicrotopBereich from "../../../../components/MicrotopBereich";
 import { RAPID_SET_PRODUKT_IDS } from "../../../../data/rapidSetContent";
+import BereichDownloads from "../../../../components/BereichDownloads";
 import BereichEditorialSektion from "../../../../components/BereichEditorialSektion";
 import { bereichEditorial } from "../../../../data/bereichEditorial";
 
@@ -137,7 +138,13 @@ export default async function BereichPage({ params }: { params: Params }) {
   const DedizierterBereich = lang === "de" ? DEDIZIERTE_BEREICHE[slug] : undefined;
   if (DedizierterBereich) {
     const dict = await getDictionary(lang);
-    return <DedizierterBereich lang={lang} dict={dict} />;
+    return (
+      <>
+        <DedizierterBereich lang={lang} dict={dict} />
+        {/* Bereichs-Downloads (#442): Broschüren/Flyer als Abschluss-Sektion. */}
+        <BereichDownloads slug={slug} lang={lang} dict={dict} />
+      </>
+    );
   }
 
   // Multi-Bereich (#215): Produkt gehört zum Bereich über Primär-`bereich`
@@ -382,6 +389,9 @@ export default async function BereichPage({ params }: { params: Params }) {
           </div>
         </section>
       )}
+
+      {/* Bereichs-Downloads (#442): Broschüren/Flyer des Bereichs */}
+      <BereichDownloads slug={slug} lang={lang} dict={dict} />
 
       {/* Referenz-Teaser des Bereichs (Korb 2) */}
       {bereichsReferenzen.length > 0 && (
