@@ -129,12 +129,21 @@ export default function KompetenzfelderSektion({
         </div>
       </div>
 
-      {/* Feld 2: Betonsanierung (4 Unterbereiche) */}
+      {/* Feld 2: Betonsanierung (4 Unterbereiche); Kopfzeilen-Link auf den
+          Sparten-Hub /betonsanierung/ (#430) */}
       <div className="rounded-xl border border-mid-gray overflow-hidden">
-        <div className="px-6 pt-6 sm:px-7">
+        <div className="flex flex-wrap items-baseline justify-between gap-2 px-6 pt-6 sm:px-7">
           <h3 className="text-navy" style={{ fontSize: 24, fontWeight: 800 }}>
             {h.kompetenz_beton_title}
           </h3>
+          <Link
+            href={`/${lang}/betonsanierung/`}
+            className="inline-flex items-center gap-1 text-cyan-text text-[14px] no-underline hover:underline"
+            style={{ fontWeight: 700 }}
+          >
+            {h.kompetenz_zum_bereich}
+            <AppIcon icon={ChevronRight} width={15} height={15} strokeWidth={2.5} aria-hidden="true" />
+          </Link>
         </div>
         <p className="px-6 sm:px-7 pt-1 text-navy opacity-60 text-[15px]" style={{ maxWidth: 720 }}>
           {h.kompetenz_beton_sub}
