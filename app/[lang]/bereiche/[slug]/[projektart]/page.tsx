@@ -17,6 +17,7 @@ import { alternatesFor } from "../../../../../lib/seo";
 import { projektartBucket, projektartLabel, type Projektart } from "../../../../../data/einsatzbereichMapping";
 import { produktHatProjektart } from "../../../../../data/produktProjektart";
 import BereichEditorialSektion from "../../../../../components/BereichEditorialSektion";
+import BereichProduktFilter from "../../../../../components/BereichProduktFilter";
 import { bereichEditorial } from "../../../../../data/bereichEditorial";
 import Anwendungsmatrix from "../../../../../components/Anwendungsmatrix";
 import type { Locale } from "../../../../../lib/i18n";
@@ -81,6 +82,16 @@ export default async function SubBereichPage({ params }: { params: Params }) {
   // (kein Produkt wird fälschlich aus einem Bereich versteckt).
   const artProdukte = bereichProdukte.filter((p) => produktHatProjektart(p.id, art));
   const localizedProdukte = await localizeProdukte(artProdukte, lang);
+  // #453: Produktgruppen-Filter wie auf der Dachseite (#119) — kuratierte
+  // Gruppen-Kacheln statt flachem Rohkatalog, gebildet über die bereits
+  // projektart-gefilterten Produkte; leere Gruppen entfallen.
+  const gruppen = (bereich.produktgruppen ?? [])
+    .map((key) => ({
+      key,
+      label: tb(`gruppe_${key}`),
+      items: localizedProdukte.filter((p) => p.produktgruppe === key),
+    }))
+    .filter((g) => g.items.length > 0);
   const localizedRefs = await localizeReferenzen(artRefs.slice(0, 6), lang);
   const refLink = `/${lang}/referenzen/?projektart=${art}`;
   const ed = bereichEditorial(slug);
@@ -234,24 +245,36 @@ export default async function SubBereichPage({ params }: { params: Params }) {
           {/* #306: Produkte sind jetzt projektart-klassifiziert (Notion-Kern-DB-
               SoT über produktProjektart.ts / PRODUKT_PROJEKTART_OVERRIDES). Der
               Filter oben (produktHatProjektart) zeigt nur die für die jeweilige
-              Projektart relevanten Produkte — Platzhalter entfällt (#240/#83). */}
-          <div className="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {localizedProdukte.map((produkt) => (
-              <Link key={produkt.id} href={`/${lang}/produkte/${produkt.id}`} className="no-underline group block">
-                <div className="bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg" style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}>
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>{produkt.name}</h3>
-                    {produkt.qualitaetsklasse && (
-                      <span className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0" style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}>
-                        {produkt.qualitaetsklasse}
-                      </span>
-                    )}
+              Projektart relevanten Produkte — Platzhalter entfällt (#240/#83).
+              #453: Gruppen-Kacheln statt flachem Grid (wie Dachseite, #119). */}
+          {gruppen.length > 1 ? (
+            <BereichProduktFilter
+              gruppen={gruppen}
+              lang={lang}
+              defaultOpen={localizedProdukte.length <= 6}
+              hinweis={tb("produkte_filter_hinweis")}
+              alleLabel={tb("produkte_filter_alle")}
+              waehleLabel={tb("produkte_filter_waehle")}
+            />
+          ) : (
+            <div className="mb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {localizedProdukte.map((produkt) => (
+                <Link key={produkt.id} href={`/${lang}/produkte/${produkt.id}`} className="no-underline group block">
+                  <div className="bg-white p-6 flex flex-col gap-3 h-full transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg" style={{ borderRadius: 14, boxShadow: "0 4px 20px rgba(0,45,89,0.08)" }}>
+                    <div className="flex items-start justify-between gap-3">
+                      <h3 className="text-navy text-[17px] m-0" style={{ fontWeight: 900 }}>{produkt.name}</h3>
+                      {produkt.qualitaetsklasse && (
+                        <span className="text-[10px] text-white uppercase tracking-wider px-2 py-0.5 rounded shrink-0" style={{ backgroundColor: "var(--cyan)", fontWeight: 700 }}>
+                          {produkt.qualitaetsklasse}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">{produkt.kurzbeschreibung}</p>
                   </div>
-                  <p className="text-navy opacity-60 text-[14px] m-0 leading-[1.5]">{produkt.kurzbeschreibung}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
