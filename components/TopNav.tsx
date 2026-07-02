@@ -91,11 +91,31 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   // reaktiv vorwählt (ProdukteListe liest ?produktart= über useSearchParams).
   const paHref = (art: string) => `/${lang}/produkte/?produktart=${art}`;
 
-  // Zwei-Achsen-IA (#306/#309). Portfolio = Achse A „WAS" (Produktart, gruppiert);
-  // Neubau/Sanierung = Achse B „WOFÜR" (Use-Case-Bereiche). Spezialmörtel ist nur
-  // Neubau ein eigener Bereich; im Sanierungspfad geht der Anteil (VM 5, PFM) in
-  // Betonsanierung auf (Steffi 2026-06-22) → kein Spezialmörtel im Sanierung-Menü.
+  const h = dict.home as Record<string, string>;
+
+  // Sparten-Nav (#430, GF-Abstimmung 02.07. / finale Spec Steffi 01.07.):
+  // Industrieboden ▾ | Betonsanierung ▾ | Produkte ▾ | Referenzen | Kontakt.
+  // Neubau/Sanierung wandern als Einstiege in die Sparte Industrieboden
+  // (Ziel: die Rich-Unterseiten aus #438/#439); die Sparte Betonsanierung
+  // bündelt ihre vier Bereiche und bekommt den Hub /betonsanierung/.
+  // „Unternehmen" wandert in den Footer, Katzenstreu bleibt bewusst draußen
+  // (Zugang: Home-Streifen + Produkte-Menü + Footer).
   const menus: Record<string, MegaMenu> = {
+    industrieboden: {
+      items: [
+        { label: dict.nav.neubau, href: `/${lang}/bereiche/industrieboden/neubau/`, sub: bt.industrieboden_neubau_teaser },
+        { label: dict.nav.sanierung, href: `/${lang}/bereiche/industrieboden/sanierung/`, sub: bt.industrieboden_sanierung_teaser },
+        { label: dict.nav.loesungsfinder, href: `/${lang}/loesungsfinder/`, highlight: true },
+      ],
+    },
+    betonsanierung: {
+      items: [
+        { label: h.kompetenz_beton_instandsetzung_title, href: `/${lang}/bereiche/betonsanierung/`, sub: bt.betonsanierung_teaser },
+        { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
+        { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
+        { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
+      ],
+    },
     portfolio: {
       // Reihenfolge (Steffi 2026-06-23): Industrieböden (Sichtestrich als letzte
       // Produktart, Bereich aufgelöst #331) → Begleitprodukte → Betonsanierung &
@@ -136,29 +156,17 @@ export default function TopNav({ lang, dict }: TopNavProps) {
             { label: pa["produktart_tw-beschichtungsmoertel"], href: paHref("tw-beschichtungsmoertel") },
           ],
         },
+        // #430: abgesetzte Spalte — führt auf Bereichsseiten, nicht in den
+        // Katalog. „Händler werden" folgt mit der Partnerseite (#440).
+        {
+          title: dict.nav.mm_cluster_weitere,
+          items: [
+            { label: bt.katzenstreu_name, href: `/${lang}/bereiche/katzenstreu/` },
+            { label: bt["3d-concrete-printing_name"], href: `/${lang}/bereiche/3d-concrete-printing/` },
+          ],
+        },
       ],
       footer: [{ label: dict.bereiche.alle_produkte_name, href: `/${lang}/produkte/` }],
-    },
-    // Neubau + Sanierung zeigen NUR die Bereiche (Achse B). Bereiche mit beiden
-    // Projektarten (Industrieboden, Sichtestrich) verlinken in die projektart-
-    // gefilterte Sub-Seite; reine Neubau-/Sanierungs-Bereiche auf die Dachseite.
-    neubau: {
-      items: [
-        { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/neubau/`, sub: bt.industrieboden_teaser },
-        { label: bt.spezialmoertel_name, href: `/${lang}/bereiche/spezialmoertel/`, sub: bt.spezialmoertel_teaser },
-      ],
-    },
-    sanierung: {
-      // Final (Steffi 2026-06-22/#306): Industrieboden · Infrastruktur ·
-      // TW-Behältersanierung (MICROTOP) · Betonsanierung (Rapid Set). KEIN
-      // Spezialmörtel (→ Betonsanierung), kein Sichtestrich (in Industrieboden
-      // aufgegangen, #331).
-      items: [
-        { label: bt.industrieboden_name, href: `/${lang}/bereiche/industrieboden/sanierung/`, sub: bt.industrieboden_teaser },
-        { label: bt.infrastruktur_name, href: `/${lang}/bereiche/infrastruktur/`, sub: bt.infrastruktur_teaser },
-        { label: bt.microtop_menu, href: `/${lang}/bereiche/microtop/`, sub: bt.microtop_teaser },
-        { label: bt["betonsanierung_name"], href: `/${lang}/bereiche/betonsanierung/`, sub: bt["betonsanierung_teaser"] },
-      ],
     },
     kontakt: {
       items: [
@@ -169,20 +177,19 @@ export default function TopNav({ lang, dict }: TopNavProps) {
   };
 
   const navItems: { key: string; href: string; label: string; menu: boolean }[] = [
-    { key: "portfolio", href: `/${lang}/produkte/`, label: dict.nav.bereiche, menu: true },
-    { key: "neubau", href: `/${lang}/neubau/`, label: dict.nav.neubau, menu: true },
-    { key: "sanierung", href: `/${lang}/sanierung/`, label: dict.nav.sanierung, menu: true },
+    { key: "industrieboden", href: `/${lang}/bereiche/industrieboden/`, label: bt.industrieboden_name, menu: true },
+    { key: "betonsanierung", href: `/${lang}/betonsanierung/`, label: h.kompetenz_beton_title, menu: true },
+    { key: "portfolio", href: `/${lang}/produkte/`, label: dict.nav.produkte, menu: true },
     { key: "referenzen", href: `/${lang}/referenzen/`, label: dict.nav.referenzen, menu: false },
-    { key: "unternehmen", href: `/${lang}/unternehmen/`, label: dict.nav.unternehmen, menu: false },
     { key: "kontakt", href: `/${lang}/kontakt/`, label: dict.nav.kontakt, menu: true },
   ];
 
   // Panel-Layout: unter dem Trigger verankert, Kontakt (rechts außen)
   // rechtsbündig → kurze Mauswege (Steffi, 2026-06-13).
   const layout: Record<string, { w: string; cols: string; align: "left" | "right" }> = {
-    portfolio: { w: "w-[min(720px,calc(100vw-32px))]", cols: "grid-cols-2 lg:grid-cols-3", align: "left" },
-    neubau: { w: "w-[340px]", cols: "grid-cols-1", align: "left" },
-    sanierung: { w: "w-[360px]", cols: "grid-cols-1", align: "left" },
+    industrieboden: { w: "w-[360px]", cols: "grid-cols-1", align: "left" },
+    betonsanierung: { w: "w-[400px]", cols: "grid-cols-1", align: "left" },
+    portfolio: { w: "w-[min(920px,calc(100vw-32px))]", cols: "grid-cols-2 lg:grid-cols-4", align: "left" },
     kontakt: { w: "w-[300px]", cols: "grid-cols-1", align: "right" },
   };
 

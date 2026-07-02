@@ -71,11 +71,18 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* (2) Unternehmen — nur Adresse + Kontakt (Unternehmens-Link steht in der Nav). */}
+          {/* (2) Unternehmen — Link + Adresse + Kontakt. #430: „Unternehmen" ist
+              aus der Top-Nav in den Footer gewandert → hier der Einstieg. */}
           <div>
             <h3 className={headingClass} style={{ fontWeight: 800 }}>
               {dict.footer.col_unternehmen}
             </h3>
+            <div>
+              <Link href={`/${lang}/unternehmen/`} className={highlightClass} style={{ fontWeight: 800 }}>
+                {dict.nav.unternehmen}
+                <AppIcon icon={ChevronRight} width={14} height={14} strokeWidth={2.5} aria-hidden="true" />
+              </Link>
+            </div>
             <address className="not-italic text-[14px] text-white/70 leading-[1.6]">
               <div>{KORODUR_ZENTRALE.strasse}</div>
               <div>{KORODUR_ZENTRALE.plzOrt}</div>
